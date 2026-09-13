@@ -100,6 +100,29 @@ for (const [ruta, archivo] of Object.entries(ARCHIVOS)) {
   n++;
 }
 
+// --- propuestas: la home con el hero reemplazado, en /propuestas/<nombre>/ ---
+// El hero original es la sección de Elementor que trae el slideshow. Se
+// esconde con CSS y se inserta la propuesta justo antes. El resto de la
+// página queda intacto, así se compara con la home real.
+import { readdirSync } from 'node:fs';
+const homeLimpia = limpiar(readFileSync(path.join(ORIG, 'home.html'), 'utf8'), '/');
+const heroTag = homeLimpia.match(/<section[^>]*data-settings="[^"]*background_slideshow_gallery[^"]*"[^>]*>/);
+if (heroTag && existsSync('propuestas')) {
+  const idHero = heroTag[0].match(/elementor-element-([0-9a-f]+)/)[1];
+  for (const f of readdirSync('propuestas').filter((x) => x.endsWith('.html'))) {
+    const nombre = f.replace(/\.html$/, '');
+    const bloque = readFileSync(path.join('propuestas', f), 'utf8')
+      .split('"#form-home"').join(`"${BASE}/propuestas/${nombre}/#form-home"`)
+      .split('"#servicios"').join(`"${BASE}/propuestas/${nombre}/#servicios"`);
+    let html = homeLimpia.replace(heroTag[0], `${bloque}\n<div id="servicios"></div>\n${heroTag[0]}`);
+    html = html.replace(/<\/head>/i, `<style>.elementor-element-${idHero}{display:none !important}</style>\n</head>`);
+    const destino = path.join(DEST, 'propuestas', nombre, 'index.html');
+    mkdirSync(path.dirname(destino), { recursive: true });
+    writeFileSync(destino, html);
+    console.log(`propuesta: /propuestas/${nombre}/`);
+  }
+}
+
 // que nadie indexe la copia
 writeFileSync(path.join(DEST, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
 

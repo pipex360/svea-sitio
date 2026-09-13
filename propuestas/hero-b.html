@@ -1,0 +1,144 @@
+<!--
+  Propuesta B · «Glassmorphism Trust Hero» (21st.dev, jahed) adaptado a SVEA.
+  Titular a la izquierda; a la derecha una tarjeta de vidrio con las cifras
+  que prometen los anuncios y una franja con los clientes reales de la home.
+  Reescrito en HTML + CSS sin React. El H1 conserva la palabra clave.
+-->
+<style>
+  .svea-hero-b{position:relative;overflow:hidden;background:#0b0f0d;color:#fff;
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+  .svea-hero-b .fondo{position:absolute;inset:0;z-index:0;opacity:.42;
+    background:url("https://sveaconsultores.cl/wp-content/uploads/2025/03/aerial-view-of-logistic-center.jpg") center/cover no-repeat;
+    -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 0%,#000 70%,transparent)}
+  .svea-hero-b .marco{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:72px 24px 56px;
+    display:grid;grid-template-columns:1fr;gap:44px;align-items:start}
+  @media(min-width:1024px){.svea-hero-b .marco{grid-template-columns:7fr 5fr;gap:40px;padding:104px 32px 80px}}
+  /* la cinta de logos mide "max-content": sin esto el grid la deja crecer y la tarjeta se sale de la pantalla */
+  .svea-hero-b .marco>*{min-width:0}
+
+  .svea-hero-b .izq{display:flex;flex-direction:column;gap:28px;padding-top:12px}
+  .svea-hero-b .insignia{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:7px 13px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);backdrop-filter:blur(8px);
+    font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#d4d9d5}
+  .svea-hero-b .insignia i{width:8px;height:8px;border-radius:50%;background:#9BEB6B;box-shadow:0 0 0 4px rgba(155,235,107,.18)}
+  .svea-hero-b h1{margin:0;font-weight:500;letter-spacing:-.03em;line-height:.95;color:#fff;text-transform:none;
+    font-size:clamp(36px,4.6vw,62px);text-wrap:balance}
+  .svea-hero-b h1 span{background:linear-gradient(135deg,#fff 20%,#9BEB6B);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .svea-hero-b .izq p{margin:0;max-width:56ch;font-size:18px;line-height:1.6;color:#a8b0ab}
+  .svea-hero-b .botones{display:flex;flex-wrap:wrap;gap:14px}
+  .svea-hero-b .btn{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 30px;border-radius:999px;
+    font-size:15px;font-weight:600;text-decoration:none;transition:transform .15s,background .2s,border-color .2s}
+  .svea-hero-b .btn-blanco{background:#fff;color:#0b0f0d}
+  .svea-hero-b .btn-blanco:hover{background:#e6e9e4;transform:scale(1.02)}
+  .svea-hero-b .btn-vidrio{color:#fff;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);backdrop-filter:blur(6px)}
+  .svea-hero-b .btn-vidrio:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22)}
+  .svea-hero-b .btn svg{width:16px;height:16px}
+
+  .svea-hero-b .der{display:flex;flex-direction:column;gap:22px}
+  @media(min-width:1024px){.svea-hero-b .der{margin-top:48px}}
+  .svea-hero-b .tarjeta{position:relative;overflow:hidden;border-radius:26px;border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.05);backdrop-filter:blur(18px);box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+  .svea-hero-b .tarjeta.cifras{padding:30px}
+  .svea-hero-b .tarjeta.cifras::before{content:"";position:absolute;top:-64px;right:-64px;width:256px;height:256px;border-radius:50%;
+    background:rgba(155,235,107,.08);filter:blur(48px);pointer-events:none}
+  .svea-hero-b .cabeza{position:relative;display:flex;align-items:center;gap:16px;margin-bottom:28px}
+  .svea-hero-b .icono{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:16px;
+    background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
+  .svea-hero-b .icono svg{width:24px;height:24px;stroke:#fff}
+  .svea-hero-b .grande{font-size:32px;font-weight:700;letter-spacing:-.02em;line-height:1}
+  .svea-hero-b .chico{font-size:14px;color:#a8b0ab;margin-top:4px}
+  .svea-hero-b .barra{position:relative;margin-bottom:28px}
+  .svea-hero-b .barra .fila{display:flex;justify-content:space-between;font-size:14px;margin-bottom:10px}
+  .svea-hero-b .barra .fila span:last-child{font-weight:500}
+  .svea-hero-b .barra .pista{height:8px;border-radius:999px;background:rgba(39,44,41,.6);overflow:hidden}
+  .svea-hero-b .barra .relleno{height:100%;width:100%;border-radius:999px;background:linear-gradient(90deg,#fff,#9BEB6B)}
+  .svea-hero-b .linea{height:1px;background:rgba(255,255,255,.1);margin-bottom:22px}
+  .svea-hero-b .mini{display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;gap:12px;text-align:center}
+  .svea-hero-b .mini .sep{background:rgba(255,255,255,.1)}
+  .svea-hero-b .mini b{display:block;font-size:22px;font-weight:700}
+  .svea-hero-b .mini small{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#7d8782;margin-top:2px}
+  .svea-hero-b .pastillas{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+  .svea-hero-b .pastilla{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);font-size:10.5px;font-weight:600;letter-spacing:.06em;color:#d4d9d5}
+  .svea-hero-b .pastilla i{width:8px;height:8px;border-radius:50%;background:#9BEB6B}
+
+  .svea-hero-b .tarjeta.clientes{padding:26px 0}
+  .svea-hero-b .tarjeta.clientes h3{margin:0 30px 20px;font-size:14px;font-weight:500;color:#a8b0ab}
+  .svea-hero-b .cinta{overflow:hidden;
+    -webkit-mask-image:linear-gradient(to right,transparent,#000 15%,#000 85%,transparent);mask-image:linear-gradient(to right,transparent,#000 15%,#000 85%,transparent)}
+  .svea-hero-b .cinta ul{display:flex;gap:56px;align-items:center;list-style:none;margin:0;padding:0 24px;width:max-content;
+    animation:svea-b-cinta 40s linear infinite}
+  .svea-hero-b .cinta img{height:34px;width:auto;filter:grayscale(1) brightness(1.6);opacity:.55;transition:opacity .2s,filter .2s}
+  .svea-hero-b .cinta li:hover img{opacity:1;filter:none}
+  @keyframes svea-b-cinta{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  .svea-hero-b .aparece{opacity:0;animation:svea-b-sube .8s ease-out forwards}
+  .svea-hero-b .r1{animation-delay:.1s}.svea-hero-b .r2{animation-delay:.2s}.svea-hero-b .r3{animation-delay:.3s}
+  .svea-hero-b .r4{animation-delay:.4s}.svea-hero-b .r5{animation-delay:.5s}
+  @keyframes svea-b-sube{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.svea-hero-b .aparece{animation:none;opacity:1}.svea-hero-b .cinta ul{animation:none}}
+</style>
+
+<section class="svea-hero-b" aria-label="Presentación">
+  <div class="fondo" aria-hidden="true"></div>
+  <div class="marco">
+
+    <div class="izq">
+      <div class="insignia aparece r1"><i></i> Consultora ambiental e industrial · todo Chile</div>
+      <h1 class="aparece r2" style="max-width:13ch">Consultoría Ambiental y Cumplimiento Normativo <span>para tu empresa</span></h1>
+      <p class="aparece r3">Tramitamos ante la SEREMI de Salud, Bomberos y la municipalidad lo que tu empresa necesita para operar. Calificación industrial, carga de combustible, planes de emergencia y residuos.</p>
+      <div class="botones aparece r4">
+        <a class="btn btn-blanco" href="#form-home">Solicitar cotización
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-vidrio" href="#servicios">Ver servicios</a>
+      </div>
+    </div>
+
+    <div class="der">
+      <div class="tarjeta cifras aparece r5">
+        <div class="cabeza">
+          <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <div><div class="grande">+250</div><div class="chico">Empresas atendidas</div></div>
+        </div>
+        <div class="barra">
+          <div class="fila"><span style="color:#a8b0ab">Aprobación ante la autoridad</span><span>Garantizada</span></div>
+          <div class="pista"><div class="relleno"></div></div>
+        </div>
+        <div class="linea"></div>
+        <div class="mini">
+          <div><b>24 hrs</b><small>Cotización</small></div><div class="sep"></div>
+          <div><b>5–10</b><small>Días hábiles</small></div><div class="sep"></div>
+          <div><b>6</b><small>Servicios</small></div>
+        </div>
+        <div class="pastillas">
+          <span class="pastilla"><i></i> SEREMI DE SALUD</span>
+          <span class="pastilla"><i></i> BOMBEROS</span>
+          <span class="pastilla"><i></i> MUNICIPALIDAD</span>
+        </div>
+      </div>
+
+      <div class="tarjeta clientes aparece r5">
+        <h3>Empresas que ya cumplen con SVEA</h3>
+        <div class="cinta">
+          <ul>
+            <li><img src="https://sveaconsultores.cl/wp-content/uploads/2025/11/DBsantasalo_logo.png" alt="DB Santasalo"></li>
+            <li><img src="https://sveaconsultores.cl/wp-content/uploads/2025/11/LOGO_GrupoMBO_Nuevo_4.png" alt="Grupo MBO"></li>
+            <li><img src="https://sveaconsultores.cl/wp-content/uploads/2025/11/Logo-nuevopudahuel.png" alt="Nuevo Pudahuel"></li>
+            <li><img src="https://sveaconsultores.cl/wp-content/uploads/2025/11/gespania-300x152-1.webp" alt="Gespania"></li>
+            <li><img src="https://sveaconsultores.cl/wp-content/uploads/2025/11/logo_nature-300x220-1.png" alt="Nature"></li>
+            <li><img src="https://sveaconsultores.cl/wp-content/uploads/2025/11/logo_25_m.png" alt="Sungrow"></li>
+            <li><img src="https://sveaconsultores.cl/wp-content/uploads/2025/11/logo_comprimido_big.972a9837.png" alt="Cliente"></li>
+            <li><img src="https://sveaconsultores.cl/wp-content/uploads/2025/11/DBsantasalo_logo.png" alt=""></li>
+            <li><img src="https://sveaconsultores.cl/wp-content/uploads/2025/11/LOGO_GrupoMBO_Nuevo_4.png" alt=""></li>
+            <li><img src="https://sveaconsultores.cl/wp-content/uploads/2025/11/Logo-nuevopudahuel.png" alt=""></li>
+            <li><img src="https://sveaconsultores.cl/wp-content/uploads/2025/11/gespania-300x152-1.webp" alt=""></li>
+            <li><img src="https://sveaconsultores.cl/wp-content/uploads/2025/11/logo_nature-300x220-1.png" alt=""></li>
+            <li><img src="https://sveaconsultores.cl/wp-content/uploads/2025/11/logo_25_m.png" alt=""></li>
+            <li><img src="https://sveaconsultores.cl/wp-content/uploads/2025/11/logo_comprimido_big.972a9837.png" alt=""></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

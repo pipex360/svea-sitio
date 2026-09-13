@@ -1,0 +1,57 @@
+<!--
+  Propuesta A · «Hero 12» (21st.dev, felipemenezes098) adaptado a SVEA.
+  Foto a pantalla completa, título grande abajo a la izquierda, etiqueta y
+  botón redondo anclado abajo a la derecha. Reescrito en HTML + CSS: el
+  original es React + motion; aquí no hace falta JavaScript.
+  El H1 conserva «Consultoría Ambiental y Cumplimiento Normativo».
+-->
+<style>
+  .svea-hero-a{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;
+    min-height:600px;overflow:hidden;background:#0b0f0d;color:#fff;
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+  .svea-hero-a .fondo{position:absolute;inset:0;z-index:0}
+  .svea-hero-a .fondo img{width:100%;height:100%;object-fit:cover;display:block;
+    animation:svea-a-zoom 1.2s cubic-bezier(.22,1,.36,1) both}
+  .svea-hero-a .fondo::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.25) 55%,rgba(0,0,0,.10))}
+  .svea-hero-a .contenido{position:relative;z-index:1;display:flex;flex-direction:column;gap:24px;
+    padding:40px 24px;width:100%}
+  .svea-hero-a .texto{display:flex;flex-direction:column;gap:20px;min-width:0}
+  .svea-hero-a .titulo{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px}
+  .svea-hero-a h1{margin:0;font-weight:400;letter-spacing:-.02em;line-height:1.02;color:#fff;text-transform:none;
+    font-size:clamp(36px,5.6vw,64px);text-wrap:balance;max-width:16ch}
+  .svea-hero-a .etiqueta{font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+  .svea-hero-a p{margin:0;max-width:52ch;font-size:16px;line-height:1.6;color:rgba(255,255,255,.82)}
+  .svea-hero-a .cta{flex-shrink:0;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 26px;
+    border-radius:999px;background:#fff;color:#0b0f0d;font-weight:500;font-size:15px;text-decoration:none;
+    transition:transform .2s,background .2s}
+  .svea-hero-a .cta:hover{background:#eef0ec;transform:translateY(-1px)}
+  .svea-hero-a .cta svg{width:16px;height:16px}
+  .svea-hero-a .anim{animation:svea-a-sube .5s cubic-bezier(.22,1,.36,1) both}
+  .svea-hero-a .anim.d2{animation-delay:.12s}.svea-hero-a .anim.d3{animation-delay:.24s}
+  @keyframes svea-a-sube{from{opacity:0;transform:translateY(16px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+  @keyframes svea-a-zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+  @media(min-width:640px){
+    .svea-hero-a .contenido{flex-direction:row;align-items:flex-end;justify-content:space-between;padding:48px 40px}
+  }
+  @media(prefers-reduced-motion:reduce){.svea-hero-a .anim,.svea-hero-a .fondo img{animation:none}}
+</style>
+
+<section class="svea-hero-a" aria-label="Presentación">
+  <div class="fondo" aria-hidden="true">
+    <img src="https://sveaconsultores.cl/wp-content/uploads/2025/03/chemical-oil-refinery-plant-power-plant-and-metal-2024-12-08-00-52-34-utc-scaled.jpg" alt="" fetchpriority="high">
+  </div>
+  <div class="contenido">
+    <div class="texto">
+      <div class="titulo anim">
+        <h1>Consultoría Ambiental y Cumplimiento Normativo</h1>
+        <span class="etiqueta">SVEA Consultores · Chile</span>
+      </div>
+      <p class="anim d2">Tramitamos ante la SEREMI de Salud, Bomberos y la municipalidad lo que tu empresa necesita para operar: calificación industrial, carga de combustible, planes de emergencia y residuos. Cotización en menos de 24 horas.</p>
+    </div>
+    <a class="cta anim d3" href="#form-home">
+      Solicitar cotización
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
