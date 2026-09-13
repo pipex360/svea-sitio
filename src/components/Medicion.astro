@@ -1,0 +1,125 @@
+---
+/**
+ * Bloque de medición del anexo A + C + D del plan.
+ *
+ * LISTA ROJA. Los identificadores, las etiquetas de conversión, el prefijo del
+ * asunto y las palabras de servicio los lee n8n y Google Ads. Lo único que
+ * cambia entre páginas son las cuatro props de abajo, con los valores que hoy
+ * están publicados (extraídos de las landings, no inventados).
+ *
+ * Los tres <script> van is:inline para que Astro no los agrupe, no los mueva
+ * ni les cambie el orden: van después del formulario, como hoy.
+ */
+interface Props {
+  servicio: string;       // valor del evento GA4 form_submit_cotizacion
+  prefijoAsunto?: string; // p.ej. "[ADS] Cotización CTI - "  → n8n lo lee
+  formId?: string;        // p.ej. "form-landing-cti"
+  subjectId?: string;     // p.ej. "dynamic-subject-lcti"
+  servicioDesdeSelector?: boolean; // la home toma el servicio del <select>
+}
+const {
+  servicio,
+  prefijoAsunto,
+  formId,
+  subjectId,
+  servicioDesdeSelector = false,
+} = Astro.props;
+
+const GA4 = 'G-FWQ05WDLZ3';
+const ADS = 'AW-16836158536';
+const CONV_FORM = 'AW-16836158536/086iCJjJlsobEMjIjdw-';
+---
+
+<!-- A · GA4 + Google Ads (remarketing y conversion linker) -->
+<script is:inline define:vars={{ GA4, ADS }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = window.gtag || gtag;
+  gtag('js', new Date());
+  gtag('config', GA4);
+  gtag('config', ADS);
+</script>
+
+<!-- A · Conversión del formulario con Enhanced Conversions -->
+<script is:inline define:vars={{ CONV_FORM, servicio, servicioDesdeSelector }}>
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.querySelector('form[action*="web3forms"]') || document.querySelector('form');
+  if (!form) return;
+
+  form.addEventListener('submit', function () {
+    // Capturar datos ANTES del redirect a /gracias/
+    var emailField = form.querySelector('input[type="email"], input[name="Email"]');
+    var phoneField = form.querySelector('input[type="tel"], input[name="Teléfono"]');
+    var enhancedData = {};
+
+    if (emailField && emailField.value) {
+      enhancedData.email = emailField.value.trim().toLowerCase();
+    }
+    if (phoneField && phoneField.value) {
+      var phone = phoneField.value.replace(/\D/g, '');
+      if (phone.length === 9) phone = '56' + phone;
+      if (!phone.startsWith('+')) phone = '+' + phone;
+      enhancedData.phone_number = phone;
+    }
+
+    gtag('set', 'user_data', enhancedData);
+    gtag('event', 'conversion', { 'send_to': CONV_FORM });
+
+    // En la home el servicio sale del selector; en las landings es fijo.
+    var valor = servicio;
+    if (servicioDesdeSelector) {
+      var sel = form.querySelector('select[name="Servicio"]');
+      if (sel && sel.value) valor = sel.value;
+    }
+    gtag('event', 'form_submit_cotizacion', {
+      'event_category': 'Lead',
+      'event_label': document.title,
+      'servicio': valor
+    });
+  });
+});
+</script>
+
+{prefijoAsunto && formId && subjectId && (
+  <!-- C · Asunto dinámico. El prefijo y la palabra de servicio los lee n8n. -->
+  <script is:inline define:vars={{ prefijoAsunto, formId, subjectId }}>
+  document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', function () {
+      var campoNombre  = form.querySelector('input[name="Nombre"]');
+      var campoEmpresa = form.querySelector('input[name="Empresa"]') ||
+                         form.querySelector('input[name="Condominio"]');
+      var nombre  = ((campoNombre && campoNombre.value) || '').trim() || 'Sin nombre';
+      var empresa = ((campoEmpresa && campoEmpresa.value) || '').trim();
+      var ahora = new Date();
+      var fecha = ahora.toLocaleDateString('es-CL') + ' ' +
+                  ahora.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
+      var asunto = prefijoAsunto + nombre + (empresa ? ' | ' + empresa : '') + ' - ' + fecha;
+      var destino = document.getElementById(subjectId);
+      if (destino) destino.value = asunto;
+    });
+  });
+  </script>
+)}
+
+<!-- D · Captura de gclid y utm_*, idéntica en todas las páginas con formulario -->
+<script is:inline>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var campos = ['gclid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  campos.forEach(function (f) {
+    var val = params.get(f);
+    if (val) {
+      var el = document.getElementById('field-' + f);
+      if (el) el.value = val;
+    }
+  });
+  if (params.get('gclid')) {
+    sessionStorage.setItem('gclid', params.get('gclid'));
+  } else if (sessionStorage.getItem('gclid')) {
+    var el = document.getElementById('field-gclid');
+    if (el && !el.value) el.value = sessionStorage.getItem('gclid');
+  }
+})();
+</script>

@@ -1,0 +1,80 @@
+---
+/**
+ * Formulario de Web3Forms.
+ *
+ * LISTA ROJA (R2, R3, R4): action, method, access_key, los campos ocultos con
+ * sus name/id/value, los name visibles con tilde y mayúscula, los id de
+ * formulario y los textos de las opciones. Todo eso sale del inventario
+ * extraído de las páginas publicadas; no se escribe a mano en ningún sitio.
+ *
+ * ÁMBAR: el marcado, las clases, las etiquetas, los placeholders y el texto
+ * del botón son libres. Aquí se rehacen para cumplir lo de la sección 8:
+ * una columna, 48 px de alto mínimo, teclado numérico en el teléfono.
+ */
+interface Oculto { name: string; value: string; id: string | null }
+interface Visible { tag: string; name: string; type: string | null; required: boolean; placeholder?: string | null }
+interface Opcion { value: string; label: string; disabled: boolean; selected: boolean }
+interface Form {
+  id: string;
+  action: string;
+  ocultos: Oculto[];
+  visibles: Visible[];
+  opciones: Record<string, Opcion[]>;
+  boton: string;
+}
+interface Props { form: Form; boton?: string }
+
+const { form, boton } = Astro.props;
+
+// gclid y utm_* sólo existen en las landings. Si el formulario no los trae,
+// no se inventan: se reproduce el formulario tal como está publicado.
+const etiqueta = (name: string) => name;
+---
+
+<form id={form.id} action={form.action} method="POST" class="frm">
+  {form.ocultos.map((h) => (
+    <input type="hidden" name={h.name} value={h.value} {...(h.id ? { id: h.id } : {})} />
+  ))}
+
+  {form.visibles.map((c) => {
+    if (c.name === 'botcheck') {
+      return <input type="checkbox" name="botcheck" class="frm-bot" style="display:none" tabindex="-1" aria-hidden="true" />;
+    }
+    const opts = form.opciones[c.name];
+    const id = `${form.id}-${c.name.replace(/[^A-Za-z]/g, '')}`;
+    return (
+      <div class="frm-campo">
+        <label for={id}>
+          {etiqueta(c.name)}{c.required && <span class="frm-req" aria-hidden="true"> *</span>}
+        </label>
+        {opts ? (
+          <select id={id} name={c.name} required={c.required}>
+            {opts.map((o) => (
+              <option value={o.value} disabled={o.disabled} selected={o.selected}>{o.label}</option>
+            ))}
+          </select>
+        ) : c.tag === 'textarea' ? (
+          <textarea id={id} name={c.name} rows="3" required={c.required} placeholder={c.placeholder ?? undefined}></textarea>
+        ) : (
+          <input
+            id={id}
+            type={c.type ?? 'text'}
+            name={c.name}
+            required={c.required}
+            placeholder={c.placeholder ?? undefined}
+            inputmode={c.type === 'tel' ? 'tel' : c.type === 'email' ? 'email' : undefined}
+            autocomplete={
+              c.name === 'Nombre' ? 'name' :
+              c.name === 'Teléfono' ? 'tel' :
+              c.name === 'Email' ? 'email' :
+              c.name === 'Empresa' ? 'organization' : undefined
+            }
+          />
+        )}
+      </div>
+    );
+  })}
+
+  <button type="submit" class="frm-enviar">{boton ?? form.boton}</button>
+  <p class="frm-nota">Datos protegidos · Sin compromiso</p>
+</form>

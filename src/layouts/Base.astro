@@ -1,0 +1,138 @@
+---
+/**
+ * Plantilla base de todas las páginas.
+ *
+ * LISTA ROJA: el contenedor GTM-NGVMRNDM va en todas las páginas; el title,
+ * la meta descripción, el canonical, el robots y el JSON-LD se reproducen
+ * desde 04-seo-por-url/ sin tocarlos.
+ *
+ * Una sola hoja de estilo y ningún script de framework: es lo que baja las
+ * 67 hojas y 31 scripts de la home actual a 1 y 3.
+ */
+import '../styles/base.css';
+
+interface Pagina {
+  ruta: string;
+  title: string;
+  description: string;
+  robots: string;
+  canonical: string;
+  og_image?: string;
+  jsonld?: unknown[];
+}
+interface Props { pagina: Pagina; sinCabecera?: boolean }
+
+// sinCabecera: la home lleva su propia cabecera transparente dentro del hero
+const { pagina, sinCabecera = false } = Astro.props;
+const GTM = 'GTM-NGVMRNDM';
+const TEL = '+56 9 2994 7924';
+const WA  = 'https://api.whatsapp.com/send?phone=56929947924&text=Hola,%20necesito%20informaci%C3%B3n%20sobre%20sus%20servicios';
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO reproducido desde 04-seo-por-url/seo-por-url.csv. Uno de cada uno: el
+       error 3 del plan era justamente tener dos title y dos robots por página. -->
+  <title set:html={pagina.title}></title>
+  <meta name="description" content={pagina.description} />
+  <meta name="robots" content={pagina.robots} />
+  <link rel="canonical" href={pagina.canonical} />
+  <meta property="og:title" content={pagina.title} />
+  <meta property="og:description" content={pagina.description} />
+  <meta property="og:url" content={pagina.canonical} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CL" />
+  {pagina.og_image && <meta property="og:image" content={pagina.og_image} />}
+
+  <!-- Datos estructurados de Rank Math, reproducidos igual -->
+  {(pagina.jsonld ?? []).map((bloque) => (
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(bloque)} />
+  ))}
+
+  <!-- LISTA ROJA · Google Tag Manager -->
+  <script is:inline define:vars={{ GTM }}>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+  var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+  j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer',GTM);
+  </script>
+
+  <slot name="head" />
+</head>
+<body>
+  <!-- LISTA ROJA · GTM sin JavaScript -->
+  <noscript set:html={`<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`} />
+
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  {!sinCabecera && (
+  <header class="cab">
+    <a class="cab-marca" href="/">SVEA <span>Consultores</span></a>
+    <nav class="cab-nav" aria-label="Principal">
+      <a href="/calificacion-tecnica-industrial/">Calificación industrial</a>
+      <a href="/estudio-de-carga-de-combustible/">Carga de combustible</a>
+      <a href="/planes-de-emergencia-y-evacuacion/">Planes de emergencia</a>
+      <a href="/autorizacion-de-transporte-de-residuos/">Transporte de residuos</a>
+      <a href="/blog/">Guías</a>
+    </nav>
+    <a class="cab-tel" href="tel:+56929947924">{TEL}</a>
+  </header>
+  )}
+
+  <main id="contenido" class={sinCabecera ? 'sin-cabecera' : undefined}>
+    <slot />
+  </main>
+
+  <footer class="pie">
+    <div class="pie-cols">
+      <div>
+        <p class="pie-marca">SVEA Consultores</p>
+        <p>Consultoría ambiental e industrial en todo Chile.</p>
+      </div>
+      <div>
+        <p class="pie-tit">Contacto</p>
+        <p>Oficina 605, Las Condes, Santiago</p>
+        <p><a href="mailto:contacto@sveaconsultores.cl">contacto@sveaconsultores.cl</a></p>
+        <p><a href="tel:+56929947924">{TEL}</a></p>
+      </div>
+      <div>
+        <p class="pie-tit">Servicios</p>
+        <p><a href="/calificacion-tecnica-industrial/">Calificación Técnica Industrial</a></p>
+        <p><a href="/estudio-de-carga-de-combustible/">Estudio de Carga de Combustible</a></p>
+        <p><a href="/planes-de-emergencia-y-evacuacion/">Planes de emergencia</a></p>
+        <p><a href="/planes-de-emergencia-y-evacuacion-condominios/">Planes de emergencia condominios</a></p>
+        <p><a href="/manejo-de-residuos-peligrosos/">Manejo de residuos peligrosos</a></p>
+        <p><a href="/autorizacion-de-transporte-de-residuos/">Autorización de transporte de residuos</a></p>
+      </div>
+      <div>
+        <p class="pie-tit">Legal</p>
+        <p><a href="/politica-de-privacidad/">Política de privacidad</a></p>
+      </div>
+    </div>
+    <p class="pie-fin">© {new Date().getFullYear()} SVEA Consultores</p>
+  </footer>
+
+  <!-- LISTA ROJA · el href y el número no cambian; los scripts detectan el clic
+       buscando "whatsapp" o "wa.me" en el href. -->
+  <a class="wa" href={WA} target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <span aria-hidden="true">WhatsApp</span>
+  </a>
+
+  <!-- Anexo B · conversión de WhatsApp por delegación de eventos.
+       Reemplaza al listener que recorría los enlaces al cargar y nunca
+       encontraba el botón flotante (arreglo 2). -->
+  <script is:inline>
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="whatsapp"], a[href*="wa.me"]');
+    if (!a || typeof gtag !== 'function') return;
+    gtag('event', 'conversion', { 'send_to': 'AW-16836158536/9SA2CNy8qcobEMjIjdw-' });
+    gtag('event', 'clic_whatsapp', { 'event_category': 'Lead', 'event_label': document.title });
+  }, true);
+  </script>
+
+  <slot name="medicion" />
+</body>
+</html>

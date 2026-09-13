@@ -1,0 +1,71 @@
+---
+/**
+ * Una sola ruta genera las 27 URLs, tomadas de src/data/paginas.json.
+ * Así es imposible que se pierda o se renombre una: si no está en el JSON
+ * que sale del CSV de Rank Math, no existe.
+ */
+import Base from '../layouts/Base.astro';
+import Formulario from '../components/Formulario.astro';
+import Medicion from '../components/Medicion.astro';
+import paginas from '../data/paginas.json';
+
+const cuerpos = import.meta.glob('../contenido/*.html', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
+
+export function getStaticPaths() {
+  // /gracias/ y la home tienen página propia: la primera lleva la conversión
+  // de respaldo (anexo F); la segunda, el hero aprobado por el usuario.
+  return paginas.filter((p) => p.ruta !== '/gracias/' && p.ruta !== '/').map((p) => ({
+    // '/' → undefined ; '/blog/' → 'blog'
+    params: { ruta: p.ruta === '/' ? undefined : p.ruta.replace(/^\/|\/$/g, '') },
+    props: { pagina: p },
+  }));
+}
+
+const { pagina } = Astro.props;
+const cuerpo = pagina.contenido ? cuerpos[`../contenido/${pagina.contenido}`] : null;
+const med = (pagina as any).medicion;
+const esLanding = pagina.tipo === 'landings-ads';
+---
+<Base pagina={pagina}>
+  <article class="pagina" data-tipo={pagina.tipo}>
+    <h1 set:html={pagina.h1_html} />
+
+    {(pagina as any).pendiente && (
+      <p class="aviso"><strong>Pendiente:</strong> {(pagina as any).pendiente}</p>
+    )}
+
+    {pagina.formularios.length > 0 && (
+      <section class="bloque-form">
+        <h2>Cotiza este servicio</h2>
+        {pagina.formularios.map((f: any) => <Formulario form={f} />)}
+      </section>
+    )}
+
+    {cuerpo && <div class="cuerpo" set:html={cuerpo} />}
+  </article>
+
+  <Fragment slot="medicion">
+    {med && (
+      <Medicion
+        servicio={med.servicio}
+        prefijoAsunto={med.prefijo_asunto}
+        formId={med.form_id}
+        subjectId={med.subject_id}
+      />
+    )}
+    {!med && pagina.ruta === '/' && (
+      <Medicion servicio="Consulta general" servicioDesdeSelector={true} />
+    )}
+  </Fragment>
+</Base>
+
+<style>
+  .pagina { display: flex; flex-direction: column; }
+  .aviso {
+    background: #F7EFDD; border-left: 3px solid #8A6112;
+    padding: 10px 14px; border-radius: 0 6px 6px 0; font-size: 15px;
+  }
+  .bloque-form { margin: 28px 0; }
+  .cuerpo :global(h2) { border-top: 1px solid var(--linea); padding-top: 1em; }
+  .cuerpo :global(table) { margin: 1em 0; }
+</style>

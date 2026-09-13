@@ -1,0 +1,109 @@
+/* ------------------------------------------------------------------
+   SVEA · hoja base del esqueleto.
+   Esto NO es el diseño: es lo mínimo legible mientras Carlos aprueba la
+   propuesta visual (sección 8 del plan). Una sola hoja, sin framework.
+   ------------------------------------------------------------------ */
+
+:root{
+  /* paleta actual de la marca, según la sección 10 del plan */
+  --salvia:#677C77;
+  --lima:#9BEB6B;
+  --celeste:#7FCED6;
+  --negro:#010101;
+  --gris:#EFF0EF;
+
+  --texto:#1B211F;
+  --texto-2:#5A6661;
+  --linea:#DCE1DA;
+  --fondo:#FFFFFF;
+  --fondo-2:#F6F7F4;
+  --ancho:1120px;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--fondo);
+  color:var(--texto);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:17px;
+  line-height:1.65;
+}
+
+/* El H1 se pinta de inmediato. En las landings actuales nace con opacity:0
+   y espera al JavaScript: por eso el LCP móvil es de 10 segundos. */
+h1,h2,h3,h4{opacity:1;line-height:1.2;text-wrap:balance;margin:1.6em 0 .5em}
+h1{font-size:clamp(28px,5vw,42px);margin-top:0}
+h2{font-size:clamp(22px,3.4vw,30px)}
+h3{font-size:clamp(18px,2.6vw,22px)}
+p,li{max-width:70ch}
+a{color:var(--salvia)}
+img{max-width:100%;height:auto}
+
+table{border-collapse:collapse;width:100%;font-size:.94em}
+th,td{border:1px solid var(--linea);padding:.55em .7em;text-align:left;vertical-align:top}
+th{background:var(--fondo-2)}
+.tabla-scroll{overflow-x:auto}
+
+.saltar{position:absolute;left:-9999px}
+.saltar:focus{left:8px;top:8px;background:var(--negro);color:#fff;padding:8px 14px;z-index:100}
+:focus-visible{outline:3px solid var(--salvia);outline-offset:2px}
+
+/* cabecera y pie ------------------------------------------------- */
+.cab{
+  display:flex;gap:18px;align-items:center;flex-wrap:wrap;
+  max-width:var(--ancho);margin:0 auto;padding:14px 20px;
+  border-bottom:1px solid var(--linea);
+}
+.cab-marca{font-weight:700;text-decoration:none;color:var(--texto);letter-spacing:.02em}
+.cab-marca span{font-weight:400;color:var(--texto-2)}
+.cab-nav{display:flex;gap:16px;flex-wrap:wrap;font-size:14.5px;margin-left:auto}
+.cab-nav a{color:var(--texto-2);text-decoration:none}
+.cab-nav a:hover{color:var(--salvia)}
+.cab-tel{font-size:14.5px;font-weight:600;text-decoration:none;color:var(--texto)}
+
+main{max-width:var(--ancho);margin:0 auto;padding:28px 20px 64px}
+
+.pie{background:var(--fondo-2);border-top:1px solid var(--linea);margin-top:48px}
+.pie-cols{
+  max-width:var(--ancho);margin:0 auto;padding:34px 20px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:26px;
+  font-size:14.5px;
+}
+.pie-cols p{margin:.28em 0;max-width:none}
+.pie-marca{font-weight:700}
+.pie-tit{font-weight:600;margin-bottom:.5em !important}
+.pie-fin{max-width:var(--ancho);margin:0 auto;padding:0 20px 26px;font-size:13px;color:var(--texto-2)}
+
+/* formularios ---------------------------------------------------- */
+.frm{display:flex;flex-direction:column;gap:12px;max-width:520px}
+.frm-campo{display:flex;flex-direction:column;gap:5px}
+.frm-campo label{font-size:14px;font-weight:600}
+.frm-req{color:#A32F26}
+.frm input,.frm select,.frm textarea{
+  font:inherit;font-size:16px;            /* 16px evita el zoom de iOS al enfocar */
+  min-height:48px;                         /* sección 8: 48 px mínimo en móvil */
+  padding:10px 12px;
+  border:1px solid var(--linea);border-radius:8px;background:#fff;color:var(--texto);
+  width:100%;
+}
+.frm textarea{min-height:92px;resize:vertical}
+.frm-enviar{
+  font:inherit;font-weight:600;min-height:48px;
+  border:0;border-radius:8px;background:var(--salvia);color:#fff;cursor:pointer;padding:0 20px;
+}
+.frm-enviar:hover{background:#566864}
+.frm-nota{font-size:13px;color:var(--texto-2);margin:0}
+
+/* WhatsApp flotante ---------------------------------------------- */
+.wa{
+  position:fixed;right:16px;bottom:16px;z-index:50;
+  background:#25D366;color:#06331a;font-weight:700;font-size:14px;
+  padding:12px 16px;border-radius:999px;text-decoration:none;
+  box-shadow:0 6px 20px -6px rgba(0,0,0,.4);
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
