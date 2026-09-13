@@ -17,6 +17,8 @@ concurrency:
 jobs:
   construir:
     runs-on: ubuntu-latest
+    env:
+      BASE_URL: /svea-sitio
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -24,10 +26,8 @@ jobs:
           node-version: 22
       - run: npm install
       - run: npm run build
-      - name: Control de calidad (lista roja)
+      - name: Control de calidad
         run: node scripts/verificar.mjs
-      - name: Ajustar rutas a la subcarpeta
-        run: node scripts/base-pages.mjs /svea-sitio
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

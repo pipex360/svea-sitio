@@ -1,0 +1,76 @@
+---
+/**
+ * Índice de trabajo: las 27 URLs, para saltar entre ellas mientras revisamos.
+ * No forma parte del sitio: es una página de apoyo para el rediseño.
+ */
+import paginas from '../data/paginas.json';
+
+const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+const grupos = [
+  ['Raíz', paginas.filter((p) => p.tipo === 'raiz')],
+  ['Landings de Google Ads', paginas.filter((p) => p.tipo === 'landings-ads')],
+  ['Páginas de servicio', paginas.filter((p) => p.tipo === 'servicios')],
+  ['Artículos', paginas.filter((p) => p.tipo === 'articulos')],
+] as const;
+---
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>SVEA · páginas del sitio</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0; padding: 32px 20px 60px;
+      font: 400 15px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #f6f7f4; color: #161b18;
+    }
+    .caja { max-width: 900px; margin: 0 auto; }
+    h1 { font-size: 24px; margin: 0 0 6px; }
+    .sub { color: #5b6862; margin: 0 0 26px; }
+    h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em;
+         color: #5b6862; margin: 28px 0 10px; }
+    ul { list-style: none; padding: 0; margin: 0;
+         border: 1px solid #dce1da; border-radius: 10px; background: #fff; overflow: hidden; }
+    li + li { border-top: 1px solid #eceee9; }
+    a { display: flex; gap: 14px; align-items: baseline; padding: 11px 16px;
+        text-decoration: none; color: #161b18; }
+    a:hover { background: #f2f4f0; }
+    .ruta { font: 500 13px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: #677C77; min-width: 22ch; }
+    .tit { color: #5b6862; font-size: 13.5px; }
+    .nota { margin-top: 30px; font-size: 13.5px; color: #5b6862; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0f1211; color: #e8ede8; }
+      ul { background: #161a18; border-color: #2a302c; }
+      li + li { border-top-color: #232a26; }
+      a { color: #e8ede8; } a:hover { background: #1c211e; }
+      .ruta { color: #93a9a3; } .tit, .sub, h2, .nota { color: #9ca9a2; }
+    }
+  </style>
+</head>
+<body>
+  <div class="caja">
+    <h1>Sitio SVEA · copia de trabajo</h1>
+    <p class="sub">Las {paginas.length} páginas, idénticas a las que están en línea hoy. Sin medición, sin envío de formularios y sin indexar.</p>
+
+    {grupos.map(([titulo, lista]) => lista.length > 0 && (
+      <>
+        <h2>{titulo}</h2>
+        <ul>
+          {lista.map((p) => (
+            <li>
+              <a href={`${BASE}${p.ruta}`}>
+                <span class="ruta">{p.ruta}</span>
+                <span class="tit">{p.h1 || p.title}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </>
+    ))}
+
+    <p class="nota">Desde aquí vamos mejorando sección por sección.</p>
+  </div>
+</body>
+</html>
