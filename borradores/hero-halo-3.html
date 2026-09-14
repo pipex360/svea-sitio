@@ -30,13 +30,31 @@
     height:calc(100dvh - 96px);min-height:560px;max-height:900px}
   .halo-fondo{position:absolute;inset:0}
   .halo-fondo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+    transform-origin:center center;will-change:opacity,transform;
     animation:halo-fundido 18s linear infinite}
   .halo-fondo img:nth-child(1){animation-delay:0s;opacity:1}
   .halo-fondo img:nth-child(2){animation-delay:6s}
   .halo-fondo img:nth-child(3){animation-delay:12s}
-  @keyframes halo-fundido{0%{opacity:0}5%{opacity:1}33%{opacity:1}38%{opacity:0}100%{opacity:0}}
+  /* Ken Burns, como el slideshow original: la foto se acerca lentamente
+     mientras está a la vista y recupera su tamaño mientras está invisible,
+     así el ciclo no da un salto al volver a empezar. */
+  @keyframes halo-fundido{
+    0%{opacity:0;transform:scale(1)}
+    5%{opacity:1;transform:scale(1.02)}
+    33%{opacity:1;transform:scale(1.12)}
+    38%{opacity:0;transform:scale(1.14)}
+    39%{opacity:0;transform:scale(1)}
+    100%{opacity:0;transform:scale(1)}
+  }
   .halo-fondo img:nth-child(1){animation-name:halo-fundido-primera}
-  @keyframes halo-fundido-primera{0%{opacity:1}33%{opacity:1}38%{opacity:0}95%{opacity:0}100%{opacity:1}}
+  @keyframes halo-fundido-primera{
+    0%{opacity:1;transform:scale(1)}
+    33%{opacity:1;transform:scale(1.12)}
+    38%{opacity:0;transform:scale(1.14)}
+    39%{opacity:0;transform:scale(1)}
+    95%{opacity:0;transform:scale(1)}
+    100%{opacity:1;transform:scale(1)}
+  }
   /* veladuras blancas: de arriba (70 %) y de abajo (85 %), igual que el original */
   .halo-velo-arriba{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.7),rgba(255,255,255,.2) 50%,rgba(255,255,255,.1))}
   .halo-velo-abajo{position:absolute;left:0;right:0;bottom:0;height:50%;background:linear-gradient(to top,rgba(255,255,255,.85),rgba(255,255,255,.4) 50%,transparent)}
