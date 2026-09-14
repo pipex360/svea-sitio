@@ -140,9 +140,9 @@ export default function MenuSvea({ base = '' }: { base?: string }) {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Servicios</NavigationMenuTrigger>
           <NavigationMenuContent className="px-0 py-1">
-            <div className="grid w-[900px] grid-cols-3 gap-3 divide-x divide-border p-4">
+            <div className="grid w-[900px] grid-cols-3 gap-3 divide-x divide-black/10 p-4">
               <div className="col-span-2 pe-2">
-                <h6 className="pl-2.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                <h6 className="pl-2.5 text-xs font-semibold uppercase tracking-wider text-foreground/55">
                   Servicios
                 </h6>
                 <ul className="mt-2.5 grid grid-cols-2 gap-1">
@@ -155,7 +155,7 @@ export default function MenuSvea({ base = '' }: { base?: string }) {
               </div>
 
               <div className="pl-4">
-                <h6 className="pl-2.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                <h6 className="pl-2.5 text-xs font-semibold uppercase tracking-wider text-foreground/55">
                   Más trámites
                 </h6>
                 <ul className="mt-2.5 grid gap-1">
@@ -173,7 +173,7 @@ export default function MenuSvea({ base = '' }: { base?: string }) {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Recursos y guías</NavigationMenuTrigger>
           <NavigationMenuContent className="p-4">
-            <h6 className="pl-2.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            <h6 className="pl-2.5 text-xs font-semibold uppercase tracking-wider text-foreground/55">
               Guías de cumplimiento normativo
             </h6>
             <ul className="mt-2.5 grid w-[400px] gap-1 md:w-[560px] md:grid-cols-2">
@@ -204,7 +204,7 @@ const ListItem = React.forwardRef<
     <NavigationMenuLink asChild>
       <a
         className={cn(
-          'block select-none flex-col items-start rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+          'block select-none flex-col items-start rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-black/[0.05] focus:bg-black/[0.05]',
           className,
         )}
         ref={ref}
@@ -214,7 +214,7 @@ const ListItem = React.forwardRef<
           <Icon className="h-5 w-5 shrink-0 text-primary" />
           {title}
         </div>
-        <p className="mt-2 line-clamp-2 text-[13px] font-normal leading-snug text-muted-foreground">
+        <p className="mt-2 line-clamp-2 text-[13px] font-normal leading-snug text-foreground/65">
           {children}
         </p>
       </a>

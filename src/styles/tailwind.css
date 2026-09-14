@@ -92,3 +92,69 @@
   margin: 0;
   padding: 0;
 }
+
+/* ------------------------------------------------------------------
+   Vidrio tipo macOS para el panel del menú.
+
+   Sigue las reglas de materiales de Apple: superficie translúcida con
+   desenfoque y saturación (el color de lo que hay detrás se filtra), un
+   borde superior claro que simula la luz cayendo sobre el vidrio, y una
+   sombra profunda porque es una superficie grande —cuanto mayor la
+   superficie, más gruesa debe leerse—.
+
+   «Materializar, no sólo aparecer»: al abrirse, el desenfoque y la escala
+   entran juntos, así el panel se lee como un material que llega y no como
+   una caja que se enciende.
+   ------------------------------------------------------------------ */
+.vidrio-mac {
+  background: rgba(255, 255, 255, 0.62);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 24px 60px -18px rgba(22, 27, 24, 0.32),
+    0 2px 10px -4px rgba(22, 27, 24, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);   /* filo superior: la luz sobre el vidrio */
+}
+
+.vidrio-mac[data-state='open'] {
+  animation: svea-materializa 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.vidrio-mac[data-state='closed'] {
+  animation: svea-desmaterializa 0.16s ease-in forwards;
+}
+
+@keyframes svea-materializa {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(-6px);
+    -webkit-backdrop-filter: blur(0) saturate(100%);
+    backdrop-filter: blur(0) saturate(100%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    backdrop-filter: blur(28px) saturate(180%);
+  }
+}
+@keyframes svea-desmaterializa {
+  from { opacity: 1; transform: none }
+  to { opacity: 0; transform: scale(0.97) translateY(-4px) }
+}
+
+/* El usuario pidió menos transparencia: se vuelve opaco y sin desenfoque. */
+@media (prefers-reduced-transparency: reduce) {
+  .vidrio-mac {
+    background: #fff;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border-color: rgba(22, 27, 24, 0.12);
+  }
+}
+/* El usuario pidió menos movimiento: entra con un fundido corto. */
+@media (prefers-reduced-motion: reduce) {
+  .vidrio-mac[data-state='open'] { animation: svea-aparece 0.15s ease-out }
+  .vidrio-mac[data-state='closed'] { animation: none }
+  @keyframes svea-aparece { from { opacity: 0 } to { opacity: 1 } }
+}
