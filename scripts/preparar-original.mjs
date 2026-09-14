@@ -112,6 +112,23 @@ if (existsSync('mejoras/img')) {
 // que es lo que mantiene el aspecto del contenido que aún no migramos) y el
 // cuerpo, con la barra superior y el hero viejo escondidos: esos dos los
 // reemplaza el hero nuevo.
+const CAJA_NOSOTROS = '<div class="max-w-6xl mx-auto relative">';
+const CAJA_PROCESO = '<div class="mb-20">';
+
+/** Devuelve [desde, hasta) con el contenido de la cuarta sección. */
+function recortaNosotros(html) {
+  const ini = html.search(/<div class="nosotros-section/);
+  if (ini < 0) return null;
+  const caja = html.indexOf(CAJA_NOSOTROS, ini);
+  if (caja < 0) return null;
+  const desde = caja + CAJA_NOSOTROS.length;
+  const proceso = html.indexOf('\u00bfC\u00f3mo Trabajamos?', desde);
+  if (proceso < 0) return null;
+  const hasta = html.lastIndexOf(CAJA_PROCESO, proceso);
+  if (hasta < 0 || hasta <= desde) return null;
+  return [desde, hasta];
+}
+
 const HERO_VIEJO = '607952e6';   // sección de Elementor con el slideshow
 const BARRA_VIEJA = '73078e5';   // barra superior con logo y menú
 const CARRUSEL = 'cc069dd';      // contenedor del carrusel de logos de clientes
@@ -137,6 +154,16 @@ cuerpo = cuerpo.replace(
 cuerpo = cuerpo.replace(
   new RegExp(`<div class=['"][^'"]*elementor-element-${SERVICIOS}[^'"]*['"]`),
   (m) => `<!--SVEA:SERVICIOS-->${m}`);
+
+// «Cumplimiento Ambiental Sin Complicaciones» no se puede esconder por id: no
+// tiene contenedor propio. Vive como un puñado de hermanos dentro de la misma
+// caja que «¿Cómo Trabajamos?» y las secciones que siguen. Así que se recorta
+// el tramo que va desde la apertura de esa caja hasta donde empieza «¿Cómo
+// Trabajamos?», y en su lugar queda la marca. Las dos cajas que envuelven
+// quedan intactas, para no descuadrar lo que viene después.
+const tramo = recortaNosotros(cuerpo);
+if (!tramo) throw new Error('no se encontró el tramo de «nosotros-section» en la home');
+cuerpo = cuerpo.slice(0, tramo[0]) + '<!--SVEA:NOSOTROS-->' + cuerpo.slice(tramo[1]);
 
 mkdirSync('src/contenido', { recursive: true });
 writeFileSync('src/contenido/home-wp-cabeza.html',
