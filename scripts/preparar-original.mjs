@@ -191,6 +191,11 @@ const proceso = recortaDiv(cuerpo, /<div class="mb-20">/);
 if (!proceso) throw new Error('no se encontró el bloque de «¿Cómo Trabajamos?» en la home');
 cuerpo = cuerpo.slice(0, proceso[0]) + '<!--SVEA:PROCESO-->' + cuerpo.slice(proceso[1]);
 
+// «Lo que nos diferencia», igual: su <div> cierra donde corresponde.
+const diferencia = recortaDiv(cuerpo, /<div class="mb-20 scroll-reveal">/);
+if (!diferencia) throw new Error('no se encontró el bloque de «Lo que nos diferencia» en la home');
+cuerpo = cuerpo.slice(0, diferencia[0]) + '<!--SVEA:DIFERENCIA-->' + cuerpo.slice(diferencia[1]);
+
 mkdirSync('src/contenido', { recursive: true });
 writeFileSync('src/contenido/home-wp-cabeza.html',
   cabeza.join('\n') + `\n<style>.elementor-element-${HERO_VIEJO},.elementor-element-${BARRA_VIEJA},.elementor-element-${CARRUSEL},.elementor-element-${SERVICIOS}{display:none !important}</style>`);

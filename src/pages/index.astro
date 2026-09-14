@@ -18,6 +18,7 @@ import { FeaturesSectionWithHoverEffects } from '../components/ui/feature-sectio
 import { CumplimientoBento } from '../components/ui/bento-cumplimiento';
 import { Cta69 } from '../components/ui/cta69';
 import { HowItWorks02 } from '../components/ui/how-it-works-02';
+import { AboutSection } from '../components/ui/about-section';
 import paginas from '../data/paginas.json';
 import cabezaWP from '../contenido/home-wp-cabeza.html?raw';
 import cuerpoWP from '../contenido/home-wp-cuerpo.html?raw';
@@ -30,7 +31,8 @@ const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 const [antesLogos, restoTrasLogos] = cuerpoWP.split('<!--SVEA:LOGOS-->');
 const [entreLogosYServicios, restoTrasServicios] = restoTrasLogos.split('<!--SVEA:SERVICIOS-->');
 const [entreServiciosYNosotros, restoTrasNosotros] = restoTrasServicios.split('<!--SVEA:NOSOTROS-->');
-const [entreNosotrosYProceso, despuesProceso] = restoTrasNosotros.split('<!--SVEA:PROCESO-->');
+const [entreNosotrosYProceso, restoTrasProceso] = restoTrasNosotros.split('<!--SVEA:PROCESO-->');
+const [entreProcesoYDiferencia, despuesDiferencia] = restoTrasProceso.split('<!--SVEA:DIFERENCIA-->');
 
 // Los 12 clientes del carrusel original, recortados y servidos desde el
 // repositorio. La proporción equilibra el tamaño de cada uno.
@@ -177,7 +179,15 @@ const clientes = [
     </p>
   </section>
 
-  <div class="wp-restante" set:html={despuesProceso} />
+  <div class="wp-restante" set:html={entreProcesoYDiferencia} />
+
+  <!-- Lo que nos diferencia -->
+  <section class="svea-nuevo bg-white px-6 py-20" id="diferencia" aria-labelledby="titulo-diferencia">
+    <h2 id="titulo-diferencia" class="sr-only">Lo que nos diferencia</h2>
+    <AboutSection base={BASE} client:visible />
+  </section>
+
+  <div class="wp-restante" set:html={despuesDiferencia} />
 
   <div class="aviso-copia">
     COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
