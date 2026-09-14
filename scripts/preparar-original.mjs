@@ -107,7 +107,7 @@ for (const [ruta, archivo] of Object.entries(ARCHIVOS)) {
 // <!-- ocultar: 73078e5 -->.
 //   mejoras/home-hero.html  → se aplica a la home real (aprobado por el usuario)
 //   propuestas/*.html       → se publican aparte en /propuestas/<nombre>/ (para comparar)
-import { readdirSync } from 'node:fs';
+import { readdirSync, cpSync } from 'node:fs';
 
 function conHero(htmlHome, bloque, rutaPagina) {
   const heroTag = htmlHome.match(/<section[^>]*data-settings="[^"]*background_slideshow_gallery[^"]*"[^>]*>/);
@@ -117,12 +117,19 @@ function conHero(htmlHome, bloque, rutaPagina) {
     .split(',').map((x) => x.trim()).filter(Boolean);
   const ocultar = [idHero, ...extra].map((id) => `.elementor-element-${id}{display:none !important}`).join('');
   const b = bloque
+    .split('__BASE__').join(BASE)
     .split('"#form-home"').join(`"${BASE}${rutaPagina}#form-home"`)
     .split('"#servicios"').join(`"${BASE}${rutaPagina}#servicios"`)
     .split('"#inicio"').join(`"${BASE}${rutaPagina}#inicio"`)
     .split('"#guias"').join(`"${BASE}${rutaPagina}#guias"`);
   let html = htmlHome.replace(heroTag[0], `${b}\n<div id="servicios"></div>\n${heroTag[0]}`);
   return html.replace(/<\/head>/i, `<style>${ocultar}</style>\n</head>`);
+}
+
+// recursos propios de las mejoras (logo, etc.): se publican bajo /img/
+if (existsSync('mejoras/img')) {
+  cpSync('mejoras/img', path.join(DEST, 'img'), { recursive: true });
+  console.log('recursos propios copiados a /img/');
 }
 
 const homeLimpia = limpiar(readFileSync(path.join(ORIG, 'home.html'), 'utf8'), '/');
