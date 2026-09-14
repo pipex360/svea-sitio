@@ -39,6 +39,11 @@ const clientes = [
   { archivo: 'lira', alt: 'Lira', ratio: 1.1 },
   { archivo: 'animal-services', alt: 'Animal Services', ratio: 1.33 },
   { archivo: 'delart-chocolat', alt: 'DelArt Chocolat', ratio: 2.01 },
+  { archivo: 'myv', alt: 'Martínez y Valdivieso', ratio: 3.0 },
+  { archivo: 'bodegas-san-francisco', alt: 'Bodegas San Francisco', ratio: 9.99 },
+  { archivo: 'newrest', alt: 'Newrest Catering Chile', ratio: 4.16 },
+  { archivo: 'flexpark', alt: 'Flexpark', ratio: 4.42 },
+  { archivo: 'galilea-centro', alt: 'Inmobiliaria Galilea Centro', ratio: 1.06 },
 ].map((c) => ({ src: `${BASE}/img/clientes/${c.archivo}.webp`, alt: c.alt, ratio: c.ratio }));
 ---
 <!doctype html>
@@ -68,9 +73,9 @@ const clientes = [
 
   <!-- Clientes: carrusel con desenfoque en los bordes -->
   <section class="svea-nuevo px-4 py-14">
-    <h2 class="mb-5 text-center text-lg font-medium text-muted-foreground md:text-2xl">
+    <h2 class="mb-5 text-center text-lg font-medium text-foreground md:text-2xl">
       Con la confianza de
-      <span class="font-black tracking-tight text-primary">más de 500 empresas</span>
+      <span class="font-black tracking-tight">más de 500 empresas</span>
       en todo el Chile
     </h2>
     <LogoMarquee logos={clientes} client:visible />
