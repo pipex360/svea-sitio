@@ -1,4 +1,13 @@
-@import "tailwindcss";
+/*
+  «important»: mientras el sitio conviva con la hoja del WordPress, las
+  utilidades de Tailwind salen marcadas !important. Hace falta porque esa
+  hoja va sin capas, y en CSS lo que está fuera de una capa le gana a todo
+  lo que está dentro, sin importar la especificidad. Es lo que documenta
+  Tailwind para convivir con CSS heredado.
+
+  Cuando se migre la última sección y esa hoja desaparezca, se quita.
+*/
+@import "tailwindcss" important;
 
 /*
   Tokens de shadcn, con los colores de SVEA.
@@ -48,14 +57,38 @@
 }
 
 /*
-  El contenido que todavía viene del WordPress trae su propia hoja de
-  estilos. Para que Tailwind no le cambie el aspecto, lo nuestro se limita
-  a los bloques nuevos: por eso no hay preflight global aquí.
+  Aislamiento del tema de WordPress.
+
+  Mientras el contenido viejo siga en la página, su hoja convive con la
+  nuestra: la carga LiteSpeed de forma asíncrona, así que entra después y
+  le impone a los bloques nuevos cosas como button{border:1px solid #cc3366}
+  o mayúsculas en los enlaces.
+
+  Estas reglas van fuera de las capas de Tailwind y apuntan a .svea-nuevo,
+  así que ganan por especificidad sin necesidad de !important. Se limitan a
+  lo que el tema rompe; el resto lo siguen decidiendo las clases de Tailwind.
+
+  Todo esto desaparece cuando se migre la última sección.
 */
-@layer base {
-  :where(.svea-nuevo) *,
-  :where(.svea-nuevo) *::before,
-  :where(.svea-nuevo) *::after {
-    box-sizing: border-box;
-  }
+.svea-nuevo *,
+.svea-nuevo *::before,
+.svea-nuevo *::after { box-sizing: border-box; }
+
+/* lo que el tema impone y ninguna utilidad de los componentes contradice */
+.svea-nuevo button,
+.svea-nuevo a {
+  border-width: 0;
+  border-style: solid;
+  border-color: transparent;
+  text-transform: none;
+  text-decoration: none;
+  box-shadow: none;
+  font-family: inherit;
+}
+
+.svea-nuevo ul,
+.svea-nuevo li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
