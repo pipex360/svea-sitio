@@ -112,7 +112,7 @@ const LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {
       /* Los logos de SVEA van de proporción 1,1 a 4,3. Con la altura fija
          del original (h-4/h-5) los cuadrados quedarían diminutos, así que
          se calcula a partir de su proporción. */
-      style={{ height: `${Math.round(32 / Math.pow(logo.ratio ?? 2, 0.35))}px` }}
+      style={{ height: `${Math.round(40 / Math.pow(logo.ratio ?? 2, 0.35))}px` }}
     />
   );
 });
