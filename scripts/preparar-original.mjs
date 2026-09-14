@@ -115,6 +115,7 @@ if (existsSync('mejoras/img')) {
 const HERO_VIEJO = '607952e6';   // sección de Elementor con el slideshow
 const BARRA_VIEJA = '73078e5';   // barra superior con logo y menú
 const CARRUSEL = 'cc069dd';      // contenedor del carrusel de logos de clientes
+const SERVICIOS = 'a566092';     // contenedor de «Nuestros Servicios»
 
 const homeLimpia = limpiar(readFileSync(path.join(ORIG, 'home.html'), 'utf8'), '/');
 
@@ -131,9 +132,15 @@ cuerpo = cuerpo.replace(
   new RegExp(`<div class=['"][^'"]*elementor-element-${CARRUSEL}[^'"]*['"]`),
   (m) => `<!--SVEA:LOGOS-->${m}`);
 
+// lo mismo con «Nuestros Servicios»: la marca queda donde empieza la sección
+// vieja, que se esconde justo debajo
+cuerpo = cuerpo.replace(
+  new RegExp(`<div class=['"][^'"]*elementor-element-${SERVICIOS}[^'"]*['"]`),
+  (m) => `<!--SVEA:SERVICIOS-->${m}`);
+
 mkdirSync('src/contenido', { recursive: true });
 writeFileSync('src/contenido/home-wp-cabeza.html',
-  cabeza.join('\n') + `\n<style>.elementor-element-${HERO_VIEJO},.elementor-element-${BARRA_VIEJA},.elementor-element-${CARRUSEL}{display:none !important}</style>`);
+  cabeza.join('\n') + `\n<style>.elementor-element-${HERO_VIEJO},.elementor-element-${BARRA_VIEJA},.elementor-element-${CARRUSEL},.elementor-element-${SERVICIOS}{display:none !important}</style>`);
 writeFileSync('src/contenido/home-wp-cuerpo.html', cuerpo);
 console.log('home: recursos y cuerpo entregados a Astro');
 
