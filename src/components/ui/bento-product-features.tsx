@@ -13,9 +13,12 @@
  *    del hero: con `animate` la animación ocurría sin que nadie la viera.
  * 3. Respeta `prefers-reduced-motion`: si el sistema lo pide, las tarjetas
  *    aparecen sin desplazamiento.
- * 4. La columna alta ocupa dos filas, no tres, y la banda de abajo ocupa las
- *    tres columnas. Con el reparto original la columna alta quedaba con
- *    trescientos ochenta píxeles de vacío: su contenido no da para tres filas.
+ * 4. La columna alta ocupa dos filas, no tres. Con el reparto original
+ *    quedaba con trescientos ochenta píxeles de vacío: su contenido no da
+ *    para tres filas.
+ * 5. La banda de abajo es opcional. Aquí el cierre salió de la rejilla para
+ *    ocupar su propia franja a todo el ancho, así que la rejilla se queda en
+ *    dos filas y cinco huecos.
  */
 
 import { motion, useReducedMotion } from 'motion/react';
@@ -56,8 +59,8 @@ interface BentoGridShowcaseProps {
   focus: React.ReactNode;
   /** medio derecha */
   productivity: React.ReactNode;
-  /** banda ancha de abajo */
-  shortcuts: React.ReactNode;
+  /** banda ancha de abajo; si no viene, la rejilla se queda en dos filas */
+  shortcuts?: React.ReactNode;
   className?: string;
 }
 
@@ -81,7 +84,7 @@ export const BentoGridShowcase = ({
       viewport={{ once: true, amount: 0.15 }}
       className={cn(
         'grid w-full grid-cols-1 gap-6 md:grid-cols-3',
-        'md:grid-rows-3',
+        shortcuts ? 'md:grid-rows-3' : 'md:grid-rows-2',
         'auto-rows-[minmax(180px,auto)]',
         className,
       )}
@@ -106,9 +109,11 @@ export const BentoGridShowcase = ({
         {productivity}
       </motion.div>
 
-      <motion.div variants={pieza} className="md:col-span-3 md:row-span-1">
-        {shortcuts}
-      </motion.div>
+      {shortcuts && (
+        <motion.div variants={pieza} className="md:col-span-3 md:row-span-1">
+          {shortcuts}
+        </motion.div>
+      )}
     </motion.div>
   );
 };

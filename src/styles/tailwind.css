@@ -92,3 +92,22 @@
   margin: 0;
   padding: 0;
 }
+
+
+/* ------------------------------------------------------------------
+   Cinta del CTA: la palabra gigante que cruza el fondo.
+   El bucle son dos mitades idénticas; correr media anchura deja la
+   segunda exactamente donde estaba la primera, así que no se ve el
+   salto. Va en la hoja porque el componente original la declaraba con
+   <style jsx>, que es de Next.
+   ------------------------------------------------------------------ */
+.cta69-cinta {
+  animation: cta69-cinta 40s linear infinite;
+}
+@keyframes cta69-cinta {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cta69-cinta { animation: none; }
+}

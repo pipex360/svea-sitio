@@ -20,6 +20,9 @@
  *
  * Los contadores suben cuando la cifra entra en pantalla, como en el sitio
  * actual, y se quedan quietos si el sistema pide menos movimiento.
+ *
+ * El cierre («¿Listo para comenzar su proyecto?») ya no vive aquí: salió de
+ * la rejilla para ocupar su propia franja a todo el ancho, en Cta69.
  */
 
 import { animate, useInView, useMotionValue, useReducedMotion } from 'motion/react';
@@ -159,33 +162,7 @@ const Innovacion = () => (
   </Card>
 );
 
-/** El cierre, en la banda ancha de abajo. */
-const Cierre = ({ base }: { base: string }) => (
-  <Card className={cn(marco, 'bg-black text-white hover:border-white/25')}>
-    <CardContent className="flex h-full flex-wrap items-center justify-between gap-6 p-8">
-      <div className="max-w-xl">
-        <h3 className="mb-2 text-xl font-bold tracking-tight text-white">
-          ¿Listo para comenzar su proyecto?
-        </h3>
-        <p className="text-sm leading-relaxed text-white/70">
-          Deje la complejidad normativa en nuestras manos. Nuestro equipo de expertos está listo
-          para asesorarlo hoy mismo.
-        </p>
-      </div>
-      <div className="flex flex-col items-start gap-2">
-        <a
-          href={`${base}/#form-home`}
-          className="inline-flex h-11 items-center rounded-full bg-white px-7 text-sm font-semibold text-black no-underline transition-colors hover:bg-white/90"
-        >
-          Contáctanos
-        </a>
-        <span className="text-xs text-white/50">Proceso simple y transparente</span>
-      </div>
-    </CardContent>
-  </Card>
-);
-
-export function CumplimientoBento({ base = '' }: { base?: string }) {
+export function CumplimientoBento() {
   return (
     <BentoGridShowcase
       className="mx-auto max-w-7xl"
@@ -203,7 +180,6 @@ export function CumplimientoBento({ base = '' }: { base?: string }) {
       }
       focus={<Dato meta={24} sufijo=" hrs" rotulo="Tiempo de Cotización" />}
       productivity={<Innovacion />}
-      shortcuts={<Cierre base={base} />}
     />
   );
 }

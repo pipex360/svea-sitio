@@ -16,6 +16,7 @@ import HeroHalo from '../components/HeroHalo.astro';
 import { LogoMarquee } from '../components/ui/logo-marquee';
 import { FeaturesSectionWithHoverEffects } from '../components/ui/feature-section-with-hover-effects';
 import { CumplimientoBento } from '../components/ui/bento-cumplimiento';
+import { Cta69 } from '../components/ui/cta69';
 import paginas from '../data/paginas.json';
 import cabezaWP from '../contenido/home-wp-cabeza.html?raw';
 import cuerpoWP from '../contenido/home-wp-cuerpo.html?raw';
@@ -129,8 +130,22 @@ const clientes = [
         </a>
       </div>
     </div>
-    <CumplimientoBento base={BASE} client:visible />
+    <CumplimientoBento client:visible />
   </section>
+
+  <!-- Cierre de la sección: franja completa con la palabra de fondo -->
+  <div class="svea-nuevo">
+    <Cta69
+      badge={{ label: 'Primer paso' }}
+      heading="¿Listo para comenzar su proyecto?"
+      button={{ label: 'Contáctanos', href: `${BASE}/#form-home` }}
+      labels={{
+        marqueePhrase: 'Cumplimiento',
+        note: 'Deje la complejidad normativa en nuestras manos. Nuestro equipo de expertos está listo para asesorarlo hoy mismo.',
+        footnote: 'Proceso simple y transparente',
+      }}
+    />
+  </div>
 
   <div class="wp-restante" set:html={despuesNosotros} />
 
