@@ -9,7 +9,8 @@
  * Las cifras del 100% y de las 24 hrs salen de los `data-target` del HTML de
  * WordPress. La de trámites no: el sitio decía 100+ mientras el hero decía
  * +500 empresas atendidas, que no puede ser —cada empresa contrata al menos
- * un trámite—. Felipe fijó la cifra en 300, y las tres del sitio (empresas
+ * un trámite—. La cifra queda en 250, que es la que prometen los avisos de
+ * Google Ads: así el aviso y la página dicen lo mismo. Las tres del sitio (empresas
  * del hero, empresas del carrusel y trámites de aquí) parten de ese número.
  *
  * La única fusión: el sitio actual repetía el 100% dos veces —una como «Tasa
@@ -189,7 +190,7 @@ export function CumplimientoBento({ base = '' }: { base?: string }) {
     <BentoGridShowcase
       className="mx-auto max-w-7xl"
       integration={<Compromiso />}
-      trackers={<Dato meta={300} sufijo="+" rotulo="Trámites Gestionados" />}
+      trackers={<Dato meta={250} sufijo="+" rotulo="Trámites Gestionados" />}
       statistic={
         <Dato
           meta={100}
