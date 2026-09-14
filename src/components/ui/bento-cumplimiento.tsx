@@ -54,7 +54,17 @@ function Cifra({ meta, sufijo = '' }: { meta: number; sufijo?: string }) {
   );
 }
 
-const marco = 'h-full border-border bg-white shadow-none transition-colors hover:border-black/25';
+/* Al pasar el cursor la tarjeta se levanta cuatro píxeles y proyecta sombra:
+   se separa del papel en vez de encenderse. El borde se oscurece a la vez,
+   para que el gesto también se lea sin color. Si el sistema pide menos
+   movimiento, queda sólo la sombra y el borde. */
+const marco = cn(
+  'h-full border-border bg-white shadow-none',
+  'transition-[transform,box-shadow,border-color] duration-200 ease-out',
+  'hover:-translate-y-1 hover:border-black/30',
+  'hover:shadow-[0_18px_40px_-20px_rgba(0,0,0,0.3),0_2px_8px_-4px_rgba(0,0,0,0.12)]',
+  'motion-reduce:transition-[box-shadow,border-color] motion-reduce:hover:translate-y-0',
+);
 
 /** Compromiso y Garantía: la columna alta de la izquierda. */
 const Compromiso = () => (
@@ -70,7 +80,7 @@ const Compromiso = () => (
           (item) => (
             <li
               key={item}
-              className="flex items-center gap-2.5 rounded-lg border border-border bg-black/[0.02] px-3 py-2.5 text-sm font-medium text-black"
+              className="flex items-center gap-2.5 rounded-lg border border-border bg-black/[0.02] px-3 py-2.5 text-sm font-medium text-black transition-colors duration-200 hover:border-black/25 hover:bg-black/[0.05]"
             >
               <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-black" />
               {item}
@@ -146,7 +156,7 @@ const Innovacion = () => (
 
 /** El cierre, en la banda ancha de abajo. */
 const Cierre = ({ base }: { base: string }) => (
-  <Card className={cn(marco, 'bg-black text-white hover:border-black')}>
+  <Card className={cn(marco, 'bg-black text-white hover:border-white/25')}>
     <CardContent className="flex h-full flex-wrap items-center justify-between gap-6 p-8">
       <div className="max-w-xl">
         <h3 className="mb-2 text-xl font-bold tracking-tight text-white">
