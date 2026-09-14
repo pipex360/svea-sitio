@@ -18,7 +18,7 @@ import { FeaturesSectionWithHoverEffects } from '../components/ui/feature-sectio
 import { CumplimientoBento } from '../components/ui/bento-cumplimiento';
 import { Cta69 } from '../components/ui/cta69';
 import { HowItWorks02 } from '../components/ui/how-it-works-02';
-import { AboutSection } from '../components/ui/about-section';
+import { Comparison03 } from '../components/ui/comparison-03';
 import paginas from '../data/paginas.json';
 import cabezaWP from '../contenido/home-wp-cabeza.html?raw';
 import cuerpoWP from '../contenido/home-wp-cuerpo.html?raw';
@@ -182,8 +182,8 @@ const clientes = [
   <div class="wp-restante" set:html={entreProcesoYDiferencia} />
 
   <!-- Lo que nos diferencia -->
-  <div class="svea-nuevo py-12" id="diferencia">
-    <AboutSection base={BASE} client:visible />
+  <div class="svea-nuevo" id="diferencia">
+    <Comparison03 base={BASE} />
   </div>
 
   <div class="wp-restante" set:html={despuesDiferencia} />
