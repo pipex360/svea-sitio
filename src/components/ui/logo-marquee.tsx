@@ -1,10 +1,18 @@
 'use client';
+
+import React, { memo, useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-// El original importa de 'framer-motion'; aquí se usa 'motion/react', que es
-// la misma librería con su nombre nuevo, para no instalarla dos veces.
 import { useMotionValue, animate, motion } from 'motion/react';
-import { useState, useEffect } from 'react';
 import useMeasure from 'react-use-measure';
+
+export type Logo = {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  /** proporción ancho/alto del archivo, para equilibrar el tamaño óptico */
+  ratio?: number;
+};
 
 type InfiniteSliderProps = {
   children: React.ReactNode;
@@ -16,7 +24,7 @@ type InfiniteSliderProps = {
   className?: string;
 };
 
-export function InfiniteSlider({
+const InfiniteSlider = memo(function InfiniteSlider({
   children,
   gap = 16,
   duration = 25,
@@ -32,11 +40,12 @@ export function InfiniteSlider({
   const [key, setKey] = useState(0);
 
   useEffect(() => {
-    let controls;
     const size = direction === 'horizontal' ? width : height;
     const contentSize = size + gap;
     const from = reverse ? -contentSize / 2 : 0;
     const to = reverse ? 0 : -contentSize / 2;
+
+    let controls;
 
     if (isTransitioning) {
       controls = animate(translation, [translation.get(), to], {
@@ -44,7 +53,7 @@ export function InfiniteSlider({
         duration: currentDuration * Math.abs((translation.get() - to) / contentSize),
         onComplete: () => {
           setIsTransitioning(false);
-          setKey((prevKey) => prevKey + 1);
+          setKey((prev) => prev + 1);
         },
       });
     } else {
@@ -54,9 +63,7 @@ export function InfiniteSlider({
         repeat: Infinity,
         repeatType: 'loop',
         repeatDelay: 0,
-        onRepeat: () => {
-          translation.set(from);
-        },
+        onRepeat: () => translation.set(from),
       });
     }
 
@@ -79,13 +86,13 @@ export function InfiniteSlider({
   return (
     <div className={cn('overflow-hidden', className)}>
       <motion.div
-        className="flex w-max"
+        ref={ref}
+        className="flex w-max items-center"
         style={{
           ...(direction === 'horizontal' ? { x: translation } : { y: translation }),
           gap: `${gap}px`,
           flexDirection: direction === 'horizontal' ? 'row' : 'column',
         }}
-        ref={ref}
         {...hoverProps}
       >
         {children}
@@ -93,4 +100,46 @@ export function InfiniteSlider({
       </motion.div>
     </div>
   );
-}
+});
+
+const LogoImage = memo(function LogoImage({ logo }: { logo: Logo }) {
+  return (
+    <img
+      alt={logo.alt}
+      src={logo.src}
+      loading="lazy"
+      className="pointer-events-none w-auto select-none object-contain"
+      /* Los logos de SVEA van de proporción 1,1 a 4,3. Con la altura fija
+         del original (h-4/h-5) los cuadrados quedarían diminutos, así que
+         se calcula a partir de su proporción. */
+      style={{ height: `${Math.round(32 / Math.pow(logo.ratio ?? 2, 0.35))}px` }}
+    />
+  );
+});
+
+export const LogoMarquee = memo(function LogoMarquee({
+  logos,
+  className,
+}: {
+  logos: Logo[];
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        'mx-auto max-w-7xl overflow-hidden py-4',
+        '[mask-image:linear-gradient(to_right,transparent,black_25%,black_75%,transparent)]',
+        className,
+      )}
+    >
+      <InfiniteSlider gap={42} reverse duration={80} durationOnHover={25}>
+        {[...logos, ...logos].map((logo, i) => (
+          <LogoImage key={`${logo.alt}-${i}`} logo={logo} />
+        ))}
+      </InfiniteSlider>
+    </div>
+  );
+});
+
+LogoMarquee.displayName = 'LogoMarquee';
+export default LogoMarquee;
