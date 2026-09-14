@@ -114,19 +114,26 @@ if (existsSync('mejoras/img')) {
 // reemplaza el hero nuevo.
 const HERO_VIEJO = '607952e6';   // sección de Elementor con el slideshow
 const BARRA_VIEJA = '73078e5';   // barra superior con logo y menú
+const CARRUSEL = 'cc069dd';      // contenedor del carrusel de logos de clientes
 
 const homeLimpia = limpiar(readFileSync(path.join(ORIG, 'home.html'), 'utf8'), '/');
 
 const cabeza = (homeLimpia.match(/<head[\s\S]*?<\/head>/i) || [''])[0]
   .match(/<link[^>]+rel="stylesheet"[^>]*>|<style[\s\S]*?<\/style>|<link[^>]+rel="(?:preconnect|dns-prefetch)"[^>]*>/gi) || [];
 
-const cuerpo = homeLimpia
+let cuerpo = homeLimpia
   .slice(homeLimpia.indexOf('<body') , homeLimpia.lastIndexOf('</body>'))
   .replace(/^<body[^>]*>/i, '');
 
+// se deja una marca donde está el carrusel de logos para que Astro ponga
+// ahí la rejilla nueva; el carrusel viejo queda escondido justo debajo
+cuerpo = cuerpo.replace(
+  new RegExp(`<div class=['"][^'"]*elementor-element-${CARRUSEL}[^'"]*['"]`),
+  (m) => `<!--SVEA:LOGOS-->${m}`);
+
 mkdirSync('src/contenido', { recursive: true });
 writeFileSync('src/contenido/home-wp-cabeza.html',
-  cabeza.join('\n') + `\n<style>.elementor-element-${HERO_VIEJO},.elementor-element-${BARRA_VIEJA}{display:none !important}</style>`);
+  cabeza.join('\n') + `\n<style>.elementor-element-${HERO_VIEJO},.elementor-element-${BARRA_VIEJA},.elementor-element-${CARRUSEL}{display:none !important}</style>`);
 writeFileSync('src/contenido/home-wp-cuerpo.html', cuerpo);
 console.log('home: recursos y cuerpo entregados a Astro');
 

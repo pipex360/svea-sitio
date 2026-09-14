@@ -127,8 +127,9 @@ const guias: Entrada[] = [
 export default function MenuSvea({ base = '' }: { base?: string }) {
   const url = (href: string) => `${base}${href}`;
 
+  // en móvil el menú se esconde: los enlaces están en el pie
   return (
-    <NavigationMenu className="z-20">
+    <NavigationMenu className="z-20 max-md:hidden">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuLink className={navigationMenuTriggerStyle()} href={url('/')}>

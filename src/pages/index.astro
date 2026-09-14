@@ -13,12 +13,16 @@
  */
 import '../styles/tailwind.css';
 import HeroHalo from '../components/HeroHalo.astro';
+import { LogoCloud } from '../components/ui/logo-cloud-2';
 import paginas from '../data/paginas.json';
 import cabezaWP from '../contenido/home-wp-cabeza.html?raw';
 import cuerpoWP from '../contenido/home-wp-cuerpo.html?raw';
 
 const pagina = paginas.find((p) => p.ruta === '/')!;
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+
+// el cuerpo del WordPress se parte donde iba el carrusel de logos
+const [antesLogos, despuesLogos] = cuerpoWP.split('<!--SVEA:LOGOS-->');
 ---
 <!doctype html>
 <html lang="es">
@@ -43,7 +47,17 @@ const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
   <HeroHalo />
 
   <!-- Contenido original bajo el hero, sección por sección pendiente -->
-  <div class="wp-restante" set:html={cuerpoWP} />
+  <div class="wp-restante" set:html={antesLogos} />
+
+  <!-- Clientes: rejilla nueva en lugar del carrusel -->
+  <section class="svea-nuevo mx-auto grid max-w-5xl px-4 py-14">
+    <h2 class="mb-8 text-center text-lg font-medium tracking-tight text-muted-foreground md:text-2xl">
+      Empresas que ya cumplen <span class="font-semibold text-primary">con SVEA</span>
+    </h2>
+    <LogoCloud base={BASE} />
+  </section>
+
+  <div class="wp-restante" set:html={despuesLogos} />
 
   <div class="aviso-copia">
     COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
