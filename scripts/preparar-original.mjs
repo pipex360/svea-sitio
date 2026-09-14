@@ -117,6 +117,8 @@ function conHero(htmlHome, bloque, rutaPagina) {
     .split(',').map((x) => x.trim()).filter(Boolean);
   const ocultar = [idHero, ...extra].map((id) => `.elementor-element-${id}{display:none !important}`).join('');
   const b = bloque
+    // __INCLUIR:archivo__ pega otro bloque de mejoras/ en su lugar
+    .replace(/__INCLUIR:([\w.-]+)__/g, (_, f) => readFileSync(path.join('mejoras', f), 'utf8'))
     .split('__BASE__').join(BASE)
     .split('"#form-home"').join(`"${BASE}${rutaPagina}#form-home"`)
     .split('"#servicios"').join(`"${BASE}${rutaPagina}#servicios"`)
