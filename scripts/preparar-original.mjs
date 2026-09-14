@@ -115,6 +115,25 @@ if (existsSync('mejoras/img')) {
 const CAJA_NOSOTROS = '<div class="max-w-6xl mx-auto relative">';
 const CAJA_PROCESO = '<div class="mb-20">';
 
+/** Devuelve [inicio, fin) del <div> que abre en la primera coincidencia. */
+function recortaDiv(html, marca) {
+  const i = html.search(marca);
+  if (i < 0) return null;
+  const re = /<div\b|<\/div>/gi;
+  re.lastIndex = i;
+  let prof = 0;
+  let m;
+  while ((m = re.exec(html))) {
+    if (m[0][1] === '/') {
+      prof -= 1;
+      if (prof === 0) return [i, re.lastIndex];
+    } else {
+      prof += 1;
+    }
+  }
+  return null;
+}
+
 /** Devuelve [desde, hasta) con el contenido de la cuarta sección. */
 function recortaNosotros(html) {
   const ini = html.search(/<div class="nosotros-section/);
@@ -164,6 +183,13 @@ cuerpo = cuerpo.replace(
 const tramo = recortaNosotros(cuerpo);
 if (!tramo) throw new Error('no se encontró el tramo de «nosotros-section» en la home');
 cuerpo = cuerpo.slice(0, tramo[0]) + '<!--SVEA:NOSOTROS-->' + cuerpo.slice(tramo[1]);
+
+// «¿Cómo Trabajamos?» sí tiene contenedor propio —el <div class="mb-20"> que
+// abre justo antes del copete— y cierra donde corresponde, así que basta con
+// contar la profundidad hasta su </div>.
+const proceso = recortaDiv(cuerpo, /<div class="mb-20">/);
+if (!proceso) throw new Error('no se encontró el bloque de «¿Cómo Trabajamos?» en la home');
+cuerpo = cuerpo.slice(0, proceso[0]) + '<!--SVEA:PROCESO-->' + cuerpo.slice(proceso[1]);
 
 mkdirSync('src/contenido', { recursive: true });
 writeFileSync('src/contenido/home-wp-cabeza.html',
