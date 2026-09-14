@@ -1,0 +1,160 @@
+---
+/**
+ * Hero de la home. Copia del hero de hirael.com/usd-halo con las fotos del
+ * slideshow original: cabecera clara alineada con la tarjeta, veladuras
+ * blancas, halo tras el mensaje, Ken Burns en las fotos y las cifras abajo.
+ *
+ * El menú es una isla de React (Radix), montada sólo cuando el navegador
+ * está libre: el resto del hero es HTML y CSS, sin JavaScript.
+ */
+import MenuSvea from './ui/navigation-menu-06';
+
+const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+---
+
+<div class="halo svea-nuevo">
+  <header class="halo-cab">
+    <div class="halo-cab-caja">
+      <a class="halo-marca" href={`${BASE}/`} aria-label="SVEA Consultores, inicio">
+        <img src={`${BASE}/img/logo-svea.webp`} width="404" height="137" alt="SVEA Consultores" fetchpriority="high" />
+      </a>
+
+      <MenuSvea base={BASE} client:idle />
+
+      <a class="halo-btn" href={`${BASE}/#form-home`} style="gap:0"><span>Solicitar cotización</span></a>
+    </div>
+  </header>
+
+  <section class="halo-seccion" id="inicio" aria-label="Presentación">
+    <div class="halo-tarjeta">
+      <div class="halo-fondo" aria-hidden="true">
+        <img src="https://sveaconsultores.cl/wp-content/uploads/2025/03/california-renewable-energy.jpg" alt="" fetchpriority="high" />
+        <img src="https://sveaconsultores.cl/wp-content/uploads/2025/03/aerial-view-of-logistic-center.jpg" alt="" loading="lazy" />
+        <img src="https://sveaconsultores.cl/wp-content/uploads/2025/03/chemical-oil-refinery-plant-power-plant-and-metal-2024-12-08-00-52-34-utc-scaled.jpg" alt="" loading="lazy" />
+      </div>
+      <div class="halo-velo-arriba" aria-hidden="true"></div>
+      <div class="halo-velo-abajo" aria-hidden="true"></div>
+      <div class="halo-aura" aria-hidden="true"></div>
+
+      <div class="halo-contenido">
+        <h1>Consultoría Ambiental y Cumplimiento Normativo</h1>
+        <p>Tramitamos ante la SEREMI de Salud, Bomberos y la municipalidad lo que tu empresa necesita para operar. Cotización en menos de 24 horas.</p>
+        <a class="halo-btn" href={`${BASE}/#form-home`}>
+          <span>Solicitar cotización</span>
+          <span class="circulo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
+
+        <div class="halo-pulso" aria-label="Cifras">
+          <div class="principal"><span class="punto" aria-hidden="true"></span><b class="cifra pre" style="--meta:500"></b><span>empresas atendidas</span></div>
+          <div class="secundarias">
+            <span><i>→</i><b class="cifra pct" style="--meta:100"></b> satisfacción</span>
+            <span><i>→</i><b>24 hrs</b> cotización</span>
+            <span><i>→</i><b>Aprobación</b> garantizada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style is:global>
+  /* Los contadores suben desde cero al cargar, en CSS. */
+  @property --n{syntax:"<integer>";inherits:false;initial-value:0}
+  .halo .cifra{counter-reset:n var(--n);animation:sube-n 1.6s cubic-bezier(.2,.7,.2,1) forwards;font-variant-numeric:tabular-nums}
+  .halo .cifra::after{content:counter(n)}
+  .halo .cifra.pre::before{content:"+"}
+  .halo .cifra.pct::after{content:counter(n) "%"}
+  @keyframes sube-n{from{--n:0}to{--n:var(--meta)}}
+
+  .halo{background:#fff;color:#161b22;font-family:Inter,ui-sans-serif,system-ui,sans-serif;
+    display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
+
+  .halo-cab{padding:14px 24px 12px;position:relative;z-index:50}
+  .halo-cab-caja{max-width:88rem;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .halo-marca img{height:40px;width:auto;display:block}
+
+  .halo-seccion{flex:1;display:flex;align-items:flex-end;padding:0 24px 24px}
+  .halo-tarjeta{position:relative;width:100%;max-width:88rem;margin:0 auto;overflow:hidden;border-radius:16px;
+    height:calc(100dvh - 96px);min-height:560px;max-height:900px}
+  .halo-fondo{position:absolute;inset:0}
+  .halo-fondo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+    transform-origin:center center;will-change:opacity,transform;
+    animation:halo-fundido 18s linear infinite}
+  .halo-fondo img:nth-child(1){animation-delay:0s;opacity:1;animation-name:halo-fundido-primera}
+  .halo-fondo img:nth-child(2){animation-delay:6s}
+  .halo-fondo img:nth-child(3){animation-delay:12s}
+  /* Ken Burns: la foto se acerca mientras está a la vista y recupera su
+     tamaño mientras está invisible, para que el ciclo no dé un salto. */
+  @keyframes halo-fundido{
+    0%{opacity:0;transform:scale(1)}
+    5%{opacity:1;transform:scale(1.02)}
+    33%{opacity:1;transform:scale(1.12)}
+    38%{opacity:0;transform:scale(1.14)}
+    39%{opacity:0;transform:scale(1)}
+    100%{opacity:0;transform:scale(1)}
+  }
+  @keyframes halo-fundido-primera{
+    0%{opacity:1;transform:scale(1)}
+    33%{opacity:1;transform:scale(1.12)}
+    38%{opacity:0;transform:scale(1.14)}
+    39%{opacity:0;transform:scale(1)}
+    95%{opacity:0;transform:scale(1)}
+    100%{opacity:1;transform:scale(1)}
+  }
+  .halo-velo-arriba{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.7),rgba(255,255,255,.2) 50%,rgba(255,255,255,.1))}
+  .halo-velo-abajo{position:absolute;left:0;right:0;bottom:0;height:50%;background:linear-gradient(to top,rgba(255,255,255,.85),rgba(255,255,255,.4) 50%,transparent)}
+  /* el halo: resplandor blanco tras el mensaje, con deriva lenta */
+  .halo-aura{position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(58% 52% at 30% 40%,rgba(255,255,255,.92),rgba(255,255,255,.55) 45%,rgba(255,255,255,0) 72%),
+      radial-gradient(42% 38% at 10% 26%,rgba(255,255,255,.55),rgba(255,255,255,0) 70%);
+    animation:halo-deriva 22s ease-in-out infinite}
+  @keyframes halo-deriva{0%,100%{background-position:0 0,0 0}50%{background-position:6% -4%,-8% 5%}}
+
+  .halo-contenido{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;height:100%;padding:144px 48px 48px}
+  .halo h1{margin:0 0 16px;max-width:22ch;font-family:Manrope,Inter,sans-serif;font-weight:500;letter-spacing:-.04em;line-height:1.1;
+    font-size:clamp(36px,4.2vw,56px);color:#000;text-transform:none;text-wrap:balance}
+  .halo p{margin:0 0 32px;max-width:44ch;font-size:18px;line-height:1.6;color:rgba(0,0,0,.7)}
+  .halo .halo-btn{display:inline-flex;align-items:center;gap:12px;height:auto;padding:8px 8px 8px 32px;border-radius:999px;
+    background:#000;color:#fff !important;font-size:18px;font-weight:500;text-decoration:none;transition:background .2s}
+  .halo .halo-btn span{color:#fff !important}
+  .halo .halo-btn .circulo,.halo .halo-btn .circulo svg{color:#000 !important}
+  .halo .halo-btn:hover{background:#1f2937}
+  .halo .halo-btn .circulo{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#fff}
+  .halo .halo-btn .circulo svg{width:20px;height:20px}
+  .halo-cab .halo-btn{padding:0 24px;height:40px;font-size:15px;white-space:nowrap}
+
+  .halo-pulso{margin-top:auto;padding-top:56px;display:flex;flex-direction:column;gap:14px}
+  .halo-pulso .principal{display:flex;align-items:center;gap:14px}
+  .halo-pulso .punto{position:relative;width:12px;height:12px;border-radius:50%;background:#16a34a;flex-shrink:0}
+  .halo-pulso .punto::before{content:"";position:absolute;inset:-6px;border-radius:50%;background:rgba(22,163,74,.25);animation:late 1.8s ease-out infinite}
+  @keyframes late{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.8);opacity:0}}
+  .halo-pulso .principal b{font-family:Manrope,Inter,sans-serif;font-weight:500;font-size:48px;letter-spacing:-.03em;line-height:1;color:#000}
+  .halo-pulso .principal span{font-size:18px;color:rgba(0,0,0,.6)}
+  .halo-pulso .secundarias{display:flex;flex-wrap:wrap;gap:8px 28px;padding-left:26px;font-size:15px;color:rgba(0,0,0,.6)}
+  .halo-pulso .secundarias b{color:#000;font-weight:600}
+  .halo-pulso .secundarias i{font-style:normal;color:rgba(0,0,0,.35);margin-right:8px}
+
+  @media (max-width:820px){
+    .halo-cab{padding:10px 16px 8px}
+    .halo-cab .halo-btn{padding:0 18px;height:42px;font-size:15px}
+    .halo-marca img{height:34px}
+    .halo-seccion{padding:0 12px 12px}
+    .halo-tarjeta{height:calc(100dvh - 80px);min-height:520px}
+    .halo-contenido{padding:96px 24px 28px}
+    .halo p{font-size:16px}
+    .halo-pulso{padding-top:36px}
+    .halo-pulso .principal b{font-size:38px}
+    .halo-pulso .principal span{font-size:15px}
+    .halo-aura{background:
+      radial-gradient(80% 46% at 42% 34%,rgba(255,255,255,.92),rgba(255,255,255,.55) 48%,rgba(255,255,255,0) 76%),
+      radial-gradient(60% 34% at 16% 22%,rgba(255,255,255,.5),rgba(255,255,255,0) 72%)}
+    /* el menú de escritorio se oculta; los enlaces están en el pie */
+    .halo-cab-caja > nav{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .halo-fondo img,.halo-aura,.halo-pulso .punto::before{animation:none}
+    .halo-fondo img:nth-child(1){opacity:1}
+    .halo .cifra{animation:none;--n:var(--meta)}
+  }
+</style>

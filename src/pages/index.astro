@@ -1,0 +1,61 @@
+---
+/**
+ * Home. Primera página construida de verdad con Astro.
+ *
+ * El SEO sale de src/data/paginas.json, que se genera desde el CSV de Rank
+ * Math: título, meta, canonical, robots y datos estructurados no se escriben
+ * a mano. El hero es un componente propio y el menú una isla de React.
+ *
+ * Lo que va bajo el hero sigue siendo el contenido del WordPress, con su
+ * propia hoja de estilos, hasta que aprobemos cada sección. Por eso la
+ * página carga esa hoja: es lo que mantiene el aspecto de lo que aún no
+ * migramos, y desaparece cuando se migre la última sección.
+ */
+import '../styles/tailwind.css';
+import HeroHalo from '../components/HeroHalo.astro';
+import paginas from '../data/paginas.json';
+import cabezaWP from '../contenido/home-wp-cabeza.html?raw';
+import cuerpoWP from '../contenido/home-wp-cuerpo.html?raw';
+
+const pagina = paginas.find((p) => p.ruta === '/')!;
+const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO reproducido desde 04-seo-por-url/seo-por-url.csv: uno de cada uno -->
+  <title set:html={pagina.title}></title>
+  <meta name="description" content={pagina.description} />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href={pagina.canonical} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&family=Inter:wght@400;500;600&display=swap" />
+
+  <!-- hoja del WordPress: sostiene el contenido que todavía no migramos -->
+  <Fragment set:html={cabezaWP} />
+</head>
+<body>
+  <HeroHalo />
+
+  <!-- Contenido original bajo el hero, sección por sección pendiente -->
+  <div class="wp-restante" set:html={cuerpoWP} />
+
+  <div class="aviso-copia">
+    COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
+    <a href={`${BASE}/estado/`}>ver las 27 páginas</a>
+  </div>
+</body>
+</html>
+
+<style is:global>
+  body { margin: 0; }
+  .aviso-copia{
+    position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#161b18;color:#fff;
+    font:400 12px/1.4 system-ui,sans-serif;padding:7px 12px;text-align:center}
+  .aviso-copia a{color:#9BEB6B}
+</style>

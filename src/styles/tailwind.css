@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/*
+  Tokens de shadcn, con los colores de SVEA.
+  Los componentes de 21st.dev usan estos nombres (bg-popover,
+  text-muted-foreground, border, ring…), así que se pegan sin retocar.
+  La paleta sale de la sección 10 del plan: verde salvia #677C77,
+  lima #9BEB6B, celeste #7FCED6, negro #010101, gris #EFF0EF.
+*/
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #161b22;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #161b22;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #161b22;
+
+  /* el verde de la marca manda en lo primario */
+  --color-primary: #677c77;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #eff0ef;
+  --color-secondary-foreground: #161b22;
+
+  --color-muted: #f3f5f1;
+  --color-muted-foreground: #6b7280;
+
+  --color-accent: #f3f5f1;
+  --color-accent-foreground: #161b22;
+
+  --color-destructive: #a32f26;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: #e6e8e4;
+  --color-input: #e6e8e4;
+  --color-ring: #677c77;
+
+  /* extras de la marca, por si un componente los pide */
+  --color-lima: #9beb6b;
+  --color-celeste: #7fced6;
+
+  --radius: 10px;
+
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-display: Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
+  El contenido que todavía viene del WordPress trae su propia hoja de
+  estilos. Para que Tailwind no le cambie el aspecto, lo nuestro se limita
+  a los bloques nuevos: por eso no hay preflight global aquí.
+*/
+@layer base {
+  :where(.svea-nuevo) *,
+  :where(.svea-nuevo) *::before,
+  :where(.svea-nuevo) *::after {
+    box-sizing: border-box;
+  }
+}
