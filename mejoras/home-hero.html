@@ -19,9 +19,19 @@
   .halo-cab{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px 6px}
   .halo-marca{display:flex;align-items:center;gap:10px;text-decoration:none;color:#161b22;font-family:Manrope,Inter,sans-serif;font-weight:600;font-size:20px;letter-spacing:-.01em}
   .halo-marca img{height:40px;width:auto}
-  .halo-nav{display:flex;gap:32px}
-  .halo-nav a{color:#161b22;text-decoration:none;font-size:16px}
-  .halo-nav a:hover{opacity:.7}
+  /* Menú: componente «vercel-tabs», con sus mismas medidas y transiciones.
+     La píldora del hover y la barra del activo se deslizan de un tab a otro. */
+  .halo-nav{position:relative}
+  .halo-nav .pista{position:relative;display:flex;align-items:center;gap:6px}
+  .halo-nav .hover{position:absolute;height:30px;border-radius:6px;background:#0e0f1114;
+    opacity:0;pointer-events:none;transition:left .3s ease-out,width .3s ease-out,opacity .3s ease-out}
+  .halo-nav .activo{position:absolute;bottom:-6px;height:2px;background:#0e0f11;
+    transition:left .3s ease-out,width .3s ease-out}
+  .halo-nav a{position:relative;display:flex;align-items:center;justify-content:center;height:30px;
+    padding:8px 12px;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;text-decoration:none;
+    color:#0e0f1199;transition:color .3s}
+  .halo-nav a.es-activo{color:#0e0e10}
+  @media (prefers-reduced-motion:reduce){.halo-nav .hover,.halo-nav .activo,.halo-nav a{transition:none}}
   .halo-cab .halo-btn{padding:0 28px;height:48px;white-space:nowrap}
 
   /* tarjeta del hero */
@@ -98,10 +108,14 @@
       <img src="https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png" alt="SVEA Consultores">
     </a>
     <nav class="halo-nav" aria-label="Principal">
-      <a href="#inicio">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#guias">Recursos y guías</a>
-      <a href="#form-home">Contacto</a>
+      <div class="pista">
+        <span class="hover" aria-hidden="true"></span>
+        <span class="activo" aria-hidden="true"></span>
+        <a href="#inicio" class="es-activo">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#guias">Recursos y guías</a>
+        <a href="#form-home">Contacto</a>
+      </div>
     </nav>
     <a class="halo-btn" href="#form-home" style="gap:0"><span>Solicitar cotización</span></a>
   </header>
@@ -160,3 +174,36 @@
     </div>
   </section>
 </div>
+
+<script>
+(function () {
+  var nav = document.querySelector('.halo-nav'); if (!nav) return;
+  var tabs = [].slice.call(nav.querySelectorAll('a'));
+  var hover = nav.querySelector('.hover');
+  var activo = nav.querySelector('.activo');
+  var iActivo = Math.max(0, tabs.indexOf(nav.querySelector('a.es-activo')));
+
+  function colocar(el, tab) {
+    if (!tab) return;
+    el.style.left = tab.offsetLeft + 'px';
+    el.style.width = tab.offsetWidth + 'px';
+  }
+  function pintarActivo() {
+    tabs.forEach(function (t, i) { t.classList.toggle('es-activo', i === iActivo); });
+    colocar(activo, tabs[iActivo]);
+  }
+
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener('mouseenter', function () { colocar(hover, tab); hover.style.opacity = 1; });
+    tab.addEventListener('focus', function () { colocar(hover, tab); hover.style.opacity = 1; });
+    tab.addEventListener('click', function () { iActivo = i; pintarActivo(); });
+  });
+  nav.addEventListener('mouseleave', function () { hover.style.opacity = 0; });
+  nav.addEventListener('focusout', function () { hover.style.opacity = 0; });
+
+  requestAnimationFrame(pintarActivo);
+  addEventListener('resize', pintarActivo);
+  // las tipografías cargan después y cambian el ancho de cada tab
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(pintarActivo);
+})();
+</script>
