@@ -13,7 +13,7 @@
  */
 import '../styles/tailwind.css';
 import HeroHalo from '../components/HeroHalo.astro';
-import { LogoCloud } from '../components/ui/logo-cloud-2';
+import { LogoCloud } from '../components/ui/logo-cloud-4';
 import paginas from '../data/paginas.json';
 import cabezaWP from '../contenido/home-wp-cabeza.html?raw';
 import cuerpoWP from '../contenido/home-wp-cuerpo.html?raw';
@@ -49,12 +49,13 @@ const [antesLogos, despuesLogos] = cuerpoWP.split('<!--SVEA:LOGOS-->');
   <!-- Contenido original bajo el hero, sección por sección pendiente -->
   <div class="wp-restante" set:html={antesLogos} />
 
-  <!-- Clientes: rejilla nueva en lugar del carrusel -->
-  <section class="svea-nuevo mx-auto grid max-w-5xl px-4 py-14">
-    <h2 class="mb-8 text-center text-lg font-medium tracking-tight text-muted-foreground md:text-2xl">
-      Empresas que ya cumplen <span class="font-semibold text-primary">con SVEA</span>
+  <!-- Clientes: carrusel con desenfoque en los bordes -->
+  <section class="svea-nuevo px-4 py-14">
+    <h2 class="mb-5 text-center">
+      <span class="block text-lg font-medium text-muted-foreground md:text-2xl">Empresas que ya cumplen</span>
+      <span class="text-2xl font-black tracking-tight text-primary md:text-3xl">con SVEA</span>
     </h2>
-    <LogoCloud base={BASE} />
+    <LogoCloud base={BASE} client:visible />
   </section>
 
   <div class="wp-restante" set:html={despuesLogos} />
