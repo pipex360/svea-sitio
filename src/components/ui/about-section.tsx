@@ -173,27 +173,34 @@ export function AboutSection({ base = '' }: { base?: string }) {
               </div>
             </TimelineContent>
 
-            <div className="bottom-16 right-0 flex flex-row-reverse flex-wrap items-baseline gap-x-4 gap-y-1 lg:absolute lg:flex-col lg:flex-nowrap lg:gap-0">
+            {/* Estas dos cifras van dentro de la muesca del recorte, no sobre
+                la foto. La muesca empieza en el 77,6 % del ancho de la figura,
+                así que el bloque tiene unos 260 px: la cifra y su rótulo van
+                uno encima del otro, que es lo único que cabe. En el original
+                caben en línea porque «brands» tiene la mitad de letras que
+                «aprobación». */}
+            <div className="bottom-14 right-0 flex flex-row-reverse flex-wrap items-baseline gap-x-6 gap-y-2 text-right lg:absolute lg:flex-col lg:items-end lg:gap-y-3">
               <TimelineContent
                 as="div"
                 animationNum={4}
                 timelineRef={refSeccion}
                 customVariants={revealVariants}
-                className="mb-2 flex items-center gap-2 whitespace-nowrap text-lg sm:text-3xl lg:text-4xl"
+                className="flex flex-col items-end leading-none"
               >
-                <span className="font-semibold text-black">100%</span>
-                <span className="uppercase text-black/60">aprobación</span>
+                <span className="text-2xl font-semibold text-black sm:text-3xl lg:text-4xl">100%</span>
+                <span className="mt-1 text-xs uppercase tracking-wide text-black/60 sm:text-sm">
+                  aprobación
+                </span>
               </TimelineContent>
               <TimelineContent
                 as="div"
                 animationNum={5}
                 timelineRef={refSeccion}
                 customVariants={revealVariants}
-                className="mb-2 flex items-center gap-2 whitespace-nowrap text-xs sm:text-base"
+                className="flex flex-col items-end leading-none"
               >
-                <span className="font-bold text-black">24 hrs</span>
-                <span className="text-black/60">de cotización</span>
-                <span className="block text-black/20 lg:hidden">|</span>
+                <span className="text-base font-bold text-black sm:text-lg">24 hrs</span>
+                <span className="mt-1 text-xs text-black/60">de cotización</span>
               </TimelineContent>
             </div>
           </div>
