@@ -100,25 +100,44 @@ for (const [ruta, archivo] of Object.entries(ARCHIVOS)) {
   n++;
 }
 
-// --- propuestas: la home con el hero reemplazado, en /propuestas/<nombre>/ ---
+// --- hero: reemplazo del hero de la home ---------------------------------
 // El hero original es la sección de Elementor que trae el slideshow. Se
-// esconde con CSS y se inserta la propuesta justo antes. El resto de la
-// página queda intacto, así se compara con la home real.
+// esconde con CSS y se inserta el bloque nuevo justo antes; el resto de la
+// página queda intacto. Un bloque puede pedir esconder más secciones con
+// <!-- ocultar: 73078e5 -->.
+//   mejoras/home-hero.html  → se aplica a la home real (aprobado por el usuario)
+//   propuestas/*.html       → se publican aparte en /propuestas/<nombre>/ (para comparar)
 import { readdirSync } from 'node:fs';
-const homeLimpia = limpiar(readFileSync(path.join(ORIG, 'home.html'), 'utf8'), '/');
-const heroTag = homeLimpia.match(/<section[^>]*data-settings="[^"]*background_slideshow_gallery[^"]*"[^>]*>/);
-if (heroTag && existsSync('propuestas')) {
+
+function conHero(htmlHome, bloque, rutaPagina) {
+  const heroTag = htmlHome.match(/<section[^>]*data-settings="[^"]*background_slideshow_gallery[^"]*"[^>]*>/);
+  if (!heroTag) return htmlHome;
   const idHero = heroTag[0].match(/elementor-element-([0-9a-f]+)/)[1];
+  const extra = (bloque.match(/<!--\s*ocultar:\s*([^>]+?)\s*-->/) || [, ''])[1]
+    .split(',').map((x) => x.trim()).filter(Boolean);
+  const ocultar = [idHero, ...extra].map((id) => `.elementor-element-${id}{display:none !important}`).join('');
+  const b = bloque
+    .split('"#form-home"').join(`"${BASE}${rutaPagina}#form-home"`)
+    .split('"#servicios"').join(`"${BASE}${rutaPagina}#servicios"`)
+    .split('"#inicio"').join(`"${BASE}${rutaPagina}#inicio"`)
+    .split('"#guias"').join(`"${BASE}${rutaPagina}#guias"`);
+  let html = htmlHome.replace(heroTag[0], `${b}\n<div id="servicios"></div>\n${heroTag[0]}`);
+  return html.replace(/<\/head>/i, `<style>${ocultar}</style>\n</head>`);
+}
+
+const homeLimpia = limpiar(readFileSync(path.join(ORIG, 'home.html'), 'utf8'), '/');
+
+if (existsSync('mejoras/home-hero.html')) {
+  writeFileSync(path.join(DEST, 'index.html'), conHero(homeLimpia, readFileSync('mejoras/home-hero.html', 'utf8'), '/'));
+  console.log('home: hero nuevo aplicado (mejoras/home-hero.html)');
+}
+
+if (existsSync('propuestas')) {
   for (const f of readdirSync('propuestas').filter((x) => x.endsWith('.html'))) {
     const nombre = f.replace(/\.html$/, '');
-    const bloque = readFileSync(path.join('propuestas', f), 'utf8')
-      .split('"#form-home"').join(`"${BASE}/propuestas/${nombre}/#form-home"`)
-      .split('"#servicios"').join(`"${BASE}/propuestas/${nombre}/#servicios"`);
-    let html = homeLimpia.replace(heroTag[0], `${bloque}\n<div id="servicios"></div>\n${heroTag[0]}`);
-    html = html.replace(/<\/head>/i, `<style>.elementor-element-${idHero}{display:none !important}</style>\n</head>`);
     const destino = path.join(DEST, 'propuestas', nombre, 'index.html');
     mkdirSync(path.dirname(destino), { recursive: true });
-    writeFileSync(destino, html);
+    writeFileSync(destino, conHero(homeLimpia, readFileSync(path.join('propuestas', f), 'utf8'), `/propuestas/${nombre}/`));
     console.log(`propuesta: /propuestas/${nombre}/`);
   }
 }
