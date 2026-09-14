@@ -4,9 +4,13 @@
  * «Cumplimiento Ambiental Sin Complicaciones» — la cuarta sección de la home,
  * montada sobre la rejilla bento de 21st.dev.
  *
- * Los textos, los rótulos y las cifras son los del sitio actual, palabra por
- * palabra. Las tres cifras (100+, 100% y 24 hrs) salen de los `data-target`
- * del HTML de WordPress, no de ninguna estimación.
+ * Los textos y los rótulos son los del sitio actual, palabra por palabra.
+ *
+ * Las cifras del 100% y de las 24 hrs salen de los `data-target` del HTML de
+ * WordPress. La de trámites no: el sitio decía 100+ mientras el hero decía
+ * +500 empresas atendidas, que no puede ser —cada empresa contrata al menos
+ * un trámite—. Felipe fijó la cifra en 300, y las tres del sitio (empresas
+ * del hero, empresas del carrusel y trámites de aquí) parten de ese número.
  *
  * La única fusión: el sitio actual repetía el 100% dos veces —una como «Tasa
  * de Aprobación» y otra como «100% Cumplimiento · En trámites realizados»
@@ -185,7 +189,7 @@ export function CumplimientoBento({ base = '' }: { base?: string }) {
     <BentoGridShowcase
       className="mx-auto max-w-7xl"
       integration={<Compromiso />}
-      trackers={<Dato meta={100} sufijo="+" rotulo="Trámites Gestionados" />}
+      trackers={<Dato meta={300} sufijo="+" rotulo="Trámites Gestionados" />}
       statistic={
         <Dato
           meta={100}
