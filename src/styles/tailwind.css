@@ -121,3 +121,44 @@
 @media (prefers-reduced-motion: reduce) {
   .cta69-cinta { animation: none; }
 }
+
+
+/* ------------------------------------------------------------------
+   El botón negro con la flecha blanca en su círculo.
+   Nació en el hero y ahora vive aquí, sin el prefijo `.halo`, porque lo
+   usan también secciones de más abajo. Una sola definición: si cambia
+   el hero, cambian todos.
+
+   Va sin capa y sin utilidades encima a propósito. Tailwind entra con
+   la marca `important`, así que cualquier clase de utilidad sobre el
+   mismo <a> le ganaría a estas reglas: el botón se escribe con
+   `class="btn-flecha"` a secas.
+   ------------------------------------------------------------------ */
+.btn-flecha {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: auto;
+  padding: 8px 8px 8px 32px;
+  border-radius: 999px;
+  background: #000;
+  color: #fff !important;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-flecha span { color: #fff !important; }
+.btn-flecha:hover { background: #1f2937; }
+.btn-flecha .circulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+}
+.btn-flecha .circulo,
+.btn-flecha .circulo svg { color: #000 !important; }
+.btn-flecha .circulo svg { width: 20px; height: 20px; }

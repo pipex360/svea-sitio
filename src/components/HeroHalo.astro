@@ -21,7 +21,7 @@ const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 
       <MenuSvea base={BASE} client:idle />
 
-      <a class="halo-btn" href={`${BASE}/#form-home`} style="gap:0"><span>Solicitar cotización</span></a>
+      <a class="btn-flecha" href={`${BASE}/#form-home`} style="gap:0"><span>Solicitar cotización</span></a>
     </div>
   </header>
 
@@ -39,7 +39,7 @@ const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
       <div class="halo-contenido">
         <h1>Consultoría Ambiental y Cumplimiento Normativo</h1>
         <p>En SVEA llevamos el cumplimiento de tu empresa de punta a punta: diagnóstico, informes técnicos y el trámite ante la autoridad hasta que el permiso sale aprobado.</p>
-        <a class="halo-btn" href={`${BASE}/#form-home`}>
+        <a class="btn-flecha" href={`${BASE}/#form-home`}>
           <span>Solicitar cotización</span>
           <span class="circulo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </a>
@@ -117,14 +117,9 @@ const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
   .halo h1{margin:0 0 16px;max-width:22ch;font-family:Manrope,Inter,sans-serif;font-weight:500;letter-spacing:-.04em;line-height:1.1;
     font-size:clamp(36px,4.2vw,56px);color:#000;text-transform:none;text-wrap:balance}
   .halo p{margin:0 0 32px;max-width:44ch;font-size:18px;line-height:1.6;color:rgba(0,0,0,.7)}
-  .halo .halo-btn{display:inline-flex;align-items:center;gap:12px;height:auto;padding:8px 8px 8px 32px;border-radius:999px;
-    background:#000;color:#fff !important;font-size:18px;font-weight:500;text-decoration:none;transition:background .2s}
-  .halo .halo-btn span{color:#fff !important}
-  .halo .halo-btn .circulo,.halo .halo-btn .circulo svg{color:#000 !important}
-  .halo .halo-btn:hover{background:#1f2937}
-  .halo .halo-btn .circulo{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#fff}
-  .halo .halo-btn .circulo svg{width:20px;height:20px}
-  .halo-cab .halo-btn{padding:0 24px;height:40px;font-size:15px;white-space:nowrap}
+  /* el botón negro con la flecha (.btn-flecha) vive en la hoja de estilos:
+     lo usan también las secciones de más abajo */
+  .halo-cab .btn-flecha{padding:0 24px;height:40px;font-size:15px;white-space:nowrap}
   /* la veladura de arriba deja la foto clara: el texto oscuro se lee igual */
 
   .halo-pulso{margin-top:auto;padding-top:56px;display:flex;flex-direction:column;gap:14px}
@@ -140,7 +135,7 @@ const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 
   @media (max-width:820px){
     .halo-cab{padding:14px 24px}
-    .halo-cab .halo-btn{padding:0 18px;height:40px;font-size:14px}
+    .halo-cab .btn-flecha{padding:0 18px;height:40px;font-size:14px}
     .halo-marca img{height:32px}
     .halo-seccion{padding:0}
     .halo-tarjeta{height:100dvh;min-height:520px}
