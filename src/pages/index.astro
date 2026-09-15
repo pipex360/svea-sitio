@@ -117,7 +117,12 @@ const clientes = [
   <div class="wp-restante" set:html={entreServiciosYNosotros} />
 
   <!-- Cumplimiento: rejilla bento con las cifras y el cierre -->
-  <section class="svea-nuevo bg-white px-6 py-20" id="nosotros" aria-labelledby="titulo-nosotros">
+  <section class="svea-nuevo relative overflow-hidden bg-white px-6 py-20" id="nosotros" aria-labelledby="titulo-nosotros">
+    <!-- La trama vive aquí porque es la sección con más aire: las tarjetas
+         flotan sobre ella en vez de taparla. Se apaga hacia los bordes para
+         no chocar con las secciones blancas de al lado. -->
+    <DotPattern className="fill-svea/40 [mask-image:radial-gradient(85%_75%_at_50%_50%,white,transparent)]" />
+    <div class="relative">
     <div class="mx-auto mb-14 max-w-3xl text-center">
       <h2 id="titulo-nosotros" class="mb-4 text-balance text-3xl font-medium tracking-tight text-black md:text-5xl">
         Cumplimiento Ambiental <span class="font-black text-svea">Sin Complicaciones.</span>
@@ -136,6 +141,7 @@ const clientes = [
       </div>
     </div>
     <CumplimientoBento client:visible />
+    </div>
   </section>
 
   <!-- Cierre de la sección: franja completa con la palabra de fondo -->
@@ -155,11 +161,7 @@ const clientes = [
   <div class="wp-restante" set:html={entreNosotrosYProceso} />
 
   <!-- Cómo trabajamos: los cinco pasos -->
-  <section class="svea-nuevo relative overflow-hidden bg-white px-6 py-20" id="proceso" aria-labelledby="titulo-proceso">
-    <!-- la trama se apaga hacia los bordes para que no choque con las
-         secciones blancas de arriba y de abajo -->
-    <DotPattern className="[mask-image:radial-gradient(70%_60%_at_50%_45%,white,transparent)]" />
-    <div class="relative">
+  <section class="svea-nuevo bg-white px-6 py-20" id="proceso" aria-labelledby="titulo-proceso">
     <div class="mx-auto mb-14 max-w-3xl text-center">
       <p class="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]">
         <span aria-hidden="true" class="h-px w-8 bg-border"></span>
@@ -182,7 +184,6 @@ const clientes = [
       <span aria-hidden="true" class="text-black/25">·</span>
       <span>Cotización en menos de 24 horas</span>
     </p>
-    </div>
   </section>
 
   <div class="wp-restante" set:html={entreProcesoYDiferencia} />

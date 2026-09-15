@@ -120,9 +120,9 @@ const Dato = ({
     {puntos && (
       <div
         aria-hidden="true"
-        className="absolute inset-0 opacity-[0.13]"
+        className="absolute inset-0 opacity-[0.22]"
         style={{
-          backgroundImage: 'radial-gradient(#000 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(#0e7a3c 1px, transparent 1px)',
           backgroundSize: '16px 16px',
         }}
       />
