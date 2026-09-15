@@ -134,7 +134,7 @@ const Servicio = ({
       {/* la barra de la izquierda crece y se tiñe al pasar el cursor */}
       <span
         aria-hidden="true"
-        className="absolute inset-y-0 left-0 my-auto h-6 w-1 origin-center rounded-br-full rounded-tr-full bg-border transition-all duration-200 group-hover/servicio:h-10 group-hover/servicio:bg-black"
+        className="absolute inset-y-0 left-0 my-auto h-6 w-1 origin-center rounded-br-full rounded-tr-full bg-border transition-all duration-200 group-hover/servicio:h-10 group-hover/servicio:bg-svea"
       />
       <span className="inline-block transition duration-200 group-hover/servicio:translate-x-2">
         {titulo}
