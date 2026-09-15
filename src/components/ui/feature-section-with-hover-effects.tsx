@@ -10,7 +10,8 @@
  *    contenedor, derecho e inferior en cada celda) en vez de calcularse por
  *    índice. Así cuadran igual con una, dos o tres columnas; la fórmula por
  *    índice del original sólo cuadra a cuatro columnas.
- * 3. El acento del realce es negro, donde el original ponía azul.
+ * 3. El acento del realce es el verde del logo, donde el original ponía
+ *    azul. El velo que sube desde abajo sigue en negro.
  *
  * Los textos son los del sitio actual, palabra por palabra, y cada tarjeta
  * conserva su enlace a la página del servicio: son enlaces internos que el
@@ -131,10 +132,11 @@ const Servicio = ({
     </div>
 
     <h3 className="relative z-10 mb-2 px-8 text-lg font-bold normal-case tracking-normal text-black">
-      {/* la barra de la izquierda crece y se tiñe al pasar el cursor */}
+      {/* la barra de la izquierda crece y se tiñe de verde al pasar el
+          cursor; en reposo es del gris del borde, para que el cambio se note */}
       <span
         aria-hidden="true"
-        className="absolute inset-y-0 left-0 my-auto h-6 w-1 origin-center rounded-br-full rounded-tr-full bg-border transition-all duration-200 group-hover/servicio:h-10 group-hover/servicio:bg-black"
+        className="absolute inset-y-0 left-0 my-auto h-6 w-1 origin-center rounded-br-full rounded-tr-full bg-border transition-all duration-200 group-hover/servicio:h-10 group-hover/servicio:bg-svea"
       />
       <span className="inline-block transition duration-200 group-hover/servicio:translate-x-2">
         {titulo}
