@@ -299,9 +299,9 @@ export function VerticalTabs({ base = '' }: { base?: string }) {
 
         {/* las dos promesas van centradas bajo las dos columnas: pegadas a la
             izquierda quedaban huérfanas al fondo de la lista */}
-        <p className="mt-14 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-black/60">
+        <p className="mt-14 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm font-bold text-black">
           <span>Informe técnico listo en 5-10 días hábiles</span>
-          <span aria-hidden="true" className="text-black/25">
+          <span aria-hidden="true" className="font-normal text-black/25">
             ·
           </span>
           <span>Cotización en menos de 24 horas</span>
