@@ -29,6 +29,7 @@ import { animate, useInView, useMotionValue, useReducedMotion } from 'motion/rea
 import * as React from 'react';
 
 import { Card, CardContent } from '@/components/ui/card';
+import { Velaris } from '@/components/ui/velaris';
 import { BentoGridShowcase } from '@/components/ui/bento-product-features';
 import { cn } from '@/lib/utils';
 
@@ -174,21 +175,33 @@ const Dato = ({
   </Card>
 );
 
-/** Innovación Constante. */
+/**
+ * Innovación Constante, sobre el degradado vivo de Velaris.
+ *
+ * El shader va detrás y el texto encima, con un velo que lo sostiene: el
+ * degradado se mueve y sin el velo el contraste cambiaría todo el rato.
+ * Comparte paleta con «Compromiso y Garantía», así que las dos tarjetas
+ * oscuras de la sección se leen como una familia y no como dos decisiones.
+ */
 const Innovacion = () => (
-  <Card className={marco}>
-    <CardContent className="flex h-full flex-col justify-between p-8">
+  <Card className={cn(marco, 'relative overflow-hidden border-[#0b3d25] hover:border-[#1f5c3d]')}>
+    <Velaris className="absolute inset-0" height="100%" />
+    <div
+      aria-hidden="true"
+      className="absolute inset-0 bg-gradient-to-t from-[#04120d]/85 via-[#04120d]/45 to-transparent"
+    />
+    <CardContent className="relative z-10 flex h-full flex-col justify-between p-8">
       <div>
-        <h3 className="mb-2 text-base font-bold tracking-tight text-black">Innovación Constante</h3>
-        <p className="text-sm leading-relaxed text-black/70">
+        <h3 className="mb-2 text-base font-bold tracking-tight text-white">Innovación Constante</h3>
+        <p className="text-sm leading-relaxed text-white/80">
           Adaptamos metodologías modernas para agilizar trámites y reducir riesgos operativos.
         </p>
       </div>
-      <div className="mt-6 border-t border-border pt-4">
-        <p className="text-2xl font-bold leading-none tracking-tight text-black">
-          5-10 <span className="text-sm font-medium text-black/60">días hábiles</span>
+      <div className="mt-6 border-t border-white/20 pt-4">
+        <p className="text-2xl font-bold leading-none tracking-tight text-white">
+          5-10 <span className="text-sm font-medium text-white/70">días hábiles</span>
         </p>
-        <p className="mt-1 text-xs text-black/50">Informe técnico listo para revisión</p>
+        <p className="mt-1 text-xs text-white/60">Informe técnico listo para revisión</p>
       </div>
     </CardContent>
   </Card>
