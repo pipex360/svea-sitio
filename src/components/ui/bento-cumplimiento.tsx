@@ -147,7 +147,16 @@ const Dato = ({
   grande?: boolean;
   puntos?: boolean;
 }) => (
-  <Card className={cn(marco, 'relative overflow-hidden')}>
+  <Card
+    className={cn(
+      marco,
+      'relative overflow-hidden',
+      // Las tres blancas llevan sombra en reposo para despegarse del papel.
+      // Las dos oscuras no: sobre su propio fondo una sombra no se ve, y lo
+      // que las separa ahí es el contraste.
+      'shadow-[0_10px_28px_-16px_rgba(0,0,0,.28),0_2px_8px_-5px_rgba(0,0,0,.10)]',
+    )}
+  >
     {puntos && (
       <div
         aria-hidden="true"
