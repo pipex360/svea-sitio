@@ -52,11 +52,23 @@ export function HowItWorks02() {
     <ol className="relative mx-auto flex max-w-3xl flex-col gap-6 border-l border-dashed border-black/20 pl-10 sm:pl-12">
       {PASOS.map((paso, i) => (
         <li key={paso.title} className="relative">
-          <span className="absolute -left-[3.65rem] top-1 grid size-9 place-items-center rounded-full border border-border bg-white font-mono text-xs font-semibold text-black shadow-sm shadow-black/5 sm:-left-[4.15rem]">
+          {/* el último paso va en verde: es el trámite aprobado, que es a
+              lo que viene el visitante */}
+          <span
+            className={`absolute -left-[3.65rem] top-1 grid size-9 place-items-center rounded-full border font-mono text-xs font-semibold shadow-sm shadow-black/5 sm:-left-[4.15rem] ${
+              i === PASOS.length - 1
+                ? 'border-svea bg-svea text-white'
+                : 'border-border bg-white text-black'
+            }`}
+          >
             {String(i + 1).padStart(2, '0')}
           </span>
           <div className="flex items-start gap-3 rounded-xl border border-border bg-white p-4 transition-colors duration-200 hover:border-black/30 sm:p-5">
-            <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-black/5 text-black">
+            <span
+              className={`grid size-9 shrink-0 place-items-center rounded-lg ${
+                i === PASOS.length - 1 ? 'bg-svea/10 text-svea' : 'bg-black/5 text-black'
+              }`}
+            >
               <paso.icon className="size-4" aria-hidden="true" />
             </span>
             <div className="flex flex-col gap-1">
