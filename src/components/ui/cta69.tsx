@@ -62,7 +62,11 @@ export function Cta69({ badge, heading, button, labels = {}, className }: Cta69P
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 flex select-none items-center overflow-hidden"
         >
-          <div className="cta69-cinta flex w-max shrink-0 whitespace-nowrap text-black/[0.06]">
+          {/* La cinta va en el verde del logo, igual de diluida que cuando era
+              negra. Sube de 0,06 a 0,10 porque el verde a la misma opacidad
+              casi no se distingue del blanco: así las dos versiones pesan lo
+              mismo en pantalla. */}
+          <div className="cta69-cinta flex w-max shrink-0 whitespace-nowrap text-svea/10">
             {[0, 1].map((copia) => (
               <span
                 key={copia}
