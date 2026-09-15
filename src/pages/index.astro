@@ -19,6 +19,7 @@ import { CumplimientoBento } from '../components/ui/bento-cumplimiento';
 import { Cta69 } from '../components/ui/cta69';
 import { HowItWorks02 } from '../components/ui/how-it-works-02';
 import { Comparison03 } from '../components/ui/comparison-03';
+import { DotPattern } from '../components/ui/dot-pattern';
 import paginas from '../data/paginas.json';
 import cabezaWP from '../contenido/home-wp-cabeza.html?raw';
 import cuerpoWP from '../contenido/home-wp-cuerpo.html?raw';
@@ -154,7 +155,11 @@ const clientes = [
   <div class="wp-restante" set:html={entreNosotrosYProceso} />
 
   <!-- Cómo trabajamos: los cinco pasos -->
-  <section class="svea-nuevo bg-white px-6 py-20" id="proceso" aria-labelledby="titulo-proceso">
+  <section class="svea-nuevo relative overflow-hidden bg-white px-6 py-20" id="proceso" aria-labelledby="titulo-proceso">
+    <!-- la trama se apaga hacia los bordes para que no choque con las
+         secciones blancas de arriba y de abajo -->
+    <DotPattern className="[mask-image:radial-gradient(70%_60%_at_50%_45%,white,transparent)]" />
+    <div class="relative">
     <div class="mx-auto mb-14 max-w-3xl text-center">
       <p class="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]">
         <span aria-hidden="true" class="h-px w-8 bg-border"></span>
@@ -177,6 +182,7 @@ const clientes = [
       <span aria-hidden="true" class="text-black/25">·</span>
       <span>Cotización en menos de 24 horas</span>
     </p>
+    </div>
   </section>
 
   <div class="wp-restante" set:html={entreProcesoYDiferencia} />
