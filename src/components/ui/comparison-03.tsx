@@ -63,7 +63,7 @@ export function Comparison03({ base = '' }: { base?: string }) {
             id="titulo-diferencia"
             className="mt-3 text-3xl font-medium tracking-tight text-black sm:text-4xl"
           >
-            Cotización Automática y <span className="font-black">Seguimiento Digital</span>
+            Cotización Automática y <span className="font-black text-svea">Seguimiento Digital</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-black/70">
             Somos la única consultora ambiental en Chile con cotización automática en menos de 24
