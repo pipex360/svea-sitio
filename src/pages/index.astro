@@ -14,8 +14,8 @@
 import '../styles/tailwind.css';
 import HeroHalo from '../components/HeroHalo.astro';
 import { LogoMarquee } from '../components/ui/logo-marquee';
+import { FeaturesSectionWithHoverEffects } from '../components/ui/feature-section-with-hover-effects';
 import { FeatureBento } from '../components/ui/feature-bento';
-import { CumplimientoBento } from '../components/ui/bento-cumplimiento';
 import { Cta69 } from '../components/ui/cta69';
 import { HowItWorks02 } from '../components/ui/how-it-works-02';
 import { Comparison03 } from '../components/ui/comparison-03';
@@ -110,7 +110,7 @@ const clientes = [
         con respaldo técnico y normativo de excelencia.
       </p>
     </div>
-    <FeatureBento base={BASE} />
+    <FeaturesSectionWithHoverEffects base={BASE} />
   </section>
 
   <div class="wp-restante" set:html={entreServiciosYNosotros} />
@@ -134,7 +134,7 @@ const clientes = [
         </a>
       </div>
     </div>
-    <CumplimientoBento client:visible />
+    <FeatureBento client:visible />
   </section>
 
   <!-- Cierre de la sección: franja completa con la palabra de fondo -->
