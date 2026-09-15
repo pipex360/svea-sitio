@@ -45,15 +45,15 @@ const CON_SVEA = [
   'Gestión completa ante la autoridad: desde el informe hasta la aprobación final',
 ] as const;
 
-const CIFRAS: { value: string; label: string; verde?: boolean }[] = [
+const CIFRAS = [
   { value: '24 hrs', label: 'para tu cotización' },
   { value: '5-10 días', label: 'hábiles el informe técnico' },
-  { value: '100%', label: 'de aprobación en trámites realizados', verde: true },
-];
+  { value: '100%', label: 'de aprobación en trámites realizados' },
+] as const;
 
 export function Comparison03({ base = '' }: { base?: string }) {
   return (
-    <section className="bg-white py-20 sm:py-28" aria-labelledby="titulo-diferencia">
+    <section className="py-20 sm:py-28" aria-labelledby="titulo-diferencia">
       <div className="mx-auto w-full max-w-5xl px-6">
         <div className="max-w-2xl">
           <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-black/50">
@@ -63,7 +63,7 @@ export function Comparison03({ base = '' }: { base?: string }) {
             id="titulo-diferencia"
             className="mt-3 text-3xl font-medium tracking-tight text-black sm:text-4xl"
           >
-            Cotización Automática y <span className="font-black text-svea">Seguimiento Digital</span>
+            Cotización Automática y <span className="font-black">Seguimiento Digital</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-black/70">
             Somos la única consultora ambiental en Chile con cotización automática en menos de 24
@@ -92,15 +92,15 @@ export function Comparison03({ base = '' }: { base?: string }) {
 
           <div className="bg-black/[0.02] p-7 sm:p-8">
             <div className="flex items-center gap-2">
-              <CircleCheck aria-hidden className="size-4 text-svea" />
-              <h3 className="font-mono text-[10px] uppercase tracking-[0.12em] text-svea">
+              <CircleCheck aria-hidden className="size-4 text-black" />
+              <h3 className="font-mono text-[10px] uppercase tracking-[0.12em] text-black">
                 Con SVEA Consultores
               </h3>
             </div>
             <ul className="mt-6 flex flex-col gap-4">
               {CON_SVEA.map((item) => (
                 <li key={item} className="flex gap-3 text-sm text-black">
-                  <Check aria-hidden className="mt-0.5 size-4 shrink-0 text-svea" />
+                  <Check aria-hidden className="mt-0.5 size-4 shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -113,11 +113,7 @@ export function Comparison03({ base = '' }: { base?: string }) {
             {CIFRAS.map((cifra) => (
               <div key={cifra.value} className="flex items-baseline gap-2">
                 <dt className="text-xs text-black/55">{cifra.label}</dt>
-                <dd
-                  className={`order-first font-mono text-sm font-semibold tracking-tight ${
-                    cifra.verde ? 'text-svea' : 'text-black'
-                  }`}
-                >
+                <dd className="order-first font-mono text-sm font-semibold tracking-tight text-black">
                   {cifra.value}
                 </dd>
               </div>
