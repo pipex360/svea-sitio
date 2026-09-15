@@ -53,7 +53,7 @@ const CIFRAS = [
 
 export function Comparison03({ base = '' }: { base?: string }) {
   return (
-    <section className="py-20 sm:py-28" aria-labelledby="titulo-diferencia">
+    <section className="bg-white py-20 sm:py-28" aria-labelledby="titulo-diferencia">
       <div className="mx-auto w-full max-w-5xl px-6">
         <div className="max-w-2xl">
           <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-black/50">

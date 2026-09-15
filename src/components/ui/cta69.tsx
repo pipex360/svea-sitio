@@ -56,7 +56,7 @@ export function Cta69({ badge, heading, button, labels = {}, className }: Cta69P
   const linea = frase ? `${frase} · `.repeat(REPETICIONES) : '';
 
   return (
-    <section className={cn('relative w-full overflow-hidden py-16 md:py-24', className)}>
+    <section className={cn('relative w-full overflow-hidden bg-white py-16 md:py-24', className)}>
       {frase && (
         <div
           aria-hidden="true"

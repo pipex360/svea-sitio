@@ -26,16 +26,6 @@
   --color-popover: #ffffff;
   --color-popover-foreground: #161b22;
 
-  /* Los dos verdes de SVEA.
-     «svea» es el verde del logo, medido sobre el archivo: un verde
-     bosque. Sobre blanco da 5,43 de contraste, así que sirve para texto
-     y para marcas finas.
-     «svea-claro» es el verde que usaba el WordPress. Sobre blanco da
-     2,30 —por eso el copete «SOLUCIONES INTEGRALES» se veía lavado— y
-     sobre negro da 9,14. Va sólo sobre fondos oscuros. */
-  --color-svea: #0e7a3c;
-  --color-svea-claro: #6bbf3b;
-
   /* el verde de la marca manda en lo primario */
   --color-primary: #677c77;
   --color-primary-foreground: #ffffff;
