@@ -20,8 +20,9 @@
  * 5. El avance automático se detiene cuando la sección no está en pantalla.
  * 6. Las pestañas llevan `aria-current` y la lista se anuncia como tal.
  *
- * Las fotos son provisionales, a la espera de las de SVEA. Cambiarlas es
- * editar la línea `foto` de cada paso.
+ * Las fotos son las que entregó SVEA, una por paso, convertidas a WebP de
+ * 1600 px: los originales pesaban 3,2 MB cada uno y quedaron entre 88 y
+ * 130 KB. La del paso activo carga de inmediato; las otras cuatro esperan.
  */
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -30,43 +31,41 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
-const WP = 'https://sveaconsultores.cl/wp-content/uploads';
-
 const PASOS = [
   {
     id: '01',
     title: 'Cotización',
     description: 'Recibe tu cotización en menos de 24 horas',
-    foto: `${WP}/2025/03/group-of-business-advisor-showing-plan-of-investment-to-clients-in-the-consultancy-office.jpg`,
-    alt: 'Equipo de SVEA preparando una propuesta',
+    foto: '/img/proceso/01-cotizacion.webp',
+    alt: 'Profesional recibiendo la cotización por correo en su computador',
   },
   {
     id: '02',
     title: 'Diagnóstico',
     description: 'Evaluamos tu caso y requerimientos específicos',
-    foto: `${WP}/2025/03/chemical-plant.jpg`,
-    alt: 'Planta industrial en evaluación',
+    foto: '/img/proceso/02-diagnostico.webp',
+    alt: 'Dos profesionales de SVEA revisando los planos y requisitos de un proyecto',
   },
   {
     id: '03',
     title: 'Desarrollo',
     description: 'Elaboramos la documentación técnica en 5-10 días hábiles',
-    foto: `${WP}/2025/03/warehouse-products-storage.jpg`,
-    alt: 'Bodega con productos almacenados',
+    foto: '/img/proceso/03-desarrollo.webp',
+    alt: 'Profesional de SVEA elaborando la documentación técnica sobre los planos',
   },
   {
     id: '04',
     title: 'Gestión',
     description: 'Tramitamos ante la autoridad competente',
-    foto: `${WP}/2025/03/warehousing-engineering-concept-hazardous-waste-storage.jpg`,
-    alt: 'Bodega de residuos peligrosos',
+    foto: '/img/proceso/04-gestion.webp',
+    alt: 'Entrega del expediente en la ventanilla de la autoridad',
   },
   {
     id: '05',
     title: 'Entrega',
     description: 'Recibes tu documentación aprobada',
-    foto: `${WP}/2025/06/plan-emergencia-evacuacion.jpg`,
-    alt: 'Plan de emergencia y evacuación aprobado',
+    foto: '/img/proceso/05-entrega.webp',
+    alt: 'Entrega de la carpeta con la documentación aprobada al cliente',
   },
 ];
 
@@ -246,8 +245,10 @@ export function VerticalTabs({ base = '' }: { base?: string }) {
                     onClick={siguiente}
                   >
                     <img
-                      src={PASOS[activo].foto}
+                      src={`${base}${PASOS[activo].foto}`}
                       alt={PASOS[activo].alt}
+                      width={1600}
+                      height={900}
                       className="m-0 block h-full w-full p-0 object-cover transition-transform duration-700 hover:scale-105"
                     />
                     <div
@@ -256,6 +257,16 @@ export function VerticalTabs({ base = '' }: { base?: string }) {
                     />
                   </motion.div>
                 </AnimatePresence>
+
+                {/* las cuatro que no se ven se descargan igual, en silencio:
+                    así el cambio de paso no parpadea la primera vez */}
+                <div aria-hidden="true" className="hidden">
+                  {PASOS.map((p, i) =>
+                    i === activo ? null : (
+                      <img key={p.id} src={`${base}${p.foto}`} alt="" loading="lazy" />
+                    ),
+                  )}
+                </div>
 
                 <div className="absolute bottom-6 right-6 z-20 flex gap-2 md:bottom-8 md:right-8 md:gap-3">
                   <button
