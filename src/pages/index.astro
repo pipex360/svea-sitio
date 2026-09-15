@@ -17,7 +17,7 @@ import { LogoMarquee } from '../components/ui/logo-marquee';
 import { FeaturesSectionWithHoverEffects } from '../components/ui/feature-section-with-hover-effects';
 import { CumplimientoBento } from '../components/ui/bento-cumplimiento';
 import { Cta69 } from '../components/ui/cta69';
-import { HowItWorks02 } from '../components/ui/how-it-works-02';
+import { VerticalTabs } from '../components/ui/vertical-tabs';
 import { Comparison03 } from '../components/ui/comparison-03';
 import paginas from '../data/paginas.json';
 import cabezaWP from '../contenido/home-wp-cabeza.html?raw';
@@ -153,31 +153,10 @@ const clientes = [
 
   <div class="wp-restante" set:html={entreNosotrosYProceso} />
 
-  <!-- Cómo trabajamos: los cinco pasos -->
-  <section class="svea-nuevo bg-white px-6 py-20" id="proceso" aria-labelledby="titulo-proceso">
-    <div class="mx-auto mb-14 max-w-3xl text-center">
-      <p class="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]">
-        <span aria-hidden="true" class="h-px w-8 bg-border"></span>
-        Proceso simple y transparente
-        <span aria-hidden="true" class="h-px w-8 bg-border"></span>
-      </p>
-      <h2 id="titulo-proceso" class="mb-4 text-balance text-3xl font-medium tracking-tight text-black md:text-5xl">
-        ¿Cómo <span class="font-black text-svea">Trabajamos?</span>
-      </h2>
-      <p class="mx-auto max-w-2xl text-base leading-relaxed text-black/75 md:text-lg">
-        Desde la cotización hasta la resolución aprobada, gestionamos todo el proceso
-        para que tú te concentres en tu negocio.
-      </p>
-    </div>
-
-    <HowItWorks02 />
-
-    <p class="mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-black/60">
-      <span>Informe técnico listo en 5-10 días hábiles</span>
-      <span aria-hidden="true" class="text-black/25">·</span>
-      <span>Cotización en menos de 24 horas</span>
-    </p>
-  </section>
+  <!-- Cómo trabajamos: los cinco pasos, con la foto de cada uno -->
+  <div class="svea-nuevo">
+    <VerticalTabs client:visible />
+  </div>
 
   <div class="wp-restante" set:html={entreProcesoYDiferencia} />
 
