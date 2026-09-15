@@ -19,6 +19,7 @@ import { CumplimientoBento } from '../components/ui/bento-cumplimiento';
 import { Cta69 } from '../components/ui/cta69';
 import { VerticalTabs } from '../components/ui/vertical-tabs';
 import { Comparison02 } from '../components/ui/comparison-02';
+import { Testimonios } from '../components/ui/testimonios';
 import paginas from '../data/paginas.json';
 import cabezaWP from '../contenido/home-wp-cabeza.html?raw';
 import cuerpoWP from '../contenido/home-wp-cuerpo.html?raw';
@@ -163,6 +164,11 @@ const clientes = [
   <!-- Lo que nos diferencia -->
   <div class="svea-nuevo" id="diferencia">
     <Comparison02 base={BASE} />
+  </div>
+
+  <!-- Lo que dicen los clientes -->
+  <div class="svea-nuevo" id="testimonios">
+    <Testimonios />
   </div>
 
   <div class="wp-restante" set:html={despuesDiferencia} />
