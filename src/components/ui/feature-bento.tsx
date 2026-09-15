@@ -8,11 +8,9 @@
  * 1. Sus degradados de color —azules, morados, rosas— se reemplazan por dos
  *    fotos del propio sitio. Eran relleno decorativo; la foto sitúa de qué se
  *    está hablando.
- * 2. Foto sólo en una de las cinco tarjetas. Con foto en todas, las cifras
+ * 2. Foto sólo en dos de las cinco tarjetas. Con foto en todas, las cifras
  *    dejarían de leerse de un vistazo, que es justamente para lo que sirven.
- *    «Innovación Constante» lleva de fondo el Gateway Flow —líneas que
- *    convergen al centro— y las de cifras van en negro liso y en blanco con
- *    trama.
+ *    Las tres de cifras van en negro liso y en blanco con trama.
  * 3. Los textos y las cifras son los del sitio actual, palabra por palabra.
  *    Las cifras suben desde cero cuando entran en pantalla.
  * 4. Las cinco tarjetas llenan la rejilla sin huecos: la primera ocupa dos
@@ -27,10 +25,9 @@
 import { animate, useInView, useMotionValue, useReducedMotion } from 'motion/react';
 import * as React from 'react';
 
-import { GatewayFlow } from '@/components/ui/gateway-flow';
-
 const WP = 'https://sveaconsultores.cl/wp-content/uploads/2025/03';
 const FOTO_EQUIPO = `${WP}/group-of-business-advisor-showing-plan-of-investment-to-clients-in-the-consultancy-office.jpg`;
+const FOTO_LOGISTICA = `${WP}/aerial-view-of-logistic-center.jpg`;
 
 /** Cifra que sube desde cero la primera vez que se ve. */
 function Cifra({ meta, sufijo = '' }: { meta: number; sufijo?: string }) {
@@ -135,13 +132,17 @@ export function FeatureBento() {
         </div>
       </div>
 
-      {/* Innovación Constante — ancha, con las líneas convergiendo al centro */}
-      <div className="relative flex flex-col justify-end overflow-hidden rounded-3xl bg-neutral-950 p-8 text-white md:col-span-2">
-        <GatewayFlow className="absolute inset-0 h-full w-full" />
-        {/* un velo suave para que el texto no compita con las partículas */}
+      {/* Innovación Constante — ancha, con la foto de logística */}
+      <div className="group relative flex flex-col justify-end overflow-hidden rounded-3xl p-8 text-white md:col-span-2">
+        <img
+          src={FOTO_LOGISTICA}
+          alt="Centro logístico visto desde el aire"
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+        />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/70 to-transparent"
+          className="absolute inset-0 bg-gradient-to-t from-black/94 via-black/72 to-black/40"
         />
         <div className="relative z-10">
           <h3 className="text-2xl font-bold tracking-tight">Innovación Constante</h3>
