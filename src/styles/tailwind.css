@@ -36,10 +36,6 @@
   --color-svea: #0e7a3c;
   --color-svea-claro: #6bbf3b;
 
-  /* las dos pistas del muro de testimonios */
-  --animate-marquee: marquee var(--duration, 40s) infinite linear;
-  --animate-marquee-vertical: marquee-vertical var(--duration, 40s) linear infinite;
-
   /* el verde de la marca manda en lo primario */
   --color-primary: #677c77;
   --color-primary-foreground: #ffffff;
@@ -124,19 +120,4 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .cta69-cinta { animation: none; }
-}
-
-
-/* ------------------------------------------------------------------
-   Muro de testimonios: las dos pistas se desplazan su propio alto y
-   vuelven a empezar. El salto no se ve porque el contenido está
-   repetido, así que la copia siguiente queda donde estaba la anterior.
-   ------------------------------------------------------------------ */
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(calc(-100% - var(--gap))); }
-}
-@keyframes marquee-vertical {
-  from { transform: translateY(0); }
-  to   { transform: translateY(calc(-100% - var(--gap))); }
 }
