@@ -21,7 +21,10 @@
  * 2. No se aplica su bloque CSS. Redefine --background, --foreground,
  *    --primary y doce fichas más: repintaría la web entera en tonos arena.
  * 3. El titular usa la tipografía de la casa, no `font-serif`, que aquí no
- *    existe.
+ *    existe, y va a la misma escala que los demás titulares de la portada
+ *    (text-3xl / md:text-5xl, copete arriba y bajada de md:text-lg). El del
+ *    original se quedaba en sm:text-4xl y esta sección se leía un punto más
+ *    chica que las de al lado.
  * 4. La columna destacada va en el verde del logo, no en el color primario
  *    del tema.
  * 5. Los envoltorios de cada celda llevan `relative`. Los <span class="sr-only">
@@ -98,7 +101,7 @@ export function Comparison02({ base = '' }: { base?: string }) {
   return (
     <section className="bg-white py-20 sm:py-28" aria-labelledby="titulo-diferencia">
       <div className="mx-auto w-full max-w-5xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
           <p className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]">
             <span aria-hidden="true" className="h-px w-8 bg-border" />
             Lo que nos diferencia
@@ -106,18 +109,18 @@ export function Comparison02({ base = '' }: { base?: string }) {
           </p>
           <h2
             id="titulo-diferencia"
-            className="text-balance text-3xl font-medium tracking-tight text-black sm:text-4xl"
+            className="mb-4 text-balance text-3xl font-medium tracking-tight text-black md:text-5xl"
           >
             Cotización Automática y <span className="font-black text-svea">Seguimiento Digital</span>
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-black/70">
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-black/75 md:text-lg">
             Somos la única consultora ambiental en Chile con cotización automática en menos de 24
             horas y seguimiento digital de tu trámite. Sin llamadas de seguimiento, sin
             incertidumbre.
           </p>
         </div>
 
-        <div className="mt-12 overflow-x-auto">
+        <div className="overflow-x-auto">
           <table className="w-full min-w-[42rem] border-collapse text-start">
             <caption className="sr-only">
               Comparación entre hacer el trámite por cuenta propia, con otra consultora o con SVEA
