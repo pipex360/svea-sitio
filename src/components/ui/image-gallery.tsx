@@ -15,7 +15,14 @@
  * 4. En el teléfono no hay cursor, así que la fila se convierte en columna y
  *    los seis paneles se muestran abiertos.
  * 5. Los títulos cerrados van en vertical: con seis paneles, cada uno mide
- *    unos doscientos píxeles en reposo y un título horizontal no cabría.
+ *    unos doscientos píxeles en reposo y un título horizontal no cabría. Ahí
+ *    va una etiqueta corta, no el nombre completo: «Planes de Emergencia y
+ *    Evacuación para Condominios» en vertical mide más que el panel de alto.
+ *    El nombre completo sigue en el <h3>, que es el que leen Google y los
+ *    lectores de pantalla; la etiqueta vertical va marcada como decorativa.
+ * 6. El panel cerrado se oscurece. Cerrado, la foto es decoración y el nombre
+ *    es el mensaje, así que el nombre manda; al abrirse el velo se retira y
+ *    la foto recupera su sitio.
  *
  * Cada foto es la que encabeza la página de ese servicio en el sitio actual,
  * así que el panel y la página a la que lleva enseñan lo mismo: quien pincha
@@ -27,6 +34,7 @@ const WP = 'https://sveaconsultores.cl/wp-content/uploads';
 const SERVICIOS = [
   {
     titulo: 'Calificación Técnica Industrial',
+    etiqueta: 'Calificación Técnica',
     descripcion:
       'Aseguramos que cumplas los estándares técnicos y normativos de la SEREMI de Salud, facilitando la obtención de tu patente municipal.',
     href: '/calificacion-tecnica-industrial/',
@@ -35,6 +43,7 @@ const SERVICIOS = [
   },
   {
     titulo: 'Estudio de Carga de Combustible',
+    etiqueta: 'Carga de Combustible',
     descripcion:
       'Evaluamos el riesgo de incendio en instalaciones comerciales e industriales, calculando la carga de combustible según materiales.',
     href: '/estudio-de-carga-de-combustible/',
@@ -43,6 +52,7 @@ const SERVICIOS = [
   },
   {
     titulo: 'Manejo de Sustancias y Residuos Peligrosos',
+    etiqueta: 'Residuos Peligrosos',
     descripcion:
       'Garantizamos la seguridad, legalidad y sostenibilidad en el manejo de sustancias peligrosas, minimizando riesgos operativos.',
     href: '/manejo-de-residuos-peligrosos/',
@@ -51,6 +61,7 @@ const SERVICIOS = [
   },
   {
     titulo: 'Planes de Emergencia y Evacuación Industrial',
+    etiqueta: 'Emergencia Industrial',
     descripcion:
       'Desarrollamos planes personalizados que aseguran la protección de personas y la continuidad ante situaciones de riesgo.',
     href: '/planes-de-emergencia-y-evacuacion/',
@@ -59,6 +70,7 @@ const SERVICIOS = [
   },
   {
     titulo: 'Autorización Transporte de Residuos',
+    etiqueta: 'Transporte de Residuos',
     descripcion:
       'Gestionamos la autorización para el transporte seguro de residuos peligrosos y no peligrosos, cumpliendo las normativas.',
     href: '/autorizacion-de-transporte-de-residuos/',
@@ -67,6 +79,7 @@ const SERVICIOS = [
   },
   {
     titulo: 'Planes de Emergencia y Evacuación para Condominios',
+    etiqueta: 'Emergencia Condominios',
     descripcion:
       'Diseñamos planes a medida con protocolos claros para actuar con rapidez, resguardando la vida de los residentes.',
     href: '/planes-de-emergencia-y-evacuacion-condominios/',
@@ -97,13 +110,25 @@ export function GaleriaServicios({ base = '' }: { base?: string }) {
             aria-hidden="true"
             className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/65 to-black/20 md:via-black/50 md:to-black/10"
           />
+          {/* oscurece el panel cerrado para que el nombre se lea sobre
+              cualquier foto; se retira al abrirlo */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 hidden bg-black/45 transition-opacity duration-500 md:block md:group-hover:opacity-0"
+          />
 
-          {/* cerrado: sólo el nombre, en vertical */}
+          {/* cerrado: el número arriba y el nombre en vertical */}
           <span
             aria-hidden="true"
-            className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 [writing-mode:vertical-rl] rotate-180 text-sm font-semibold tracking-tight text-white transition-opacity duration-300 md:block md:group-hover:opacity-0"
+            className="absolute inset-x-0 top-6 hidden text-center font-mono text-xs font-semibold text-white/70 transition-opacity duration-300 md:block md:group-hover:opacity-0"
           >
-            {s.titulo}
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          <span
+            aria-hidden="true"
+            className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 [writing-mode:vertical-rl] rotate-180 text-[17px] font-bold uppercase tracking-[0.06em] text-white [text-shadow:0_2px_10px_rgba(0,0,0,.7)] transition-opacity duration-300 md:block md:group-hover:opacity-0"
+          >
+            {s.etiqueta}
           </span>
 
           {/* abierto: el nombre, la descripción y la llamada */}
