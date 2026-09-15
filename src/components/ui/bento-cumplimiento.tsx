@@ -74,12 +74,33 @@ const marco = cn(
   'motion-reduce:transition-[box-shadow,border-color] motion-reduce:hover:translate-y-0',
 );
 
-/** Compromiso y Garantía: la columna alta de la izquierda. */
+/**
+ * Compromiso y Garantía: la columna alta de la izquierda, y la única tarjeta
+ * con color de la sección.
+ *
+ * Las cinco tarjetas pesaban igual y la sección se veía apagada: faltaba una
+ * que anclara. Ésta lleva una malla de verdes bosque —la paleta del Static
+ * Mesh Gradient de paper-design, hecha con tres degradados radiales en CSS
+ * en vez de su shader WebGL— y los vistos en verde menta. Las cifras de al
+ * lado siguen en blanco y negro: la tarjeta las enmarca, no compite.
+ *
+ * El fondo va como clase utilitaria (`bg-[#081c15]`) y no en línea: el marco
+ * trae `bg-white` con !important, y un estilo en línea pierde contra eso.
+ */
 const Compromiso = () => (
-  <Card className={cn(marco, 'flex flex-col')}>
-    <CardContent className="flex h-full flex-col p-8">
-      <h3 className="mb-3 text-xl font-bold tracking-tight text-black">Compromiso y Garantía</h3>
-      <p className="text-sm leading-relaxed text-black/70">
+  <Card
+    className={cn(marco, 'relative flex flex-col overflow-hidden border-[#0b3d25] bg-[#081c15] hover:border-[#1f5c3d]')}
+    style={{
+      backgroundImage: `
+        radial-gradient(ellipse 70% 55% at 15% 10%, rgba(45,106,79,.85) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 95% 85%, rgba(149,213,178,.35) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 70% 30%, rgba(255,243,176,.12) 0%, transparent 60%)
+      `,
+    }}
+  >
+    <CardContent className="relative z-10 flex h-full flex-col p-8">
+      <h3 className="mb-3 text-xl font-bold tracking-tight text-white">Compromiso y Garantía</h3>
+      <p className="text-sm leading-relaxed text-white/80">
         Nos especializamos en la satisfacción del cliente. No solo entregamos documentos;
         aseguramos la viabilidad y el cumplimiento normativo de su proyecto industrial.
       </p>
@@ -88,9 +109,20 @@ const Compromiso = () => (
           (item) => (
             <li
               key={item}
-              className="flex items-center gap-2.5 rounded-lg border border-border bg-black/[0.02] px-3 py-2.5 text-sm font-medium text-black transition-colors duration-200 hover:border-black/25 hover:bg-black/[0.05]"
+              className="flex items-center gap-2.5 rounded-lg border border-white/15 bg-white/[0.08] px-3 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-colors duration-200 hover:border-white/30 hover:bg-white/[0.14]"
             >
-              <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-black" />
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                className="h-4 w-4 shrink-0 text-[#95d5b2]"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
               {item}
             </li>
           ),
