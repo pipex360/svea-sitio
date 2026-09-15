@@ -76,29 +76,27 @@ const marco = cn(
 );
 
 /**
- * Compromiso y Garantía: la columna alta de la izquierda, y la única tarjeta
- * con color de la sección.
+ * Compromiso y Garantía: la columna alta de la izquierda.
  *
  * Las cinco tarjetas pesaban igual y la sección se veía apagada: faltaba una
- * que anclara. Ésta lleva una malla de verdes bosque —la paleta del Static
- * Mesh Gradient de paper-design, hecha con tres degradados radiales en CSS
- * en vez de su shader WebGL— y los vistos en verde menta. Las cifras de al
- * lado siguen en blanco y negro: la tarjeta las enmarca, no compite.
+ * que anclara. Ésta y «Innovación Constante» llevan el mismo degradado vivo
+ * de Velaris, con la paleta del logo, así que las dos oscuras quedan en
+ * diagonal y se leen como una familia. Las cifras de al lado siguen en
+ * blanco y negro: las enmarcan, no compiten.
  *
- * El fondo va como clase utilitaria (`bg-[#081c15]`) y no en línea: el marco
- * trae `bg-white` con !important, y un estilo en línea pierde contra eso.
+ * Va más lenta que la de Innovación. Es la tarjeta más alta y la que más
+ * texto tiene: a la misma velocidad, el movimiento detrás de cuatro líneas
+ * de párrafo distrae de leerlas.
  */
 const Compromiso = () => (
   <Card
-    className={cn(marco, 'relative flex flex-col overflow-hidden border-[#0b3d25] bg-[#081c15] hover:border-[#1f5c3d]')}
-    style={{
-      backgroundImage: `
-        radial-gradient(ellipse 70% 55% at 15% 10%, rgba(45,106,79,.85) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 95% 85%, rgba(149,213,178,.35) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 40% at 70% 30%, rgba(255,243,176,.12) 0%, transparent 60%)
-      `,
-    }}
+    className={cn(marco, 'relative flex flex-col overflow-hidden border-[#0b3d25] hover:border-[#1f5c3d]')}
   >
+    <Velaris className="absolute inset-0" height="100%" speed={1.2} />
+    <div
+      aria-hidden="true"
+      className="absolute inset-0 bg-gradient-to-t from-[#04120d]/85 via-[#04120d]/45 to-[#04120d]/25"
+    />
     <CardContent className="relative z-10 flex h-full flex-col p-8">
       <h3 className="mb-3 text-xl font-bold tracking-tight text-white">Compromiso y Garantía</h3>
       <p className="text-sm leading-relaxed text-white/80">
