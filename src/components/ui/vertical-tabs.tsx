@@ -129,26 +129,30 @@ export function VerticalTabs({ base = '' }: { base?: string }) {
   return (
     <section ref={ref} className="w-full bg-white py-8 md:py-16 lg:py-24" id="proceso" aria-labelledby="titulo-proceso">
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Izquierda: el encabezado y los cinco pasos */}
-          <div className="order-2 flex flex-col justify-center pt-4 lg:order-1 lg:col-span-5">
-            <div className="mb-12 space-y-1">
-              <p className="ml-0.5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-black/50">
-                <span aria-hidden="true" className="h-px w-8 bg-border" />
-                Proceso simple y transparente
-              </p>
-              <h2
-                id="titulo-proceso"
-                className="text-balance text-3xl font-medium tracking-tighter text-black md:text-4xl lg:text-5xl"
-              >
-                ¿Cómo <span className="font-black text-svea">Trabajamos?</span>
-              </h2>
-              <p className="max-w-md pt-3 text-sm leading-relaxed text-black/70 md:text-base">
-                Desde la cotización hasta la resolución aprobada, gestionamos todo el proceso para
-                que tú te concentres en tu negocio.
-              </p>
-            </div>
+        {/* El encabezado va centrado y sobre las dos columnas, como en el resto
+            de la home. El original lo mete en la columna izquierda, encima de
+            las pestañas: aquí sería la única sección con el titular a un lado. */}
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <p className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]">
+            <span aria-hidden="true" className="h-px w-8 bg-border" />
+            Proceso simple y transparente
+            <span aria-hidden="true" className="h-px w-8 bg-border" />
+          </p>
+          <h2
+            id="titulo-proceso"
+            className="mb-4 text-balance text-3xl font-medium tracking-tight text-black md:text-5xl"
+          >
+            ¿Cómo <span className="font-black text-svea">Trabajamos?</span>
+          </h2>
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-black/75 md:text-lg">
+            Desde la cotización hasta la resolución aprobada, gestionamos todo el proceso para que
+            tú te concentres en tu negocio.
+          </p>
+        </div>
 
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
+          {/* Izquierda: los cinco pasos */}
+          <div className="order-2 flex flex-col justify-center lg:order-1 lg:col-span-5">
             <ol className="flex flex-col space-y-0">
               {PASOS.map((paso, i) => {
                 const esActivo = activo === i;
@@ -213,13 +217,6 @@ export function VerticalTabs({ base = '' }: { base?: string }) {
               })}
             </ol>
 
-            <p className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-black/60">
-              <span>Informe técnico listo en 5-10 días hábiles</span>
-              <span aria-hidden="true" className="text-black/25">
-                ·
-              </span>
-              <span>Cotización en menos de 24 horas</span>
-            </p>
           </div>
 
           {/* Derecha: la foto del paso */}
@@ -288,6 +285,16 @@ export function VerticalTabs({ base = '' }: { base?: string }) {
             </div>
           </div>
         </div>
+
+        {/* las dos promesas van centradas bajo las dos columnas: pegadas a la
+            izquierda quedaban huérfanas al fondo de la lista */}
+        <p className="mt-14 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-black/60">
+          <span>Informe técnico listo en 5-10 días hábiles</span>
+          <span aria-hidden="true" className="text-black/25">
+            ·
+          </span>
+          <span>Cotización en menos de 24 horas</span>
+        </p>
       </div>
     </section>
   );
