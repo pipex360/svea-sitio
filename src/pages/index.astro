@@ -17,7 +17,7 @@ import { LogoMarquee } from '../components/ui/logo-marquee';
 import { FeaturesSectionWithHoverEffects } from '../components/ui/feature-section-with-hover-effects';
 import { CumplimientoBento } from '../components/ui/bento-cumplimiento';
 import { Cta69 } from '../components/ui/cta69';
-import { VerticalTabs } from '../components/ui/vertical-tabs';
+import { Proceso } from '../components/ui/proceso';
 import { Comparison02 } from '../components/ui/comparison-02';
 import paginas from '../data/paginas.json';
 import cabezaWP from '../contenido/home-wp-cabeza.html?raw';
@@ -153,9 +153,9 @@ const clientes = [
 
   <div class="wp-restante" set:html={entreNosotrosYProceso} />
 
-  <!-- Cómo trabajamos: los cinco pasos, con la foto de cada uno -->
+  <!-- Cómo trabajamos: esquema de nodos y los cinco pasos -->
   <div class="svea-nuevo">
-    <VerticalTabs base={BASE} client:visible />
+    <Proceso base={BASE} client:visible />
   </div>
 
   <div class="wp-restante" set:html={entreProcesoYDiferencia} />
