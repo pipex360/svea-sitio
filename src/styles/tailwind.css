@@ -183,3 +183,7 @@ button.btn-flecha { border: 0; cursor: pointer; font-family: inherit; }
 
 /* Chico, para las barras: el mismo del hero en su cabecera. */
 .btn-flecha.chica { padding: 0 24px; height: 40px; font-size: 15px; white-space: nowrap; }
+@media (max-width: 820px) {
+  /* 44 px: alto mínimo para el dedo */
+  .btn-flecha.chica { padding: 0 18px; height: 44px; font-size: 14px; }
+}

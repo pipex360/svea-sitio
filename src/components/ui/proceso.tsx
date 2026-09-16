@@ -79,7 +79,7 @@ export function Proceso({ base = '' }: { base?: string }) {
                 >
                   <Icono className="size-4" />
                 </span>
-                <span className="font-mono text-[11px] font-semibold text-black/40 transition-colors duration-200 group-hover/paso:text-svea">
+                <span className="font-mono text-xs font-semibold text-black/40 transition-colors duration-200 group-hover/paso:text-svea">
                   {paso.numero}
                 </span>
               </div>

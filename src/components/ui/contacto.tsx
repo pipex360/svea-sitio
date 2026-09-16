@@ -28,10 +28,11 @@
  * del original en cada corrida: si algo de la lista roja cambia, no pasa.
  */
 
-import { ClockIcon, MailIcon, MessageCircleIcon } from 'lucide-react';
+import { ClockIcon, MailIcon } from 'lucide-react';
 import { useRef } from 'react';
 
 import { ContactCard } from '@/components/ui/contact-card';
+import { IconoWhatsApp } from '@/components/ui/icono-whatsapp';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Reveal } from '@/components/ui/reveal';
@@ -84,7 +85,7 @@ export function Contacto({ copia = false }: { copia?: boolean }) {
           titleId="titulo-contacto"
           description="Da el siguiente paso en tu proyecto. Envíanos tus datos y nos comunicaremos contigo en menos de 24 horas con tu cotización personalizada."
           contactInfo={[
-            { icon: MessageCircleIcon, label: 'WhatsApp directo', value: '+56 9 2994 7924', href: WHATSAPP, externo: true },
+            { icon: IconoWhatsApp, label: 'WhatsApp directo', value: '+56 9 2994 7924', href: WHATSAPP, externo: true },
             { icon: MailIcon, label: 'Correo', value: CORREO, href: `mailto:${CORREO}` },
             { icon: ClockIcon, label: 'Respuesta', value: 'Cotización en menos de 24 horas' },
           ]}

@@ -116,12 +116,12 @@ export function Footer2({
             <address className="mt-6 space-y-1.5 text-sm not-italic text-white/65">
               <p>{contacto.direccion}</p>
               <p>
-                <a href={`tel:${contacto.telefono}`} className="no-underline transition-colors hover:text-white">
+                <a href={`tel:${contacto.telefono}`} className="inline-block py-1.5 no-underline transition-colors hover:text-white">
                   {contacto.telefono}
                 </a>
               </p>
               <p>
-                <a href={`mailto:${contacto.correo}`} className="no-underline transition-colors hover:text-white">
+                <a href={`mailto:${contacto.correo}`} className="inline-block py-1.5 no-underline transition-colors hover:text-white">
                   {contacto.correo}
                 </a>
               </p>
@@ -131,10 +131,11 @@ export function Footer2({
           {menuItems.map((section) => (
             <div key={section.title} className={section.span === 2 ? 'col-span-2' : undefined}>
               <h3 className="mb-4 text-base font-bold text-white">{section.title}</h3>
-              <ul className="space-y-3 text-sm text-white/65">
+              <ul className="space-y-0.5 text-sm text-white/65">
                 {section.links.map((link) => (
                   <li key={link.text} className="font-medium">
-                    <a href={link.url} className="no-underline transition-colors hover:text-white">
+                    {/* py-2.5: cada enlace mide 37 px de alto, para el dedo */}
+                    <a href={link.url} className="inline-block py-2.5 no-underline transition-colors hover:text-white">
                       {link.text}
                     </a>
                   </li>
@@ -150,7 +151,7 @@ export function Footer2({
           <ul className="flex gap-4">
             {bottomLinks.map((link) => (
               <li key={link.text} className="underline underline-offset-4 transition-colors hover:text-white">
-                <a href={link.url}>{link.text}</a>
+                <a href={link.url} className="inline-block py-2.5">{link.text}</a>
               </li>
             ))}
           </ul>

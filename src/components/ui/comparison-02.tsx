@@ -33,6 +33,12 @@
  *    queda fuera de la caja que recorta: no los alcanza el recorte, se plantan
  *    a seiscientos píxeles y estiran la página. En el teléfono desbordaba
  *    183 px. Con `relative` en el envoltorio, el recorte los alcanza.
+ * 6. En el teléfono la tabla no se desplaza de lado: cada fila es una tarjeta
+ *    con su título y tres líneas «columna · valor», con SVEA en verde. Es la
+ *    misma tabla —mismo HTML, mismos <th> y <td>—, sólo cambia cómo se pinta
+ *    bajo `md`; el nombre de cada columna sale de `data-label`. Una tabla de
+ *    672 px en una pantalla de 390 dejaba la columna de SVEA fuera de la
+ *    vista, que es justo la que importa.
  *
  * Se hidrata (`client:idle`) por dos cosas que sí necesitan JavaScript: el
  * revelado al bajar y la frase del encabezado, que se va leyendo con el
@@ -125,14 +131,14 @@ export function Comparison02({ base = '' }: { base?: string }) {
         </Reveal>
 
         <Reveal className="overflow-x-auto">
-          <table className="w-full min-w-[42rem] border-collapse text-start">
+          <table className="w-full min-w-[42rem] border-collapse text-start max-md:block max-md:min-w-0">
             <caption className="sr-only">
               Comparación entre hacer el trámite por cuenta propia, con otra consultora o con SVEA
             </caption>
-            <thead>
+            <thead className="max-md:hidden">
               <tr>
                 <th scope="col" className="w-1/3 p-4 text-start align-bottom">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-black/50">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-black/50">
                     Cómo lo resuelves
                   </span>
                 </th>
@@ -160,18 +166,29 @@ export function Comparison02({ base = '' }: { base?: string }) {
                 ))}
               </tr>
             </thead>
-            <tbody>
+            <tbody className="max-md:block">
               {FILAS.map((fila) => (
-                <tr key={fila.label} className="border-t border-border">
-                  <th scope="row" className="p-4 text-start text-sm font-normal text-black">
+                <tr
+                  key={fila.label}
+                  className="border-t border-border max-md:mb-3 max-md:block max-md:rounded-xl max-md:border max-md:bg-white max-md:p-4"
+                >
+                  <th
+                    scope="row"
+                    className="p-4 text-start text-sm font-normal text-black max-md:block max-md:p-0 max-md:pb-2 max-md:font-semibold"
+                  >
                     {fila.label}
                   </th>
                   {fila.cells.map((celda, i) => (
                     <td
                       key={COLUMNAS[i].name}
+                      data-label={COLUMNAS[i].name}
                       className={cn(
                         'p-4 align-middle',
-                        COLUMNAS[i].featured && 'border-x border-svea/30 bg-svea/[0.04]',
+                        // en el teléfono cada celda es una línea «columna · valor»
+                        'max-md:flex max-md:items-center max-md:justify-between max-md:gap-3 max-md:border-t max-md:border-border max-md:px-0 max-md:py-2',
+                        'max-md:before:text-xs max-md:before:text-black/55 max-md:before:content-[attr(data-label)]',
+                        COLUMNAS[i].featured &&
+                          'border-x border-svea/30 bg-svea/[0.04] max-md:-mx-1 max-md:rounded-md max-md:border-x-0 max-md:px-1 max-md:before:font-semibold max-md:before:text-svea',
                       )}
                     >
                       <span className="relative flex items-center">
@@ -181,15 +198,16 @@ export function Comparison02({ base = '' }: { base?: string }) {
                   ))}
                 </tr>
               ))}
-              <tr className="border-t border-border">
-                <td />
+              <tr className="border-t border-border max-md:block max-md:border-0">
+                <td className="max-md:hidden" />
                 {COLUMNAS.map((columna) => (
                   <td
                     key={columna.name}
                     className={cn(
-                      'p-4',
+                      'p-4 max-md:block max-md:p-0',
+                      !columna.featured && 'max-md:hidden',
                       columna.featured &&
-                        'rounded-b-md border-x border-b border-svea/30 bg-svea/[0.04]',
+                        'rounded-b-md border-x border-b border-svea/30 bg-svea/[0.04] max-md:rounded-none max-md:border-0 max-md:bg-transparent max-md:pt-1',
                     )}
                   >
                     {columna.featured && (
