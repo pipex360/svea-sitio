@@ -115,11 +115,15 @@ if (existsSync('mejoras/img')) {
 const CAJA_NOSOTROS = '<div class="max-w-6xl mx-auto relative">';
 const CAJA_PROCESO = '<div class="mb-20">';
 
-/** Devuelve [inicio, fin) del <div> que abre en la primera coincidencia. */
+/**
+ * Devuelve [inicio, fin) del bloque que abre en la primera coincidencia.
+ * Cuenta <div> y <section> juntos: Elementor anida unos dentro de otros y
+ * el bloque cierra donde la cuenta vuelve a cero.
+ */
 function recortaDiv(html, marca) {
   const i = html.search(marca);
   if (i < 0) return null;
-  const re = /<div\b|<\/div>/gi;
+  const re = /<(?:div|section)\b|<\/(?:div|section)>/gi;
   re.lastIndex = i;
   let prof = 0;
   let m;
@@ -229,6 +233,13 @@ if (dentro.replace(/<!--SVEA:[A-Z]+-->/g, '').replace(/<div[^>]*><\/div>|<\/?div
   throw new Error('la caja «nosotros-section» tiene contenido que no se esperaba; revisar antes de cortarla');
 }
 cuerpo = cuerpo.slice(0, caja[0]) + MARCAS.join('') + cuerpo.slice(caja[1]);
+
+// El pie de página: la <section> de Elementor 7d7a6236, que cierra donde
+// corresponde. Queda la marca; el botón de WhatsApp y los scripts del tema
+// que vienen después siguen donde estaban.
+const pie = recortaDiv(cuerpo, /<section class="elementor-section elementor-top-section elementor-element elementor-element-7d7a6236/);
+if (!pie) throw new Error('no se encontró el pie de página en la home');
+cuerpo = cuerpo.slice(0, pie[0]) + '<!--SVEA:PIE-->' + cuerpo.slice(pie[1]);
 
 mkdirSync('src/contenido', { recursive: true });
 writeFileSync('src/contenido/home-wp-cabeza.html',
