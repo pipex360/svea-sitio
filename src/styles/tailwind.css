@@ -176,3 +176,7 @@
 .btn-flecha.inversa .circulo { background: #000; }
 .btn-flecha.inversa .circulo,
 .btn-flecha.inversa .circulo svg { color: #fff !important; }
+
+/* Como <button> (el envío del formulario) y a todo el ancho. */
+button.btn-flecha { border: 0; cursor: pointer; font-family: inherit; }
+.btn-flecha.ancha { width: 100%; justify-content: space-between; }

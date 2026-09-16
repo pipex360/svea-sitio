@@ -20,6 +20,7 @@ import { Cta69 } from '../components/ui/cta69';
 import { Proceso } from '../components/ui/proceso';
 import { Comparison02 } from '../components/ui/comparison-02';
 import { Reveal } from '../components/ui/reveal';
+import { Contacto } from '../components/ui/contacto';
 import paginas from '../data/paginas.json';
 import cabezaWP from '../contenido/home-wp-cabeza.html?raw';
 import cuerpoWP from '../contenido/home-wp-cuerpo.html?raw';
@@ -33,7 +34,13 @@ const [antesLogos, restoTrasLogos] = cuerpoWP.split('<!--SVEA:LOGOS-->');
 const [entreLogosYServicios, restoTrasServicios] = restoTrasLogos.split('<!--SVEA:SERVICIOS-->');
 const [entreServiciosYNosotros, restoTrasNosotros] = restoTrasServicios.split('<!--SVEA:NOSOTROS-->');
 const [entreNosotrosYProceso, restoTrasProceso] = restoTrasNosotros.split('<!--SVEA:PROCESO-->');
-const [entreProcesoYDiferencia, despuesDiferencia] = restoTrasProceso.split('<!--SVEA:DIFERENCIA-->');
+const [entreProcesoYDiferencia, restoTrasDiferencia] = restoTrasProceso.split('<!--SVEA:DIFERENCIA-->');
+const [entreDiferenciaYContacto, despuesContacto] = restoTrasDiferencia.split('<!--SVEA:CONTACTO-->');
+
+// Mientras esto sea la copia de trabajo, el formulario no envía (igual que
+// hace el generador con los del WordPress). El día del cambio se construye
+// con SVEA_PRODUCCION=1, junto con el resto de guardas del generador.
+const COPIA = !import.meta.env.SVEA_PRODUCCION;
 
 // Los 12 clientes del carrusel original, recortados y servidos desde el
 // repositorio. La proporción equilibra el tamaño de cada uno.
@@ -170,7 +177,14 @@ const clientes = [
     <Comparison02 base={BASE} client:idle />
   </div>
 
-  <div class="wp-restante" set:html={despuesDiferencia} />
+  <div class="wp-restante" set:html={entreDiferenciaYContacto} />
+
+  <!-- Contáctanos y el formulario (lista roja: ver contacto.tsx) -->
+  <div class="svea-nuevo">
+    <Contacto copia={COPIA} client:load />
+  </div>
+
+  <div class="wp-restante" set:html={despuesContacto} />
 
   <div class="aviso-copia">
     COPIA DE TRABAJO · sin medición y con los formularios desactivados ·

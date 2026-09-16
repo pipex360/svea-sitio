@@ -57,6 +57,36 @@ if (!existsSync(robots) || !readFileSync(robots, 'utf8').includes('Disallow: /')
 else checks++;
 
 console.log(`\n${esperadas.length} páginas · ${checks} comprobaciones`);
+// 5. LISTA ROJA del formulario de la portada: lo que lee Web3Forms y el flujo
+// de n8n tiene que ser idéntico al del WordPress. Se compara la huella del
+// <form id="form-home"> construido con la del original: campos ocultos con
+// su valor, campos visibles con name/type/required, y las opciones del
+// select en su orden. La ropa (clases, etiquetas) no entra en la huella.
+function huellaFormulario(html) {
+  const m = html.match(/<form\b[^>]*id="form-home"[^>]*>([\s\S]*?)<\/form>/);
+  if (!m) return null;
+  const cuerpo = m[1];
+  const attr = (tag, n) => (tag.match(new RegExp(`\\s${n}="([^"]*)"`)) || [])[1];
+  const tiene = (tag, n) => new RegExp(`\\s${n}(?:=""|(?=[\\s>/]))`).test(tag);
+  const ocultos = {};
+  const visibles = [];
+  for (const tag of cuerpo.match(/<(?:input|select|textarea)\b[^>]*>/g) || []) {
+    const name = attr(tag, 'name');
+    if (!name) continue;
+    const type = tag.startsWith('<select') ? 'select' : tag.startsWith('<textarea') ? 'textarea' : attr(tag, 'type') || 'text';
+    if (type === 'hidden') ocultos[name] = attr(tag, 'value');
+    else if (name === 'botcheck') ocultos.botcheck = type;
+    else visibles.push(`${name}:${type}:${tiene(tag, 'required') ? 'req' : 'opt'}`);
+  }
+  const opciones = (cuerpo.match(/<option\b[^>]*value="([^"]*)"/g) || []).map((o) => attr(o, 'value'));
+  return JSON.stringify({ ocultos, visibles, opciones });
+}
+const original = huellaFormulario(readFileSync('originales-wp/home.html', 'utf8'));
+const construido = huellaFormulario(readFileSync(path.join(DIST, 'index.html'), 'utf8'));
+if (!original || !construido) fallos.push('/  ✗ no se encontró el form-home (original o construido)');
+else if (original !== construido) fallos.push(`/  ✗ la lista roja del formulario cambió\n     original:   ${original}\n     construido: ${construido}`);
+else checks++;
+
 if (fallos.length) {
   console.log(`\nFALLA — ${fallos.length} problemas:`);
   for (const f of fallos) console.log('  ', f);

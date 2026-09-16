@@ -179,7 +179,7 @@ cuerpo = cuerpo.replace(
 // caja que «¿Cómo Trabajamos?» y las secciones que siguen. Así que se recorta
 // el tramo que va desde la apertura de esa caja hasta donde empieza «¿Cómo
 // Trabajamos?», y en su lugar queda la marca. Las dos cajas que envuelven
-// se corren más abajo, después de la última marca (ver al final).
+// se cortan al final, cuando ya no queda nada dentro.
 const tramo = recortaNosotros(cuerpo);
 if (!tramo) throw new Error('no se encontró el tramo de «nosotros-section» en la home');
 cuerpo = cuerpo.slice(0, tramo[0]) + '<!--SVEA:NOSOTROS-->' + cuerpo.slice(tramo[1]);
@@ -196,22 +196,39 @@ const diferencia = recortaDiv(cuerpo, /<div class="mb-20 scroll-reveal">/);
 if (!diferencia) throw new Error('no se encontró el bloque de «Lo que nos diferencia» en la home');
 cuerpo = cuerpo.slice(0, diferencia[0]) + '<!--SVEA:DIFERENCIA-->' + cuerpo.slice(diferencia[1]);
 
-// Las tres marcas quedaron dentro de las dos cajas que abren la cuarta
-// sección: <div class="nosotros-section … px-6"> y su max-w-6xl. Las secciones
-// nuevas se pintan ahí dentro y heredan ese px-6: salen 24 px más angostas
-// que la pantalla, y con un fondo de color se ven las dos tiras blancas a los
-// lados (medido: 1392 en vez de 1440). Las dos cajas se corren a después de
-// la última marca: siguen envolviendo el formulario, que es lo único del
-// WordPress que queda dentro, y las secciones nuevas quedan como hermanas.
-const MARCA_FINAL = '<!--SVEA:DIFERENCIA-->';
-const cajaIni = cuerpo.search(/<div class="nosotros-section/);
-const cajaFin = cuerpo.indexOf(CAJA_NOSOTROS, cajaIni) + CAJA_NOSOTROS.length;
-const marcaFin = cuerpo.indexOf(MARCA_FINAL) + MARCA_FINAL.length;
-if (cajaIni < 0 || cajaFin < CAJA_NOSOTROS.length || marcaFin <= cajaFin) {
-  throw new Error('las cajas de «nosotros-section» no están donde se esperaba');
+// «Contáctanos» y el formulario: su <div id="contacto"> cierra donde
+// corresponde. El <script> que armaba el asunto del correo se va con él: el
+// componente nuevo hace el mismo cálculo (ver src/components/ui/contacto.tsx).
+const contacto = recortaDiv(cuerpo, /<div id="contacto"/);
+if (!contacto) throw new Error('no se encontró el bloque de «Contáctanos» en la home');
+cuerpo = cuerpo.slice(0, contacto[0]) + '<!--SVEA:CONTACTO-->' + cuerpo.slice(contacto[1]);
+// Se ubica por su contenido y se corta desde su <script> hasta su </script>:
+// una expresión regular desde el primer <script> de la página se comería
+// todo lo que hay en medio.
+const asunto = cuerpo.indexOf("getElementById('dynamic-subject-home')");
+if (asunto < 0) throw new Error('no se encontró el <script> del asunto en la home');
+const scriptIni = cuerpo.lastIndexOf('<script', asunto);
+const scriptFin = cuerpo.indexOf('</script>', asunto) + '</script>'.length;
+cuerpo = cuerpo.slice(0, scriptIni) + cuerpo.slice(scriptFin);
+if (/dynamic-subject-home/.test(cuerpo)) throw new Error('el <script> del asunto sigue en el cuerpo');
+
+// Con las cuatro secciones fuera, las dos cajas que las envolvían en el
+// WordPress —<div class="nosotros-section … px-6"> y su max-w-6xl— quedan
+// vacías, salvo por las marcas. Se cortan enteras y las marcas se ponen en
+// su lugar, como hermanas: si las secciones nuevas se pintaran dentro,
+// heredarían el px-6 y saldrían 24 px más angostas que la pantalla (medido:
+// 1392 en vez de 1440; con fondo de color se veían dos tiras blancas).
+const caja = recortaDiv(cuerpo, /<div class="nosotros-section/);
+if (!caja) throw new Error('no se encontró la caja «nosotros-section» en la home');
+const MARCAS = ['<!--SVEA:NOSOTROS-->', '<!--SVEA:PROCESO-->', '<!--SVEA:DIFERENCIA-->', '<!--SVEA:CONTACTO-->'];
+const dentro = cuerpo.slice(caja[0], caja[1]);
+for (const m of MARCAS) {
+  if (!dentro.includes(m)) throw new Error(`la marca ${m} no está dentro de «nosotros-section»`);
 }
-const cajas = cuerpo.slice(cajaIni, cajaFin);
-cuerpo = cuerpo.slice(0, cajaIni) + cuerpo.slice(cajaFin, marcaFin) + cajas + cuerpo.slice(marcaFin);
+if (dentro.replace(/<!--SVEA:[A-Z]+-->/g, '').replace(/<div[^>]*><\/div>|<\/?div[^>]*>|\s|<!--[^>]*-->/g, '') !== '') {
+  throw new Error('la caja «nosotros-section» tiene contenido que no se esperaba; revisar antes de cortarla');
+}
+cuerpo = cuerpo.slice(0, caja[0]) + MARCAS.join('') + cuerpo.slice(caja[1]);
 
 mkdirSync('src/contenido', { recursive: true });
 writeFileSync('src/contenido/home-wp-cabeza.html',
