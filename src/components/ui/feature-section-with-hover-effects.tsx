@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import * as React from 'react';
 
+import { Reveal } from '@/components/ui/reveal';
 import { cn } from '@/lib/utils';
 
 type Servicio = {
@@ -99,7 +100,9 @@ export function FeaturesSectionWithHoverEffects({
       )}
     >
       {SERVICIOS.map((servicio, i) => (
-        <Servicio key={servicio.titulo} {...servicio} numero={i + 1} base={base} />
+        <Reveal key={servicio.titulo} delay={i * 0.08} className="flex">
+          <Servicio {...servicio} numero={i + 1} base={base} />
+        </Reveal>
       ))}
     </div>
   );
@@ -115,7 +118,7 @@ const Servicio = ({
 }: Servicio & { numero: number; base: string }) => (
   <a
     href={`${base}${href}`}
-    className="group/servicio relative flex flex-col border-b border-r border-border py-10 no-underline transition-colors"
+    className="group/servicio relative flex w-full flex-col border-b border-r border-border py-10 no-underline transition-colors"
   >
     {/* el realce entra desde abajo, en negro muy diluido */}
     <div

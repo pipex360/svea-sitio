@@ -19,6 +19,7 @@ import { CumplimientoBento } from '../components/ui/bento-cumplimiento';
 import { Cta69 } from '../components/ui/cta69';
 import { Proceso } from '../components/ui/proceso';
 import { Comparison02 } from '../components/ui/comparison-02';
+import { Reveal } from '../components/ui/reveal';
 import paginas from '../data/paginas.json';
 import cabezaWP from '../contenido/home-wp-cabeza.html?raw';
 import cuerpoWP from '../contenido/home-wp-cuerpo.html?raw';
@@ -84,11 +85,13 @@ const clientes = [
 
   <!-- Clientes: carrusel con desenfoque en los bordes -->
   <section class="svea-nuevo bg-white px-4 py-14">
-    <h2 class="mb-5 text-center text-lg font-medium text-foreground md:text-2xl">
-      Con la confianza de
-      <span class="font-black tracking-tight text-svea">más de 250 empresas</span>
-      en todo el Chile
-    </h2>
+    <Reveal client:idle>
+      <h2 class="mb-5 text-center text-lg font-medium text-foreground md:text-2xl">
+        Con la confianza de
+        <span class="font-black tracking-tight text-svea">más de 250 empresas</span>
+        en todo el Chile
+      </h2>
+    </Reveal>
     <LogoMarquee logos={clientes} client:visible />
   </section>
 
@@ -96,7 +99,7 @@ const clientes = [
 
   <!-- Servicios: rejilla con realce al pasar el cursor -->
   <section class="svea-nuevo bg-white px-4 py-20" id="servicios" aria-labelledby="titulo-servicios">
-    <div class="mx-auto mb-12 max-w-7xl px-4 text-center">
+    <Reveal className="mx-auto mb-12 max-w-7xl px-4 text-center" client:idle>
       <p class="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]">
         <span aria-hidden="true" class="h-px w-8 bg-border"></span>
         Tramitamos, no sólo asesoramos
@@ -109,15 +112,15 @@ const clientes = [
         Acompañamos a tu empresa desde el diagnóstico hasta la obtención de permisos,
         con respaldo técnico y normativo de excelencia.
       </p>
-    </div>
-    <FeaturesSectionWithHoverEffects base={BASE} />
+    </Reveal>
+    <FeaturesSectionWithHoverEffects base={BASE} client:idle />
   </section>
 
   <div class="wp-restante" set:html={entreServiciosYNosotros} />
 
   <!-- Cumplimiento: rejilla bento con las cifras y el cierre -->
   <section class="svea-nuevo bg-white px-6 py-20" id="nosotros" aria-labelledby="titulo-nosotros">
-    <div class="mx-auto mb-14 max-w-3xl text-center">
+    <Reveal className="mx-auto mb-14 max-w-3xl text-center" client:idle>
       <h2 id="titulo-nosotros" class="mb-4 text-balance text-3xl font-medium tracking-tight text-black md:text-5xl">
         Cumplimiento Ambiental <span class="font-black text-svea">Sin Complicaciones.</span>
       </h2>
@@ -134,7 +137,7 @@ const clientes = [
           Conocer Servicios
         </a>
       </div>
-    </div>
+    </Reveal>
     <CumplimientoBento client:visible />
   </section>
 
@@ -149,6 +152,7 @@ const clientes = [
         note: 'Deje la complejidad normativa en nuestras manos. Nuestro equipo de expertos está listo para asesorarlo hoy mismo.',
         footnote: 'Proceso simple y transparente',
       }}
+      client:idle
     />
   </div>
 
@@ -156,14 +160,14 @@ const clientes = [
 
   <!-- Cómo trabajamos: esquema de nodos y los cinco pasos -->
   <div class="svea-nuevo">
-    <Proceso base={BASE} client:visible />
+    <Proceso base={BASE} client:idle />
   </div>
 
   <div class="wp-restante" set:html={entreProcesoYDiferencia} />
 
   <!-- Lo que nos diferencia -->
   <div class="svea-nuevo" id="diferencia">
-    <Comparison02 base={BASE} />
+    <Comparison02 base={BASE} client:idle />
   </div>
 
   <div class="wp-restante" set:html={despuesDiferencia} />

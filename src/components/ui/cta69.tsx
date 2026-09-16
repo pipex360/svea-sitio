@@ -20,6 +20,7 @@
 
 import { Badge7 } from '@/components/ui/cta69-utils/badge7';
 import { Button12 } from '@/components/ui/cta69-utils/button12';
+import { Reveal } from '@/components/ui/reveal';
 import { cn } from '@/lib/utils';
 
 interface Cta69Props {
@@ -79,7 +80,7 @@ export function Cta69({ badge, heading, button, labels = {}, className }: Cta69P
         </div>
       )}
 
-      <div className="relative mx-auto flex max-w-3xl flex-col items-center px-4 text-center md:px-6">
+      <Reveal className="relative mx-auto flex max-w-3xl flex-col items-center px-4 text-center md:px-6">
         {badge && <Badge7 label={badge.label} />}
 
         {heading && (
@@ -101,7 +102,7 @@ export function Cta69({ badge, heading, button, labels = {}, className }: Cta69P
         )}
 
         {labels.footnote && <p className="mt-8 text-base text-black/55">{labels.footnote}</p>}
-      </div>
+      </Reveal>
     </section>
   );
 }

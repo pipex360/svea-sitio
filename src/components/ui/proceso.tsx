@@ -17,12 +17,13 @@
  */
 
 import { Esquema, MarcoEsquema, PASOS } from '@/components/ui/integration-card';
+import { Reveal } from '@/components/ui/reveal';
 import { cn } from '@/lib/utils';
 
 export function Proceso({ base = '' }: { base?: string }) {
   return (
     <section className="bg-white px-6 py-20" id="proceso" aria-labelledby="titulo-proceso">
-      <div className="mx-auto mb-14 max-w-3xl text-center">
+      <Reveal className="mx-auto mb-14 max-w-3xl text-center">
         <p className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]">
           <span aria-hidden="true" className="h-px w-8 bg-border" />
           Proceso simple y transparente
@@ -38,13 +39,13 @@ export function Proceso({ base = '' }: { base?: string }) {
           Desde la cotización hasta la resolución aprobada, gestionamos todo el proceso para que tú
           te concentres en tu negocio.
         </p>
-      </div>
+      </Reveal>
 
-      <div className="mx-auto hidden max-w-5xl md:block">
+      <Reveal className="mx-auto hidden max-w-5xl md:block">
         <MarcoEsquema>
           <Esquema base={base} />
         </MarcoEsquema>
-      </div>
+      </Reveal>
 
       {/* El texto de los cinco pasos, siempre presente */}
       <ol className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:gap-3">
@@ -52,8 +53,10 @@ export function Proceso({ base = '' }: { base?: string }) {
           const Icono = paso.icono;
           const ultimo = paso.id === 'entrega';
           return (
-            <li
+            <Reveal
+              as="li"
               key={paso.id}
+              delay={PASOS.indexOf(paso) * 0.08}
               className={cn(
                 'group/paso relative overflow-hidden rounded-xl border border-border bg-white p-5',
                 'transition-[transform,box-shadow,border-color] duration-200 ease-out',
@@ -82,7 +85,7 @@ export function Proceso({ base = '' }: { base?: string }) {
               </div>
               <h3 className="text-base font-bold tracking-tight text-black">{paso.titulo}</h3>
               <p className="mt-1 text-sm leading-relaxed text-black/60">{paso.descripcion}</p>
-            </li>
+            </Reveal>
           );
         })}
       </ol>

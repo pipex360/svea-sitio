@@ -34,12 +34,17 @@
  *    a seiscientos píxeles y estiran la página. En el teléfono desbordaba
  *    183 px. Con `relative` en el envoltorio, el recorte los alcanza.
  *
- * No lleva estado: Astro lo dibuja en el servidor y no viaja JavaScript.
+ * Se hidrata (`client:idle`) por dos cosas que sí necesitan JavaScript: el
+ * revelado al bajar y la frase del encabezado, que se va leyendo con el
+ * scroll (TextoScroll). El HTML del servidor trae la tabla y la frase
+ * completas y visibles igual.
  */
 
 import { Check, Minus } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
+import { Reveal } from '@/components/ui/reveal';
+import { TextoScroll } from '@/components/ui/texto-scroll';
 import { cn } from '@/lib/utils';
 
 type Celda = boolean | string;
@@ -101,7 +106,7 @@ export function Comparison02({ base = '' }: { base?: string }) {
   return (
     <section className="bg-white py-20 sm:py-28" aria-labelledby="titulo-diferencia">
       <div className="mx-auto w-full max-w-5xl px-6">
-        <div className="mx-auto mb-14 max-w-3xl text-center">
+        <Reveal className="mx-auto mb-14 max-w-3xl text-center">
           <p className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]">
             <span aria-hidden="true" className="h-px w-8 bg-border" />
             Lo que nos diferencia
@@ -113,14 +118,13 @@ export function Comparison02({ base = '' }: { base?: string }) {
           >
             Cotización Automática y <span className="font-black text-svea">Seguimiento Digital</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-base leading-relaxed text-black/75 md:text-lg">
-            Somos la única consultora ambiental en Chile con cotización automática en menos de 24
-            horas y seguimiento digital de tu trámite. Sin llamadas de seguimiento, sin
-            incertidumbre.
-          </p>
-        </div>
+          <TextoScroll
+            className="mx-auto max-w-2xl text-base leading-relaxed text-black/75 md:text-lg"
+            texto="Somos la única consultora ambiental en Chile con cotización automática en menos de 24 horas y seguimiento digital de tu trámite. Sin llamadas de seguimiento, sin incertidumbre."
+          />
+        </Reveal>
 
-        <div className="overflow-x-auto">
+        <Reveal className="overflow-x-auto">
           <table className="w-full min-w-[42rem] border-collapse text-start">
             <caption className="sr-only">
               Comparación entre hacer el trámite por cuenta propia, con otra consultora o con SVEA
@@ -201,7 +205,7 @@ export function Comparison02({ base = '' }: { base?: string }) {
               </tr>
             </tbody>
           </table>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
