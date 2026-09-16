@@ -5,7 +5,9 @@
  * blancas, halo tras el mensaje, Ken Burns en las fotos y las cifras abajo.
  *
  * El menú es una isla de React (Radix), montada sólo cuando el navegador
- * está libre: el resto del hero es HTML y CSS, sin JavaScript.
+ * está libre: el resto del hero es HTML y CSS, sin JavaScript. En el
+ * teléfono la cabecera es logo + menú ☰ (MenuMovil); el botón de cotizar
+ * de la cabecera repetía al grande de abajo y se esconde.
  *
  * Las fotos son las tres del slideshow original, servidas desde el sitio en
  * WebP a 1920 y 1080 px (mejoras/img/hero): 132/258/102 KB en vez de los
@@ -13,6 +15,7 @@
  * desde la cabecera de la página, porque es el LCP.
  */
 import MenuSvea from './ui/navigation-menu-06';
+import { MenuMovil } from './ui/menu-movil';
 
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 ---
@@ -26,7 +29,9 @@ const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 
       <MenuSvea base={BASE} client:idle />
 
-      <a class="btn-flecha" href={`${BASE}/#form-home`} style="gap:0"><span>Solicitar cotización</span></a>
+      <!-- en el teléfono: el menú ☰ en vez del botón, que repetía al botón grande de abajo -->
+      <a class="btn-flecha max-md:hidden" href={`${BASE}/#form-home`} style="gap:0"><span>Solicitar cotización</span></a>
+      <MenuMovil base={BASE} client:idle />
     </div>
   </header>
 

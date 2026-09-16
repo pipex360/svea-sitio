@@ -22,9 +22,9 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 
-type Entrada = { title: string; href: string; description: string; icon: LucideIcon };
+export type Entrada = { title: string; href: string; description: string; icon: LucideIcon };
 
-const servicios: Entrada[] = [
+export const servicios: Entrada[] = [
   {
     title: 'Calificación Técnica Industrial',
     href: '/calificacion-tecnica-industrial/',
@@ -63,7 +63,7 @@ const servicios: Entrada[] = [
   },
 ];
 
-const masTramites: Entrada[] = [
+export const masTramites: Entrada[] = [
   {
     title: 'Informe Sanitario',
     href: '/informe-sanitario/',
@@ -84,7 +84,7 @@ const masTramites: Entrada[] = [
   },
 ];
 
-const guias: Entrada[] = [
+export const guias: Entrada[] = [
   {
     title: 'Calificación inofensiva SEREMI',
     href: '/calificacion-inofensiva-seremi-2026/',

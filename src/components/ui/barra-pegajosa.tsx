@@ -13,11 +13,13 @@
  * `prefers-reduced-motion` aparece y desaparece sin deslizarse.
  *
  * El menú es el mismo del hero (MenuSvea), que en el teléfono se esconde
- * solo; ahí quedan el logo y el botón.
+ * solo; ahí quedan el logo y el menú ☰ (MenuMovil). El botón de cotizar no
+ * va en el teléfono: ya está en la barra de abajo, en la zona del pulgar.
  */
 
 import { useEffect, useState } from 'react';
 
+import { MenuMovil } from '@/components/ui/menu-movil';
 import MenuSvea from '@/components/ui/navigation-menu-06';
 import { cn } from '@/lib/utils';
 
@@ -47,9 +49,11 @@ export function BarraPegajosa({ base = '' }: { base?: string }) {
           <img src={`${base}/img/logo-svea.webp`} width={404} height={137} alt="SVEA Consultores" className="block h-8 w-auto" />
         </a>
         <MenuSvea base={base} />
-        <a className="btn-flecha chica" href={`${base}/#form-home`} style={{ gap: 0 }}>
+        {/* en el teléfono, el ☰; el botón de cotizar ya está en la barra de abajo */}
+        <a className="btn-flecha chica max-md:hidden" href={`${base}/#form-home`} style={{ gap: 0 }}>
           <span>Solicitar cotización</span>
         </a>
+        <MenuMovil base={base} />
       </div>
     </div>
   );
