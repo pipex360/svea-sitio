@@ -16,6 +16,13 @@
  * truco de la cinta del CTA). Cada mitad lleva el hueco al final para que
  * las dos midan lo mismo.
  *
+ * Los logos van con `loading="eager"` (288 KB entre los 18) y la cinta
+ * corre hacia la izquierda, desde 0. Con `loading="lazy"` y la cinta
+ * arrancando en -50 %, en Safari del iPhone la cinta salía vacía: Safari
+ * decide qué imagen perezosa cargar por su posición de maquetación, sin
+ * contar el transform, así que cargaba la mitad que estaba fuera de la
+ * vista y dejaba sin cargar la que se veía. En Chrome no pasaba.
+ *
  * Se pierde el cambio de velocidad al pasar el cursor del original: cambiar
  * la duración de una animación CSS en marcha la hace saltar. Con
  * `prefers-reduced-motion` la cinta se queda quieta.
@@ -45,7 +52,8 @@ const Mitad = ({ logos, oculta }: { logos: Logo[]; oculta?: boolean }) => (
         key={`${logo.alt}-${i}`}
         alt={oculta ? '' : logo.alt}
         src={logo.src}
-        loading="lazy"
+        loading="eager"
+        decoding="async"
         className="pointer-events-none w-auto select-none object-contain"
         style={{ height: alto(logo) }}
       />

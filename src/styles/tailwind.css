@@ -129,15 +129,17 @@
 }
 
 /* La cinta de logos de clientes, con el mismo truco: dos mitades idénticas,
-   media anchura por vuelta. Va hacia la derecha (de -50 % a 0), como el
-   original. will-change la deja en su capa desde el primer cuadro. */
+   media anchura por vuelta. Arranca en 0 y va hacia la izquierda: así la
+   primera mitad —la que está en su sitio de maquetación— es la que se ve
+   al principio, en cualquier navegador. will-change la deja en su capa
+   desde el primer cuadro. */
 .logos-cinta {
   will-change: transform;
   animation: logos-cinta 80s linear infinite;
 }
 @keyframes logos-cinta {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 @media (prefers-reduced-motion: reduce) {
   .logos-cinta { animation: none; }
