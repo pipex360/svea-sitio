@@ -45,8 +45,17 @@ for (const p of esperadas) {
   if ((html.match(/name="robots"/g) || []).length !== 1) fallos.push(`${p.ruta}  ✗ hay más de un robots`);
   else checks++;
 
-  // 4. sigue apuntando al CSS del sitio real: si no, no se ve igual
-  if (!html.includes('sveaconsultores.cl/wp-content')) fallos.push(`${p.ruta}  ✗ perdió los recursos del sitio original`);
+  // 4. las copias siguen apuntando al CSS del sitio real: si no, no se ven
+  // igual. La portada es la excepción: es propia, y lo que se comprueba es lo
+  // contrario —que no cargue nada del WordPress ni de CDN, y que sirva sus
+  // fuentes y las fotos del hero desde el sitio—.
+  if (p.ruta === '/') {
+    const ajenos = html.match(/(?:src|href)="https?:\/\/[^"]*(?:wp-content|wp-includes|cdn\.tailwindcss\.com|code\.iconify\.design|fonts\.googleapis\.com)[^"]*"/g) || [];
+    if (ajenos.length) fallos.push(`${p.ruta}  ✗ la portada aún carga del WordPress o de CDN: ${ajenos.slice(0, 3).join(' ')}`);
+    else checks++;
+    if (!/\/fonts\/inter-variable-latin\.woff2/.test(html) || !/\/img\/hero\/hero-1-energia-1920\.webp/.test(html)) fallos.push(`${p.ruta}  ✗ la portada no sirve sus fuentes o las fotos del hero`);
+    else checks++;
+  } else if (!html.includes('sveaconsultores.cl/wp-content')) fallos.push(`${p.ruta}  ✗ perdió los recursos del sitio original`);
   else checks++;
 }
 

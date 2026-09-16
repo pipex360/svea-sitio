@@ -6,6 +6,11 @@
  *
  * El menú es una isla de React (Radix), montada sólo cuando el navegador
  * está libre: el resto del hero es HTML y CSS, sin JavaScript.
+ *
+ * Las fotos son las tres del slideshow original, servidas desde el sitio en
+ * WebP a 1920 y 1080 px (mejoras/img/hero): 132/258/102 KB en vez de los
+ * 539/925/379 KB en JPG que bajaban del WordPress. La primera se precarga
+ * desde la cabecera de la página, porque es el LCP.
  */
 import MenuSvea from './ui/navigation-menu-06';
 
@@ -28,9 +33,9 @@ const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
   <section class="halo-seccion" id="inicio" aria-label="Presentación">
     <div class="halo-tarjeta">
       <div class="halo-fondo" aria-hidden="true">
-        <img src="https://sveaconsultores.cl/wp-content/uploads/2025/03/california-renewable-energy.jpg" alt="" fetchpriority="high" />
-        <img src="https://sveaconsultores.cl/wp-content/uploads/2025/03/aerial-view-of-logistic-center.jpg" alt="" loading="lazy" />
-        <img src="https://sveaconsultores.cl/wp-content/uploads/2025/03/chemical-oil-refinery-plant-power-plant-and-metal-2024-12-08-00-52-34-utc-scaled.jpg" alt="" loading="lazy" />
+        <img src={`${BASE}/img/hero/hero-1-energia-1920.webp`} srcset={`${BASE}/img/hero/hero-1-energia-1080.webp 1080w, ${BASE}/img/hero/hero-1-energia-1920.webp 1920w`} sizes="100vw" width="1920" height="1280" alt="" fetchpriority="high" />
+        <img src={`${BASE}/img/hero/hero-2-logistica-1920.webp`} srcset={`${BASE}/img/hero/hero-2-logistica-1080.webp 1080w, ${BASE}/img/hero/hero-2-logistica-1920.webp 1920w`} sizes="100vw" width="1920" height="1257" alt="" loading="lazy" />
+        <img src={`${BASE}/img/hero/hero-3-planta-1920.webp`} srcset={`${BASE}/img/hero/hero-3-planta-1080.webp 1080w, ${BASE}/img/hero/hero-3-planta-1920.webp 1920w`} sizes="100vw" width="1920" height="1079" alt="" loading="lazy" />
       </div>
       <div class="halo-velo-arriba" aria-hidden="true"></div>
       <div class="halo-velo-abajo" aria-hidden="true"></div>

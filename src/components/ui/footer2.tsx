@@ -4,7 +4,8 @@
  * Es el Footer2 de shadcnblocks.com con los contenidos del pie que hoy sirve
  * el WordPress: el mismo texto de presentación, la dirección, el teléfono y el
  * correo, y los mismos enlaces internos (los seis servicios, con sus URL
- * exactas). Cinco cambios sobre el original:
+ * exactas), más la columna «Recursos y guías» con los enlaces que el menú
+ * del WordPress vivo lleva bajo ese nombre. Cinco cambios sobre el original:
  *
  * 1. El logo de SVEA va solo, sin el título de texto al lado: el logo ya
  *    lleva el nombre y quedaría «SVEA SVEA».
@@ -75,6 +76,26 @@ export function Footer2({
         { text: 'Manejo de Sustancias y Residuos Peligrosos', url: `${base}/manejo-de-residuos-peligrosos/` },
         { text: 'Autorización de Transporte de Residuos Peligrosos y no Peligrosos', url: `${base}/autorizacion-de-transporte-de-residuos/` },
         { text: 'Planes de Emergencia y Evacuación para Condominios', url: `${base}/planes-de-emergencia-y-evacuacion-condominios/` },
+        { text: 'Informe Sanitario', url: `${base}/informe-sanitario/` },
+        { text: 'Permisos ambientales y SEIA', url: `${base}/permisos-ambientales-y-pertinencias-del-seia/` },
+      ],
+    },
+    {
+      // Los mismos enlaces que lleva el menú del WordPress vivo bajo «Recursos y
+      // Guías». El menú desplegable de la cabecera (Radix) sólo dibuja su
+      // contenido al abrirse, así que estos enlaces no están en el HTML: aquí
+      // sí, para que Google los siga desde la portada como hasta ahora.
+      title: 'Recursos y guías',
+      span: 2,
+      links: [
+        { text: 'Guías de cumplimiento', url: `${base}/blog/` },
+        { text: '¿Qué es el Informe Sanitario?', url: `${base}/que-es-informe-sanitario/` },
+        { text: 'Calificación Técnica Industrial en Chile', url: `${base}/calificacion-tecnica-industrial-chile/` },
+        { text: 'Estudio de Carga de Combustible en Chile', url: `${base}/estudio-de-carga-combustible-chile/` },
+        { text: 'Manejo de Residuos Peligrosos en Chile', url: `${base}/manejo-de-residuos-peligrosos-chile/` },
+        { text: 'Plan de Emergencia para Empresas', url: `${base}/plan-de-emergencia-empresa-chile/` },
+        { text: 'Plan de Emergencia para Condominios', url: `${base}/plan-de-emergencia-condominio-chile/` },
+        { text: 'Autorización de Transporte de Residuos en Chile', url: `${base}/autorizacion-transporte-residuos-chile/` },
       ],
     },
   ],
@@ -86,7 +107,7 @@ export function Footer2({
     <footer className={cn('relative overflow-hidden bg-[#081c15] py-16 text-white md:py-24', className)}>
       <Velaris className="absolute inset-0" />
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-7">
           <div className="col-span-2 mb-8 lg:mb-0">
             <a href={logo.url} className="inline-block">
               <img src={logo.src} alt={logo.alt} width={404} height={137} className="h-10 w-auto" />
@@ -123,7 +144,8 @@ export function Footer2({
           ))}
         </div>
 
-        <div className="mt-16 flex flex-col justify-between gap-4 border-t border-white/15 pt-8 text-sm font-medium text-white/65 md:flex-row md:items-center">
+        {/* md:pr-44 deja sitio al botón flotante de WhatsApp, que va abajo a la derecha */}
+        <div className="mt-16 flex flex-col justify-between gap-4 border-t border-white/15 pt-8 text-sm font-medium text-white/65 md:flex-row md:items-center md:pr-44">
           <p>{copyright}</p>
           <ul className="flex gap-4">
             {bottomLinks.map((link) => (

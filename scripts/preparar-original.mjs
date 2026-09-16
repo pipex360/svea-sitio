@@ -106,6 +106,11 @@ if (existsSync('mejoras/img')) {
   cpSync('mejoras/img', path.join(DEST, 'img'), { recursive: true });
   console.log('recursos propios copiados a /img/');
 }
+// las fuentes (Inter y Manrope variables, subconjunto latino) se sirven desde el sitio
+if (existsSync('mejoras/fonts')) {
+  cpSync('mejoras/fonts', path.join(DEST, 'fonts'), { recursive: true });
+  console.log('fuentes copiadas a /fonts/');
+}
 
 // --- la home, para que la componga Astro --------------------------------
 // Se entregan por separado los recursos del <head> (la hoja del WordPress,

@@ -180,3 +180,6 @@
 /* Como <button> (el envío del formulario) y a todo el ancho. */
 button.btn-flecha { border: 0; cursor: pointer; font-family: inherit; }
 .btn-flecha.ancha { width: 100%; justify-content: space-between; }
+
+/* Chico, para las barras: el mismo del hero en su cabecera. */
+.btn-flecha.chica { padding: 0 24px; height: 40px; font-size: 15px; white-space: nowrap; }
