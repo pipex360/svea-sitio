@@ -135,7 +135,10 @@
    desde el primer cuadro. */
 .logos-cinta {
   will-change: transform;
-  animation: logos-cinta 80s linear infinite;
+  /* 40 s por media vuelta (2.122 px) = 53 px/s, la velocidad que tenía con
+     motion: allí los 80 s eran para el doble de recorrido. Con 80 s aquí
+     iba a la mitad (27 px/s medidos) y se sentía lenta. */
+  animation: logos-cinta 40s linear infinite;
 }
 @keyframes logos-cinta {
   from { transform: translateX(0); }
