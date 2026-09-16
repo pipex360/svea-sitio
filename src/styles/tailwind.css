@@ -128,6 +128,21 @@
   .cta69-cinta { animation: none; }
 }
 
+/* La cinta de logos de clientes, con el mismo truco: dos mitades idénticas,
+   media anchura por vuelta. Va hacia la derecha (de -50 % a 0), como el
+   original. will-change la deja en su capa desde el primer cuadro. */
+.logos-cinta {
+  will-change: transform;
+  animation: logos-cinta 80s linear infinite;
+}
+@keyframes logos-cinta {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logos-cinta { animation: none; }
+}
+
 
 /* ------------------------------------------------------------------
    El botón negro con la flecha blanca en su círculo.
