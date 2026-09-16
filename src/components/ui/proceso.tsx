@@ -9,9 +9,15 @@
  * se pisen. La lista de abajo lleva el texto de verdad —los cinco títulos con
  * su descripción— y está siempre, en cualquier tamaño de pantalla: es lo que
  * leen Google y los lectores de pantalla.
+ *
+ * Las tarjetas responden al paso del cursor igual que las de «Cumplimiento
+ * Ambiental»: se levantan un píxel con su sombra, y además se pintan de verde
+ * la barra de arriba y el número. Con `prefers-reduced-motion` no se levantan
+ * ni corre la barra —el color queda, el movimiento no—.
  */
 
 import { Esquema, MarcoEsquema, PASOS } from '@/components/ui/integration-card';
+import { cn } from '@/lib/utils';
 
 export function Proceso({ base = '' }: { base?: string }) {
   return (
@@ -48,19 +54,29 @@ export function Proceso({ base = '' }: { base?: string }) {
           return (
             <li
               key={paso.id}
-              className="rounded-xl border border-border bg-white p-5 transition-colors duration-200 hover:border-black/30"
+              className={cn(
+                'group/paso relative overflow-hidden rounded-xl border border-border bg-white p-5',
+                'transition-[transform,box-shadow,border-color] duration-200 ease-out',
+                'hover:-translate-y-1 hover:border-black/30',
+                'hover:shadow-[0_18px_40px_-20px_rgba(0,0,0,0.3),0_2px_8px_-4px_rgba(0,0,0,0.12)]',
+                'motion-reduce:transition-[box-shadow,border-color] motion-reduce:hover:translate-y-0',
+              )}
             >
+              {/* la barra del borde superior, que se pinta de verde al pasar */}
+              <span
+                aria-hidden="true"
+                className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-svea transition-transform duration-300 ease-out group-hover/paso:scale-x-100 motion-reduce:transition-none"
+              />
               <div className="mb-3 flex items-center gap-2.5">
                 <span
-                  className={
-                    ultimo
-                      ? 'grid size-8 shrink-0 place-items-center rounded-lg bg-svea/10 text-svea md:hidden'
-                      : 'grid size-8 shrink-0 place-items-center rounded-lg bg-black/5 text-black md:hidden'
-                  }
+                  className={cn(
+                    'grid size-8 shrink-0 place-items-center rounded-lg transition-colors duration-200 md:hidden',
+                    ultimo ? 'bg-svea/10 text-svea' : 'bg-black/5 text-black',
+                  )}
                 >
                   <Icono className="size-4" />
                 </span>
-                <span className="font-mono text-[11px] font-semibold text-black/40">
+                <span className="font-mono text-[11px] font-semibold text-black/40 transition-colors duration-200 group-hover/paso:text-svea">
                   {paso.numero}
                 </span>
               </div>
