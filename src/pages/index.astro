@@ -97,8 +97,10 @@ const clientes = [
   <HeroHalo />
   <BarraPegajosa base={BASE} client:idle />
 
-  <!-- Clientes: carrusel con desenfoque en los bordes -->
-  <section class="svea-nuevo bg-white px-4 py-14">
+  <!-- Clientes: carrusel con desenfoque en los bordes. El fondo va de blanco a
+       la hoja gris para que Servicios, que ya es gris, empiece sin un borde:
+       el corte blanco/gris justo bajo los logos se leía como una línea. -->
+  <section class="svea-nuevo bg-gradient-to-b from-white to-hoja px-4 py-14">
     <Reveal client:idle>
       <h2 class="mb-5 text-center text-lg font-medium text-foreground md:text-2xl">
         Con la confianza de
