@@ -179,7 +179,7 @@ cuerpo = cuerpo.replace(
 // caja que «¿Cómo Trabajamos?» y las secciones que siguen. Así que se recorta
 // el tramo que va desde la apertura de esa caja hasta donde empieza «¿Cómo
 // Trabajamos?», y en su lugar queda la marca. Las dos cajas que envuelven
-// quedan intactas, para no descuadrar lo que viene después.
+// se corren más abajo, después de la última marca (ver al final).
 const tramo = recortaNosotros(cuerpo);
 if (!tramo) throw new Error('no se encontró el tramo de «nosotros-section» en la home');
 cuerpo = cuerpo.slice(0, tramo[0]) + '<!--SVEA:NOSOTROS-->' + cuerpo.slice(tramo[1]);
@@ -195,6 +195,23 @@ cuerpo = cuerpo.slice(0, proceso[0]) + '<!--SVEA:PROCESO-->' + cuerpo.slice(proc
 const diferencia = recortaDiv(cuerpo, /<div class="mb-20 scroll-reveal">/);
 if (!diferencia) throw new Error('no se encontró el bloque de «Lo que nos diferencia» en la home');
 cuerpo = cuerpo.slice(0, diferencia[0]) + '<!--SVEA:DIFERENCIA-->' + cuerpo.slice(diferencia[1]);
+
+// Las tres marcas quedaron dentro de las dos cajas que abren la cuarta
+// sección: <div class="nosotros-section … px-6"> y su max-w-6xl. Las secciones
+// nuevas se pintan ahí dentro y heredan ese px-6: salen 24 px más angostas
+// que la pantalla, y con un fondo de color se ven las dos tiras blancas a los
+// lados (medido: 1392 en vez de 1440). Las dos cajas se corren a después de
+// la última marca: siguen envolviendo el formulario, que es lo único del
+// WordPress que queda dentro, y las secciones nuevas quedan como hermanas.
+const MARCA_FINAL = '<!--SVEA:DIFERENCIA-->';
+const cajaIni = cuerpo.search(/<div class="nosotros-section/);
+const cajaFin = cuerpo.indexOf(CAJA_NOSOTROS, cajaIni) + CAJA_NOSOTROS.length;
+const marcaFin = cuerpo.indexOf(MARCA_FINAL) + MARCA_FINAL.length;
+if (cajaIni < 0 || cajaFin < CAJA_NOSOTROS.length || marcaFin <= cajaFin) {
+  throw new Error('las cajas de «nosotros-section» no están donde se esperaba');
+}
+const cajas = cuerpo.slice(cajaIni, cajaFin);
+cuerpo = cuerpo.slice(0, cajaIni) + cuerpo.slice(cajaFin, marcaFin) + cajas + cuerpo.slice(marcaFin);
 
 mkdirSync('src/contenido', { recursive: true });
 writeFileSync('src/contenido/home-wp-cabeza.html',

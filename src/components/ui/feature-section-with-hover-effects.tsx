@@ -93,17 +93,24 @@ export function FeaturesSectionWithHoverEffects({
   className?: string;
 }) {
   return (
+    // El panel: un bloque blanco con esquinas redondas sobre la hoja gris de
+    // la sección. La rejilla va un píxel más ancha y más alta (-mr-px, -mb-px)
+    // para que el filete derecho de la última columna y el inferior de la
+    // última fila caigan fuera y los recorte el panel: así ningún borde se
+    // duplica con el del panel, en cualquier número de columnas.
     <div
       className={cn(
-        'relative z-10 mx-auto grid max-w-7xl grid-cols-1 border-l border-t border-border md:grid-cols-2 lg:grid-cols-3',
+        'relative z-10 mx-auto max-w-7xl overflow-hidden rounded-2xl border border-border bg-white',
         className,
       )}
     >
-      {SERVICIOS.map((servicio, i) => (
-        <Reveal key={servicio.titulo} delay={i * 0.08} className="flex">
-          <Servicio {...servicio} numero={i + 1} base={base} />
-        </Reveal>
-      ))}
+      <div className="-mb-px -mr-px grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {SERVICIOS.map((servicio, i) => (
+          <Reveal key={servicio.titulo} delay={i * 0.08} className="flex">
+            <Servicio {...servicio} numero={i + 1} base={base} />
+          </Reveal>
+        ))}
+      </div>
     </div>
   );
 }
@@ -118,7 +125,7 @@ const Servicio = ({
 }: Servicio & { numero: number; base: string }) => (
   <a
     href={`${base}${href}`}
-    className="group/servicio relative flex w-full flex-col border-b border-r border-border py-10 no-underline transition-colors"
+    className="group/servicio relative flex w-full flex-col border-b border-r border-border bg-white py-10 no-underline transition-colors"
   >
     {/* el realce entra desde abajo, en negro muy diluido */}
     <div

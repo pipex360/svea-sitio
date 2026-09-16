@@ -226,7 +226,7 @@ export function Esquema({ base = '' }: { base?: string }) {
 /** El marco del esquema: trama de puntos y veladura, como el original. */
 export function MarcoEsquema({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative flex w-full items-center justify-center overflow-hidden rounded-2xl border border-border bg-black/[0.02] p-6 sm:p-10">
+    <div className="relative flex w-full items-center justify-center overflow-hidden rounded-2xl border border-border bg-white p-6 sm:p-10">
       <div
         aria-hidden="true"
         className="absolute inset-0 opacity-[0.18]"

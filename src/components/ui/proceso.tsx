@@ -22,7 +22,7 @@ import { cn } from '@/lib/utils';
 
 export function Proceso({ base = '' }: { base?: string }) {
   return (
-    <section className="bg-white px-6 py-20" id="proceso" aria-labelledby="titulo-proceso">
+    <section className="bg-hoja px-6 py-20" id="proceso" aria-labelledby="titulo-proceso">
       <Reveal className="mx-auto mb-14 max-w-3xl text-center">
         <p className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]">
           <span aria-hidden="true" className="h-px w-8 bg-border" />

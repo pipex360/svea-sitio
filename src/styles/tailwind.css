@@ -36,6 +36,12 @@
   --color-svea: #0e7a3c;
   --color-svea-claro: #6bbf3b;
 
+  /* «hoja»: el gris de las secciones alternas. Un pelo de verde, apenas
+     perceptible: sobre blanco puro se nota el cambio de fondo y nada más.
+     Sirve para que las tarjetas blancas se despeguen del fondo por sí
+     solas en vez de depender del filete. */
+  --color-hoja: #f4f6f4;
+
   /* el verde de la marca manda en lo primario */
   --color-primary: #677c77;
   --color-primary-foreground: #ffffff;
@@ -162,3 +168,11 @@
 .btn-flecha .circulo,
 .btn-flecha .circulo svg { color: #000 !important; }
 .btn-flecha .circulo svg { width: 20px; height: 20px; }
+
+/* Invertido, para fondos oscuros: blanco con la flecha en negro. */
+.btn-flecha.inversa { background: #fff; color: #000 !important; }
+.btn-flecha.inversa span { color: #000 !important; }
+.btn-flecha.inversa:hover { background: #e5e7eb; }
+.btn-flecha.inversa .circulo { background: #000; }
+.btn-flecha.inversa .circulo,
+.btn-flecha.inversa .circulo svg { color: #fff !important; }
