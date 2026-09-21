@@ -13,6 +13,9 @@
  * copete, titular, párrafo, botón y cifras. Sin props rinde exactamente la
  * portada, así que index.astro no cambia.
  *
+ * Con varias fotos se turnan con el fundido y el Ken Burns; con una sola
+ * queda fija.
+ *
  * Las fotos son las tres del slideshow original, servidas desde el sitio en
  * WebP a 1920 y 1080 px (mejoras/img/hero): 132/258/102 KB en vez de los
  * 539/925/379 KB en JPG que bajaban del WordPress. La primera se precarga
@@ -83,7 +86,7 @@ const {
 
   <section class="halo-seccion" id="inicio" aria-label="Presentación">
     <div class="halo-tarjeta">
-      <div class="halo-fondo" aria-hidden="true">
+      <div class:list={['halo-fondo', { una: fotos.length === 1 }]} aria-hidden="true">
         {fotos.map((f, i) => (
           <img
             src={`${BASE}/img/hero/${f.archivo}-1920.webp`}
@@ -164,6 +167,10 @@ const {
     transform-origin:center center;will-change:opacity,transform;
     animation:halo-fundido 18s linear infinite}
   .halo-fondo img:nth-child(1){animation-delay:0s;opacity:1;animation-name:halo-fundido-primera}
+  /* Con una sola foto no hay turnos: el fundido la apagaba y dejaba el hero
+     en blanco diez de cada dieciocho segundos (medido en la página de la
+     CTI). Queda fija. */
+  .halo-fondo.una img{animation:none;opacity:1;transform:none}
   .halo-fondo img:nth-child(2){animation-delay:6s}
   .halo-fondo img:nth-child(3){animation-delay:12s}
   /* Ken Burns: la foto se acerca mientras está a la vista y recupera su
