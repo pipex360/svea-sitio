@@ -22,8 +22,20 @@
  *    (mejoras/img/logo-svea-blanco.webp): el texto negro del logo original
  *    desaparecería sobre el fondo oscuro; la hoja verde se conserva.
  *
- * Se hidrata (`client:idle`) por el Velaris; sin WebGL queda el verde plano.
+ * 6. En el teléfono las tres columnas se pliegan. Eran 19 enlaces apilados:
+ *    1.712 px de pie, dos pantallas completas. Cada grupo es un <details>
+ *    que el HTML entrega **abierto** —así lo ven Google y quien no tenga
+ *    JavaScript, y en escritorio no cambia nada— y que se cierra al hidratar
+ *    sólo si la pantalla es de teléfono. Ningún enlace se quita: son los
+ *    enlaces internos que el menú desplegable de la cabecera no deja en el
+ *    HTML, y sacarlos sería tocar el SEO.
+ *
+ * Se hidrata (`client:idle`) por el Velaris y por ese plegado; sin WebGL
+ * queda el verde plano y sin JavaScript el pie queda desplegado.
  */
+
+import { ChevronDownIcon } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 
 import { Velaris } from '@/components/ui/velaris';
 import { cn } from '@/lib/utils';
@@ -103,17 +115,30 @@ export function Footer2({
   bottomLinks = [{ text: 'Política de privacidad', url: `${base}/politica-de-privacidad/` }],
   className,
 }: Footer2Props) {
+  const grupos = useRef<(HTMLDetailsElement | null)[]>([]);
+
+  // El `open` va en el HTML y aquí sólo se quita en pantallas de teléfono:
+  // pre-hidratación el pie está desplegado, que es lo correcto para quien no
+  // ejecuta JavaScript. Después de esto mandan los toques del visitante.
+  useEffect(() => {
+    const consulta = window.matchMedia('(max-width: 767px)');
+    const aplicar = () => grupos.current.forEach((d) => d && (d.open = !consulta.matches));
+    aplicar();
+    consulta.addEventListener('change', aplicar);
+    return () => consulta.removeEventListener('change', aplicar);
+  }, []);
+
   return (
-    <footer className={cn('relative overflow-hidden bg-[#081c15] py-16 text-white md:py-24', className)}>
+    <footer className={cn('relative overflow-hidden bg-[#081c15] py-14 text-white md:py-16', className)}>
       <Velaris className="absolute inset-0" />
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-2 gap-8 lg:grid-cols-7">
-          <div className="col-span-2 mb-8 lg:mb-0">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-0 lg:grid-cols-7 lg:gap-8">
+          <div className="col-span-2 mb-6 lg:mb-0">
             <a href={logo.url} className="inline-block">
               <img src={logo.src} alt={logo.alt} width={404} height={137} className="h-10 w-auto" />
             </a>
             <p className="mt-5 max-w-sm text-base leading-relaxed text-white/80">{tagline}</p>
-            <address className="mt-6 space-y-1.5 text-sm not-italic text-white/65">
+            <address className="mt-5 space-y-1 text-sm not-italic text-white/65">
               <p>{contacto.direccion}</p>
               <p>
                 <a href={`tel:${contacto.telefono}`} className="inline-block py-1.5 no-underline transition-colors hover:text-white">
@@ -128,25 +153,44 @@ export function Footer2({
             </address>
           </div>
 
-          {menuItems.map((section) => (
-            <div key={section.title} className={section.span === 2 ? 'col-span-2' : undefined}>
-              <h3 className="mb-4 text-base font-bold text-white">{section.title}</h3>
-              <ul className="space-y-0.5 text-sm text-white/65">
+          {menuItems.map((section, i) => (
+            <details
+              key={section.title}
+              open
+              ref={(el) => {
+                grupos.current[i] = el;
+              }}
+              className={cn(
+                'pie-grupo group col-span-2 border-t border-white/10 md:border-0',
+                section.span === 2 ? 'lg:col-span-2' : 'lg:col-span-1',
+              )}
+            >
+              <summary className="flex cursor-pointer items-center justify-between gap-3 py-3 md:py-0">
+                <h3 className="text-base font-bold text-white">{section.title}</h3>
+                <ChevronDownIcon
+                  aria-hidden="true"
+                  className="size-5 shrink-0 text-white/50 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none md:hidden"
+                />
+              </summary>
+              <ul className="space-y-0.5 pb-2 text-sm text-white/65 md:mt-4 md:pb-0">
                 {section.links.map((link) => (
                   <li key={link.text} className="font-medium">
-                    {/* py-2.5: cada enlace mide 37 px de alto, para el dedo */}
-                    <a href={link.url} className="inline-block py-2.5 no-underline transition-colors hover:text-white">
+                    {/* py-2.5 en el teléfono: 37 px de alto, para el dedo */}
+                    <a
+                      href={link.url}
+                      className="inline-block py-2.5 no-underline transition-colors hover:text-white md:py-1.5"
+                    >
                       {link.text}
                     </a>
                   </li>
                 ))}
               </ul>
-            </div>
+            </details>
           ))}
         </div>
 
         {/* md:pr-44 deja sitio al botón flotante de WhatsApp, que va abajo a la derecha */}
-        <div className="mt-16 flex flex-col justify-between gap-4 border-t border-white/15 pt-8 text-sm font-medium text-white/65 md:flex-row md:items-center md:pr-44">
+        <div className="mt-10 flex flex-col justify-between gap-4 border-t border-white/15 pt-6 text-sm font-medium text-white/65 md:flex-row md:items-center md:pr-44">
           <p>{copyright}</p>
           <ul className="flex gap-4">
             {bottomLinks.map((link) => (
