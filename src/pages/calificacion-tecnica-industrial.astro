@@ -8,12 +8,17 @@
  * palabra ni un enlace:
  *
  *   1. Hero (foto del servicio, cifras y el botón de cotizar)
- *   2. Formulario «Solicita tu Cotización CTI»  ← LISTA ROJA
- *   3. ¿Qué es la CTI? + ¿Quién la necesita?    ← eran dos secciones
- *   4. ¿Qué incluye? + ¿Cómo lo obtienes?       ← eran dos secciones
- *   5. Sigue por aquí: ECC + guía del blog      ← eran dos franjas sueltas
- *   6. Preguntas frecuentes
- *   7. Cierre «Regulariza tu actividad hoy»
+ *   2. ¿Qué es la CTI? + ¿Quién la necesita?    ← eran dos secciones
+ *   3. ¿Qué incluye? + ¿Cómo lo obtienes?       ← eran dos secciones
+ *   4. Sigue por aquí: ECC + guía del blog      ← eran dos franjas sueltas
+ *   5. Preguntas frecuentes
+ *   6. Cierre «Regulariza tu actividad hoy»
+ *   7. Formulario «Solicita tu Cotización CTI»  ← LISTA ROJA
+ *
+ * El formulario cierra la página, justo antes del pie y con la misma
+ * tarjeta que «Contáctanos» de la portada. En el WordPress iba arriba, al
+ * lado del titular; ahí competía con el hero y obligaba a decidir antes de
+ * haber leído nada.
  *
  * Fuera queda sólo el carrusel de clientes, que no aportaba texto ni
  * enlaces y ya se ve en la portada.
@@ -85,7 +90,6 @@ const fuentesCSS = `
   <BarraPegajosa base={BASE} cotizar="#formulario-cti" client:idle />
 
   <div class="svea-nuevo">
-    <CtiFormulario copia={COPIA} client:idle />
     <CtiQueEs base={BASE} client:idle />
     <CtiServicio client:idle />
     <CtiSiguiente base={BASE} client:idle />
@@ -101,6 +105,7 @@ const fuentesCSS = `
       }}
       client:idle
     />
+    <CtiFormulario copia={COPIA} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 

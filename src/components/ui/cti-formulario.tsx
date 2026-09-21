@@ -17,20 +17,28 @@
  * - El asunto se arma al enviar con el mismo algoritmo que el <script> del
  *   WordPress: «Cotización CTI - Nombre | Empresa - fecha hora» en es-CL.
  *
- * Sólo cambia la ropa: etiquetas visibles sobre cada campo —antes eran sólo
- * placeholders— y el botón de la casa.
+ * Sólo cambia la ropa: la misma tarjeta de «Contáctanos» de la portada
+ * —datos de contacto a la izquierda, formulario a la derecha—, etiquetas
+ * visibles sobre cada campo —antes eran sólo placeholders— y el botón de la
+ * casa. Va al final de la página, justo antes del pie, como en la portada.
  *
  * `scripts/verificar.mjs` compara estos campos con los del original en cada
  * corrida: si algo de la lista roja cambia, no pasa.
  */
 
-import { ClockIcon, ShieldCheckIcon } from 'lucide-react';
+import { ClockIcon, MailIcon, ShieldCheckIcon } from 'lucide-react';
 import { useRef } from 'react';
 
+import { ContactCard } from '@/components/ui/contact-card';
+import { IconoWhatsApp } from '@/components/ui/icono-whatsapp';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Reveal } from '@/components/ui/reveal';
 import { Textarea } from '@/components/ui/textarea';
+
+/** Los mismos enlaces del WordPress: el de WhatsApp lo cuenta el listener de GTM. */
+const WHATSAPP = 'https://api.whatsapp.com/send/?phone=56929947924&text=Hola%2C%20necesito%20asesor%C3%ADa%20t%C3%A9cnica';
+const CORREO = 'contacto@sveaconsultores.cl';
 
 export function CtiFormulario({ copia = false }: { copia?: boolean }) {
   const asuntoRef = useRef<HTMLInputElement>(null);
@@ -51,25 +59,25 @@ export function CtiFormulario({ copia = false }: { copia?: boolean }) {
   };
 
   return (
-    <section className="bg-white px-6 pb-20 pt-4" id="formulario-cti" aria-labelledby="titulo-form-cti">
-      <Reveal className="mx-auto max-w-xl">
-        <div className="rounded-2xl border border-border bg-hoja p-6 shadow-[0_18px_40px_-24px_rgba(0,0,0,0.25)] md:p-8">
-          <div className="mb-6 text-center">
-            <h2 id="titulo-form-cti" className="text-2xl font-bold tracking-tight text-black">
-              Solicita tu Cotización CTI
-            </h2>
-            <p className="mt-1 text-sm text-black/55">
-              Te enviaremos tu cotización en menos de 24 horas
-            </p>
-          </div>
-
+    <section className="bg-hoja px-6 py-20" id="formulario-cti" aria-labelledby="titulo-form-cti">
+      <Reveal className="mx-auto max-w-6xl">
+        <ContactCard
+          title="Solicita tu Cotización CTI"
+          titleId="titulo-form-cti"
+          description="Te enviaremos tu cotización en menos de 24 horas. Cuéntanos de tu instalación y te respondemos con el plazo y el valor de tu Calificación Técnica Industrial."
+          contactInfo={[
+            { icon: IconoWhatsApp, label: 'WhatsApp directo', value: '+56 9 2994 7924', href: WHATSAPP, externo: true },
+            { icon: MailIcon, label: 'Correo', value: CORREO, href: `mailto:${CORREO}` },
+            { icon: ClockIcon, label: 'Respuesta en 24h', value: 'Cotización automática por email' },
+          ]}
+        >
           <form
             id="form-cti"
             action={copia ? '#' : 'https://api.web3forms.com/submit'}
             method={copia ? undefined : 'POST'}
             data-copia={copia ? '1' : undefined}
             onSubmit={alEnviar}
-            className="space-y-3"
+            className="w-full space-y-3"
           >
             {/* LISTA ROJA: campos ocultos, tal cual el original */}
             <input type="hidden" name="access_key" value="076a0f9a-9911-48f6-880e-dd9d44c3063b" />
@@ -127,7 +135,7 @@ export function CtiFormulario({ copia = false }: { copia?: boolean }) {
               </span>
             </p>
           </form>
-        </div>
+        </ContactCard>
       </Reveal>
     </section>
   );
