@@ -1,0 +1,87 @@
+---
+/**
+ * Calificación Técnica Industrial. La primera página de servicio que se
+ * rehace, sección por sección, como se hizo con la portada.
+ *
+ * Por ahora sólo el hero es nuevo: el mismo componente de la portada con la
+ * foto de este servicio —la que el WordPress usa de fondo en su banner— y
+ * sus propias cifras. Lo que va debajo sigue siendo el contenido del
+ * WordPress con su hoja de estilos, hasta que aprobemos cada sección.
+ *
+ * El SEO sale de src/data/paginas.json, que se genera desde el CSV de Rank
+ * Math. Ojo con la canónica: apunta al artículo
+ * /calificacion-tecnica-industrial-chile/, no a esta URL. Es así en el sitio
+ * vivo y está en la lista de cosas que confirmar con Carlos antes del
+ * cambio; aquí se reproduce tal cual.
+ */
+import '../styles/tailwind.css';
+import HeroHalo from '../components/HeroHalo.astro';
+import paginas from '../data/paginas.json';
+import cabezaWP from '../contenido/cti-wp-cabeza.html?raw';
+import cuerpoWP from '../contenido/cti-wp-cuerpo.html?raw';
+
+const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+const pagina = paginas.find((p) => p.ruta === '/calificacion-tecnica-industrial/')!;
+
+const [antesHero, despuesHero] = cuerpoWP.split('<!--SVEA:HERO-->');
+
+// Las mismas fuentes que la portada. Se declaran aquí y no en tailwind.css
+// para que la ruta lleve la base del sitio.
+const fuentesCSS = `
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 900;font-display:swap;src:url(${BASE}/fonts/inter-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:500 800;font-display:swap;src:url(${BASE}/fonts/manrope-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+`;
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO reproducido desde 04-seo-por-url/seo-por-url.csv: uno de cada uno -->
+  <title set:html={pagina.title}></title>
+  <meta name="description" content={pagina.description} />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href={pagina.canonical} />
+
+  <link rel="preload" href={`${BASE}/fonts/inter-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
+  <style set:html={fuentesCSS}></style>
+  <!-- la foto del hero es el LCP: se precarga -->
+  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-cti-1080.webp 1080w, ${BASE}/img/hero/servicio-cti-1920.webp 1920w`} imagesizes="100vw" />
+
+  <!-- hoja del WordPress: sostiene el contenido que todavía no migramos -->
+  <Fragment set:html={cabezaWP} />
+</head>
+<body>
+  <div class="wp-restante" set:html={antesHero} />
+
+  <HeroHalo
+    fotos={[{ archivo: 'servicio-cti', alto: 1280 }]}
+    copete="Servicios SVEA"
+    titulo="Calificación Técnica Industrial"
+    parrafo="Regulariza tu infraestructura y obtén tu patente municipal. Nos encargamos de todo el proceso ante la SEREMI de Salud, desde el informe técnico hasta la resolución aprobada."
+    boton={{ texto: 'Cotiza tu CTI ahora', href: '#formulario-cti' }}
+    principal={{ valor: '100', texto: 'aprobación en trámites realizados', contador: 'pct' }}
+    secundarias={[
+      { destacado: '5-10 días hábiles', texto: 'informe técnico CTI' },
+      { destacado: 'Cotización en 24 hrs', texto: 'automática por email' },
+    ]}
+  />
+
+  <div class="wp-restante" set:html={despuesHero} />
+
+  <div class="aviso-copia">
+    COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
+    <a href={`${BASE}/estado/`}>ver las 27 páginas</a>
+  </div>
+</body>
+</html>
+
+<style is:global>
+  body { margin: 0; }
+  .aviso-copia{
+    position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#161b18;color:#fff;
+    font:400 12px/1.4 system-ui,sans-serif;padding:7px 12px;text-align:center}
+  .aviso-copia a{color:#9BEB6B}
+</style>

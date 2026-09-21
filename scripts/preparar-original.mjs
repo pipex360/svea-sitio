@@ -89,9 +89,32 @@ COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
 rmSync(DEST, { recursive: true, force: true });
 mkdirSync(DEST, { recursive: true });
 
+/**
+ * «Calificación Técnica Industrial», la primera página de servicio que se
+ * rehace. Mismo trato que la home: el original se limpia, se le quitan los
+ * bloques que ya tenemos en componentes y el resto se entrega a Astro con
+ * una marca donde iba cada uno.
+ */
+const CTI = {
+  ruta: '/calificacion-tecnica-industrial/',
+  archivo: 'servicios/calificacion-tecnica-industrial.html',
+  // la barra superior con el teléfono y el menú: la trae el hero nuevo
+  cabecera: /<section class="elementor-section elementor-top-section elementor-element elementor-element-0d8f189/,
+  // el banner con la foto de fondo y el h1: lo reemplaza el hero nuevo
+  banner: /<section class="elementor-section elementor-top-section elementor-element elementor-element-50365904/,
+  // la columna izquierda del bloque de entrada (copete, titular, cifras y
+  // botones): también está en el hero nuevo. La derecha es el formulario y
+  // no se toca; sin su pareja, la rejilla de cinco columnas se cambia por
+  // una caja centrada para que no quede colgando a un lado.
+  columnaTexto: /<div class="lg:col-span-3">/,
+  rejilla: '<div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start mb-12">',
+  rejillaNueva: '<div class="mx-auto max-w-xl mb-12">',
+};
+
 let n = 0;
 for (const [ruta, archivo] of Object.entries(ARCHIVOS)) {
   if (ruta === '/') continue;              // la home la arma src/pages/index.astro
+  if (ruta === CTI.ruta) continue;         // y ésta, src/pages/calificacion-tecnica-industrial.astro
   const origen = path.join(ORIG, archivo);
   if (!existsSync(origen)) { console.log('falta el original:', ruta); continue; }
   const destino = ruta === '/' ? path.join(DEST, 'index.html')
@@ -247,6 +270,27 @@ if (!pie) throw new Error('no se encontró el pie de página en la home');
 cuerpo = cuerpo.slice(0, pie[0]) + '<!--SVEA:PIE-->' + cuerpo.slice(pie[1]);
 
 mkdirSync('src/contenido', { recursive: true });
+// --- «Calificación Técnica Industrial», para que la componga Astro -------
+let cti = limpiar(readFileSync(path.join(ORIG, CTI.archivo), 'utf8'), CTI.ruta);
+const ctiCabeza = (cti.match(/<head[\s\S]*?<\/head>/i) || [''])[0]
+  .replace(/<\/?head[^>]*>/gi, '')
+  .replace(/<title[\s\S]*?<\/title>|<meta[^>]*name=["'](?:description|robots)["'][^>]*>|<link[^>]*rel=["']canonical["'][^>]*>/gi, '');
+cti = cti.slice(cti.indexOf('<body'), cti.lastIndexOf('</body>'));
+cti = cti.slice(cti.indexOf('>') + 1);
+
+for (const [nombre, marca] of [['cabecera', CTI.cabecera], ['banner', CTI.banner], ['columnaTexto', CTI.columnaTexto]]) {
+  const tramo = recortaDiv(cti, marca);
+  if (!tramo) throw new Error(`no se encontró «${nombre}» en la página de la CTI`);
+  cti = cti.slice(0, tramo[0]) + (nombre === 'banner' ? '<!--SVEA:HERO-->' : '') + cti.slice(tramo[1]);
+}
+if (!cti.includes(CTI.rejilla)) throw new Error('no se encontró la rejilla del bloque de entrada en la CTI');
+cti = cti.replace(CTI.rejilla, CTI.rejillaNueva);
+if (!/id="form-cti"/.test(cti)) throw new Error('el formulario form-cti se perdió al recortar la CTI');
+
+writeFileSync('src/contenido/cti-wp-cabeza.html', ctiCabeza);
+writeFileSync('src/contenido/cti-wp-cuerpo.html', cti);
+console.log('CTI: cuerpo entregado a Astro');
+
 writeFileSync('src/contenido/home-wp-cabeza.html',
   cabeza.join('\n') + `\n<style>.elementor-element-${HERO_VIEJO},.elementor-element-${BARRA_VIEJA},.elementor-element-${CARRUSEL},.elementor-element-${SERVICIOS}{display:none !important}</style>`);
 writeFileSync('src/contenido/home-wp-cuerpo.html', cuerpo);
