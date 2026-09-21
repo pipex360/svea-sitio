@@ -29,9 +29,18 @@ const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 
       <MenuSvea base={BASE} client:idle />
 
-      <!-- en el teléfono: el menú ☰ en vez del botón, que repetía al botón grande de abajo -->
-      <a class="btn-flecha max-md:hidden" href={`${BASE}/#form-home`} style="gap:0"><span>Solicitar cotización</span></a>
-      <MenuMovil base={BASE} client:idle />
+      <div class="halo-cab-acciones">
+        <!-- el teléfono de la barra superior del WordPress, ahora como enlace:
+             allí era texto plano y no se podía tocar para llamar -->
+        <a class="halo-tel max-md:hidden" href="tel:+56929947924">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg><span>+56 9 2994 7924</span>
+        </a>
+        <!-- en el teléfono no cabe el número: va el icono, y el botón se
+             esconde porque repetía al botón grande de abajo -->
+        <a class="halo-llamar md:hidden" href="tel:+56929947924" aria-label="Llamar a SVEA Consultores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg></a>
+        <a class="btn-flecha max-md:hidden" href={`${BASE}/#form-home`} style="gap:0"><span>Solicitar cotización</span></a>
+        <MenuMovil base={BASE} client:idle />
+      </div>
     </div>
   </header>
 
@@ -85,6 +94,13 @@ const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
      titular (mismo margen izquierdo que .halo-contenido) */
   .halo-cab{position:absolute;top:0;left:0;right:0;z-index:50;padding:20px 48px}
   .halo-cab-caja{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .halo-cab-acciones{display:flex;align-items:center;gap:14px}
+  .halo-tel{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+    font-size:15px;font-weight:500;color:#000;text-decoration:none;transition:color .2s}
+  .halo-tel:hover{color:#0e7a3c}
+  .halo-tel svg{width:17px;height:17px;color:rgba(0,0,0,.5)}
+  .halo-llamar{display:grid;place-items:center;width:44px;height:44px;color:#000;text-decoration:none}
+  .halo-llamar svg{width:21px;height:21px}
   .halo-marca img{height:40px;width:auto;display:block}
 
   .halo-seccion{flex:1;display:flex;align-items:flex-end;padding:0}

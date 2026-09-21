@@ -13,11 +13,14 @@
  * `prefers-reduced-motion` aparece y desaparece sin deslizarse.
  *
  * El menú es el mismo del hero (MenuSvea), que en el teléfono se esconde
- * solo; ahí quedan el logo y el menú ☰ (MenuMovil). El botón de cotizar no
- * va en el teléfono: ya está en la barra de abajo, en la zona del pulgar.
+ * solo; ahí quedan el logo, el icono de llamar y el menú ☰ (MenuMovil). El
+ * botón de cotizar no va en el teléfono: ya está en la barra de abajo, en la
+ * zona del pulgar. El teléfono repite el de la cabecera del hero.
  */
 
 import { useEffect, useState } from 'react';
+
+import { PhoneIcon } from 'lucide-react';
 
 import { MenuMovil } from '@/components/ui/menu-movil';
 import MenuSvea from '@/components/ui/navigation-menu-06';
@@ -49,11 +52,27 @@ export function BarraPegajosa({ base = '' }: { base?: string }) {
           <img src={`${base}/img/logo-svea.webp`} width={404} height={137} alt="SVEA Consultores" className="block h-8 w-auto" />
         </a>
         <MenuSvea base={base} />
-        {/* en el teléfono, el ☰; el botón de cotizar ya está en la barra de abajo */}
-        <a className="btn-flecha chica max-md:hidden" href={`${base}/#form-home`} style={{ gap: 0 }}>
-          <span>Solicitar cotización</span>
-        </a>
-        <MenuMovil base={base} />
+        <div className="flex items-center gap-3.5">
+          <a
+            href="tel:+56929947924"
+            className="inline-flex items-center gap-2 whitespace-nowrap text-[15px] font-medium text-black no-underline transition-colors hover:text-svea max-md:hidden"
+          >
+            <PhoneIcon className="size-[17px] text-black/50" aria-hidden="true" />
+            +56 9 2994 7924
+          </a>
+          <a
+            href="tel:+56929947924"
+            aria-label="Llamar a SVEA Consultores"
+            className="grid size-11 place-items-center text-black no-underline md:hidden"
+          >
+            <PhoneIcon className="size-[21px]" aria-hidden="true" />
+          </a>
+          {/* en el teléfono, el ☰; el botón de cotizar ya está en la barra de abajo */}
+          <a className="btn-flecha chica max-md:hidden" href={`${base}/#form-home`} style={{ gap: 0 }}>
+            <span>Solicitar cotización</span>
+          </a>
+          <MenuMovil base={base} />
+        </div>
       </div>
     </div>
   );

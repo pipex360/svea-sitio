@@ -12,9 +12,11 @@
  * 2. Las anclas «Nosotros» y «Contacto» apuntan a las secciones nuevas
  *    (#nosotros y #contacto); en el WordPress iban a #Nosotros y #Formulario,
  *    que ya no existen en esta portada.
- * 3. Abajo queda sólo «Política de privacidad», que es una página real del
- *    sitio. «Term of use» y «Cookie Policy» apuntaban a «#» —enlaces muertos
- *    y en inglés— y no hay página detrás: se retiran.
+ * 3. Abajo van «Política de privacidad», que es una página real del sitio, y
+ *    el LinkedIn de SVEA, que en el WordPress vive en la barra superior de
+ *    la cabecera y no estaba en ninguna parte de la portada nueva.
+ *    «Term of use» y «Cookie Policy» apuntaban a «#» —enlaces muertos y en
+ *    inglés— y no hay página detrás: se retiran.
  * 4. `container` no existe en Tailwind 4 sin configurarlo; se usa el ancho
  *    de las demás secciones (max-w-7xl).
  * 5. Va sobre el verde en movimiento de las tarjetas de «Cumplimiento» y del
@@ -59,6 +61,14 @@ interface Footer2Props {
 }
 
 const CORREO = 'contacto@sveaconsultores.cl';
+const LINKEDIN = 'https://www.linkedin.com/company/svea-consultores/about/';
+
+/** El logotipo de LinkedIn (trazado de Simple Icons), en el color del texto. */
+const IconoLinkedIn = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.063 2.063 0 0 1 0 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+  </svg>
+);
 
 export function Footer2({
   base = '',
@@ -141,8 +151,10 @@ export function Footer2({
             <address className="mt-5 space-y-1 text-sm not-italic text-white/65">
               <p>{contacto.direccion}</p>
               <p>
+                {/* el número se escribe agrupado, como en la cabecera y en
+                    «Contáctanos»; el href lleva el crudo */}
                 <a href={`tel:${contacto.telefono}`} className="inline-block py-1.5 no-underline transition-colors hover:text-white">
-                  {contacto.telefono}
+                  +56 9 2994 7924
                 </a>
               </p>
               <p>
@@ -192,13 +204,24 @@ export function Footer2({
         {/* md:pr-44 deja sitio al botón flotante de WhatsApp, que va abajo a la derecha */}
         <div className="mt-10 flex flex-col justify-between gap-4 border-t border-white/15 pt-6 text-sm font-medium text-white/65 md:flex-row md:items-center md:pr-44">
           <p>{copyright}</p>
-          <ul className="flex gap-4">
-            {bottomLinks.map((link) => (
-              <li key={link.text} className="underline underline-offset-4 transition-colors hover:text-white">
-                <a href={link.url} className="inline-block py-2.5">{link.text}</a>
-              </li>
-            ))}
-          </ul>
+          <div className="flex items-center gap-5">
+            <ul className="flex gap-4">
+              {bottomLinks.map((link) => (
+                <li key={link.text} className="underline underline-offset-4 transition-colors hover:text-white">
+                  <a href={link.url} className="inline-block py-2.5">{link.text}</a>
+                </li>
+              ))}
+            </ul>
+            <a
+              href={LINKEDIN}
+              target="_blank"
+              rel="noopener"
+              aria-label="SVEA Consultores en LinkedIn"
+              className="grid size-11 shrink-0 place-items-center rounded-full text-white/65 no-underline transition-colors hover:text-white"
+            >
+              <IconoLinkedIn className="size-[18px]" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
