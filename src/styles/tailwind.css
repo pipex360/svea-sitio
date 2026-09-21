@@ -212,7 +212,9 @@ button.btn-flecha { border: 0; cursor: pointer; font-family: inherit; }
 /* Los grupos plegables del pie. El triángulo del <details> se retira: el
    indicador es la flecha del componente. En escritorio el resumen es sólo
    un titular, así que no responde al clic ni muestra el cursor de mano. */
+.acordeon > summary,
 .pie-grupo > summary { list-style: none; }
+.acordeon > summary::-webkit-details-marker,
 .pie-grupo > summary::-webkit-details-marker { display: none; }
 @media (min-width: 768px) {
   .pie-grupo > summary { pointer-events: none; cursor: default; }

@@ -1,32 +1,51 @@
 ---
 /**
- * Calificación Técnica Industrial. La primera página de servicio que se
- * rehace, sección por sección, como se hizo con la portada.
+ * Calificación Técnica Industrial, la primera página de servicio rehecha
+ * entera. Del WordPress ya no queda nada: ni su hoja de estilos, ni sus
+ * scripts, ni su estructura.
  *
- * Por ahora sólo el hero es nuevo: el mismo componente de la portada con la
- * foto de este servicio —la que el WordPress usa de fondo en su banner— y
- * sus propias cifras. Lo que va debajo sigue siendo el contenido del
- * WordPress con su hoja de estilos, hasta que aprobemos cada sección.
+ * El WordPress la servía en once bloques; aquí son siete, sin quitar una
+ * palabra ni un enlace:
+ *
+ *   1. Hero (foto del servicio, cifras y el botón de cotizar)
+ *   2. Formulario «Solicita tu Cotización CTI»  ← LISTA ROJA
+ *   3. ¿Qué es la CTI? + ¿Quién la necesita?    ← eran dos secciones
+ *   4. ¿Qué incluye? + ¿Cómo lo obtienes?       ← eran dos secciones
+ *   5. Sigue por aquí: ECC + guía del blog      ← eran dos franjas sueltas
+ *   6. Preguntas frecuentes
+ *   7. Cierre «Regulariza tu actividad hoy»
+ *
+ * Fuera queda sólo el carrusel de clientes, que no aportaba texto ni
+ * enlaces y ya se ve en la portada.
  *
  * El SEO sale de src/data/paginas.json, que se genera desde el CSV de Rank
  * Math. Ojo con la canónica: apunta al artículo
  * /calificacion-tecnica-industrial-chile/, no a esta URL. Es así en el sitio
- * vivo y está en la lista de cosas que confirmar con Carlos antes del
- * cambio; aquí se reproduce tal cual.
+ * vivo y está pendiente de confirmar con Carlos; aquí se reproduce tal cual.
+ *
+ * `scripts/verificar.mjs` comprueba en cada corrida que ninguna palabra del
+ * original se haya perdido y que los campos del formulario sigan siendo los
+ * mismos.
  */
 import '../styles/tailwind.css';
 import HeroHalo from '../components/HeroHalo.astro';
+import { BarraPegajosa } from '../components/ui/barra-pegajosa';
+import { BarraMovil } from '../components/ui/barra-movil';
+import { CtiFormulario } from '../components/ui/cti-formulario';
+import { CtiQueEs } from '../components/ui/cti-que-es';
+import { CtiServicio } from '../components/ui/cti-servicio';
+import { CtiSiguiente } from '../components/ui/cti-siguiente';
+import { CtiFaq } from '../components/ui/cti-faq';
+import { Cta69 } from '../components/ui/cta69';
+import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
-import cabezaWP from '../contenido/cti-wp-cabeza.html?raw';
-import cuerpoWP from '../contenido/cti-wp-cuerpo.html?raw';
 
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 const pagina = paginas.find((p) => p.ruta === '/calificacion-tecnica-industrial/')!;
 
-const [antesHero, despuesHero] = cuerpoWP.split('<!--SVEA:HERO-->');
+// Mientras esto sea la copia de trabajo, el formulario no envía.
+const COPIA = !import.meta.env.SVEA_PRODUCCION;
 
-// Las mismas fuentes que la portada. Se declaran aquí y no en tailwind.css
-// para que la ruta lleve la base del sitio.
 const fuentesCSS = `
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 900;font-display:swap;src:url(${BASE}/fonts/inter-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'Manrope';font-style:normal;font-weight:500 800;font-display:swap;src:url(${BASE}/fonts/manrope-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -49,13 +68,8 @@ const fuentesCSS = `
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero es el LCP: se precarga -->
   <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-cti-1080.webp 1080w, ${BASE}/img/hero/servicio-cti-1920.webp 1920w`} imagesizes="100vw" />
-
-  <!-- hoja del WordPress: sostiene el contenido que todavía no migramos -->
-  <Fragment set:html={cabezaWP} />
 </head>
 <body>
-  <div class="wp-restante" set:html={antesHero} />
-
   <HeroHalo
     fotos={[{ archivo: 'servicio-cti', alto: 1280 }]}
     copete="Servicios SVEA"
@@ -68,8 +82,31 @@ const fuentesCSS = `
       { destacado: 'Cotización en 24 hrs', texto: 'automática por email' },
     ]}
   />
+  <BarraPegajosa base={BASE} cotizar="#formulario-cti" client:idle />
 
-  <div class="wp-restante" set:html={despuesHero} />
+  <div class="svea-nuevo">
+    <CtiFormulario copia={COPIA} client:idle />
+    <CtiQueEs base={BASE} client:idle />
+    <CtiServicio client:idle />
+    <CtiSiguiente base={BASE} client:idle />
+    <CtiFaq />
+    <Cta69
+      badge={{ label: 'Último paso' }}
+      heading="Regulariza tu actividad hoy"
+      button={{ label: 'Cotiza tu CTI ahora', href: '#formulario-cti' }}
+      labels={{
+        marqueePhrase: 'Calificación',
+        note: 'Obtén tu Calificación Técnica Industrial con respaldo profesional. Cotización en menos de 24 horas, informe en 5-10 días hábiles, 100% tasa de aprobación.',
+        footnote: 'WhatsApp directo: +56 9 2994 7924',
+      }}
+      client:idle
+    />
+    <Footer2 base={BASE} client:idle />
+  </div>
+
+  <!-- en el teléfono, sitio para la barra de abajo -->
+  <div class="h-20 md:hidden" aria-hidden="true"></div>
+  <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-cti" client:idle />
 
   <div class="aviso-copia">
     COPIA DE TRABAJO · sin medición y con los formularios desactivados ·

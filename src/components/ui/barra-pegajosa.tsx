@@ -26,7 +26,8 @@ import { MenuMovil } from '@/components/ui/menu-movil';
 import MenuSvea from '@/components/ui/navigation-menu-06';
 import { cn } from '@/lib/utils';
 
-export function BarraPegajosa({ base = '' }: { base?: string }) {
+export function BarraPegajosa({ base = '', cotizar }: { base?: string; cotizar?: string }) {
+  const destino = cotizar ?? `${base}/#form-home`;
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -68,7 +69,7 @@ export function BarraPegajosa({ base = '' }: { base?: string }) {
             <PhoneIcon className="size-[21px]" aria-hidden="true" />
           </a>
           {/* en el teléfono, el ☰; el botón de cotizar ya está en la barra de abajo */}
-          <a className="btn-flecha chica max-md:hidden" href={`${base}/#form-home`} style={{ gap: 0 }}>
+          <a className="btn-flecha chica max-md:hidden" href={destino} style={{ gap: 0 }}>
             <span>Solicitar cotización</span>
           </a>
           <MenuMovil base={base} />

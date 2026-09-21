@@ -28,12 +28,13 @@ const WHATSAPP = 'https://api.whatsapp.com/send/?phone=56929947924&text=Hola%2C%
 const AVISO = 31;
 
 
-export function BarraMovil({ base = '', copia = false }: { base?: string; copia?: boolean }) {
+export function BarraMovil({ base = '', copia = false, cotizar }: { base?: string; copia?: boolean; cotizar?: string }) {
+  const destino = cotizar ?? `${base}/#form-home`;
   const [formularioALaVista, setFormularioALaVista] = useState(false);
   const [heroALaVista, setHeroALaVista] = useState(true);
 
   useEffect(() => {
-    const contacto = document.querySelector('#contacto');
+    const contacto = document.querySelector('#contacto, #formulario-cti');
     const hero = document.querySelector('#inicio');
     const observadores: IntersectionObserver[] = [];
     if (contacto) {
@@ -76,7 +77,7 @@ export function BarraMovil({ base = '', copia = false }: { base?: string; copia?
           WhatsApp
         </a>
         <a
-          href={`${base}/#form-home`}
+          href={destino}
           className="flex h-12 items-center justify-center gap-2 rounded-full bg-black text-sm font-semibold text-white no-underline"
         >
           Cotizar

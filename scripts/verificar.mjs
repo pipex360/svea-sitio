@@ -49,11 +49,11 @@ for (const p of esperadas) {
   // igual. La portada es la excepción: es propia, y lo que se comprueba es lo
   // contrario —que no cargue nada del WordPress ni de CDN, y que sirva sus
   // fuentes y las fotos del hero desde el sitio—.
-  if (p.ruta === '/') {
+  if (p.ruta === '/' || p.ruta === '/calificacion-tecnica-industrial/') {
     const ajenos = html.match(/(?:src|href)="https?:\/\/[^"]*(?:wp-content|wp-includes|cdn\.tailwindcss\.com|code\.iconify\.design|fonts\.googleapis\.com)[^"]*"/g) || [];
     if (ajenos.length) fallos.push(`${p.ruta}  ✗ la portada aún carga del WordPress o de CDN: ${ajenos.slice(0, 3).join(' ')}`);
     else checks++;
-    if (!/\/fonts\/inter-variable-latin\.woff2/.test(html) || !/\/img\/hero\/hero-1-energia-1920\.webp/.test(html)) fallos.push(`${p.ruta}  ✗ la portada no sirve sus fuentes o las fotos del hero`);
+    if (!/\/fonts\/inter-variable-latin\.woff2/.test(html) || !/\/img\/hero\//.test(html)) fallos.push(`${p.ruta}  ✗ no sirve sus fuentes o las fotos del hero desde el sitio`);
     else checks++;
   } else if (!html.includes('sveaconsultores.cl/wp-content')) fallos.push(`${p.ruta}  ✗ perdió los recursos del sitio original`);
   else checks++;
@@ -66,13 +66,13 @@ if (!existsSync(robots) || !readFileSync(robots, 'utf8').includes('Disallow: /')
 else checks++;
 
 console.log(`\n${esperadas.length} páginas · ${checks} comprobaciones`);
-// 5. LISTA ROJA del formulario de la portada: lo que lee Web3Forms y el flujo
+// 5. LISTA ROJA de los formularios: lo que lee Web3Forms y el flujo
 // de n8n tiene que ser idéntico al del WordPress. Se compara la huella del
 // <form id="form-home"> construido con la del original: campos ocultos con
 // su valor, campos visibles con name/type/required, y las opciones del
 // select en su orden. La ropa (clases, etiquetas) no entra en la huella.
-function huellaFormulario(html) {
-  const m = html.match(/<form\b[^>]*id="form-home"[^>]*>([\s\S]*?)<\/form>/);
+function huellaFormulario(html, id) {
+  const m = html.match(new RegExp(`<form\\b[^>]*id="${id}"[^>]*>([\\s\\S]*?)</form>`));
   if (!m) return null;
   const cuerpo = m[1];
   const attr = (tag, n) => (tag.match(new RegExp(`\\s${n}="([^"]*)"`)) || [])[1];
@@ -90,11 +90,59 @@ function huellaFormulario(html) {
   const opciones = (cuerpo.match(/<option\b[^>]*value="([^"]*)"/g) || []).map((o) => attr(o, 'value'));
   return JSON.stringify({ ocultos, visibles, opciones });
 }
-const original = huellaFormulario(readFileSync('originales-wp/home.html', 'utf8'));
-const construido = huellaFormulario(readFileSync(path.join(DIST, 'index.html'), 'utf8'));
-if (!original || !construido) fallos.push('/  ✗ no se encontró el form-home (original o construido)');
-else if (original !== construido) fallos.push(`/  ✗ la lista roja del formulario cambió\n     original:   ${original}\n     construido: ${construido}`);
-else checks++;
+for (const [ruta, id, origen, destino] of [
+  ['/', 'form-home', 'originales-wp/home.html', 'index.html'],
+  ['/calificacion-tecnica-industrial/', 'form-cti', 'originales-wp/servicios/calificacion-tecnica-industrial.html', 'calificacion-tecnica-industrial/index.html'],
+]) {
+  const original = huellaFormulario(readFileSync(origen, 'utf8'), id);
+  const construido = huellaFormulario(readFileSync(path.join(DIST, destino), 'utf8'), id);
+  if (!original || !construido) fallos.push(`${ruta}  ✗ no se encontró el ${id} (original o construido)`);
+  else if (original !== construido) fallos.push(`${ruta}  ✗ la lista roja de ${id} cambió\n     original:   ${original}\n     construido: ${construido}`);
+  else checks++;
+}
+
+// 6. Las páginas rehechas enteras no pueden perder texto. El brief lo pone en
+// la lista roja: «el texto de artículos y páginas de servicio se conserva o
+// crece, nunca se resume». Se comparan las palabras del contenido del
+// original con las de la página construida; las de la cabecera y el pie del
+// WordPress quedan fuera porque ésos sí se rehicieron.
+/** Quita scripts, estilos y comentarios. Se hace antes de recortar: si se
+ *  recorta primero, media hoja de estilos entra como si fuera texto. */
+function sinCodigo(html) {
+  return html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<!--[\s\S]*?-->/g, '');
+}
+
+function palabras(limpio, desde = 0, hasta = limpio.length) {
+  const texto = limpio
+    .slice(desde, hasta)
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&#0?39;|&apos;/g, "'")
+    .replace(/&quot;/g, '"').replace(/&aacute;/g, 'á').replace(/&eacute;/g, 'é')
+    .replace(/&iacute;/g, 'í').replace(/&oacute;/g, 'ó').replace(/&uacute;/g, 'ú')
+    .replace(/&ntilde;/g, 'ñ').replace(/&[a-z#0-9]+;/gi, ' ');
+  return new Set(
+    (texto.toLowerCase().match(/[a-záéíóúüñ0-9][a-záéíóúüñ0-9.\-/]{2,}/g) || [])
+      .map((w) => w.replace(/[.\-/]+$/, '')),
+  );
+}
+
+{
+  const orig = sinCodigo(readFileSync('originales-wp/servicios/calificacion-tecnica-industrial.html', 'utf8'));
+  // sólo el contenido: desde el bloque de entrada hasta antes del pie
+  // desde el final de la etiqueta que abre el contenido, para que sus clases
+  // no cuenten como texto; hasta donde empieza el pie del WordPress, que se
+  // rehízo aparte (Footer2) y tiene sus propios enlaces.
+  const marca = orig.indexOf('cti-page');
+  const desde = marca < 0 ? -1 : orig.indexOf('>', marca) + 1;
+  const hasta = orig.indexOf('<section class="elementor-section elementor-top-section elementor-element elementor-element-adbcfcf');
+  const antes = palabras(orig, desde, hasta > desde ? hasta : orig.length);
+  const ahora = palabras(sinCodigo(readFileSync(path.join(DIST, 'calificacion-tecnica-industrial/index.html'), 'utf8')));
+  const perdidas = [...antes].filter((w) => !ahora.has(w));
+  if (marca < 0 || hasta < 0) fallos.push('/calificacion-tecnica-industrial/  ✗ no se encontró el contenido del original');
+  else if (perdidas.length) {
+    fallos.push(`/calificacion-tecnica-industrial/  ✗ se perdieron ${perdidas.length} palabras del original: ${perdidas.slice(0, 12).join(', ')}`);
+  } else checks++;
+}
 
 if (fallos.length) {
   console.log(`\nFALLA — ${fallos.length} problemas:`);
