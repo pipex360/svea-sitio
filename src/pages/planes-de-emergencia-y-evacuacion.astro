@@ -1,28 +1,25 @@
 ---
 /**
- * Estudio de Carga de Combustible, rehecha con el mismo formato que
- * calificacion-tecnica-industrial.astro (ver ahí la explicación de los siete
- * bloques). Texto, enlaces y formulario idénticos al WordPress; los compara
- * scripts/verificar.mjs.
- *
- * Canónica: apunta a sí misma (decidido con Carlos el 24-sep; en el
- * WordPress apuntaba al artículo /estudio-de-carga-combustible-chile/).
+ * Planes de Emergencia y Evacuación Industrial, rehecha con el mismo formato
+ * que calificacion-tecnica-industrial.astro y estudio-de-carga-de-combustible
+ * .astro (ver ahí la explicación de los bloques). Texto, enlaces y formulario
+ * idénticos al WordPress; los compara scripts/verificar.mjs.
  */
 import '../styles/tailwind.css';
 import HeroHalo from '../components/HeroHalo.astro';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
-import { EccFormulario } from '../components/ui/ecc-formulario';
-import { EccQueEs } from '../components/ui/ecc-que-es';
-import { EccServicio } from '../components/ui/ecc-servicio';
-import { EccSiguiente } from '../components/ui/ecc-siguiente';
-import { EccFaq } from '../components/ui/ecc-faq';
+import { PeFormulario } from '../components/ui/pe-formulario';
+import { PeQueEs } from '../components/ui/pe-que-es';
+import { PeServicio } from '../components/ui/pe-servicio';
+import { PeSiguiente } from '../components/ui/pe-siguiente';
+import { PeFaq } from '../components/ui/pe-faq';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
 
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
-const pagina = paginas.find((p) => p.ruta === '/estudio-de-carga-de-combustible/')!;
+const pagina = paginas.find((p) => p.ruta === '/planes-de-emergencia-y-evacuacion/')!;
 
 // Mientras esto sea la copia de trabajo, el formulario no envía.
 const COPIA = !import.meta.env.SVEA_PRODUCCION;
@@ -48,46 +45,46 @@ const fuentesCSS = `
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero es el LCP: se precarga -->
-  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-ecc-1080.webp 1080w, ${BASE}/img/hero/servicio-ecc-1920.webp 1920w`} imagesizes="100vw" />
+  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-pe-1080.webp 1080w, ${BASE}/img/hero/servicio-pe-1920.webp 1920w`} imagesizes="100vw" />
 </head>
 <body>
   <HeroHalo
-    fotos={[{ archivo: 'servicio-ecc', alto: 1281 }]}
+    fotos={[{ archivo: 'servicio-pe', alto: 1317 }]}
     copete="Servicios SVEA"
-    titulo="Estudio de Carga de Combustible"
-    parrafo="Cuantifica el riesgo de incendio de tu instalación y cumple con la OGUC. Elaboramos el informe técnico completo para obtener tus permisos municipales y sectoriales."
-    boton={{ texto: 'Cotiza tu ECC ahora', href: '#formulario-ecc' }}
-    principal={{ valor: '5-10', texto: 'días hábiles para el informe técnico ECC' }}
+    titulo="Planes de Emergencia y Evacuación Industrial"
+    parrafo="Protege a tus trabajadores y asegura la continuidad operativa de tu empresa. Desarrollamos planes personalizados que cumplen con la normativa vigente y garantizan una evacuación eficiente ante cualquier emergencia."
+    boton={{ texto: 'Cotiza tu Plan de Emergencia', href: '#formulario-pe' }}
+    principal={{ valor: '7-15', texto: 'días hábiles · Plan completo entregado' }}
     secundarias={[
-      { destacado: 'Correcciones sin costo', texto: 'incluidas en el servicio' },
-      { destacado: 'Cotización en 24 hrs', texto: 'automática por email' },
+      { destacado: 'DS 594 y DS 44', texto: 'Normativa aplicada' },
+      { destacado: 'Cotización en 24 hrs', texto: 'Automática por email' },
     ]}
   />
-  <BarraPegajosa base={BASE} cotizar="#formulario-ecc" client:idle />
+  <BarraPegajosa base={BASE} cotizar="#formulario-pe" client:idle />
 
   <div class="svea-nuevo">
-    <EccQueEs base={BASE} client:idle />
-    <EccServicio client:idle />
-    <EccSiguiente base={BASE} client:idle />
-    <EccFaq />
+    <PeQueEs base={BASE} client:idle />
+    <PeServicio client:idle />
+    <PeSiguiente base={BASE} client:idle />
+    <PeFaq />
     <Cta69
       badge={{ label: 'Último paso' }}
-      heading="Protege tu instalación hoy"
-      button={{ label: 'Cotiza tu ECC ahora', href: '#formulario-ecc' }}
+      heading="Protege a tu equipo hoy"
+      button={{ label: 'Cotiza tu Plan ahora', href: '#formulario-pe' }}
       labels={{
-        marqueePhrase: 'Combustible',
-        note: 'Obtén tu Estudio de Carga de Combustible con respaldo profesional. Cotización en menos de 24 horas, informe en 5-10 días hábiles, conforme a la OGUC.',
+        marqueePhrase: 'Emergencia',
+        note: 'Obtén tu Plan de Emergencia y Evacuación con respaldo profesional. Cotización en menos de 24 horas, plan completo en 7-15 días hábiles, conforme al DS 594 y DS 44.',
         footnote: 'WhatsApp directo: +56 9 2994 7924',
       }}
       client:idle
     />
-    <EccFormulario copia={COPIA} client:idle />
+    <PeFormulario copia={COPIA} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
   <!-- en el teléfono, sitio para la barra de abajo -->
   <div class="h-20 md:hidden" aria-hidden="true"></div>
-  <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-ecc" client:idle />
+  <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-pe" client:idle />
 
   <div class="aviso-copia">
     COPIA DE TRABAJO · sin medición y con los formularios desactivados ·

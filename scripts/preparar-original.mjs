@@ -97,7 +97,14 @@ mkdirSync(DEST, { recursive: true });
  */
 const CTI = { ruta: '/calificacion-tecnica-industrial/' };
 // Las demás páginas rehechas con el mismo formato (src/pages/<ruta>.astro).
-const REHECHAS = new Set([CTI.ruta, '/estudio-de-carga-de-combustible/']);
+const REHECHAS = new Set([
+  CTI.ruta,
+  '/estudio-de-carga-de-combustible/',
+  '/planes-de-emergencia-y-evacuacion/',
+  '/planes-de-emergencia-y-evacuacion-condominios/',
+  '/manejo-de-residuos-peligrosos/',
+  '/autorizacion-de-transporte-de-residuos/',
+]);
 
 let n = 0;
 for (const [ruta, archivo] of Object.entries(ARCHIVOS)) {

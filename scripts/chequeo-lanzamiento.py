@@ -55,6 +55,9 @@ for ruta in rutas:
         print(f'? {ruta}  no se pudo leer el sitio vivo ({e})'); continue
     ahora = senales(f.read_text(encoding='utf-8', errors='ignore'))
     falta = sorted(antes - ahora)
+    # canónica cambiada a propósito (24-sep): cada página apunta a sí misma
+    if f'canonical {VIVO}{ruta}' in ahora:
+        falta = [x for x in falta if not x.startswith('canonical ')]
     if falta:
         problemas += 1
         print(f'✗ {ruta}')

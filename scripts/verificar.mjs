@@ -11,6 +11,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import paginas from '../src/data/paginas.json' with { type: 'json' };
 
+const REHECHAS_VER = new Set(['/calificacion-tecnica-industrial/', '/estudio-de-carga-de-combustible/', '/planes-de-emergencia-y-evacuacion/', '/planes-de-emergencia-y-evacuacion-condominios/', '/manejo-de-residuos-peligrosos/', '/autorizacion-de-transporte-de-residuos/']);
 const DIST = 'dist';
 const fallos = [];
 let checks = 0;
@@ -49,7 +50,7 @@ for (const p of esperadas) {
   // igual. La portada es la excepción: es propia, y lo que se comprueba es lo
   // contrario —que no cargue nada del WordPress ni de CDN, y que sirva sus
   // fuentes y las fotos del hero desde el sitio—.
-  if (p.ruta === '/' || p.ruta === '/calificacion-tecnica-industrial/' || p.ruta === '/estudio-de-carga-de-combustible/') {
+  if (p.ruta === '/' || REHECHAS_VER.has(p.ruta)) {
     const ajenos = html.match(/(?:src|href)="https?:\/\/[^"]*(?:wp-content|wp-includes|cdn\.tailwindcss\.com|code\.iconify\.design|fonts\.googleapis\.com)[^"]*"/g) || [];
     if (ajenos.length) fallos.push(`${p.ruta}  ✗ la portada aún carga del WordPress o de CDN: ${ajenos.slice(0, 3).join(' ')}`);
     else checks++;
@@ -94,6 +95,10 @@ for (const [ruta, id, origen, destino] of [
   ['/', 'form-home', 'originales-wp/home.html', 'index.html'],
   ['/calificacion-tecnica-industrial/', 'form-cti', 'originales-wp/servicios/calificacion-tecnica-industrial.html', 'calificacion-tecnica-industrial/index.html'],
   ['/estudio-de-carga-de-combustible/', 'form-ecc', 'originales-wp/servicios/estudio-de-carga-de-combustible.html', 'estudio-de-carga-de-combustible/index.html'],
+  ['/planes-de-emergencia-y-evacuacion/', 'form-pe-industrial', 'originales-wp/servicios/planes-de-emergencia-y-evacuacion.html', 'planes-de-emergencia-y-evacuacion/index.html'],
+  ['/planes-de-emergencia-y-evacuacion-condominios/', 'form-plan-condominio', 'originales-wp/servicios/planes-de-emergencia-y-evacuacion-condominios.html', 'planes-de-emergencia-y-evacuacion-condominios/index.html'],
+  ['/manejo-de-residuos-peligrosos/', 'form-residuos-peligrosos', 'originales-wp/servicios/manejo-de-residuos-peligrosos.html', 'manejo-de-residuos-peligrosos/index.html'],
+  ['/autorizacion-de-transporte-de-residuos/', 'form-transporte-residuos', 'originales-wp/servicios/autorizacion-de-transporte-de-residuos.html', 'autorizacion-de-transporte-de-residuos/index.html'],
 ]) {
   const original = huellaFormulario(readFileSync(origen, 'utf8'), id);
   const construido = huellaFormulario(readFileSync(path.join(DIST, destino), 'utf8'), id);
@@ -150,6 +155,10 @@ function palabras(limpio, desde = 0, hasta = limpio.length) {
 // hasta la sección del pie del WordPress (la que contiene «Term of use»).
 for (const [ruta, archivo, marcaClase] of [
   ['/estudio-de-carga-de-combustible/', 'estudio-de-carga-de-combustible', 'ecc-page'],
+  ['/planes-de-emergencia-y-evacuacion/', 'planes-de-emergencia-y-evacuacion', 'pe-page'],
+  ['/planes-de-emergencia-y-evacuacion-condominios/', 'planes-de-emergencia-y-evacuacion-condominios', 'pe-page'],
+  ['/manejo-de-residuos-peligrosos/', 'manejo-de-residuos-peligrosos', 'rp-page'],
+  ['/autorizacion-de-transporte-de-residuos/', 'autorizacion-de-transporte-de-residuos', 'tr-page'],
 ]) {
   const orig = sinCodigo(readFileSync(`originales-wp/servicios/${archivo}.html`, 'utf8'));
   const marca = orig.indexOf(marcaClase);

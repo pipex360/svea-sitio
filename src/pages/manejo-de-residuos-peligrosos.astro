@@ -1,28 +1,27 @@
 ---
 /**
- * Estudio de Carga de Combustible, rehecha con el mismo formato que
- * calificacion-tecnica-industrial.astro (ver ahí la explicación de los siete
- * bloques). Texto, enlaces y formulario idénticos al WordPress; los compara
- * scripts/verificar.mjs.
- *
- * Canónica: apunta a sí misma (decidido con Carlos el 24-sep; en el
- * WordPress apuntaba al artículo /estudio-de-carga-combustible-chile/).
+ * Manejo de Sustancias y Residuos Peligrosos, rehecha con el mismo formato
+ * que calificacion-tecnica-industrial.astro y estudio-de-carga-de-combustible.astro
+ * (ver en la CTI la explicación de los siete bloques). Texto, enlaces y
+ * formulario idénticos al WordPress; los compara scripts/verificar.mjs.
+ * En el WordPress el formulario va dentro del hero; aquí baja al bloque del
+ * formulario, como en las otras dos.
  */
 import '../styles/tailwind.css';
 import HeroHalo from '../components/HeroHalo.astro';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
-import { EccFormulario } from '../components/ui/ecc-formulario';
-import { EccQueEs } from '../components/ui/ecc-que-es';
-import { EccServicio } from '../components/ui/ecc-servicio';
-import { EccSiguiente } from '../components/ui/ecc-siguiente';
-import { EccFaq } from '../components/ui/ecc-faq';
+import { RpFormulario } from '../components/ui/rp-formulario';
+import { RpQueEs } from '../components/ui/rp-que-es';
+import { RpServicio } from '../components/ui/rp-servicio';
+import { RpSiguiente } from '../components/ui/rp-siguiente';
+import { RpFaq } from '../components/ui/rp-faq';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
 
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
-const pagina = paginas.find((p) => p.ruta === '/estudio-de-carga-de-combustible/')!;
+const pagina = paginas.find((p) => p.ruta === '/manejo-de-residuos-peligrosos/')!;
 
 // Mientras esto sea la copia de trabajo, el formulario no envía.
 const COPIA = !import.meta.env.SVEA_PRODUCCION;
@@ -48,46 +47,46 @@ const fuentesCSS = `
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero es el LCP: se precarga -->
-  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-ecc-1080.webp 1080w, ${BASE}/img/hero/servicio-ecc-1920.webp 1920w`} imagesizes="100vw" />
+  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-rp-1080.webp 1080w, ${BASE}/img/hero/servicio-rp-1920.webp 1920w`} imagesizes="100vw" />
 </head>
 <body>
   <HeroHalo
-    fotos={[{ archivo: 'servicio-ecc', alto: 1281 }]}
+    fotos={[{ archivo: 'servicio-rp', alto: 1281 }]}
     copete="Servicios SVEA"
-    titulo="Estudio de Carga de Combustible"
-    parrafo="Cuantifica el riesgo de incendio de tu instalación y cumple con la OGUC. Elaboramos el informe técnico completo para obtener tus permisos municipales y sectoriales."
-    boton={{ texto: 'Cotiza tu ECC ahora', href: '#formulario-ecc' }}
-    principal={{ valor: '5-10', texto: 'días hábiles para el informe técnico ECC' }}
+    titulo="Manejo de Sustancias y Residuos Peligrosos"
+    parrafo="Gestión integral conforme a los Decretos 43/2015 y 148/2003 del MINSAL. Desde el almacenamiento seguro hasta el transporte y disposición final, aseguramos el cumplimiento normativo en cada etapa, protegiendo el medio ambiente y la salud pública."
+    boton={{ texto: 'Cotiza tu Informe de Residuos', href: '#formulario-rp' }}
+    principal={{ valor: 'D.S. 43 y D.S. 148', texto: 'Cumplimiento MINSAL' }}
     secundarias={[
-      { destacado: 'Correcciones sin costo', texto: 'incluidas en el servicio' },
+      { destacado: 'Informe técnico completo', texto: 'personalizado a tu operación' },
       { destacado: 'Cotización en 24 hrs', texto: 'automática por email' },
     ]}
   />
-  <BarraPegajosa base={BASE} cotizar="#formulario-ecc" client:idle />
+  <BarraPegajosa base={BASE} cotizar="#formulario-rp" client:idle />
 
   <div class="svea-nuevo">
-    <EccQueEs base={BASE} client:idle />
-    <EccServicio client:idle />
-    <EccSiguiente base={BASE} client:idle />
-    <EccFaq />
+    <RpQueEs base={BASE} client:idle />
+    <RpServicio client:idle />
+    <RpSiguiente base={BASE} client:idle />
+    <RpFaq />
     <Cta69
       badge={{ label: 'Último paso' }}
-      heading="Protege tu instalación hoy"
-      button={{ label: 'Cotiza tu ECC ahora', href: '#formulario-ecc' }}
+      heading="Asegura el cumplimiento normativo de tu empresa"
+      button={{ label: 'Cotiza tu Informe ahora', href: '#formulario-rp' }}
       labels={{
-        marqueePhrase: 'Combustible',
-        note: 'Obtén tu Estudio de Carga de Combustible con respaldo profesional. Cotización en menos de 24 horas, informe en 5-10 días hábiles, conforme a la OGUC.',
+        marqueePhrase: 'Residuos',
+        note: 'Obtén tu Informe de Manejo de Residuos Peligrosos con respaldo profesional. Cotización en menos de 24 horas, informe técnico personalizado, cumplimiento D.S. 43 y D.S. 148.',
         footnote: 'WhatsApp directo: +56 9 2994 7924',
       }}
       client:idle
     />
-    <EccFormulario copia={COPIA} client:idle />
+    <RpFormulario copia={COPIA} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
   <!-- en el teléfono, sitio para la barra de abajo -->
   <div class="h-20 md:hidden" aria-hidden="true"></div>
-  <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-ecc" client:idle />
+  <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-rp" client:idle />
 
   <div class="aviso-copia">
     COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
