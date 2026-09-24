@@ -1,0 +1,42 @@
+---
+/**
+ * Encabezado de sección de las landings: copete, titular y bajada. El
+ * titular trae el <em> del original, que aquí se pinta en el verde del logo.
+ */
+interface Props {
+  copete: string;
+  titulo: string; // html
+  bajada?: string; // html
+  id: string;
+  centrado?: boolean;
+  oscuro?: boolean;
+}
+const { copete, titulo, bajada, id, centrado = false, oscuro = false } = Astro.props;
+---
+<div class:list={['lp-titulo mb-10 md:mb-12', centrado && 'mx-auto text-center', oscuro && 'lp-oscuro']} data-rv>
+  <p
+    class:list={[
+      'mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] md:text-[13px]',
+      centrado && 'justify-center',
+      oscuro ? 'text-white/60' : 'text-black/60',
+    ]}
+  >
+    <span aria-hidden="true" class:list={['h-px w-8', oscuro ? 'bg-white/30' : 'bg-black/20']}></span>
+    {copete}
+  </p>
+  <h2
+    id={id}
+    class:list={[
+      'max-w-3xl text-balance font-display text-3xl font-medium leading-[1.1] tracking-tight md:text-[44px]',
+      centrado && 'mx-auto',
+      oscuro ? 'text-white' : 'text-black',
+    ]}
+    set:html={titulo}
+  />
+  {bajada && (
+    <p
+      class:list={['mt-4 max-w-2xl text-base leading-relaxed md:text-lg', centrado && 'mx-auto', oscuro ? 'text-white/70' : 'text-black/65']}
+      set:html={bajada}
+    />
+  )}
+</div>

@@ -1,32 +1,31 @@
 ---
 /**
- * Plan de Emergencia y Evacuación para Condominios, rehecha con el mismo
- * formato que calificacion-tecnica-industrial.astro y
- * estudio-de-carga-de-combustible.astro (ver ahí la explicación de los
- * bloques). Texto, enlaces y formulario idénticos al WordPress; los compara
- * scripts/verificar.mjs.
+ * Permisos Ambientales y Pertinencias del SEIA, rehecha con el mismo formato
+ * que estudio-de-carga-de-combustible.astro. El original (Elementor, sin
+ * contenedor «x-page») tenía hero, «Descripción General», «Objetivo»,
+ * «Alcance» y cuatro preguntas frecuentes, y NO tenía formulario propio:
+ * sus botones llevaban al formulario de la portada, y aquí también
+ * (`${BASE}/#form-home`).
  *
- * El ancla del formulario era #formulario-pe en el WordPress (la misma que
- * el plan industrial); aquí es #formulario-pc para no chocar.
+ * Texto idéntico al WordPress salvo las cuatro promesas con «garantiz-»,
+ * cambiadas por lo que sí depende de nosotros (ver cada componente).
  */
 import '../styles/tailwind.css';
 import HeroHalo from '../components/HeroHalo.astro';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
-import { PcFormulario } from '../components/ui/pc-formulario';
-import { PcQueEs } from '../components/ui/pc-que-es';
-import { PcServicio } from '../components/ui/pc-servicio';
-import { PcSiguiente } from '../components/ui/pc-siguiente';
-import { PcFaq, PREGUNTAS } from '../components/ui/pc-faq';
+import { SeiaDescripcion } from '../components/ui/seia-descripcion';
+import { SeiaAlcance } from '../components/ui/seia-alcance';
+import { SeiaFaq, PREGUNTAS } from '../components/ui/seia-faq';
 import SeoHead from '../components/SeoHead.astro';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
 
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
-const pagina = paginas.find((p) => p.ruta === '/planes-de-emergencia-y-evacuacion-condominios/')!;
+const pagina = paginas.find((p) => p.ruta === '/permisos-ambientales-y-pertinencias-del-seia/')!;
 
-// Mientras esto sea la copia de trabajo, el formulario no envía.
+// Mientras esto sea la copia de trabajo, los formularios no envían.
 const COPIA = !import.meta.env.SVEA_PRODUCCION;
 
 const fuentesCSS = `
@@ -46,46 +45,44 @@ const fuentesCSS = `
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero es el LCP: se precarga -->
-  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-pc-1080.webp 1080w, ${BASE}/img/hero/servicio-pc-1920.webp 1920w`} imagesizes="100vw" />
+  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-seia-1080.webp 1080w, ${BASE}/img/hero/servicio-seia-1920.webp 1920w`} imagesizes="100vw" />
 </head>
 <body>
   <HeroHalo
-    fotos={[{ archivo: 'servicio-pc', alto: 1080 }]}
+    fotos={[{ archivo: 'servicio-seia', alto: 1280 }]}
     copete="Servicios SVEA"
-    titulo="Plan de Emergencia y Evacuación para Condominios"
-    parrafo="Protege a tus residentes, define roles claros para Comité y Administración y asegura una evacuación eficiente. Elaboramos planes personalizados según la realidad del condominio, con foco en prevención, orden y cumplimiento normativo."
-    boton={{ texto: 'Cotiza tu Plan para Condominio', href: '#formulario-pc' }}
-    principal={{ valor: '5-10', texto: 'días hábiles · Plan completo entregado' }}
+    titulo="Permisos Ambientales y Pertinencias del SEIA"
+    parrafo="Te acompañamos en el cumplimiento normativo y la obtención de permisos ambientales a través del Sistema de Evaluación de Impacto Ambiental (SEIA)"
+    boton={{ texto: 'Solicitar asesoría', href: `${BASE}/#form-home` }}
+    principal={{ valor: 'Pertinencia SEIA', texto: 'Informe de evaluación de tu proyecto' }}
     secundarias={[
-      { destacado: 'Enfoque 100% aplicable', texto: 'a la realidad del condominio' },
-      { destacado: 'Cotización en 24 hrs', texto: 'automática por email' },
+      { destacado: 'Permisos ambientales', texto: 'elaboración de la documentación' },
+      { destacado: 'Seguimiento', texto: 'de la tramitación ante el SEA' },
     ]}
   />
-  <BarraPegajosa base={BASE} cotizar="#formulario-pc" client:idle />
+  <BarraPegajosa base={BASE} client:idle />
 
   <div class="svea-nuevo">
-    <PcQueEs base={BASE} client:idle />
-    <PcServicio client:idle />
-    <PcSiguiente base={BASE} client:idle />
-    <PcFaq />
+    <SeiaDescripcion base={BASE} client:idle />
+    <SeiaAlcance base={BASE} client:idle />
+    <SeiaFaq />
     <Cta69
       badge={{ label: 'Último paso' }}
-      heading="Protege a tu comunidad hoy"
-      button={{ label: 'Cotiza tu Plan ahora', href: '#formulario-pc' }}
+      heading="Evalúa la pertinencia de tu proyecto"
+      button={{ label: 'Solicitar asesoría', href: `${BASE}/#form-home` }}
       labels={{
-        marqueePhrase: 'Evacuación',
-        note: 'Obtén tu Plan de Emergencia y Evacuación para Condominios con respaldo profesional. Cotización en menos de 24 horas, plan completo en 5-10 días hábiles, enfoque aplicable y personalizado.',
+        marqueePhrase: 'SEIA',
+        note: 'Revisamos tu proyecto, confeccionamos el informe de pertinencia del SEIA y hacemos el seguimiento de la tramitación ante el SEA.',
         footnote: 'WhatsApp directo: +56 9 2994 7924',
       }}
       client:idle
     />
-    <PcFormulario copia={COPIA} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
   <!-- en el teléfono, sitio para la barra de abajo -->
   <div class="h-20 md:hidden" aria-hidden="true"></div>
-  <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-pc" client:idle />
+  <BarraMovil base={BASE} copia={COPIA} client:idle />
 
   <div class="aviso-copia">
     COPIA DE TRABAJO · sin medición y con los formularios desactivados ·

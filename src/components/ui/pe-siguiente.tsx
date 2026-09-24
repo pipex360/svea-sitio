@@ -66,7 +66,7 @@ export function PeSiguiente({ base = '' }: { base?: string }) {
                 Plan de Emergencia Empresa Chile: Guía de Evacuación 2026
               </h3>
               <p className="mt-3 text-base leading-relaxed text-black/70">
-                Normativa DS 594 y DS 44, multas de hasta $14 millones, contenido obligatorio y proceso paso a paso.
+                Normativa DS 594 y DS 44, multas de hasta 1.000 UTM (SEREMI), contenido obligatorio y proceso paso a paso.
               </p>
               <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-black">
                 Leer guía

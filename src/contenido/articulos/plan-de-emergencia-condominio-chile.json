@@ -1,0 +1,389 @@
+{
+  "slug": "plan-de-emergencia-condominio-chile",
+  "ruta": "/plan-de-emergencia-condominio-chile/",
+  "migasOriginal": [
+    {
+      "texto": "Inicio",
+      "href": "/"
+    },
+    {
+      "texto": "Blog",
+      "href": "/blog/"
+    }
+  ],
+  "migaFinal": "Plan de Emergencia Condominios",
+  "categoria": "Normativa y Copropiedad",
+  "h1": "Plan de Emergencia Condominio Chile: Guía Definitiva 2026",
+  "bajada": "Obligaciones de la Ley 21.442, multas por incumplimiento, contenido obligatorio y cómo elaborar un plan de emergencia y contingencia condominio Chile que proteja a tu comunidad.",
+  "fecha": "Febrero 2026",
+  "lectura": "14 min de lectura",
+  "autor": "SVEA Consultores",
+  "cifras": [
+    {
+      "n": "100%",
+      "l": "Condominios obligados"
+    },
+    {
+      "n": "1-10",
+      "l": "UTM en multas"
+    },
+    {
+      "n": "Anual",
+      "l": "Actualización obligatoria"
+    },
+    {
+      "n": "<24h",
+      "l": "Cotización SVEA"
+    }
+  ],
+  "indiceTitulo": "En este artículo",
+  "indice": [
+    {
+      "href": "#que-es",
+      "texto": "Qué es un plan de emergencia (contingencia) para condominios"
+    },
+    {
+      "href": "#obligatorio",
+      "texto": "¿Es obligatorio según la Ley 21.442?"
+    },
+    {
+      "href": "#normativa",
+      "texto": "Normativa vigente: Ley 21.442 y más"
+    },
+    {
+      "href": "#multas",
+      "texto": "Multas y sanciones por incumplimiento"
+    },
+    {
+      "href": "#contenido",
+      "texto": "Qué debe incluir tu plan de emergencia"
+    },
+    {
+      "href": "#responsables",
+      "texto": "Quiénes son responsables"
+    },
+    {
+      "href": "#proceso",
+      "texto": "Cómo se elabora paso a paso"
+    },
+    {
+      "href": "#errores",
+      "texto": "Errores comunes que debes evitar"
+    },
+    {
+      "href": "#faq",
+      "texto": "Preguntas frecuentes"
+    }
+  ],
+  "formulario": {
+    "titulo": "Cotiza tu Plan de Emergencia para Condominios sin compromiso",
+    "bajada": "Completa el formulario y recibe tu cotización personalizada en menos de 24 horas.",
+    "ocultos": [
+      {
+        "name": "access_key",
+        "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+      },
+      {
+        "name": "subject",
+        "value": "Nueva cotización PLAN DE EMERGENCIA CONDOMINIO (Blog) - SVEA Consultores",
+        "id": "dynamic-subject-art-condo"
+      },
+      {
+        "name": "from_name",
+        "value": "SVEA Consultores Blog - Condominios"
+      },
+      {
+        "name": "redirect",
+        "value": "https://sveaconsultores.cl/gracias/"
+      },
+      {
+        "name": "Servicio",
+        "value": "Plan de Emergencia para Condominios"
+      },
+      {
+        "name": "Origen",
+        "value": "Artículo SEO - Plan Emergencia Condominios"
+      }
+    ],
+    "campos": [
+      {
+        "label": "Nombre completo *",
+        "id": "art-nombre",
+        "name": "Nombre",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Ej: María González",
+        "ancho": false
+      },
+      {
+        "label": "Condominio o edificio *",
+        "id": "art-condominio",
+        "name": "Condominio",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Nombre del edificio",
+        "ancho": false
+      },
+      {
+        "label": "Teléfono *",
+        "id": "art-telefono",
+        "name": "Teléfono",
+        "tipo": "tel",
+        "requerido": true,
+        "placeholder": "+569 1234 5678",
+        "ancho": false
+      },
+      {
+        "label": "Email *",
+        "id": "art-email",
+        "name": "Email",
+        "tipo": "email",
+        "requerido": true,
+        "placeholder": "correo@ejemplo.cl",
+        "ancho": false
+      },
+      {
+        "label": "Tipo de condominio",
+        "id": "art-tipo",
+        "name": "Tipo de Condominio",
+        "tipo": "select",
+        "requerido": false,
+        "placeholder": null,
+        "ancho": true,
+        "opciones": [
+          {
+            "value": "",
+            "texto": "Selecciona una opción",
+            "seleccionada": true,
+            "desactivada": true
+          },
+          {
+            "value": "Edificio de departamentos",
+            "texto": "Edificio de departamentos",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Condominio de casas",
+            "texto": "Condominio de casas",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Edificio mixto",
+            "texto": "Edificio mixto (comercial + residencial)",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Conjunto habitacional",
+            "texto": "Conjunto habitacional",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Otro",
+            "texto": "Otro",
+            "seleccionada": false,
+            "desactivada": false
+          }
+        ]
+      },
+      {
+        "label": "Mensaje (opcional)",
+        "id": "art-mensaje",
+        "name": "Mensaje",
+        "tipo": "textarea",
+        "requerido": false,
+        "placeholder": "Cuéntanos detalles: número de pisos, unidades, etc.",
+        "ancho": true,
+        "filas": 3
+      }
+    ],
+    "boton": "SOLICITAR COTIZACIÓN GRATUITA →",
+    "confianza": [
+      "Datos protegidos",
+      "Respuesta en menos de 24 hrs",
+      "Sin compromiso"
+    ],
+    "logos": [
+      {
+        "src": "/img/articulos/logo-25m.webp",
+        "alt": "Logo 25M",
+        "ancho": 400,
+        "alto": 85
+      },
+      {
+        "src": "/img/clientes/gespania.webp",
+        "alt": "Gespania",
+        "ancho": 299,
+        "alto": 149
+      },
+      {
+        "src": "/img/clientes/grupo-mbo.webp",
+        "alt": "Grupo MBO",
+        "ancho": 294,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/nuevo-pudahuel.webp",
+        "alt": "Nuevo Pudahuel",
+        "ancho": 329,
+        "alto": 77
+      },
+      {
+        "src": "/img/clientes/natures-farm.webp",
+        "alt": "Nature's Farm",
+        "ancho": 286,
+        "alto": 217
+      },
+      {
+        "src": "/img/clientes/blt-mini-bodegas.webp",
+        "alt": "BLT",
+        "ancho": 516,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/db-santasalo.webp",
+        "alt": "DB Santasalo",
+        "ancho": 388,
+        "alto": 127
+      },
+      {
+        "src": "/img/clientes/animal-services.webp",
+        "alt": "Animal Services",
+        "ancho": 215,
+        "alto": 162
+      },
+      {
+        "src": "/img/clientes/lira.webp",
+        "alt": "Lira",
+        "ancho": 242,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/fuchs.webp",
+        "alt": "Fuchs Lubricants",
+        "ancho": 495,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/delart-chocolat.webp",
+        "alt": "DelArt Chocolat",
+        "ancho": 443,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/novametal.webp",
+        "alt": "Novametal",
+        "ancho": 166,
+        "alto": 122
+      }
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      {
+        "p": "¿Es obligatorio tener un plan de emergencia en mi condominio?",
+        "r": "Sí. La Ley 21.442 (Art. 40) establece que todo condominio debe tener un plan de emergencia. Debe ser elaborado por un ingeniero en prevención de riesgos y entregado a Bomberos y Carabineros. La obligación aplica a todos los condominios sin excepción.",
+        "rTexto": "Sí. La Ley 21.442 (Art. 40) establece que todo condominio debe tener un plan de emergencia. Debe ser elaborado por un ingeniero en prevención de riesgos y entregado a Bomberos y Carabineros. La obligación aplica a todos los condominios sin excepción."
+      },
+      {
+        "p": "¿Qué multas existen por no tener plan de emergencia en un condominio?",
+        "r": "Las multas van de 1 a 10 UTM para el administrador, con posibilidad de suspensión o eliminación del Registro Nacional de Administradores. Además, el comité puede enfrentar responsabilidad civil y penal en caso de accidente.",
+        "rTexto": "Las multas van de 1 a 10 UTM para el administrador, con posibilidad de suspensión o eliminación del Registro Nacional de Administradores. Además, el comité puede enfrentar responsabilidad civil y penal en caso de accidente."
+      },
+      {
+        "p": "¿El administrador puede elaborar el plan por su cuenta?",
+        "r": "No. La Ley 21.442 exige que el plan sea elaborado y suscrito por un ingeniero en prevención de riesgos. El administrador firma las actualizaciones junto al presidente del comité, pero la elaboración técnica requiere un profesional calificado.",
+        "rTexto": "No. La Ley 21.442 exige que el plan sea elaborado y suscrito por un ingeniero en prevención de riesgos. El administrador firma las actualizaciones junto al presidente del comité, pero la elaboración técnica requiere un profesional calificado."
+      },
+      {
+        "p": "¿Cada cuánto hay que actualizar el plan y hacer simulacros?",
+        "r": "La Ley 21.442 exige actualización anual del plan y simulacros de evacuación al menos una vez al año. Las actualizaciones deben entregarse a Bomberos y Carabineros dentro de 15 días corridos desde su suscripción.",
+        "rTexto": "La Ley 21.442 exige actualización anual del plan y simulacros de evacuación al menos una vez al año. Las actualizaciones deben entregarse a Bomberos y Carabineros dentro de 15 días corridos desde su suscripción."
+      },
+      {
+        "p": "¿Es lo mismo un plan de emergencia que un plan de contingencia para condominios?",
+        "r": "Son conceptos muy relacionados. El <strong>plan de emergencia</strong> es el documento integral exigido por la Ley 21.442 que cubre todos los protocolos ante siniestros (incendio, sismo, tsunami). El <strong>plan de contingencia</strong> se enfoca en las acciones específicas para mantener la operación del condominio durante y después de la emergencia. En la práctica chilena, un buen plan de emergencia para condominios incluye los protocolos de contingencia, por lo que ambos términos se usan frecuentemente como sinónimos en el contexto residencial.",
+        "rTexto": "Son conceptos muy relacionados. El plan de emergencia es el documento integral exigido por la Ley 21.442 que cubre todos los protocolos ante siniestros (incendio, sismo, tsunami). El plan de contingencia se enfoca en las acciones específicas para mantener la operación del condominio durante y después de la emergencia. En la práctica chilena, un buen plan de emergencia para condominios incluye los protocolos de contingencia, por lo que ambos términos se usan frecuentemente como sinónimos en el contexto residencial."
+      },
+      {
+        "p": "¿Cuánto demora y cuánto cuesta elaborar un plan de emergencia para condominios?",
+        "r": "En SVEA Consultores, un plan de emergencia condominio Chile profesional demora entre 5 y 10 días hábiles. El costo varía según el tamaño del edificio. Entregamos cotización personalizada en menos de 24 horas, incluyendo visita técnica y trámite ante autoridades.",
+        "rTexto": "En SVEA Consultores, un plan de emergencia condominio Chile profesional demora entre 5 y 10 días hábiles. El costo varía según el tamaño del edificio. Entregamos cotización personalizada en menos de 24 horas, incluyendo visita técnica y trámite ante autoridades."
+      },
+      {
+        "p": "¿A quién se debe entregar el plan de emergencia?",
+        "r": "El plan debe entregarse en formato físico y digital a la unidad de Carabineros y al Cuerpo de Bomberos de la comuna donde se ubica el condominio. Estas instituciones pueden revisar el plan y hacer observaciones que la comunidad debe considerar.",
+        "rTexto": "El plan debe entregarse en formato físico y digital a la unidad de Carabineros y al Cuerpo de Bomberos de la comuna donde se ubica el condominio. Estas instituciones pueden revisar el plan y hacer observaciones que la comunidad debe considerar."
+      }
+    ]
+  },
+  "compartir": {
+    "titulo": "Compartir",
+    "enlaces": [
+      {
+        "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://sveaconsultores.cl/plan-de-emergencia-condominio-chile/",
+        "texto": "in",
+        "titulo": "Compartir en LinkedIn",
+        "externo": true
+      },
+      {
+        "href": "https://api.whatsapp.com/send?text=Plan%20de%20Emergencia%20para%20Condominios%20en%20Chile%20https://sveaconsultores.cl/plan-de-emergencia-condominio-chile/",
+        "texto": "wa",
+        "titulo": "Compartir por WhatsApp",
+        "externo": true
+      }
+    ]
+  },
+  "autorCaja": {
+    "inicial": "S",
+    "nombre": "SVEA Consultores",
+    "texto": "Consultora ambiental chilena especializada en cumplimiento normativo. Más de 13 clientes corporativos confían en nosotros, incluyendo Nuevo Pudahuel, Fuchs Lubricants y Grupo MBO. Cotización en menos de 24 horas."
+  },
+  "bloques": [
+    {
+      "tipo": "html",
+      "html": "<p class=\"art-entrada\">\n        Desde la entrada en vigencia de la <strong>Ley 21.442 de Copropiedad Inmobiliaria</strong>, <strong>todos los condominios y edificios en Chile</strong> están obligados a contar con un <strong>plan de emergencia</strong> — también llamado <strong>plan de contingencia</strong> — actualizado. Las sanciones por incumplimiento pueden alcanzar hasta <strong>10 UTM en multas</strong>, y en caso de siniestro sin plan vigente, el comité de administración enfrenta responsabilidad civil e incluso penal. En esta guía te explicamos qué exige la ley, qué debe contener tu plan y cómo elaborarlo correctamente.\n    </p>\n    \n<section id=\"que-es\">\n        <h2>Qué es un plan de emergencia (contingencia) para condominios</h2>\n        <p>El <strong>plan de emergencia condominio Chile</strong>, también denominado <strong>plan de contingencia</strong>, es un documento técnico-operativo que establece los procedimientos, protocolos y acciones que debe ejecutar una comunidad de copropietarios para proteger la vida de los residentes y la integridad de las instalaciones ante situaciones de emergencia como incendios, terremotos, tsunamis, fugas de gas o inundaciones.</p>\n        <p>A diferencia de un protocolo genérico descargado de internet, un plan de emergencia y contingencia condominio Chile profesional se diseña a la medida de cada edificio o conjunto residencial, considerando sus características constructivas, cantidad de pisos, número de residentes, equipamiento de seguridad existente y los riesgos específicos de su ubicación geográfica.</p>\n        <div class=\"callout callout-info\"><span class=\"callout-icon callout-icon--info\">i</span><div class=\"callout-body\"><div class=\"callout-title\">Importante</div><p>La Ley 21.442 exige que el plan sea elaborado y suscrito por un <strong>ingeniero en prevención de riesgos</strong>. Un plan sin esta firma profesional no tiene validez legal.</p></div></div>\n    </section>\n    \n<section id=\"obligatorio\">\n        <h2>¿Es obligatorio tener un plan de emergencia en mi condominio?</h2>\n        <p><strong>Sí, es obligatorio.</strong> Todo plan de emergencia condominio Chile debe cumplir con lo establecido en el <strong>Artículo 40 de la Ley 21.442</strong>, que establece que todo condominio deberá tener un plan de emergencia ante siniestros o emergencias, tales como incendios, terremotos, tsunamis u otros eventos que puedan dañar a las personas, las unidades y/o los bienes de dominio común. Si además tu condominio cuenta con locales comerciales o áreas industriales, revisa también nuestra <a href=\"/plan-de-emergencia-empresa-chile/\">guía de plan de emergencia para empresas en Chile</a>.</p>\n        <p>Esta obligación aplica a <strong>todos los condominios sin excepción</strong>: edificios de departamentos, conjuntos habitacionales, condominios de casas y edificios mixtos (comerciales y residenciales). No importa si el condominio es nuevo o antiguo, grande o pequeño.</p>\n        <div class=\"callout callout-danger\"><span class=\"callout-icon callout-icon--danger\">!</span><div class=\"callout-body\"><div class=\"callout-title\">Atención comités de administración</div><p>La responsabilidad de contar con un plan de emergencia recae directamente sobre el <strong>comité de administración</strong> y el <strong>administrador</strong> del condominio. En caso de siniestro sin plan vigente, pueden enfrentar demandas civiles y querellas penales.</p></div></div>\n        <figure class=\"article-img\"><img src=\"/img/articulos/senal-salida-emergencia.webp\" alt=\"Plan de emergencia condominio Chile - Señalización de salida de emergencia en edificio residencial\" width=\"1200\" height=\"800\" loading=\"lazy\" decoding=\"async\"><figcaption>Señalización de salida de emergencia: requisito obligatorio según la Ley 21.442 para todos los condominios.</figcaption></figure>\n    </section>\n    \n<section id=\"normativa\">\n        <h2>Normativa vigente: Ley 21.442 y más</h2>\n        <p>Para entender las obligaciones de tu condominio respecto al plan de emergencia condominio Chile, es clave conocer el marco normativo completo:</p>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Normativa</th><th>Alcance en planes de emergencia</th><th>Aplica a</th></tr></thead>\n            <tbody>\n                <tr><td><strong><a href=\"https://www.leychile.cl/leychile/navegar?idNorma=1174663\" target=\"_blank\" rel=\"noopener\">Ley 21.442</a></strong> (Art. 40)</td><td>Obliga a todo condominio a tener plan de emergencia. Elaborado por ingeniero en prevención de riesgos. Actualización anual. Entrega a Bomberos y Carabineros.</td><td>Todos los condominios</td></tr>\n                <tr><td><strong>Reglamento Ley 21.442</strong></td><td>Detalla procedimientos de entrega, plazos de actualización (15 días para entregar actualizaciones) y formato del plan.</td><td>Todos los condominios</td></tr>\n                <tr><td><strong>OGUC</strong> (Art. 4.3)</td><td>Ordenanza General de Urbanismo y Construcciones: requisitos de seguridad contra incendios en edificaciones.</td><td>Edificios de altura</td></tr>\n                <tr><td><strong>Ley 20.564</strong></td><td>Ley Marco de Bomberos: coordinación obligatoria para planes de emergencia. Bomberos puede revisar y hacer observaciones.</td><td>Todos los condominios</td></tr>\n                <tr><td><strong>NCh 935</strong></td><td>Norma chilena de prevención de incendios en edificios: requisitos de sistemas de detección, extinción y evacuación.</td><td>Edificios residenciales</td></tr>\n            </tbody>\n        </table>\n        </div><div class=\"callout callout-info\"><span class=\"callout-icon callout-icon--info\">i</span><div class=\"callout-body\"><div class=\"callout-title\">¿Quién fiscaliza?</div><p>La fiscalización es multi-entidad: el <strong>MINVU</strong> reglamenta y sanciona a través de las SEREMI, las <strong>municipalidades</strong> lo exigen para recepciones definitivas, <strong>Bomberos</strong> y <strong>Carabineros</strong> lo revisan técnicamente, y cualquier copropietario puede denunciar el incumplimiento ante el Juzgado de Policía Local.</p></div></div>\n    </section>\n    \n<section id=\"multas\">\n        <h2>Multas y sanciones por incumplimiento</h2>\n        <p>No contar con un plan de emergencia vigente y actualizado para tu condominio expone a la comunidad a sanciones significativas que operan en múltiples niveles:</p>\n        <div class=\"callout callout-danger\"><span class=\"callout-icon callout-icon--danger\">!</span><div class=\"callout-body\"><div class=\"callout-title\">Sanciones al administrador</div><p>La Ley 21.442 (Arts. 87-89) establece multas de <strong>1 a 10 UTM</strong> ($66.000 a $660.000 CLP aprox.), suspensión de 1 a 3 años del Registro Nacional de Administradores, e incluso <strong>eliminación permanente</strong> del registro en casos gravísimos.</p></div></div>\n        <h3>Otras consecuencias legales</h3>\n        <p><strong>Responsabilidad civil:</strong> si ocurre un siniestro y la comunidad no tenía plan de emergencia condominio Chile vigente, los copropietarios afectados pueden demandar al comité de administración y al administrador por negligencia, exigiendo indemnización por daños.</p>\n        <p><strong>Responsabilidad penal:</strong> en caso de lesiones graves o muerte durante una emergencia sin plan vigente, el comité y administrador pueden enfrentar querellas criminales por cuasidelito.</p>\n        <p><strong>Multas por Juzgado de Policía Local:</strong> cualquier copropietario puede denunciar el incumplimiento ante el JPL correspondiente, donde se aplican multas adicionales en UTM.</p>\n        <div class=\"callout callout-warning\"><span class=\"callout-icon callout-icon--tip\">!</span><div class=\"callout-body\"><div class=\"callout-title\">Dato clave para edificios nuevos</div><p>La Dirección de Obras Municipales <strong>no otorgará la recepción definitiva</strong> sin el primer plan de emergencia. El plan inicial debe ser suscrito por el propietario y acompañar la solicitud de recepción final de la edificación.</p></div></div>\n    </section>\n    "
+    },
+    {
+      "tipo": "formulario"
+    },
+    {
+      "tipo": "html",
+      "html": "<section id=\"contenido\">\n        <h2>Qué debe incluir tu plan de emergencia y contingencia</h2>\n        <p>Un plan de emergencia profesional para condominios no es un documento genérico. Debe adaptarse a la realidad de cada edificio. La Ley 21.442 y su reglamento establecen contenidos mínimos obligatorios:</p>\n        <ul class=\"checklist\">\n            <li><strong>Datos generales del condominio:</strong> Ubicación, distribución, infraestructura, número de pisos, unidades y residentes.</li>\n            <li><strong>Análisis de riesgos:</strong> Evaluación de amenazas: incendio, sismo, tsunami, fuga de gas, inundación, según ubicación geográfica. Para edificios con alto riesgo de incendio, puede requerirse adicionalmente un <a href=\"/estudio-de-carga-combustible-chile/\">estudio de carga de combustible</a>.</li>\n            <li><strong>Protocolo de alarma y comunicación:</strong> Cómo se alertará a los residentes: sistema de alarma, megafonía, comunicación por pisos.</li>\n            <li><strong>Plan de evacuación:</strong> Rutas de evacuación, zonas de seguridad, tiempos estimados de evacuación por piso.</li>\n            <li><strong>Planos del condominio:</strong> Con indicación de vías de evacuación, grifos, red seca/húmeda, extintores, grupo electrógeno, alumbrado de emergencia.</li>\n            <li><strong>Roles y responsabilidades:</strong> Funciones del comité, administrador, conserjes, brigadistas voluntarios y coordinadores de piso.</li>\n            <li><strong>Registro de personas vulnerables:</strong> Identificación de residentes con movilidad reducida, adultos mayores dependientes o personas con necesidades especiales.</li>\n            <li><strong>Protocolos de contingencia operativa:</strong> Acciones específicas para mantener servicios esenciales (agua, electricidad, ascensores) durante y después de la emergencia.</li>\n            <li><strong>Programa de simulacros:</strong> Calendario de simulacros anuales obligatorios con metodología de evaluación y mejora continua.</li>\n        </ul>\n        <div class=\"callout callout-success\"><span class=\"callout-icon callout-icon--success\">✓</span><div class=\"callout-body\"><div class=\"callout-title\">En SVEA Consultores incluimos todo esto</div><p>Nuestro servicio de <a href=\"/planes-de-emergencia-y-evacuacion-condominios/\">Plan de Emergencia para Condominios</a> cubre todos los componentes mencionados, más la <strong>gestión ante Bomberos y Carabineros</strong> como exige la ley.</p></div></div>\n    </section>\n    \n<section id=\"responsables\">\n        <h2>Quiénes son responsables del plan de emergencia</h2>\n        <p>La Ley 21.442 establece una cadena clara de responsabilidades para el plan de emergencia condominio Chile:</p>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Comité de Administración</h4><p>Responsable principal. Debe someter el plan a aprobación de la asamblea de copropietarios y asegurar su actualización anual. En condominios nuevos, el primer plan es responsabilidad del propietario/constructora.</p></div></li>\n            <li><div class=\"step-content\"><h4>Ingeniero en Prevención de Riesgos</h4><p>Debe elaborar y suscribir tanto el primer plan como sus actualizaciones. Sin esta firma profesional, el plan no tiene validez legal ante la autoridad.</p></div></li>\n            <li><div class=\"step-content\"><h4>Administrador del Condominio</h4><p>Debe suscribir las actualizaciones junto al presidente del comité. Mantener copia del plan en recepción/conserjería. Coordinar simulacros anuales.</p></div></li>\n            <li><div class=\"step-content\"><h4>Bomberos y Carabineros</h4><p>Reciben copia del plan (formato físico y digital). Pueden revisar el plan y hacer observaciones que la comunidad debe considerar.</p></div></li>\n        </ol>\n    </section>\n    \n<section id=\"proceso\">\n        <h2>Cómo se elabora un plan de emergencia paso a paso</h2>\n        <p>Elaborar un plan de emergencia para condominios profesional requiere un enfoque técnico y personalizado. En SVEA Consultores seguimos un proceso probado:</p>\n        <figure class=\"article-img\"><img src=\"/img/articulos/simulacro-evacuacion.webp\" alt=\"Elaboración de plan de emergencia condominio Chile - Simulacro de evacuación en edificio\" width=\"1200\" height=\"659\" loading=\"lazy\" decoding=\"async\"><figcaption>Simulacro de evacuación: etapa fundamental en la implementación de un plan de emergencia para condominios.</figcaption></figure>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Cotización y diagnóstico inicial</h4><p>Evaluamos las características de tu condominio: pisos, unidades, residentes, equipamiento de seguridad y ubicación. Cotización en <strong>menos de 24 horas</strong>.</p></div></li>\n            <li><div class=\"step-content\"><h4>Visita técnica al condominio</h4><p>Nuestro ingeniero en prevención de riesgos recorre el edificio, identifica vías de evacuación, verifica equipos (extintores, red húmeda/seca, detectores de humo) y evalúa condiciones de seguridad.</p></div></li>\n            <li><div class=\"step-content\"><h4>Análisis de riesgos y diseño de protocolos de contingencia</h4><p>Identificamos amenazas específicas (sismo, incendio, tsunami, fuga de gas), diseñamos protocolos de respuesta y contingencia, definimos rutas de evacuación y zonas de seguridad.</p></div></li>\n            <li><div class=\"step-content\"><h4>Elaboración del documento técnico</h4><p>Redactamos el plan completo: planos de evacuación, listados de equipos, protocolos operativos, roles y programa de simulacros. <strong>Listo en 5-10 días hábiles.</strong></p></div></li>\n            <li><div class=\"step-content\"><h4>Entrega y trámite ante autoridades</h4><p>Entregamos el plan firmado por ingeniero y gestionamos la entrega oficial a <strong>Bomberos y Carabineros</strong> de tu comuna, en formato físico y digital como exige la ley.</p></div></li>\n        </ol>\n    </section>\n    \n<section id=\"errores\">\n        <h2>Errores comunes que debes evitar</h2>\n        <p>En nuestra experiencia asesorando a condominios, estos son los errores más frecuentes:</p>\n        <div class=\"error-item\"><h4>Usar una plantilla genérica de internet</h4><p>Cada condominio tiene características únicas. Un plan genérico no considera la distribución real del edificio, sus equipos de seguridad ni los riesgos específicos de la zona. Si el edificio incluye áreas comerciales o industriales, probablemente necesitará también una <a href=\"/calificacion-tecnica-industrial-chile/\">calificación técnica industrial (CTI)</a> para operar legalmente.</p></div>\n        <div class=\"error-item\"><h4>No contar con firma de ingeniero en prevención de riesgos</h4><p>La Ley 21.442 lo exige expresamente. Un plan sin esta firma no tiene validez legal ante ninguna autoridad.</p></div>\n        <div class=\"error-item\"><h4>No entregar copia a Bomberos y Carabineros</h4><p>La ley exige entrega en formato físico y digital a ambas instituciones. Sin este trámite, el cumplimiento está incompleto.</p></div>\n        <div class=\"error-item\"><h4>No actualizar anualmente</h4><p>La ley exige actualización anual del plan de emergencia condominio Chile y simulacros cada año. Un plan desactualizado pierde validez.</p></div>\n        <div class=\"error-item\"><h4>No realizar simulacros ni difundir el plan</h4><p>Un plan que nadie conoce es inútil. Debe ser aprobado por la asamblea, difundido a copropietarios y trabajadores, y practicado con simulacros.</p></div>\n    </section>\n    \n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿Tu condominio necesita un plan de emergencia?</h3><p>Cumple con la Ley 21.442 con un plan profesional. Cotización en menos de 24 horas, informe listo en 5-10 días hábiles y trámite completo ante Bomberos y Carabineros.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20necesito%20cotizar%20un%20Plan%20de%20Emergencia%20para%20mi%20condominio\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><div class=\"art-logos\" aria-label=\"Empresas que confían en SVEA\"><div class=\"logos-cinta art-logos-cinta\"><div class=\"art-logos-mitad\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"Logo 25M\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"Gespania\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"Grupo MBO\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"Nuevo Pudahuel\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"Nature's Farm\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"BLT\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"DB Santasalo\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"Animal Services\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"Lira\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"Fuchs Lubricants\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"DelArt Chocolat\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"Novametal\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div><div class=\"art-logos-mitad\" aria-hidden=\"true\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div></div></div></aside>"
+    }
+  ],
+  "relacionados": {
+    "titulo": "Servicios relacionados",
+    "intro": "",
+    "tarjetas": [
+      {
+        "titulo": "Planes de Emergencia para Empresas",
+        "texto": "Cumple con el DS 594 y DS 44. Plan personalizado con gestión ante la autoridad.",
+        "href": "/planes-de-emergencia-y-evacuacion/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Estudio de Carga de Combustible",
+        "texto": "Evaluación del riesgo de incendio según materiales presentes en tu instalación.",
+        "href": "/estudio-de-carga-de-combustible/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Calificación Técnica Industrial",
+        "texto": "Expediente técnico para SEREMI de Salud y obtención de patente municipal.",
+        "href": "/calificacion-tecnica-industrial/",
+        "enlace": "Conocer servicio →"
+      }
+    ]
+  },
+  "asunto": {
+    "prefijo": "[BLOG] Cotización Plan Emergencia Condo - ",
+    "campo": "Condominio",
+    "id": "dynamic-subject-art-condo"
+  }
+}

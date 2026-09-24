@@ -1,0 +1,570 @@
+---
+/**
+ * Plantilla de las landings de Google Ads (/cotiza-*).
+ *
+ * Son la página de destino de los anuncios: lo que importa es que el
+ * formulario se vea y se envíe, y que la página aparezca rápido en el
+ * teléfono. Las copias del WordPress tardaban ~10 s en mostrar contenido
+ * (LCP) porque todo nacía con opacity:0 (la clase .rv) y esperaba a un
+ * IntersectionObserver. Aquí:
+ *
+ * - Nada de lo que se ve al abrir nace invisible. El titular es el LCP y es
+ *   texto: sale con la primera pintura, con Inter y Manrope precargadas
+ *   desde el propio sitio.
+ * - Cero JavaScript de framework: todo es HTML de Astro. Los únicos scripts
+ *   son los del formulario (asunto, gclid/utm), la medición en producción,
+ *   un revelado de lo que está bajo el pliegue y la barra de abajo en el
+ *   teléfono. El revelado oculta sólo lo que está bajo el borde de la
+ *   pantalla al cargar, y con prefers-reduced-motion no hace nada.
+ * - Cero recursos del WordPress: logo, logos de clientes y la foto del
+ *   cierre salen de /img/ en webp.
+ * - Sin menú: una landing no debe sacar a la persona. Arriba, logo y
+ *   teléfono; en el hero, el formulario (en el teléfono, justo después del
+ *   titular y la bajada).
+ *
+ * Todo el texto sale de src/contenido/landings/<slug>.ts, extraído del
+ * bloque de cada original. El formulario es LISTA ROJA (LandingFormulario).
+ *
+ * Medición (LISTA ROJA), sólo en producción (SVEA_PRODUCCION=1):
+ *   · GTM-NGVMRNDM, que el WordPress cargaba en todas las landings;
+ *   · gtag.js de G-FWQ05WDLZ3, que el bloque de la landing cargaba y
+ *     Medicion.astro no carga (sólo define gtag y sus config);
+ *   · Medicion.astro: config GA4 + Ads, conversión del formulario con
+ *     Enhanced Conversions, evento GA4, asunto dinámico y gclid/utm;
+ *   · la conversión del clic de WhatsApp (AW-16836158536/9SA2CNy8qcobEMjIjdw-),
+ *     que Medicion.astro no trae. Va por delegación de eventos, como en
+ *     Base.astro, para que cuente también el botón de la barra del teléfono.
+ * En la copia de trabajo no sale ni un gtag ni el GTM (scripts/verificar.mjs
+ * falla si aparece): sólo el asunto y el gclid/utm, que no miden nada.
+ */
+import '../styles/tailwind.css';
+import SeoHead from '../components/SeoHead.astro';
+import Medicion from '../components/Medicion.astro';
+import LandingFormulario from '../components/landing/LandingFormulario.astro';
+import LandingTitulo from '../components/landing/LandingTitulo.astro';
+import { LogoMarquee } from '../components/ui/logo-marquee';
+import paginas from '../data/paginas.json';
+import type { Landing } from '../contenido/landings/tipos';
+
+interface Props {
+  datos: Landing;
+}
+const { datos: d } = Astro.props;
+
+const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+const COPIA = !import.meta.env.SVEA_PRODUCCION;
+const pagina = paginas.find((p) => p.ruta === d.ruta)!;
+if (!pagina) throw new Error(`falta ${d.ruta} en paginas.json`);
+
+const TEL = '+56 9 2994 7924';
+const TEL_HREF = 'tel:+56929947924';
+const GTM = 'GTM-NGVMRNDM';
+const WA_CONV = 'AW-16836158536/9SA2CNy8qcobEMjIjdw-';
+
+// para el FAQPage de SeoHead (sólo se usa si paginas.json no trae uno)
+const sinEtiquetas = (s: string) => s.replace(/<[^>]+>/g, '').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+const PREGUNTAS = d.faq.items.map(({ p, r }) => ({ p, r: sinEtiquetas(r) }));
+
+// los enlaces del pie del original apuntan al dominio; aquí, al sitio (con su base)
+const enlace = (href: string) =>
+  href
+    .replace('https://sveaconsultores.cl/#Nosotros', `${BASE}/#nosotros`)
+    .replace('https://sveaconsultores.cl/#Formulario', `${BASE}/#contacto`)
+    .replace(/^https:\/\/sveaconsultores\.cl\//, `${BASE}/`);
+
+// los clientes del carrusel del original, servidos desde el sitio (el de
+// «Logo 25M» no está en mejoras/img/clientes y se omite)
+const clientes = [
+  { archivo: 'gespania', alt: 'Gespania', ratio: 2.01 },
+  { archivo: 'grupo-mbo', alt: 'Grupo MBO', ratio: 1.34 },
+  { archivo: 'nuevo-pudahuel', alt: 'Nuevo Pudahuel', ratio: 4.27 },
+  { archivo: 'natures-farm', alt: "Nature's Farm", ratio: 1.32 },
+  { archivo: 'blt-mini-bodegas', alt: 'BLT', ratio: 2.35 },
+  { archivo: 'db-santasalo', alt: 'DB Santasalo', ratio: 3.06 },
+  { archivo: 'animal-services', alt: 'Animal Services', ratio: 1.33 },
+  { archivo: 'lira', alt: 'Lira', ratio: 1.1 },
+  { archivo: 'fuchs', alt: 'Fuchs Lubricants', ratio: 2.25 },
+  { archivo: 'delart-chocolat', alt: 'DelArt Chocolat', ratio: 2.01 },
+  { archivo: 'novametal', alt: 'Novametal', ratio: 1.36 },
+].map((c) => ({ src: `${BASE}/img/clientes/${c.archivo}.webp`, alt: c.alt, ratio: c.ratio }));
+
+const fuentesCSS = `
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 900;font-display:swap;src:url(${BASE}/fonts/inter-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:500 800;font-display:swap;src:url(${BASE}/fonts/manrope-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+`;
+
+const WA_SVG =
+  '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.634-1.215A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-2.115 0-4.142-.662-5.846-1.908l-.42-.294-2.748.721.734-2.682-.322-.455A9.72 9.72 0 012.25 12 9.75 9.75 0 0112 2.25 9.75 9.75 0 0121.75 12 9.75 9.75 0 0112 21.75z"/>';
+const TEL_SVG =
+  '<path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>';
+const FLECHA = '<path d="M5 12h14" /><path d="m12 5 7 7-7 7" />';
+
+const m = d.medicion;
+const WA_CON_VALOR = m.valorConversion ?? null;
+const WA_EVENTO = m.eventoWhatsApp;
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <SeoHead pagina={pagina} copia={COPIA} faq={PREGUNTAS} />
+
+  <link rel="preload" href={`${BASE}/fonts/inter-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
+  <style set:html={fuentesCSS}></style>
+
+  {!COPIA && (
+    <Fragment>
+      <!-- LISTA ROJA · Google Tag Manager, como lo cargaba el WordPress -->
+      <script is:inline define:vars={{ GTM }}>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer',GTM);
+      </script>
+      <!-- LISTA ROJA · la librería gtag.js que cargaba el bloque de la landing -->
+      <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-FWQ05WDLZ3"></script>
+    </Fragment>
+  )}
+</head>
+<body class="lp">
+  {!COPIA && (
+    <noscript set:html={`<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`} />
+  )}
+
+  <div class="svea-nuevo">
+    <!-- franja de urgencia del original -->
+    <div class="lp-urgencia bg-black px-4 py-2.5 text-center text-[13px] leading-snug text-white/75 md:text-sm">
+      <span class="lp-punto" aria-hidden="true"></span>
+      <span set:html={d.urgencia} />
+    </div>
+
+    <!-- cabecera de landing: logo y teléfono, sin menú -->
+    <header class="border-b border-black/5 bg-white">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
+        <img src={`${BASE}/img/logo-svea.webp`} width="404" height="137" alt="SVEA Consultores" class="h-9 w-auto md:h-11" fetchpriority="high" />
+        <a href={TEL_HREF} class="inline-flex items-center gap-2 rounded-full border border-black/15 px-3.5 py-2 text-sm font-semibold text-black hover:border-black/40 md:px-4 md:text-[15px]" aria-label={`Llamar al ${TEL}`}>
+          <svg viewBox="0 0 24 24" class="size-4 text-svea" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={TEL_SVG} />
+          {TEL}
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO: titular y bajada, el formulario, y abajo las pills y cifras.
+           En el teléfono el orden es ése; en escritorio el formulario va a la
+           derecha, a la altura del titular. -->
+      <section class="lp-hero relative overflow-hidden" aria-labelledby="lp-h1">
+        <div class="lp-aura" aria-hidden="true"></div>
+        <div class="relative mx-auto grid max-w-6xl gap-x-12 gap-y-7 px-4 pb-14 pt-6 md:px-6 md:pt-12 lg:grid-cols-[minmax(0,1fr)_440px] lg:grid-rows-[auto_1fr] lg:gap-y-10 lg:pb-20 lg:pt-16">
+          <div class="lg:col-start-1 lg:row-start-1">
+            <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-3 py-1.5 text-[13px] font-medium text-black/75">
+              <span class="lp-punto verde" aria-hidden="true"></span>{d.badge}
+            </p>
+            <h1 id="lp-h1" class="lp-h1 font-display font-medium text-black">
+              <Fragment set:html={d.h1} />
+              {d.h1Alterno && <span class="mt-3 block font-sans text-base font-medium tracking-normal text-black/55 md:text-lg">{d.h1Alterno}</span>}
+            </h1>
+            {d.subtitulo && <p class="lp-subtitulo mt-3 text-sm font-medium text-black/50" set:html={d.subtitulo} />}
+            <p class="mt-5 max-w-[46ch] text-[17px] leading-relaxed text-black/70 md:text-lg" set:html={d.bajada} />
+          </div>
+
+          <div id="formulario" class="lp-ancla lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start">
+            <LandingFormulario f={d.formulario} copia={COPIA} />
+          </div>
+
+          <div class="lg:col-start-1 lg:row-start-2">
+            <ul class="flex flex-wrap gap-2">
+              {d.pills.map((p) => (
+                <li class="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3.5 py-2 text-sm font-medium text-black/80">
+                  <svg viewBox="0 0 24 24" class="size-4 shrink-0 text-svea" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                  {p}
+                </li>
+              ))}
+            </ul>
+            <!-- las cifras van escritas: el contador del original nacía en 0 -->
+            <ul class="mt-8 grid max-w-lg grid-cols-3 divide-x divide-black/10 border-y border-black/10">
+              {d.cifras.map((c) => (
+                <li class="px-3 py-4 first:pl-0">
+                  <p class="font-display text-[26px] font-medium leading-none tracking-tight text-black md:text-[32px]">{c.valor}</p>
+                  <p class="mt-1.5 text-xs leading-snug text-black/60 md:text-sm">{c.texto}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- clientes -->
+      <section class="border-y border-black/5 bg-white py-6" aria-label="Clientes de SVEA Consultores">
+        <LogoMarquee logos={clientes} />
+      </section>
+
+      {d.queEs && (
+        <section class="bg-white px-4 py-16 md:px-6 md:py-24" aria-labelledby="lp-que-es">
+          <div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <LandingTitulo copete={d.queEs.copete} titulo={d.queEs.titulo} id="lp-que-es" />
+              <div class="-mt-4 space-y-4 text-base leading-relaxed text-black/70 md:text-lg" data-rv>
+                {d.queEs.parrafos.map((p) => <p set:html={p} />)}
+              </div>
+            </div>
+            <img
+              src={`${BASE}/img/${d.queEs.foto.archivo}`}
+              width={d.queEs.foto.ancho}
+              height={d.queEs.foto.alto}
+              alt={d.queEs.foto.alt}
+              loading="lazy"
+              decoding="async"
+              class="aspect-[4/3] w-full rounded-2xl object-cover"
+              data-rv
+            />
+          </div>
+        </section>
+      )}
+
+      <!-- riesgos -->
+      <section class="bg-hoja px-4 py-16 md:px-6 md:py-24" aria-labelledby="lp-riesgos">
+        <div class="mx-auto max-w-6xl">
+          <LandingTitulo copete={d.riesgos.copete} titulo={d.riesgos.titulo} bajada={d.riesgos.bajada} id="lp-riesgos" />
+          <div class="grid gap-4 md:grid-cols-2">
+            {d.riesgos.items.map((r) => (
+              <article class="flex gap-4 rounded-2xl border border-border bg-white p-5 md:p-6" data-rv>
+                <span class="grid size-10 shrink-0 place-items-center rounded-full bg-[#a32f26]/10 text-[#a32f26]" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                </span>
+                <div>
+                  <h3 class="text-lg font-semibold tracking-tight text-black">{r.titulo}</h3>
+                  <p class="mt-1.5 text-[15px] leading-relaxed text-black/65" set:html={r.texto} />
+                </div>
+              </article>
+            ))}
+          </div>
+          <div class="mt-8 flex flex-col items-start gap-5 rounded-2xl bg-black p-6 text-white md:flex-row md:items-center md:justify-between md:p-8" data-rv>
+            <p class="max-w-xl text-lg font-medium leading-snug">{d.riesgos.llamado}</p>
+            <a href="#formulario" class="btn-flecha inversa chica shrink-0">
+              <span>{d.riesgos.boton}</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {d.listas && (
+        <section class="bg-white px-4 py-16 md:px-6 md:py-24">
+          <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
+            {d.listas.map((l, i) => (
+              <div>
+                <LandingTitulo copete={l.copete} titulo={l.titulo} id={`lp-lista-${i}`} />
+                <ul class="-mt-2 grid gap-2.5 sm:grid-cols-2" data-rv>
+                  {l.items.map((it) => (
+                    <li class="flex items-center gap-2.5 rounded-xl border border-border bg-hoja px-4 py-3 text-[15px] font-medium text-black/80">
+                      <svg viewBox="0 0 24 24" class="size-4 shrink-0 text-svea" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                      {it}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- qué incluye -->
+      <section class:list={['px-4 py-16 md:px-6 md:py-24', d.listas ? 'bg-hoja' : 'bg-white']} aria-labelledby="lp-incluye">
+        <div class="mx-auto max-w-6xl">
+          <LandingTitulo copete={d.incluye.copete} titulo={d.incluye.titulo} bajada={d.incluye.bajada} id="lp-incluye" centrado />
+          <ol class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {d.incluye.items.map((it, i) => (
+              <li class="relative rounded-2xl border border-border bg-white p-6" data-rv>
+                <span class="absolute right-5 top-5 font-display text-sm font-semibold text-black/25">{String(i + 1).padStart(2, '0')}</span>
+                <span class="grid size-11 place-items-center rounded-xl bg-hoja text-svea" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" set:html={it.icono} />
+                </span>
+                <h3 class="mt-4 text-lg font-semibold tracking-tight text-black">{it.titulo}</h3>
+                <p class="mt-1.5 text-[15px] leading-relaxed text-black/65" set:html={it.texto} />
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <!-- proceso -->
+      <section class="bg-black px-4 py-16 text-white md:px-6 md:py-24" aria-labelledby="lp-proceso">
+        <div class="mx-auto max-w-6xl">
+          <LandingTitulo copete={d.proceso.copete} titulo={d.proceso.titulo} id="lp-proceso" centrado oscuro />
+          <ol class="lp-pasos grid gap-6 md:grid-cols-5 md:gap-4" data-rv>
+            {d.proceso.pasos.map((p, i) => (
+              <li class="relative flex gap-4 md:flex-col md:items-center md:text-center">
+                <span class="lp-paso-num relative z-10 grid size-11 shrink-0 place-items-center rounded-full bg-svea-claro font-display text-lg font-semibold text-black">{i + 1}</span>
+                <div>
+                  <h3 class="text-base font-semibold text-white">{p.titulo}</h3>
+                  <p class="mt-1 text-sm text-white/60">{p.texto}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <!-- normativa -->
+      <section class="bg-hoja px-4 py-16 md:px-6 md:py-24" aria-labelledby="lp-normativa">
+        <div class="mx-auto max-w-6xl">
+          <LandingTitulo copete={d.normativa.copete} titulo={d.normativa.titulo} bajada={d.normativa.bajada} id="lp-normativa" centrado />
+          <div class="grid gap-4 md:grid-cols-3">
+            {d.normativa.items.map((n) => (
+              <article class="rounded-2xl border border-border bg-white p-6" data-rv>
+                <span class="inline-block rounded-full bg-svea/10 px-3 py-1 text-xs font-bold tracking-wide text-svea">{n.sigla}</span>
+                <h3 class="mt-4 text-lg font-semibold tracking-tight text-black">{n.titulo}</h3>
+                <p class="mt-1.5 text-[15px] leading-relaxed text-black/65" set:html={n.texto} />
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- preguntas frecuentes -->
+      <section class="bg-white px-4 py-16 md:px-6 md:py-24" aria-labelledby="lp-faq">
+        <div class="mx-auto max-w-3xl">
+          <LandingTitulo copete={d.faq.copete} titulo={d.faq.titulo} id="lp-faq" centrado />
+          <div class="space-y-3">
+            {d.faq.items.map((q, i) => (
+              <details open={i === 0} class="acordeon group rounded-xl border border-border bg-white px-5" data-rv>
+                <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 text-left">
+                  <h3 class="text-base font-semibold tracking-tight text-black">{q.p}</h3>
+                  <svg viewBox="0 0 24 24" class="size-5 shrink-0 text-black/40 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+                </summary>
+                <p class="pb-5 text-[15px] leading-relaxed text-black/70" set:html={q.r} />
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- cierre: al formulario o por WhatsApp -->
+      <section class="relative overflow-hidden bg-black px-4 py-20 md:px-6 md:py-28" aria-labelledby="lp-cierre">
+        <img
+          src={`${BASE}/img/hero/${d.foto}-1080.webp`}
+          srcset={`${BASE}/img/hero/${d.foto}-1080.webp 1080w, ${BASE}/img/hero/${d.foto}-1920.webp 1920w`}
+          sizes="100vw"
+          alt=""
+          loading="lazy"
+          decoding="async"
+          class="absolute inset-0 size-full object-cover opacity-35"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" aria-hidden="true"></div>
+        <div class="relative mx-auto max-w-3xl text-center" data-rv>
+          <h2 id="lp-cierre" class="lp-cierre-t text-balance font-display text-3xl font-medium leading-[1.1] tracking-tight text-white md:text-5xl" set:html={d.cierre.titulo} />
+          <p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg" set:html={d.cierre.texto} />
+          <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a href="#formulario" class="btn-flecha inversa">
+              <span>{d.cierre.boton}</span>
+              <span class="circulo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:rotate(-90deg)" set:html={FLECHA} /></span>
+            </a>
+            <a href={d.cierre.whatsapp} target="_blank" rel="noopener" class="lp-wa inline-flex h-14 items-center gap-2.5 rounded-full px-7 text-[17px] font-semibold">
+              <svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true" set:html={WA_SVG} />
+              {d.cierre.whatsappTexto}
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- pie mínimo -->
+    <footer class="bg-[#0b0f0d] px-4 pb-28 pt-12 text-sm text-white/60 md:px-6 md:pb-10">
+      <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.3fr_1fr_1.4fr]">
+        <div>
+          <img src={`${BASE}/img/logo-svea-blanco.webp`} alt="SVEA Consultores" width="404" height="137" loading="lazy" decoding="async" class="h-9 w-auto" />
+          {d.pie.presentacion && <p class="mt-4 max-w-sm leading-relaxed">{d.pie.presentacion}</p>}
+          <ul class="mt-4 space-y-1.5">
+            <li><a class="hover:text-white" href="https://maps.google.com/?q=Apoquindo+6410+Las+Condes" target="_blank" rel="noopener">Apoquindo #6410, Oficina 605, Las Condes, Santiago de Chile.</a></li>
+            <li><a class="hover:text-white" href={TEL_HREF}>+56929947924</a></li>
+            <li><a class="hover:text-white" href="mailto:contacto@sveaconsultores.cl">contacto@sveaconsultores.cl</a></li>
+          </ul>
+        </div>
+        {d.pie.columnas.map((c) => (
+          <nav aria-label={c.titulo}>
+            <p class="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-white/40">{c.titulo}</p>
+            <ul class="space-y-1.5">
+              {c.enlaces.map((e) => <li><a class="hover:text-white" href={enlace(e.href)}>{e.texto}</a></li>)}
+            </ul>
+          </nav>
+        ))}
+      </div>
+      <div class="mx-auto mt-10 flex max-w-6xl flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/40 md:flex-row md:justify-between">
+        <p>
+          <span>Términos de uso</span> · <span>Política de cookies</span> ·
+          <a class="hover:text-white" href={`${BASE}/politica-de-privacidad/`}>Política de privacidad</a>
+        </p>
+        <p>© 2026 SVEA Consultores. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- en el teléfono, cuando el formulario ya quedó arriba: cotizar o WhatsApp -->
+    <div class:list={['lp-barra md:hidden', COPIA && 'con-aviso']} aria-hidden="true" inert>
+      <a href="#formulario" class="btn-flecha chica flex-1 justify-center"><span>{d.cierre.boton}</span></a>
+      <a href={d.cierre.whatsapp} target="_blank" rel="noopener" class="lp-wa grid size-11 shrink-0 place-items-center rounded-full" aria-label="Escribir por WhatsApp">
+        <svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true" set:html={WA_SVG} />
+      </a>
+    </div>
+  </div>
+
+  {COPIA && (
+    <div class="aviso-copia">
+      COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
+      <a href={`${BASE}/estado/`}>ver las 27 páginas</a>
+    </div>
+  )}
+
+  <!-- revelado de lo que está bajo el pliegue; lo visible al cargar no se toca -->
+  <script is:inline>
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var borde = window.innerHeight;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.remove('lp-oculto'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('[data-rv]').forEach(function (el) {
+      if (el.getBoundingClientRect().top > borde) { el.classList.add('lp-oculto'); io.observe(el); }
+    });
+  })();
+  // la barra del teléfono aparece cuando el formulario quedó arriba
+  (function () {
+    var barra = document.querySelector('.lp-barra');
+    var form = document.getElementById('formulario');
+    if (!barra || !form || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (es) {
+      var e = es[0];
+      var pasado = !e.isIntersecting && e.boundingClientRect.top < 0;
+      barra.classList.toggle('visible', pasado);
+      if (pasado) { barra.removeAttribute('inert'); barra.removeAttribute('aria-hidden'); }
+      else { barra.setAttribute('inert', ''); barra.setAttribute('aria-hidden', 'true'); }
+    }).observe(form);
+  })();
+  </script>
+
+  {COPIA ? (
+    <Fragment>
+      <!-- C · asunto dinámico, la misma lógica del original: el prefijo y la
+           palabra de servicio los lee n8n -->
+      <script is:inline define:vars={{ prefijoAsunto: m.prefijoAsunto, formId: d.formulario.id, subjectId: m.subjectId }}>
+      document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById(formId);
+        if (!form) return;
+        form.addEventListener('submit', function () {
+          var campoNombre  = form.querySelector('input[name="Nombre"]');
+          var campoEmpresa = form.querySelector('input[name="Empresa"]') ||
+                             form.querySelector('input[name="Condominio"]');
+          var nombre  = ((campoNombre && campoNombre.value) || '').trim() || 'Sin nombre';
+          var empresa = ((campoEmpresa && campoEmpresa.value) || '').trim();
+          var ahora = new Date();
+          var fecha = ahora.toLocaleDateString('es-CL') + ' ' +
+                      ahora.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
+          var asunto = prefijoAsunto + nombre + (empresa ? ' | ' + empresa : '') + ' - ' + fecha;
+          var destino = document.getElementById(subjectId);
+          if (destino) destino.value = asunto;
+        });
+      });
+      </script>
+      <!-- D · gclid y utm_* desde la URL y sessionStorage, idéntico al original -->
+      <script is:inline>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var campos = ['gclid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+        campos.forEach(function (f) {
+          var val = params.get(f);
+          if (val) {
+            var el = document.getElementById('field-' + f);
+            if (el) el.value = val;
+          }
+        });
+        if (params.get('gclid')) {
+          sessionStorage.setItem('gclid', params.get('gclid'));
+        } else if (sessionStorage.getItem('gclid')) {
+          var el = document.getElementById('field-gclid');
+          if (el && !el.value) el.value = sessionStorage.getItem('gclid');
+        }
+      })();
+      </script>
+    </Fragment>
+  ) : (
+    <Fragment>
+      <!-- A + C + D · la medición común de las páginas con formulario -->
+      <Medicion
+        servicio={m.servicio}
+        prefijoAsunto={m.prefijoAsunto}
+        formId={d.formulario.id}
+        subjectId={m.subjectId}
+        eventoGA4={m.eventoGA4}
+        valorConversion={m.valorConversion}
+      />
+      <!-- B · conversión del clic de WhatsApp, con los valores del original -->
+      <script is:inline define:vars={{ WA_CONV, WA_CON_VALOR, WA_EVENTO }}>
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="whatsapp"], a[href*="wa.me"]');
+        if (!a || typeof gtag !== 'function') return;
+        var conversion = { 'send_to': WA_CONV };
+        if (WA_CON_VALOR !== null) { conversion.value = WA_CON_VALOR; conversion.currency = 'CLP'; }
+        gtag('event', 'conversion', conversion);
+        if (WA_EVENTO) gtag('event', 'clic_whatsapp', { 'event_category': 'Lead', 'event_label': document.title });
+      }, true);
+      </script>
+    </Fragment>
+  )}
+</body>
+</html>
+
+<style is:global>
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body.lp { margin: 0; background: #fff; color: #161b22; font-family: Inter, ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+  .lp-urgencia strong { color: #fff; font-weight: 600; }
+  .lp-punto { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: #e5484d; vertical-align: 1px; box-shadow: 0 0 0 3px rgba(229,72,77,.25); }
+  .lp-punto.verde { margin-right: 0; background: #0e7a3c; box-shadow: 0 0 0 3px rgba(14,122,60,.18); }
+
+  /* el aura del hero: sólo gradientes, sin imagen que esperar */
+  .lp-hero { background: #f4f6f4; }
+  .lp-aura { position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(60% 55% at 12% 0%, rgba(155,235,107,.28), transparent 70%),
+      radial-gradient(50% 50% at 95% 10%, rgba(127,206,214,.30), transparent 70%),
+      radial-gradient(70% 60% at 50% 110%, rgba(255,255,255,.9), transparent 70%); }
+
+  .lp-h1 { margin: 0; font-size: clamp(32px, 4.6vw, 56px); line-height: 1.08; letter-spacing: -0.035em; text-wrap: balance; }
+  .lp-h1 em, .lp-titulo h2 em { font-style: normal; color: #0e7a3c; }
+  .lp-titulo.lp-oscuro h2 em, .lp-cierre-t em { font-style: normal; color: #9beb6b; }
+  .lp-subtitulo em { font-style: normal; font-weight: 600; color: rgba(0,0,0,.65); }
+  .lp-ancla { scroll-margin-top: 12px; }
+
+  /* la línea que une los pasos, sólo en escritorio */
+  @media (min-width: 768px) {
+    .lp-pasos li:not(:last-child)::after { content: ""; position: absolute; top: 22px; left: calc(50% + 30px); right: calc(-50% + 30px); height: 1px; background: rgba(255,255,255,.2); }
+  }
+
+  .lp-wa { background: #25d366; color: #06301a !important; text-decoration: none; transition: background .2s; }
+  .lp-wa:hover { background: #1fbe5b; }
+
+  /* revelado bajo el pliegue: el script agrega .lp-oculto sólo a lo que está
+     debajo del borde al cargar; sin script, todo se ve */
+  [data-rv] { transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1); }
+  .lp-oculto { opacity: 0; transform: translateY(18px); }
+  @media (prefers-reduced-motion: reduce) { [data-rv] { transition: none; } .lp-oculto { opacity: 1; transform: none; } }
+
+  .lp-barra { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; gap: 10px; align-items: center;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.96);
+    border-top: 1px solid rgba(0,0,0,.08); box-shadow: 0 -8px 24px -12px rgba(0,0,0,.2);
+    transform: translateY(110%); transition: transform .25s ease; }
+  .lp-barra.visible { transform: none; }
+  .lp-barra.con-aviso { bottom: 31px; }
+  .lp-barra .btn-flecha { overflow: hidden; text-overflow: ellipsis; }
+  @media (prefers-reduced-motion: reduce) { .lp-barra { transition: none; } }
+
+  .aviso-copia { position: fixed; left: 0; right: 0; bottom: 0; z-index: 99999; background: #161b18; color: #fff;
+    font: 400 12px/1.4 system-ui, sans-serif; padding: 7px 12px; text-align: center; }
+  .aviso-copia a { color: #9BEB6B; }
+</style>

@@ -1,0 +1,388 @@
+{
+  "slug": "autorizacion-transporte-residuos-chile",
+  "ruta": "/autorizacion-transporte-residuos-chile/",
+  "migasOriginal": [
+    {
+      "texto": "Inicio",
+      "href": "/"
+    },
+    {
+      "texto": "Blog",
+      "href": "/blog/"
+    }
+  ],
+  "migaFinal": "Autorización Transporte de Residuos",
+  "categoria": "Permisos y Autorizaciones",
+  "h1": "Autorización de Transporte de Residuos Chile: Guía Completa 2026",
+  "bajada": "Cómo obtener la autorización sanitaria para transportar residuos peligrosos y no peligrosos. Requisitos, documentos, costos, plazos y proceso ante la SEREMI de Salud.",
+  "fecha": "Febrero 2026",
+  "lectura": "12 min de lectura",
+  "autor": "SVEA Consultores",
+  "cifras": [
+    {
+      "n": "$124K",
+      "l": "Arancel RESPEL"
+    },
+    {
+      "n": "$128K",
+      "l": "Arancel RSINP"
+    },
+    {
+      "n": "30",
+      "l": "Días hábiles"
+    },
+    {
+      "n": "<24h",
+      "l": "Cotización SVEA"
+    }
+  ],
+  "indiceTitulo": "En este artículo",
+  "indice": [
+    {
+      "href": "#que-es",
+      "texto": "Qué es la autorización de transporte de residuos"
+    },
+    {
+      "href": "#tipos",
+      "texto": "Tipos de autorización: peligrosos vs. no peligrosos"
+    },
+    {
+      "href": "#normativa",
+      "texto": "Normativa aplicable"
+    },
+    {
+      "href": "#requisitos",
+      "texto": "Requisitos y documentos"
+    },
+    {
+      "href": "#vehiculos",
+      "texto": "Requisitos de los vehículos"
+    },
+    {
+      "href": "#proceso",
+      "texto": "Proceso paso a paso"
+    },
+    {
+      "href": "#costos",
+      "texto": "Costos y aranceles 2026"
+    },
+    {
+      "href": "#sanciones",
+      "texto": "Sanciones por transportar sin autorización"
+    },
+    {
+      "href": "#errores",
+      "texto": "Errores comunes que debes evitar"
+    },
+    {
+      "href": "#faq",
+      "texto": "Preguntas frecuentes"
+    }
+  ],
+  "formulario": {
+    "titulo": "Cotiza tu autorización de transporte sin compromiso",
+    "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+    "ocultos": [
+      {
+        "name": "access_key",
+        "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+      },
+      {
+        "name": "subject",
+        "value": "Nueva cotización Transporte Residuos (Blog) - SVEA Consultores",
+        "id": "dynamic-subject-art-tr"
+      },
+      {
+        "name": "from_name",
+        "value": "SVEA Consultores Blog - Transporte Residuos"
+      },
+      {
+        "name": "redirect",
+        "value": "https://sveaconsultores.cl/gracias/"
+      },
+      {
+        "name": "Servicio",
+        "value": "Autorización Transporte de Residuos"
+      },
+      {
+        "name": "Origen",
+        "value": "Artículo SEO - Transporte Residuos"
+      }
+    ],
+    "campos": [
+      {
+        "label": "Nombre completo *",
+        "id": "art-nombre",
+        "name": "Nombre",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Ej: Juan Pérez",
+        "ancho": false
+      },
+      {
+        "label": "Empresa *",
+        "id": "art-empresa",
+        "name": "Empresa",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Nombre de tu empresa",
+        "ancho": false
+      },
+      {
+        "label": "Teléfono *",
+        "id": "art-telefono",
+        "name": "Teléfono",
+        "tipo": "tel",
+        "requerido": true,
+        "placeholder": "+569 1234 5678",
+        "ancho": false
+      },
+      {
+        "label": "Email *",
+        "id": "art-email",
+        "name": "Email",
+        "tipo": "email",
+        "requerido": true,
+        "placeholder": "correo@empresa.cl",
+        "ancho": false
+      },
+      {
+        "label": "Tipo de autorización",
+        "id": "art-tipo",
+        "name": "Tipo de Autorización",
+        "tipo": "select",
+        "requerido": false,
+        "placeholder": null,
+        "ancho": true,
+        "opciones": [
+          {
+            "value": "",
+            "texto": "Selecciona una opción",
+            "seleccionada": true,
+            "desactivada": true
+          },
+          {
+            "value": "Transporte RESPEL",
+            "texto": "Transporte de residuos peligrosos",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Transporte RSINP",
+            "texto": "Transporte de residuos no peligrosos",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Ambas autorizaciones",
+            "texto": "Ambas autorizaciones",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "No estoy seguro",
+            "texto": "No estoy seguro",
+            "seleccionada": false,
+            "desactivada": false
+          }
+        ]
+      },
+      {
+        "label": "Mensaje (opcional)",
+        "id": "art-mensaje",
+        "name": "Mensaje",
+        "tipo": "textarea",
+        "requerido": false,
+        "placeholder": "¿Cuántos vehículos necesitas autorizar? ¿Qué tipo de residuos transportas?",
+        "ancho": true,
+        "filas": 3
+      }
+    ],
+    "boton": "SOLICITAR COTIZACIÓN GRATUITA →",
+    "confianza": [
+      "Datos protegidos",
+      "Respuesta en menos de 24 hrs",
+      "Sin compromiso"
+    ],
+    "logos": [
+      {
+        "src": "/img/articulos/logo-25m.webp",
+        "alt": "Logo 25M",
+        "ancho": 400,
+        "alto": 85
+      },
+      {
+        "src": "/img/clientes/gespania.webp",
+        "alt": "Gespania",
+        "ancho": 299,
+        "alto": 149
+      },
+      {
+        "src": "/img/clientes/grupo-mbo.webp",
+        "alt": "Grupo MBO",
+        "ancho": 294,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/nuevo-pudahuel.webp",
+        "alt": "Nuevo Pudahuel",
+        "ancho": 329,
+        "alto": 77
+      },
+      {
+        "src": "/img/clientes/natures-farm.webp",
+        "alt": "Nature's Farm",
+        "ancho": 286,
+        "alto": 217
+      },
+      {
+        "src": "/img/clientes/blt-mini-bodegas.webp",
+        "alt": "BLT",
+        "ancho": 516,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/db-santasalo.webp",
+        "alt": "DB Santasalo",
+        "ancho": 388,
+        "alto": 127
+      },
+      {
+        "src": "/img/clientes/animal-services.webp",
+        "alt": "Animal Services",
+        "ancho": 215,
+        "alto": 162
+      },
+      {
+        "src": "/img/clientes/lira.webp",
+        "alt": "Lira",
+        "ancho": 242,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/fuchs.webp",
+        "alt": "Fuchs Lubricants",
+        "ancho": 495,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/delart-chocolat.webp",
+        "alt": "DelArt Chocolat",
+        "ancho": 443,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/novametal.webp",
+        "alt": "Novametal",
+        "ancho": 166,
+        "alto": 122
+      }
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "titulo": "Preguntas frecuentes sobre la autorización transporte residuos Chile",
+    "items": [
+      {
+        "p": "¿Qué autorización necesito para transportar residuos en Chile?",
+        "r": "Depende del tipo de residuo. Para residuos peligrosos (RESPEL) necesitas autorización sanitaria según DS 148 con arancel de $123.700 CLP. Para residuos industriales no peligrosos (RSINP) necesitas autorización según DS 594 con arancel de $127.600 CLP. Ambas se tramitan ante la SEREMI de Salud a través de la plataforma SEREMI en Línea.",
+        "rTexto": "Depende del tipo de residuo. Para residuos peligrosos (RESPEL) necesitas autorización sanitaria según DS 148 con arancel de $123.700 CLP. Para residuos industriales no peligrosos (RSINP) necesitas autorización según DS 594 con arancel de $127.600 CLP. Ambas se tramitan ante la SEREMI de Salud a través de la plataforma SEREMI en Línea."
+      },
+      {
+        "p": "¿Cuánto cuesta la autorización de transporte de residuos?",
+        "r": "El arancel oficial para transporte de RESPEL es de $123.700 CLP. Para RSINP es de $127.600 CLP. A estos montos se suma el costo de la asesoría profesional para preparar toda la documentación técnica exigida por la SEREMI. En SVEA Consultores entregamos cotización en menos de 24 horas.",
+        "rTexto": "El arancel oficial para transporte de RESPEL es de $123.700 CLP. Para RSINP es de $127.600 CLP. A estos montos se suma el costo de la asesoría profesional para preparar toda la documentación técnica exigida por la SEREMI. En SVEA Consultores entregamos cotización en menos de 24 horas."
+      },
+      {
+        "p": "¿Cuánto demora obtener la autorización?",
+        "r": "El plazo oficial de la SEREMI es de aproximadamente 30 días hábiles desde la presentación completa del expediente. Si hay observaciones, el plazo se extiende mientras se resuelven. Con asesoría profesional se minimizan las observaciones y se acortan significativamente los tiempos.",
+        "rTexto": "El plazo oficial de la SEREMI es de aproximadamente 30 días hábiles desde la presentación completa del expediente. Si hay observaciones, el plazo se extiende mientras se resuelven. Con asesoría profesional se minimizan las observaciones y se acortan significativamente los tiempos."
+      },
+      {
+        "p": "¿Qué vehículos necesito para transportar residuos peligrosos?",
+        "r": "Los vehículos deben ser adecuados al tipo de residuo: carrocería cerrada o estanque según corresponda, señalización según NCh 2190 con rombos de seguridad, kit de emergencia para derrames, extintores y documentación vigente incluyendo permiso de circulación, seguro, certificado de estanqueidad y autorización sanitaria.",
+        "rTexto": "Los vehículos deben ser adecuados al tipo de residuo: carrocería cerrada o estanque según corresponda, señalización según NCh 2190 con rombos de seguridad, kit de emergencia para derrames, extintores y documentación vigente incluyendo permiso de circulación, seguro, certificado de estanqueidad y autorización sanitaria."
+      },
+      {
+        "p": "¿Qué pasa si transporto residuos sin autorización?",
+        "r": "Transportar residuos sin autorización sanitaria es una infracción grave. Las multas van desde 0,1 hasta 1.000 UTM (más de $65 millones CLP). Además se arriesga la retención del vehículo, la clausura de la operación y responsabilidad penal en caso de accidente ambiental o daño a la salud pública.",
+        "rTexto": "Transportar residuos sin autorización sanitaria es una infracción grave. Las multas van desde 0,1 hasta 1.000 UTM (más de $65 millones CLP). Además se arriesga la retención del vehículo, la clausura de la operación y responsabilidad penal en caso de accidente ambiental o daño a la salud pública."
+      },
+      {
+        "p": "¿La autorización cubre todos mis vehículos?",
+        "r": "No. La autorización es por vehículo. Cada camión, camioneta o tracto debe estar individualmente autorizado con su patente, tipo de carrocería, capacidad de carga y tipo de residuos que puede transportar. Si agregas un vehículo nuevo a tu flota, necesitas tramitar su autorización antes de operarlo.",
+        "rTexto": "No. La autorización es por vehículo. Cada camión, camioneta o tracto debe estar individualmente autorizado con su patente, tipo de carrocería, capacidad de carga y tipo de residuos que puede transportar. Si agregas un vehículo nuevo a tu flota, necesitas tramitar su autorización antes de operarlo."
+      }
+    ]
+  },
+  "autorCaja": {
+    "inicial": "SC",
+    "nombre": "SVEA Consultores",
+    "texto": "Consultora ambiental especializada en cumplimiento normativo en Chile. Más de 250 proyectos gestionados con alta tasa de aprobación. Cotización en menos de 24 horas."
+  },
+  "compartir": {
+    "titulo": "Compartir",
+    "enlaces": [
+      {
+        "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://sveaconsultores.cl/autorizacion-transporte-residuos-chile/",
+        "texto": "in",
+        "titulo": "Compartir en LinkedIn",
+        "externo": true
+      },
+      {
+        "href": "https://api.whatsapp.com/send?text=Autorización%20Transporte%20de%20Residuos%20Chile%20-%20Guía%20Completa%20https://sveaconsultores.cl/autorizacion-transporte-residuos-chile/",
+        "texto": "wa",
+        "titulo": "Compartir por WhatsApp",
+        "externo": true
+      },
+      {
+        "href": "mailto:?subject=Autorización%20Transporte%20de%20Residuos%20Chile&body=Te%20comparto%20esta%20guía%3A%20https://sveaconsultores.cl/autorizacion-transporte-residuos-chile/",
+        "texto": "@",
+        "titulo": "Enviar por email",
+        "externo": false
+      }
+    ]
+  },
+  "bloques": [
+    {
+      "tipo": "html",
+      "html": "<p class=\"art-entrada\">\n        La <strong>autorización transporte residuos Chile</strong> es un permiso sanitario obligatorio para toda empresa que traslade residuos peligrosos o industriales no peligrosos por calles y caminos. Sin esta autorización de transporte de residuos, tu operación es ilegal y arriesgas <strong>multas de hasta 1.000 UTM, retención de vehículos y responsabilidad penal</strong>. En esta guía te explicamos todo lo que necesitas para obtenerla.\n    </p>\n\n    \n<section id=\"que-es\">\n        <h2>Qué es la autorización transporte residuos Chile</h2>\n        <p>La <strong>autorización transporte residuos Chile</strong> es un permiso emitido por la SEREMI de Salud que habilita a personas naturales o jurídicas para trasladar residuos industriales — tanto peligrosos como no peligrosos — en vehículos debidamente acondicionados.</p>\n        <p>Este permiso garantiza que el transporte se realiza en condiciones seguras para la salud pública y el medio ambiente: vehículos adecuados, conductores capacitados, rutas definidas, documentación de trazabilidad y protocolos de emergencia en caso de derrames o accidentes.</p>\n        <p>La autorización es <strong>por vehículo</strong>, no por empresa. Cada camión, camioneta o tracto que transporte residuos debe estar individualmente autorizado con su patente, tipo de carrocería y tipo de residuos que puede transportar.</p>\n        <div class=\"callout callout-info\">\n            <span class=\"callout-icon\">i</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Importante: la autorización no se hereda</div>\n                <p>Si cambias un vehículo de tu flota, debes tramitar una nueva autorización para el vehículo de reemplazo. La autorización está vinculada a la patente específica del vehículo.</p>\n            </div>\n        </div>\n    </section>\n\n    \n<section id=\"tipos\">\n        <h2>Tipos de autorización: peligrosos vs. no peligrosos</h2>\n        <p>Existen dos autorizaciones distintas según el tipo de residuo que se transporta. Es fundamental entender la diferencia antes de tramitar tu <strong>autorización transporte residuos Chile</strong>:</p>\n        <div class=\"emergency-grid\">\n            <div class=\"emergency-card emergency-card--a\">\n                <div class=\"emergency-card-letter\" style=\"--letra:#DC2626\">RP</div>\n                <h4>Residuos Peligrosos (RESPEL)</h4>\n                <p>Regulado por DS 148. Incluye residuos tóxicos, inflamables, corrosivos y reactivos. Requiere señalización NCh 2190, kit de emergencia, HDS y declaración en SIDREP. <strong>Arancel: $123.700 CLP.</strong></p>\n            </div>\n            <div class=\"emergency-card emergency-card--b\">\n                <div class=\"emergency-card-letter\" style=\"--letra:#3B82F6\">NP</div>\n                <h4>Residuos No Peligrosos (RSINP)</h4>\n                <p>Regulado por DS 594. Incluye residuos industriales sólidos, semisólidos, líquidos envasados y gases envasados que no son peligrosos. Requiere vehículo estanco y destinatario autorizado. <strong>Arancel: $127.600 CLP.</strong></p>\n            </div>\n        </div>\n        <div class=\"highlight-box\">\n            <h3>¿Puedo transportar ambos tipos con una sola autorización?</h3>\n            <p>No. Cada tipo de residuo requiere su propia autorización. Si tu empresa transporta tanto RESPEL como RSINP, necesitas <strong>dos autorizaciones separadas</strong>. Cada una tiene requisitos técnicos, documentación y aranceles distintos.</p>\n        </div>\n    </section>\n\n    \n<section id=\"normativa\">\n        <h2>Normativa aplicable</h2>\n        <p>El marco legal que regula la <strong>autorización transporte residuos Chile</strong> incluye decretos del Ministerio de Salud, el Ministerio de Transportes y normas técnicas chilenas:</p>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Normativa</th><th>Alcance</th><th>Relevancia</th></tr></thead>\n            <tbody>\n                <tr><td><strong>DS 148</strong> (MINSAL)</td><td>Reglamento Sanitario sobre Manejo de Residuos Peligrosos. Título V regula el transporte de RESPEL.</td><td>Transporte RESPEL</td></tr>\n                <tr><td><strong>DS 298</strong> (MTT)</td><td>Reglamento de transporte de cargas peligrosas por calles y caminos.</td><td>Vehículos y rutas</td></tr>\n                <tr><td><strong>DS 594</strong> (MINSAL)</td><td>Condiciones sanitarias en lugares de trabajo. Base para autorización de transporte de RSINP.</td><td>Transporte RSINP</td></tr>\n                <tr><td><strong>NCh 2190</strong></td><td>Transporte de sustancias peligrosas: distintivos, rombos de seguridad y etiquetado.</td><td>Señalización</td></tr>\n                <tr><td><strong>NCh 382</strong></td><td>Clasificación general de sustancias peligrosas en 9 clases.</td><td>Clasificación</td></tr>\n                <tr><td><strong>Código Sanitario</strong></td><td>Base legal para la fiscalización y sanción por infracciones sanitarias.</td><td>Sanciones</td></tr>\n            </tbody>\n        </table>\n    </div></section>\n\n    \n<section id=\"requisitos\">\n        <h2>Requisitos y documentos para la autorización</h2>\n        <p>Para obtener la <strong>autorización transporte residuos Chile</strong> ante la SEREMI de Salud, debes presentar los siguientes documentos según el tipo de residuo:</p>\n        <h3>Para transporte de RESPEL (DS 148)</h3>\n        <ul class=\"checklist\">\n            <li><strong>Identificación del solicitante:</strong> RUT empresa, razón social, representante legal y encargado de gestión de transporte.</li>\n            <li><strong>Memoria explicativa del sistema de transporte:</strong> Descripción completa de la operación, tipos de RESPEL, cantidades mensuales estimadas.</li>\n            <li><strong>Documentación de vehículos:</strong> Permiso de circulación, padrón, certificado de estanqueidad (para estanques y cisternas), revisión técnica vigente.</li>\n            <li><strong>Características técnicas:</strong> Marca, modelo, año, patente, tipo de carrocería, capacidad de carga por vehículo incluyendo remolques.</li>\n            <li><strong>Licencias de conducir:</strong> Copia de licencia vigente de todos los conductores que operarán los vehículos.</li>\n            <li><strong>Hojas de Datos de Seguridad (HDS):</strong> Para cada tipo de RESPEL que se transportará.</li>\n            <li><strong>Sitio de estacionamiento:</strong> Descripción del lugar donde se estacionan y descontaminan los vehículos.</li>\n            <li><strong>Plan de contingencias:</strong> Protocolos de emergencia para derrames, incendios y accidentes durante el transporte.</li>\n            <li><strong>Plan de capacitación:</strong> Programa de formación para conductores y personal de carga.</li>\n        </ul>\n        <h3>Para transporte de RSINP (DS 594)</h3>\n        <ul class=\"checklist\">\n            <li><strong>Identificación y tipo de residuos:</strong> Estado físico (sólido, semisólido, líquido), si son a granel o envasados, HDS si corresponde.</li>\n            <li><strong>Cantidades mensuales:</strong> Estimación de los volúmenes a transportar.</li>\n            <li><strong>Memoria explicativa de vehículos e instalaciones:</strong> Características técnicas de la flota y base de operaciones.</li>\n            <li><strong>Descripción del sitio de estacionamiento:</strong> Ubicación, piso impermeable, sistema de evacuación de aguas, certificado de informaciones previas.</li>\n            <li><strong>Infraestructura para trabajadores:</strong> Servicios sanitarios, agua potable, alcantarillado.</li>\n            <li><strong>Plan de contingencia:</strong> Protocolos de emergencia durante el transporte.</li>\n        </ul>\n        <div class=\"callout callout-success\">\n            <span class=\"callout-icon\">✓</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">SVEA Consultores prepara toda la documentación</div>\n                <p>Nuestro servicio de <a href=\"/autorizacion-de-transporte-de-residuos/\">Autorización de Transporte de Residuos</a> incluye levantamiento técnico, elaboración de memorias y planes, y gestión completa ante la SEREMI de Salud.</p>\n            </div>\n        </div>\n    </section>\n\n    \n<figure class=\"article-img\">\n        <img src=\"/img/articulos/camion-excavadora-residuos.webp\" alt=\"Autorización transporte residuos Chile - Camión con excavadora cargando residuos industriales para retiro\" width=\"960\" height=\"640\" loading=\"lazy\" decoding=\"async\">\n        <figcaption>Carga de residuos industriales: cada vehículo que transporta residuos debe contar con autorización sanitaria vigente.</figcaption>\n    </figure>\n\n    "
+    },
+    {
+      "tipo": "formulario"
+    },
+    {
+      "tipo": "html",
+      "html": "<section id=\"vehiculos\">\n        <h2>Requisitos de los vehículos</h2>\n        <p>Los vehículos destinados al transporte de residuos deben cumplir exigencias específicas según el tipo de residuo. A continuación, los requisitos que evalúa la SEREMI al tramitar la <strong>autorización transporte residuos Chile</strong>:</p>\n        <h3>Para RESPEL (DS 298 + DS 148)</h3>\n        <ul class=\"checklist\">\n            <li><strong>Carrocería adecuada:</strong> Cerrada, estanque o cisterna según el estado físico del residuo. Materiales resistentes y compatibles.</li>\n            <li><strong>Señalización NCh 2190:</strong> Rombos de seguridad en las cuatro caras del vehículo con la clase de peligro correspondiente.</li>\n            <li><strong>Kit de emergencia:</strong> Equipos de contención para derrames, extintores, EPP para el conductor, material absorbente.</li>\n            <li><strong>Certificado de estanqueidad:</strong> Obligatorio para estanques y cisternas. Debe estar vigente.</li>\n            <li><strong>Documentación a bordo:</strong> HDS, guía de despacho con identificación del RESPEL, autorización sanitaria, plan de contingencia.</li>\n        </ul>\n        <h3>Para RSINP (DS 594)</h3>\n        <ul class=\"checklist\">\n            <li><strong>Carrocería estanca:</strong> Que impida la caída, dispersión o escurrimiento del residuo durante el transporte.</li>\n            <li><strong>Piso impermeable:</strong> Base del vehículo resistente a los residuos transportados.</li>\n            <li><strong>Cubierta:</strong> Lona o carrocería cerrada para evitar dispersión por viento o lluvia.</li>\n            <li><strong>Documentación:</strong> Autorización sanitaria, guía de despacho con identificación del residuo y destinatario autorizado.</li>\n        </ul>\n    </section>\n\n    \n<figure class=\"article-img\">\n        <img src=\"/img/articulos/camion-tolva-carretera.webp\" alt=\"Autorización transporte residuos Chile - Camión tolva circulando por carretera con carga de residuos industriales\" width=\"1200\" height=\"675\" loading=\"lazy\" decoding=\"async\">\n        <figcaption>Transporte en ruta: los vehículos deben portar señalización NCh 2190, kit de emergencia y documentación a bordo.</figcaption>\n    </figure>\n\n    \n<section id=\"proceso\">\n        <h2>Proceso paso a paso con SVEA Consultores</h2>\n        <p>En SVEA Consultores gestionamos el proceso completo para obtener tu <strong>autorización transporte residuos Chile</strong>, desde la evaluación inicial hasta la resolución favorable:</p>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Evaluación y cotización</h4><p>Analizamos tu operación: tipo de residuos, cantidad de vehículos, base de estacionamiento y rutas. <strong>Cotización en menos de 24 horas.</strong></p></div></li>\n            <li><div class=\"step-content\"><h4>Levantamiento técnico</h4><p>Visitamos tus instalaciones y vehículos para documentar el estado actual: dossier fotográfico, croquis de base, verificación de equipamiento.</p></div></li>\n            <li><div class=\"step-content\"><h4>Elaboración de expediente</h4><p>Preparamos memoria explicativa, plan de contingencia, plan de capacitación y toda la documentación exigida. <strong>Informe listo en 3-5 días hábiles.</strong></p></div></li>\n            <li><div class=\"step-content\"><h4>Ingreso en SEREMI en Línea</h4><p>Cargamos el expediente completo en la plataforma de la SEREMI de Salud y realizamos el pago del arancel correspondiente.</p></div></li>\n            <li><div class=\"step-content\"><h4>Seguimiento y resolución de observaciones</h4><p>Hacemos seguimiento activo. Si la SEREMI hace observaciones, las resolvemos rápidamente. <strong>Plazo oficial: 30 días hábiles.</strong></p></div></li>\n        </ol>\n    </section>\n\n    \n<section id=\"costos\">\n        <h2>Costos y aranceles 2026</h2>\n        <p>El costo total de la <strong>autorización transporte residuos Chile</strong> incluye el arancel oficial de la SEREMI más la asesoría profesional para preparar el expediente técnico:</p>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Concepto</th><th>RESPEL (DS 148)</th><th>RSINP (DS 594)</th></tr></thead>\n            <tbody>\n                <tr><td><strong>Arancel SEREMI</strong></td><td>$123.700 CLP</td><td>$127.600 CLP</td></tr>\n                <tr><td><strong>Plazo resolución</strong></td><td>~30 días hábiles</td><td>~30 días hábiles</td></tr>\n                <tr><td><strong>Vigencia</strong></td><td>Indefinida (mientras se mantengan condiciones)</td><td>Indefinida (mientras se mantengan condiciones)</td></tr>\n                <tr><td><strong>Asesoría SVEA</strong></td><td>Cotización en &lt;24 hrs</td><td>Cotización en &lt;24 hrs</td></tr>\n            </tbody>\n        </table>\n        </div><p>La asesoría profesional de SVEA Consultores incluye levantamiento técnico, elaboración de toda la documentación exigida, ingreso del expediente y seguimiento hasta obtener la resolución favorable. <a href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20necesito%20cotizar%20autorizaci%C3%B3n%20de%20transporte%20de%20residuos\" target=\"_blank\" rel=\"noopener\"><strong>Solicita tu cotización aquí.</strong></a></p>\n    </section>\n\n    \n<section id=\"sanciones\">\n        <h2>Sanciones por transportar sin autorización</h2>\n        <p>Operar sin la <strong>autorización transporte residuos Chile</strong> correspondiente tiene consecuencias legales y económicas graves tanto para el transportista como para el generador:</p>\n        <div class=\"callout callout-danger\">\n            <span class=\"callout-icon\">!</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Consecuencias de operar sin autorización</div>\n                <p><strong>Multas de 0,1 a 1.000 UTM</strong> (más de $65 millones CLP) impuestas por la SEREMI de Salud. <strong>Retención del vehículo</strong> y prohibición de operar hasta regularizar. <strong>Clausura de la empresa</strong> de transporte. <strong>Responsabilidad solidaria</strong>: el generador que contrata un transportista no autorizado comparte la responsabilidad. <strong>Responsabilidad penal</strong> si el transporte sin autorización resulta en un accidente ambiental.</p>\n            </div>\n        </div>\n        <div class=\"callout callout-warning\">\n            <span class=\"callout-icon\">!</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Ojo si eres generador</div>\n                <p>Si contratas un transportista sin autorización vigente, <strong>la responsabilidad es compartida</strong>. El DS 148 establece que el generador es responsable de sus RESPEL hasta su disposición final. Siempre verifica que tu transportista tenga resolución sanitaria vigente.</p>\n            </div>\n        </div>\n    </section>\n\n    \n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>Obtén tu autorización transporte residuos Chile sin complicaciones</h3><p>Cotización en menos de 24 horas. Documentación profesional. Gestión completa ante SEREMI de Salud.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20necesito%20cotizar%20autorizaci%C3%B3n%20de%20transporte%20de%20residuos\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><div class=\"art-logos\" aria-label=\"Empresas que confían en SVEA\"><div class=\"logos-cinta art-logos-cinta\"><div class=\"art-logos-mitad\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"Logo 25M\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"Gespania\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"Grupo MBO\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"Nuevo Pudahuel\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"Nature's Farm\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"BLT\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"DB Santasalo\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"Animal Services\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"Lira\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"Fuchs Lubricants\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"DelArt Chocolat\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"Novametal\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div><div class=\"art-logos-mitad\" aria-hidden=\"true\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div></div></div></aside>\n<section id=\"errores\">\n        <h2>Errores comunes que debes evitar</h2>\n        <p>Estos son los errores más frecuentes que observamos al tramitar la autorización transporte residuos Chile y que generan observaciones de la SEREMI:</p>\n        <div class=\"error-item\"><h4>Presentar fotos deficientes de vehículos y base</h4><p>La SEREMI requiere dossier fotográfico detallado: buena iluminación, ángulos amplios y de detalle, con referencia de escala. Fotos oscuras o sin contexto generan observaciones.</p></div>\n        <div class=\"error-item\"><h4>No evidenciar sistema de evacuación de aguas</h4><p>La base de estacionamiento debe tener piso impermeable y punto de lavado con evacuación adecuada. Sin evidencia documental de esto, la SEREMI observa el expediente.</p></div>\n        <div class=\"error-item\"><h4>Olvidar el plan de contingencias</h4><p>Es un documento obligatorio tanto para RESPEL como RSINP. Debe incluir protocolos específicos para derrames en ruta, incendios del vehículo y accidentes con volcamiento.</p></div>\n        <div class=\"error-item\"><h4>No incluir todos los vehículos de la flota</h4><p>Si operas un camión sin autorización individual, estás en infracción aunque tu empresa tenga otros vehículos autorizados. Cada patente debe estar en la resolución.</p></div>\n        <div class=\"error-item\"><h4>Tramitar sin verificar el certificado de informaciones previas</h4><p>El sitio donde estacionas los vehículos debe ser compatible con el uso de suelo del plan regulador. Verifica antes de invertir en adecuaciones.</p></div>\n    </section>\n\n    "
+    }
+  ],
+  "relacionados": {
+    "titulo": "Servicios relacionados",
+    "intro": "",
+    "tarjetas": [
+      {
+        "titulo": "Manejo de Residuos Peligrosos",
+        "texto": "Plan de manejo RESPEL, clasificación, almacenamiento y gestión completa según DS 148.",
+        "href": "/manejo-de-residuos-peligrosos/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Plan de Emergencia Industrial",
+        "texto": "Planes personalizados para protección de personas y continuidad operativa ante emergencias.",
+        "href": "/plan-de-emergencia-empresa-chile/",
+        "enlace": "Ver artículo →"
+      },
+      {
+        "titulo": "Calificación Técnica Industrial",
+        "texto": "Evaluación técnica y expediente completo para patente municipal industrial ante SEREMI.",
+        "href": "/calificacion-tecnica-industrial-chile/",
+        "enlace": "Ver artículo →"
+      }
+    ]
+  },
+  "asunto": {
+    "prefijo": "[BLOG] Cotización Transporte Residuos - ",
+    "campo": "Empresa",
+    "id": "dynamic-subject-art-tr"
+  }
+}

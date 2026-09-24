@@ -32,7 +32,7 @@ const INCLUYE = [
   },
   {
     titulo: 'Elaboración del Informe CTI',
-    descripcion: 'Informe técnico completo listo en 5-10 días hábiles',
+    descripcion: 'Informe técnico completo listo en 3-5 días hábiles',
     icono: FileTextIcon,
   },
   {
@@ -55,7 +55,7 @@ const INCLUYE = [
 const PASOS = [
   { titulo: 'Cotización', descripcion: 'Recibe tu cotización en menos de 24 horas', icono: ClipboardCheckIcon },
   { titulo: 'Antecedentes', descripcion: 'Recopilamos planos, patente anterior y datos de tu instalación', icono: SearchIcon },
-  { titulo: 'Informe CTI', descripcion: 'Elaboramos el informe técnico en 5-10 días hábiles', icono: FileTextIcon },
+  { titulo: 'Informe CTI', descripcion: 'Elaboramos el informe técnico en 3-5 días hábiles', icono: FileTextIcon },
   { titulo: 'Gestión SEREMI', descripcion: 'Ingresamos el expediente ante la SEREMI de Salud', icono: LandmarkIcon },
   { titulo: 'Resolución', descripcion: 'Recibes tu resolución aprobada para tramitar tu patente', icono: BadgeCheckIcon },
 ];

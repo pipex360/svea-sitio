@@ -1,30 +1,32 @@
 ---
 /**
- * Plan de Emergencia y Evacuación para Condominios, rehecha con el mismo
- * formato que calificacion-tecnica-industrial.astro y
- * estudio-de-carga-de-combustible.astro (ver ahí la explicación de los
- * bloques). Texto, enlaces y formulario idénticos al WordPress; los compara
- * scripts/verificar.mjs.
+ * Informe Sanitario Favorable, rehecha con el mismo formato que
+ * calificacion-tecnica-industrial.astro y estudio-de-carga-de-combustible
+ * .astro (ver ahí la explicación de los bloques). Texto, enlaces y
+ * formulario idénticos al WordPress; los compara scripts/verificar.mjs.
  *
- * El ancla del formulario era #formulario-pe en el WordPress (la misma que
- * el plan industrial); aquí es #formulario-pc para no chocar.
+ * Aquí el original trae, antes de su contenedor «is-page», una franja de
+ * Elementor con la foto de los camiones (sección 50365904): su frase va en
+ * la descripción del formulario, y su foto es la del hero. El bloque
+ * «Marco normativo aplicable», que las otras páginas no tienen, va dentro
+ * de IsServicio con las mismas tarjetas.
  */
 import '../styles/tailwind.css';
 import HeroHalo from '../components/HeroHalo.astro';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
-import { PcFormulario } from '../components/ui/pc-formulario';
-import { PcQueEs } from '../components/ui/pc-que-es';
-import { PcServicio } from '../components/ui/pc-servicio';
-import { PcSiguiente } from '../components/ui/pc-siguiente';
-import { PcFaq, PREGUNTAS } from '../components/ui/pc-faq';
+import { IsFormulario } from '../components/ui/is-formulario';
+import { IsQueEs } from '../components/ui/is-que-es';
+import { IsServicio } from '../components/ui/is-servicio';
+import { IsSiguiente } from '../components/ui/is-siguiente';
+import { IsFaq, PREGUNTAS } from '../components/ui/is-faq';
 import SeoHead from '../components/SeoHead.astro';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
 
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
-const pagina = paginas.find((p) => p.ruta === '/planes-de-emergencia-y-evacuacion-condominios/')!;
+const pagina = paginas.find((p) => p.ruta === '/informe-sanitario/')!;
 
 // Mientras esto sea la copia de trabajo, el formulario no envía.
 const COPIA = !import.meta.env.SVEA_PRODUCCION;
@@ -46,46 +48,46 @@ const fuentesCSS = `
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero es el LCP: se precarga -->
-  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-pc-1080.webp 1080w, ${BASE}/img/hero/servicio-pc-1920.webp 1920w`} imagesizes="100vw" />
+  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-is-1080.webp 1080w, ${BASE}/img/hero/servicio-is-1920.webp 1920w`} imagesizes="100vw" />
 </head>
 <body>
   <HeroHalo
-    fotos={[{ archivo: 'servicio-pc', alto: 1080 }]}
+    fotos={[{ archivo: 'servicio-is', alto: 1257 }]}
     copete="Servicios SVEA"
-    titulo="Plan de Emergencia y Evacuación para Condominios"
-    parrafo="Protege a tus residentes, define roles claros para Comité y Administración y asegura una evacuación eficiente. Elaboramos planes personalizados según la realidad del condominio, con foco en prevención, orden y cumplimiento normativo."
-    boton={{ texto: 'Cotiza tu Plan para Condominio', href: '#formulario-pc' }}
-    principal={{ valor: '5-10', texto: 'días hábiles · Plan completo entregado' }}
+    titulo="Informe Sanitario Favorable ante SEREMI de Salud"
+    parrafo="Gestionamos tu informe sanitario favorable ante la SEREMI de Salud, asegurando el cumplimiento normativo de tu establecimiento. Desde la evaluación hasta la obtención de la resolución, tu empresa opera de forma segura y legal."
+    boton={{ texto: 'Cotiza tu Informe Sanitario', href: '#formulario-is' }}
+    principal={{ valor: 'SEREMI de Salud', texto: 'Gestión integral del permiso' }}
     secundarias={[
-      { destacado: 'Enfoque 100% aplicable', texto: 'a la realidad del condominio' },
-      { destacado: 'Cotización en 24 hrs', texto: 'automática por email' },
+      { destacado: 'Evaluación completa', texto: 'Infraestructura + procesos' },
+      { destacado: 'Cotización en 24 hrs', texto: 'Automática por email' },
     ]}
   />
-  <BarraPegajosa base={BASE} cotizar="#formulario-pc" client:idle />
+  <BarraPegajosa base={BASE} cotizar="#formulario-is" client:idle />
 
   <div class="svea-nuevo">
-    <PcQueEs base={BASE} client:idle />
-    <PcServicio client:idle />
-    <PcSiguiente base={BASE} client:idle />
-    <PcFaq />
+    <IsQueEs base={BASE} client:idle />
+    <IsServicio client:idle />
+    <IsSiguiente base={BASE} client:idle />
+    <IsFaq />
     <Cta69
       badge={{ label: 'Último paso' }}
-      heading="Protege a tu comunidad hoy"
-      button={{ label: 'Cotiza tu Plan ahora', href: '#formulario-pc' }}
+      heading="Obtén tu Informe Sanitario Favorable"
+      button={{ label: 'Solicitar cotización gratuita', href: '#formulario-is' }}
       labels={{
-        marqueePhrase: 'Evacuación',
-        note: 'Obtén tu Plan de Emergencia y Evacuación para Condominios con respaldo profesional. Cotización en menos de 24 horas, plan completo en 5-10 días hábiles, enfoque aplicable y personalizado.',
+        marqueePhrase: 'Sanitario',
+        note: 'Gestión integral ante la SEREMI de Salud. Cotización en menos de 24 horas, evaluación completa y seguimiento hasta la resolución favorable.',
         footnote: 'WhatsApp directo: +56 9 2994 7924',
       }}
       client:idle
     />
-    <PcFormulario copia={COPIA} client:idle />
+    <IsFormulario copia={COPIA} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
   <!-- en el teléfono, sitio para la barra de abajo -->
   <div class="h-20 md:hidden" aria-hidden="true"></div>
-  <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-pc" client:idle />
+  <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-is" client:idle />
 
   <div class="aviso-copia">
     COPIA DE TRABAJO · sin medición y con los formularios desactivados ·

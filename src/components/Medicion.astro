@@ -16,6 +16,11 @@ interface Props {
   formId?: string;        // p.ej. "form-landing-cti"
   subjectId?: string;     // p.ej. "dynamic-subject-lcti"
   servicioDesdeSelector?: boolean; // la home toma el servicio del <select>
+  /** false: el original no manda el evento GA4 form_submit_cotizacion
+   *  (la landing de condominios sólo manda la conversión) */
+  eventoGA4?: boolean;
+  /** la landing de condominios manda la conversión con value 1.0 y currency CLP */
+  valorConversion?: number;
 }
 const {
   servicio,
@@ -23,7 +28,11 @@ const {
   formId,
   subjectId,
   servicioDesdeSelector = false,
+  eventoGA4 = true,
+  valorConversion,
 } = Astro.props;
+// null y no undefined: define:vars no declara las variables undefined
+const VALOR = valorConversion ?? null;
 
 const GA4 = 'G-FWQ05WDLZ3';
 const ADS = 'AW-16836158536';
@@ -41,7 +50,7 @@ const CONV_FORM = 'AW-16836158536/086iCJjJlsobEMjIjdw-';
 </script>
 
 <!-- A · Conversión del formulario con Enhanced Conversions -->
-<script is:inline define:vars={{ CONV_FORM, servicio, servicioDesdeSelector }}>
+<script is:inline define:vars={{ CONV_FORM, servicio, servicioDesdeSelector, eventoGA4, VALOR }}>
 document.addEventListener('DOMContentLoaded', function () {
   var form = document.querySelector('form[action*="web3forms"]') || document.querySelector('form');
   if (!form) return;
@@ -63,7 +72,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     gtag('set', 'user_data', enhancedData);
-    gtag('event', 'conversion', { 'send_to': CONV_FORM });
+    var conversion = { 'send_to': CONV_FORM };
+    if (VALOR !== null) { conversion.value = VALOR; conversion.currency = 'CLP'; }
+    gtag('event', 'conversion', conversion);
+    if (!eventoGA4) return;
 
     // En la home el servicio sale del selector; en las landings es fijo.
     var valor = servicio;

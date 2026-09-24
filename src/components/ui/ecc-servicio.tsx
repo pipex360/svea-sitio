@@ -51,7 +51,7 @@ const PASOS = [
   { titulo: 'Cotización', descripcion: 'Recibe tu cotización en menos de 24 horas', icono: ClipboardCheckIcon },
   { titulo: 'Visita Técnica', descripcion: 'Inspección presencial para identificar materiales combustibles', icono: TruckIcon },
   { titulo: 'Cálculo y Análisis', descripcion: 'Cuantificación de carga térmica por sector según OGUC', icono: SearchIcon },
-  { titulo: 'Informe ECC', descripcion: 'Elaboramos el informe técnico en 5-10 días hábiles', icono: FileTextIcon },
+  { titulo: 'Informe ECC', descripcion: 'Elaboramos el informe técnico en 3-5 días hábiles', icono: FileTextIcon },
   { titulo: 'Entrega', descripcion: 'Recibes tu informe con recomendaciones para cumplir la normativa', icono: ClipboardCheckIcon },
 ];
 
@@ -117,7 +117,7 @@ export function EccServicio() {
           ))}
         </ol>
         <p className="mt-6 text-center text-sm text-black/60">
-          Informe ECC listo en 5-10 días hábiles · Cotización en menos de 24 horas
+          Informe ECC listo en 3-5 días hábiles · Cotización en menos de 24 horas
         </p>
       </Reveal>
     </section>

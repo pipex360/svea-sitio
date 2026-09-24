@@ -118,7 +118,7 @@ export function PeServicio() {
           ))}
         </ol>
         <p className="mt-6 text-center text-sm text-black/60">
-          Plan listo en 7-15 días hábiles · Cotización en menos de 24 horas
+          Plan listo en 5-10 días hábiles · Cotización en menos de 24 horas
         </p>
       </Reveal>
     </section>
