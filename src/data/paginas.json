@@ -7263,7 +7263,7 @@
     "slug": "cotiza-informe-sanitario",
     "tipo": "landings-ads",
     "title": "Informe Sanitario | Resolución y Autorización SEREMI · SVEA",
-    "description": "Tramitamos tu Informe Sanitario (Resolución o Autorización Sanitaria) ante SEREMI de Salud. Evaluación completa y aprobación garantizada. Cotiza en 24h.",
+    "description": "Tramitamos tu Informe Sanitario (Resolución o Autorización Sanitaria) ante SEREMI de Salud. Evaluación completa y tramitación hasta la resolución. Cotiza en 24h.",
     "robots": "noindex, follow",
     "canonical": "https://sveaconsultores.cl/cotiza-informe-sanitario/",
     "h1": "Informe Sanitario Favorable ante  SEREMI de Salud  También conocido como Resolución Sanitaria · Autorización Sanitaria",
@@ -7355,7 +7355,7 @@
             "publisher": {
               "@id": "https://sveaconsultores.cl/#organization"
             },
-            "description": "Tramitamos tu Informe Sanitario (Resolución o Autorización Sanitaria) ante SEREMI de Salud. Evaluación completa y aprobación garantizada. Cotiza en 24h.",
+            "description": "Tramitamos tu Informe Sanitario (Resolución o Autorización Sanitaria) ante SEREMI de Salud. Evaluación completa y tramitación hasta la resolución. Cotiza en 24h.",
             "name": "Informe Sanitario | Resolución y Autorización SEREMI · SVEA",
             "@id": "https://sveaconsultores.cl/cotiza-informe-sanitario/#richSnippet",
             "isPartOf": {
@@ -7855,12 +7855,12 @@
     "ruta": "/cotiza-plan-emergencia-condominio/",
     "slug": "cotiza-plan-emergencia-condominio",
     "tipo": "landings-ads",
-    "title": "Plan de Emergencia Condominio | Aprobación Garantizada SVEA",
+    "title": "Plan de Emergencia Condominio y Edificio | Ley 21.442 | SVEA",
     "description": "Elaboramos el plan de emergencia condominio que exige la Ley 21.442. Protege a tus residentes con protocolos claros y aprobados. Cotización gratis en 24 horas.",
     "robots": "noindex, follow",
     "canonical": "https://sveaconsultores.cl/cotiza-plan-emergencia-condominio/",
-    "h1": "Plan de Emergencia Condominio y Edificio  Evacuación segura garantizada",
-    "h1_html": "Plan de Emergencia<br>Condominio y Edificio<br><em>Evacuación segura garantizada</em>",
+    "h1": "Plan de Emergencia Condominio y Edificio  Ley 21.442",
+    "h1_html": "Plan de Emergencia<br>Condominio y Edificio<br><em>Ley 21.442</em>",
     "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/11/LOGO_GrupoMBO_Nuevo_4.png",
     "palabras_origen": 1128,
     "jsonld": [
@@ -7905,7 +7905,7 @@
             "@type": "WebPage",
             "@id": "https://sveaconsultores.cl/cotiza-plan-emergencia-condominio/#webpage",
             "url": "https://sveaconsultores.cl/cotiza-plan-emergencia-condominio/",
-            "name": "Plan de Emergencia Condominio | Aprobación Garantizada SVEA",
+            "name": "Plan de Emergencia Condominio y Edificio | Ley 21.442 | SVEA",
             "datePublished": "2026-02-16T22:29:43+00:00",
             "dateModified": "2026-04-06T04:13:31+00:00",
             "isPartOf": {
@@ -7937,7 +7937,7 @@
           },
           {
             "@type": "Article",
-            "headline": "Plan de Emergencia Condominio | Aprobación Garantizada SVEA",
+            "headline": "Plan de Emergencia Condominio y Edificio | Ley 21.442 | SVEA",
             "keywords": "plan de emergencia condominio",
             "datePublished": "2026-02-16T22:29:43+00:00",
             "dateModified": "2026-04-06T04:13:31+00:00",
@@ -7949,7 +7949,7 @@
               "@id": "https://sveaconsultores.cl/#organization"
             },
             "description": "Elaboramos el plan de emergencia condominio que exige la Ley 21.442. Protege a tus residentes con protocolos claros y aprobados. Cotización gratis en 24 horas.",
-            "name": "Plan de Emergencia Condominio | Aprobación Garantizada SVEA",
+            "name": "Plan de Emergencia Condominio y Edificio | Ley 21.442 | SVEA",
             "@id": "https://sveaconsultores.cl/cotiza-plan-emergencia-condominio/#richSnippet",
             "isPartOf": {
               "@id": "https://sveaconsultores.cl/cotiza-plan-emergencia-condominio/#webpage"
@@ -8420,12 +8420,12 @@
     "ruta": "/cotiza-plan-emergencia/",
     "slug": "cotiza-plan-emergencia",
     "tipo": "landings-ads",
-    "title": "Plan de Emergencia para Empresas | Aprobación Garantizada | SVEA",
-    "description": "Elaboramos tu plan de emergencia para empresas conforme al DS 594 y DS 44. Aprobación garantizada ante SEREMI y Bomberos. Cotización gratuita en menos de 24 horas.",
+    "title": "Plan de Emergencia para Empresas DS 44 y DS 594 | SVEA Consultores",
+    "description": "Elaboramos tu plan de emergencia para empresas conforme al DS 594 y DS 44, con gestión ante SEREMI y Bomberos. Cotización gratuita en menos de 24 horas.",
     "robots": "noindex, follow",
     "canonical": "https://sveaconsultores.cl/cotiza-plan-emergencia/",
-    "h1": "Plan de Emergencia y Evacuación  con aprobación garantizada",
-    "h1_html": "Plan de Emergencia<br>y Evacuación<br><em>con aprobación garantizada</em>",
+    "h1": "Plan de Emergencia y Evacuación  conforme al DS 594 y DS 44",
+    "h1_html": "Plan de Emergencia<br>y Evacuación<br><em>conforme al DS 594 y DS 44</em>",
     "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/11/LOGO_GrupoMBO_Nuevo_4.png",
     "palabras_origen": 899,
     "jsonld": [
@@ -8470,7 +8470,7 @@
             "@type": "WebPage",
             "@id": "https://sveaconsultores.cl/cotiza-plan-emergencia/#webpage",
             "url": "https://sveaconsultores.cl/cotiza-plan-emergencia/",
-            "name": "Plan de Emergencia para Empresas | Aprobación Garantizada | SVEA",
+            "name": "Plan de Emergencia para Empresas DS 44 y DS 594 | SVEA Consultores",
             "datePublished": "2026-02-16T18:57:39+00:00",
             "dateModified": "2026-04-06T04:13:24+00:00",
             "isPartOf": {
@@ -8502,7 +8502,7 @@
           },
           {
             "@type": "Article",
-            "headline": "Plan de Emergencia para Empresas | Aprobación Garantizada | SVEA",
+            "headline": "Plan de Emergencia para Empresas DS 44 y DS 594 | SVEA Consultores",
             "keywords": "plan de emergencia",
             "datePublished": "2026-02-16T18:57:39+00:00",
             "dateModified": "2026-04-06T04:13:24+00:00",
@@ -8513,8 +8513,8 @@
             "publisher": {
               "@id": "https://sveaconsultores.cl/#organization"
             },
-            "description": "Elaboramos tu plan de emergencia para empresas conforme al DS 594 y DS 44. Aprobación garantizada ante SEREMI y Bomberos. Cotización gratuita en menos de 24 horas.",
-            "name": "Plan de Emergencia para Empresas | Aprobación Garantizada | SVEA",
+            "description": "Elaboramos tu plan de emergencia para empresas conforme al DS 594 y DS 44, con gestión ante SEREMI y Bomberos. Cotización gratuita en menos de 24 horas.",
+            "name": "Plan de Emergencia para Empresas DS 44 y DS 594 | SVEA Consultores",
             "@id": "https://sveaconsultores.cl/cotiza-plan-emergencia/#richSnippet",
             "isPartOf": {
               "@id": "https://sveaconsultores.cl/cotiza-plan-emergencia/#webpage"
@@ -10777,7 +10777,7 @@
     "slug": "informe-sanitario",
     "tipo": "servicios",
     "title": "Informe Sanitario Favorable 2026 · SEREMI de Salud | SVEA",
-    "description": "Obtén tu informe sanitario favorable ante la SEREMI de Salud. Evaluación sanitaria completa, tramitación directa y aprobación garantizada. Cotiza en 24 hrs",
+    "description": "Obtén tu informe sanitario favorable ante la SEREMI de Salud. Evaluación sanitaria completa, tramitación directa y acompañamiento hasta la resolución. Cotiza en 24 hrs",
     "robots": "index, follow",
     "canonical": "https://sveaconsultores.cl/informe-sanitario/",
     "h1": "Informe Sanitario",
@@ -10869,7 +10869,7 @@
             "publisher": {
               "@id": "https://sveaconsultores.cl/#organization"
             },
-            "description": "Obtén tu informe sanitario favorable ante la SEREMI de Salud. Evaluación sanitaria completa, tramitación directa y aprobación garantizada. Cotiza en 24 hrs",
+            "description": "Obtén tu informe sanitario favorable ante la SEREMI de Salud. Evaluación sanitaria completa, tramitación directa y acompañamiento hasta la resolución. Cotiza en 24 hrs",
             "name": "Informe Sanitario Favorable 2026 · SEREMI de Salud | SVEA",
             "@id": "https://sveaconsultores.cl/informe-sanitario/#richSnippet",
             "isPartOf": {
@@ -12084,7 +12084,7 @@
     "ruta": "/planes-de-emergencia-y-evacuacion-condominios/",
     "slug": "planes-de-emergencia-y-evacuacion-condominios",
     "tipo": "servicios",
-    "title": "Plan de Emergencia y Evacuación para Condominios 2026 | Garantizado",
+    "title": "Plan de Emergencia y Evacuación para Condominios 2026 | SVEA",
     "description": "Plan de Emergencia y Evacuación para Condominios. Cumple la normativa, protege a tus residentes y garantiza una evacuación segura. Cotiza con SVEA Consultores.",
     "robots": "index, follow",
     "canonical": "https://sveaconsultores.cl/plan-de-emergencia-condominio-chile/",
@@ -12134,7 +12134,7 @@
             "@type": "WebPage",
             "@id": "https://sveaconsultores.cl/plan-de-emergencia-condominio-chile/#webpage",
             "url": "https://sveaconsultores.cl/plan-de-emergencia-condominio-chile/",
-            "name": "Plan de Emergencia y Evacuación para Condominios 2026 | Garantizado",
+            "name": "Plan de Emergencia y Evacuación para Condominios 2026 | SVEA",
             "datePublished": "2025-06-22T22:20:46+00:00",
             "dateModified": "2026-04-06T04:28:55+00:00",
             "isPartOf": {
@@ -12166,7 +12166,7 @@
           },
           {
             "@type": "Article",
-            "headline": "Plan de Emergencia y Evacuación para Condominios 2026 | Garantizado",
+            "headline": "Plan de Emergencia y Evacuación para Condominios 2026 | SVEA",
             "keywords": "Plan de Emergencia y Evacuación para Condominios",
             "datePublished": "2025-06-22T22:20:46+00:00",
             "dateModified": "2026-04-06T04:28:55+00:00",
@@ -12178,7 +12178,7 @@
               "@id": "https://sveaconsultores.cl/#organization"
             },
             "description": "Plan de Emergencia y Evacuación para Condominios. Cumple la normativa, protege a tus residentes y garantiza una evacuación segura. Cotiza con SVEA Consultores.",
-            "name": "Plan de Emergencia y Evacuación para Condominios 2026 | Garantizado",
+            "name": "Plan de Emergencia y Evacuación para Condominios 2026 | SVEA",
             "@id": "https://sveaconsultores.cl/plan-de-emergencia-condominio-chile/#richSnippet",
             "isPartOf": {
               "@id": "https://sveaconsultores.cl/plan-de-emergencia-condominio-chile/#webpage"
