@@ -12,10 +12,28 @@
  * estaban en el índice viejo; sus textos salen del propio artículo (H1 y
  * bajada). Las siete del final (sep-2026) son guías nuevas, escritas para
  * este sitio: no tienen original en el WordPress.
+ *
+ * `categoria` es el rótulo del WordPress (se conserva en los datos); lo que
+ * se muestra es `tema`, uno de los cuatro TEMAS.
  */
+
+/**
+ * Los cuatro temas fijos del blog. Cada guía pertenece a uno; el mismo rótulo
+ * se usa en la tarjeta de /blog/, en el chip de la cabecera del artículo, en
+ * «Otras guías» y en las secciones (con ancla) de /blog/.
+ */
+export const TEMAS = [
+  { id: 'permisos-seremi', nombre: 'Permisos SEREMI', bajada: 'Calificación industrial, informe sanitario, patente y qué hacer ante observaciones o sumarios.' },
+  { id: 'emergencias', nombre: 'Emergencias', bajada: 'Planes de emergencia para empresas y condominios, DS 44 y fiscalización de la Dirección del Trabajo.' },
+  { id: 'incendio', nombre: 'Incendio', bajada: 'Carga de combustible, resistencia al fuego y almacenamiento de sustancias peligrosas.' },
+  { id: 'residuos', nombre: 'Residuos', bajada: 'Manejo, transporte y declaración de residuos peligrosos y no peligrosos.' },
+] as const;
+export type Tema = (typeof TEMAS)[number]['nombre'];
 
 export type Guia = {
   slug: string;
+  /** uno de los cuatro TEMAS: tarjeta, chip del artículo y sección de /blog/ */
+  tema: Tema;
   /** título de la tarjeta (el H2 de la tarjeta en /blog/) */
   titulo: string;
   bajada: string;
@@ -81,6 +99,7 @@ const IS: Servicio = {
 export const GUIAS: Guia[] = [
   {
     slug: 'autorizacion-transporte-residuos-chile',
+    tema: 'Residuos',
     titulo: 'Autorización Transporte de Residuos Chile: Guía Completa 2026',
     bajada: 'Requisitos SEREMI, documentos, costos, plazos y proceso completo para obtener la autorización sanitaria de transporte de residuos peligrosos y no peligrosos.',
     categoria: 'Permisos y Autorizaciones',
@@ -91,6 +110,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'manejo-de-residuos-peligrosos-chile',
+    tema: 'Residuos',
     titulo: 'Manejo de Residuos Peligrosos en Chile: Guía Completa 2026',
     bajada: 'Normativa DS 148, clasificación de RESPEL, plan de manejo, almacenamiento, transporte, declaración SIDREP y obligaciones del generador.',
     categoria: 'Residuos Peligrosos',
@@ -101,6 +121,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'plan-de-emergencia-empresa-chile',
+    tema: 'Emergencias',
     titulo: 'Plan de Emergencia Empresa Chile: Guía Definitiva 2026',
     bajada: 'Requisitos del DS 44, multas por incumplimiento, cómo elaborar tu plan y qué necesitas para la aprobación de SEREMI y Bomberos.',
     categoria: 'Emergencias',
@@ -111,6 +132,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'plan-de-emergencia-condominio-chile',
+    tema: 'Emergencias',
     titulo: 'Plan de Emergencia Condominio Chile: Guía Definitiva 2026',
     bajada: 'La Ley 21.442 lo exige. Conoce los requisitos, el rol del Comité de Administración, multas y cómo proteger a tu comunidad.',
     categoria: 'Condominios',
@@ -121,6 +143,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'calificacion-tecnica-industrial-chile',
+    tema: 'Permisos SEREMI',
     titulo: 'Calificación Técnica Industrial Chile: Guía Definitiva 2026',
     // «sin rechazos» del WordPress: promesa, se cambia por algo que la guía sí entrega
     bajada: 'Requisitos SEREMI, documentos necesarios, categorías de clasificación, plazos reales y cómo obtener tu CTI evitando los rechazos más comunes.',
@@ -132,6 +155,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'estudio-de-carga-combustible-chile',
+    tema: 'Incendio',
     titulo: 'Estudio de Carga Combustible Chile: Guía Completa 2026',
     bajada: 'Normativa OGUC, categorías de resistencia al fuego (A, B, C, D), metodología NCh 1916 y cómo el estudio puede ahorrarte millones.',
     categoria: 'Seguridad Incendios',
@@ -143,6 +167,7 @@ export const GUIAS: Guia[] = [
   // --- las tres que el índice del WordPress no listaba ----------------------
   {
     slug: 'plan-de-emergencia-ds-44-empresas-chile',
+    tema: 'Emergencias',
     titulo: 'Plan de Emergencia DS 44: Guía Completa para Empresas en Chile 2026',
     bajada: 'El Decreto Supremo 44 exige a toda empresa contar con un plan de emergencia actualizado. Conoce los requisitos, contenido obligatorio, simulacros y cómo evitar sanciones.',
     categoria: 'Seguridad Laboral',
@@ -152,7 +177,8 @@ export const GUIAS: Guia[] = [
     servicio: PE,
   },
   {
-    slug: 'calificacion-inofensiva-seremi-2026',
+    slug: 'calificacion-inofensiva-seremi',
+    tema: 'Permisos SEREMI',
     titulo: 'Calificación Inofensiva SEREMI: Guía para Obtener tu Patente en Chile 2026',
     bajada: 'Todo lo que necesitas saber sobre la calificación de actividad inofensiva: qué es, quién la necesita, documentos requeridos, plazos y cómo obtenerla evitando los rechazos más comunes.',
     categoria: 'Permisos y Autorizaciones',
@@ -163,6 +189,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'que-es-informe-sanitario',
+    tema: 'Permisos SEREMI',
     titulo: 'Informe Sanitario Favorable Chile: Guía Completa 2026',
     bajada: 'Qué es el informe sanitario favorable, quién lo necesita, documentos requeridos, marco normativo, plazos, costos y cómo obtenerlo ante la SEREMI de Salud.',
     categoria: 'Permisos y Cumplimiento',
@@ -174,6 +201,7 @@ export const GUIAS: Guia[] = [
   // --- las guías nuevas (sep-2026), sin original en el WordPress --------------
   {
     slug: 'patente-definitiva-permisos-seremi',
+    tema: 'Permisos SEREMI',
     titulo: 'Patente definitiva: qué permisos de la SEREMI necesitas',
     bajada: 'De la patente provisoria a la definitiva: qué exige la municipalidad según tu rubro, cuándo entra la SEREMI de Salud y en qué orden hacer los trámites.',
     categoria: 'Permisos y Autorizaciones',
@@ -184,6 +212,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'checklist-ds-44-fiscalizacion',
+    tema: 'Emergencias',
     titulo: 'Checklist DS 44: qué revisa la Dirección del Trabajo en una fiscalización',
     bajada: 'Lista práctica basada en el Formulario Único de Fiscalización del DS 44: matriz de riesgos, programa preventivo, plan de emergencia, comité y multas.',
     categoria: 'Seguridad Laboral',
@@ -194,6 +223,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'autorizacion-transporte-residuos-no-peligrosos',
+    tema: 'Residuos',
     titulo: 'Autorización para transportar residuos no peligrosos: paso a paso',
     bajada: 'Quién la pide, qué antecedentes revisa la SEREMI, cómo se completa en SEREMI en Línea y en qué se diferencia de la de residuos peligrosos.',
     categoria: 'Permisos y Autorizaciones',
@@ -204,6 +234,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'declaracion-residuos-sidrep-sinader',
+    tema: 'Residuos',
     titulo: 'Declaración de residuos en SIDREP y SINADER: quién declara y cómo',
     bajada: 'SIDREP para residuos peligrosos y SINADER para no peligrosos: obligados, plazos, acceso por la Ventanilla Única del RETC y errores comunes.',
     categoria: 'Residuos Peligrosos',
@@ -214,6 +245,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'sumario-sanitario-seremi',
+    tema: 'Permisos SEREMI',
     titulo: 'Sumario sanitario de la SEREMI: qué hacer si te llega un acta o una multa',
     bajada: 'Cómo avanza el sumario sanitario desde el acta hasta la sentencia, qué sanciones puede aplicar la SEREMI, qué poner en tus descargos y qué plazos tienes.',
     categoria: 'Permisos y Cumplimiento',
@@ -224,6 +256,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'rechazo-observaciones-seremi',
+    tema: 'Permisos SEREMI',
     titulo: 'La SEREMI rechazó u observó tu solicitud: cómo responder',
     bajada: 'Observación no es rechazo: cómo responder punto por punto, qué recursos tienes, en qué plazos y qué pasa si la SEREMI no responde a tiempo.',
     categoria: 'Permisos y Autorizaciones',
@@ -234,6 +267,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'plan-manejo-sustancias-peligrosas-ds-43',
+    tema: 'Incendio',
     titulo: 'Plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye',
     bajada: 'Umbrales de autorización sanitaria, tipos de bodega según la cantidad, documentos del plan de manejo y declaración semestral según el DS 43.',
     categoria: 'Residuos Peligrosos',

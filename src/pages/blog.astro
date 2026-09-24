@@ -10,10 +10,13 @@
  * (dieciséis en total). Los datos de las tarjetas salen de
  * src/contenido/articulos/guias.ts.
  *
- * No se pierde texto: la cabecera, los cuatro párrafos de presentación (con
- * el enlace a la Ley 19.300), las tarjetas y el cierre «¿Necesitas cumplir
- * con la normativa?» con sus dos enlaces van completos. Los párrafos de
- * presentación pasan debajo de las tarjetas: primero lo que se vino a buscar.
+ * Desde el 24-sep las guías van agrupadas en los cuatro TEMAS de guias.ts
+ * (Permisos SEREMI · Emergencias · Incendio · Residuos), cada uno con su
+ * ancla, y la frase «Guías cumplimiento normativo Chile» queda una sola vez
+ * (el H1). Lo que se sacó del texto del WordPress se sacó también de su copia
+ * en originales-wp/servicios/blog.html, para que verificar.mjs compare lo
+ * mismo. Los párrafos de presentación van debajo de las tarjetas: primero lo
+ * que se vino a buscar.
  */
 import '../styles/tailwind.css';
 import MedicionSitio from '../components/MedicionSitio.astro';
@@ -25,7 +28,9 @@ import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import { Reveal } from '../components/ui/reveal';
 import paginas from '../data/paginas.json';
-import { GUIAS } from '../contenido/articulos/guias';
+import { GUIAS, TEMAS } from '../contenido/articulos/guias';
+
+const GRUPOS = TEMAS.map((t) => ({ ...t, guias: GUIAS.filter((g) => g.tema === t.nombre) }));
 
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 const COPIA = !import.meta.env.SVEA_PRODUCCION;
@@ -67,7 +72,14 @@ const fuentesCSS = `
         </nav>
         <p class="blog-insignia">Recursos y Guías</p>
         <h1>Guías Cumplimiento <em>Normativo</em> Chile</h1>
-        <p class="blog-bajada">Nuestras guías cumplimiento normativo Chile cubren todo lo que necesitas saber sobre regulación ambiental, sanitaria e industrial. Elaboradas por nuestro equipo técnico especializado.</p>
+        <p class="blog-bajada">{GUIAS.length} guías prácticas sobre regulación ambiental, sanitaria e industrial, escritas por nuestro equipo técnico especializado: qué exige cada norma, quién está obligado, plazos y costos.</p>
+        <nav class="blog-temas" aria-label="Temas">
+          <ul>
+            {GRUPOS.map((t) => (
+              <li><a href={`#${t.id}`}>{t.nombre} <span>{t.guias.length}</span></a></li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
 
@@ -76,48 +88,56 @@ const fuentesCSS = `
     <main class="blog-cuerpo">
       <div class="blog-ancho">
         <p class="blog-eyebrow">Nuestras Guías</p>
-        <h2 class="blog-titulo">Guías Cumplimiento Normativo Chile: Artículos <em>Destacados</em></h2>
+        <h2 class="blog-titulo">Artículos <em>destacados</em> por tema</h2>
         <p class="blog-sub">Contenido especializado para ayudarte a cumplir con la normativa ambiental, sanitaria e industrial vigente en Chile.</p>
 
-        <Reveal client:idle>
-        <ul class="blog-rejilla">
-          {GUIAS.map((g, i) => (
-            <li>
-              <a class="blog-tarjeta tarjeta-svea" href={`${BASE}/${g.slug}/`}>
-                <div class="blog-foto">
-                  <img
-                    src={`${BASE}/img/articulos/${g.imagen.archivo}.webp`}
-                    alt={g.imagen.alt}
-                    width={g.imagen.ancho}
-                    height={g.imagen.alto}
-                    loading={i < 3 ? undefined : 'lazy'}
-                    fetchpriority={i < 3 ? 'low' : undefined}
-                    decoding="async"
-                  />
-                  <span class="blog-cat">{g.categoria}</span>
-                </div>
-                <div class="blog-texto">
-                  <p class="blog-meta"><span>{g.fecha}</span><span aria-hidden="true">·</span><span>{g.lectura}</span></p>
-                  <h2>{g.titulo}</h2>
-                  <p class="blog-extracto">{g.bajada}</p>
-                  <span class="blog-leer">
-                    Leer guía completa
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                  </span>
-                </div>
-              </a>
-            </li>
-          ))}
-        </ul>
-        </Reveal>
+        {GRUPOS.map((t, k) => (
+          <section class="blog-tema" id={t.id} aria-labelledby={`tema-${t.id}`}>
+            <div class="blog-tema-cab">
+              <h2 id={`tema-${t.id}`}>{t.nombre}</h2>
+              <p>{t.bajada}</p>
+            </div>
+            <Reveal client:idle>
+            <ul class="blog-rejilla">
+              {t.guias.map((g, i) => (
+                <li>
+                  <a class="blog-tarjeta tarjeta-svea" href={`${BASE}/${g.slug}/`}>
+                    <div class="blog-foto">
+                      <img
+                        src={`${BASE}/img/articulos/${g.imagen.archivo}.webp`}
+                        alt={g.imagen.alt}
+                        width={g.imagen.ancho}
+                        height={g.imagen.alto}
+                        loading={k === 0 && i < 3 ? undefined : 'lazy'}
+                        fetchpriority={k === 0 && i < 3 ? 'low' : undefined}
+                        decoding="async"
+                      />
+                      <span class="blog-cat">{g.tema}</span>
+                    </div>
+                    <div class="blog-texto">
+                      <p class="blog-meta"><span>{g.fecha}</span><span aria-hidden="true">·</span><span>{g.lectura}</span></p>
+                      <h3>{g.titulo}</h3>
+                      <p class="blog-extracto">{g.bajada}</p>
+                      <span class="blog-leer">
+                        Leer guía completa
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                      </span>
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            </Reveal>
+          </section>
+        ))}
       </div>
 
       <section class="blog-sobre" aria-label="Sobre nuestras guías">
         <Reveal className="blog-lectura" client:idle>
-          <img class="blog-logo" src={`${BASE}/img/logo-svea.webp`} alt="Guías cumplimiento normativo Chile - SVEA Consultores" width="404" height="137" loading="lazy" decoding="async" />
-          <p><strong>Guías cumplimiento normativo Chile</strong> — en SVEA Consultores publicamos recursos técnicos actualizados para ayudar a empresas y condominios a cumplir con la regulación ambiental, sanitaria e industrial vigente. Nuestras guías de cumplimiento normativo cubren planes de emergencia, calificación técnica industrial, estudios de carga combustible, autorización de transporte de residuos y manejo de residuos peligrosos — todo lo que necesitas para operar de forma legal y segura en Chile.</p>
+          <img class="blog-logo" src={`${BASE}/img/logo-svea.webp`} alt="SVEA Consultores" width="404" height="137" loading="lazy" decoding="async" />
+          <p>En SVEA Consultores publicamos recursos técnicos actualizados para ayudar a empresas y condominios a cumplir con la regulación ambiental, sanitaria e industrial vigente. Nuestras guías de cumplimiento normativo cubren planes de emergencia, calificación técnica industrial, estudios de carga combustible, autorización de transporte de residuos y manejo de residuos peligrosos — todo lo que necesitas para operar de forma legal y segura en Chile.</p>
           <p>El cumplimiento normativo en Chile es una obligación que afecta a todas las empresas con operación industrial, comercial o residencial. La <a href="https://www.bcn.cl/leychile/navegar?idNorma=30667" target="_blank" rel="noopener">Ley 19.300 de Bases Generales del Medio Ambiente</a> establece el marco legal que regula las actividades con impacto ambiental. A partir de esta ley, distintos decretos supremos y normativas sectoriales exigen permisos, planes y estudios específicos según el rubro y nivel de riesgo de cada actividad.</p>
-          <p>Cada una de nuestras guías cumplimiento normativo Chile está diseñada para explicar en lenguaje claro los requisitos técnicos, documentos necesarios, plazos de tramitación, costos involucrados y el proceso paso a paso ante las autoridades competentes como la SEREMI de Salud, Bomberos, la Superintendencia del Medio Ambiente y las municipalidades. Nuestro equipo técnico actualiza cada guía con los aranceles y procedimientos vigentes para que siempre tengas información confiable.</p>
+          <p>Cada guía está diseñada para explicar en lenguaje claro los requisitos técnicos, documentos necesarios, plazos de tramitación, costos involucrados y el proceso paso a paso ante las autoridades competentes como la SEREMI de Salud, Bomberos, la Superintendencia del Medio Ambiente y las municipalidades. Nuestro equipo técnico actualiza cada guía con los aranceles y procedimientos vigentes para que siempre tengas información confiable.</p>
           <p>Entre los temas que abordamos se encuentran: la elaboración de planes de emergencia y evacuación tanto para empresas industriales como para condominios residenciales; la calificación técnica industrial necesaria para obtener la patente municipal; el estudio de carga combustible que define la resistencia al fuego requerida para tu edificio o local comercial; la autorización sanitaria para el transporte de residuos peligrosos y no peligrosos; y el manejo integral de residuos peligrosos según el DS 148. Cada guía incluye preguntas frecuentes, tablas comparativas de costos y enlaces directos para solicitar cotización.</p>
         </Reveal>
       </section>
@@ -184,7 +204,16 @@ const fuentesCSS = `
     font-size:clamp(28px,3.6vw,46px);color:#000;text-wrap:balance}
   .blog-sub{margin:14px 0 0;max-width:60ch;font-size:17px;line-height:1.6;color:var(--suave)}
 
-  .blog-rejilla{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:40px}
+  .blog-rejilla{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:24px}
+  .blog-tema{margin-top:56px;scroll-margin-top:96px}
+  .blog-tema-cab{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px;padding-bottom:14px;border-bottom:1px solid var(--borde)}
+  .blog-tema-cab h2{margin:0;font-family:Manrope,Inter,sans-serif;font-weight:600;font-size:clamp(22px,2.4vw,28px);letter-spacing:-.02em;color:#000}
+  .blog-tema-cab p{margin:0;font-size:15px;line-height:1.5;color:var(--suave)}
+  .blog-temas ul{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 0;padding:0;list-style:none}
+  .blog-temas a{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--borde);background:#fff;
+    color:#000;font-size:14px;font-weight:500;text-decoration:none;transition:border-color .2s}
+  .blog-temas a:hover{border-color:var(--verde)}
+  .blog-temas span{font-size:12px;font-weight:600;color:var(--verde)}
   .blog-tarjeta{display:flex;flex-direction:column;height:100%;border:1px solid var(--borde);border-radius:12px;overflow:hidden;background:#fff;
     color:inherit;text-decoration:none}
   .blog-foto{position:relative;aspect-ratio:16/9;background:var(--hoja);overflow:hidden}
@@ -193,7 +222,7 @@ const fuentesCSS = `
   .blog-cat{position:absolute;left:14px;top:14px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.92);font-size:11.5px;font-weight:600;color:#000}
   .blog-texto{display:flex;flex-direction:column;flex:1;padding:20px 22px 22px}
   .blog-meta{display:flex;gap:6px;margin:0 0 10px;font-size:13px;color:rgba(0,0,0,.55)}
-  .blog-texto h2{margin:0 0 10px;font-family:Manrope,Inter,sans-serif;font-weight:600;font-size:19px;line-height:1.3;letter-spacing:-.015em;color:#000}
+  .blog-texto h3{margin:0 0 10px;font-family:Manrope,Inter,sans-serif;font-weight:600;font-size:19px;line-height:1.3;letter-spacing:-.015em;color:#000}
   .blog-extracto{margin:0 0 18px;font-size:15px;line-height:1.6;color:var(--suave)}
   .blog-leer{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#000}
   .blog-leer svg{width:16px;height:16px;transition:transform .2s}

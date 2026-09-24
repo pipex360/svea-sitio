@@ -9,6 +9,12 @@
  *
  * En la copia de trabajo el robots es siempre «noindex, nofollow»; en
  * producción (SVEA_PRODUCCION=1) es el de la página.
+ *
+ * En las guías (`articulo`) el JSON-LD lleva UN solo Article —autor y editor
+ * la organización SVEA, nunca la Person «admin» de Rank Math— y UN solo
+ * BreadcrumbList (Inicio › Guías › título): los Article, BreadcrumbList y
+ * Person heredados de paginas.json se descartan. En todas las páginas la
+ * Person «admin» se quita y cualquier «author» que la apunte pasa a SVEA.
  */
 interface Pagina {
   title: string;
@@ -24,8 +30,12 @@ interface Props {
   faq?: { p: string; r: string }[];
   /** og:type: «article» en las guías, «website» en el resto */
   tipo?: 'website' | 'article';
+  /** sólo en las guías: arma el Article y el BreadcrumbList únicos */
+  articulo?: { titulo: string; miga: string; publicado?: string; modificado?: string; imagen?: string; seccion?: string };
 }
-const { pagina, copia, faq = [], tipo = 'website' } = Astro.props;
+const { pagina, copia, faq = [], tipo = 'website', articulo } = Astro.props;
+const SITIO = 'https://sveaconsultores.cl';
+const ORG = { '@type': 'Organization', '@id': `${SITIO}/#organization`, name: 'SVEA Consultores', url: SITIO };
 const robots = copia ? 'noindex, nofollow' : pagina.robots;
 const titulo = pagina.title.replace(/&[a-z]+;/g, (e) => ({ '&amp;': '&', '&oacute;': 'ó', '&eacute;': 'é', '&aacute;': 'á', '&iacute;': 'í', '&uacute;': 'ú', '&ntilde;': 'ñ' } as Record<string, string>)[e] ?? e);
 // El FAQPage sale SIEMPRE de las preguntas que se ven en la página: si la
@@ -43,13 +53,60 @@ const alDia = (n: any) => {
   if ('description' in m) m.description = pagina.description;
   return m;
 };
+// la Person «admin» de Rank Math no es un autor: fuera, y quien la apunte pasa a SVEA
+const esAdmin = (n: any) => n && typeof n === 'object' && n['@type'] === 'Person' && /\/author\/admin\/?$/.test(n['@id'] ?? '');
+const sinAdmin = (n: any) => {
+  if (!n || typeof n !== 'object') return n;
+  const a = n.author;
+  if (a && typeof a === 'object' && (a.name === 'admin' || /\/author\/admin\//.test(a['@id'] ?? ''))) return { ...n, author: ORG };
+  return n;
+};
+// en las guías, el Article y las migas los arma esta cabecera (uno de cada uno)
+const TIPOS_GUIA = new Set(['Article', 'BreadcrumbList']);
+// en /blog/ el Article heredado del WordPress («6 Guías…») sobra: la página es un Blog
+const fuera = (n: any) =>
+  !n || typeof n !== 'object' ? false
+  : esAdmin(n) || (faq.length > 0 && esFaq(n))
+    || (articulo ? TIPOS_GUIA.has(n['@type']) : n['@type'] === 'Article' && /\/blog\/#richSnippet$/.test(n['@id'] ?? ''));
+let migasVistas = 0;
 const bloques = (pagina.jsonld ?? [])
-  .filter((b: any) => !(faq.length && esFaq(b)))
+  .filter((b: any) => !fuera(b))
+  // un solo BreadcrumbList también fuera de las guías (el WordPress repetía el suyo)
+  .filter((b: any) => !(b && b['@type'] === 'BreadcrumbList' && migasVistas++ > 0))
   .map((b: any) =>
     b && Array.isArray(b['@graph'])
-      ? { ...b, '@graph': b['@graph'].filter((n: any) => !(faq.length && esFaq(n))).map(alDia) }
-      : alDia(b),
+      ? { ...b, '@graph': b['@graph'].filter((n: any) => !fuera(n)).map(alDia).map(sinAdmin) }
+      : sinAdmin(alDia(b)),
   );
+const url = pagina.canonical;
+const articuloLD = articulo
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      '@id': `${url}#article`,
+      headline: articulo.titulo,
+      description: pagina.description,
+      ...(articulo.imagen ? { image: articulo.imagen } : {}),
+      inLanguage: 'es-CL',
+      ...(articulo.seccion ? { articleSection: articulo.seccion } : {}),
+      author: ORG,
+      publisher: { ...ORG, logo: { '@type': 'ImageObject', url: `${SITIO}/img/logo-svea.png` } },
+      ...(articulo.publicado ? { datePublished: articulo.publicado } : {}),
+      ...(articulo.modificado ? { dateModified: articulo.modificado } : {}),
+      mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    }
+  : null;
+const migasLD = articulo
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITIO}/` },
+        { '@type': 'ListItem', position: 2, name: 'Guías', item: `${SITIO}/blog/` },
+        { '@type': 'ListItem', position: 3, name: articulo.miga, item: url },
+      ],
+    }
+  : null;
 const faqPage = faq.length
   ? {
       '@context': 'https://schema.org',
@@ -80,4 +137,6 @@ const faqPage = faq.length
 {bloques.map((bloque) => (
   <script type="application/ld+json" is:inline set:html={JSON.stringify(bloque)} />
 ))}
+{articuloLD && <script type="application/ld+json" is:inline set:html={JSON.stringify(articuloLD)} />}
+{migasLD && <script type="application/ld+json" is:inline set:html={JSON.stringify(migasLD)} />}
 {faqPage && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqPage)} />}

@@ -93,7 +93,7 @@ export const masTramites: Entrada[] = [
 export const guias: Entrada[] = [
   {
     title: 'Calificación inofensiva SEREMI',
-    href: '/calificacion-inofensiva-seremi-2026/',
+    href: '/calificacion-inofensiva-seremi/',
     description: 'Cómo obtener el certificado de actividad inofensiva y tu patente.',
     icon: FileCheckIcon,
   },
@@ -171,6 +171,13 @@ export const guias: Entrada[] = [
   },
 ];
 
+/**
+ * El menú «Recursos y guías» muestra sólo las seis guías principales y un
+ * enlace a /blog/, donde están todas agrupadas por tema. `guias` sigue
+ * exportando la lista completa.
+ */
+export const guiasPrincipales: Entrada[] = guias.slice(0, 6);
+
 /** `base` es la subcarpeta donde vive el sitio (en GitHub Pages, /svea-sitio). */
 export default function MenuSvea({ base = '' }: { base?: string }) {
   const url = (href: string) => `${base}${href}`;
@@ -225,12 +232,21 @@ export default function MenuSvea({ base = '' }: { base?: string }) {
               Guías de cumplimiento normativo
             </h6>
             <ul className="mt-2.5 grid w-[400px] gap-1 md:w-[560px] md:grid-cols-2">
-              {guias.map((g) => (
+              {guiasPrincipales.map((g) => (
                 <ListItem key={g.title} href={url(g.href)} icon={g.icon} title={g.title}>
                   {g.description}
                 </ListItem>
               ))}
             </ul>
+            <NavigationMenuLink asChild>
+              <a
+                href={url('/blog/')}
+                className="mt-2 flex items-center justify-between rounded-md border border-border px-3 py-2.5 text-sm font-semibold text-foreground no-underline transition-colors hover:bg-accent"
+              >
+                Ver todas las guías
+                <span className="text-xs font-medium text-muted-foreground">Permisos SEREMI · Emergencias · Incendio · Residuos →</span>
+              </a>
+            </NavigationMenuLink>
           </NavigationMenuContent>
         </NavigationMenuItem>
 

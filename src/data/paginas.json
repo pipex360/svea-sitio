@@ -283,7 +283,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -578,13 +578,13 @@
     ]
   },
   {
-    "ruta": "/calificacion-inofensiva-seremi-2026/",
-    "slug": "calificacion-inofensiva-seremi-2026",
+    "ruta": "/calificacion-inofensiva-seremi/",
+    "slug": "calificacion-inofensiva-seremi",
     "tipo": "articulos",
     "title": "Calificación Inofensiva SEREMI: Certificado para tu Patente",
     "description": "Qué es la calificación de actividad inofensiva de la SEREMI, cuándo la pide la municipalidad para la patente y qué documentos presentar.",
     "robots": "index, follow",
-    "canonical": "https://sveaconsultores.cl/calificacion-inofensiva-seremi-2026/",
+    "canonical": "https://sveaconsultores.cl/calificacion-inofensiva-seremi/",
     "h1": "Calificación Inofensiva SEREMI: Guía para Obtener tu Patente en Chile 2026",
     "h1_html": "Calificación Inofensiva SEREMI: Guía para Obtener tu Patente en Chile 2026",
     "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/petrochemical-oil-refinery-in-bangkok-city-thaila-2024-10-18-22-56-40-utc-1024x682.jpg",
@@ -629,8 +629,8 @@
           },
           {
             "@type": "WebPage",
-            "@id": "https://sveaconsultores.cl/calificacion-inofensiva-seremi-2026/#webpage",
-            "url": "https://sveaconsultores.cl/calificacion-inofensiva-seremi-2026/",
+            "@id": "https://sveaconsultores.cl/calificacion-inofensiva-seremi/#webpage",
+            "url": "https://sveaconsultores.cl/calificacion-inofensiva-seremi/",
             "name": "Calificación Inofensiva SEREMI: Guía para Empresas Chile 2026",
             "datePublished": "2026-03-10T02:04:34+00:00",
             "dateModified": "2026-03-16T15:56:58+00:00",
@@ -677,16 +677,16 @@
             },
             "description": "Calificación inofensiva SEREMI Chile: requisitos, documentos y plazos para obtener tu certificado. Gestión completa con SVEA Consultores.",
             "name": "Calificación Inofensiva SEREMI: Guía para Empresas Chile 2026",
-            "@id": "https://sveaconsultores.cl/calificacion-inofensiva-seremi-2026/#richSnippet",
+            "@id": "https://sveaconsultores.cl/calificacion-inofensiva-seremi/#richSnippet",
             "isPartOf": {
-              "@id": "https://sveaconsultores.cl/calificacion-inofensiva-seremi-2026/#webpage"
+              "@id": "https://sveaconsultores.cl/calificacion-inofensiva-seremi/#webpage"
             },
             "image": {
               "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
-              "@id": "https://sveaconsultores.cl/calificacion-inofensiva-seremi-2026/#webpage"
+              "@id": "https://sveaconsultores.cl/calificacion-inofensiva-seremi/#webpage"
             }
           }
         ]
@@ -861,7 +861,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -939,7 +939,7 @@
         "dateModified": "2026-03-09",
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://sveaconsultores.cl/calificacion-inofensiva-seremi-2026/"
+          "@id": "https://sveaconsultores.cl/calificacion-inofensiva-seremi/"
         }
       },
       {
@@ -1016,16 +1016,16 @@
             "@type": "ListItem",
             "position": 3,
             "name": "Calificación Inofensiva SEREMI",
-            "item": "https://sveaconsultores.cl/calificacion-inofensiva-seremi-2026/"
+            "item": "https://sveaconsultores.cl/calificacion-inofensiva-seremi/"
           }
         ]
       }
     ],
-    "contenido": "calificacion-inofensiva-seremi-2026.html",
+    "contenido": "calificacion-inofensiva-seremi.html",
     "formularios": [
       {
-        "pagina": "articulos/calificacion-inofensiva-seremi-2026.html",
-        "url": "/calificacion-inofensiva-seremi-2026/",
+        "pagina": "articulos/calificacion-inofensiva-seremi.html",
+        "url": "/calificacion-inofensiva-seremi/",
         "id": "article-lead-form",
         "action": "https://api.web3forms.com/submit",
         "ocultos": [
@@ -1150,7 +1150,7 @@
             }
           ]
         },
-        "html": "00-respuesta-felipe/formularios/articulos__calificacion-inofensiva-seremi-2026__article-lead-form.html",
+        "html": "00-respuesta-felipe/formularios/articulos__calificacion-inofensiva-seremi__article-lead-form.html",
         "boton": "SOLICITAR COTIZACIÓN GRATUITA →"
       }
     ]
@@ -1160,7 +1160,7 @@
     "slug": "calificacion-tecnica-industrial-chile",
     "tipo": "articulos",
     "title": "Calificación Técnica Industrial: Requisitos, Plazos y Categorías",
-    "description": "Guía de la calificación técnica industrial en Chile: quién la necesita, las 5 categorías, documentos, plazos SEREMI (30-60 días hábiles) y sanciones.",
+    "description": "Guía de la calificación técnica industrial en Chile: quién la necesita, las 4 categorías, documentos, plazos SEREMI (30-60 días hábiles) y sanciones.",
     "robots": "index, follow",
     "canonical": "https://sveaconsultores.cl/calificacion-tecnica-industrial-chile/",
     "h1": "Calificación Técnica Industrial Chile: Guía Definitiva 2026",
@@ -1439,7 +1439,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -2029,7 +2029,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -2621,7 +2621,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -3211,7 +3211,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -3803,7 +3803,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -4381,7 +4381,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -4983,7 +4983,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -5546,7 +5546,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -5896,7 +5896,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -6377,7 +6377,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -6970,7 +6970,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -7541,7 +7541,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -8134,7 +8134,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -8699,7 +8699,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -9284,7 +9284,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -9538,7 +9538,7 @@
             "@type": "WebPage",
             "@id": "https://sveaconsultores.cl/blog/#webpage",
             "url": "https://sveaconsultores.cl/blog/",
-            "name": "6 Guías Cumplimiento Normativo Chile Esenciales (2026)",
+            "name": "Guías de Permisos SEREMI y Normativa para Empresas",
             "datePublished": "2026-02-18T13:52:21+00:00",
             "dateModified": "2026-02-18T15:53:49+00:00",
             "isPartOf": {
@@ -9570,7 +9570,7 @@
           },
           {
             "@type": "Article",
-            "headline": "6 Guías Cumplimiento Normativo Chile Esenciales (2026)",
+            "headline": "Guías de Permisos SEREMI y Normativa para Empresas",
             "keywords": "guías cumplimiento normativo Chile",
             "datePublished": "2026-02-18T13:52:21+00:00",
             "dateModified": "2026-02-18T15:53:49+00:00",
@@ -9582,7 +9582,7 @@
               "@id": "https://sveaconsultores.cl/#organization"
             },
             "description": "Guías cumplimiento normativo Chile: planes de emergencia, calificación técnica industrial, carga combustible y más. Cotiza con SVEA Consultores.",
-            "name": "6 Guías Cumplimiento Normativo Chile Esenciales (2026)",
+            "name": "Guías de Permisos SEREMI y Normativa para Empresas",
             "@id": "https://sveaconsultores.cl/blog/#richSnippet",
             "isPartOf": {
               "@id": "https://sveaconsultores.cl/blog/#webpage"
@@ -9767,7 +9767,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -10143,7 +10143,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -10572,7 +10572,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -11055,7 +11055,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -11538,7 +11538,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -12021,7 +12021,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -12363,7 +12363,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -12846,7 +12846,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"
@@ -13330,7 +13330,7 @@
         "@type": "Service",
         "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#service",
         "name": "Manejo de Sustancias y Residuos Peligrosos",
-        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 78, D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
+        "description": "Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.",
         "url": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
         "provider": {
           "@id": "https://sveaconsultores.cl/#organization"

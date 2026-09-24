@@ -15,7 +15,7 @@ import paginas from '../src/data/paginas.json' with { type: 'json' };
 // traer su foto propia; los artículos y el blog, sólo sus fuentes.
 const SERVICIOS_VER = ['/calificacion-tecnica-industrial/', '/estudio-de-carga-de-combustible/', '/planes-de-emergencia-y-evacuacion/', '/planes-de-emergencia-y-evacuacion-condominios/', '/manejo-de-residuos-peligrosos/', '/autorizacion-de-transporte-de-residuos/', '/informe-sanitario/', '/permisos-ambientales-y-pertinencias-del-seia/'];
 const LANDINGS = ['cotiza-calificacion-tecnica-industrial', 'cotiza-estudio-de-carga-de-combustible', 'cotiza-plan-emergencia', 'cotiza-plan-emergencia-condominio', 'cotiza-informe-sanitario', 'cotiza-autorizacion-transporte-residuos'];
-const ARTICULOS = ['autorizacion-transporte-residuos-chile', 'calificacion-inofensiva-seremi-2026', 'calificacion-tecnica-industrial-chile', 'estudio-de-carga-combustible-chile', 'manejo-de-residuos-peligrosos-chile', 'plan-de-emergencia-condominio-chile', 'plan-de-emergencia-ds-44-empresas-chile', 'plan-de-emergencia-empresa-chile', 'que-es-informe-sanitario'];
+const ARTICULOS = ['autorizacion-transporte-residuos-chile', 'calificacion-inofensiva-seremi', 'calificacion-tecnica-industrial-chile', 'estudio-de-carga-combustible-chile', 'manejo-de-residuos-peligrosos-chile', 'plan-de-emergencia-condominio-chile', 'plan-de-emergencia-ds-44-empresas-chile', 'plan-de-emergencia-empresa-chile', 'que-es-informe-sanitario'];
 // guías nuevas (sep-2026): escritas para este sitio, sin original en el
 // WordPress. Se revisan igual que las demás (medición, noindex, formulario
 // que no envía, nada del WordPress) y su formulario contra el patrón de los

@@ -12,7 +12,7 @@
     }
   ],
   "migaFinal": "Sumario sanitario",
-  "categoria": "Permisos y Cumplimiento",
+  "categoria": "Permisos SEREMI",
   "h1": "Sumario sanitario de la SEREMI: qué hacer si te llega un acta o una multa",
   "bajada": "Qué es el sumario sanitario, cómo avanza desde el acta de inspección hasta la sentencia, qué sanciones puede aplicar la SEREMI de Salud, qué poner en tus descargos y qué plazos tienes para pagar o reclamar.",
   "fecha": "Septiembre 2026",
@@ -36,8 +36,8 @@
       "l": "Multa por reincidencia"
     },
     {
-      "n": "<24h",
-      "l": "Cotización SVEA"
+      "n": "Art. 174",
+      "l": "Código Sanitario: multas"
     }
   ],
   "indiceTitulo": "En este artículo",
@@ -204,10 +204,10 @@
         "filas": 3
       }
     ],
-    "boton": "SOLICITAR COTIZACIÓN GRATUITA →",
+    "boton": "Solicitar cotización gratuita →",
     "confianza": [
       "Datos protegidos",
-      "Respuesta en menos de 24 hrs",
+      "Cotización sin costo",
       "Sin compromiso"
     ],
     "logos": [
@@ -322,9 +322,9 @@
     ]
   },
   "autorCaja": {
-    "inicial": "SC",
+    "inicial": "S",
     "nombre": "Equipo técnico SVEA Consultores",
-    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud y las municipalidades. Más de 250 proyectos gestionados. Cotización en menos de 24 horas."
+    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
   },
   "compartir": {
     "titulo": "Compartir",
@@ -379,10 +379,10 @@
         "enlace": "Conocer servicio →"
       },
       {
-        "titulo": "Patente definitiva",
-        "texto": "Qué permisos de la SEREMI necesitas para pasar de la patente provisoria a la definitiva.",
-        "href": "/patente-definitiva-permisos-seremi/",
-        "enlace": "Ver artículo →"
+        "titulo": "Planes de Emergencia y Evacuación",
+        "texto": "Plan de emergencia conforme al DS 44 y al DS 594, con mapa de riesgos y simulacro.",
+        "href": "/planes-de-emergencia-y-evacuacion/",
+        "enlace": "Conocer servicio →"
       }
     ]
   },

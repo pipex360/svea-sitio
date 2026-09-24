@@ -12,7 +12,7 @@
     }
   ],
   "migaFinal": "Checklist DS 44",
-  "categoria": "Seguridad Laboral",
+  "categoria": "Emergencias",
   "h1": "Checklist DS 44: qué revisa la Dirección del Trabajo en una fiscalización",
   "bajada": "Una lista práctica, basada en el Formulario Único de Fiscalización del DS 44, para revisar tu empresa antes de que llegue el inspector: documentos, plazos y responsables según el tamaño de tu empresa.",
   "fecha": "Septiembre 2026",
@@ -36,8 +36,8 @@
       "l": "Simulacro mínimo"
     },
     {
-      "n": "<24h",
-      "l": "Cotización SVEA"
+      "n": "8 h",
+      "l": "Curso de capacitación (art. 16)"
     }
   ],
   "indiceTitulo": "En este artículo",
@@ -210,10 +210,10 @@
         "filas": 3
       }
     ],
-    "boton": "SOLICITAR COTIZACIÓN GRATUITA →",
+    "boton": "Solicitar cotización gratuita →",
     "confianza": [
       "Datos protegidos",
-      "Respuesta en menos de 24 hrs",
+      "Cotización sin costo",
       "Sin compromiso"
     ],
     "logos": [
@@ -322,15 +322,15 @@
       },
       {
         "p": "¿Cuánto demora tener el plan de emergencia listo?",
-        "r": "En SVEA elaboramos el plan de emergencia y evacuación en 5 a 10 días hábiles, con mapa de riesgos, protocolos y planos. Cotizamos en menos de 24 horas.",
-        "rTexto": "En SVEA elaboramos el plan de emergencia y evacuación en 5 a 10 días hábiles, con mapa de riesgos, protocolos y planos. Cotizamos en menos de 24 horas."
+        "r": "En SVEA elaboramos el plan de emergencia y evacuación en 5 a 10 días hábiles, con mapa de riesgos, protocolos y planos.",
+        "rTexto": "En SVEA elaboramos el plan de emergencia y evacuación en 5 a 10 días hábiles, con mapa de riesgos, protocolos y planos."
       }
     ]
   },
   "autorCaja": {
-    "inicial": "SC",
+    "inicial": "S",
     "nombre": "Equipo técnico SVEA Consultores",
-    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud y las municipalidades. Más de 250 proyectos gestionados. Cotización en menos de 24 horas."
+    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
   },
   "compartir": {
     "titulo": "Compartir",
@@ -379,16 +379,16 @@
         "enlace": "Conocer servicio →"
       },
       {
-        "titulo": "Plan de Emergencia DS 44",
-        "texto": "Qué exige el decreto, contenido obligatorio del plan y simulacros.",
-        "href": "/plan-de-emergencia-ds-44-empresas-chile/",
-        "enlace": "Ver artículo →"
+        "titulo": "Estudio de Carga de Combustible",
+        "texto": "Cálculo de la carga de fuego según NCh 1916 y tipo de construcción según la tabla 4.3.3 de la OGUC.",
+        "href": "/estudio-de-carga-de-combustible/",
+        "enlace": "Conocer servicio →"
       },
       {
-        "titulo": "Plan de Emergencia Empresas",
-        "texto": "Guía completa del plan de emergencia y evacuación para empresas.",
-        "href": "/plan-de-emergencia-empresa-chile/",
-        "enlace": "Ver artículo →"
+        "titulo": "Manejo de Residuos Peligrosos",
+        "texto": "Plan de manejo, bodega de almacenamiento y declaración en SIDREP según el DS 148.",
+        "href": "/manejo-de-residuos-peligrosos/",
+        "enlace": "Conocer servicio →"
       }
     ]
   },

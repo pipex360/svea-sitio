@@ -12,7 +12,7 @@
     }
   ],
   "migaFinal": "Transporte de residuos no peligrosos",
-  "categoria": "Permisos y Autorizaciones",
+  "categoria": "Residuos",
   "h1": "Autorización para transportar residuos no peligrosos: paso a paso en SEREMI en Línea",
   "bajada": "Quién debe pedirla, qué antecedentes revisa la SEREMI de Salud, cómo se completa la solicitud en la plataforma SEREMI en Línea y en qué se diferencia de la autorización para residuos peligrosos del DS 148.",
   "fecha": "Septiembre 2026",
@@ -24,8 +24,8 @@
   "autor": "Equipo técnico SVEA Consultores",
   "cifras": [
     {
-      "n": "100%",
-      "l": "Trámite en línea"
+      "n": "En línea",
+      "l": "Se tramita en SEREMI en Línea"
     },
     {
       "n": "4",
@@ -36,8 +36,8 @@
       "l": "Días hábiles expediente"
     },
     {
-      "n": "<24h",
-      "l": "Cotización SVEA"
+      "n": "$30.400",
+      "l": "Arancel (ChileAtiende)"
     }
   ],
   "indiceTitulo": "En este artículo",
@@ -194,10 +194,10 @@
         "filas": 3
       }
     ],
-    "boton": "SOLICITAR COTIZACIÓN GRATUITA →",
+    "boton": "Solicitar cotización gratuita →",
     "confianza": [
       "Datos protegidos",
-      "Respuesta en menos de 24 hrs",
+      "Cotización sin costo",
       "Sin compromiso"
     ],
     "logos": [
@@ -301,8 +301,8 @@
       },
       {
         "p": "¿Cuánto cuesta el arancel?",
-        "r": "El arancel lo cobra la SEREMI de Salud y se paga en la misma plataforma al ingresar la solicitud. Revisa el valor vigente en SEREMI en Línea o en la ficha de ChileAtiende antes de ingresar; algunos solicitantes pueden acreditar un beneficio arancelario.",
-        "rTexto": "El arancel lo cobra la SEREMI de Salud y se paga en la misma plataforma al ingresar la solicitud. Revisa el valor vigente en SEREMI en Línea o en la ficha de ChileAtiende antes de ingresar; algunos solicitantes pueden acreditar un beneficio arancelario."
+        "r": "El arancel lo cobra la SEREMI de Salud y se paga en la misma plataforma al ingresar la solicitud. Según la ficha de ChileAtiende, la autorización tiene un valor de $30.400 (consultado el 24-09-2026); revisa el valor vigente en SEREMI en Línea o en ChileAtiende antes de ingresar; algunos solicitantes pueden acreditar un beneficio arancelario.",
+        "rTexto": "El arancel lo cobra la SEREMI de Salud y se paga en la misma plataforma al ingresar la solicitud. Según la ficha de ChileAtiende, la autorización tiene un valor de $30.400 (consultado el 24-09-2026); revisa el valor vigente en SEREMI en Línea o en ChileAtiende antes de ingresar; algunos solicitantes pueden acreditar un beneficio arancelario."
       },
       {
         "p": "¿Cuánto demora?",
@@ -312,9 +312,9 @@
     ]
   },
   "autorCaja": {
-    "inicial": "SC",
+    "inicial": "S",
     "nombre": "Equipo técnico SVEA Consultores",
-    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud y las municipalidades. Más de 250 proyectos gestionados. Cotización en menos de 24 horas."
+    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
   },
   "compartir": {
     "titulo": "Compartir",
@@ -363,10 +363,10 @@
         "enlace": "Conocer servicio →"
       },
       {
-        "titulo": "Transporte de Residuos: guía completa",
-        "texto": "Peligrosos y no peligrosos: normativa, requisitos, costos y proceso.",
-        "href": "/autorizacion-transporte-residuos-chile/",
-        "enlace": "Ver artículo →"
+        "titulo": "Planes de Emergencia y Evacuación",
+        "texto": "Plan de emergencia conforme al DS 44 y al DS 594, con mapa de riesgos y simulacro.",
+        "href": "/planes-de-emergencia-y-evacuacion/",
+        "enlace": "Conocer servicio →"
       },
       {
         "titulo": "Manejo de Residuos Peligrosos",

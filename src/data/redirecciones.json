@@ -1,0 +1,9 @@
+[
+  { "desde": "/calificacion-inofensiva-seremi-2026/", "hacia": "/calificacion-inofensiva-seremi/", "motivo": "slug sin año (24-sep-2026, aprobado por Carlos)" },
+  { "desde": "/lp/plan-de-emergencia/", "hacia": "/planes-de-emergencia-y-evacuacion/", "motivo": "landing vieja del WordPress" },
+  { "desde": "/plan-de-emergencia/", "hacia": "/planes-de-emergencia-y-evacuacion/", "motivo": "URL vieja del WordPress" },
+  { "desde": "/inicio/", "hacia": "/", "motivo": "página «Inicio» duplicada del WordPress" },
+  { "desde": "/category/uncategorized/", "hacia": "/blog/", "motivo": "archivo de categoría del WordPress" },
+  { "desde": "/author/admin/", "hacia": "/blog/", "motivo": "archivo de autor del WordPress" },
+  { "desde": "/cotiza-plan-condominios/", "hacia": "/cotiza-plan-emergencia-condominio/", "motivo": "landing de Ads renombrada" }
+]

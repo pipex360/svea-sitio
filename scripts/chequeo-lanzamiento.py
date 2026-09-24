@@ -38,6 +38,10 @@ rutas = ['/', '/gracias/'] + [p['ruta'] for p in paginas if p['ruta'] not in ('/
 # (en el WordPress estaba indexable); paginas.json la marca noindex.
 ROBOTS_A_PROPOSITO = {'/gracias/': 'noindex'}
 
+# rutas renombradas en el sitio nuevo (con su 301, ver REDIRECCIONES.md): se
+# comparan contra la URL VIEJA del vivo, y la canónica nueva es la esperada
+RENOMBRADAS = {'/calificacion-inofensiva-seremi/': '/calificacion-inofensiva-seremi-2026/'}
+
 GTM = 'GTM-NGVMRNDM'
 GA4 = 'G-FWQ05WDLZ3'
 
@@ -98,7 +102,7 @@ for ruta in rutas:
     nuevo = f.read_text(encoding='utf-8', errors='ignore')
     malos = medicion(nuevo)
     try:
-        antes = senales(vivo(ruta))
+        antes = senales(vivo(RENOMBRADAS.get(ruta, ruta)))
     except Exception as e:
         antes = None
         aviso = f'no se pudo leer el sitio vivo ({e})'

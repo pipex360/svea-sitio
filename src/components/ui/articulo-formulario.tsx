@@ -106,7 +106,7 @@ export function ArticuloFormulario({
           contactInfo={[
             { icon: IconoWhatsApp, label: 'WhatsApp directo', value: '+56 9 2994 7924', href: WHATSAPP, externo: true },
             { icon: MailIcon, label: 'Correo', value: CORREO, href: `mailto:${CORREO}` },
-            { icon: ClockIcon, label: 'Respuesta en 24h', value: 'Cotización por email' },
+            { icon: ClockIcon, label: 'Cotización sin compromiso', value: 'Por email o WhatsApp' },
           ]}
         >
           <form

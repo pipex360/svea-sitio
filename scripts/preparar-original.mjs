@@ -123,7 +123,7 @@ const REHECHAS = new Set([
   '/cotiza-autorizacion-transporte-residuos/',
   // los artículos (src/layouts/Articulo.astro) y el índice del blog
   '/autorizacion-transporte-residuos-chile/',
-  '/calificacion-inofensiva-seremi-2026/',
+  '/calificacion-inofensiva-seremi/',
   '/calificacion-tecnica-industrial-chile/',
   '/estudio-de-carga-combustible-chile/',
   '/manejo-de-residuos-peligrosos-chile/',
@@ -310,6 +310,28 @@ writeFileSync(path.join(DEST, 'robots.txt'), PRODUCCION
   ? `User-agent: *\nAllow: /\nSitemap: ${DOM}/sitemap-index.xml\n`
   : 'User-agent: *\nDisallow: /\n');
 console.log(`robots.txt de ${PRODUCCION ? 'PRODUCCIÓN (Allow + sitemap)' : 'la copia (Disallow: /)'}`);
+
+// --- redirecciones 301 (ver REDIRECCIONES.md) -------------------------------
+// La lista vive en src/data/redirecciones.json. En producción se escribe
+// public/_redirects (Netlify / Cloudflare Pages), con y sin barra final; la
+// copia de trabajo no lleva. vercel.json (raíz) debe tener las mismas: si no
+// calza, se corta aquí para que nadie publique con una redirección perdida.
+const REDIRECCIONES = JSON.parse(readFileSync('src/data/redirecciones.json', 'utf8'));
+const variantes = (d) => [d, d.replace(/\/$/, '')].filter((x, i, a) => x && a.indexOf(x) === i);
+if (PRODUCCION) {
+  const lineas = REDIRECCIONES.flatMap((r) => variantes(r.desde).map((d) => `${d} ${r.hacia} 301`));
+  writeFileSync(path.join(DEST, '_redirects'), lineas.join('\n') + '\n');
+  console.log(`_redirects: ${lineas.length} reglas 301`);
+}
+{
+  const vercel = JSON.parse(readFileSync('vercel.json', 'utf8')).redirects ?? [];
+  const clave = (s, d, c) => `${s} ${d} ${c}`;
+  const esperadas = new Set(REDIRECCIONES.flatMap((r) => variantes(r.desde).map((d) => clave(d, r.hacia, 301))));
+  const hay = new Set(vercel.map((v) => clave(v.source, v.destination, v.statusCode)));
+  const faltan = [...esperadas].filter((x) => !hay.has(x));
+  const sobran = [...hay].filter((x) => !esperadas.has(x));
+  if (faltan.length || sobran.length) throw new Error(`vercel.json no calza con src/data/redirecciones.json · faltan: ${faltan.join(' | ')} · sobran: ${sobran.join(' | ')}`);
+}
 
 console.log(`${n} páginas copiadas del sitio actual · base "${BASE || '/'}"`);
 const faltan = paginas.filter((p) => !ARCHIVOS[p.ruta]).map((p) => p.ruta);
