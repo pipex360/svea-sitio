@@ -1,13 +1,19 @@
 import {
   BookOpenIcon,
   BuildingIcon,
+  ClipboardCheckIcon,
   FactoryIcon,
   FileCheckIcon,
+  FileSpreadsheetIcon,
+  FileWarningIcon,
   FlameIcon,
   FlaskConicalIcon,
+  GavelIcon,
   LeafIcon,
   type LucideIcon,
+  RecycleIcon,
   SirenIcon,
+  StoreIcon,
   TruckIcon,
 } from 'lucide-react';
 import * as React from 'react';
@@ -120,6 +126,48 @@ export const guias: Entrada[] = [
     href: '/autorizacion-transporte-residuos-chile/',
     description: 'Peligrosos y no peligrosos: qué resolución necesitas y cómo se obtiene.',
     icon: TruckIcon,
+  },
+  {
+    title: 'Patente definitiva',
+    href: '/patente-definitiva-permisos-seremi/',
+    description: 'Qué permisos de la SEREMI te piden para dejar la patente provisoria.',
+    icon: StoreIcon,
+  },
+  {
+    title: 'Checklist DS 44',
+    href: '/checklist-ds-44-fiscalizacion/',
+    description: 'Lo que revisa la Dirección del Trabajo en una fiscalización.',
+    icon: ClipboardCheckIcon,
+  },
+  {
+    title: 'Transporte de residuos no peligrosos',
+    href: '/autorizacion-transporte-residuos-no-peligrosos/',
+    description: 'La autorización paso a paso en SEREMI en Línea.',
+    icon: RecycleIcon,
+  },
+  {
+    title: 'Declaración SIDREP y SINADER',
+    href: '/declaracion-residuos-sidrep-sinader/',
+    description: 'Quién declara residuos, en qué sistema y en qué plazo.',
+    icon: FileSpreadsheetIcon,
+  },
+  {
+    title: 'Sumario sanitario',
+    href: '/sumario-sanitario-seremi/',
+    description: 'Qué hacer si la SEREMI te levanta un acta o te multa.',
+    icon: GavelIcon,
+  },
+  {
+    title: 'Rechazo u observaciones SEREMI',
+    href: '/rechazo-observaciones-seremi/',
+    description: 'Cómo responder, qué recursos tienes y en qué plazos.',
+    icon: FileWarningIcon,
+  },
+  {
+    title: 'Sustancias peligrosas DS 43',
+    href: '/plan-manejo-sustancias-peligrosas-ds-43/',
+    description: 'Cuándo exigen autorización y qué incluye el plan de manejo.',
+    icon: FlaskConicalIcon,
   },
 ];
 

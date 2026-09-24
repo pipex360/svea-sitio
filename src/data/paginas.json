@@ -13411,5 +13411,509 @@
       "form_id": "form-landing-tr",
       "subject_id": "dynamic-subject-ltr"
     }
+  },
+  {
+    "ruta": "/patente-definitiva-permisos-seremi/",
+    "slug": "patente-definitiva-permisos-seremi",
+    "tipo": "articulos",
+    "title": "Patente definitiva: qué permisos de la SEREMI necesitas",
+    "description": "Pasa de patente provisoria a definitiva: qué pide la municipalidad según tu rubro, cuándo entra la SEREMI de Salud y en qué orden hacer los trámites.",
+    "robots": "index, follow",
+    "canonical": "https://sveaconsultores.cl/patente-definitiva-permisos-seremi/",
+    "h1": "Patente definitiva: qué permisos de la SEREMI necesitas",
+    "h1_html": "Patente definitiva: qué permisos de la SEREMI necesitas",
+    "og_image": "https://sveaconsultores.cl/img/articulos/centro-distribucion-aereo.webp",
+    "palabras_origen": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Patente definitiva: qué permisos de la SEREMI necesitas",
+        "description": "Pasa de patente provisoria a definitiva: qué pide la municipalidad según tu rubro, cuándo entra la SEREMI de Salud y en qué orden hacer los trámites.",
+        "image": "https://sveaconsultores.cl/img/articulos/centro-distribucion-aereo.webp",
+        "keywords": "Patente definitiva, patente provisoria, SEREMI",
+        "inLanguage": "es-CL",
+        "articleSection": "Guías de cumplimiento",
+        "author": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
+          }
+        },
+        "datePublished": "2026-09-24",
+        "dateModified": "2026-09-24",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://sveaconsultores.cl/patente-definitiva-permisos-seremi/"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://sveaconsultores.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://sveaconsultores.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Patente definitiva",
+            "item": "https://sveaconsultores.cl/patente-definitiva-permisos-seremi/"
+          }
+        ]
+      }
+    ],
+    "contenido": null,
+    "formularios": [],
+    "nueva": true
+  },
+  {
+    "ruta": "/checklist-ds-44-fiscalizacion/",
+    "slug": "checklist-ds-44-fiscalizacion",
+    "tipo": "articulos",
+    "title": "Checklist DS 44: qué revisa la Dirección del Trabajo",
+    "description": "Checklist del DS 44 según el Formulario Único de Fiscalización: matriz de riesgos, programa preventivo, plan de emergencia, simulacro, comité y multas.",
+    "robots": "index, follow",
+    "canonical": "https://sveaconsultores.cl/checklist-ds-44-fiscalizacion/",
+    "h1": "Checklist DS 44: qué revisa la Dirección del Trabajo en una fiscalización",
+    "h1_html": "Checklist DS 44: qué revisa la Dirección del Trabajo en una fiscalización",
+    "og_image": "https://sveaconsultores.cl/img/articulos/escalera-evacuacion.webp",
+    "palabras_origen": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Checklist DS 44: qué revisa la Dirección del Trabajo en una fiscalización",
+        "description": "Checklist del DS 44 según el Formulario Único de Fiscalización: matriz de riesgos, programa preventivo, plan de emergencia, simulacro, comité y multas.",
+        "image": "https://sveaconsultores.cl/img/articulos/escalera-evacuacion.webp",
+        "keywords": "DS 44, fiscalización, Dirección del Trabajo",
+        "inLanguage": "es-CL",
+        "articleSection": "Guías de cumplimiento",
+        "author": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
+          }
+        },
+        "datePublished": "2026-09-24",
+        "dateModified": "2026-09-24",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://sveaconsultores.cl/checklist-ds-44-fiscalizacion/"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://sveaconsultores.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://sveaconsultores.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Checklist DS 44",
+            "item": "https://sveaconsultores.cl/checklist-ds-44-fiscalizacion/"
+          }
+        ]
+      }
+    ],
+    "contenido": null,
+    "formularios": [],
+    "nueva": true
+  },
+  {
+    "ruta": "/autorizacion-transporte-residuos-no-peligrosos/",
+    "slug": "autorizacion-transporte-residuos-no-peligrosos",
+    "tipo": "articulos",
+    "title": "Transporte de residuos no peligrosos: autorización SEREMI",
+    "description": "Autorización para transportar residuos no peligrosos: quién la pide, antecedentes, paso a paso en SEREMI en Línea y diferencias con el DS 148.",
+    "robots": "index, follow",
+    "canonical": "https://sveaconsultores.cl/autorizacion-transporte-residuos-no-peligrosos/",
+    "h1": "Autorización para transportar residuos no peligrosos: paso a paso en SEREMI en Línea",
+    "h1_html": "Autorización para transportar residuos no peligrosos: paso a paso en SEREMI en Línea",
+    "og_image": "https://sveaconsultores.cl/img/articulos/camion-tolva-carretera.webp",
+    "palabras_origen": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Autorización para transportar residuos no peligrosos: paso a paso en SEREMI en Línea",
+        "description": "Autorización para transportar residuos no peligrosos: quién la pide, antecedentes, paso a paso en SEREMI en Línea y diferencias con el DS 148.",
+        "image": "https://sveaconsultores.cl/img/articulos/camion-tolva-carretera.webp",
+        "keywords": "transporte de residuos no peligrosos, SEREMI",
+        "inLanguage": "es-CL",
+        "articleSection": "Guías de cumplimiento",
+        "author": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
+          }
+        },
+        "datePublished": "2026-09-24",
+        "dateModified": "2026-09-24",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://sveaconsultores.cl/autorizacion-transporte-residuos-no-peligrosos/"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://sveaconsultores.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://sveaconsultores.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Transporte de residuos no peligrosos",
+            "item": "https://sveaconsultores.cl/autorizacion-transporte-residuos-no-peligrosos/"
+          }
+        ]
+      }
+    ],
+    "contenido": null,
+    "formularios": [],
+    "nueva": true
+  },
+  {
+    "ruta": "/declaracion-residuos-sidrep-sinader/",
+    "slug": "declaracion-residuos-sidrep-sinader",
+    "tipo": "articulos",
+    "title": "SIDREP y SINADER: quién declara residuos y cómo",
+    "description": "Declaración de residuos en SIDREP (peligrosos, DS 148) y SINADER (no peligrosos, RETC): quién está obligado, plazos, Ventanilla Única y errores.",
+    "robots": "index, follow",
+    "canonical": "https://sveaconsultores.cl/declaracion-residuos-sidrep-sinader/",
+    "h1": "Declaración de residuos en SIDREP y SINADER: quién declara y cómo",
+    "h1_html": "Declaración de residuos en SIDREP y SINADER: quién declara y cómo",
+    "og_image": "https://sveaconsultores.cl/img/articulos/bodega-residuos-peligrosos.webp",
+    "palabras_origen": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Declaración de residuos en SIDREP y SINADER: quién declara y cómo",
+        "description": "Declaración de residuos en SIDREP (peligrosos, DS 148) y SINADER (no peligrosos, RETC): quién está obligado, plazos, Ventanilla Única y errores.",
+        "image": "https://sveaconsultores.cl/img/articulos/bodega-residuos-peligrosos.webp",
+        "keywords": "SIDREP, SINADER, declaración de residuos",
+        "inLanguage": "es-CL",
+        "articleSection": "Guías de cumplimiento",
+        "author": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
+          }
+        },
+        "datePublished": "2026-09-24",
+        "dateModified": "2026-09-24",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://sveaconsultores.cl/declaracion-residuos-sidrep-sinader/"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://sveaconsultores.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://sveaconsultores.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Declaración SIDREP y SINADER",
+            "item": "https://sveaconsultores.cl/declaracion-residuos-sidrep-sinader/"
+          }
+        ]
+      }
+    ],
+    "contenido": null,
+    "formularios": [],
+    "nueva": true
+  },
+  {
+    "ruta": "/sumario-sanitario-seremi/",
+    "slug": "sumario-sanitario-seremi",
+    "tipo": "articulos",
+    "title": "Sumario sanitario SEREMI: qué hacer si te llega un acta",
+    "description": "Sumario sanitario de la SEREMI de Salud: etapas desde el acta, multas de hasta 1.000 UTM, qué poner en tus descargos y plazos para pagar o reclamar.",
+    "robots": "index, follow",
+    "canonical": "https://sveaconsultores.cl/sumario-sanitario-seremi/",
+    "h1": "Sumario sanitario de la SEREMI: qué hacer si te llega un acta o una multa",
+    "h1_html": "Sumario sanitario de la SEREMI: qué hacer si te llega un acta o una multa",
+    "og_image": "https://sveaconsultores.cl/img/articulos/planta-industrial-nocturna.webp",
+    "palabras_origen": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Sumario sanitario de la SEREMI: qué hacer si te llega un acta o una multa",
+        "description": "Sumario sanitario de la SEREMI de Salud: etapas desde el acta, multas de hasta 1.000 UTM, qué poner en tus descargos y plazos para pagar o reclamar.",
+        "image": "https://sveaconsultores.cl/img/articulos/planta-industrial-nocturna.webp",
+        "keywords": "sumario sanitario, SEREMI, multa",
+        "inLanguage": "es-CL",
+        "articleSection": "Guías de cumplimiento",
+        "author": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
+          }
+        },
+        "datePublished": "2026-09-24",
+        "dateModified": "2026-09-24",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://sveaconsultores.cl/sumario-sanitario-seremi/"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://sveaconsultores.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://sveaconsultores.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Sumario sanitario",
+            "item": "https://sveaconsultores.cl/sumario-sanitario-seremi/"
+          }
+        ]
+      }
+    ],
+    "contenido": null,
+    "formularios": [],
+    "nueva": true
+  },
+  {
+    "ruta": "/rechazo-observaciones-seremi/",
+    "slug": "rechazo-observaciones-seremi",
+    "tipo": "articulos",
+    "title": "La SEREMI rechazó u observó tu solicitud: cómo responder",
+    "description": "Cómo responder observaciones de la SEREMI de Salud, recursos de reposición y jerárquico, plazos de la Ley 19.880 y qué hacer si no responden.",
+    "robots": "index, follow",
+    "canonical": "https://sveaconsultores.cl/rechazo-observaciones-seremi/",
+    "h1": "La SEREMI rechazó u observó tu solicitud: cómo responder",
+    "h1_html": "La SEREMI rechazó u observó tu solicitud: cómo responder",
+    "og_image": "https://sveaconsultores.cl/img/articulos/revision-documentos-seremi.webp",
+    "palabras_origen": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "La SEREMI rechazó u observó tu solicitud: cómo responder",
+        "description": "Cómo responder observaciones de la SEREMI de Salud, recursos de reposición y jerárquico, plazos de la Ley 19.880 y qué hacer si no responden.",
+        "image": "https://sveaconsultores.cl/img/articulos/revision-documentos-seremi.webp",
+        "keywords": "SEREMI, observaciones, recurso de reposición",
+        "inLanguage": "es-CL",
+        "articleSection": "Guías de cumplimiento",
+        "author": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
+          }
+        },
+        "datePublished": "2026-09-24",
+        "dateModified": "2026-09-24",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://sveaconsultores.cl/rechazo-observaciones-seremi/"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://sveaconsultores.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://sveaconsultores.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Rechazo u observaciones de la SEREMI",
+            "item": "https://sveaconsultores.cl/rechazo-observaciones-seremi/"
+          }
+        ]
+      }
+    ],
+    "contenido": null,
+    "formularios": [],
+    "nueva": true
+  },
+  {
+    "ruta": "/plan-manejo-sustancias-peligrosas-ds-43/",
+    "slug": "plan-manejo-sustancias-peligrosas-ds-43",
+    "tipo": "articulos",
+    "title": "Plan de manejo de sustancias peligrosas DS 43",
+    "description": "DS 43: cuándo exige autorización sanitaria para almacenar sustancias peligrosas, qué bodega corresponde, qué incluye el plan y la declaración semestral.",
+    "robots": "index, follow",
+    "canonical": "https://sveaconsultores.cl/plan-manejo-sustancias-peligrosas-ds-43/",
+    "h1": "Plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye",
+    "h1_html": "Plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye",
+    "og_image": "https://sveaconsultores.cl/img/articulos/estanques-planta-quimica.webp",
+    "palabras_origen": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye",
+        "description": "DS 43: cuándo exige autorización sanitaria para almacenar sustancias peligrosas, qué bodega corresponde, qué incluye el plan y la declaración semestral.",
+        "image": "https://sveaconsultores.cl/img/articulos/estanques-planta-quimica.webp",
+        "keywords": "DS 43, sustancias peligrosas, almacenamiento",
+        "inLanguage": "es-CL",
+        "articleSection": "Guías de cumplimiento",
+        "author": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
+          }
+        },
+        "datePublished": "2026-09-24",
+        "dateModified": "2026-09-24",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://sveaconsultores.cl/plan-manejo-sustancias-peligrosas-ds-43/"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://sveaconsultores.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://sveaconsultores.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Sustancias peligrosas DS 43",
+            "item": "https://sveaconsultores.cl/plan-manejo-sustancias-peligrosas-ds-43/"
+          }
+        ]
+      }
+    ],
+    "contenido": null,
+    "formularios": [],
+    "nueva": true
   }
 ]

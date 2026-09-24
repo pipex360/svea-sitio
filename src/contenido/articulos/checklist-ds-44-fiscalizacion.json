@@ -1,0 +1,400 @@
+{
+  "slug": "checklist-ds-44-fiscalizacion",
+  "ruta": "/checklist-ds-44-fiscalizacion/",
+  "migasOriginal": [
+    {
+      "texto": "Inicio",
+      "href": "/"
+    },
+    {
+      "texto": "Blog",
+      "href": "/blog/"
+    }
+  ],
+  "migaFinal": "Checklist DS 44",
+  "categoria": "Seguridad Laboral",
+  "h1": "Checklist DS 44: qué revisa la Dirección del Trabajo en una fiscalización",
+  "bajada": "Una lista práctica, basada en el Formulario Único de Fiscalización del DS 44, para revisar tu empresa antes de que llegue el inspector: documentos, plazos y responsables según el tamaño de tu empresa.",
+  "fecha": "Septiembre 2026",
+  "actualizado": {
+    "iso": "2026-09-24",
+    "texto": "24 de septiembre de 2026"
+  },
+  "lectura": "10 min de lectura",
+  "autor": "Equipo técnico SVEA Consultores",
+  "cifras": [
+    {
+      "n": "Feb 2025",
+      "l": "Vigencia DS 44"
+    },
+    {
+      "n": "60",
+      "l": "Preguntas del FUF"
+    },
+    {
+      "n": "1/año",
+      "l": "Simulacro mínimo"
+    },
+    {
+      "n": "<24h",
+      "l": "Cotización SVEA"
+    }
+  ],
+  "indiceTitulo": "En este artículo",
+  "indice": [
+    {
+      "href": "#como-fiscaliza",
+      "texto": "Cómo fiscaliza la DT el DS 44"
+    },
+    {
+      "href": "#tamano",
+      "texto": "Qué te exigen según tu tamaño"
+    },
+    {
+      "href": "#matriz",
+      "texto": "Matriz de riesgos (MIPER)"
+    },
+    {
+      "href": "#programa",
+      "texto": "Programa de trabajo preventivo"
+    },
+    {
+      "href": "#informacion",
+      "texto": "Información y capacitación"
+    },
+    {
+      "href": "#emergencia",
+      "texto": "Plan de emergencia y simulacro"
+    },
+    {
+      "href": "#participacion",
+      "texto": "Comité Paritario o Delegado"
+    },
+    {
+      "href": "#registros",
+      "texto": "Reglamento, mapas y registros"
+    },
+    {
+      "href": "#multas",
+      "texto": "Multas"
+    },
+    {
+      "href": "#preparar",
+      "texto": "Cómo prepararte para la visita"
+    },
+    {
+      "href": "#fuentes",
+      "texto": "Fuentes"
+    },
+    {
+      "href": "#faq",
+      "texto": "Preguntas frecuentes"
+    }
+  ],
+  "formulario": {
+    "titulo": "Cotiza tu plan de emergencia DS 44 sin compromiso",
+    "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+    "ocultos": [
+      {
+        "name": "access_key",
+        "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+      },
+      {
+        "name": "subject",
+        "value": "Nueva cotización Plan Emergencia (Blog) - SVEA Consultores",
+        "id": "dynamic-subject-art-ds44"
+      },
+      {
+        "name": "from_name",
+        "value": "SVEA Consultores Blog - Plan Emergencia"
+      },
+      {
+        "name": "redirect",
+        "value": "https://sveaconsultores.cl/gracias/"
+      },
+      {
+        "name": "Servicio",
+        "value": "Plan de Emergencia y Evacuación"
+      },
+      {
+        "name": "Origen",
+        "value": "Artículo SEO - Checklist DS 44"
+      }
+    ],
+    "campos": [
+      {
+        "label": "Nombre completo *",
+        "id": "art-nombre",
+        "name": "Nombre",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Ej: Juan Pérez",
+        "ancho": false
+      },
+      {
+        "label": "Empresa *",
+        "id": "art-empresa",
+        "name": "Empresa",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Nombre de tu empresa",
+        "ancho": false
+      },
+      {
+        "label": "Teléfono *",
+        "id": "art-telefono",
+        "name": "Teléfono",
+        "tipo": "tel",
+        "requerido": true,
+        "placeholder": "+569 1234 5678",
+        "ancho": false
+      },
+      {
+        "label": "Email *",
+        "id": "art-email",
+        "name": "Email",
+        "tipo": "email",
+        "requerido": true,
+        "placeholder": "correo@empresa.cl",
+        "ancho": false
+      },
+      {
+        "label": "Tipo de servicio",
+        "id": "art-tipo",
+        "name": "Tipo de Servicio",
+        "tipo": "select",
+        "requerido": false,
+        "placeholder": null,
+        "ancho": true,
+        "opciones": [
+          {
+            "value": "",
+            "texto": "Selecciona una opción",
+            "seleccionada": true,
+            "desactivada": true
+          },
+          {
+            "value": "Plan de Emergencia DS 44",
+            "texto": "Plan de emergencia DS 44",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Actualización de plan existente",
+            "texto": "Actualizar un plan existente",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Simulacro de evacuación",
+            "texto": "Simulacro de evacuación",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "No estoy seguro",
+            "texto": "No estoy seguro",
+            "seleccionada": false,
+            "desactivada": false
+          }
+        ]
+      },
+      {
+        "label": "Mensaje (opcional)",
+        "id": "art-mensaje",
+        "name": "Mensaje",
+        "tipo": "textarea",
+        "requerido": false,
+        "placeholder": "¿Cuántas personas trabajan en tu empresa y en cuántos lugares de trabajo?",
+        "ancho": true,
+        "filas": 3
+      }
+    ],
+    "boton": "SOLICITAR COTIZACIÓN GRATUITA →",
+    "confianza": [
+      "Datos protegidos",
+      "Respuesta en menos de 24 hrs",
+      "Sin compromiso"
+    ],
+    "logos": [
+      {
+        "src": "/img/articulos/logo-25m.webp",
+        "alt": "Logo 25M",
+        "ancho": 400,
+        "alto": 85
+      },
+      {
+        "src": "/img/clientes/gespania.webp",
+        "alt": "Gespania",
+        "ancho": 299,
+        "alto": 149
+      },
+      {
+        "src": "/img/clientes/grupo-mbo.webp",
+        "alt": "Grupo MBO",
+        "ancho": 294,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/nuevo-pudahuel.webp",
+        "alt": "Nuevo Pudahuel",
+        "ancho": 329,
+        "alto": 77
+      },
+      {
+        "src": "/img/clientes/natures-farm.webp",
+        "alt": "Nature's Farm",
+        "ancho": 286,
+        "alto": 217
+      },
+      {
+        "src": "/img/clientes/blt-mini-bodegas.webp",
+        "alt": "BLT",
+        "ancho": 516,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/db-santasalo.webp",
+        "alt": "DB Santasalo",
+        "ancho": 388,
+        "alto": 127
+      },
+      {
+        "src": "/img/clientes/animal-services.webp",
+        "alt": "Animal Services",
+        "ancho": 215,
+        "alto": 162
+      },
+      {
+        "src": "/img/clientes/lira.webp",
+        "alt": "Lira",
+        "ancho": 242,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/fuchs.webp",
+        "alt": "Fuchs Lubricants",
+        "ancho": 495,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/delart-chocolat.webp",
+        "alt": "DelArt Chocolat",
+        "ancho": 443,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/novametal.webp",
+        "alt": "Novametal",
+        "ancho": 166,
+        "alto": 122
+      }
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      {
+        "p": "¿Qué es el Formulario Único de Fiscalización del DS 44?",
+        "r": "Es la pauta que publicó la Dirección del Trabajo para fiscalizar el DS 44: 60 preguntas agrupadas por tema (matriz de riesgos, programa preventivo, información, emergencias, comités, reglamento interno, mapas y registros), cada una con su artículo y las opciones cumple, no cumple o no aplica.",
+        "rTexto": "Es la pauta que publicó la Dirección del Trabajo para fiscalizar el DS 44: 60 preguntas agrupadas por tema (matriz de riesgos, programa preventivo, información, emergencias, comités, reglamento interno, mapas y registros), cada una con su artículo y las opciones cumple, no cumple o no aplica."
+      },
+      {
+        "p": "¿El DS 44 aplica si tengo menos de 10 trabajadores?",
+        "r": "Sí. Toda entidad empleadora debe gestionar sus riesgos: matriz, programa preventivo, información a los trabajadores y plan de emergencia con simulacro anual. Las empresas de hasta 25 personas pueden apoyarse en el instrumento de autoevaluación de su mutual (art. 64). Lo que no se exige bajo 10 personas es el Delegado SST.",
+        "rTexto": "Sí. Toda entidad empleadora debe gestionar sus riesgos: matriz, programa preventivo, información a los trabajadores y plan de emergencia con simulacro anual. Las empresas de hasta 25 personas pueden apoyarse en el instrumento de autoevaluación de su mutual (art. 64). Lo que no se exige bajo 10 personas es el Delegado SST."
+      },
+      {
+        "p": "¿Cada cuánto debo actualizar la matriz de riesgos?",
+        "r": "Al menos una vez al año, y además cada vez que cambien las condiciones de trabajo, ocurra un accidente, se diagnostique una enfermedad profesional o se genere un riesgo grave e inminente (art. 7). Después tienes 30 días corridos para ajustar el programa preventivo (art. 8).",
+        "rTexto": "Al menos una vez al año, y además cada vez que cambien las condiciones de trabajo, ocurra un accidente, se diagnostique una enfermedad profesional o se genere un riesgo grave e inminente (art. 7). Después tienes 30 días corridos para ajustar el programa preventivo (art. 8)."
+      },
+      {
+        "p": "¿Cuánto es la multa por no cumplir el DS 44?",
+        "r": "Si fiscaliza la Dirección del Trabajo, la escala general del artículo 506 del Código del Trabajo va de 1 a 5 UTM en la microempresa, 1 a 10 UTM en la pequeña, 2 a 40 UTM en la mediana y 3 a 60 UTM en la grande, por cada infracción. Si fiscaliza la SEREMI de Salud, el Código Sanitario permite multas de hasta 1.000 UTM y la clausura.",
+        "rTexto": "Si fiscaliza la Dirección del Trabajo, la escala general del artículo 506 del Código del Trabajo va de 1 a 5 UTM en la microempresa, 1 a 10 UTM en la pequeña, 2 a 40 UTM en la mediana y 3 a 60 UTM en la grande, por cada infracción. Si fiscaliza la SEREMI de Salud, el Código Sanitario permite multas de hasta 1.000 UTM y la clausura."
+      },
+      {
+        "p": "¿Sirve un simulacro de escritorio?",
+        "r": "El artículo 19 pide ensayar el plan al menos una vez al año simulando una emergencia real. Un ejercicio de escritorio ayuda a preparar, pero lo prudente es hacer una evacuación real y dejar acta, asistencia y mejoras detectadas.",
+        "rTexto": "El artículo 19 pide ensayar el plan al menos una vez al año simulando una emergencia real. Un ejercicio de escritorio ayuda a preparar, pero lo prudente es hacer una evacuación real y dejar acta, asistencia y mejoras detectadas."
+      },
+      {
+        "p": "¿Cuánto demora tener el plan de emergencia listo?",
+        "r": "En SVEA elaboramos el plan de emergencia y evacuación en 5 a 10 días hábiles, con mapa de riesgos, protocolos y planos. Cotizamos en menos de 24 horas.",
+        "rTexto": "En SVEA elaboramos el plan de emergencia y evacuación en 5 a 10 días hábiles, con mapa de riesgos, protocolos y planos. Cotizamos en menos de 24 horas."
+      }
+    ]
+  },
+  "autorCaja": {
+    "inicial": "SC",
+    "nombre": "Equipo técnico SVEA Consultores",
+    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud y las municipalidades. Más de 250 proyectos gestionados. Cotización en menos de 24 horas."
+  },
+  "compartir": {
+    "titulo": "Compartir",
+    "enlaces": [
+      {
+        "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://sveaconsultores.cl/checklist-ds-44-fiscalizacion/",
+        "texto": "in",
+        "titulo": "LinkedIn",
+        "externo": true
+      },
+      {
+        "href": "https://api.whatsapp.com/send?text=Checklist%20DS%2044%20https://sveaconsultores.cl/checklist-ds-44-fiscalizacion/",
+        "texto": "wa",
+        "titulo": "WhatsApp",
+        "externo": true
+      },
+      {
+        "href": "mailto:?subject=Checklist%20DS%2044&body=Te%20comparto%20esta%20gu%C3%ADa%3A%20https://sveaconsultores.cl/checklist-ds-44-fiscalizacion/",
+        "texto": "@",
+        "titulo": "Email",
+        "externo": false
+      }
+    ]
+  },
+  "bloques": [
+    {
+      "tipo": "html",
+      "html": "<p class=\"art-entrada\">\n        El <strong>DS 44</strong>, reglamento sobre gestión preventiva de los riesgos laborales, rige desde el <strong>1 de febrero de 2025</strong> y reemplazó a los antiguos DS 40 y DS 54 de 1969. En nuestra guía del <a href=\"/plan-de-emergencia-ds-44-empresas-chile/\">plan de emergencia DS 44</a> explicamos qué exige el decreto; esta es la lista práctica para revisar tu empresa antes de que llegue la fiscalización.\n    </p>\n\n<section id=\"como-fiscaliza\">\n        <h2>Cómo fiscaliza la Dirección del Trabajo el DS 44</h2>\n        <p>El artículo 77 del DS 44 reparte la fiscalización entre la <strong>SEREMI de Salud</strong> y la <strong>Dirección del Trabajo</strong>, según sus competencias; el control de los Comités Paritarios corresponde exclusivamente a la Dirección del Trabajo. Para ordenar la inspección, la DT publicó el <strong>Formulario Único de Fiscalización (FUF) del DS 44</strong>: 60 preguntas, cada una con el artículo que la respalda y tres respuestas posibles, «cumple», «no cumple» o «no aplica».</p>\n        <div class=\"callout callout-info\">\n            <span class=\"callout-icon\">i</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Hazte tu propia auditoría</div>\n                <p>El FUF es público. Descárgalo desde la página del DS 44 de la Dirección del Trabajo y respóndelo con tu equipo: es exactamente lo que va a mirar el inspector. Esta guía resume sus bloques principales.</p>\n            </div>\n        </div>\n    </section>\n\n<section id=\"tamano\">\n        <h2>Qué te exigen según el tamaño de tu empresa</h2>\n        <p>La matriz de riesgos, el programa preventivo, la información a los trabajadores y el plan de emergencia son para <strong>todas</strong> las empresas. Lo que cambia con el tamaño es la estructura preventiva:</p>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Personas trabajadoras</th><th>Qué se agrega</th><th>Artículo DS 44</th></tr></thead>\n            <tbody>\n                <tr><td><strong>Hasta 25</strong></td><td>Sistema de gestión con los elementos mínimos del reglamento, apoyado en el instrumento de autoevaluación del organismo administrador (mutual o ISL).</td><td>64</td></tr>\n                <tr><td><strong>Entre 10 y 25</strong> por lugar de trabajo</td><td>Delegado de Seguridad y Salud en el Trabajo, si no funciona un Comité Paritario, elegido en asamblea por hasta dos años.</td><td>66</td></tr>\n                <tr><td><strong>Más de 25</strong> por empresa, faena, sucursal o agencia</td><td>Comité Paritario de Higiene y Seguridad.</td><td>23</td></tr>\n                <tr><td><strong>Hasta 100</strong></td><td>El representante legal debe pedir a su organismo administrador capacitación en gestión de riesgos, para sí o para quien designe.</td><td>65</td></tr>\n                <tr><td><strong>Más de 100</strong></td><td>Departamento de Prevención de Riesgos dirigido por un experto.</td><td>50</td></tr>\n            </tbody>\n        </table>\n        </div>\n    </section>\n\n<section id=\"matriz\">\n        <h2>1. Matriz de riesgos (MIPER)</h2>\n        <ul class=\"checklist\">\n            <li><strong>Existe y cubre todo:</strong> todos los procesos, tareas y puestos de trabajo (art. 7).</li>\n            <li><strong>Considera todos los riesgos:</strong> ergonómicos, psicosociales, violencia y acoso, los accidentes y enfermedades que ya ocurrieron y los programas de vigilancia, con enfoque de género.</li>\n            <li><strong>Tiene los elementos mínimos:</strong> identificación de peligros, evaluación, nivel de riesgo y medidas de control, con la metodología de la guía técnica del Instituto de Salud Pública.</li>\n            <li><strong>Está fechada y al día:</strong> se revisa al menos una vez al año y cada vez que cambian las condiciones, ocurre un accidente, se diagnostica una enfermedad profesional o aparece un riesgo grave e inminente.</li>\n            <li><strong>Está disponible:</strong> en los lugares de trabajo, informada a los trabajadores, al Comité o Delegado, a los dirigentes sindicales y a toda la línea de mando.</li>\n        </ul>\n    </section>\n\n<section id=\"programa\">\n        <h2>2. Programa de trabajo preventivo</h2>\n        <ul class=\"checklist\">\n            <li><strong>Plazo:</strong> elaborado o actualizado dentro de <strong>30 días corridos</strong> desde que se confeccionó o actualizó la MIPER (art. 8).</li>\n            <li><strong>Formalidad:</strong> por escrito, aprobado por el representante legal, con fecha de aprobación y de cada modificación.</li>\n            <li><strong>Contenido:</strong> medidas preventivas y correctivas, plazos y responsables; actividades para prevenir el consumo de alcohol y drogas y promover vida saludable; prevención en la conducción de vehículos cuando corresponda.</li>\n            <li><strong>Difusión:</strong> publicado en los lugares de trabajo o enviado por correo, con un ejemplar al Comité Paritario.</li>\n            <li><strong>Evaluación anual:</strong> al menos una vez al año se evalúa su cumplimiento y la eficacia de las acciones (art. 14).</li>\n        </ul>\n    </section>\n\n<section id=\"informacion\">\n        <h2>3. Información de riesgos y capacitación</h2>\n        <ul class=\"checklist\">\n            <li><strong>Información previa:</strong> cada persona recibe, antes de empezar y cada vez que cambian procesos, tecnologías o sustancias, la información de sus riesgos, las medidas preventivas y los procedimientos de trabajo seguro (art. 15).</li>\n            <li><strong>Capacitación:</strong> curso de al menos <strong>8 horas</strong>, con la periodicidad que fije el programa, que no puede exceder de dos años (art. 16).</li>\n            <li><strong>Elementos de protección personal:</strong> entregados sin costo, adecuados al riesgo y certificados; capacitación de uso de al menos una hora, con registro de asistentes, relatores y evaluaciones (art. 13).</li>\n        </ul>\n    </section>\n"
+    },
+    {
+      "tipo": "formulario"
+    },
+    {
+      "tipo": "html",
+      "html": "<section id=\"emergencia\">\n        <h2>4. Plan de emergencia y simulacro</h2>\n        <ul class=\"checklist\">\n            <li><strong>Plan vigente:</strong> uno o más planes de gestión, reducción y respuesta ante emergencias, catástrofes o desastres, internos o externos (art. 19).</li>\n            <li><strong>Informado:</strong> los trabajadores conocen los riesgos, cómo actuar y el procedimiento de evacuación y traslado de afectados.</li>\n            <li><strong>Ensayado:</strong> al menos <strong>una vez al año</strong>, simulando una emergencia real. Guarda el acta, la asistencia y las mejoras que salieron del ejercicio.</li>\n            <li><strong>Coordinado:</strong> si compartes el lugar con otras empresas o trabajadores independientes, se intercambian riesgos, medidas y planes de emergencia (art. 20).</li>\n        </ul>\n        <div class=\"callout callout-success\">\n            <span class=\"callout-icon\">✓</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">El punto que más se deja pasar</div>\n                <p>Muchas empresas tienen un plan escrito pero ningún registro de simulacro. En SVEA elaboramos el <a href=\"/planes-de-emergencia-y-evacuacion/\">plan de emergencia y evacuación</a> con mapa de riesgos, protocolos y planos en <strong>5 a 10 días hábiles</strong>, y te acompañamos en el simulacro.</p>\n            </div>\n        </div>\n    </section>\n\n<figure class=\"article-img\">\n        <img src=\"/img/articulos/escalera-evacuacion.webp\" alt=\"Checklist DS 44 - escalera de evacuación señalizada en un lugar de trabajo\" width=\"800\" height=\"533\" loading=\"lazy\" decoding=\"async\">\n        <figcaption>Vías de evacuación despejadas y señalizadas: parte de lo que se revisa junto con el plan de emergencia.</figcaption>\n    </figure>\n\n<section id=\"participacion\">\n        <h2>5. Comité Paritario o Delegado SST</h2>\n        <ul class=\"checklist\">\n            <li><strong>Comité constituido</strong> donde trabajan más de 25 personas, con el acta registrada en el sitio de la Dirección del Trabajo dentro de los 15 días hábiles siguientes a la elección.</li>\n            <li><strong>Reuniones mensuales</strong> y extraordinarias cuando ocurre un accidente grave o fatal o hay un riesgo grave e inminente, con actas que registren materias, acuerdos y plazos.</li>\n            <li><strong>Acuerdos por escrito</strong> a la empresa, y acceso del Comité a toda la documentación preventiva.</li>\n            <li><strong>Delegado SST</strong> entre 10 y 25 personas, elegido en asamblea con acta.</li>\n        </ul>\n    </section>\n\n<section id=\"registros\">\n        <h2>6. Reglamento interno, mapas de riesgo y registros</h2>\n        <ul class=\"checklist\">\n            <li><strong>Reglamento Interno de Higiene y Seguridad</strong> al día, entregado gratis a cada trabajador (art. 56).</li>\n            <li><strong>Mapas de riesgos</strong> visibles, con un esquema del lugar y los principales riesgos, actualizados cuando cambia la MIPER (art. 62).</li>\n            <li><strong>Registro documental</strong> fidedigno de toda la gestión preventiva, disponible para la fiscalización (art. 72), y estadísticas de accidentabilidad.</li>\n        </ul>\n    </section>\n\n<section id=\"multas\">\n        <h2>Multas: cuánto arriesgas</h2>\n        <p>Cuando fiscaliza la Dirección del Trabajo, las infracciones sin sanción especial se multan según la escala del <strong>artículo 506 del Código del Trabajo</strong>, por tamaño de empresa y gravedad:</p>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Tamaño de empresa</th><th>Rango de la multa</th></tr></thead>\n            <tbody>\n                <tr><td>Micro</td><td>1 a 5 UTM</td></tr>\n                <tr><td>Pequeña</td><td>1 a 10 UTM</td></tr>\n                <tr><td>Mediana</td><td>2 a 40 UTM</td></tr>\n                <tr><td>Grande</td><td>3 a 60 UTM</td></tr>\n            </tbody>\n        </table>\n        </div>\n        <p>La multa es por cada infracción constatada, y la DT las clasifica en su Tipificador. Para micro y pequeñas empresas, el inspector puede dar un plazo de al menos cinco días hábiles para corregir cuando no hay riesgo inminente (art. 506 bis), y una multa por normas de higiene y seguridad puede sustituirse, una vez al año, por un programa de asistencia al cumplimiento con el organismo administrador (art. 506 ter). Si fiscaliza la SEREMI de Salud, se aplica el sumario sanitario del Código Sanitario, cuyo artículo 174 contempla multas de un décimo de UTM hasta 1.000 UTM y la clausura.</p>\n    </section>\n\n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿Te falta el plan de emergencia o el simulacro?</h3><p>Plan de emergencia conforme al DS 44 en 5 a 10 días hábiles, con mapa de riesgos, protocolos y planos de evacuación.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20necesito%20cotizar%20un%20plan%20de%20emergencia%20DS%2044\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><div class=\"art-logos\" aria-label=\"Empresas que confían en SVEA\"><div class=\"logos-cinta art-logos-cinta\"><div class=\"art-logos-mitad\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"Logo 25M\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"Gespania\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"Grupo MBO\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"Nuevo Pudahuel\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"Nature's Farm\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"BLT\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"DB Santasalo\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"Animal Services\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"Lira\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"Fuchs Lubricants\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"DelArt Chocolat\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"Novametal\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div><div class=\"art-logos-mitad\" aria-hidden=\"true\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div></div></div></aside>\n<section id=\"preparar\">\n        <h2>Cómo prepararte para la visita</h2>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Responde el FUF</h4><p>Marca cada una de las 60 preguntas como cumple, no cumple o no aplica, con honestidad.</p></div></li>\n            <li><div class=\"step-content\"><h4>Arma la carpeta de evidencias</h4><p>MIPER fechada, programa firmado, registros de capacitación y EPP, acta del simulacro, actas del Comité o del Delegado.</p></div></li>\n            <li><div class=\"step-content\"><h4>Corrige lo que no cumple</h4><p>Empieza por lo que no existe: un documento incompleto se mejora; uno ausente es una infracción directa.</p></div></li>\n            <li><div class=\"step-content\"><h4>Pide apoyo a tu mutual</h4><p>El DS 44 permite pedir asistencia técnica al organismo administrador para elaborar y revisar la matriz.</p></div></li>\n        </ol>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (septiembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=1205298\" target=\"_blank\" rel=\"noopener\">Decreto 44 de 2024, Ministerio del Trabajo y Previsión Social</a></li><li><a href=\"https://www.dt.gob.cl/portal/1626/w3-article-127643.html\" target=\"_blank\" rel=\"noopener\">Dirección del Trabajo: página del DS 44, con el Formulario Único de Fiscalización y el Tipificador</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=207436\" target=\"_blank\" rel=\"noopener\">Código del Trabajo, arts. 506, 506 bis y 506 ter</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=5595\" target=\"_blank\" rel=\"noopener\">Código Sanitario, art. 174</a></li><li><a href=\"https://www.suseso.gob.cl/612/w3-article-760528.html\" target=\"_blank\" rel=\"noopener\">SUSESO: normativa del DS 44</a></li></ul>\n    </section>\n"
+    }
+  ],
+  "relacionados": {
+    "titulo": "Servicios relacionados",
+    "intro": "",
+    "tarjetas": [
+      {
+        "titulo": "Planes de Emergencia y Evacuación",
+        "texto": "Plan conforme al DS 44 con mapa de riesgos, protocolos, planos de evacuación y simulacros.",
+        "href": "/planes-de-emergencia-y-evacuacion/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Plan de Emergencia DS 44",
+        "texto": "Qué exige el decreto, contenido obligatorio del plan y simulacros.",
+        "href": "/plan-de-emergencia-ds-44-empresas-chile/",
+        "enlace": "Ver artículo →"
+      },
+      {
+        "titulo": "Plan de Emergencia Empresas",
+        "texto": "Guía completa del plan de emergencia y evacuación para empresas.",
+        "href": "/plan-de-emergencia-empresa-chile/",
+        "enlace": "Ver artículo →"
+      }
+    ]
+  },
+  "asunto": {
+    "prefijo": "[BLOG] Cotización Plan Emergencia - ",
+    "campo": "Empresa",
+    "id": "dynamic-subject-art-ds44"
+  }
+}

@@ -1,0 +1,386 @@
+{
+  "slug": "rechazo-observaciones-seremi",
+  "ruta": "/rechazo-observaciones-seremi/",
+  "migasOriginal": [
+    {
+      "texto": "Inicio",
+      "href": "/"
+    },
+    {
+      "texto": "Blog",
+      "href": "/blog/"
+    }
+  ],
+  "migaFinal": "Rechazo u observaciones de la SEREMI",
+  "categoria": "Permisos y Autorizaciones",
+  "h1": "La SEREMI rechazó u observó tu solicitud: cómo responder",
+  "bajada": "Diferencia entre observación y rechazo, cómo responder punto por punto, qué recursos tienes (reposición, jerárquico y revisión), en qué plazos, y qué pasa si la SEREMI de Salud no responde a tiempo.",
+  "fecha": "Septiembre 2026",
+  "actualizado": {
+    "iso": "2026-09-24",
+    "texto": "24 de septiembre de 2026"
+  },
+  "lectura": "8 min de lectura",
+  "autor": "Equipo técnico SVEA Consultores",
+  "cifras": [
+    {
+      "n": "5",
+      "l": "Días hábiles para reponer"
+    },
+    {
+      "n": "30",
+      "l": "Días hábiles para resolver"
+    },
+    {
+      "n": "6 meses",
+      "l": "Plazo máx. del procedimiento"
+    },
+    {
+      "n": "<24h",
+      "l": "Cotización SVEA"
+    }
+  ],
+  "indiceTitulo": "En este artículo",
+  "indice": [
+    {
+      "href": "#observacion-o-rechazo",
+      "texto": "Observación no es rechazo"
+    },
+    {
+      "href": "#responder",
+      "texto": "Cómo responder una observación"
+    },
+    {
+      "href": "#recursos",
+      "texto": "Si la SEREMI rechaza: los recursos"
+    },
+    {
+      "href": "#sin-respuesta",
+      "texto": "Si la SEREMI no responde"
+    },
+    {
+      "href": "#errores",
+      "texto": "Errores comunes"
+    },
+    {
+      "href": "#fuentes",
+      "texto": "Fuentes"
+    },
+    {
+      "href": "#faq",
+      "texto": "Preguntas frecuentes"
+    }
+  ],
+  "formulario": {
+    "titulo": "Cotiza la respuesta a tu observación o rechazo",
+    "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+    "ocultos": [
+      {
+        "name": "access_key",
+        "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+      },
+      {
+        "name": "subject",
+        "value": "Nueva cotización CTI (Blog) - SVEA Consultores",
+        "id": "dynamic-subject-art-rechazo"
+      },
+      {
+        "name": "from_name",
+        "value": "SVEA Consultores Blog - CTI"
+      },
+      {
+        "name": "redirect",
+        "value": "https://sveaconsultores.cl/gracias/"
+      },
+      {
+        "name": "Servicio",
+        "value": "Calificación Técnica Industrial"
+      },
+      {
+        "name": "Origen",
+        "value": "Artículo SEO - Rechazo u observaciones SEREMI"
+      }
+    ],
+    "campos": [
+      {
+        "label": "Nombre completo *",
+        "id": "art-nombre",
+        "name": "Nombre",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Ej: Juan Pérez",
+        "ancho": false
+      },
+      {
+        "label": "Empresa *",
+        "id": "art-empresa",
+        "name": "Empresa",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Nombre de tu empresa",
+        "ancho": false
+      },
+      {
+        "label": "Teléfono *",
+        "id": "art-telefono",
+        "name": "Teléfono",
+        "tipo": "tel",
+        "requerido": true,
+        "placeholder": "+569 1234 5678",
+        "ancho": false
+      },
+      {
+        "label": "Email *",
+        "id": "art-email",
+        "name": "Email",
+        "tipo": "email",
+        "requerido": true,
+        "placeholder": "correo@empresa.cl",
+        "ancho": false
+      },
+      {
+        "label": "Tipo de servicio",
+        "id": "art-tipo",
+        "name": "Tipo de Servicio",
+        "tipo": "select",
+        "requerido": false,
+        "placeholder": null,
+        "ancho": true,
+        "opciones": [
+          {
+            "value": "",
+            "texto": "Selecciona una opción",
+            "seleccionada": true,
+            "desactivada": true
+          },
+          {
+            "value": "Calificación Técnica Industrial",
+            "texto": "Calificación técnica industrial (CTI)",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Informe Sanitario",
+            "texto": "Informe sanitario",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Transporte de Residuos",
+            "texto": "Transporte de residuos",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Otro trámite SEREMI",
+            "texto": "Otro trámite ante la SEREMI",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "No estoy seguro",
+            "texto": "No estoy seguro",
+            "seleccionada": false,
+            "desactivada": false
+          }
+        ]
+      },
+      {
+        "label": "Mensaje (opcional)",
+        "id": "art-mensaje",
+        "name": "Mensaje",
+        "tipo": "textarea",
+        "requerido": false,
+        "placeholder": "¿Qué trámite ingresaste y qué te observó la SEREMI?",
+        "ancho": true,
+        "filas": 3
+      }
+    ],
+    "boton": "SOLICITAR COTIZACIÓN GRATUITA →",
+    "confianza": [
+      "Datos protegidos",
+      "Respuesta en menos de 24 hrs",
+      "Sin compromiso"
+    ],
+    "logos": [
+      {
+        "src": "/img/articulos/logo-25m.webp",
+        "alt": "Logo 25M",
+        "ancho": 400,
+        "alto": 85
+      },
+      {
+        "src": "/img/clientes/gespania.webp",
+        "alt": "Gespania",
+        "ancho": 299,
+        "alto": 149
+      },
+      {
+        "src": "/img/clientes/grupo-mbo.webp",
+        "alt": "Grupo MBO",
+        "ancho": 294,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/nuevo-pudahuel.webp",
+        "alt": "Nuevo Pudahuel",
+        "ancho": 329,
+        "alto": 77
+      },
+      {
+        "src": "/img/clientes/natures-farm.webp",
+        "alt": "Nature's Farm",
+        "ancho": 286,
+        "alto": 217
+      },
+      {
+        "src": "/img/clientes/blt-mini-bodegas.webp",
+        "alt": "BLT",
+        "ancho": 516,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/db-santasalo.webp",
+        "alt": "DB Santasalo",
+        "ancho": 388,
+        "alto": 127
+      },
+      {
+        "src": "/img/clientes/animal-services.webp",
+        "alt": "Animal Services",
+        "ancho": 215,
+        "alto": 162
+      },
+      {
+        "src": "/img/clientes/lira.webp",
+        "alt": "Lira",
+        "ancho": 242,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/fuchs.webp",
+        "alt": "Fuchs Lubricants",
+        "ancho": 495,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/delart-chocolat.webp",
+        "alt": "DelArt Chocolat",
+        "ancho": 443,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/novametal.webp",
+        "alt": "Novametal",
+        "ancho": 166,
+        "alto": 122
+      }
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      {
+        "p": "¿Cuánto plazo tengo para responder una observación de la SEREMI?",
+        "r": "El que fije la propia observación. El Código Sanitario permite a la autoridad dar por una sola vez un plazo para subsanar observaciones de forma, y la Ley 19.880 fija 5 días hábiles para completar solicitudes incompletas. Si necesitas más tiempo, pide una ampliación antes de que venza.",
+        "rTexto": "El que fije la propia observación. El Código Sanitario permite a la autoridad dar por una sola vez un plazo para subsanar observaciones de forma, y la Ley 19.880 fija 5 días hábiles para completar solicitudes incompletas. Si necesitas más tiempo, pide una ampliación antes de que venza."
+      },
+      {
+        "p": "¿Qué recurso presento si me rechazan la solicitud?",
+        "r": "El recurso de reposición, ante la misma SEREMI, dentro de 5 días hábiles desde la notificación, y en subsidio el jerárquico ante el superior (Ley 19.880, art. 59). La autoridad tiene hasta 30 días para resolverlos.",
+        "rTexto": "El recurso de reposición, ante la misma SEREMI, dentro de 5 días hábiles desde la notificación, y en subsidio el jerárquico ante el superior (Ley 19.880, art. 59). La autoridad tiene hasta 30 días para resolverlos."
+      },
+      {
+        "p": "¿Conviene recurrir o volver a presentar?",
+        "r": "Si la SEREMI se equivocó en los hechos o en la norma, recurre. Si el rechazo se debe a un antecedente que faltaba o estaba mal, suele ser más rápido corregir y presentar una nueva solicitud.",
+        "rTexto": "Si la SEREMI se equivocó en los hechos o en la norma, recurre. Si el rechazo se debe a un antecedente que faltaba o estaba mal, suele ser más rápido corregir y presentar una nueva solicitud."
+      },
+      {
+        "p": "¿Qué pasa si la SEREMI no responde en 30 días hábiles?",
+        "r": "Según el artículo 7 del Código Sanitario, la autorización se entiende concedida, salvo en las materias que por ley requieren autorización expresa. La Ley 19.880 permite además denunciar el incumplimiento y pedir un certificado de silencio (art. 64). Confirma antes qué régimen rige tu trámite, porque la Ley 21.770 se está implementando de forma gradual.",
+        "rTexto": "Según el artículo 7 del Código Sanitario, la autorización se entiende concedida, salvo en las materias que por ley requieren autorización expresa. La Ley 19.880 permite además denunciar el incumplimiento y pedir un certificado de silencio (art. 64). Confirma antes qué régimen rige tu trámite, porque la Ley 21.770 se está implementando de forma gradual."
+      },
+      {
+        "p": "¿Puedo pedir más plazo para responder?",
+        "r": "Sí. La Ley 19.880 permite ampliar los plazos hasta por la mitad de su duración, de oficio o a petición del interesado, siempre que se pida y se resuelva antes de que el plazo venza y no se perjudiquen derechos de terceros (art. 26).",
+        "rTexto": "Sí. La Ley 19.880 permite ampliar los plazos hasta por la mitad de su duración, de oficio o a petición del interesado, siempre que se pida y se resuelva antes de que el plazo venza y no se perjudiquen derechos de terceros (art. 26)."
+      },
+      {
+        "p": "¿Sirve reclamar en la OIRS?",
+        "r": "La OIRS sirve para dejar constancia de un retraso o pedir información sobre tu trámite, pero no reemplaza los recursos de la Ley 19.880 ni suspende sus plazos.",
+        "rTexto": "La OIRS sirve para dejar constancia de un retraso o pedir información sobre tu trámite, pero no reemplaza los recursos de la Ley 19.880 ni suspende sus plazos."
+      }
+    ]
+  },
+  "autorCaja": {
+    "inicial": "SC",
+    "nombre": "Equipo técnico SVEA Consultores",
+    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud y las municipalidades. Más de 250 proyectos gestionados. Cotización en menos de 24 horas."
+  },
+  "compartir": {
+    "titulo": "Compartir",
+    "enlaces": [
+      {
+        "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://sveaconsultores.cl/rechazo-observaciones-seremi/",
+        "texto": "in",
+        "titulo": "LinkedIn",
+        "externo": true
+      },
+      {
+        "href": "https://api.whatsapp.com/send?text=Rechazo%20u%20observaciones%20de%20la%20SEREMI%20https://sveaconsultores.cl/rechazo-observaciones-seremi/",
+        "texto": "wa",
+        "titulo": "WhatsApp",
+        "externo": true
+      },
+      {
+        "href": "mailto:?subject=Rechazo%20u%20observaciones%20de%20la%20SEREMI&body=Te%20comparto%20esta%20gu%C3%ADa%3A%20https://sveaconsultores.cl/rechazo-observaciones-seremi/",
+        "texto": "@",
+        "titulo": "Email",
+        "externo": false
+      }
+    ]
+  },
+  "bloques": [
+    {
+      "tipo": "html",
+      "html": "<p class=\"art-entrada\">\n        Ingresaste tu solicitud en <strong>SEREMI en Línea</strong> y la respuesta no fue la resolución favorable, sino una lista de <strong>observaciones</strong> o, peor, un <strong>rechazo</strong>. No es el fin del trámite: la ley da plazos y herramientas para responder, pero hay que usarlas a tiempo.\n    </p>\n\n<section id=\"observacion-o-rechazo\">\n        <h2>Observación no es rechazo</h2>\n        <p>Una <strong>observación</strong> es un requerimiento para corregir o completar la solicitud. El Código Sanitario (art. 7) permite a la autoridad sanitaria, cuando hay observaciones de forma, otorgar <strong>por una sola vez</strong> un plazo para subsanar o acompañar documentos, advirtiendo que si no se hace, la petición se tendrá por desistida. La Ley 19.880 tiene una regla parecida para las solicitudes incompletas: <strong>5 días</strong> para subsanar (art. 31).</p>\n        <p>Un <strong>rechazo</strong> es una resolución que deniega la solicitud, y debe ser fundada (Código Sanitario, art. 7). Contra ella proceden recursos.</p>\n        <div class=\"callout callout-warning\">\n            <span class=\"callout-icon\">!</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">El plazo se cuenta en días hábiles</div>\n                <p>Los plazos de la Ley 19.880 son de días hábiles (sábados, domingos y festivos no cuentan) y corren desde el día siguiente a la notificación (art. 25). Si necesitas más tiempo, pide la ampliación antes de que venza: puede concederse hasta por la mitad del plazo original (art. 26).</p>\n            </div>\n        </div>\n    </section>\n\n<section id=\"responder\">\n        <h2>Cómo responder una observación</h2>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Lee la observación completa</h4><p>Identifica cada punto y la norma o el antecedente al que se refiere.</p></div></li>\n            <li><div class=\"step-content\"><h4>Responde punto por punto</h4><p>Una carta o memoria que numere cada observación y diga qué se corrigió y dónde está el respaldo.</p></div></li>\n            <li><div class=\"step-content\"><h4>Corrige los documentos, no solo la carta</h4><p>Si la observación es al plano o a la memoria, sube la versión corregida.</p></div></li>\n            <li><div class=\"step-content\"><h4>Cárgalo en la plataforma dentro del plazo</h4><p>Por la misma solicitud en SEREMI en Línea. Guarda el comprobante de ingreso.</p></div></li>\n        </ol>\n        <p>Las observaciones más comunes son planos que no coinciden con la realidad del local, procesos o materias primas que faltan en la memoria, documentos vencidos y datos distintos entre un documento y otro. Antes de responder, revisa que la corrección no abra una contradicción nueva en otra parte del expediente: la SEREMI vuelve a revisar todo.</p>\n    </section>\n\n<figure class=\"article-img\">\n        <img src=\"/img/articulos/revision-documentos-seremi.webp\" alt=\"Rechazo u observaciones de la SEREMI - revisión de documentos para responder\" width=\"1200\" height=\"600\" loading=\"lazy\" decoding=\"async\">\n        <figcaption>Responder punto por punto, con los documentos corregidos, evita una segunda ronda de observaciones.</figcaption>\n    </figure>\n"
+    },
+    {
+      "tipo": "formulario"
+    },
+    {
+      "tipo": "html",
+      "html": "<section id=\"recursos\">\n        <h2>Si la SEREMI rechaza: los recursos</h2>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Recurso</th><th>Plazo</th><th>Ante quién</th><th>Ley 19.880</th></tr></thead>\n            <tbody>\n                <tr><td><strong>Reposición</strong></td><td>5 días hábiles desde la notificación</td><td>El mismo órgano que dictó el acto</td><td>Art. 59</td></tr>\n                <tr><td><strong>Jerárquico</strong></td><td>5 días, en subsidio de la reposición o directo</td><td>El superior jerárquico de quien dictó el acto</td><td>Art. 59</td></tr>\n                <tr><td><strong>Revisión extraordinaria</strong></td><td>1 año en los casos de las letras a) y b)</td><td>El superior jerárquico o, si no lo hay, la misma autoridad</td><td>Art. 60</td></tr>\n            </tbody>\n        </table>\n        </div>\n        <p>La autoridad tiene hasta <strong>30 días</strong> para resolver la reposición o el jerárquico, y la resolución que acoge el recurso puede modificar, reemplazar o dejar sin efecto el acto (art. 59). La revisión extraordinaria es para casos graves, como una resolución dictada sin el debido emplazamiento o con un error de hecho manifiesto y determinante (art. 60).</p>\n        <p>Muchas veces lo más rápido no es recurrir sino <strong>presentar una nueva solicitud</strong> que corrija la causa del rechazo. Decide según el motivo: si la SEREMI se equivocó, recurre; si faltaba algo, corrige y reingresa.</p>\n    </section>\n\n<section id=\"sin-respuesta\">\n        <h2>Qué pasa si la SEREMI no responde</h2>\n        <p>El Código Sanitario (art. 7) obliga a la autoridad sanitaria a pronunciarse sobre una solicitud de autorización dentro de <strong>30 días hábiles</strong> desde su ingreso. Si no lo hace, la autorización se entiende concedida, salvo en las materias que por ley requieren autorización expresa, que no pueden funcionar sin ella.</p>\n        <p>La Ley 19.880 agrega reglas generales: el procedimiento no puede exceder de <strong>6 meses</strong> (art. 27); con el plazo vencido, puedes denunciar el incumplimiento ante la autoridad y, si no se pronuncia en <strong>5 días</strong>, la solicitud se entiende aceptada, con un certificado que lo acredita (art. 64, silencio positivo). En ciertos casos el silencio es negativo, por ejemplo cuando se trata de impugnaciones o de solicitudes que afectan el patrimonio fiscal (art. 65). También puedes dejar constancia del retraso por la Oficina de Informaciones, Reclamos y Sugerencias (OIRS) de la SEREMI.</p>\n        <div class=\"callout callout-info\">\n            <span class=\"callout-icon\">i</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Ley Marco de Autorizaciones Sectoriales</div>\n                <p>La Ley 21.770, publicada el 29 de septiembre de 2025, fija plazos máximos y reglas de silencio administrativo para las autorizaciones sectoriales. Su procedimiento entra en vigencia de forma gradual, autorización por autorización, a medida que se publican los decretos que las clasifican. Antes de invocar el silencio, confirma qué régimen rige tu trámite.</p>\n            </div>\n        </div>\n        <p>Si obtienes una autorización sanitaria por silencio y la necesitas para tu patente, el artículo 26 de la Ley de Rentas Municipales pide acompañar una declaración jurada de que la autoridad no se pronunció en plazo y el comprobante de la solicitud.</p>\n    </section>\n\n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿Te observaron o rechazaron la solicitud?</h3><p>Revisamos la resolución, corregimos el expediente y preparamos la respuesta punto por punto. Cotización en menos de 24 horas.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20la%20SEREMI%20observ%C3%B3%20mi%20solicitud%20y%20necesito%20ayuda%20para%20responder\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><div class=\"art-logos\" aria-label=\"Empresas que confían en SVEA\"><div class=\"logos-cinta art-logos-cinta\"><div class=\"art-logos-mitad\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"Logo 25M\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"Gespania\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"Grupo MBO\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"Nuevo Pudahuel\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"Nature's Farm\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"BLT\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"DB Santasalo\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"Animal Services\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"Lira\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"Fuchs Lubricants\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"DelArt Chocolat\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"Novametal\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div><div class=\"art-logos-mitad\" aria-hidden=\"true\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div></div></div></aside>\n<section id=\"errores\">\n        <h2>Errores comunes</h2>\n        <div class=\"error-item\"><h4>Responder solo con una carta</h4><p>Si la observación es a un documento, hay que subir el documento corregido.</p></div>\n        <div class=\"error-item\"><h4>Dejar vencer el plazo</h4><p>Vencido el plazo de una observación de forma, la solicitud puede tenerse por desistida y hay que empezar de nuevo.</p></div>\n        <div class=\"error-item\"><h4>Recurrir cuando conviene reingresar</h4><p>Un recurso contra un rechazo bien fundado solo suma semanas. Si faltaba un antecedente, corrige y presenta de nuevo.</p></div>\n        <div class=\"error-item\"><h4>Contradecir el expediente</h4><p>La respuesta no puede cambiar datos (superficies, procesos, número de vehículos) sin corregirlos en todos los documentos.</p></div>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (septiembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=5595\" target=\"_blank\" rel=\"noopener\">Código Sanitario, art. 7</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=210676\" target=\"_blank\" rel=\"noopener\">Ley 19.880, bases de los procedimientos administrativos (arts. 25 a 27, 31, 59, 60, 64 y 65)</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=1216930\" target=\"_blank\" rel=\"noopener\">Ley 21.770, Ley Marco de Autorizaciones Sectoriales</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=18967\" target=\"_blank\" rel=\"noopener\">Ley de Rentas Municipales, DL 3.063, art. 26</a></li><li><a href=\"https://seremienlinea.minsal.cl/\" target=\"_blank\" rel=\"noopener\">SEREMI en Línea, Ministerio de Salud</a></li></ul>\n    </section>\n"
+    }
+  ],
+  "relacionados": {
+    "titulo": "Servicios relacionados",
+    "intro": "",
+    "tarjetas": [
+      {
+        "titulo": "Calificación Técnica Industrial",
+        "texto": "Expediente completo y respuesta a cada observación de la SEREMI hasta la resolución.",
+        "href": "/calificacion-tecnica-industrial/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Informe Sanitario",
+        "texto": "Expediente técnico y gestión ante la SEREMI para el informe sanitario favorable.",
+        "href": "/informe-sanitario/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Sumario sanitario",
+        "texto": "Qué hacer si la SEREMI te levanta un acta o te aplica una multa.",
+        "href": "/sumario-sanitario-seremi/",
+        "enlace": "Ver artículo →"
+      }
+    ]
+  },
+  "asunto": {
+    "prefijo": "[BLOG] Cotización CTI - ",
+    "campo": "Empresa",
+    "id": "dynamic-subject-art-rechazo"
+  }
+}

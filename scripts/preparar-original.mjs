@@ -13,8 +13,8 @@
  *   3. Todas las páginas van noindex y el robots.txt bloquea todo, para que
  *      Google no indexe una copia del sitio y compita consigo mismo.
  *
- * Desde el 24-sep ya no queda ninguna copia del WordPress en public/: las 27
- * páginas están rehechas en Astro (REHECHAS, abajo), incluidas /gracias/ y
+ * Desde el 24-sep ya no queda ninguna copia del WordPress en public/: todas
+ * las páginas están rehechas en Astro (REHECHAS, abajo), incluidas /gracias/ y
  * /politica-de-privacidad/. Los originales siguen en originales-wp/ como
  * fuente de verdad para scripts/verificar.mjs.
  *
@@ -87,7 +87,7 @@ function limpiar(html, ruta) {
 <div style="position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#161b18;color:#fff;
 font:400 12px/1.4 system-ui,sans-serif;padding:7px 12px;text-align:center">
 COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
-<a href="${BASE}/estado/" style="color:#9BEB6B">ver las 27 páginas</a>
+<a href="${BASE}/estado/" style="color:#9BEB6B">ver todas las páginas</a>
 </div>
 </body>`);
 
@@ -131,6 +131,8 @@ const REHECHAS = new Set([
   '/plan-de-emergencia-ds-44-empresas-chile/',
   '/plan-de-emergencia-empresa-chile/',
   '/que-es-informe-sanitario/',
+  // las guías nuevas (sep-2026), sin original en el WordPress
+  ...paginas.filter((p) => p.nueva).map((p) => p.ruta),
   '/blog/',
   // las dos páginas sueltas (src/pages/gracias.astro y politica-de-privacidad.astro)
   '/gracias/',

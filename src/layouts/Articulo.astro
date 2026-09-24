@@ -1,12 +1,14 @@
 ---
 /**
- * Plantilla de las nueve guías de «Recursos y guías».
+ * Plantilla de las guías de «Recursos y guías».
  *
  * En el WordPress cada artículo era una página HTML entera pegada dentro de
  * un widget de Elementor, con su propia hoja de estilos, sus scripts y su
- * barra de navegación. Aquí queda una sola plantilla y nueve archivos de
- * datos (src/contenido/articulos/<slug>.json), extraídos de ese HTML sin
- * quitar una palabra, un enlace, un H2/H3 ni un alt.
+ * barra de navegación. Aquí queda una sola plantilla y un archivo de
+ * datos por guía (src/contenido/articulos/<slug>.json): las nueve del
+ * WordPress, extraídas de ese HTML sin quitar una palabra, un enlace, un
+ * H2/H3 ni un alt, y las guías nuevas escritas para este sitio (éstas traen
+ * `actualizado`, que se muestra en la cabecera como «Actualizado el …»).
  *
  * El formato es de LECTURA, no de venta:
  *
@@ -134,7 +136,11 @@ const fuentesCSS = `
         <h1>{datos.h1}</h1>
         <p class="art-bajada">{datos.bajada}</p>
         <ul class="art-meta">
-          <li><time datetime={fechaISO}>{datos.fecha}</time></li>
+          {datos.actualizado ? (
+            <li>Actualizado el <time datetime={datos.actualizado.iso}>{datos.actualizado.texto}</time></li>
+          ) : (
+            <li><time datetime={fechaISO}>{datos.fecha}</time></li>
+          )}
           <li>{datos.lectura}</li>
           <li>Por {datos.autor}</li>
         </ul>
@@ -290,7 +296,7 @@ const fuentesCSS = `
   {COPIA && (
     <div class="aviso-copia">
       COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
-      <a href={`${BASE}/estado/`}>ver las 27 páginas</a>
+      <a href={`${BASE}/estado/`}>ver todas las páginas</a>
     </div>
   )}
 

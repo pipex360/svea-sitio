@@ -66,6 +66,12 @@ paginas.append({
                'form_id': 'form-landing-tr', 'subject_id': 'dynamic-subject-ltr'},
 })
 
+# las guías nuevas (sep-2026) no salen de 04-seo-por-url/: se escribieron a
+# mano en paginas.json con "nueva": true y se conservan tal cual al regenerar
+_actual = f'{RAIZ}/sitio/src/data/paginas.json'
+if os.path.exists(_actual):
+    paginas += [p for p in json.load(open(_actual, encoding='utf-8')) if p.get('nueva')]
+
 json.dump(paginas, open(f'{RAIZ}/sitio/src/data/paginas.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 
 ind = [p for p in paginas if 'noindex' not in p['robots'] and p['ruta'] != '/gracias/']

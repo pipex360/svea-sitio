@@ -1,0 +1,406 @@
+{
+  "slug": "patente-definitiva-permisos-seremi",
+  "ruta": "/patente-definitiva-permisos-seremi/",
+  "migasOriginal": [
+    {
+      "texto": "Inicio",
+      "href": "/"
+    },
+    {
+      "texto": "Blog",
+      "href": "/blog/"
+    }
+  ],
+  "migaFinal": "Patente definitiva y permisos SEREMI",
+  "categoria": "Permisos y Autorizaciones",
+  "h1": "Patente definitiva: qué permisos de la SEREMI necesitas",
+  "bajada": "De la patente provisoria a la definitiva: qué exige la municipalidad según tu rubro, cuándo entra la SEREMI de Salud con la calificación técnica o el informe sanitario, qué pasa si vence la provisoria y en qué orden conviene hacer los trámites.",
+  "fecha": "Septiembre 2026",
+  "actualizado": {
+    "iso": "2026-09-24",
+    "texto": "24 de septiembre de 2026"
+  },
+  "lectura": "9 min de lectura",
+  "autor": "Equipo técnico SVEA Consultores",
+  "cifras": [
+    {
+      "n": "2 años",
+      "l": "Plazo máx. de la provisoria"
+    },
+    {
+      "n": "4",
+      "l": "Categorías OGUC"
+    },
+    {
+      "n": "3-5",
+      "l": "Días hábiles expediente"
+    },
+    {
+      "n": "<24h",
+      "l": "Cotización SVEA"
+    }
+  ],
+  "indiceTitulo": "En este artículo",
+  "indice": [
+    {
+      "href": "#provisoria-definitiva",
+      "texto": "Patente provisoria y definitiva"
+    },
+    {
+      "href": "#que-exige",
+      "texto": "Qué te pedirán según tu rubro"
+    },
+    {
+      "href": "#calificacion",
+      "texto": "Calificación técnica o inofensiva"
+    },
+    {
+      "href": "#sanitario",
+      "texto": "Informe y autorización sanitaria"
+    },
+    {
+      "href": "#carga-combustible",
+      "texto": "Estudio de carga de combustible"
+    },
+    {
+      "href": "#cambio-destino",
+      "texto": "Cambio de destino o de giro"
+    },
+    {
+      "href": "#vence-provisoria",
+      "texto": "Si vence la patente provisoria"
+    },
+    {
+      "href": "#orden",
+      "texto": "Orden recomendado de los trámites"
+    },
+    {
+      "href": "#resolucion",
+      "texto": "Ya tengo mi resolución: qué sigue"
+    },
+    {
+      "href": "#como-ayuda",
+      "texto": "Cómo te ayuda SVEA"
+    },
+    {
+      "href": "#fuentes",
+      "texto": "Fuentes"
+    },
+    {
+      "href": "#faq",
+      "texto": "Preguntas frecuentes"
+    }
+  ],
+  "formulario": {
+    "titulo": "Cotiza los permisos para tu patente definitiva",
+    "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+    "ocultos": [
+      {
+        "name": "access_key",
+        "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+      },
+      {
+        "name": "subject",
+        "value": "Nueva cotización CTI (Blog) - SVEA Consultores",
+        "id": "dynamic-subject-art-patente"
+      },
+      {
+        "name": "from_name",
+        "value": "SVEA Consultores Blog - CTI"
+      },
+      {
+        "name": "redirect",
+        "value": "https://sveaconsultores.cl/gracias/"
+      },
+      {
+        "name": "Servicio",
+        "value": "Calificación Técnica Industrial"
+      },
+      {
+        "name": "Origen",
+        "value": "Artículo SEO - Patente definitiva"
+      }
+    ],
+    "campos": [
+      {
+        "label": "Nombre completo *",
+        "id": "art-nombre",
+        "name": "Nombre",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Ej: Juan Pérez",
+        "ancho": false
+      },
+      {
+        "label": "Empresa *",
+        "id": "art-empresa",
+        "name": "Empresa",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Nombre de tu empresa",
+        "ancho": false
+      },
+      {
+        "label": "Teléfono *",
+        "id": "art-telefono",
+        "name": "Teléfono",
+        "tipo": "tel",
+        "requerido": true,
+        "placeholder": "+569 1234 5678",
+        "ancho": false
+      },
+      {
+        "label": "Email *",
+        "id": "art-email",
+        "name": "Email",
+        "tipo": "email",
+        "requerido": true,
+        "placeholder": "correo@empresa.cl",
+        "ancho": false
+      },
+      {
+        "label": "Tipo de servicio",
+        "id": "art-tipo",
+        "name": "Tipo de Servicio",
+        "tipo": "select",
+        "requerido": false,
+        "placeholder": null,
+        "ancho": true,
+        "opciones": [
+          {
+            "value": "",
+            "texto": "Selecciona una opción",
+            "seleccionada": true,
+            "desactivada": true
+          },
+          {
+            "value": "Calificación Técnica Industrial",
+            "texto": "Calificación técnica industrial (CTI)",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Calificación Inofensiva",
+            "texto": "Calificación inofensiva",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Informe Sanitario",
+            "texto": "Informe sanitario",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Estudio de Carga de Combustible",
+            "texto": "Estudio de carga de combustible",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "No estoy seguro",
+            "texto": "No estoy seguro",
+            "seleccionada": false,
+            "desactivada": false
+          }
+        ]
+      },
+      {
+        "label": "Mensaje (opcional)",
+        "id": "art-mensaje",
+        "name": "Mensaje",
+        "tipo": "textarea",
+        "requerido": false,
+        "placeholder": "¿Qué actividad realizas, en qué comuna y qué te pidió la municipalidad?",
+        "ancho": true,
+        "filas": 3
+      }
+    ],
+    "boton": "SOLICITAR COTIZACIÓN GRATUITA →",
+    "confianza": [
+      "Datos protegidos",
+      "Respuesta en menos de 24 hrs",
+      "Sin compromiso"
+    ],
+    "logos": [
+      {
+        "src": "/img/articulos/logo-25m.webp",
+        "alt": "Logo 25M",
+        "ancho": 400,
+        "alto": 85
+      },
+      {
+        "src": "/img/clientes/gespania.webp",
+        "alt": "Gespania",
+        "ancho": 299,
+        "alto": 149
+      },
+      {
+        "src": "/img/clientes/grupo-mbo.webp",
+        "alt": "Grupo MBO",
+        "ancho": 294,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/nuevo-pudahuel.webp",
+        "alt": "Nuevo Pudahuel",
+        "ancho": 329,
+        "alto": 77
+      },
+      {
+        "src": "/img/clientes/natures-farm.webp",
+        "alt": "Nature's Farm",
+        "ancho": 286,
+        "alto": 217
+      },
+      {
+        "src": "/img/clientes/blt-mini-bodegas.webp",
+        "alt": "BLT",
+        "ancho": 516,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/db-santasalo.webp",
+        "alt": "DB Santasalo",
+        "ancho": 388,
+        "alto": 127
+      },
+      {
+        "src": "/img/clientes/animal-services.webp",
+        "alt": "Animal Services",
+        "ancho": 215,
+        "alto": 162
+      },
+      {
+        "src": "/img/clientes/lira.webp",
+        "alt": "Lira",
+        "ancho": 242,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/fuchs.webp",
+        "alt": "Fuchs Lubricants",
+        "ancho": 495,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/delart-chocolat.webp",
+        "alt": "DelArt Chocolat",
+        "ancho": 443,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/novametal.webp",
+        "alt": "Novametal",
+        "ancho": 166,
+        "alto": 122
+      }
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      {
+        "p": "¿Cuál es la diferencia entre patente provisoria y definitiva?",
+        "r": "La provisoria te permite funcionar mientras acreditas los permisos que faltan; la definitiva se otorga cuando ya acompañaste todos los permisos sanitarios, de emplazamiento y los que exijan leyes especiales. Ambas están reguladas en el artículo 26 de la Ley de Rentas Municipales (DL 3.063).",
+        "rTexto": "La provisoria te permite funcionar mientras acreditas los permisos que faltan; la definitiva se otorga cuando ya acompañaste todos los permisos sanitarios, de emplazamiento y los que exijan leyes especiales. Ambas están reguladas en el artículo 26 de la Ley de Rentas Municipales (DL 3.063)."
+      },
+      {
+        "p": "¿Cuánto dura la patente provisoria?",
+        "r": "Según el texto vigente del artículo 26 del DL 3.063, la municipalidad fija un plazo para acreditar los permisos pendientes que no puede exceder de dos años desde que se otorgó la provisoria, extensible por una sola vez hasta un año adicional si presentas un plan de trabajo 60 días antes del vencimiento. Cada municipalidad define el plazo concreto dentro de ese tope.",
+        "rTexto": "Según el texto vigente del artículo 26 del DL 3.063, la municipalidad fija un plazo para acreditar los permisos pendientes que no puede exceder de dos años desde que se otorgó la provisoria, extensible por una sola vez hasta un año adicional si presentas un plan de trabajo 60 días antes del vencimiento. Cada municipalidad define el plazo concreto dentro de ese tope."
+      },
+      {
+        "p": "¿Qué permisos de la SEREMI piden para la patente definitiva?",
+        "r": "Depende del rubro. Industrias y bodegas necesitan la calificación técnica de la SEREMI (OGUC, art. 4.14.2) y las industrias, además, el informe sanitario previo (Código Sanitario, art. 83). Los establecimientos de alimentos necesitan autorización sanitaria (DS 977). Oficinas y servicios profesionales normalmente no requieren permisos de la SEREMI.",
+        "rTexto": "Depende del rubro. Industrias y bodegas necesitan la calificación técnica de la SEREMI (OGUC, art. 4.14.2) y las industrias, además, el informe sanitario previo (Código Sanitario, art. 83). Los establecimientos de alimentos necesitan autorización sanitaria (DS 977). Oficinas y servicios profesionales normalmente no requieren permisos de la SEREMI."
+      },
+      {
+        "p": "¿Qué pasa si vence la patente provisoria sin los permisos?",
+        "r": "La patente provisoria caduca de pleno derecho y debes cesar de inmediato la actividad. Lo mismo ocurre si la SEREMI rechaza la autorización sanitaria que tenías en trámite.",
+        "rTexto": "La patente provisoria caduca de pleno derecho y debes cesar de inmediato la actividad. Lo mismo ocurre si la SEREMI rechaza la autorización sanitaria que tenías en trámite."
+      },
+      {
+        "p": "¿El estudio de carga de combustible lo pide la SEREMI?",
+        "r": "No. Es una exigencia de la Ordenanza General de Urbanismo y Construcciones que revisa la Dirección de Obras, por ejemplo al evaluar un cambio de destino o una bodega con mercadería combustible. Suele ir en el mismo expediente de la patente.",
+        "rTexto": "No. Es una exigencia de la Ordenanza General de Urbanismo y Construcciones que revisa la Dirección de Obras, por ejemplo al evaluar un cambio de destino o una bodega con mercadería combustible. Suele ir en el mismo expediente de la patente."
+      },
+      {
+        "p": "¿Cuánto demora juntar los permisos?",
+        "r": "En SVEA preparamos el expediente en 3 a 5 días hábiles. Luego corre el plazo de cada organismo: para autorizaciones sanitarias, el Código Sanitario da 30 días hábiles desde el ingreso.",
+        "rTexto": "En SVEA preparamos el expediente en 3 a 5 días hábiles. Luego corre el plazo de cada organismo: para autorizaciones sanitarias, el Código Sanitario da 30 días hábiles desde el ingreso."
+      }
+    ]
+  },
+  "autorCaja": {
+    "inicial": "SC",
+    "nombre": "Equipo técnico SVEA Consultores",
+    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud y las municipalidades. Más de 250 proyectos gestionados. Cotización en menos de 24 horas."
+  },
+  "compartir": {
+    "titulo": "Compartir",
+    "enlaces": [
+      {
+        "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://sveaconsultores.cl/patente-definitiva-permisos-seremi/",
+        "texto": "in",
+        "titulo": "LinkedIn",
+        "externo": true
+      },
+      {
+        "href": "https://api.whatsapp.com/send?text=Patente%20definitiva%20y%20permisos%20SEREMI%20https://sveaconsultores.cl/patente-definitiva-permisos-seremi/",
+        "texto": "wa",
+        "titulo": "WhatsApp",
+        "externo": true
+      },
+      {
+        "href": "mailto:?subject=Patente%20definitiva%20y%20permisos%20SEREMI&body=Te%20comparto%20esta%20gu%C3%ADa%3A%20https://sveaconsultores.cl/patente-definitiva-permisos-seremi/",
+        "texto": "@",
+        "titulo": "Email",
+        "externo": false
+      }
+    ]
+  },
+  "bloques": [
+    {
+      "tipo": "html",
+      "html": "<p class=\"art-entrada\">\n        Muchos negocios parten con <strong>patente provisoria</strong> y descubren, meses después, que la municipalidad no les dará la <strong>patente definitiva</strong> hasta que acrediten los permisos que faltaban. Buena parte de esos permisos los emite la <strong>SEREMI de Salud</strong>, y cuáles te van a pedir depende de lo que hagas en el local: no es lo mismo una oficina que una bodega, una cocina o un taller.\n    </p>\n\n<section id=\"provisoria-definitiva\">\n        <h2>Patente provisoria y patente definitiva: la diferencia</h2>\n        <p>Las reglas están en el <strong>artículo 26 de la Ley de Rentas Municipales</strong> (DL 3.063). La municipalidad debe otorgar la <strong>patente definitiva</strong> de inmediato cuando el contribuyente acompaña todos los permisos requeridos, «tanto de orden sanitario, como de emplazamiento según las normas de zonificación del Plan Regulador», y los que exijan leyes especiales. Las patentes de profesionales y de sociedades de profesionales no requieren permiso alguno.</p>\n        <p>La <strong>patente provisoria</strong> existe para no frenar el inicio de la actividad. La municipalidad debe otorgarla de inmediato si se cumplen cuatro condiciones:</p>\n        <ul class=\"checklist\">\n            <li><strong>Emplazamiento:</strong> la actividad está permitida en esa dirección según el plan regulador.</li>\n            <li><strong>Autorización sanitaria expresa:</strong> si tu actividad es de las que el DFL 1 de 1989 del Ministerio de Salud exige con autorización expresa, debes acompañarla ya obtenida.</li>\n            <li><strong>Otras autorizaciones sanitarias:</strong> para el resto de las actividades que la requieren, basta acreditar que la <strong>solicitaste</strong> ante la SEREMI.</li>\n            <li><strong>Leyes especiales:</strong> los permisos que exijan otras leyes, según el caso.</li>\n        </ul>\n        <p>Con la provisoria vigente, la municipalidad fija un plazo para que acredites lo que falta. Según el texto vigente del artículo 26, ese plazo <strong>no puede exceder de dos años</strong> desde que se otorgó la patente provisoria, y se puede extender <strong>una sola vez, por hasta un año adicional</strong>, si presentas un plan de trabajo 60 días antes del vencimiento.</p>\n        <div class=\"callout callout-info\">\n            <span class=\"callout-icon\">i</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Cuando la DOM no alcanza a revisar</div>\n                <p>Si la Dirección de Obras debe verificar el funcionamiento, tiene 30 días corridos desde la provisoria. Si no concurre o no observa nada, la provisoria se vuelve definitiva por el solo ministerio de la ley, <strong>siempre que tengas los permisos sanitarios</strong>.</p>\n            </div>\n        </div>\n    </section>\n\n<section id=\"que-exige\">\n        <h2>Qué te pedirán para la patente definitiva según tu rubro</h2>\n        <p>Cada municipalidad arma su lista, pero el patrón se repite. Confírmalo siempre en el departamento de patentes de tu comuna.</p>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Rubro</th><th>Permisos que suelen pedir</th><th>Base normativa</th></tr></thead>\n            <tbody>\n                <tr><td><strong>Oficina o servicios profesionales</strong></td><td>Patente profesional sin permisos; para otras oficinas, uso de suelo y recepción del inmueble.</td><td>DL 3.063, art. 26</td></tr>\n                <tr><td><strong>Bodega o centro de distribución</strong></td><td>Calificación técnica de la SEREMI (establecimiento de bodegaje) y, según el edificio, estudio de carga de combustible.</td><td>OGUC, arts. 4.14.2 y 4.3.4</td></tr>\n                <tr><td><strong>Taller, fábrica o planta</strong></td><td>Calificación técnica industrial e informe sanitario de la SEREMI.</td><td>Código Sanitario, art. 83; OGUC, art. 4.14.2</td></tr>\n                <tr><td><strong>Restaurante, cocina o elaboración de alimentos</strong></td><td>Autorización sanitaria del establecimiento de alimentos.</td><td>DS 977 (Reglamento Sanitario de los Alimentos), art. 7</td></tr>\n                <tr><td><strong>Local en un inmueble con otro destino</strong></td><td>Autorización de cambio de destino de la DOM y recepción de las obras.</td><td>LGUC, art. 145; OGUC, art. 5.1.4</td></tr>\n            </tbody>\n        </table>\n        </div>\n        <h3>Uso de suelo y recepción del inmueble</h3>\n        <p>El primer filtro es municipal. El <strong>certificado de informaciones previas</strong> de la Dirección de Obras te dice qué usos permite el plan regulador en esa dirección. Además, la Ley General de Urbanismo y Construcciones (art. 145) dispone que ninguna obra puede habitarse o destinarse a uso alguno antes de su <strong>recepción definitiva</strong>: si el local tiene ampliaciones sin recepción, la patente definitiva se complica aunque tengas todo lo sanitario.</p>\n    </section>\n\n<section id=\"calificacion\">\n        <h2>Calificación técnica industrial o actividad inofensiva</h2>\n        <p>La Ordenanza General de Urbanismo y Construcciones (art. 4.14.2) dispone que los <strong>establecimientos industriales o de bodegaje</strong> sean calificados caso a caso por la SEREMI de Salud, según los riesgos que puedan causar a sus trabajadores, al vecindario y a la comunidad. Hay cuatro categorías: <strong>peligroso</strong>, <strong>insalubre o contaminante</strong>, <strong>molesto</strong> e <strong>inofensivo</strong>. La categoría define en qué zonas del plan regulador puede funcionar la actividad (art. 4.14.3).</p>\n        <p>Para las industrias, el Código Sanitario (art. 83) es explícito: las municipalidades no pueden otorgar <strong>patentes definitivas</strong> para la instalación, ampliación o traslado de industrias sin un informe previo de la autoridad sanitaria. Si quieres el detalle del trámite, revisa nuestras guías de <a href=\"/calificacion-tecnica-industrial-chile/\">calificación técnica industrial</a> y de <a href=\"/calificacion-inofensiva-seremi-2026/\">calificación inofensiva</a>.</p>\n    </section>\n\n<figure class=\"article-img\">\n        <img src=\"/img/articulos/bodega-mercaderia-embalada.webp\" alt=\"Patente definitiva - bodega con mercadería embalada que requiere calificación de la SEREMI\" width=\"1200\" height=\"798\" loading=\"lazy\" decoding=\"async\">\n        <figcaption>Las bodegas y los establecimientos industriales necesitan la calificación de la SEREMI antes de la patente definitiva.</figcaption>\n    </figure>\n"
+    },
+    {
+      "tipo": "formulario"
+    },
+    {
+      "tipo": "html",
+      "html": "<section id=\"sanitario\">\n        <h2>Informe sanitario y autorización sanitaria</h2>\n        <p>Son dos documentos distintos que a menudo se confunden. El <strong>informe sanitario</strong> es el pronunciamiento de la SEREMI que la municipalidad necesita para las industrias (Código Sanitario, art. 83). La <strong>autorización sanitaria</strong> es el permiso de funcionamiento que exigen reglamentos específicos, como el de alimentos: el DS 977 pide, entre otros antecedentes, la autorización municipal según plano regulador, el plano de planta y la descripción de los procesos (art. 7).</p>\n        <p>Por regla general, el Código Sanitario (art. 7) da a la autoridad sanitaria <strong>30 días hábiles</strong> para pronunciarse sobre una solicitud de autorización. Si no lo hace, la autorización se entiende concedida, salvo en las materias que por ley requieren autorización expresa. Más detalle en nuestra guía del <a href=\"/que-es-informe-sanitario/\">informe sanitario</a>.</p>\n    </section>\n\n<section id=\"carga-combustible\">\n        <h2>Estudio de carga de combustible: cuándo aparece</h2>\n        <p>No es un permiso de la SEREMI, pero suele ir en el mismo expediente. La OGUC (art. 4.3.4) usa la <strong>densidad de carga combustible</strong> para fijar la resistencia al fuego de un edificio según su destino, y por eso la DOM puede pedir un <a href=\"/estudio-de-carga-combustible-chile/\">estudio de carga de combustible</a> en un cambio de destino o una bodega.</p>\n    </section>\n\n<section id=\"cambio-destino\">\n        <h2>Cambio de destino o de giro</h2>\n        <p>Si el local fue construido para otro uso, necesitas la <strong>autorización de cambio de destino</strong> de la DOM (OGUC, art. 5.1.4). La DOM la informa favorablemente si el nuevo uso cumple el uso de suelo, las normas de accesibilidad universal y las de seguridad, entre ellas las de protección contra incendio.</p>\n        <p>Cambiar de giro también reabre trámites: un establecimiento de alimentos no puede usarse para un fin distinto del autorizado (DS 977, art. 12), y la calificación técnica refleja los procesos que declaraste. Si cambian, revisa si corresponde una nueva.</p>\n    </section>\n\n<section id=\"vence-provisoria\">\n        <h2>Qué pasa si vence la patente provisoria</h2>\n        <div class=\"callout callout-warning\">\n            <span class=\"callout-icon\">!</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">La provisoria caduca de pleno derecho</div>\n                <p>Según el artículo 26, si se rechaza la autorización sanitaria que tenías en trámite, si se rechazan los permisos pendientes o si vence el plazo que dio la municipalidad para obtenerlos, <strong>la patente provisoria caduca de pleno derecho</strong> y debes cesar de inmediato la actividad. Seguir operando con la patente caducada expone a las sanciones del Título X de la misma ley.</p>\n            </div>\n        </div>\n        <p>Anota desde el primer día cuándo vence el plazo municipal y la fecha, 60 días antes, para pedir la extensión.</p>\n    </section>\n\n<section id=\"orden\">\n        <h2>Orden recomendado de los trámites</h2>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Certificado de informaciones previas</h4><p>Antes de arrendar o invertir, confirma en la DOM que tu actividad está permitida en esa dirección.</p></div></li>\n            <li><div class=\"step-content\"><h4>Lista de requisitos de tu comuna</h4><p>Pide al departamento de patentes los permisos que exige para tu rubro y anota cuáles se pueden presentar después con la provisoria.</p></div></li>\n            <li><div class=\"step-content\"><h4>Inmueble en regla</h4><p>Cambio de destino y recepción de obras si corresponde, junto con el estudio de carga de combustible cuando la DOM lo pida.</p></div></li>\n            <li><div class=\"step-content\"><h4>Calificación técnica en la SEREMI</h4><p>Para industrias y bodegas. Preparamos el expediente en <strong>3 a 5 días hábiles</strong> y lo ingresamos en SEREMI en Línea.</p></div></li>\n            <li><div class=\"step-content\"><h4>Informe o autorización sanitaria</h4><p>Según tu rubro. Muchas veces avanza en paralelo con la calificación.</p></div></li>\n            <li><div class=\"step-content\"><h4>Patente definitiva</h4><p>Con todos los permisos acreditados, la municipalidad debe otorgarla de inmediato.</p></div></li>\n        </ol>\n    </section>\n\n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿Tienes patente provisoria y te faltan los permisos de la SEREMI?</h3><p>Revisamos tu caso, te decimos qué te falta y preparamos el expediente en 3 a 5 días hábiles. Cotización en menos de 24 horas.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20necesito%20los%20permisos%20de%20la%20SEREMI%20para%20mi%20patente%20definitiva\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><div class=\"art-logos\" aria-label=\"Empresas que confían en SVEA\"><div class=\"logos-cinta art-logos-cinta\"><div class=\"art-logos-mitad\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"Logo 25M\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"Gespania\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"Grupo MBO\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"Nuevo Pudahuel\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"Nature's Farm\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"BLT\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"DB Santasalo\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"Animal Services\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"Lira\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"Fuchs Lubricants\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"DelArt Chocolat\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"Novametal\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div><div class=\"art-logos-mitad\" aria-hidden=\"true\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div></div></div></aside>\n<section id=\"resolucion\">\n        <h2>Ya tengo mi resolución de la SEREMI: qué significa y qué viene después</h2>\n        <ul class=\"checklist\">\n            <li><strong>Preséntala en la municipalidad:</strong> con todos los permisos acompañados, el artículo 26 del DL 3.063 obliga a otorgar la patente definitiva de inmediato. Si tenías provisoria, pide expresamente el cambio.</li>\n            <li><strong>Revisa su vigencia:</strong> el Código Sanitario (art. 7) fija para las autorizaciones sanitarias una duración mínima de tres años, que se prorroga automáticamente mientras no se deje sin efecto. La calificación, en cambio, describe los procesos que declaraste: si cambian, hay que revisarla.</li>\n            <li><strong>Cumple sus condiciones:</strong> operar fuera de lo autorizado es una infracción.</li>\n            <li><strong>Espera fiscalización:</strong> la autoridad sanitaria puede inspeccionar en cualquier momento (Código Sanitario, art. 155). Si detecta infracciones, abre un <a href=\"/sumario-sanitario-seremi/\">sumario sanitario</a>, y si cancela una autorización lo comunica a la municipalidad para cancelar la patente (art. 175).</li>\n        </ul>\n    </section>\n\n<section id=\"como-ayuda\">\n        <h2>Cómo te ayuda SVEA Consultores</h2>\n        <p>Preparamos la <a href=\"/calificacion-tecnica-industrial/\">calificación técnica industrial</a>, el <a href=\"/informe-sanitario/\">informe sanitario</a> y el <a href=\"/estudio-de-carga-de-combustible/\">estudio de carga de combustible</a>, y respondemos cada observación hasta la resolución. Más de 250 proyectos gestionados.</p>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (septiembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=18967\" target=\"_blank\" rel=\"noopener\">Ley de Rentas Municipales, DL 3.063 (texto refundido), art. 26</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=5595\" target=\"_blank\" rel=\"noopener\">Código Sanitario, arts. 7, 83, 155 y 175</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=8201\" target=\"_blank\" rel=\"noopener\">Ordenanza General de Urbanismo y Construcciones, arts. 4.3.4, 4.14.2 y 5.1.4</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=13560\" target=\"_blank\" rel=\"noopener\">Ley General de Urbanismo y Construcciones, art. 145</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=71271\" target=\"_blank\" rel=\"noopener\">Reglamento Sanitario de los Alimentos, DS 977, arts. 7 a 12</a></li><li><a href=\"https://seremienlinea.minsal.cl/\" target=\"_blank\" rel=\"noopener\">SEREMI en Línea, Ministerio de Salud</a></li></ul>\n    </section>\n"
+    }
+  ],
+  "relacionados": {
+    "titulo": "Servicios relacionados",
+    "intro": "",
+    "tarjetas": [
+      {
+        "titulo": "Calificación Técnica Industrial",
+        "texto": "Expediente completo y tramitación ante la SEREMI de Salud para industrias y bodegas.",
+        "href": "/calificacion-tecnica-industrial/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Informe Sanitario",
+        "texto": "Expediente técnico y gestión ante la SEREMI para el informe sanitario favorable.",
+        "href": "/informe-sanitario/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Estudio de Carga de Combustible",
+        "texto": "Cálculo de la carga de fuego según NCh 1916 e informe firmado por profesional.",
+        "href": "/estudio-de-carga-de-combustible/",
+        "enlace": "Conocer servicio →"
+      }
+    ]
+  },
+  "asunto": {
+    "prefijo": "[BLOG] Cotización CTI - ",
+    "campo": "Empresa",
+    "id": "dynamic-subject-art-patente"
+  }
+}

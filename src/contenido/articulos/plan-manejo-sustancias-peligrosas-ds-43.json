@@ -1,0 +1,383 @@
+{
+  "slug": "plan-manejo-sustancias-peligrosas-ds-43",
+  "ruta": "/plan-manejo-sustancias-peligrosas-ds-43/",
+  "migasOriginal": [
+    {
+      "texto": "Inicio",
+      "href": "/"
+    },
+    {
+      "texto": "Blog",
+      "href": "/blog/"
+    }
+  ],
+  "migaFinal": "Sustancias peligrosas DS 43",
+  "categoria": "Residuos Peligrosos",
+  "h1": "Plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye",
+  "bajada": "Cuándo el DS 43 exige autorización sanitaria para almacenar sustancias peligrosas, dónde puedes guardarlas según la cantidad, qué documentos forman el plan de manejo y qué se declara cada semestre.",
+  "fecha": "Septiembre 2026",
+  "actualizado": {
+    "iso": "2026-09-24",
+    "texto": "24 de septiembre de 2026"
+  },
+  "lectura": "9 min de lectura",
+  "autor": "Equipo técnico SVEA Consultores",
+  "cifras": [
+    {
+      "n": "10 t",
+      "l": "Inflamables: umbral de autorización"
+    },
+    {
+      "n": "30 t",
+      "l": "Otras clases"
+    },
+    {
+      "n": "2/año",
+      "l": "Declaraciones (jun y dic)"
+    },
+    {
+      "n": "<24h",
+      "l": "Cotización SVEA"
+    }
+  ],
+  "indiceTitulo": "En este artículo",
+  "indice": [
+    {
+      "href": "#que-regula",
+      "texto": "Qué regula el DS 43"
+    },
+    {
+      "href": "#autorizacion",
+      "texto": "Cuándo necesitas autorización"
+    },
+    {
+      "href": "#donde",
+      "texto": "Dónde almacenar según la cantidad"
+    },
+    {
+      "href": "#plan",
+      "texto": "Qué incluye el plan de manejo"
+    },
+    {
+      "href": "#declaracion",
+      "texto": "Declaración semestral y cierre"
+    },
+    {
+      "href": "#carga-combustible",
+      "texto": "Relación con la carga de combustible"
+    },
+    {
+      "href": "#errores",
+      "texto": "Errores comunes"
+    },
+    {
+      "href": "#fuentes",
+      "texto": "Fuentes"
+    },
+    {
+      "href": "#faq",
+      "texto": "Preguntas frecuentes"
+    }
+  ],
+  "formulario": {
+    "titulo": "Cotiza tu plan de sustancias peligrosas sin compromiso",
+    "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+    "ocultos": [
+      {
+        "name": "access_key",
+        "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+      },
+      {
+        "name": "subject",
+        "value": "Nueva cotización Manejo de residuos (Blog) - SVEA Consultores",
+        "id": "dynamic-subject-art-ds43"
+      },
+      {
+        "name": "from_name",
+        "value": "SVEA Consultores Blog - Manejo de residuos"
+      },
+      {
+        "name": "redirect",
+        "value": "https://sveaconsultores.cl/gracias/"
+      },
+      {
+        "name": "Servicio",
+        "value": "Manejo de Residuos Peligrosos"
+      },
+      {
+        "name": "Origen",
+        "value": "Artículo SEO - Sustancias peligrosas DS 43"
+      }
+    ],
+    "campos": [
+      {
+        "label": "Nombre completo *",
+        "id": "art-nombre",
+        "name": "Nombre",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Ej: Juan Pérez",
+        "ancho": false
+      },
+      {
+        "label": "Empresa *",
+        "id": "art-empresa",
+        "name": "Empresa",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Nombre de tu empresa",
+        "ancho": false
+      },
+      {
+        "label": "Teléfono *",
+        "id": "art-telefono",
+        "name": "Teléfono",
+        "tipo": "tel",
+        "requerido": true,
+        "placeholder": "+569 1234 5678",
+        "ancho": false
+      },
+      {
+        "label": "Email *",
+        "id": "art-email",
+        "name": "Email",
+        "tipo": "email",
+        "requerido": true,
+        "placeholder": "correo@empresa.cl",
+        "ancho": false
+      },
+      {
+        "label": "Tipo de servicio",
+        "id": "art-tipo",
+        "name": "Tipo de Servicio",
+        "tipo": "select",
+        "requerido": false,
+        "placeholder": null,
+        "ancho": true,
+        "opciones": [
+          {
+            "value": "",
+            "texto": "Selecciona una opción",
+            "seleccionada": true,
+            "desactivada": true
+          },
+          {
+            "value": "Autorización bodega DS 43",
+            "texto": "Autorización de bodega de sustancias peligrosas",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Plan de emergencias DS 43",
+            "texto": "Plan de emergencias DS 43",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Estudio de Carga de Combustible",
+            "texto": "Estudio de carga de combustible",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "No estoy seguro",
+            "texto": "No estoy seguro",
+            "seleccionada": false,
+            "desactivada": false
+          }
+        ]
+      },
+      {
+        "label": "Mensaje (opcional)",
+        "id": "art-mensaje",
+        "name": "Mensaje",
+        "tipo": "textarea",
+        "requerido": false,
+        "placeholder": "¿Qué sustancias almacenas y en qué cantidades, aproximadamente?",
+        "ancho": true,
+        "filas": 3
+      }
+    ],
+    "boton": "SOLICITAR COTIZACIÓN GRATUITA →",
+    "confianza": [
+      "Datos protegidos",
+      "Respuesta en menos de 24 hrs",
+      "Sin compromiso"
+    ],
+    "logos": [
+      {
+        "src": "/img/articulos/logo-25m.webp",
+        "alt": "Logo 25M",
+        "ancho": 400,
+        "alto": 85
+      },
+      {
+        "src": "/img/clientes/gespania.webp",
+        "alt": "Gespania",
+        "ancho": 299,
+        "alto": 149
+      },
+      {
+        "src": "/img/clientes/grupo-mbo.webp",
+        "alt": "Grupo MBO",
+        "ancho": 294,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/nuevo-pudahuel.webp",
+        "alt": "Nuevo Pudahuel",
+        "ancho": 329,
+        "alto": 77
+      },
+      {
+        "src": "/img/clientes/natures-farm.webp",
+        "alt": "Nature's Farm",
+        "ancho": 286,
+        "alto": 217
+      },
+      {
+        "src": "/img/clientes/blt-mini-bodegas.webp",
+        "alt": "BLT",
+        "ancho": 516,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/db-santasalo.webp",
+        "alt": "DB Santasalo",
+        "ancho": 388,
+        "alto": 127
+      },
+      {
+        "src": "/img/clientes/animal-services.webp",
+        "alt": "Animal Services",
+        "ancho": 215,
+        "alto": 162
+      },
+      {
+        "src": "/img/clientes/lira.webp",
+        "alt": "Lira",
+        "ancho": 242,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/fuchs.webp",
+        "alt": "Fuchs Lubricants",
+        "ancho": 495,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/delart-chocolat.webp",
+        "alt": "DelArt Chocolat",
+        "ancho": 443,
+        "alto": 220
+      },
+      {
+        "src": "/img/clientes/novametal.webp",
+        "alt": "Novametal",
+        "ancho": 166,
+        "alto": 122
+      }
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      {
+        "p": "¿Cuándo necesito autorización sanitaria para almacenar sustancias peligrosas?",
+        "r": "Según el artículo 5 del DS 43, cuando la instalación almacena más de 10 toneladas de sustancias inflamables o más de 30 toneladas de otras clases, cuando los cilindros de gas llenos ocupan más de 30 m², cuando hay estanques fijos de 15 m³ o más, o patios con más de un contenedor o isotanque.",
+        "rTexto": "Según el artículo 5 del DS 43, cuando la instalación almacena más de 10 toneladas de sustancias inflamables o más de 30 toneladas de otras clases, cuando los cilindros de gas llenos ocupan más de 30 m², cuando hay estanques fijos de 15 m³ o más, o patios con más de un contenedor o isotanque."
+      },
+      {
+        "p": "¿Qué es el plan de manejo de sustancias peligrosas?",
+        "r": "Es el conjunto de documentos con que se gestiona la bodega: especificaciones técnicas, listado de sustancias, procedimiento escrito de operación, análisis de riesgos, capacitación anual, registro de sustancias y Plan de Emergencias. El DS 43 los exige para la autorización y la operación (arts. 5, 12 a 15, 45 y 190).",
+        "rTexto": "Es el conjunto de documentos con que se gestiona la bodega: especificaciones técnicas, listado de sustancias, procedimiento escrito de operación, análisis de riesgos, capacitación anual, registro de sustancias y Plan de Emergencias. El DS 43 los exige para la autorización y la operación (arts. 5, 12 a 15, 45 y 190)."
+      },
+      {
+        "p": "¿Cada cuánto se declara el almacenamiento?",
+        "r": "Dos veces al año, con fechas límite el 20 de junio y el 20 de diciembre, en el sistema electrónico que defina el Ministerio de Salud (art. 5).",
+        "rTexto": "Dos veces al año, con fechas límite el 20 de junio y el 20 de diciembre, en el sistema electrónico que defina el Ministerio de Salud (art. 5)."
+      },
+      {
+        "p": "¿Puedo guardar productos químicos sin bodega?",
+        "r": "Sí, hasta 600 kg o L en total, sobre el piso o en estanterías de material liso no absorbente (art. 19), con límites menores para algunas sustancias (art. 20). Sobre esa cantidad necesitas una bodega común o una bodega para sustancias peligrosas.",
+        "rTexto": "Sí, hasta 600 kg o L en total, sobre el piso o en estanterías de material liso no absorbente (art. 19), con límites menores para algunas sustancias (art. 20). Sobre esa cantidad necesitas una bodega común o una bodega para sustancias peligrosas."
+      },
+      {
+        "p": "¿El DS 43 aplica a los combustibles?",
+        "r": "No a los combustibles líquidos y gaseosos usados como recurso energético, que tienen su propia regulación (art. 3). Sí aplica a otras sustancias inflamables, como solventes o pinturas.",
+        "rTexto": "No a los combustibles líquidos y gaseosos usados como recurso energético, que tienen su propia regulación (art. 3). Sí aplica a otras sustancias inflamables, como solventes o pinturas."
+      }
+    ]
+  },
+  "autorCaja": {
+    "inicial": "SC",
+    "nombre": "Equipo técnico SVEA Consultores",
+    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud y las municipalidades. Más de 250 proyectos gestionados. Cotización en menos de 24 horas."
+  },
+  "compartir": {
+    "titulo": "Compartir",
+    "enlaces": [
+      {
+        "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://sveaconsultores.cl/plan-manejo-sustancias-peligrosas-ds-43/",
+        "texto": "in",
+        "titulo": "LinkedIn",
+        "externo": true
+      },
+      {
+        "href": "https://api.whatsapp.com/send?text=Sustancias%20peligrosas%20DS%2043%20https://sveaconsultores.cl/plan-manejo-sustancias-peligrosas-ds-43/",
+        "texto": "wa",
+        "titulo": "WhatsApp",
+        "externo": true
+      },
+      {
+        "href": "mailto:?subject=Sustancias%20peligrosas%20DS%2043&body=Te%20comparto%20esta%20gu%C3%ADa%3A%20https://sveaconsultores.cl/plan-manejo-sustancias-peligrosas-ds-43/",
+        "texto": "@",
+        "titulo": "Email",
+        "externo": false
+      }
+    ]
+  },
+  "bloques": [
+    {
+      "tipo": "html",
+      "html": "<p class=\"art-entrada\">\n        Si tu empresa guarda solventes, pinturas, gases en cilindros, ácidos, pesticidas u otros productos químicos, le aplica el <strong>DS 43 de 2015 del Ministerio de Salud</strong>, el Reglamento de Almacenamiento de Sustancias Peligrosas. Según la cantidad, te exigirá una bodega especial, una <strong>autorización sanitaria</strong> y un conjunto de documentos que en la práctica se conoce como <strong>plan de manejo</strong>.\n    </p>\n\n<section id=\"que-regula\">\n        <h2>Qué regula el DS 43</h2>\n        <p>El DS 43 fija las condiciones de seguridad de las instalaciones que almacenan sustancias peligrosas (art. 1). Son peligrosas las clasificadas en la <strong>NCh 382:2013</strong>, en nueve clases: explosivos, gases, líquidos inflamables, sólidos inflamables, comburentes y peróxidos, tóxicas e infecciosas, radiactivas, corrosivas y peligrosas varias (art. 2).</p>\n        <p>Quedan fuera, entre otros, las sustancias radiactivas y los explosivos, que tienen normas propias, los combustibles usados como recurso energético, el almacenamiento en recintos portuarios y lo que se mantiene en la zona de producción en la cantidad estrictamente necesaria para el proceso (art. 3).</p>\n        <div class=\"callout callout-info\">\n            <span class=\"callout-icon\">i</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">No confundir con residuos</div>\n                <p>El DS 43 regula sustancias y productos que usas o vendes. Cuando esos productos se transforman en residuos, pasan al DS 148 y a nuestra guía de <a href=\"/manejo-de-residuos-peligrosos-chile/\">manejo de residuos peligrosos</a>.</p>\n            </div>\n        </div>\n    </section>\n\n<section id=\"autorizacion\">\n        <h2>Cuándo necesitas autorización sanitaria</h2>\n        <p>El artículo 5 exige autorización sanitaria de funcionamiento a la instalación que almacene:</p>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Tipo de almacenamiento</th><th>Umbral para pedir autorización</th></tr></thead>\n            <tbody>\n                <tr><td><strong>Sustancias inflamables</strong></td><td>Más de 10 toneladas</td></tr>\n                <tr><td><strong>Otras clases de sustancias peligrosas</strong></td><td>Más de 30 toneladas</td></tr>\n                <tr><td><strong>Gases en cilindros</strong></td><td>Área real de almacenamiento superior a 30 m² de cilindros llenos, sin contar pasillos</td></tr>\n                <tr><td><strong>Estanques fijos</strong></td><td>Volumen igual o superior a 15 m³, o varios estanques a 5 m o menos que lo sumen</td></tr>\n                <tr><td><strong>Patios de contenedores o isotanques</strong></td><td>Más de 1 unidad</td></tr>\n            </tbody>\n        </table>\n        </div>\n        <p>Para envases, contenedores y cilindros se <strong>suman todas las sustancias peligrosas de la planta o empresa</strong>. La SEREMI otorga la autorización tras una visita inspectiva, y dura tres años con prórroga automática mientras no se deje sin efecto (art. 6). Cualquier modificación de la instalación autorizada debe comunicarse a la SEREMI, que decide si corresponde una nueva autorización (art. 5).</p>\n    </section>\n\n<section id=\"donde\">\n        <h2>Dónde puedes almacenar según la cantidad</h2>\n        <ul class=\"checklist\">\n            <li><strong>Hasta 600 kg o L en total:</strong> fuera de una bodega, sobre el piso o en estanterías de material liso no absorbente (art. 19), con límites menores para algunas sustancias (art. 20).</li>\n            <li><strong>Hasta 12 toneladas:</strong> en una bodega común, cerrada por muros, con piso impermeable y contención de derrames (arts. 25 y 28).</li>\n            <li><strong>Sobre 12 toneladas:</strong> en una bodega para sustancias peligrosas, con pictogramas visibles a 10 metros (art. 33), que no puede estar en un subterráneo ni tener más de un piso (art. 43).</li>\n            <li><strong>Locales comerciales con más de 600 kg o L:</strong> exhibición en góndolas incombustibles y señalizadas, entre otras condiciones (art. 175).</li>\n        </ul>\n    </section>\n\n<figure class=\"article-img\">\n        <img src=\"/img/articulos/estanques-planta-quimica.webp\" alt=\"Sustancias peligrosas DS 43 - estanques de almacenamiento en una planta química\" width=\"1200\" height=\"674\" loading=\"lazy\" decoding=\"async\">\n        <figcaption>Los estanques fijos de 15 m³ o más requieren autorización sanitaria según el DS 43.</figcaption>\n    </figure>\n"
+    },
+    {
+      "tipo": "formulario"
+    },
+    {
+      "tipo": "html",
+      "html": "<section id=\"plan\">\n        <h2>Qué incluye el plan de manejo</h2>\n        <p>El DS 43 no usa la expresión «plan de manejo», pero los antecedentes que pide para la autorización (art. 5) y las obligaciones de operación forman, en conjunto, ese plan:</p>\n        <ul class=\"checklist\">\n            <li><strong>Especificaciones técnicas</strong> de la instalación, firmadas por un profesional idóneo, y memorias de ventilación y de extinción de incendios cuando corresponda.</li>\n            <li><strong>Listado de sustancias</strong> por clase NCh 382, con cantidades y capacidad máxima.</li>\n            <li><strong>Procedimiento escrito de operación</strong>, conocido por todo el personal (art. 12).</li>\n            <li><strong>Análisis de riesgos</strong>, al menos del tipo árbol de eventos (art. 45).</li>\n            <li><strong>Capacitación anual</strong> del personal, con registro, y capacitación previa para quien llega (art. 13).</li>\n            <li><strong>Registro de sustancias</strong> fuera de la bodega, con las hojas de datos de seguridad disponibles (art. 14), y plano de emplazamiento en la portería (art. 15).</li>\n            <li><strong>Plan de Emergencias</strong> con planos del predio y su entorno en 50 metros, cadena de mando, procedimientos por tipo de emergencia, equipos disponibles y simulacros al menos una vez al año (art. 190).</li>\n        </ul>\n        <div class=\"callout callout-success\">\n            <span class=\"callout-icon\">✓</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Un solo plan de emergencia</div>\n                <p>El plan de emergencias del DS 43 puede ser parte del plan general de la empresa (art. 190). En SVEA lo integramos con el plan que exige el <a href=\"/checklist-ds-44-fiscalizacion/\">DS 44</a>, para que no tengas dos documentos que se contradicen.</p>\n            </div>\n        </div>\n    </section>\n\n<section id=\"declaracion\">\n        <h2>Declaración semestral y cierre</h2>\n        <p>Con la autorización obtenida, la empresa debe ingresar y mantener actualizados los datos de la instalación y de las sustancias almacenadas, <strong>declarándolos dos veces al año</strong>, con fechas límite el <strong>20 de junio y el 20 de diciembre</strong>, en el sistema electrónico que defina el Ministerio de Salud (art. 5). El cierre temporal o permanente se informa a la SEREMI, y un cierre de más de un año hace caducar la autorización (art. 7).</p>\n    </section>\n\n<section id=\"carga-combustible\">\n        <h2>Relación con el estudio de carga de combustible</h2>\n        <p>El artículo 28 del DS 43 dispone que las bodegas comunes con sustancias peligrosas se diseñen conforme a la Ordenanza General de Urbanismo y Construcciones, <strong>considerando el estudio de carga combustible</strong>. Por eso, cuando habilitas o regularizas una bodega, el <a href=\"/estudio-de-carga-de-combustible/\">estudio de carga de combustible</a> suele ir en el mismo expediente.</p>\n    </section>\n\n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿Tu bodega necesita autorización según el DS 43?</h3><p>Revisamos tus cantidades, te decimos qué tipo de bodega y qué autorización corresponde, y preparamos el expediente. Cotización en menos de 24 horas.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20necesito%20cotizar%20la%20autorizaci%C3%B3n%20de%20una%20bodega%20de%20sustancias%20peligrosas%20DS%2043\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><div class=\"art-logos\" aria-label=\"Empresas que confían en SVEA\"><div class=\"logos-cinta art-logos-cinta\"><div class=\"art-logos-mitad\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"Logo 25M\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"Gespania\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"Grupo MBO\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"Nuevo Pudahuel\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"Nature's Farm\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"BLT\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"DB Santasalo\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"Animal Services\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"Lira\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"Fuchs Lubricants\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"DelArt Chocolat\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"Novametal\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div><div class=\"art-logos-mitad\" aria-hidden=\"true\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div></div></div></aside>\n<section id=\"errores\">\n        <h2>Errores comunes</h2>\n        <div class=\"error-item\"><h4>Contar por bodega y no por empresa</h4><p>Para envases y cilindros, el umbral se calcula sumando todas las sustancias peligrosas de la planta.</p></div>\n        <div class=\"error-item\"><h4>Mezclar sustancias incompatibles</h4><p>El reglamento exige separar las sustancias incompatibles; guardarlas juntas es una observación frecuente.</p></div>\n        <div class=\"error-item\"><h4>Hojas de datos de seguridad desactualizadas</h4><p>Deben estar disponibles para cada sustancia almacenada.</p></div>\n        <div class=\"error-item\"><h4>Olvidar la declaración semestral</h4><p>Las fechas límite son el 20 de junio y el 20 de diciembre de cada año.</p></div>\n        <div class=\"error-item\"><h4>Ampliar sin avisar</h4><p>Cualquier modificación de una instalación autorizada se comunica a la SEREMI antes de operar con ella.</p></div>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (septiembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=1088802\" target=\"_blank\" rel=\"noopener\">DS 43 de 2015, Ministerio de Salud, Reglamento de Almacenamiento de Sustancias Peligrosas</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=226458\" target=\"_blank\" rel=\"noopener\">DS 148 de 2003, Reglamento Sanitario sobre Manejo de Residuos Peligrosos</a></li><li><a href=\"https://seremienlinea.minsal.cl/\" target=\"_blank\" rel=\"noopener\">SEREMI en Línea, Ministerio de Salud</a></li></ul>\n    </section>\n"
+    }
+  ],
+  "relacionados": {
+    "titulo": "Servicios relacionados",
+    "intro": "",
+    "tarjetas": [
+      {
+        "titulo": "Manejo de Sustancias y Residuos Peligrosos",
+        "texto": "Bodegas, planes y declaraciones para sustancias y residuos peligrosos.",
+        "href": "/manejo-de-residuos-peligrosos/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Estudio de Carga de Combustible",
+        "texto": "Cálculo de la carga de fuego según NCh 1916 e informe firmado por profesional.",
+        "href": "/estudio-de-carga-de-combustible/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Residuos Peligrosos: guía completa",
+        "texto": "Normativa DS 148, clasificación, plan de manejo y obligaciones del generador.",
+        "href": "/manejo-de-residuos-peligrosos-chile/",
+        "enlace": "Ver artículo →"
+      }
+    ]
+  },
+  "asunto": {
+    "prefijo": "[BLOG] Cotización Manejo de residuos - ",
+    "campo": "Empresa",
+    "id": "dynamic-subject-art-ds43"
+  }
+}

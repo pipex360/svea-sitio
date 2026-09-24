@@ -1,5 +1,5 @@
 /**
- * Las nueve guías de «Recursos y guías», en un solo lugar.
+ * Las guías de «Recursos y guías», en un solo lugar.
  *
  * De aquí salen las tarjetas de /blog/, el bloque «Otras guías» al pie de
  * cada artículo y el «Servicio relacionado» de cada uno. El contenido de
@@ -10,7 +10,8 @@
  * WordPress (título, bajada, categoría, fecha, lectura, alt de la
  * foto): son texto de esa página y no se puede perder. Las tres últimas no
  * estaban en el índice viejo; sus textos salen del propio artículo (H1 y
- * bajada).
+ * bajada). Las siete del final (sep-2026) son guías nuevas, escritas para
+ * este sitio: no tienen original en el WordPress.
  */
 
 export type Guia = {
@@ -169,6 +170,77 @@ export const GUIAS: Guia[] = [
     lectura: '15 min lectura',
     imagen: { archivo: 'planta-quimica', alt: 'Informe sanitario favorable Chile - Instalación industrial evaluada por la SEREMI de Salud', ancho: 1200, alto: 674 },
     servicio: IS,
+  },
+  // --- las guías nuevas (sep-2026), sin original en el WordPress --------------
+  {
+    slug: 'patente-definitiva-permisos-seremi',
+    titulo: 'Patente definitiva: qué permisos de la SEREMI necesitas',
+    bajada: 'De la patente provisoria a la definitiva: qué exige la municipalidad según tu rubro, cuándo entra la SEREMI de Salud y en qué orden hacer los trámites.',
+    categoria: 'Permisos y Autorizaciones',
+    fecha: 'Sep 2026',
+    lectura: '9 min lectura',
+    imagen: { archivo: 'centro-distribucion-aereo', alt: 'Patente definitiva - centro de distribución que requiere permisos de la SEREMI de Salud', ancho: 1200, alto: 800 },
+    servicio: CTI,
+  },
+  {
+    slug: 'checklist-ds-44-fiscalizacion',
+    titulo: 'Checklist DS 44: qué revisa la Dirección del Trabajo en una fiscalización',
+    bajada: 'Lista práctica basada en el Formulario Único de Fiscalización del DS 44: matriz de riesgos, programa preventivo, plan de emergencia, comité y multas.',
+    categoria: 'Seguridad Laboral',
+    fecha: 'Sep 2026',
+    lectura: '10 min lectura',
+    imagen: { archivo: 'escalera-evacuacion', alt: 'Checklist DS 44 - escalera de evacuación señalizada en un lugar de trabajo', ancho: 800, alto: 533 },
+    servicio: PE,
+  },
+  {
+    slug: 'autorizacion-transporte-residuos-no-peligrosos',
+    titulo: 'Autorización para transportar residuos no peligrosos: paso a paso',
+    bajada: 'Quién la pide, qué antecedentes revisa la SEREMI, cómo se completa en SEREMI en Línea y en qué se diferencia de la de residuos peligrosos.',
+    categoria: 'Permisos y Autorizaciones',
+    fecha: 'Sep 2026',
+    lectura: '9 min lectura',
+    imagen: { archivo: 'camion-tolva-carretera', alt: 'Autorización de transporte de residuos no peligrosos - camión tolva en carretera', ancho: 1200, alto: 675 },
+    servicio: TR,
+  },
+  {
+    slug: 'declaracion-residuos-sidrep-sinader',
+    titulo: 'Declaración de residuos en SIDREP y SINADER: quién declara y cómo',
+    bajada: 'SIDREP para residuos peligrosos y SINADER para no peligrosos: obligados, plazos, acceso por la Ventanilla Única del RETC y errores comunes.',
+    categoria: 'Residuos Peligrosos',
+    fecha: 'Sep 2026',
+    lectura: '9 min lectura',
+    imagen: { archivo: 'bodega-residuos-peligrosos', alt: 'Declaración de residuos en SIDREP y SINADER - tambores de residuos peligrosos etiquetados', ancho: 1200, alto: 479 },
+    servicio: RP,
+  },
+  {
+    slug: 'sumario-sanitario-seremi',
+    titulo: 'Sumario sanitario de la SEREMI: qué hacer si te llega un acta o una multa',
+    bajada: 'Cómo avanza el sumario sanitario desde el acta hasta la sentencia, qué sanciones puede aplicar la SEREMI, qué poner en tus descargos y qué plazos tienes.',
+    categoria: 'Permisos y Cumplimiento',
+    fecha: 'Sep 2026',
+    lectura: '9 min lectura',
+    imagen: { archivo: 'planta-industrial-nocturna', alt: 'Sumario sanitario SEREMI - planta industrial fiscalizada por la autoridad sanitaria', ancho: 1200, alto: 800 },
+    servicio: IS,
+  },
+  {
+    slug: 'rechazo-observaciones-seremi',
+    titulo: 'La SEREMI rechazó u observó tu solicitud: cómo responder',
+    bajada: 'Observación no es rechazo: cómo responder punto por punto, qué recursos tienes, en qué plazos y qué pasa si la SEREMI no responde a tiempo.',
+    categoria: 'Permisos y Autorizaciones',
+    fecha: 'Sep 2026',
+    lectura: '8 min lectura',
+    imagen: { archivo: 'revision-documentos-seremi', alt: 'Rechazo u observaciones de la SEREMI - revisión de documentos para responder', ancho: 1200, alto: 600 },
+    servicio: CTI,
+  },
+  {
+    slug: 'plan-manejo-sustancias-peligrosas-ds-43',
+    titulo: 'Plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye',
+    bajada: 'Umbrales de autorización sanitaria, tipos de bodega según la cantidad, documentos del plan de manejo y declaración semestral según el DS 43.',
+    categoria: 'Residuos Peligrosos',
+    fecha: 'Sep 2026',
+    lectura: '9 min lectura',
+    imagen: { archivo: 'estanques-planta-quimica', alt: 'Sustancias peligrosas DS 43 - estanques de almacenamiento en una planta química', ancho: 1200, alto: 674 },
+    servicio: RP,
   },
 ];
 

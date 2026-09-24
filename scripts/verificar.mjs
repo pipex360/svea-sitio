@@ -16,8 +16,13 @@ import paginas from '../src/data/paginas.json' with { type: 'json' };
 const SERVICIOS_VER = ['/calificacion-tecnica-industrial/', '/estudio-de-carga-de-combustible/', '/planes-de-emergencia-y-evacuacion/', '/planes-de-emergencia-y-evacuacion-condominios/', '/manejo-de-residuos-peligrosos/', '/autorizacion-de-transporte-de-residuos/', '/informe-sanitario/', '/permisos-ambientales-y-pertinencias-del-seia/'];
 const LANDINGS = ['cotiza-calificacion-tecnica-industrial', 'cotiza-estudio-de-carga-de-combustible', 'cotiza-plan-emergencia', 'cotiza-plan-emergencia-condominio', 'cotiza-informe-sanitario', 'cotiza-autorizacion-transporte-residuos'];
 const ARTICULOS = ['autorizacion-transporte-residuos-chile', 'calificacion-inofensiva-seremi-2026', 'calificacion-tecnica-industrial-chile', 'estudio-de-carga-combustible-chile', 'manejo-de-residuos-peligrosos-chile', 'plan-de-emergencia-condominio-chile', 'plan-de-emergencia-ds-44-empresas-chile', 'plan-de-emergencia-empresa-chile', 'que-es-informe-sanitario'];
+// guías nuevas (sep-2026): escritas para este sitio, sin original en el
+// WordPress. Se revisan igual que las demás (medición, noindex, formulario
+// que no envía, nada del WordPress) y su formulario contra el patrón de los
+// artículos (5c), porque no hay original con qué compararlo.
+const GUIAS_NUEVAS = paginas.filter((p) => p.nueva && p.tipo === 'articulos').map((p) => p.slug);
 const CON_FOTO = new Set([...SERVICIOS_VER, ...LANDINGS.map((s) => `/${s}/`)]);
-const REHECHAS_VER = new Set([...CON_FOTO, ...ARTICULOS.map((s) => `/${s}/`), '/blog/', '/gracias/', '/politica-de-privacidad/']);
+const REHECHAS_VER = new Set([...CON_FOTO, ...ARTICULOS.map((s) => `/${s}/`), ...GUIAS_NUEVAS.map((s) => `/${s}/`), '/blog/', '/gracias/', '/politica-de-privacidad/']);
 const DIST = 'dist';
 const fallos = [];
 let checks = 0;
@@ -187,6 +192,37 @@ for (const [ruta, id, origen, destino] of [
     if (faltas.length) fallos.push(`${ruta}  ✗ el form-landing-tr no calza con las landings: ${faltas.join(', ')}`);
     else checks++;
   }
+}
+
+// 5c. Las guías nuevas no tienen original: su article-lead-form tiene que
+// hablarle a Web3Forms y a n8n igual que el de los artículos del WordPress.
+// n8n clasifica el lead por la palabra del servicio en el asunto.
+const PALABRAS_N8N = ['CTI', 'ECC', 'Plan Emergencia', 'Condominios', 'Transporte', 'Manejo de residuos'];
+for (const slug of GUIAS_NUEVAS) {
+  const ruta = `/${slug}/`;
+  const html = readFileSync(path.join(DIST, slug, 'index.html'), 'utf8');
+  const h = huellaFormulario(html, 'article-lead-form');
+  if (!h) { fallos.push(`${ruta}  ✗ no se encontró el article-lead-form`); continue; }
+  const { ocultos, visibles } = JSON.parse(h);
+  const form = html.match(/<form\b[^>]*id="article-lead-form"[^>]*>[\s\S]*?<\/form>/)[0];
+  const faltas = [];
+  if (ocultos.access_key !== '076a0f9a-9911-48f6-880e-dd9d44c3063b') faltas.push(`access_key=${ocultos.access_key}`);
+  if (!/^SVEA Consultores Blog - /.test(ocultos.from_name || '')) faltas.push(`from_name=${ocultos.from_name}`);
+  if (ocultos.redirect !== 'https://sveaconsultores.cl/gracias/') faltas.push(`redirect=${ocultos.redirect}`);
+  if (!ocultos.Servicio) faltas.push('sin Servicio');
+  if (!(form.match(/<input\b[^>]*>/g) || []).some((t) => /\sname="subject"/.test(t) && /\sid="dynamic-subject-art-[a-z0-9-]+"/.test(t))) faltas.push('subject sin id dynamic-subject-art-*');
+  if (!PALABRAS_N8N.some((w) => (ocultos.subject || '').includes(w))) faltas.push(`asunto sin palabra que reconozca n8n: ${ocultos.subject}`);
+  for (const n of ORIGEN) if (!(n in ocultos)) faltas.push(`falta el oculto ${n}`);
+  if (ocultos.botcheck !== 'checkbox') faltas.push('falta el botcheck');
+  for (const n of ['Nombre:text:req', 'Empresa:text:req', 'Teléfono:tel:req', 'Email:email:req'])
+    if (!visibles.includes(n)) faltas.push(`falta el campo ${n}`);
+  if (faltas.length) fallos.push(`${ruta}  ✗ el article-lead-form no calza con los artículos: ${faltas.join(', ')}`);
+  else checks++;
+  // el prefijo del asunto dinámico también debe llevar la palabra de n8n
+  const d = JSON.parse(readFileSync(`src/contenido/articulos/${slug}.json`, 'utf8'));
+  if (!d.asunto || !/^\[BLOG\] Cotización /.test(d.asunto.prefijo) || !PALABRAS_N8N.some((w) => d.asunto.prefijo.includes(w)))
+    fallos.push(`${ruta}  ✗ asunto dinámico mal armado: ${JSON.stringify(d.asunto)}`);
+  else checks++;
 }
 
 // 6. Las páginas rehechas enteras no pueden perder texto. El brief lo pone en
