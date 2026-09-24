@@ -49,7 +49,8 @@ export function Reveal({
   const Caja = as === 'li' ? motion.li : motion.div;
   const ref = useRef<HTMLDivElement & HTMLLIElement>(null);
   const quieto = useReducedMotion();
-  const enVista = useInView(ref, { once: true, margin: `0px 0px -${Math.round((1 - UMBRAL) * 100)}% 0px` });
+  const margen = `0px 0px -${Math.round((1 - UMBRAL) * 100)}% 0px` as const;
+  const enVista = useInView(ref, { once: true, margin: margen as `${number}px ${number}px ${number}% ${number}px` });
   const [armado, setArmado] = useState(false);
 
   useEffect(() => {

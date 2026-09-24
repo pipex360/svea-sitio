@@ -11,14 +11,14 @@
  *    eran texto plano.
  * 3. Las cruces de las esquinas van `aria-hidden`: son decoración.
  */
-import type { LucideIcon } from 'lucide-react';
 import { PlusIcon } from 'lucide-react';
 import type React from 'react';
 
 import { cn } from '@/lib/utils';
 
 type ContactInfoProps = React.ComponentProps<'div'> & {
-  icon: LucideIcon;
+  /** de lucide o propio, como el logotipo de WhatsApp */
+  icon: React.ComponentType<{ className?: string }>;
   label: string;
   value: string;
   href?: string;
