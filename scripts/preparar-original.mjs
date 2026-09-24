@@ -96,11 +96,13 @@ mkdirSync(DEST, { recursive: true });
  * ni cambien los campos del formulario— y no se copia a public/.
  */
 const CTI = { ruta: '/calificacion-tecnica-industrial/' };
+// Las demás páginas rehechas con el mismo formato (src/pages/<ruta>.astro).
+const REHECHAS = new Set([CTI.ruta, '/estudio-de-carga-de-combustible/']);
 
 let n = 0;
 for (const [ruta, archivo] of Object.entries(ARCHIVOS)) {
   if (ruta === '/') continue;              // la home la arma src/pages/index.astro
-  if (ruta === CTI.ruta) continue;         // y ésta, src/pages/calificacion-tecnica-industrial.astro
+  if (REHECHAS.has(ruta)) continue;       // y éstas, src/pages/<ruta>.astro
   const origen = path.join(ORIG, archivo);
   if (!existsSync(origen)) { console.log('falta el original:', ruta); continue; }
   const destino = ruta === '/' ? path.join(DEST, 'index.html')

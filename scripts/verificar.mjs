@@ -49,7 +49,7 @@ for (const p of esperadas) {
   // igual. La portada es la excepción: es propia, y lo que se comprueba es lo
   // contrario —que no cargue nada del WordPress ni de CDN, y que sirva sus
   // fuentes y las fotos del hero desde el sitio—.
-  if (p.ruta === '/' || p.ruta === '/calificacion-tecnica-industrial/') {
+  if (p.ruta === '/' || p.ruta === '/calificacion-tecnica-industrial/' || p.ruta === '/estudio-de-carga-de-combustible/') {
     const ajenos = html.match(/(?:src|href)="https?:\/\/[^"]*(?:wp-content|wp-includes|cdn\.tailwindcss\.com|code\.iconify\.design|fonts\.googleapis\.com)[^"]*"/g) || [];
     if (ajenos.length) fallos.push(`${p.ruta}  ✗ la portada aún carga del WordPress o de CDN: ${ajenos.slice(0, 3).join(' ')}`);
     else checks++;
@@ -93,6 +93,7 @@ function huellaFormulario(html, id) {
 for (const [ruta, id, origen, destino] of [
   ['/', 'form-home', 'originales-wp/home.html', 'index.html'],
   ['/calificacion-tecnica-industrial/', 'form-cti', 'originales-wp/servicios/calificacion-tecnica-industrial.html', 'calificacion-tecnica-industrial/index.html'],
+  ['/estudio-de-carga-de-combustible/', 'form-ecc', 'originales-wp/servicios/estudio-de-carga-de-combustible.html', 'estudio-de-carga-de-combustible/index.html'],
 ]) {
   const original = huellaFormulario(readFileSync(origen, 'utf8'), id);
   const construido = huellaFormulario(readFileSync(path.join(DIST, destino), 'utf8'), id);
@@ -142,6 +143,25 @@ function palabras(limpio, desde = 0, hasta = limpio.length) {
   else if (perdidas.length) {
     fallos.push(`/calificacion-tecnica-industrial/  ✗ se perdieron ${perdidas.length} palabras del original: ${perdidas.slice(0, 12).join(', ')}`);
   } else checks++;
+}
+
+// 6b. Lo mismo para las otras páginas de servicio rehechas con el formato
+// de la CTI. El contenido del original va desde su contenedor «<x>-page»
+// hasta la sección del pie del WordPress (la que contiene «Term of use»).
+for (const [ruta, archivo, marcaClase] of [
+  ['/estudio-de-carga-de-combustible/', 'estudio-de-carga-de-combustible', 'ecc-page'],
+]) {
+  const orig = sinCodigo(readFileSync(`originales-wp/servicios/${archivo}.html`, 'utf8'));
+  const marca = orig.indexOf(marcaClase);
+  const desde = marca < 0 ? -1 : orig.indexOf('>', marca) + 1;
+  const pie = orig.indexOf('Term of use');
+  const hasta = orig.lastIndexOf('<section class="elementor-section elementor-top-section', pie);
+  const antes = palabras(orig, desde, hasta > desde ? hasta : orig.length);
+  const ahora = palabras(sinCodigo(readFileSync(path.join(DIST, archivo, 'index.html'), 'utf8')));
+  const perdidas = [...antes].filter((w) => !ahora.has(w));
+  if (marca < 0 || hasta < 0) fallos.push(`${ruta}  ✗ no se encontró el contenido del original`);
+  else if (perdidas.length) fallos.push(`${ruta}  ✗ se perdieron ${perdidas.length} palabras del original: ${perdidas.slice(0, 12).join(', ')}`);
+  else checks++;
 }
 
 if (fallos.length) {
