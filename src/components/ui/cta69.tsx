@@ -62,7 +62,7 @@ export function Cta69({ badge, heading, button, labels = {}, className }: Cta69P
   const linea = frase ? `${frase} · `.repeat(REPETICIONES) : '';
 
   return (
-    <section className={cn('relative w-full overflow-hidden bg-[#081c15] py-16 md:py-24', className)}>
+    <section className={cn('relative w-full overflow-hidden bg-[#0d3518] py-16 md:py-24', className)}>
       <Velaris className="absolute inset-0" />
 
       {frase && (

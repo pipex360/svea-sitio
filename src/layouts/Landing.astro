@@ -115,7 +115,7 @@ const m = d.medicion;
 
   <div class="svea-nuevo">
     <!-- franja de urgencia del original -->
-    <div class="lp-urgencia bg-black px-4 py-2.5 text-center text-[13px] leading-snug text-white/75 md:text-sm">
+    <div class="lp-urgencia bg-[#0d3518] px-4 py-2.5 text-center text-[13px] leading-snug text-white/75 md:text-sm">
       <span class="lp-punto" aria-hidden="true"></span>
       <span set:html={d.urgencia} />
     </div>
@@ -221,7 +221,7 @@ const m = d.medicion;
               </article>
             ))}
           </div>
-          <div class="mt-8 flex flex-col items-start gap-5 rounded-2xl bg-black p-6 text-white md:flex-row md:items-center md:justify-between md:p-8" data-rv>
+          <div class="mt-8 flex flex-col items-start gap-5 rounded-2xl bg-[#15612f] p-6 text-white md:flex-row md:items-center md:justify-between md:p-8" data-rv>
             <p class="max-w-xl text-lg font-medium leading-snug">{d.riesgos.llamado}</p>
             <a href="#formulario" class="btn-flecha inversa chica shrink-0">
               <span>{d.riesgos.boton}</span>
@@ -270,7 +270,7 @@ const m = d.medicion;
       </section>
 
       <!-- proceso -->
-      <section class="bg-black px-4 py-16 text-white md:px-6 md:py-24" aria-labelledby="lp-proceso">
+      <section class="bg-[#0d3518] px-4 py-16 text-white md:px-6 md:py-24" aria-labelledby="lp-proceso">
         <div class="mx-auto max-w-6xl">
           <LandingTitulo copete={d.proceso.copete} titulo={d.proceso.titulo} id="lp-proceso" centrado oscuro />
           <ol class="lp-pasos grid gap-6 md:grid-cols-5 md:gap-4" data-rv>
@@ -322,7 +322,7 @@ const m = d.medicion;
       </section>
 
       <!-- cierre: al formulario o por WhatsApp -->
-      <section class="relative overflow-hidden bg-black px-4 py-20 md:px-6 md:py-28" aria-labelledby="lp-cierre">
+      <section class="relative overflow-hidden bg-[#0d3518] px-4 py-20 md:px-6 md:py-28" aria-labelledby="lp-cierre">
         <img
           src={`${BASE}/img/hero/${d.foto}-1080.webp`}
           srcset={`${BASE}/img/hero/${d.foto}-1080.webp 1080w, ${BASE}/img/hero/${d.foto}-1920.webp 1920w`}
@@ -332,7 +332,7 @@ const m = d.medicion;
           decoding="async"
           class="absolute inset-0 size-full object-cover opacity-35"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" aria-hidden="true"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0d3518] via-[#0d3518]/75 to-[#15612f]/45" aria-hidden="true"></div>
         <div class="relative mx-auto max-w-3xl text-center" data-rv>
           <h2 id="lp-cierre" class="lp-cierre-t text-balance font-display text-3xl font-medium leading-[1.1] tracking-tight text-white md:text-5xl" set:html={d.cierre.titulo} />
           <p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg" set:html={d.cierre.texto} />
@@ -351,7 +351,7 @@ const m = d.medicion;
     </main>
 
     <!-- pie mínimo -->
-    <footer class="bg-[#0b0f0d] px-4 pb-28 pt-12 text-sm text-white/60 md:px-6 md:pb-10">
+    <footer class="bg-[#0a2a13] px-4 pb-28 pt-12 text-sm text-white/60 md:px-6 md:pb-10">
       <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.3fr_1fr_1.4fr]">
         <div>
           <img src={`${BASE}/img/logo-svea-blanco.webp`} alt="SVEA Consultores" width="404" height="137" loading="lazy" decoding="async" class="h-9 w-auto" />

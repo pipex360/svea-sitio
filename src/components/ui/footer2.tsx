@@ -139,7 +139,7 @@ export function Footer2({
   }, []);
 
   return (
-    <footer className={cn('relative overflow-hidden bg-[#081c15] py-14 text-white md:py-16', className)}>
+    <footer className={cn('relative overflow-hidden bg-[#0d3518] py-14 text-white md:py-16', className)}>
       <Velaris className="absolute inset-0" />
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-2 gap-x-8 gap-y-0 lg:grid-cols-7 lg:gap-8">

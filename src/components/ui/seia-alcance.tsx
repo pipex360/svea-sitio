@@ -88,7 +88,7 @@ export function SeiaAlcance({ base = '' }: { base?: string }) {
         <Reveal className="mt-10 flex justify-center">
           <a
             href={`${base}/#form-home`}
-            className="group/boton inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white no-underline transition-colors duration-200 hover:bg-svea"
+            className="group/boton inline-flex items-center gap-2 rounded-full bg-[#0e7a3c] px-6 py-3 text-sm font-semibold text-white no-underline transition-colors duration-200 hover:bg-svea"
           >
             Solicitar asesoría
             <ArrowRightIcon
