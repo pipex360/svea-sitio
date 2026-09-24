@@ -1,0 +1,87 @@
+---
+/**
+ * /politica-de-privacidad/ — el texto del WordPress
+ * (originales-wp/servicios/politica-de-privacidad.html), completo y en el
+ * mismo orden, con la ropa de las guías: columna de lectura, secciones
+ * numeradas como H2 (en el original eran H3 sin H2 encima) y los enlaces
+ * del original. Único cambio de texto: el H1 lleva tilde («Política»).
+ */
+import PaginaSimple from '../layouts/PaginaSimple.astro';
+---
+<PaginaSimple
+  ruta="/politica-de-privacidad/"
+  miga="Política de privacidad"
+  insignia="Legal"
+  titulo="Política de <em>privacidad</em>"
+>
+  <article class="pp">
+    <p class="pp-intro">En <strong>Svea Consultores</strong> nos comprometemos a proteger la privacidad de nuestros usuarios y clientes. Esta Política de Privacidad describe cómo recopilamos, utilizamos y protegemos la información personal que se nos proporciona a través de nuestro sitio web <a href="https://www.sveaconsultores.cl">www.sveaconsultores.cl</a>, especialmente a través del formulario de contacto dirigido a clientes potenciales.</p>
+
+    <h2>1. Información que recopilamos</h2>
+    <p>Cuando usted completa nuestro formulario de contacto, podemos recopilar la siguiente información:</p>
+    <ul>
+      <li>Nombre completo</li>
+      <li>Dirección de correo electrónico</li>
+      <li>Número de teléfono</li>
+      <li>Empresa u organización (opcional)</li>
+      <li>Información relacionada con su consulta o requerimiento</li>
+    </ul>
+    <p>Esta información se recopila con su consentimiento explícito y es necesaria para brindarle una respuesta adecuada y personalizada.</p>
+
+    <h2>2. Uso de la información</h2>
+    <p>Utilizamos los datos recopilados exclusivamente para:</p>
+    <ul>
+      <li>Contactarlo en relación con su solicitud de información o servicios.</li>
+      <li>Ofrecerle asesoría personalizada sobre los servicios que ofrecemos.</li>
+      <li>Mejorar la calidad de atención y nuestros procesos internos.</li>
+    </ul>
+    <p>No utilizamos su información con fines distintos a los aquí mencionados sin su consentimiento.</p>
+
+    <h2>3. Compartición de la información</h2>
+    <p><strong>Svea Consultores</strong> no vende, alquila ni comparte sus datos personales con terceros, salvo que sea necesario para cumplir con obligaciones legales o para prestar un servicio que usted haya solicitado expresamente.</p>
+
+    <h2>4. Protección de la información</h2>
+    <p>Implementamos medidas de seguridad técnicas y organizativas para proteger sus datos contra el acceso no autorizado, uso indebido, pérdida o alteración.</p>
+
+    <h2>5. Conservación de datos</h2>
+    <p>La información recopilada se conservará solo durante el tiempo necesario para cumplir con los fines mencionados anteriormente, y conforme a las leyes vigentes en materia de protección de datos personales en Chile.</p>
+
+    <h2>6. Derechos del usuario</h2>
+    <p>Usted tiene derecho a:</p>
+    <ul>
+      <li>Acceder a sus datos personales.</li>
+      <li>Solicitar la rectificación o eliminación de sus datos.</li>
+      <li>Oponerse al tratamiento de su información.</li>
+      <li>Retirar su consentimiento en cualquier momento.</li>
+    </ul>
+    <p>Para ejercer estos derechos, puede contactarnos a través de:</p>
+    <ul class="pp-contacto">
+      <li><span aria-hidden="true">📩</span> <strong>correo:</strong> <a href="mailto:contacto@sveaconsultores.cl">contacto@sveaconsultores.cl</a></li>
+      <li><span aria-hidden="true">📞</span> <strong>teléfono:</strong> <a href="tel:+56929947924">+56 9 2994 7924</a></li>
+    </ul>
+
+    <h2>7. Uso de Google Ads y remarketing</h2>
+    <p>Este sitio puede utilizar funciones de Google Ads, incluido el seguimiento de conversiones y remarketing, que recopilan información mediante cookies. Estas cookies permiten mostrarle anuncios relevantes en función de sus visitas anteriores a nuestro sitio.</p>
+    <p><strong>Usted puede desactivar el uso de cookies de publicidad personalizada</strong> accediendo a la configuración de anuncios de Google en: <a href="https://adssettings.google.com/" target="_blank" rel="noopener">https://adssettings.google.com/</a></p>
+
+    <h2>8. Cambios en esta política</h2>
+    <p><strong>Svea Consultores</strong> se reserva el derecho de modificar esta política en cualquier momento. Cualquier cambio será publicado en esta misma página con su respectiva fecha de actualización.</p>
+
+    <p class="pp-cierre"><strong>Al enviar sus datos a través del formulario de contacto, usted acepta nuestra Política de Privacidad.</strong></p>
+  </article>
+</PaginaSimple>
+
+<style is:global>
+  .ps .pp{max-width:44rem;margin:0 auto;font-size:17px;line-height:1.75;color:#262b31}
+  .ps .pp p{margin:0 0 1.1em}
+  .ps .pp-intro{font-size:18.5px;color:#161b22}
+  .ps .pp strong{color:#000;font-weight:600}
+  .ps .pp a{color:var(--verde);text-decoration:underline;text-underline-offset:3px;font-weight:500;overflow-wrap:anywhere}
+  .ps .pp h2{margin:2.2em 0 .6em;padding-top:1.4em;border-top:1px solid var(--borde);font-family:Manrope,Inter,sans-serif;
+    font-size:clamp(21px,2.2vw,25px);font-weight:600;letter-spacing:-.02em;line-height:1.25;color:#000}
+  .ps .pp ul{margin:0 0 1.1em;padding-left:1.3em;list-style:disc}
+  .ps .pp li{margin:.3em 0;padding:0;list-style:inherit}
+  .ps .pp li::marker{color:var(--verde)}
+  .ps .pp .pp-contacto{list-style:none;padding-left:0}
+  .ps .pp-cierre{margin-top:2.4em!important;padding:20px 22px;border-radius:14px;background:var(--hoja);border:1px solid var(--borde)}
+</style>

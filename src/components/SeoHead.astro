@@ -22,8 +22,10 @@ interface Props {
   pagina: Pagina;
   copia: boolean;
   faq?: { p: string; r: string }[];
+  /** og:type: «article» en las guías, «website» en el resto */
+  tipo?: 'website' | 'article';
 }
-const { pagina, copia, faq = [] } = Astro.props;
+const { pagina, copia, faq = [], tipo = 'website' } = Astro.props;
 const robots = copia ? 'noindex, nofollow' : pagina.robots;
 const titulo = pagina.title.replace(/&[a-z]+;/g, (e) => ({ '&amp;': '&', '&oacute;': 'ó', '&eacute;': 'é', '&aacute;': 'á', '&iacute;': 'í', '&uacute;': 'ú', '&ntilde;': 'ñ' } as Record<string, string>)[e] ?? e);
 const yaTieneFaq = JSON.stringify(pagina.jsonld ?? []).includes('"FAQPage"');
@@ -44,7 +46,7 @@ const faqPage = faq.length && !yaTieneFaq
 <meta name="robots" content={robots} />
 <link rel="canonical" href={pagina.canonical} />
 <meta property="og:locale" content="es_CL" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content={tipo} />
 <meta property="og:site_name" content="SVEA Consultores" />
 <meta property="og:title" content={titulo} />
 <meta property="og:description" content={pagina.description} />

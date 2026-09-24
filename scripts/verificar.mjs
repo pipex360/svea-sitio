@@ -17,7 +17,7 @@ const SERVICIOS_VER = ['/calificacion-tecnica-industrial/', '/estudio-de-carga-d
 const LANDINGS = ['cotiza-calificacion-tecnica-industrial', 'cotiza-estudio-de-carga-de-combustible', 'cotiza-plan-emergencia', 'cotiza-plan-emergencia-condominio', 'cotiza-informe-sanitario', 'cotiza-autorizacion-transporte-residuos'];
 const ARTICULOS = ['autorizacion-transporte-residuos-chile', 'calificacion-inofensiva-seremi-2026', 'calificacion-tecnica-industrial-chile', 'estudio-de-carga-combustible-chile', 'manejo-de-residuos-peligrosos-chile', 'plan-de-emergencia-condominio-chile', 'plan-de-emergencia-ds-44-empresas-chile', 'plan-de-emergencia-empresa-chile', 'que-es-informe-sanitario'];
 const CON_FOTO = new Set([...SERVICIOS_VER, ...LANDINGS.map((s) => `/${s}/`)]);
-const REHECHAS_VER = new Set([...CON_FOTO, ...ARTICULOS.map((s) => `/${s}/`), '/blog/']);
+const REHECHAS_VER = new Set([...CON_FOTO, ...ARTICULOS.map((s) => `/${s}/`), '/blog/', '/gracias/', '/politica-de-privacidad/']);
 const DIST = 'dist';
 const fallos = [];
 let checks = 0;
@@ -103,7 +103,12 @@ function decodificar(s) {
     return ENTIDADES[e] ?? todo;
   });
 }
-function huellaFormulario(html, id) {
+// gclid y utm_*: los seis ocultos de origen del lead. Las landings ya los
+// traían en el WordPress (y ahí entran en la huella); en la portada, los
+// servicios y las guías se agregaron el 24-sep: se dejan fuera al comparar
+// con el original y se comprueba aparte que estén.
+const ORIGEN = ['gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+function huellaFormulario(html, id, { sinOrigen = false } = {}) {
   const m = html.match(new RegExp(`<form\\b[^>]*id="${id}"[^>]*>([\\s\\S]*?)</form>`));
   if (!m) return null;
   const cuerpo = m[1];
@@ -118,6 +123,7 @@ function huellaFormulario(html, id) {
     const name = attr(tag, 'name');
     if (!name) continue;
     const type = tag.startsWith('<select') ? 'select' : tag.startsWith('<textarea') ? 'textarea' : attr(tag, 'type') || 'text';
+    if (type === 'hidden' && sinOrigen && ORIGEN.includes(name)) continue;
     if (type === 'hidden') ocultos[name] = attr(tag, 'value');
     else if (name === 'botcheck') ocultos.botcheck = type;
     else visibles.push(`${name}:${type}:${tiene(tag, 'required') ? 'req' : 'opt'}`);
@@ -143,11 +149,22 @@ for (const [ruta, id, origen, destino] of [
   ].map(([slug, id]) => [`/${slug}/`, id, `originales-wp/landings-ads/${slug}.html`, `${slug}/index.html`]),
   ...ARTICULOS.map((slug) => [`/${slug}/`, 'article-lead-form', `originales-wp/articulos/${slug}.html`, `${slug}/index.html`]),
 ]) {
-  const original = huellaFormulario(readFileSync(origen, 'utf8'), id);
-  const construido = huellaFormulario(readFileSync(path.join(DIST, destino), 'utf8'), id);
+  const esLanding = ruta.startsWith('/cotiza-');
+  const html = readFileSync(path.join(DIST, destino), 'utf8');
+  const original = huellaFormulario(readFileSync(origen, 'utf8'), id, { sinOrigen: !esLanding });
+  const construido = huellaFormulario(html, id, { sinOrigen: !esLanding });
   if (!original || !construido) fallos.push(`${ruta}  ✗ no se encontró el ${id} (original o construido)`);
   else if (original !== construido) fallos.push(`${ruta}  ✗ la lista roja de ${id} cambió\n     original:   ${original}\n     construido: ${construido}`);
   else checks++;
+  // los seis ocultos de origen, con su id field-*, una sola vez en la página
+  if (construido) {
+    const { ocultos } = JSON.parse(huellaFormulario(html, id));
+    const faltan = ORIGEN.filter((n) => !(n in ocultos));
+    const repetidos = ORIGEN.filter((n) => (html.match(new RegExp(`id="field-${n}"`, 'g')) || []).length !== 1);
+    if (faltan.length) fallos.push(`${ruta}  ✗ al ${id} le faltan los ocultos ${faltan.join(', ')}`);
+    else if (repetidos.length) fallos.push(`${ruta}  ✗ id field-* ausente o repetido: ${repetidos.join(', ')}`);
+    else checks++;
+  }
 }
 
 // 5b. La landing de transporte no tiene original en el WordPress: al menos
@@ -254,6 +271,10 @@ const CONTENIDOS = [
     hasta: (o) => o.indexOf('<div class="sticky-bottom-cta"'),
   }]),
   ['/blog/', 'servicios/blog', { desde: (o) => trasEtiqueta(o, '<header class="hero"'), hasta: (o) => o.indexOf('</main>') }],
+  // las dos páginas sueltas: hasta el botón flotante de «Click to Chat»
+  ['/gracias/', 'gracias', { desde: (o) => trasEtiqueta(o, '<div class="ty-page'), hasta: (o) => o.indexOf('<div class="ht-ctc') }],
+  // la política, desde el contenido (el H1 del original, «Politica», se corrigió a «Política») hasta el pie del tema
+  ['/politica-de-privacidad/', 'servicios/politica-de-privacidad', { desde: (o) => trasEtiqueta(o, '<div class="page-content"'), hasta: (o) => o.indexOf('<footer id="site-footer"') }],
 ];
 for (const [ruta, archivo, { desde: fDesde, hasta: fHasta }] of CONTENIDOS) {
   const orig = sinCodigo(readFileSync(`originales-wp/${archivo}.html`, 'utf8'));
@@ -266,6 +287,32 @@ for (const [ruta, archivo, { desde: fDesde, hasta: fHasta }] of CONTENIDOS) {
   const ahora = palabras(sinCodigo(readFileSync(path.join(DIST, ruta.replace(/^\//, ''), 'index.html'), 'utf8')));
   const perdidas = [...antes].filter((w) => !ahora.has(w));
   if (perdidas.length) fallos.push(`${ruta}  ✗ se perdieron ${perdidas.length} palabras del original: ${perdidas.slice(0, 20).join(', ')}`);
+  else checks++;
+}
+
+// 7. /gracias/ no se indexa: en producción su robots sale de paginas.json
+{
+  const g = paginas.find((p) => p.ruta === '/gracias/');
+  if (!g || !/noindex/.test(g.robots)) fallos.push('/gracias/  ✗ paginas.json no la marca noindex (en producción se indexaría)');
+  else checks++;
+}
+
+// 8. Las conversiones de Google Ads van SÓLO por GTM: ningún
+// gtag('event','conversion') ni send_to AW- en el código (el WordPress las
+// mandaba además inline y contaba cada lead dos veces).
+{
+  const { readdirSync, statSync } = await import('node:fs');
+  const archivos = [];
+  const recorrer = (d) => { for (const n of readdirSync(d)) { const f = path.join(d, n); if (statSync(f).isDirectory()) recorrer(f); else if (/\.(astro|tsx?|m?js)$/.test(n)) archivos.push(f); } };
+  recorrer('src');
+  const CONVERSION = /send_to|gtag\(\s*['"]event['"]\s*,\s*['"]conversion['"]/;
+  const reales = [];
+  for (const f of archivos) {
+    readFileSync(f, 'utf8').split('\n').forEach((l, i) => {
+      if (CONVERSION.test(l) && !/^\s*(\*|\/\/)/.test(l)) reales.push(`${f}:${i + 1}: ${l.trim()}`);
+    });
+  }
+  if (reales.length) fallos.push(`código  ✗ quedan conversiones de Ads inline (deben ir por GTM):\n     ${reales.join('\n     ')}`);
   else checks++;
 }
 

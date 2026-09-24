@@ -12,6 +12,7 @@
  * de IsServicio con las mismas tarjetas.
  */
 import '../styles/tailwind.css';
+import MedicionSitio from '../components/MedicionSitio.astro';
 import HeroHalo from '../components/HeroHalo.astro';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
@@ -43,6 +44,7 @@ const fuentesCSS = `
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <SeoHead pagina={pagina} copia={COPIA} faq={PREGUNTAS} />
+  <MedicionSitio copia={COPIA} />
 
   <link rel="preload" href={`${BASE}/fonts/inter-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
@@ -51,6 +53,7 @@ const fuentesCSS = `
   <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-is-1080.webp 1080w, ${BASE}/img/hero/servicio-is-1920.webp 1920w`} imagesizes="100vw" />
 </head>
 <body>
+  <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
     fotos={[{ archivo: 'servicio-is', alto: 1257 }]}
     copete="Servicios SVEA"
@@ -89,10 +92,12 @@ const fuentesCSS = `
   <div class="h-20 md:hidden" aria-hidden="true"></div>
   <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-is" client:idle />
 
-  <div class="aviso-copia">
-    COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
-    <a href={`${BASE}/estado/`}>ver las 27 páginas</a>
-  </div>
+  {COPIA && (
+    <div class="aviso-copia">
+      COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
+      <a href={`${BASE}/estado/`}>ver las 27 páginas</a>
+    </div>
+  )}
 </body>
 </html>
 

@@ -25,21 +25,18 @@
  * Todo el texto sale de src/contenido/landings/<slug>.ts, extraído del
  * bloque de cada original. El formulario es LISTA ROJA (LandingFormulario).
  *
- * Medición (LISTA ROJA), sólo en producción (SVEA_PRODUCCION=1):
- *   · GTM-NGVMRNDM, que el WordPress cargaba en todas las landings;
- *   · gtag.js de G-FWQ05WDLZ3, que el bloque de la landing cargaba y
- *     Medicion.astro no carga (sólo define gtag y sus config);
- *   · Medicion.astro: config GA4 + Ads, conversión del formulario con
- *     Enhanced Conversions, evento GA4, asunto dinámico y gclid/utm;
- *   · la conversión del clic de WhatsApp (AW-16836158536/9SA2CNy8qcobEMjIjdw-),
- *     que Medicion.astro no trae. Va por delegación de eventos, como en
- *     Base.astro, para que cuente también el botón de la barra del teléfono.
+ * Medición, sólo en producción (SVEA_PRODUCCION=1): MedicionSitio.astro, la
+ * misma de todo el sitio (GTM-NGVMRNDM con las conversiones de Ads, GA4 por
+ * gtag.js, form_submit_cotizacion, clic_whatsapp, Enhanced Conversions y
+ * gclid/utm). Ya no va ningún gtag('event','conversion') inline: el GTM
+ * cuenta la conversión del formulario (vista de /gracias/) y la del clic de
+ * WhatsApp; mandarlas también desde aquí las contaba dos veces.
  * En la copia de trabajo no sale ni un gtag ni el GTM (scripts/verificar.mjs
  * falla si aparece): sólo el asunto y el gclid/utm, que no miden nada.
  */
 import '../styles/tailwind.css';
 import SeoHead from '../components/SeoHead.astro';
-import Medicion from '../components/Medicion.astro';
+import MedicionSitio from '../components/MedicionSitio.astro';
 import LandingFormulario from '../components/landing/LandingFormulario.astro';
 import LandingTitulo from '../components/landing/LandingTitulo.astro';
 import { LogoMarquee } from '../components/ui/logo-marquee';
@@ -58,8 +55,6 @@ if (!pagina) throw new Error(`falta ${d.ruta} en paginas.json`);
 
 const TEL = '+56 9 2994 7924';
 const TEL_HREF = 'tel:+56929947924';
-const GTM = 'GTM-NGVMRNDM';
-const WA_CONV = 'AW-16836158536/9SA2CNy8qcobEMjIjdw-';
 
 // para el FAQPage de SeoHead (sólo se usa si paginas.json no trae uno)
 const sinEtiquetas = (s: string) => s.replace(/<[^>]+>/g, '').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
@@ -100,8 +95,6 @@ const TEL_SVG =
 const FLECHA = '<path d="M5 12h14" /><path d="m12 5 7 7-7 7" />';
 
 const m = d.medicion;
-const WA_CON_VALOR = m.valorConversion ?? null;
-const WA_EVENTO = m.eventoWhatsApp;
 ---
 <!doctype html>
 <html lang="es">
@@ -115,24 +108,10 @@ const WA_EVENTO = m.eventoWhatsApp;
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
 
-  {!COPIA && (
-    <Fragment>
-      <!-- LISTA ROJA · Google Tag Manager, como lo cargaba el WordPress -->
-      <script is:inline define:vars={{ GTM }}>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer',GTM);
-      </script>
-      <!-- LISTA ROJA · la librería gtag.js que cargaba el bloque de la landing -->
-      <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-FWQ05WDLZ3"></script>
-    </Fragment>
-  )}
+  <MedicionSitio copia={COPIA} />
 </head>
 <body class="lp">
-  {!COPIA && (
-    <noscript set:html={`<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`} />
-  )}
+  <MedicionSitio copia={COPIA} parte="body" />
 
   <div class="svea-nuevo">
     <!-- franja de urgencia del original -->
@@ -447,30 +426,31 @@ const WA_EVENTO = m.eventoWhatsApp;
   })();
   </script>
 
-  {COPIA ? (
+  <!-- C · asunto dinámico, la misma lógica del original: el prefijo y la
+       palabra de servicio los lee n8n -->
+  <script is:inline define:vars={{ prefijoAsunto: m.prefijoAsunto, formId: d.formulario.id, subjectId: m.subjectId }}>
+  document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', function () {
+      var campoNombre  = form.querySelector('input[name="Nombre"]');
+      var campoEmpresa = form.querySelector('input[name="Empresa"]') ||
+                         form.querySelector('input[name="Condominio"]');
+      var nombre  = ((campoNombre && campoNombre.value) || '').trim() || 'Sin nombre';
+      var empresa = ((campoEmpresa && campoEmpresa.value) || '').trim();
+      var ahora = new Date();
+      var fecha = ahora.toLocaleDateString('es-CL') + ' ' +
+                  ahora.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
+      var asunto = prefijoAsunto + nombre + (empresa ? ' | ' + empresa : '') + ' - ' + fecha;
+      var destino = document.getElementById(subjectId);
+      if (destino) destino.value = asunto;
+    });
+  });
+  </script>
+
+  {COPIA && (
     <Fragment>
-      <!-- C · asunto dinámico, la misma lógica del original: el prefijo y la
-           palabra de servicio los lee n8n -->
-      <script is:inline define:vars={{ prefijoAsunto: m.prefijoAsunto, formId: d.formulario.id, subjectId: m.subjectId }}>
-      document.addEventListener('DOMContentLoaded', function () {
-        var form = document.getElementById(formId);
-        if (!form) return;
-        form.addEventListener('submit', function () {
-          var campoNombre  = form.querySelector('input[name="Nombre"]');
-          var campoEmpresa = form.querySelector('input[name="Empresa"]') ||
-                             form.querySelector('input[name="Condominio"]');
-          var nombre  = ((campoNombre && campoNombre.value) || '').trim() || 'Sin nombre';
-          var empresa = ((campoEmpresa && campoEmpresa.value) || '').trim();
-          var ahora = new Date();
-          var fecha = ahora.toLocaleDateString('es-CL') + ' ' +
-                      ahora.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
-          var asunto = prefijoAsunto + nombre + (empresa ? ' | ' + empresa : '') + ' - ' + fecha;
-          var destino = document.getElementById(subjectId);
-          if (destino) destino.value = asunto;
-        });
-      });
-      </script>
-      <!-- D · gclid y utm_* desde la URL y sessionStorage, idéntico al original -->
+      <!-- D · gclid y utm_* en la copia (en producción lo hace MedicionSitio) -->
       <script is:inline>
       (function () {
         var params = new URLSearchParams(window.location.search);
@@ -489,29 +469,6 @@ const WA_EVENTO = m.eventoWhatsApp;
           if (el && !el.value) el.value = sessionStorage.getItem('gclid');
         }
       })();
-      </script>
-    </Fragment>
-  ) : (
-    <Fragment>
-      <!-- A + C + D · la medición común de las páginas con formulario -->
-      <Medicion
-        servicio={m.servicio}
-        prefijoAsunto={m.prefijoAsunto}
-        formId={d.formulario.id}
-        subjectId={m.subjectId}
-        eventoGA4={m.eventoGA4}
-        valorConversion={m.valorConversion}
-      />
-      <!-- B · conversión del clic de WhatsApp, con los valores del original -->
-      <script is:inline define:vars={{ WA_CONV, WA_CON_VALOR, WA_EVENTO }}>
-      document.addEventListener('click', function (e) {
-        var a = e.target.closest && e.target.closest('a[href*="whatsapp"], a[href*="wa.me"]');
-        if (!a || typeof gtag !== 'function') return;
-        var conversion = { 'send_to': WA_CONV };
-        if (WA_CON_VALOR !== null) { conversion.value = WA_CON_VALOR; conversion.currency = 'CLP'; }
-        gtag('event', 'conversion', conversion);
-        if (WA_EVENTO) gtag('event', 'clic_whatsapp', { 'event_category': 'Lead', 'event_label': document.title });
-      }, true);
       </script>
     </Fragment>
   )}

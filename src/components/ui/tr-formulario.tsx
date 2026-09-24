@@ -14,6 +14,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Reveal } from '@/components/ui/reveal';
 import { Textarea } from '@/components/ui/textarea';
+import { CamposOrigen } from '@/components/ui/campos-origen';
 
 /** Los mismos enlaces del WordPress: el de WhatsApp lo cuenta el listener de GTM. */
 const WHATSAPP =
@@ -72,6 +73,8 @@ export function TrFormulario({ copia = false }: { copia?: boolean }) {
             <input type="hidden" name="redirect" value="https://sveaconsultores.cl/gracias/" />
             <input type="hidden" name="Servicio" value="Autorización de Transporte de Residuos Peligrosos y No Peligrosos" />
             <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} aria-hidden="true" />
+            {/* gclid y utm_*: los rellena la medición (MedicionSitio.astro) */}
+            <CamposOrigen />
 
             <div className="flex flex-col gap-1.5">
               <Label htmlFor="tr-nombre">Nombre</Label>

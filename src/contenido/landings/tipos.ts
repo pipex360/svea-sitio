@@ -117,11 +117,15 @@ export interface Landing {
   foto: string;
 
   /**
-   * Medición de producción, con los valores del <script> del original.
-   * Sólo se emite cuando no es la copia de trabajo.
+   * Lo que el <script> del original hacía al enviar. Hoy sólo se usan
+   * `prefijoAsunto` y `subjectId` (el asunto dinámico que lee n8n); la
+   * medición es la común de MedicionSitio.astro (el `servicio` del evento
+   * GA4 sale del campo oculto «Servicio»). Los demás campos quedan como
+   * registro de lo que hacía el WordPress: ya no se emite ninguna conversión
+   * de Ads inline (las cuenta el GTM).
    */
   medicion: {
-    /** valor `servicio` del evento GA4 form_submit_cotizacion */
+    /** (registro) valor `servicio` que el original mandaba en form_submit_cotizacion */
     servicio: string;
     prefijoAsunto: string;
     subjectId: string;

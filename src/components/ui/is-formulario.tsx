@@ -20,6 +20,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Reveal } from '@/components/ui/reveal';
 import { Textarea } from '@/components/ui/textarea';
+import { CamposOrigen } from '@/components/ui/campos-origen';
 
 /** Los mismos enlaces del WordPress: el de WhatsApp lo cuenta el listener de GTM. */
 const WHATSAPP = 'https://api.whatsapp.com/send/?phone=56929947924&text=Hola%2C%20necesito%20asesor%C3%ADa%20en%20Informe%20Sanitario%20Favorable';
@@ -76,6 +77,8 @@ export function IsFormulario({ copia = false }: { copia?: boolean }) {
             <input type="hidden" name="redirect" value="https://sveaconsultores.cl/gracias/" />
             <input type="hidden" name="Servicio" value="Informe Sanitario Favorable / Autorización Sanitaria" />
             <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} aria-hidden="true" />
+            {/* gclid y utm_*: los rellena la medición (MedicionSitio.astro) */}
+            <CamposOrigen />
 
             <div className="flex flex-col gap-1.5">
               <Label htmlFor="is-nombre">Nombre</Label>

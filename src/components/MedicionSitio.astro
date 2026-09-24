@@ -1,0 +1,146 @@
+---
+/**
+ * La medición del sitio, una sola para todas las páginas.
+ *
+ * Sólo sale en producción (SVEA_PRODUCCION=1). En la copia de trabajo no
+ * pinta nada: scripts/verificar.mjs falla si aparece un GTM, un G- o un AW-.
+ *
+ * Reparto (decisión del 24-sep, tras auditar el WordPress vivo):
+ *
+ *   · Google Ads va ENTERO por GTM-NGVMRNDM: el contenedor trae el Google
+ *     tag AW-16836158536, el Conversion Linker, la conversión del formulario
+ *     (086iCJjJlsobEMjIjdw-, disparada por la vista de /gracias/) y la del
+ *     clic de WhatsApp (9SA2CNy8qcobEMjIjdw-, clic en enlaces a
+ *     api.whatsapp.com). Aquí NO va ningún gtag('event','conversion'): el
+ *     WordPress los mandaba además inline y contaba cada lead dos veces.
+ *   · GA4 (G-FWQ05WDLZ3) va por gtag.js desde el código, porque el GTM no
+ *     trae GA4: page_view (el config), `form_submit_cotizacion` con el
+ *     parámetro `servicio`, y `clic_whatsapp`. Sin conversiones de Ads.
+ *
+ * Además:
+ *   · Enhanced Conversions: al enviar un formulario se guardan en
+ *     sessionStorage el email y el teléfono normalizados (+56…). En /gracias/
+ *     se empujan al dataLayer como `user_data` ANTES de cargar el GTM, para
+ *     que el tag de conversión los tenga en su disparo (vista de página), y
+ *     se borran.
+ *   · gclid y utm_*: se guardan en sessionStorage al llegar con ellos en la
+ *     URL y se copian a los campos ocultos del mismo nombre de cualquier
+ *     formulario (web3forms los manda en el correo).
+ *
+ * Uso: `<MedicionSitio copia={COPIA} />` dentro del <head>, y
+ * `<MedicionSitio copia={COPIA} parte="body" />` como primer hijo del <body>
+ * (el <noscript> del GTM). En /gracias/, `gracias` en el del <head>.
+ */
+interface Props {
+  copia: boolean;
+  parte?: 'head' | 'body';
+  /** la página de gracias: empuja user_data antes del GTM */
+  gracias?: boolean;
+}
+const { copia, parte = 'head', gracias = false } = Astro.props;
+const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGVMRNDM" height="0" width="0" style="display:none;visibility:hidden"></iframe>';
+---
+{!copia && parte === 'head' && (
+  <Fragment>
+    {gracias && (
+      <script is:inline>
+      // Enhanced Conversions: los datos del formulario, antes del GTM
+      (function () {
+        window.dataLayer = window.dataLayer || [];
+        try {
+          var ud = JSON.parse(sessionStorage.getItem('svea_user_data') || 'null');
+          sessionStorage.removeItem('svea_user_data');
+          if (ud && (ud.email || ud.phone_number)) window.dataLayer.push({ user_data: ud });
+        } catch (e) {}
+      })();
+      </script>
+    )}
+    <!-- Google Tag Manager (Google Ads: etiqueta, vinculador y conversiones) -->
+    <script is:inline>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NGVMRNDM');
+    </script>
+    <!-- GA4 por gtag.js (el GTM no trae GA4) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-FWQ05WDLZ3"></script>
+    <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-FWQ05WDLZ3');
+
+    (function () {
+      var CAMPOS = ['gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      var ss = {
+        get: function (k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
+        set: function (k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} },
+        del: function (k) { try { sessionStorage.removeItem(k); } catch (e) {} },
+      };
+
+      // gclid y utm_*: al llegar con cualquiera de ellos, el juego completo
+      // se reemplaza (gana el último clic); si no, queda el de la sesión.
+      var q = new URLSearchParams(location.search);
+      if (CAMPOS.some(function (f) { return q.get(f); })) {
+        CAMPOS.forEach(function (f) { var v = q.get(f); if (v) ss.set(f, v); else ss.del(f); });
+      }
+      function rellenar(raiz) {
+        CAMPOS.forEach(function (f) {
+          var v = ss.get(f);
+          if (!v) return;
+          raiz.querySelectorAll('input[name="' + f + '"]').forEach(function (el) { if (!el.value) el.value = v; });
+        });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { rellenar(document); });
+      else rellenar(document);
+
+      // teléfono en E.164 para Enhanced Conversions; si no se puede, se omite
+      function telefono(v) {
+        var d = String(v || '').replace(/\D/g, '').replace(/^00/, '');
+        if (d.length === 9) return '+56' + d;                        // 9 XXXX XXXX · 2 XXXX XXXX
+        if (d.length === 11 && d.indexOf('56') === 0) return '+' + d; // 56 9 XXXX XXXX
+        if (/^\s*\+/.test(v) && d.length >= 10 && d.length <= 15) return '+' + d;
+        return '';
+      }
+
+      // envío de cualquier formulario de Web3Forms
+      document.addEventListener('submit', function (e) {
+        var form = e.target;
+        if (!form || !form.matches || !form.matches('form[action*="web3forms"]')) return;
+        rellenar(form);
+        var s = form.querySelector('[name="Servicio"]');
+        gtag('event', 'form_submit_cotizacion', {
+          servicio: (s && s.value) || '',
+          event_category: 'Lead',
+          event_label: document.title,
+          form_id: form.id || '',
+          transport_type: 'beacon',
+        });
+        var em = form.querySelector('input[type="email"], input[name="Email"]');
+        var te = form.querySelector('input[type="tel"], input[name="Teléfono"]');
+        var ud = {};
+        if (em && em.value.trim()) ud.email = em.value.trim().toLowerCase();
+        var tel = telefono(te && te.value);
+        if (tel) ud.phone_number = tel;
+        if (ud.email || ud.phone_number) ss.set('svea_user_data', JSON.stringify(ud));
+      }, true);
+
+      // clic en WhatsApp (la conversión de Ads la cuenta el GTM)
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest && e.target.closest('a[href*="api.whatsapp.com"], a[href*="wa.me/"]');
+        if (!a) return;
+        gtag('event', 'clic_whatsapp', {
+          event_category: 'Lead',
+          event_label: document.title,
+          link_url: a.href,
+          transport_type: 'beacon',
+        });
+      }, true);
+    })();
+    </script>
+  </Fragment>
+)}
+{!copia && parte === 'body' && (
+  <noscript set:html={NOSCRIPT}></noscript>
+)}

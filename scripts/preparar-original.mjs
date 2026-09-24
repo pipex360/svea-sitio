@@ -12,6 +12,14 @@
  *   2. Los formularios no envían. Nadie genera un lead falso desde la copia.
  *   3. Todas las páginas van noindex y el robots.txt bloquea todo, para que
  *      Google no indexe una copia del sitio y compita consigo mismo.
+ *
+ * Desde el 24-sep ya no queda ninguna copia del WordPress en public/: las 27
+ * páginas están rehechas en Astro (REHECHAS, abajo), incluidas /gracias/ y
+ * /politica-de-privacidad/. Los originales siguen en originales-wp/ como
+ * fuente de verdad para scripts/verificar.mjs.
+ *
+ * Con SVEA_PRODUCCION=1 (el build que va a sveaconsultores.cl) el robots.txt
+ * es el de producción —todo permitido y el sitemap— en vez del que bloquea.
  */
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, cpSync } from 'node:fs';
 import path from 'node:path';
@@ -124,6 +132,9 @@ const REHECHAS = new Set([
   '/plan-de-emergencia-empresa-chile/',
   '/que-es-informe-sanitario/',
   '/blog/',
+  // las dos páginas sueltas (src/pages/gracias.astro y politica-de-privacidad.astro)
+  '/gracias/',
+  '/politica-de-privacidad/',
 ]);
 
 let n = 0;
@@ -290,8 +301,13 @@ writeFileSync('src/contenido/home-wp-cabeza.html',
 writeFileSync('src/contenido/home-wp-cuerpo.html', cuerpo);
 console.log('home: recursos y cuerpo entregados a Astro');
 
-// que nadie indexe la copia
-writeFileSync(path.join(DEST, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
+// que nadie indexe la copia; en producción, todo abierto y el sitemap
+// (lo genera @astrojs/sitemap sólo en producción, ver astro.config.mjs)
+const PRODUCCION = !!process.env.SVEA_PRODUCCION;
+writeFileSync(path.join(DEST, 'robots.txt'), PRODUCCION
+  ? `User-agent: *\nAllow: /\nSitemap: ${DOM}/sitemap-index.xml\n`
+  : 'User-agent: *\nDisallow: /\n');
+console.log(`robots.txt de ${PRODUCCION ? 'PRODUCCIÓN (Allow + sitemap)' : 'la copia (Disallow: /)'}`);
 
 console.log(`${n} páginas copiadas del sitio actual · base "${BASE || '/'}"`);
 const faltan = paginas.filter((p) => !ARCHIVOS[p.ruta]).map((p) => p.ruta);

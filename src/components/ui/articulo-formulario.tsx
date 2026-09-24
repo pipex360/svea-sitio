@@ -32,6 +32,7 @@ import { IconoWhatsApp } from '@/components/ui/icono-whatsapp';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { CamposOrigen } from '@/components/ui/campos-origen';
 
 export type Campo = {
   label: string;
@@ -126,6 +127,8 @@ export function ArticuloFormulario({
               ),
             )}
             <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} aria-hidden="true" />
+            {/* gclid y utm_*: los rellena la medición (MedicionSitio.astro) */}
+            <CamposOrigen />
 
             {datos.campos.map((c) => (
               <div key={c.id} className="flex flex-col gap-1.5">

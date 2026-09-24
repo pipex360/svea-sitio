@@ -31,6 +31,7 @@
  * canónica y JSON-LD de Rank Math, sin tocar).
  */
 import '../styles/tailwind.css';
+import MedicionSitio from '../components/MedicionSitio.astro';
 import SeoHead from '../components/SeoHead.astro';
 import BarraLectura from '../components/BarraLectura.astro';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
@@ -103,13 +104,15 @@ const fuentesCSS = `
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <SeoHead pagina={pagina} copia={COPIA} faq={FAQ} />
+  <SeoHead pagina={pagina} copia={COPIA} faq={FAQ} tipo="article" />
+  <MedicionSitio copia={COPIA} />
 
   <link rel="preload" href={`${BASE}/fonts/inter-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
 </head>
 <body>
+  <MedicionSitio copia={COPIA} parte="body" />
   <div class="svea-nuevo art">
     <div class="art-progreso" aria-hidden="true"></div>
 
