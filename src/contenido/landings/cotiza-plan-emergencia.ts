@@ -283,8 +283,8 @@ const landing: Landing = {
     "items": [
       {
         "sigla": "DS 44",
-        "titulo": "Sustancias Peligrosas",
-        "texto": "Exige plan de emergencia y contingencia para instalaciones que almacenen sustancias peligrosas."
+        "titulo": "Gestión Preventiva de Riesgos",
+        "texto": "Exige a toda empresa un plan de emergencia, identificación de riesgos y simulacros como parte de la gestión preventiva (vigente desde febrero de 2025)."
       },
       {
         "sigla": "DS 594",
