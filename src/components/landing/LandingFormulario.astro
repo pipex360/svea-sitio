@@ -63,12 +63,20 @@ for (const c of f.campos) {
   else filas.push([c]);
 }
 ---
-<div class="lp-form-card rounded-2xl border border-border bg-white p-5 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.35)] sm:p-7">
-  <div class="mb-5">
+<!-- la tarjeta de «Contáctanos» de la portada (contact-card): esquinas
+     rectas, cruces en las esquinas, el titular en blanco y el formulario
+     sobre la hoja -->
+<div class="lp-form-card relative border border-border bg-white shadow-[0_18px_40px_-24px_rgba(0,0,0,0.25)]">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="absolute -left-3 -top-3 size-6 text-black/40"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="absolute -right-3 -top-3 size-6 text-black/40"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="absolute -bottom-3 -left-3 size-6 text-black/40"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="absolute -bottom-3 -right-3 size-6 text-black/40"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+  <div class="px-5 pb-5 pt-6 sm:px-7 sm:pt-7">
     <h2 class="font-display text-[22px] font-semibold leading-tight tracking-tight text-black sm:text-2xl">{f.titulo}</h2>
     <p class="mt-1 text-sm text-black/60" set:html={f.bajada} />
   </div>
 
+  <div class="border-t border-border bg-hoja p-5 sm:p-7">
   <form
     id={f.id}
     action={copia ? '#' : 'https://api.web3forms.com/submit'}
@@ -128,11 +136,12 @@ for (const c of f.campos) {
     </p>
   </form>
 
-  <div class="mt-5 flex gap-3 rounded-xl bg-hoja p-4">
+  <div class="mt-5 flex gap-3 rounded-lg border border-border bg-white p-4">
     <svg viewBox="0 0 24 24" class="mt-0.5 size-5 shrink-0 text-svea" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
     <p class="text-sm leading-snug text-black/70">
       <strong class="block font-semibold text-black">{f.garantia.titulo}</strong>
       {f.garantia.texto}
     </p>
   </div>
+</div>
 </div>

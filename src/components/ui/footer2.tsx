@@ -55,7 +55,11 @@ interface Footer2Props {
   tagline?: string;
   contacto?: { direccion: string; telefono: string; correo: string };
   menuItems?: MenuItem[];
+  /** cómo se escribe el teléfono (el href lleva siempre el crudo) */
+  telefonoTexto?: string;
   copyright?: string;
+  /** textos sueltos de la fila de abajo, sin enlace (los del pie de las landings) */
+  notas?: string[];
   bottomLinks?: { text: string; url: string }[];
   className?: string;
 }
@@ -121,7 +125,9 @@ export function Footer2({
       ],
     },
   ],
+  telefonoTexto = '+56 9 2994 7924',
   copyright = `© ${new Date().getFullYear()} SVEA Consultores. Todos los derechos reservados.`,
+  notas = [],
   bottomLinks = [{ text: 'Política de privacidad', url: `${base}/politica-de-privacidad/` }],
   className,
 }: Footer2Props) {
@@ -154,7 +160,7 @@ export function Footer2({
                 {/* el número se escribe agrupado, como en la cabecera y en
                     «Contáctanos»; el href lleva el crudo */}
                 <a href={`tel:${contacto.telefono}`} className="inline-block py-1.5 no-underline transition-colors hover:text-white">
-                  +56 9 2994 7924
+                  {telefonoTexto}
                 </a>
               </p>
               <p>
@@ -205,7 +211,10 @@ export function Footer2({
         <div className="mt-10 flex flex-col justify-between gap-4 border-t border-white/15 pt-6 text-sm font-medium text-white/65 md:flex-row md:items-center md:pr-44">
           <p>{copyright}</p>
           <div className="flex items-center gap-5">
-            <ul className="flex gap-4">
+            <ul className="flex flex-wrap items-center gap-x-4">
+              {notas.map((nota) => (
+                <li key={nota} className="py-2.5">{nota}</li>
+              ))}
               {bottomLinks.map((link) => (
                 <li key={link.text} className="underline underline-offset-4 transition-colors hover:text-white">
                   <a href={link.url} className="inline-block py-2.5">{link.text}</a>

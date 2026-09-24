@@ -39,6 +39,8 @@ import { BarraMovil } from '../components/ui/barra-movil';
 import { ArticuloFormulario } from '../components/ui/articulo-formulario';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
+import { Reveal } from '../components/ui/reveal';
+import { Velaris } from '../components/ui/velaris';
 import paginas from '../data/paginas.json';
 import { GUIAS, guia } from '../contenido/articulos/guias';
 
@@ -220,34 +222,35 @@ const fuentesCSS = `
     <ArticuloFormulario datos={{ ...datos.formulario }} asunto={datos.asunto} copia={COPIA} base={BASE} client:idle />
 
     <section class="art-servicio" aria-labelledby="titulo-servicios">
-      <div class="art-ancho">
+      <Reveal className="art-ancho" client:idle>
         <h2 id="titulo-servicios">{datos.relacionados.titulo}</h2>
         {datos.relacionados.intro && <p class="art-servicio-intro" set:html={conBase(datos.relacionados.intro)} />}
         <div class="art-servicio-principal">
+          <Velaris className="absolute inset-0" speed={1.2} client:idle />
           <div>
             <p class="art-eyebrow">Servicio relacionado</p>
             <h3>{servicio.nombre}</h3>
             <p>{servicio.texto}</p>
           </div>
           <div class="art-servicio-botones">
-            <a class="btn-flecha" href={`${BASE}${servicio.ruta}${servicio.formulario}`}><span>Cotizar {servicio.nombre}</span><Fragment set:html={flecha} /></a>
+            <a class="btn-flecha inversa" href={`${BASE}${servicio.ruta}${servicio.formulario}`}><span>Cotizar {servicio.nombre}</span><Fragment set:html={flecha} /></a>
             <a class="art-boton-linea" href={`${BASE}${servicio.ruta}`}>Ver el servicio</a>
           </div>
         </div>
         <div class="art-tarjetas">
           {datos.relacionados.tarjetas.map((t: { titulo: string; texto: string; href: string; enlace: string }) => (
-            <div class="art-tarjeta">
+            <div class="art-tarjeta tarjeta-svea">
               <h3>{t.titulo}</h3>
               <p set:html={conBase(t.texto)} />
               <a href={ruta(t.href)}>{t.enlace}</a>
             </div>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
 
     <section class="art-otras" aria-labelledby="titulo-otras">
-      <div class="art-ancho">
+      <Reveal className="art-ancho" client:idle>
         <div class="art-otras-cab">
           <h2 id="titulo-otras">Otras guías del blog</h2>
           <a class="art-boton-linea" href={`${BASE}/blog/`}>Ver todas las guías</a>
@@ -255,7 +258,7 @@ const fuentesCSS = `
         <ul class="art-otras-lista">
           {otras.map((g) => (
             <li>
-              <a href={`${BASE}/${g.slug}/`}>
+              <a class="tarjeta-svea" href={`${BASE}/${g.slug}/`}>
                 <span class="art-otras-cat">{g.categoria}</span>
                 <span class="art-otras-tit">{g.titulo}</span>
                 <span class="art-otras-baj">{g.bajada}</span>
@@ -263,7 +266,7 @@ const fuentesCSS = `
             </li>
           ))}
         </ul>
-      </div>
+      </Reveal>
     </section>
 
     <Cta69
@@ -347,10 +350,8 @@ const fuentesCSS = `
   @media (prefers-reduced-motion:reduce){.art-progreso{display:none}}
 
   /* ---------- cabecera ---------- */
-  .art-cab{position:relative;background:
-      radial-gradient(60% 80% at 12% 0%,rgba(155,235,107,.16),rgba(155,235,107,0) 70%),
-      radial-gradient(50% 70% at 95% 10%,rgba(127,206,214,.18),rgba(127,206,214,0) 70%),
-      var(--hoja);
+  /* la cabecera en la hoja de la portada, sin los degradados lima y celeste */
+  .art-cab{position:relative;background:linear-gradient(to bottom,#fff,var(--hoja));
     border-bottom:1px solid var(--borde)}
   /* el titular se alinea con la columna de lectura (índice 260 px + hueco 64 px) */
   .art-cabecera{max-width:76rem;margin:0 auto;padding:40px 48px 56px 372px}
@@ -361,7 +362,7 @@ const fuentesCSS = `
   .art-migas a:hover{color:var(--verde);text-decoration:underline}
   .art-categoria{display:inline-block;margin:28px 0 16px;padding:6px 12px;border-radius:999px;border:1px solid rgba(14,122,60,.2);
     background:rgba(14,122,60,.06);color:var(--verde);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-  .art-cab h1{margin:0;font-family:Manrope,Inter,sans-serif;font-weight:600;letter-spacing:-.035em;line-height:1.1;
+  .art-cab h1{margin:0;font-family:Manrope,Inter,sans-serif;font-weight:500;letter-spacing:-.04em;line-height:1.1;
     font-size:clamp(32px,4.4vw,54px);color:#000;text-wrap:balance;max-width:24ch}
   .art-bajada{margin:20px 0 0;max-width:60ch;font-size:19px;line-height:1.6;color:var(--suave)}
   .art .art-meta{display:flex;flex-wrap:wrap;gap:6px 0;margin-top:22px;font-size:14px;color:rgba(0,0,0,.6)}
@@ -434,7 +435,7 @@ const fuentesCSS = `
   .art .art-cuerpo .highlight-box{margin:2em 0;padding:28px 30px;border-radius:18px;background:#0d3518;color:rgba(255,255,255,.82)}
   .art .art-cuerpo .highlight-box h3{margin-top:0;color:#fff}
   .art .art-cuerpo .highlight-box strong{color:#fff}
-  .art .art-cuerpo .highlight-box a{color:#9beb6b}
+  .art .art-cuerpo .highlight-box a{color:#95d5b2}
   .art .art-cuerpo .highlight-box p:last-child{margin-bottom:0}
 
   .art .art-cuerpo .error-item{position:relative;margin:14px 0;padding:18px 20px 18px 56px;border:1px solid var(--borde);border-radius:14px;background:#fff}
@@ -469,10 +470,11 @@ const fuentesCSS = `
   .art .art-cuerpo .art-cta .btn-flecha{font-size:16px;padding:6px 6px 6px 24px}
   .art .art-cuerpo .art-cta .btn-flecha .circulo{width:36px;height:36px}
 
+  /* el botón secundario de la casa (.btn-linea.chica de tailwind.css) */
   .art-boton-linea{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border-radius:999px;
-    border:1px solid rgba(0,0,0,.2)!important;background:#fff;color:#000!important;font-size:15px;font-weight:500;text-decoration:none!important;white-space:nowrap;
-    transition:border-color .2s,background .2s}
-  .art-boton-linea:hover{border-color:#000!important}
+    border:1px solid var(--borde)!important;background:#fff;color:#000!important;font-size:15px;font-weight:500;text-decoration:none!important;white-space:nowrap;
+    transition:border-color .2s}
+  .art-boton-linea:hover{border-color:rgba(0,0,0,.3)!important}
 
   .art-salto{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;margin:2em 0;padding:18px 22px;
     border-radius:14px;border:1px dashed rgba(14,122,60,.35);background:rgba(14,122,60,.04)}
@@ -507,7 +509,7 @@ const fuentesCSS = `
   .art-compartir-btn svg{width:18px;height:18px}
   .art-compartir-btn.copiado{background:var(--verde);color:#fff!important;border-color:var(--verde)!important}
   .art-autor{display:flex;gap:18px;padding:22px;border-radius:16px;background:var(--hoja)}
-  .art-autor-logo{flex-shrink:0;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#0d3518;color:#9beb6b;
+  .art-autor-logo{flex-shrink:0;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#0d3518;color:#95d5b2;
     font:700 18px/1 Manrope,Inter,sans-serif}
   .art-autor p{margin:0;font-size:15.5px;line-height:1.6}
   .art .art-cuerpo .art-autor-nombre{margin-bottom:4px;font-weight:700;color:#000}
@@ -521,20 +523,19 @@ const fuentesCSS = `
   .art-servicio{padding:80px 24px 40px}
   .art-servicio-intro{margin:-12px 0 24px;max-width:60ch;font-size:17px;line-height:1.6;color:var(--suave)}
   .art-servicio h2,.art-otras h2{margin:0 0 28px;font-family:Manrope,Inter,sans-serif;font-weight:500;letter-spacing:-.03em;font-size:clamp(28px,3.4vw,44px);color:#000}
-  .art-servicio-principal{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:28px;padding:32px;border-radius:20px;
-    background:#0d3518;color:rgba(255,255,255,.8)}
-  .art-eyebrow{margin:0 0 8px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#9beb6b}
+  /* el bloque oscuro con el verde en movimiento (Velaris), como el cierre */
+  .art-servicio-principal{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:28px;padding:32px;border-radius:12px;
+    border:1px solid #0b3d25;background:#0d3518;color:rgba(255,255,255,.8)}
+  .art-servicio-principal>div{position:relative;z-index:1}
+  .art-eyebrow{margin:0 0 8px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#95d5b2}
   .art-servicio-principal h3{margin:0 0 8px;font-family:Manrope,Inter,sans-serif;font-weight:600;font-size:28px;letter-spacing:-.02em;color:#fff}
   .art-servicio-principal p{margin:0;max-width:56ch;line-height:1.6}
   .art-servicio-botones{display:flex;flex-direction:column;gap:10px;align-items:stretch}
-  .art-servicio-principal .btn-flecha{background:#fff;justify-content:space-between}
-  .art-servicio-principal .btn-flecha span{color:#000!important}
-  .art-servicio-principal .btn-flecha .circulo{background:#0e7a3c}
-  .art-servicio-principal .btn-flecha .circulo,.art-servicio-principal .btn-flecha .circulo svg{color:#fff!important}
+  .art-servicio-principal .btn-flecha{justify-content:space-between}
   .art-servicio-principal .art-boton-linea{background:transparent;color:#fff!important;border-color:rgba(255,255,255,.35)!important}
   .art-servicio-principal .art-boton-linea:hover{border-color:#fff!important}
   .art-tarjetas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
-  .art-tarjeta{display:flex;flex-direction:column;padding:24px;border:1px solid var(--borde);border-radius:16px;background:var(--hoja)}
+  .art-tarjeta{display:flex;flex-direction:column;padding:24px;border:1px solid var(--borde);border-radius:12px;background:#fff}
   .art-tarjeta h3{margin:0 0 8px;font-size:18px;font-weight:700;color:#000}
   .art-tarjeta p{margin:0 0 18px;font-size:15px;line-height:1.6;color:var(--suave)}
   .art-tarjeta p a{color:var(--verde);text-decoration:underline;font-weight:600}
@@ -546,13 +547,11 @@ const fuentesCSS = `
   .art-otras-cab{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px}
   .art-otras-cab h2{margin:0!important}
   .art-otras-lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  .art-otras-lista a{display:flex;flex-direction:column;gap:6px;height:100%;padding:20px 22px;border:1px solid var(--borde);border-radius:14px;
-    text-decoration:none;color:inherit;transition:border-color .2s,transform .2s,box-shadow .2s}
-  .art-otras-lista a:hover{border-color:rgba(0,0,0,.3);transform:translateY(-2px);box-shadow:0 18px 40px -24px rgba(0,0,0,.3)}
+  .art-otras-lista a{display:flex;flex-direction:column;gap:6px;height:100%;padding:20px 22px;border:1px solid var(--borde);border-radius:12px;
+    background:#fff;text-decoration:none;color:inherit}
   .art-otras-cat{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--verde)}
   .art-otras-tit{font-family:Manrope,Inter,sans-serif;font-weight:600;font-size:18px;line-height:1.3;color:#000}
   .art-otras-baj{font-size:14.5px;line-height:1.55;color:var(--suave)}
-  @media (prefers-reduced-motion:reduce){.art-otras-lista a{transition:none}.art-otras-lista a:hover{transform:none}}
 
   /* ---------- pantallas medianas y teléfono ---------- */
   @media (max-width:1023px){

@@ -6,7 +6,9 @@
  * hoja de Elementor, sus scripts y los recursos del sitio viejo). Ahora van
  * con el lenguaje de /blog/ y de las guías: la cabecera clara con
  * BarraLectura, migas, insignia, H1 y bajada; el contenido en el slot; y
- * Footer2 abajo. El texto es el del original (scripts/verificar.mjs lo
+ * el final común de todas las páginas: el cierre Cta69 y Footer2. Cada
+ * página puede pasar su propio cierre (`cierre`, /gracias/ trae el suyo del
+ * original); sin él va el de la portada. El texto es el del original (scripts/verificar.mjs lo
  * compara palabra por palabra).
  *
  * El <head> sale de src/data/paginas.json por SeoHead: en producción,
@@ -18,6 +20,7 @@ import SeoHead from '../components/SeoHead.astro';
 import BarraLectura from '../components/BarraLectura.astro';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
+import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
 
@@ -32,14 +35,25 @@ interface Props {
   bajada?: string;
   /** en /gracias/: empuja los datos del formulario al dataLayer antes del GTM */
   gracias?: boolean;
+  /** el cierre (Cta69): titular, nota, botón y la palabra de fondo */
+  cierre?: { badge: string; titulo: string; nota: string; boton: { texto: string; href: string }; cinta: string; pie?: string };
 }
-const { ruta, miga, insignia, titulo, bajada, gracias = false } = Astro.props;
+const { ruta, miga, insignia, titulo, bajada, gracias = false, cierre: cierrePropio } = Astro.props;
 
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 const COPIA = !import.meta.env.SVEA_PRODUCCION;
 const pagina = paginas.find((p) => p.ruta === ruta)!;
 if (!pagina) throw new Error(`falta ${ruta} en paginas.json`);
 const COTIZAR = `${BASE}/#form-home`;
+// sin cierre propio, el de la portada, con la línea de WhatsApp de los servicios
+const cierre = cierrePropio ?? {
+  badge: 'Primer paso',
+  titulo: '¿Listo para comenzar su proyecto?',
+  nota: 'Deje la complejidad normativa en nuestras manos. Nuestro equipo de expertos está listo para asesorarlo hoy mismo.',
+  boton: { texto: 'Contáctanos', href: COTIZAR },
+  cinta: 'Cumplimiento',
+  pie: 'WhatsApp directo: +56 9 2994 7924',
+};
 
 const fuentesCSS = `
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 900;font-display:swap;src:url(${BASE}/fonts/inter-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -83,6 +97,13 @@ const fuentesCSS = `
       <slot />
     </main>
 
+    <Cta69
+      badge={{ label: cierre.badge }}
+      heading={cierre.titulo}
+      button={{ label: cierre.boton.texto, href: cierre.boton.href }}
+      labels={{ marqueePhrase: cierre.cinta, note: cierre.nota, footnote: cierre.pie }}
+      client:idle
+    />
     <Footer2 base={BASE} client:idle />
   </div>
 
@@ -107,10 +128,8 @@ const fuentesCSS = `
 
   .ps{--verde:#0e7a3c;--hoja:#f4f6f4;--borde:#e6e8e4;--suave:rgba(0,0,0,.66);
     font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:#161b22;background:#fff}
-  .ps-cab{background:
-      radial-gradient(60% 80% at 12% 0%,rgba(155,235,107,.16),rgba(155,235,107,0) 70%),
-      radial-gradient(50% 70% at 95% 10%,rgba(127,206,214,.18),rgba(127,206,214,0) 70%),
-      var(--hoja);border-bottom:1px solid var(--borde)}
+  /* la cabecera en la hoja de la portada, sin los degradados lima y celeste */
+  .ps-cab{background:linear-gradient(to bottom,#fff,var(--hoja));border-bottom:1px solid var(--borde)}
   .ps-cabecera{max-width:calc(72rem + 48px);margin:0 auto;padding:40px 24px 64px}
   .ps-migas ol{display:flex;gap:6px;margin:0;padding:0;list-style:none;font-size:14px;color:rgba(0,0,0,.55)}
   .ps-migas li{display:inline-flex;gap:6px}
@@ -119,7 +138,7 @@ const fuentesCSS = `
   .ps-migas a:hover{color:var(--verde);text-decoration:underline}
   .ps-insignia{display:inline-block;margin:28px 0 16px;padding:6px 12px;border-radius:999px;border:1px solid rgba(14,122,60,.2);
     background:rgba(14,122,60,.06);color:var(--verde);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-  .ps-cab h1{margin:0;max-width:18ch;font-family:Manrope,Inter,sans-serif;font-weight:600;letter-spacing:-.04em;line-height:1.05;
+  .ps-cab h1{margin:0;max-width:18ch;font-family:Manrope,Inter,sans-serif;font-weight:500;letter-spacing:-.04em;line-height:1.05;
     font-size:clamp(38px,5.4vw,68px);color:#000;text-wrap:balance}
   .ps-cab h1 em,.ps-titulo em{font-style:normal;color:var(--verde)}
   .ps-bajada{margin:22px 0 0;max-width:58ch;font-size:19px;line-height:1.6;color:var(--suave)}
