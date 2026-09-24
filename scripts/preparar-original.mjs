@@ -104,6 +104,26 @@ const REHECHAS = new Set([
   '/planes-de-emergencia-y-evacuacion-condominios/',
   '/manejo-de-residuos-peligrosos/',
   '/autorizacion-de-transporte-de-residuos/',
+  '/informe-sanitario/',
+  '/permisos-ambientales-y-pertinencias-del-seia/',
+  // las landings de Google Ads (src/layouts/Landing.astro)
+  '/cotiza-calificacion-tecnica-industrial/',
+  '/cotiza-estudio-de-carga-de-combustible/',
+  '/cotiza-plan-emergencia/',
+  '/cotiza-plan-emergencia-condominio/',
+  '/cotiza-informe-sanitario/',
+  '/cotiza-autorizacion-transporte-residuos/',
+  // los artículos (src/layouts/Articulo.astro) y el índice del blog
+  '/autorizacion-transporte-residuos-chile/',
+  '/calificacion-inofensiva-seremi-2026/',
+  '/calificacion-tecnica-industrial-chile/',
+  '/estudio-de-carga-combustible-chile/',
+  '/manejo-de-residuos-peligrosos-chile/',
+  '/plan-de-emergencia-condominio-chile/',
+  '/plan-de-emergencia-ds-44-empresas-chile/',
+  '/plan-de-emergencia-empresa-chile/',
+  '/que-es-informe-sanitario/',
+  '/blog/',
 ]);
 
 let n = 0;
