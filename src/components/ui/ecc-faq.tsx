@@ -5,7 +5,7 @@
 
 import { ChevronDownIcon } from 'lucide-react';
 
-const PREGUNTAS = [
+export const PREGUNTAS = [
   {
     p: '¿En qué consiste el Estudio de Carga de Combustible?',
     r: 'Es un análisis técnico que determina la cantidad de material combustible presente en una instalación, permitiendo evaluar el nivel de riesgo de incendio y establecer medidas de seguridad adecuadas conforme a la OGUC y la norma NCh 1916.',

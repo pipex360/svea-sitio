@@ -39,7 +39,8 @@ import { CtiFormulario } from '../components/ui/cti-formulario';
 import { CtiQueEs } from '../components/ui/cti-que-es';
 import { CtiServicio } from '../components/ui/cti-servicio';
 import { CtiSiguiente } from '../components/ui/cti-siguiente';
-import { CtiFaq } from '../components/ui/cti-faq';
+import { CtiFaq, PREGUNTAS } from '../components/ui/cti-faq';
+import SeoHead from '../components/SeoHead.astro';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
@@ -61,11 +62,7 @@ const fuentesCSS = `
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- SEO reproducido desde 04-seo-por-url/seo-por-url.csv: uno de cada uno -->
-  <title set:html={pagina.title}></title>
-  <meta name="description" content={pagina.description} />
-  <meta name="robots" content="noindex, nofollow" />
-  <link rel="canonical" href={pagina.canonical} />
+  <SeoHead pagina={pagina} copia={COPIA} faq={PREGUNTAS} />
 
   <link rel="preload" href={`${BASE}/fonts/inter-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />

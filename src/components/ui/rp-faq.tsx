@@ -6,7 +6,7 @@
 
 import { ChevronDownIcon } from 'lucide-react';
 
-const PREGUNTAS = [
+export const PREGUNTAS = [
   {
     p: '¿Cuáles son los residuos peligrosos que deben ser gestionados bajo normativa?',
     r: 'Los residuos peligrosos que deben gestionarse incluyen materiales inflamables, tóxicos, corrosivos y reactivos, así como residuos industriales como metales pesados, solventes, aceites y productos químicos desechados. Estas sustancias deben manejarse según los Decretos 43/2015 y 148/2003 del MINSAL.',

@@ -6,7 +6,7 @@
 
 import { ChevronDownIcon } from 'lucide-react';
 
-const PREGUNTAS = [
+export const PREGUNTAS = [
   {
     p: '¿Qué incluye un plan de emergencia y evacuación para condominios?',
     r: 'Incluye análisis de riesgos del recinto, procedimientos de respuesta, rutas y puntos de encuentro, roles para administración/comité, protocolos para conserjería y comunicación interna para evacuar de forma ordenada y segura.',

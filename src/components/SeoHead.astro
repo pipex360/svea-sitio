@@ -1,0 +1,60 @@
+---
+/**
+ * Cabecera SEO común de las páginas rehechas.
+ *
+ * Reproduce lo que Rank Math publica en el WordPress (title, descripción,
+ * robots, canónica, Open Graph, Twitter y los bloques JSON-LD de
+ * src/data/paginas.json) y agrega el FAQPage armado con las mismas
+ * preguntas que se ven en la página, para que Google pueda mostrarlas.
+ *
+ * En la copia de trabajo el robots es siempre «noindex, nofollow»; en
+ * producción (SVEA_PRODUCCION=1) es el de la página.
+ */
+interface Pagina {
+  title: string;
+  description: string;
+  robots: string;
+  canonical: string;
+  og_image?: string;
+  jsonld?: unknown[];
+}
+interface Props {
+  pagina: Pagina;
+  copia: boolean;
+  faq?: { p: string; r: string }[];
+}
+const { pagina, copia, faq = [] } = Astro.props;
+const robots = copia ? 'noindex, nofollow' : pagina.robots;
+const titulo = pagina.title.replace(/&[a-z]+;/g, (e) => ({ '&amp;': '&', '&oacute;': 'ó', '&eacute;': 'é', '&aacute;': 'á', '&iacute;': 'í', '&uacute;': 'ú', '&ntilde;': 'ñ' } as Record<string, string>)[e] ?? e);
+const yaTieneFaq = JSON.stringify(pagina.jsonld ?? []).includes('"FAQPage"');
+const faqPage = faq.length && !yaTieneFaq
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map(({ p, r }) => ({
+        '@type': 'Question',
+        name: p,
+        acceptedAnswer: { '@type': 'Answer', text: r },
+      })),
+    }
+  : null;
+---
+<title set:html={pagina.title}></title>
+<meta name="description" content={pagina.description} />
+<meta name="robots" content={robots} />
+<link rel="canonical" href={pagina.canonical} />
+<meta property="og:locale" content="es_CL" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="SVEA Consultores" />
+<meta property="og:title" content={titulo} />
+<meta property="og:description" content={pagina.description} />
+<meta property="og:url" content={pagina.canonical} />
+{pagina.og_image && <meta property="og:image" content={pagina.og_image} />}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={titulo} />
+<meta name="twitter:description" content={pagina.description} />
+{pagina.og_image && <meta name="twitter:image" content={pagina.og_image} />}
+{(pagina.jsonld ?? []).map((bloque) => (
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(bloque)} />
+))}
+{faqPage && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqPage)} />}

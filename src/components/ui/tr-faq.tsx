@@ -6,7 +6,7 @@
 
 import { ChevronDownIcon } from 'lucide-react';
 
-const PREGUNTAS = [
+export const PREGUNTAS = [
   {
     p: '¿Cómo obtengo el permiso de transporte ante la SEREMI de Salud?',
     r: 'El permiso se obtiene gestionando la solicitud de autorización a través de la SEREMI de Salud. Este proceso incluye la clasificación de los residuos, la presentación de la documentación necesaria y el cumplimiento de los requisitos establecidos por la autoridad sanitaria. En SVEA Consultores nos encargamos de todo el proceso.',
