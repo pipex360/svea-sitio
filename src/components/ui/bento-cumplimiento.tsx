@@ -222,10 +222,10 @@ export function CumplimientoBento() {
       trackers={<Dato meta={250} sufijo="+" rotulo="Trámites Gestionados" />}
       statistic={
         <Dato
-          meta={100}
-          sufijo="%"
-          rotulo="Tasa de Aprobación"
-          pie="En trámites realizados"
+          meta={8}
+          sufijo=""
+          rotulo="Servicios Especializados"
+          pie="CTI, carga de combustible, planes de emergencia, residuos, informe sanitario y SEIA"
           grande
           puntos
         />
