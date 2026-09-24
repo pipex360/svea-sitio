@@ -9,7 +9,7 @@ import type { Landing } from './tipos';
 
 const landing: Landing = {
   "ruta": "/cotiza-plan-emergencia/",
-  "urgencia": "<strong>Fiscalización activa DS 594</strong> — La SEREMI está cursando multas. Regulariza tu empresa ahora.",
+  "urgencia": "<strong>DS 44 vigente desde 2025</strong> — Tu empresa necesita un plan de emergencia actualizado. Regulariza hoy.",
   "badge": "Cotización en menos de 24 horas",
   "h1": "Plan de Emergencia<br>y Evacuación<br><em>conforme al DS 594 y DS 44</em>",
   "subtitulo": "También denominado <em>plan de contingencia</em> · Exigido por DS 594 y DS 44",

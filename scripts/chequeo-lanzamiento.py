@@ -10,8 +10,11 @@ src/components/MedicionSitio.astro):
     conversiones). En el HTML no puede quedar ninguna etiqueta de conversión
     AW-…/… ni un send_to: el WordPress las mandaba además inline y contaba
     cada lead dos veces. Por eso las señales «Ads» del vivo NO se exigen.
-  · GA4 G-FWQ05WDLZ3 por gtag.js. Cada página nueva debe traer el GTM y el
-    GA4, exactamente una vez cada uno.
+  · GA4 G-FWQ05WDLZ3 por gtag.js, con su propia cola (dataLayerGA/gtagGA).
+    Cada página nueva debe traer el GTM y el GA4, exactamente una vez cada
+    uno. Desde el 24-sep se INYECTAN después de la carga (no son <script>
+    estáticos): se cuenta la URL de cada uno en el HTML, venga del snippet
+    clásico del GTM o de la inyección.
 
 Lo que sí debe ser igual al vivo: el formulario (Web3Forms, access_key, id del
 asunto dinámico, from_name, Servicio, redirect, id del form), el robots y que
@@ -61,9 +64,11 @@ def senales(h):
 def medicion(h):
     """Problemas de medición del sitio nuevo (vacío = bien)."""
     p = []
-    n_gtm = len(re.findall(r"gtm\.js\?id='\+i\+dl[\s\S]{0,200}?'" + GTM + "'", h))
+    # snippet clásico del GTM (arma la URL con '+i+dl') o URL literal inyectada
+    n_gtm = (len(re.findall(r"gtm\.js\?id='\+i\+dl[\s\S]{0,200}?'" + GTM + "'", h))
+             + h.count('gtm.js?id=' + GTM))
     n_ns = h.count('ns.html?id=' + GTM)
-    n_ga4 = len(re.findall(r"gtag\('config',\s*'" + GA4 + r"'\)", h))
+    n_ga4 = len(re.findall(r"gtag(?:GA)?\('config',\s*'" + GA4 + r"'\)", h))
     n_lib = h.count('gtag/js?id=' + GA4)
     if n_gtm != 1: p.append(f'GTM {GTM}: {n_gtm} (se espera 1)')
     if n_ns != 1: p.append(f'<noscript> del GTM: {n_ns} (se espera 1)')

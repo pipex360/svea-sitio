@@ -305,7 +305,7 @@ for (const [ruta, archivo, { desde: fDesde, hasta: fHasta }] of CONTENIDOS) {
   const archivos = [];
   const recorrer = (d) => { for (const n of readdirSync(d)) { const f = path.join(d, n); if (statSync(f).isDirectory()) recorrer(f); else if (/\.(astro|tsx?|m?js)$/.test(n)) archivos.push(f); } };
   recorrer('src');
-  const CONVERSION = /send_to|gtag\(\s*['"]event['"]\s*,\s*['"]conversion['"]/;
+  const CONVERSION = /send_to|gtag(?:GA)?\(\s*['"]event['"]\s*,\s*['"]conversion['"]/;
   const reales = [];
   for (const f of archivos) {
     readFileSync(f, 'utf8').split('\n').forEach((l, i) => {

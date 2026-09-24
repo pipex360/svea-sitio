@@ -55,21 +55,42 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
       })();
       </script>
     )}
-    <!-- Google Tag Manager (Google Ads: etiqueta, vinculador y conversiones) -->
-    <script is:inline>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-    var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-    j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NGVMRNDM');
+    <!-- Carga de GTM (Google Ads) y gtag.js (GA4). Para no frenar la
+         primera pintura, se inyectan cuando la página ya cargó (o antes, a la
+         primera interacción; como tope a los 4 s). En /gracias/ van de
+         inmediato: ahí dispara la conversión del formulario.
+         GA4 usa su PROPIA cola (dataLayerGA): si comparte «dataLayer» con el
+         GTM, el Google tag del GTM vuelve a cargar gtag.js para G- y los
+         page_view se duplican. -->
+    <script is:inline define:vars={{ inmediato: gracias }}>
+    (function (w, d) {
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayerGA = w.dataLayerGA || [];
+      w.gtagGA = function () { w.dataLayerGA.push(arguments); };
+      w.gtagGA('js', new Date());
+      w.gtagGA('config', 'G-FWQ05WDLZ3');
+      var hecho = false;
+      function cargar() {
+        if (hecho) return; hecho = true;
+        w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName('script')[0];
+        var g = d.createElement('script'); g.async = true;
+        g.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-NGVMRNDM';
+        f.parentNode.insertBefore(g, f);
+        var a = d.createElement('script'); a.async = true;
+        a.src = 'https://www.googletagmanager.com/gtag/js?id=G-FWQ05WDLZ3&l=dataLayerGA';
+        f.parentNode.insertBefore(a, f);
+      }
+      if (inmediato) { cargar(); return; }
+      if (d.readyState === 'complete') setTimeout(cargar, 800);
+      else w.addEventListener('load', function () { setTimeout(cargar, 800); });
+      setTimeout(cargar, 4000);
+      ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (ev) {
+        w.addEventListener(ev, cargar, { once: true, passive: true });
+      });
+    })(window, document);
     </script>
-    <!-- GA4 por gtag.js (el GTM no trae GA4) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-FWQ05WDLZ3"></script>
     <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', 'G-FWQ05WDLZ3');
 
     (function () {
       var CAMPOS = ['gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
@@ -110,7 +131,7 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
         if (!form || !form.matches || !form.matches('form[action*="web3forms"]')) return;
         rellenar(form);
         var s = form.querySelector('[name="Servicio"]');
-        gtag('event', 'form_submit_cotizacion', {
+        window.gtagGA('event', 'form_submit_cotizacion', {
           servicio: (s && s.value) || '',
           event_category: 'Lead',
           event_label: document.title,
@@ -130,7 +151,7 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
       document.addEventListener('click', function (e) {
         var a = e.target && e.target.closest && e.target.closest('a[href*="api.whatsapp.com"], a[href*="wa.me/"]');
         if (!a) return;
-        gtag('event', 'clic_whatsapp', {
+        window.gtagGA('event', 'clic_whatsapp', {
           event_category: 'Lead',
           event_label: document.title,
           link_url: a.href,

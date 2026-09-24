@@ -206,7 +206,7 @@ const Innovacion = () => (
       </div>
       <div className="mt-6 border-t border-white/20 pt-4">
         <p className="text-2xl font-bold leading-none tracking-tight text-white">
-          5-10 <span className="text-sm font-medium text-white/70">días hábiles</span>
+          3-5 <span className="text-sm font-medium text-white/70">días hábiles</span>
         </p>
         <p className="mt-1 text-xs text-white/60">Informe técnico listo para revisión</p>
       </div>

@@ -58,7 +58,7 @@ const SERVICIOS: Servicio[] = [
   {
     titulo: 'Manejo de Sustancias y Residuos Peligrosos',
     descripcion:
-      'Garantizamos la seguridad, legalidad y sostenibilidad en el manejo de sustancias peligrosas, minimizando riesgos operativos.',
+      'Te acompañamos para que el manejo de sustancias peligrosas sea seguro, legal y sostenible, minimizando riesgos operativos.',
     href: '/manejo-de-residuos-peligrosos/',
     Icono: FlaskConicalIcon,
   },

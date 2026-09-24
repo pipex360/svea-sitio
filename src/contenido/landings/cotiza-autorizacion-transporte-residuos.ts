@@ -22,7 +22,7 @@ const landing: Landing = {
   badge: 'Cotización en menos de 24 horas',
   h1: 'Autorización de Transporte de Residuos<br><em>Peligrosos y No Peligrosos</em>',
   bajada:
-    'Tramitamos tu <strong>autorización de transporte de residuos</strong> ante la SEREMI de Salud: clasificación de residuos, expediente, plan de manejo y seguimiento hasta la resolución. Tú no tienes que hacer nada.',
+    '<strong>Autorización sanitaria SEREMI para transporte de residuos</strong>: clasificamos tus residuos, armamos el expediente con el plan de contingencias y la memoria técnica de los vehículos, y hacemos el seguimiento ante la SEREMI de Salud hasta la resolución.',
   pills: [
     'Residuos peligrosos (RESPEL) y no peligrosos',
     'Correcciones sin costo hasta la resolución',
@@ -87,7 +87,7 @@ const landing: Landing = {
     titulo: '¿Qué es la <em>autorización de transporte de residuos</em>?',
     parrafos: [
       'La Autorización de Transporte de Residuos es el permiso otorgado por la SEREMI de Salud que habilita a empresas y transportistas para trasladar residuos peligrosos y no peligrosos de manera legal y segura.',
-      'Este permiso es obligatorio para toda empresa que genere residuos y necesite transportarlos a un destino autorizado, ya sea para tratamiento, reciclaje o disposición final, conforme a las normativas sanitarias y ambientales vigentes.',
+      'La autorización la necesita quien transporta: la empresa de transporte, o el generador que traslada sus propios residuos con vehículos propios hacia un destino autorizado (tratamiento, reciclaje o disposición final). Si tu empresa contrata a un tercero para el traslado, no tramita este permiso, pero debe exigirle al transportista su autorización sanitaria vigente.',
       'En SVEA Consultores nos encargamos de todo el proceso: desde la clasificación de residuos hasta la obtención del permiso y la entrega de la documentación completa.',
     ],
     foto: {
@@ -113,7 +113,7 @@ const landing: Landing = {
       },
       {
         titulo: 'Rechazo por información incompleta',
-        texto: 'La solicitud exige tipos de residuos, volúmenes, procedimientos de manejo, datos del transportista, rutas y un plan de manejo. Si falta algo, el trámite se atrasa.',
+        texto: 'La solicitud exige tipos de residuos, volúmenes, datos del transportista, la memoria técnica de los vehículos y un plan de contingencias. Si falta algo, el trámite se atrasa.',
       },
       {
         titulo: 'Residuos mal clasificados',
@@ -154,7 +154,7 @@ const landing: Landing = {
   incluye: {
     copete: 'Servicio integral',
     titulo: '¿Qué incluye <em>nuestro servicio</em>?',
-    bajada: 'Desde la clasificación de tus residuos hasta el permiso aprobado por la SEREMI de Salud. Sin complicaciones.',
+    bajada: 'Desde la clasificación de tus residuos hasta la resolución de la SEREMI de Salud.',
     items: [
       {
         icono: '<path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/>',
@@ -169,12 +169,12 @@ const landing: Landing = {
       {
         icono: '<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/>',
         titulo: 'Obtención del Permiso de Transporte',
-        texto: 'Seguimiento y gestión hasta la aprobación del permiso por la SEREMI de Salud.',
+        texto: 'Seguimiento y gestión ante la SEREMI de Salud hasta la resolución de la solicitud.',
       },
       {
         icono: '<circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 000-7h-11a3.5 3.5 0 010-7H15"/><circle cx="18" cy="5" r="3"/>',
-        titulo: 'Plan de Manejo y Transporte',
-        texto: 'Protocolos de carga, transporte, rutas autorizadas y procedimientos de emergencia.',
+        titulo: 'Plan de Contingencias y Antecedentes de los Vehículos',
+        texto: 'Plan de contingencias ante derrames, accidentes o emergencias durante el traslado (DS 148), y la memoria técnica de los vehículos que harán el transporte.',
       },
       {
         icono: '<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>',
@@ -194,9 +194,9 @@ const landing: Landing = {
     pasos: [
       { titulo: 'Cotización', texto: 'En menos de 24h' },
       { titulo: 'Clasificación', texto: 'Evaluación de tus residuos' },
-      { titulo: 'Documentación', texto: 'Expediente + plan de manejo' },
+      { titulo: 'Documentación', texto: 'Expediente + plan de contingencias' },
       { titulo: 'Gestión SEREMI', texto: 'Presentación y seguimiento' },
-      { titulo: 'Autorización', texto: 'Permiso aprobado' },
+      { titulo: 'Resolución', texto: 'Seguimiento hasta que resuelve la SEREMI' },
     ],
   },
   normativa: {
@@ -239,11 +239,11 @@ const landing: Landing = {
       },
       {
         p: '¿Qué información necesito para solicitar la autorización?',
-        r: 'Se requiere información detallada sobre los tipos de residuos, volúmenes generados, procedimientos de manejo y transporte, datos del transportista, rutas de transporte y un plan de manejo de residuos conforme a las regulaciones vigentes.',
+        r: 'Se requiere información detallada sobre los tipos de residuos, volúmenes generados, procedimientos de manejo y transporte, datos del transportista, la memoria técnica de los vehículos y un plan de contingencias para el traslado, conforme al DS 148 y las regulaciones vigentes.',
       },
       {
-        p: '¿Es obligatorio para todas las empresas gestionar el transporte de residuos con la SEREMI?',
-        r: 'Sí, todas las empresas que generen residuos peligrosos o no peligrosos y necesiten transportarlos deben cumplir con la normativa vigente de la SEREMI de Salud. Esto asegura que el transporte sea seguro y conforme a las regulaciones ambientales y sanitarias.',
+        p: '¿Toda empresa que genera residuos necesita esta autorización?',
+        r: 'No. La autorización la necesita quien transporta los residuos: la empresa de transporte, o el generador que los traslada con vehículos propios. Si tu empresa contrata a un tercero para el traslado, no tramita esta autorización, pero debe exigirle al transportista su autorización sanitaria vigente.',
       },
       {
         p: '¿Cuánto cuesta el servicio?',

@@ -29,7 +29,33 @@
  */
 
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform } from 'motion/react';
-import { useRef, useState } from 'react';
+import { Children, Fragment, createElement, isValidElement, useRef, useState, type ReactNode } from 'react';
+
+/**
+ * El encabezado se pinta dos veces (teléfono y escritorio) y en cada ancho
+ * una de las dos copias está en display:none. Para que el HTML no traiga dos
+ * <h2> con el mismo id, la copia de escritorio cambia cada <h2> por un <p>
+ * con la misma clase, sin id y con role="heading" aria-level="2": quien use
+ * un lector de pantalla en escritorio sigue encontrando el título (la copia
+ * del teléfono no está en el árbol de accesibilidad), y el documento tiene
+ * un solo H2 y un solo id.
+ */
+function sinDuplicar(nodo: ReactNode): ReactNode {
+  return Children.map(nodo, (hijo) => {
+    if (!isValidElement(hijo)) return hijo;
+    const props = hijo.props as { id?: string; children?: ReactNode; [k: string]: unknown };
+    const hijos = props.children === undefined ? undefined : sinDuplicar(props.children);
+    if (hijo.type === Fragment) return <Fragment key={hijo.key ?? undefined}>{hijos}</Fragment>;
+    if (typeof hijo.type !== 'string') return hijo;
+    const { id: _id, children: _c, ...resto } = props;
+    const esTitulo = /^h[1-6]$/.test(hijo.type);
+    return createElement(
+      esTitulo ? 'p' : hijo.type,
+      { ...resto, key: hijo.key ?? undefined, ...(esTitulo ? { role: 'heading', 'aria-level': Number(hijo.type[1]) } : {}) },
+      hijos,
+    );
+  });
+}
 
 export type BloqueScroll = {
   /** el párrafo */
@@ -133,7 +159,7 @@ export function Scroll01({
         </div>
 
         <div className="py-[7vh]">
-          {encabezado}
+          {sinDuplicar(encabezado)}
           {/* Los párrafos van separados por una fracción de pantalla: es lo
               que le da sitio al efecto. Con la separación normal los cuatro
               caben a la vez, varios quedan «en el centro» al mismo tiempo y
