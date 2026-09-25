@@ -62,6 +62,12 @@ Fuente única: `src/data/redirecciones.json` (tabla y motivos en
 Probar después del deploy: `curl -sI https://sveaconsultores.cl/inicio/` →
 `301` con `location: /`. Igual con `/calificacion-inofensiva-seremi-2026/`.
 
+**Barra final:** todas las URL terminan en `/` (como en el WordPress, que
+redirige `/x` → `/x/`). En Vercel lo hace `"trailingSlash": true` de
+`vercel.json`; en otro hosting hay que configurar el mismo 301. Probar:
+`curl -sI https://sveaconsultores.cl/cotiza-calificacion-tecnica-industrial`
+→ `308`/`301` con `location: /cotiza-calificacion-tecnica-industrial/`.
+
 ## 4. Search Console
 
 1. Propiedad de dominio `sveaconsultores.cl` (ya existe la del WordPress).
