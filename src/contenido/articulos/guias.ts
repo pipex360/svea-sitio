@@ -230,7 +230,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Autorizaciones',
     fecha: 'Sep 2026',
     lectura: '9 min lectura',
-    imagen: { nombre: 'camion-recolector-residuos-no-peligrosos', alt: 'Autorización de transporte de residuos no peligrosos - camión recolector frente a un edificio' },
+    imagen: { nombre: 'camion-tolva-escombros-residuos-no-peligrosos', alt: 'Autorización de transporte de residuos no peligrosos - camión tolva cargado con escombros en una obra' },
     servicio: TR,
   },
   {

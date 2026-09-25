@@ -27,15 +27,15 @@ import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 
 /** Los cuatro párrafos del original: los dos primeros sobre qué es el
  *  permiso, con el camión tolva descargando; los dos últimos sobre el riesgo de
- *  no tenerlo y lo que hace SVEA, con el camión cisterna y su rombo de peligro. */
+ *  no tenerlo y lo que hace SVEA, con los semirremolques cisterna de acero. */
 const bloques = (): BloqueScroll[] => {
   const carretera = {
     foto: 'camion-tolva-descarga-residuos-autorizados',
     alt: 'Camión tolva descargando residuos, transporte que requiere autorización de la SEREMI de Salud',
   };
   const carga = {
-    foto: 'camion-cisterna-transporte-residuos-peligrosos',
-    alt: 'Camión cisterna con el rombo de materiales peligrosos, vehículo con autorización sanitaria de transporte de residuos',
+    foto: 'camion-cisterna-acero-transporte-residuos-peligrosos',
+    alt: 'Semirremolques cisterna de acero inoxidable estacionados en un patio de ripio, vehículos que requieren autorización sanitaria de transporte de residuos peligrosos',
   };
   return [
     {

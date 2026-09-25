@@ -232,57 +232,36 @@
     },
     "origen": "1031464:1790303551810"
   },
-  "camion-cisterna-transporte-residuos-peligrosos": {
-    "ancho": 1600,
-    "alto": 1067,
+  "camion-cisterna-acero-transporte-residuos-peligrosos": {
+    "ancho": 2400,
+    "alto": 1803,
     "anchos": [
       640,
       1080,
-      1600
+      1600,
+      1920
     ],
-    "hero": false,
-    "og": "camion-cisterna-transporte-residuos-peligrosos.jpg",
+    "hero": true,
+    "og": "camion-cisterna-acero-transporte-residuos-peligrosos.jpg",
     "peso": {
       "640": {
-        "avif": 21,
-        "webp": 25
+        "avif": 35,
+        "webp": 50
       },
       "1080": {
-        "avif": 43,
-        "webp": 51
+        "avif": 76,
+        "webp": 87
       },
       "1600": {
-        "avif": 83,
-        "webp": 93
+        "avif": 115,
+        "webp": 137
+      },
+      "1920": {
+        "avif": 144,
+        "webp": 171
       }
     },
-    "origen": "235468:1790300901979"
-  },
-  "camion-recolector-residuos-no-peligrosos": {
-    "ancho": 1600,
-    "alto": 1067,
-    "anchos": [
-      640,
-      1080,
-      1600
-    ],
-    "hero": false,
-    "og": "camion-recolector-residuos-no-peligrosos.jpg",
-    "peso": {
-      "640": {
-        "avif": 20,
-        "webp": 25
-      },
-      "1080": {
-        "avif": 43,
-        "webp": 54
-      },
-      "1600": {
-        "avif": 86,
-        "webp": 105
-      }
-    },
-    "origen": "230972:1790300901983"
+    "origen": "879644:1790305711413"
   },
   "camion-tolva-carga-planta-residuos": {
     "ancho": 2400,
@@ -372,31 +351,36 @@
     },
     "origen": "297146:1790303551811"
   },
-  "camion-tolva-escombros-transporte-residuos": {
-    "ancho": 1600,
-    "alto": 1067,
+  "camion-tolva-escombros-residuos-no-peligrosos": {
+    "ancho": 7952,
+    "alto": 5304,
     "anchos": [
       640,
       1080,
-      1600
+      1600,
+      1920
     ],
-    "hero": false,
-    "og": "camion-tolva-escombros-transporte-residuos.jpg",
+    "hero": true,
+    "og": "camion-tolva-escombros-residuos-no-peligrosos.jpg",
     "peso": {
       "640": {
-        "avif": 17,
+        "avif": 18,
         "webp": 21
       },
       "1080": {
-        "avif": 37,
-        "webp": 45
+        "avif": 40,
+        "webp": 48
       },
       "1600": {
-        "avif": 75,
-        "webp": 89
+        "avif": 72,
+        "webp": 87
+      },
+      "1920": {
+        "avif": 94,
+        "webp": 115
       }
     },
-    "origen": "196252:1790303551811"
+    "origen": "2546516:1790305593641"
   },
   "carga-residuos-camion-tolva-retroexcavadora": {
     "ancho": 1600,
@@ -952,37 +936,6 @@
       }
     },
     "origen": "858014:1790300902004"
-  },
-  "planta-quimica-estanques-sustancias-peligrosas": {
-    "ancho": 1920,
-    "alto": 1079,
-    "anchos": [
-      640,
-      1080,
-      1600,
-      1920
-    ],
-    "hero": true,
-    "og": "planta-quimica-estanques-sustancias-peligrosas.jpg",
-    "peso": {
-      "640": {
-        "avif": 16,
-        "webp": 18
-      },
-      "1080": {
-        "avif": 34,
-        "webp": 38
-      },
-      "1600": {
-        "avif": 57,
-        "webp": 64
-      },
-      "1920": {
-        "avif": 82,
-        "webp": 93
-      }
-    },
-    "origen": "104332:1790296138472"
   },
   "racks-cajas-carton-carga-fuego": {
     "ancho": 1600,
