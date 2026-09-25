@@ -148,6 +148,12 @@ function huellaFormulario(html, id, { sinOrigen = false } = {}) {
   return JSON.stringify({ ocultos, visibles, opciones });
 }
 for (const [ruta, id, origen, destino] of [
+  // 24-sep: la huella del form-home cambió A PROPÓSITO: el <select> Servicio
+  // suma «Informe Sanitario» y «Permisos ambientales y SEIA» antes de «Otro»
+  // (pedido de Carlos). originales-wp/home.html las lleva también, con un
+  // comentario, para que la comparación siga exigiendo las nueve en su orden.
+  // El <select> real va dentro de <svea-select> (src/lib/selector-svea.ts);
+  // la huella lee el <select> y sus <option>, que no cambian.
   ['/', 'form-home', 'originales-wp/home.html', 'index.html'],
   ['/calificacion-tecnica-industrial/', 'form-cti', 'originales-wp/servicios/calificacion-tecnica-industrial.html', 'calificacion-tecnica-industrial/index.html'],
   ['/estudio-de-carga-de-combustible/', 'form-ecc', 'originales-wp/servicios/estudio-de-carga-de-combustible.html', 'estudio-de-carga-de-combustible/index.html'],

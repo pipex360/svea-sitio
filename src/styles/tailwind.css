@@ -287,3 +287,33 @@ button.btn-flecha { border: 0; cursor: pointer; font-family: inherit; }
 @media (min-width: 768px) {
   .pie-grupo > summary { pointer-events: none; cursor: default; }
 }
+
+/* ------------------------------------------------------------------
+   <svea-select> (src/lib/selector-svea.ts): la lista desplegable con el
+   diseño del sitio. Estas variables fijan alto, radio, letra y borde, igual
+   que los inputs de cada formulario. Cuando el elemento ya está definido, el
+   <select> real queda invisible debajo del botón (sigue en el formulario y
+   se envía); sin JavaScript se ve el <select> nativo.
+   ------------------------------------------------------------------ */
+svea-select {
+  display: block;
+  position: relative;
+  --ss-alto: 44px;
+  --ss-radio: 6px;
+  --ss-fuente: 14px;
+  --ss-borde: #e6e8e4;
+}
+.lp-form-card svea-select { --ss-radio: 8px; --ss-fuente: 15px; }
+svea-select:defined > select {
+  position: absolute !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 1px !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}

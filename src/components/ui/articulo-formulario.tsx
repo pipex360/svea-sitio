@@ -136,19 +136,21 @@ export function ArticuloFormulario({
               <div key={c.id} className="flex flex-col gap-1.5">
                 <Label htmlFor={c.id}>{c.label}</Label>
                 {c.tipo === 'select' ? (
-                  <select
-                    id={c.id}
-                    name={c.name}
-                    required={c.requerido || undefined}
-                    defaultValue={(c.opciones ?? []).find((o) => o.seleccionada)?.value}
-                    className="flex h-11 w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-black focus-visible:border-svea focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-svea/25"
-                  >
-                    {(c.opciones ?? []).map((o) => (
-                      <option key={o.value} value={o.value} disabled={o.desactivada || undefined}>
-                        {o.texto}
-                      </option>
-                    ))}
-                  </select>
+                  <svea-select>
+                    <select
+                      id={c.id}
+                      name={c.name}
+                      required={c.requerido || undefined}
+                      defaultValue={(c.opciones ?? []).find((o) => o.seleccionada)?.value}
+                      className="flex h-11 w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-black focus-visible:border-svea focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-svea/25"
+                    >
+                      {(c.opciones ?? []).map((o) => (
+                        <option key={o.value} value={o.value} disabled={o.desactivada || undefined}>
+                          {o.texto}
+                        </option>
+                      ))}
+                    </select>
+                  </svea-select>
                 ) : c.tipo === 'textarea' ? (
                   <Textarea
                     id={c.id}

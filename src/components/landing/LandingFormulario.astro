@@ -12,7 +12,9 @@
  *   Servicio, Fuente, gclid y los cinco utm_* con sus field-*);
  * - el botcheck;
  * - los campos visibles con el mismo name, type, required y placeholder, y
- *   las opciones del <select> con su value en el mismo orden.
+ *   las opciones del <select> con su value en el mismo orden. El <select> va
+ *   dentro de <svea-select> (src/lib/selector-svea.ts): el selector con el
+ *   diseño del sitio; el que viaja en el envío sigue siendo el <select>.
  *
  * Cambia sólo la ropa. Las etiquetas quedan visibles y ligadas a su campo
  * (for/id), el teclado del teléfono sale numérico y el navegador puede
@@ -106,7 +108,7 @@ for (const c of f.campos) {
               />
             )}
             {c.control === 'select' && (
-              <select id={idCampo(c.name)} name={c.name} required={c.required} class={`${clasesControl} h-11 pr-8`}><Fragment set:html={opcionesHtml(c.opciones)} /></select>
+              <svea-select><select id={idCampo(c.name)} name={c.name} required={c.required} class={`${clasesControl} h-11 pr-8`}><Fragment set:html={opcionesHtml(c.opciones)} /></select></svea-select>
             )}
             {c.control === 'textarea' && (
               <textarea
