@@ -52,6 +52,18 @@ import { AVISO_COOKIES, LLAVE_COOKIES } from '../lib/aviso-cookies';
 const { copia, parte = 'head', gracias = false } = Astro.props;
 const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGVMRNDM" height="0" width="0" style="display:none;visibility:hidden"></iframe>';
 ---
+{parte === 'head' && (
+  <Fragment>
+    {/* Conversión de WhatsApp en Google Ads: el activador publicado en el GTM
+        (heredado del plugin «Click to Chat» del WordPress) es «Clic en todos los
+        elementos» con Click Classes que contiene «ctc-analytics» y Click URL que
+        contiene «api.whatsapp.com». Para que siga contando sin tocar el GTM,
+        todo enlace de WhatsApp lleva esa clase y sus hijos no reciben el clic
+        (así el elemento clicado es el propio enlace, con su clase y su URL). */}
+    <style is:inline>a[href*="api.whatsapp.com"] *,a[href*="wa.me/"] *{pointer-events:none}</style>
+    <script is:inline>(function(){var S='a[href*="api.whatsapp.com"],a[href*="wa.me/"]';function marcar(r){(r.querySelectorAll?r:document).querySelectorAll(S).forEach(function(a){a.classList.add('ctc-analytics')})}document.addEventListener('DOMContentLoaded',function(){marcar(document)});document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest(S);if(a)a.classList.add('ctc-analytics')},true)})();</script>
+  </Fragment>
+)}
 {!copia && parte === 'head' && (
   <Fragment>
     {AVISO_COOKIES && (
