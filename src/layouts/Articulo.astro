@@ -223,7 +223,7 @@ const fuentesCSS = `
           <ol>
             <li><a href={`${BASE}/`}>Inicio</a></li>
             <li><a href={`${BASE}/blog/`}>Guías</a></li>
-            <li aria-current="page">{datos.migaFinal}</li>
+            <li aria-current="page"><span>{datos.migaFinal}</span></li>
           </ol>
         </nav>
         <p class="art-categoria">{esta.tema}</p>
@@ -447,8 +447,13 @@ const fuentesCSS = `
   /* el titular se alinea con la columna de lectura (índice 260 px + hueco 64 px) */
   .art-cabecera{max-width:76rem;margin:0 auto;padding:40px 48px 56px 372px}
   /* migas discretas: 13 px, gris y un separador fino (24-sep) */
-  .art-migas ol{display:flex;flex-wrap:wrap;gap:4px 8px;margin:0;padding:0;list-style:none;font-size:13px;line-height:1.4;color:rgba(0,0,0,.45)}
-  .art-migas li{display:inline-flex;align-items:center;gap:8px}
+  .art-migas ol{display:flex;gap:4px 8px;margin:0;padding:0;list-style:none;font-size:13px;line-height:1.4;color:rgba(0,0,0,.45)}
+  .art-migas li{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+  /* una sola línea: el separador nunca queda al comienzo de una línea; si no
+     cabe, la última miga se corta con «…» (25-sep) */
+  .art-migas ol{flex-wrap:nowrap}
+  .art-migas li[aria-current]{min-width:0}
+  .art-migas li[aria-current] span{min-width:0;overflow:hidden;text-overflow:ellipsis}
   .art-migas li+li::before{content:"";width:1px;height:11px;background:rgba(0,0,0,.22);transform:rotate(18deg)}
   .art-migas a{color:rgba(0,0,0,.55);text-decoration:none}
   .art-migas a:hover{color:var(--verde);text-decoration:underline}

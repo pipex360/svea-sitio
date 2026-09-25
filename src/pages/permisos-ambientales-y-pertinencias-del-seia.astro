@@ -4,8 +4,9 @@
  * que estudio-de-carga-de-combustible.astro. El original (Elementor, sin
  * contenedor «x-page») tenía hero, «Descripción General», «Objetivo»,
  * «Alcance» y cuatro preguntas frecuentes, y NO tenía formulario propio:
- * sus botones llevaban al formulario de la portada, y aquí también
- * (`${BASE}/#form-home`).
+ * sus botones llevaban al formulario de la portada. Desde el 25-sep lleva
+ * el suyo (seia-formulario.tsx), como las demás páginas de servicio, y los
+ * botones apuntan a él (#formulario-seia).
  *
  * Texto idéntico al WordPress salvo las cuatro promesas con «garantiz-»,
  * cambiadas por lo que sí depende de nosotros (ver cada componente).
@@ -20,6 +21,7 @@ import { BarraMovil } from '../components/ui/barra-movil';
 import { SeiaDescripcion } from '../components/ui/seia-descripcion';
 import { SeiaAlcance } from '../components/ui/seia-alcance';
 import { SeiaFaq, PREGUNTAS } from '../components/ui/seia-faq';
+import { SeiaFormulario } from '../components/ui/seia-formulario';
 import SeoHead from '../components/SeoHead.astro';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
@@ -49,23 +51,23 @@ const fuentesCSS = `
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero es el LCP: se precarga -->
-  <link rel="preload" as="image" {...precargaFoto('planta-industrial-cordillera-permisos-ambientales-seia', BASE)} />
+  <link rel="preload" as="image" {...precargaFoto('valle-elqui-cultivos-pertinencia-seia', BASE)} />
 </head>
 <body>
   <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
-    fotos={['planta-industrial-cordillera-permisos-ambientales-seia']}
+    fotos={['valle-elqui-cultivos-pertinencia-seia']}
     copete="Servicios SVEA"
     titulo="Permisos Ambientales y Pertinencias del SEIA"
     parrafo="Te acompañamos en el cumplimiento normativo y la obtención de permisos ambientales a través del Sistema de Evaluación de Impacto Ambiental (SEIA)"
-    boton={{ texto: 'Solicitar asesoría', href: `${BASE}/#form-home` }}
+    boton={{ texto: 'Solicitar asesoría', href: '#formulario-seia' }}
     principal={{ valor: 'Pertinencia SEIA', texto: 'Informe de evaluación de tu proyecto' }}
     secundarias={[
       { destacado: 'Permisos ambientales', texto: 'elaboración de la documentación' },
       { destacado: 'Seguimiento', texto: 'de la tramitación ante el SEA' },
     ]}
   />
-  <BarraPegajosa base={BASE} client:idle />
+  <BarraPegajosa base={BASE} cotizar="#formulario-seia" client:idle />
 
   <!-- clientes: la misma franja de la portada, justo después del hero -->
   <FranjaClientes base={BASE} />
@@ -74,11 +76,12 @@ const fuentesCSS = `
     <SeiaDescripcion base={BASE} client:idle />
     <SeiaAlcance base={BASE} client:idle />
     <SeiaFaq />
-    <Cta69 destino={`${BASE}/#form-home`} client:idle />
+    <SeiaFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-seia" client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
-  <BarraMovil base={BASE} copia={COPIA} client:idle />
+  <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-seia" client:idle />
 
   {COPIA && (
     <div class="aviso-copia">

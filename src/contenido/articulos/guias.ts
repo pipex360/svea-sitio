@@ -253,7 +253,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Cumplimiento',
     fecha: 'Sep 2026',
     lectura: '9 min lectura',
-    imagen: { nombre: 'descargos-sumario-sanitario-documentos', alt: 'Sumario sanitario SEREMI - profesional prepara los descargos sobre una pila de documentos' },
+    imagen: { nombre: 'preparacion-descargos-sumario-sanitario', alt: 'Sumario sanitario SEREMI - profesional ordena los documentos para preparar los descargos' },
     servicio: IS,
   },
   {

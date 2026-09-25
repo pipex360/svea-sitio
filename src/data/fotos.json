@@ -610,32 +610,6 @@
     },
     "origen": "616554:1790304603422"
   },
-  "descargos-sumario-sanitario-documentos": {
-    "ancho": 1600,
-    "alto": 1066,
-    "anchos": [
-      640,
-      1080,
-      1600
-    ],
-    "hero": false,
-    "og": "descargos-sumario-sanitario-documentos.jpg",
-    "peso": {
-      "640": {
-        "avif": 11,
-        "webp": 12
-      },
-      "1080": {
-        "avif": 26,
-        "webp": 26
-      },
-      "1600": {
-        "avif": 60,
-        "webp": 55
-      }
-    },
-    "origen": "213450:1790300901993"
-  },
   "edificio-condominio-plan-de-emergencia": {
     "ancho": 1920,
     "alto": 1080,
@@ -1035,7 +1009,7 @@
     },
     "origen": "261182:1790334362283"
   },
-  "planta-industrial-cordillera-permisos-ambientales-seia": {
+  "preparacion-descargos-sumario-sanitario": {
     "ancho": 2400,
     "alto": 1600,
     "anchos": [
@@ -1045,26 +1019,26 @@
       1920
     ],
     "hero": true,
-    "og": "planta-industrial-cordillera-permisos-ambientales-seia.jpg",
+    "og": "preparacion-descargos-sumario-sanitario.jpg",
     "peso": {
       "640": {
-        "avif": 22,
-        "webp": 26
+        "avif": 15,
+        "webp": 18
       },
       "1080": {
-        "avif": 54,
-        "webp": 64
+        "avif": 31,
+        "webp": 37
       },
       "1600": {
-        "avif": 109,
-        "webp": 112
+        "avif": 53,
+        "webp": 62
       },
       "1920": {
-        "avif": 150,
-        "webp": 149
+        "avif": 66,
+        "webp": 76
       }
     },
-    "origen": "858014:1790300902004"
+    "origen": "283020:1790335229726"
   },
   "revision-expediente-observaciones-seremi": {
     "ancho": 1600,
@@ -1340,5 +1314,36 @@
       }
     },
     "origen": "462596:1790300902009"
+  },
+  "valle-elqui-cultivos-pertinencia-seia": {
+    "ancho": 2400,
+    "alto": 1600,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "valle-elqui-cultivos-pertinencia-seia.jpg",
+    "peso": {
+      "640": {
+        "avif": 33,
+        "webp": 44
+      },
+      "1080": {
+        "avif": 84,
+        "webp": 88
+      },
+      "1600": {
+        "avif": 113,
+        "webp": 147
+      },
+      "1920": {
+        "avif": 118,
+        "webp": 196
+      }
+    },
+    "origen": "1155038:1790335393909"
   }
 }
