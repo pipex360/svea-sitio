@@ -17,6 +17,7 @@
  */
 import '../styles/tailwind.css';
 import MedicionSitio from '../components/MedicionSitio.astro';
+import AvisoCookies from '../components/AvisoCookies.astro';
 import SeoHead from '../components/SeoHead.astro';
 import HeroHalo from '../components/HeroHalo.astro';
 import FranjaClientes from '../components/FranjaClientes.astro';
@@ -158,6 +159,7 @@ const fuentesCSS = `
   )}
   <!-- la lista desplegable con el diseño del sitio (src/lib/selector-svea.ts) -->
   <script>import '../lib/selector-svea';</script>
+  <AvisoCookies copia={COPIA} />
 </body>
 </html>
 

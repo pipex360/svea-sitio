@@ -70,6 +70,7 @@ export function BarraMovil({ base = '', copia = false, cotizar }: { base?: strin
           escondida ? 'translate-y-[calc(100%+48px)]' : 'translate-y-0',
         )}
         style={{ bottom: abajo }}
+        data-fijo-abajo=""
         aria-hidden={escondida}
         inert={escondida || undefined}
       >
@@ -101,6 +102,7 @@ export function BarraMovil({ base = '', copia = false, cotizar }: { base?: strin
         rel="noopener"
         className="fixed right-6 z-40 hidden h-14 items-center gap-3 rounded-full bg-[#25d366] pl-4 pr-6 text-sm font-semibold text-white no-underline shadow-[0_12px_30px_-10px_rgba(37,211,102,0.6)] transition-transform duration-200 hover:scale-[1.03] motion-reduce:transition-none md:flex"
         style={{ bottom: abajo + 24 }}
+        data-fijo-abajo=""
       >
         <IconoWhatsApp className="size-6" />
         Hablemos

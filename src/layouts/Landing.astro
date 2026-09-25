@@ -41,6 +41,7 @@
 import '../styles/tailwind.css';
 import SeoHead from '../components/SeoHead.astro';
 import MedicionSitio from '../components/MedicionSitio.astro';
+import AvisoCookies from '../components/AvisoCookies.astro';
 import LandingFormulario from '../components/landing/LandingFormulario.astro';
 import LandingTitulo from '../components/landing/LandingTitulo.astro';
 import { LogoMarquee } from '../components/ui/logo-marquee';
@@ -470,6 +471,7 @@ const BARRA =
   )}
   <!-- la lista desplegable con el diseño del sitio (src/lib/selector-svea.ts) -->
   <script>import '../lib/selector-svea';</script>
+  <AvisoCookies copia={COPIA} />
 </body>
 </html>
 

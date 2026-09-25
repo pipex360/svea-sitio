@@ -15,6 +15,7 @@
  */
 import '../styles/tailwind.css';
 import MedicionSitio from '../components/MedicionSitio.astro';
+import AvisoCookies from '../components/AvisoCookies.astro';
 import SeoHead from '../components/SeoHead.astro';
 import BarraLectura from '../components/BarraLectura.astro';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
@@ -99,6 +100,7 @@ const fuentesCSS = `
       <a href={`${BASE}/estado/`}>ver todas las páginas</a>
     </div>
   )}
+  <AvisoCookies copia={COPIA} />
 </body>
 </html>
 
