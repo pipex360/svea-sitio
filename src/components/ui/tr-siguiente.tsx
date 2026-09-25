@@ -6,11 +6,18 @@
  * «Servicios complementarios», con un párrafo y tres enlaces (Manejo de
  * Residuos Peligrosos, CTI y Plan de Emergencia). Va con el formato de
  * ecc-siguiente.tsx: la tarjeta a la izquierda y los tres enlaces como
- * tarjetas a la derecha. Texto y enlaces idénticos al original.
+ * tarjetas a la derecha. Texto y enlaces idénticos al original; desde el
+ * 24-sep la tarjeta suma las dos guías de transporte (RESPEL y no peligrosos).
  */
-import { ArrowRightIcon, FactoryIcon, ShieldAlertIcon, SirenIcon, TriangleAlertIcon } from 'lucide-react';
+import { ArrowRightIcon, BookOpenIcon, FactoryIcon, ShieldAlertIcon, SirenIcon, TriangleAlertIcon } from 'lucide-react';
 
 import { Reveal } from '@/components/ui/reveal';
+
+// guías del blog sobre el mismo trámite (enlace informativo, 24-sep)
+const GUIAS = [
+  { texto: 'Guía: autorización de transporte de residuos peligrosos (RESPEL) y no peligrosos', ruta: '/autorizacion-transporte-residuos-chile/' },
+  { texto: 'Guía: transporte de residuos no peligrosos, paso a paso', ruta: '/autorizacion-transporte-residuos-no-peligrosos/' },
+];
 
 const ENLACES = [
   { texto: 'Manejo de Residuos Peligrosos', ruta: '/manejo-de-residuos-peligrosos/', icono: TriangleAlertIcon },
@@ -42,6 +49,22 @@ export function TrSiguiente({ base = '' }: { base?: string }) {
                 <strong className="font-semibold text-black">Calificación Técnica Industrial</strong> y{' '}
                 <strong className="font-semibold text-black">Planes de Emergencia</strong>.
               </p>
+              <div className="mt-6 border-t border-border pt-5">
+                <p className="text-xs font-semibold uppercase tracking-wider text-black/50">Guías para entender el trámite</p>
+                <ul className="mt-3 flex flex-col gap-2">
+                  {GUIAS.map(({ texto, ruta }) => (
+                    <li key={ruta}>
+                      <a
+                        href={`${base}${ruta}`}
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-black underline decoration-svea/40 underline-offset-4 transition-colors hover:decoration-svea"
+                      >
+                        <BookOpenIcon className="size-4 shrink-0 text-svea" aria-hidden="true" />
+                        {texto}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </Reveal>
 

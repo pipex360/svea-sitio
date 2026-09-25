@@ -5,11 +5,18 @@
  * enlaza guía del blog: el bloque es uno solo, «Servicios complementarios»,
  * con un párrafo y tres servicios (CTI, Plan de Emergencia Industrial y
  * Estudio de Carga Combustible), cada uno con su descripción y «Ver
- * servicio». Formato de tr-siguiente.tsx. Texto y enlaces idénticos.
+ * servicio». Formato de tr-siguiente.tsx. Texto y enlaces idénticos; desde
+ * el 24-sep la tarjeta suma las guías del blog sobre el mismo trámite.
  */
-import { ArrowRightIcon, FactoryIcon, FlameIcon, ShieldCheckIcon, SirenIcon } from 'lucide-react';
+import { ArrowRightIcon, BookOpenIcon, FactoryIcon, FlameIcon, ShieldCheckIcon, SirenIcon } from 'lucide-react';
 
 import { Reveal } from '@/components/ui/reveal';
+
+// guías del blog sobre el mismo trámite (enlace informativo, 24-sep)
+const GUIAS = [
+  { texto: '¿Qué es el Informe Sanitario? Quién lo necesita y cómo se tramita', ruta: '/que-es-informe-sanitario/' },
+  { texto: 'Patente definitiva: qué permisos de la SEREMI necesitas', ruta: '/patente-definitiva-permisos-seremi/' },
+];
 
 const ENLACES = [
   {
@@ -54,6 +61,22 @@ export function IsSiguiente({ base = '' }: { base?: string }) {
                 Además del informe sanitario, muchos establecimientos requieren permisos complementarios. En
                 SVEA te ayudamos con todos ellos.
               </p>
+              <div className="mt-6 border-t border-border pt-5">
+                <p className="text-xs font-semibold uppercase tracking-wider text-black/50">Guías para entender el trámite</p>
+                <ul className="mt-3 flex flex-col gap-2">
+                  {GUIAS.map(({ texto, ruta }) => (
+                    <li key={ruta}>
+                      <a
+                        href={`${base}${ruta}`}
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-black underline decoration-svea/40 underline-offset-4 transition-colors hover:decoration-svea"
+                      >
+                        <BookOpenIcon className="size-4 shrink-0 text-svea" aria-hidden="true" />
+                        {texto}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </Reveal>
 
