@@ -185,7 +185,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Autorizaciones',
     fecha: 'Mar 2026',
     lectura: '11 min lectura',
-    imagen: { nombre: 'refineria-petroquimica-nocturna', alt: 'Calificación inofensiva SEREMI Chile - Establecimiento comercial e industrial' },
+    imagen: { nombre: 'bodega-calificacion-tecnica-industrial', alt: 'Calificación inofensiva SEREMI Chile - Bodega con portones y patio de maniobras' },
     servicio: CTI,
   },
   {
@@ -208,7 +208,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Autorizaciones',
     fecha: 'Sep 2026',
     lectura: '9 min lectura',
-    imagen: { nombre: 'centro-distribucion-calificacion-tecnica-industrial', alt: 'Patente definitiva - centro de distribución que requiere permisos de la SEREMI de Salud' },
+    imagen: { nombre: 'firma-solicitud-seremi-en-linea', alt: 'Patente definitiva - persona firma los antecedentes de su solicitud ante la SEREMI de Salud' },
     servicio: CTI,
   },
   {
@@ -219,7 +219,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Seguridad Laboral',
     fecha: 'Sep 2026',
     lectura: '10 min lectura',
-    imagen: { nombre: 'escalera-evacuacion-edificio', alt: 'Checklist DS 44 - escalera de evacuación señalizada en un lugar de trabajo' },
+    imagen: { nombre: 'inspeccion-planta-fiscalizacion-seremi', alt: 'Checklist DS 44 - técnico con carpeta revisa los equipos de una planta en una fiscalización' },
     servicio: PE,
   },
   {
@@ -230,7 +230,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Autorizaciones',
     fecha: 'Sep 2026',
     lectura: '9 min lectura',
-    imagen: { nombre: 'camion-tolva-transporte-residuos-carretera', alt: 'Autorización de transporte de residuos no peligrosos - camión tolva en carretera' },
+    imagen: { nombre: 'camion-recolector-residuos-no-peligrosos', alt: 'Autorización de transporte de residuos no peligrosos - camión recolector frente a un edificio' },
     servicio: TR,
   },
   {
@@ -241,7 +241,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Residuos Peligrosos',
     fecha: 'Sep 2026',
     lectura: '9 min lectura',
-    imagen: { nombre: 'tambores-bodega-residuos-peligrosos', alt: 'Declaración de residuos en SIDREP y SINADER - tambores de residuos peligrosos etiquetados' },
+    imagen: { nombre: 'tambores-metalicos-sidrep-declaracion', alt: 'Declaración de residuos en SIDREP y SINADER - tambores metálicos azules vistos desde arriba' },
     servicio: RP,
   },
   {
@@ -252,7 +252,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Cumplimiento',
     fecha: 'Sep 2026',
     lectura: '9 min lectura',
-    imagen: { nombre: 'planta-industrial-nocturna-informe-cti', alt: 'Sumario sanitario SEREMI - planta industrial fiscalizada por la autoridad sanitaria' },
+    imagen: { nombre: 'descargos-sumario-sanitario-documentos', alt: 'Sumario sanitario SEREMI - profesional prepara los descargos sobre una pila de documentos' },
     servicio: IS,
   },
   {
@@ -263,7 +263,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Autorizaciones',
     fecha: 'Sep 2026',
     lectura: '8 min lectura',
-    imagen: { nombre: 'revision-documentos-observaciones-seremi', alt: 'Rechazo u observaciones de la SEREMI - revisión de documentos para responder' },
+    imagen: { nombre: 'revision-expediente-observaciones-seremi', alt: 'Rechazo u observaciones de la SEREMI - dos personas revisan el expediente para responder' },
     servicio: CTI,
   },
   {
@@ -274,7 +274,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Residuos Peligrosos',
     fecha: 'Sep 2026',
     lectura: '9 min lectura',
-    imagen: { nombre: 'planta-quimica-estanques-sustancias-peligrosas', alt: 'Sustancias peligrosas DS 43 - estanques de almacenamiento en una planta química' },
+    imagen: { nombre: 'tambores-plasticos-sustancias-peligrosas-ds-43', alt: 'Sustancias peligrosas DS 43 - tambores plásticos con tapa naranja almacenados' },
     servicio: RP,
   },
 ];
