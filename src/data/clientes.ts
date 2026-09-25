@@ -31,7 +31,7 @@ export const CLIENTES = [
   { archivo: 'animal-services', alt: 'Animal Services', ratio: 1.33 },
   { archivo: 'delart-chocolat', alt: 'DelArt Chocolat', ratio: 2.01 },
   { archivo: 'myv', alt: 'Martínez y Valdivieso', ratio: 3.0 },
-  { archivo: 'bodegas-san-francisco', alt: 'Bodegas San Francisco', ratio: 9.99 },
+  { archivo: 'bodegas-san-francisco', alt: 'Bodegas San Francisco', ratio: 2.39 },
   { archivo: 'newrest', alt: 'Newrest Catering Chile', ratio: 4.16 },
   { archivo: 'flexpark', alt: 'Flexpark', ratio: 4.42 },
   { archivo: 'galilea-centro', alt: 'Inmobiliaria Galilea Centro', ratio: 1.06 },
