@@ -92,3 +92,83 @@ clasifique por la palabra del asunto y que termine en `/gracias/`:
 - Una guía (`article-lead-form`).
 - El selector de listas (portada, landings, guías): con teclado (Tab, flechas,
   Enter, Esc) y en el teléfono; el valor elegido debe llegar en el correo.
+
+## 6. Privacidad (Ley 21.719, vigente desde el 1-dic-2026)
+
+Informe de respaldo: `Drive Mac/Svea Consultores/Página Web/Revisión política de
+privacidad (Ley 21.719).md`.
+
+- **Política 2.0** en `src/pages/politica-de-privacidad.astro` (fecha y versión
+  arriba; la versión 1 del WordPress, íntegra y plegada al final). Al cambiarla:
+  subir `VERSION` y `ACTUALIZADA`, mover la versión vigente a «Versión anterior»
+  y actualizar `dateModified` en `src/data/paginas.json`.
+- **Aviso bajo el botón** de los 31 formularios: `src/components/ui/aviso-formulario.tsx`
+  (y su texto en `LandingFormulario.astro`). Es informativo, sin casilla: la base
+  para cotizar es el art. 13 c).
+
+### Pendiente para el 1-dic-2026
+
+- [ ] **Nombre del representante legal** en la política (sección 1). Hoy dice
+      «el representante legal de Svea Consultores»; el lugar está marcado con
+      `<!-- Ley 21.719 (vigente 1-dic-2026): agregar aquí el nombre del representante legal … -->`.
+      El art. 14 ter b) pide identificarlo.
+- [ ] Aceptar y archivar los DPA de Google, Vercel, Web3Forms, n8n y Supabase
+      (la sección 5 de la política dice que las transferencias se amparan en ellos).
+- [ ] Programar el borrado de los leads que no compran a los 24 meses del último
+      contacto (Gmail, `gmail_leads_historico`, CRM): la política ya lo promete.
+- [ ] Procedimiento para responder solicitudes en 30 días y planilla de incidentes.
+
+### Aviso de cookies (Consent Mode v2): preparado y APAGADO
+
+Piezas: `src/lib/aviso-cookies.ts` (interruptor), `src/components/AvisoCookies.astro`
+(la barra) y el bloque `AVISO_COOKIES` de `src/components/MedicionSitio.astro`.
+
+**Apagado (hoy)** no se pinta nada: ni la barra, ni `gtag('consent', …)`. La
+medición es la misma de antes (lo único nuevo en los scripts son dos guardas
+`window.sveaCookiesRechazadas` que nunca se cumplen).
+
+**Encendido:**
+
+1. Activar de una de estas dos formas:
+   - en el hosting (Vercel → Settings → Environment Variables), `SVEA_AVISO_COOKIES=1`
+     para Production, y volver a desplegar; o
+   - en el código, `const ENCENDIDO = true;` en `src/lib/aviso-cookies.ts`.
+2. Qué hace:
+   - En el `<head>`, ANTES de cargar GTM y GA4, `gtag('consent','default',…)` en
+     las dos colas (`dataLayer` del GTM y `dataLayerGA` de GA4): `ad_storage`,
+     `analytics_storage`, `ad_user_data` y `ad_personalization` en **granted**,
+     salvo que el visitante ya haya rechazado (`localStorage.svea_cookies =
+     'rechazadas'`), en cuyo caso los cuatro van en **denied**.
+   - La barra (abajo; en escritorio a la izquierda, lejos del WhatsApp) ofrece
+     «Rechazar» y «Aceptar». Al elegir: `gtag('consent','update',…)` en las dos
+     colas y se guarda la elección. Mientras está abierta, la barra fija del
+     teléfono y el WhatsApp flotante suben lo que mide.
+   - Si rechaza: no se guarda `svea_user_data` ni se empuja `user_data` en
+     /gracias/ (conversiones mejoradas). El evento `form_submit_cotizacion` y la
+     conversión de /gracias/ siguen saliendo, sin cookies (pings de Consent Mode).
+   - La política muestra el botón «Cambiar mi elección de cookies» (`data-cc-abrir`).
+3. Probarlo antes: `SVEA_AVISO_COOKIES=1 SVEA_PRODUCCION=1 npx astro build --outDir /tmp/svea-cc`
+   y en Tag Assistant ver el estado de consentimiento («Consent» en cada evento).
+   `verificar-produccion.mjs` y `chequeo-lanzamiento.py` deben seguir en OK.
+4. **Ojo con el diseño:** con el valor por defecto en *granted*, el aviso es
+   de «oposición» (interés legítimo, rechazar desactiva), no de consentimiento
+   previo. Para pedir consentimiento previo (lo seguro para remarketing y
+   conversiones mejoradas según el informe) basta cambiar el `estado(!rechazo)`
+   del `default` por `estado(aceptada)` en `MedicionSitio.astro`, y ajustar la
+   sección 3 de la política.
+
+**Medir el efecto 2 a 4 semanas después de encender:**
+
+- Anotar la fecha de encendido. Comparar, por semana, las 4 semanas antes y
+  las 2-4 después:
+  - conversiones «formulario» de Google Ads vs. leads reales en
+    `gmail_leads_historico` (la fuente de verdad);
+  - `form_submit_cotizacion` en GA4 vs. esos mismos leads;
+  - tamaño de las listas de remarketing y el % de conversiones mejoradas
+    («Diagnóstico» de la acción de conversión en Google Ads).
+- Tasa de rechazo: en GA4 los usuarios que rechazan no aparecen (o aparecen
+  modelados); una estimación es `1 − (conversiones Ads ÷ leads reales)` antes
+  vs. después.
+- Si la caída de conversiones medidas es grande y la cuenta no alcanza los
+  umbrales para modelar, la atribución sigue saliendo del gclid/utm que llegan
+  en el correo de cada formulario.
