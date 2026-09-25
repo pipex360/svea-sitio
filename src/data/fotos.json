@@ -553,37 +553,6 @@
     },
     "origen": "286090:1790300901990"
   },
-  "consultoria-ambiental-santiago-cordillera": {
-    "ancho": 2400,
-    "alto": 1594,
-    "anchos": [
-      640,
-      1080,
-      1600,
-      1920
-    ],
-    "hero": true,
-    "og": "consultoria-ambiental-santiago-cordillera.jpg",
-    "peso": {
-      "640": {
-        "avif": 33,
-        "webp": 47
-      },
-      "1080": {
-        "avif": 66,
-        "webp": 90
-      },
-      "1600": {
-        "avif": 112,
-        "webp": 120
-      },
-      "1920": {
-        "avif": 142,
-        "webp": 147
-      }
-    },
-    "origen": "616554:1790304603422"
-  },
   "edificio-condominio-plan-de-emergencia": {
     "ancho": 1920,
     "alto": 1080,
@@ -1293,6 +1262,37 @@
       }
     },
     "origen": "538558:1790300902009"
+  },
+  "tecnicos-casco-planta-cumplimiento-normativo": {
+    "ancho": 2400,
+    "alto": 1702,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "tecnicos-casco-planta-cumplimiento-normativo.jpg",
+    "peso": {
+      "640": {
+        "avif": 19,
+        "webp": 24
+      },
+      "1080": {
+        "avif": 39,
+        "webp": 50
+      },
+      "1600": {
+        "avif": 67,
+        "webp": 82
+      },
+      "1920": {
+        "avif": 86,
+        "webp": 103
+      }
+    },
+    "origen": "534678:1790348630084"
   },
   "tecnicos-casco-revision-calificacion-tecnica-industrial": {
     "ancho": 2400,
