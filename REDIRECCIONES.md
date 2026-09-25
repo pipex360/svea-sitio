@@ -42,3 +42,20 @@ Cada regla va con y sin barra final (`/inicio/` y `/inicio`).
    tabla de este archivo.
 4. En `scripts/chequeo-lanzamiento.py`, anotar la ruta en `RENOMBRADAS` para que
    se compare contra la URL vieja del sitio en vivo.
+
+## Agregadas el 25-sep-2026 (cruce con Search Console, 16 meses)
+
+URLs viejas o mal escritas que tenían impresiones en Google y no existen en el sitio nuevo:
+
+| Desde | Hacia |
+|---|---|
+| /calificacion-inofensiva-2026/ | /calificacion-inofensiva-seremi/ |
+| /calificacion-inofensiva-seremi-2016/ | /calificacion-inofensiva-seremi/ |
+| /calificacion-industrial-chile-guia-definitiva-2026/ | /calificacion-tecnica-industrial-chile/ |
+| /calificacion-technica-industrial/ | /calificacion-tecnica-industrial/ |
+| /estudio-de-cara-combustible-chile/ | /estudio-de-carga-combustible-chile/ |
+| /estudio-de-carga-de-combustible-chile/ | /estudio-de-carga-combustible-chile/ |
+| /plan-de-emergencia-condominio-chile-guia-definitiva-2026-svea-consultores/ | /plan-de-emergencia-condominio-chile/ |
+| /plan-de-empresa-chile/ | /plan-de-emergencia-empresa-chile/ |
+| /plan-de-empresa-empresa-chile/ | /plan-de-emergencia-empresa-chile/ |
+| /chile/ | / |
