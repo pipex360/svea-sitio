@@ -25,8 +25,8 @@ import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
  *  sirve, con el centro logístico. */
 const bloques = (): BloqueScroll[] => {
   const bodega = {
-    foto: 'racks-cajas-carton-carga-fuego',
-    alt: 'Racks industriales con cajas de cartón: la carga de fuego que evalúa el estudio de carga de combustible',
+    foto: 'bodega-racks-mercaderia-carga-combustible',
+    alt: 'Pasillo de bodega con racks cargados de cajas, baldes y tambores: la carga de fuego que evalúa el estudio de carga de combustible',
   };
   const logistica = {
     foto: 'bodega-cajas-estudio-carga-combustible',

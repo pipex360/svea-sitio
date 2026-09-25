@@ -201,6 +201,37 @@
     },
     "origen": "146752:1790296138474"
   },
+  "bodega-racks-mercaderia-carga-combustible": {
+    "ancho": 2400,
+    "alto": 1600,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "bodega-racks-mercaderia-carga-combustible.jpg",
+    "peso": {
+      "640": {
+        "avif": 36,
+        "webp": 49
+      },
+      "1080": {
+        "avif": 71,
+        "webp": 87
+      },
+      "1600": {
+        "avif": 118,
+        "webp": 114
+      },
+      "1920": {
+        "avif": 147,
+        "webp": 147
+      }
+    },
+    "origen": "645190:1790306480328"
+  },
   "brigada-simulacro-incendio-plan-de-emergencia": {
     "ancho": 2400,
     "alto": 1600,
@@ -350,6 +381,63 @@
       }
     },
     "origen": "297146:1790303551811"
+  },
+  "camion-tolva-descarga-transporte-residuos-autorizado": {
+    "ancho": 2400,
+    "alto": 1600,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "camion-tolva-descarga-transporte-residuos-autorizado.jpg",
+    "peso": {
+      "640": {
+        "avif": 21,
+        "webp": 28
+      },
+      "1080": {
+        "avif": 54,
+        "webp": 74
+      },
+      "1600": {
+        "avif": 106,
+        "webp": 114
+      },
+      "1920": {
+        "avif": 140,
+        "webp": 140
+      }
+    },
+    "origen": "643502:1790306423143"
+  },
+  "camion-tolva-escombros-obra-autorizacion-transporte": {
+    "ancho": 1800,
+    "alto": 1350,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "camion-tolva-escombros-obra-autorizacion-transporte.jpg",
+    "peso": {
+      "640": {
+        "avif": 37,
+        "webp": 43
+      },
+      "1080": {
+        "avif": 79,
+        "webp": 87
+      },
+      "1600": {
+        "avif": 115,
+        "webp": 129
+      }
+    },
+    "origen": "670680:1790306479983"
   },
   "camion-tolva-escombros-residuos-no-peligrosos": {
     "ancho": 7952,

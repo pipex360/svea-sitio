@@ -92,8 +92,8 @@ const landing: Landing = {
       'En SVEA Consultores nos encargamos de todo el proceso: desde la clasificación de residuos hasta la obtención del permiso y la entrega de la documentación completa.',
     ],
     foto: {
-      nombre: 'carga-residuos-camion-tolva-retroexcavadora',
-      alt: 'Retroexcavadora carga residuos en un camión tolva, transporte que requiere autorización sanitaria de la SEREMI',
+      nombre: 'camion-tolva-escombros-obra-autorizacion-transporte',
+      alt: 'Camión tolva cargado con escombros junto a una obra en la calle, transporte que requiere autorización sanitaria de la SEREMI',
     },
   },
   riesgos: {
