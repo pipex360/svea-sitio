@@ -53,7 +53,8 @@ for (const f of htmls) {
   const rel = '/' + path.relative(DIST, f).replace(/index\.html$/, '');
   const html = readFileSync(f, 'utf8');
   revisadas++;
-  if (/aviso-copia|COPIA DE TRABAJO/.test(html)) fallos.push(`${rel}  ✗ trae el aviso de copia de trabajo`);
+  // la regla CSS .aviso-copia puede quedar en la hoja: lo que cuenta es el elemento o su texto
+  if (/class="aviso-copia"|COPIA DE TRABAJO/.test(html)) fallos.push(`${rel}  ✗ trae el aviso de copia de trabajo`);
   if (!html.includes('GTM-NGVMRNDM')) fallos.push(`${rel}  ✗ falta el GTM-NGVMRNDM`);
   for (const form of html.match(/<form\b[^>]*>/g) || []) {
     if (/\saction="#"/.test(form)) fallos.push(`${rel}  ✗ un formulario con action="#": ${form.slice(0, 90)}`);
