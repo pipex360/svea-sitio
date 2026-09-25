@@ -246,7 +246,7 @@ const landing: Landing = {
       },
       {
         p: '¿Cuánto cuesta el servicio?',
-        r: 'El arancel de la SEREMI de Salud es de $132.500 por trámite (valor pagado en la SEREMI RM, diciembre de 2025; se reajusta cada año). Aparte, el costo del servicio varía según la complejidad de la instalación, el tipo de residuo a transportar y la cantidad de vehículos involucrados. Contáctanos para una cotización personalizada sin compromiso. Respondemos en menos de 24 horas.',
+        r: 'El arancel de la SEREMI de Salud es de $135.700 por trámite (valor en la SEREMI RM, septiembre de 2026; se reajusta cada año). Aparte, el costo del servicio varía según la complejidad de la instalación, el tipo de residuo a transportar y la cantidad de vehículos involucrados. Contáctanos para una cotización personalizada sin compromiso. Respondemos en menos de 24 horas.',
       },
     ],
   },
