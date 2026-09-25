@@ -78,7 +78,7 @@ const RUBROS: { id: string; nombre: string; foto: string; alt: string; texto: st
 
 const CASOS: { r: string; s: Srv; anio: number; foto: string; alt: string; empresa: string; lugar: string; titulo: string; desafio: string; hicimos: string; cifras: [string, string][] }[] = [
   {
-    r: 'bodegas', s: 'ecc', anio: 2025, foto: 'bodega-centro-logistico-carga-combustible', alt: 'Bodega con estanterías altas evaluada con un estudio de carga de combustible',
+    r: 'bodegas', s: 'cti', anio: 2025, foto: 'bodega-centro-logistico-carga-combustible', alt: 'Bodega con estanterías altas evaluada con un estudio de carga de combustible',
     empresa: 'Bodega de equipos eléctricos y baterías', lugar: 'Renca, RM',
     titulo: 'Bodega de baterías calificada inofensiva en 9 días',
     desafio: 'Iban a operar una bodega nueva de baterías, inversores y transformadores, y la SEREMI pedía el estudio de carga de combustible junto con la calificación.',
@@ -152,6 +152,10 @@ const CASOS: { r: string; s: Srv; anio: number; foto: string; alt: string; empre
 ];
 
 const rubroDe = (id: string) => RUBROS.find((x) => x.id === id)!;
+// un rubro sin casos publicados (hoy, transporte) sigue en «¿Cuál es tu
+// rubro?» pero lleva a su servicio y no aparece en los filtros
+const conCasos = (id: string) => CASOS.some((c) => c.r === id);
+const RUBROS_CON_CASOS = RUBROS.filter((r) => conCasos(r.id));
 
 // Mientras Carlos no revise los casos, la página va noindex y sólo en la
 // copia. Para publicarla: PUBLICABLE = true, agregarla a
@@ -162,7 +166,7 @@ const PUBLICABLE = false;
 const URL_CASOS = 'https://sveaconsultores.cl/casos/';
 const seo = {
   title: 'Casos de clientes por rubro: permisos SEREMI | SVEA',
-  description: 'Casos reales de bodegas, industrias, cocinas, laboratorios, condominios y transportistas que regularizaron sus permisos SEREMI con SVEA Consultores.',
+  description: 'Casos reales de bodegas, industrias, cocinas, laboratorios, y condominios que regularizaron sus permisos SEREMI con SVEA Consultores.',
   robots: PUBLICABLE ? 'index, follow' : 'noindex, nofollow',
   canonical: URL_CASOS,
   jsonld: [{
@@ -193,7 +197,7 @@ const seo = {
   miga="Casos de clientes"
   insignia="Casos por rubro"
   titulo="Empresas que ya <em>regularizaron</em> con SVEA"
-  bajada="Bodegas, plantas, cocinas, laboratorios, condominios y transportistas de todo Chile. Busca tu rubro: qué permisos te piden, qué hicimos por empresas como la tuya y en cuánto tiempo."
+  bajada="Bodegas, fábricas, panaderías, laboratorios y condominios. Busca tu rubro: qué permisos te piden, qué hicimos por empresas como la tuya y en cuánto tiempo."
   seo={seo}
 >
   <div class="cs">
@@ -201,7 +205,7 @@ const seo = {
 
     <section class="cs-resumen" aria-label="SVEA en cifras">
       <div><strong>250+</strong><span>empresas atendidas</span></div>
-      <div><strong>6</strong><span>rubros con experiencia</span></div>
+      <div><strong>{CASOS.length}</strong><span>casos con su resolución o entrega</span></div>
       <div><strong>3-5</strong><span>días hábiles para el expediente</span></div>
       <div><strong>24 h</strong><span>para cotizar</span></div>
     </section>
@@ -215,17 +219,26 @@ const seo = {
       <div class="cs-rubros-grilla">
         {RUBROS.map((r) => (
           <article class="cs-rubro">
-            <button type="button" class="cs-rubro-foto" data-ir={r.id} aria-label={`Ver casos de ${r.nombre}`}>
-              {hayFoto(r.foto) && <Foto nombre={r.foto} alt={r.alt} tamano="tarjeta" />}
-              <span class="cs-rubro-nombre">{r.nombre}</span>
-            </button>
+            {conCasos(r.id) ? (
+              <button type="button" class="cs-rubro-foto" data-ir={r.id} aria-label={`Ver casos de ${r.nombre}`}>
+                {hayFoto(r.foto) && <Foto nombre={r.foto} alt={r.alt} tamano="tarjeta" />}
+                <span class="cs-rubro-nombre">{r.nombre}</span>
+              </button>
+            ) : (
+              <a class="cs-rubro-foto" href={`${BASE}${SERVICIO[r.necesita[0]].href}`}>
+                {hayFoto(r.foto) && <Foto nombre={r.foto} alt={r.alt} tamano="tarjeta" />}
+                <span class="cs-rubro-nombre">{r.nombre}</span>
+              </a>
+            )}
             <div class="cs-rubro-cuerpo">
               <p>{r.texto}</p>
               <p class="cs-necesita">Lo que suele necesitar:</p>
               <ul>
                 {r.necesita.map((s) => <li><a href={`${BASE}${SERVICIO[s].href}`}>{SERVICIO[s].nombre}</a></li>)}
               </ul>
-              <button type="button" class="cs-ver" data-ir={r.id}>Ver casos <span aria-hidden="true">→</span></button>
+              {conCasos(r.id)
+                ? <button type="button" class="cs-ver" data-ir={r.id}>Ver casos <span aria-hidden="true">→</span></button>
+                : <a class="cs-ver" href={`${BASE}${SERVICIO[r.necesita[0]].href}`}>Ver el servicio <span aria-hidden="true">→</span></a>}
             </div>
           </article>
         ))}
@@ -239,7 +252,7 @@ const seo = {
       </div>
       <nav class="cs-filtros" aria-label="Filtrar casos por rubro">
         <button type="button" class="activo" data-filtro="todos">Todos los rubros</button>
-        {RUBROS.map((r) => <button type="button" data-filtro={r.id}>{r.nombre}</button>)}
+        {RUBROS_CON_CASOS.map((r) => <button type="button" data-filtro={r.id}>{r.nombre}</button>)}
       </nav>
       <div class="cs-lista">
         {CASOS.map((c) => (
@@ -341,7 +354,7 @@ const seo = {
   .cs-rubro-cuerpo ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
   .cs-rubro-cuerpo li a { display: inline-block; font-size: 13px; padding: 4px 10px; border-radius: 999px; background: #eef5f0; color: #0d3518; text-decoration: none; }
   .cs-rubro-cuerpo li a:hover { background: #dcecdf; color: var(--verde); }
-  .cs-ver { margin-top: auto; align-self: flex-start; padding: 8px 0 0; border: 0; background: none; font: 600 14px Inter, sans-serif; color: var(--verde); cursor: pointer; }
+  .cs-ver { text-decoration: none; margin-top: auto; align-self: flex-start; padding: 8px 0 0; border: 0; background: none; font: 600 14px Inter, sans-serif; color: var(--verde); cursor: pointer; }
   .cs-ver:hover { text-decoration: underline; }
 
   .cs-filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
