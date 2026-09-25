@@ -47,7 +47,8 @@ export function PcFormulario({ copia = false }: { copia?: boolean }) {
         <ContactCard
           title="Solicita tu Cotización"
           titleId="titulo-form-pc"
-          description="Te enviaremos tu cotización en menos de 24 horas"
+          description="Te enviaremos tu cotización en menos de 24 horas. Cuéntanos de tu condominio o edificio y te respondemos con el plazo y el valor de tu Plan de Emergencia y Evacuación."
+          beneficios={["Obtén tu Plan de Emergencia y Evacuación para Condominios con respaldo profesional.", "Plan completo en 5-10 días hábiles, con un enfoque aplicable y personalizado.", "Protege a tu comunidad hoy: cotiza ahora, sin compromiso."]}
           contactInfo={[
             { icon: IconoWhatsApp, label: 'WhatsApp directo', value: '+56 9 2994 7924', href: WHATSAPP, externo: true },
             { icon: MailIcon, label: 'Correo', value: CORREO, href: `mailto:${CORREO}` },

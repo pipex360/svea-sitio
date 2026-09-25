@@ -43,6 +43,7 @@ uniform float u_time;
 uniform float u_grain;
 uniform vec3  u_colors[4];
 uniform vec3  u_bg;
+uniform float u_suave;
 
 vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
 
@@ -94,10 +95,14 @@ void main() {
   col = mix(col, u_colors[2], smoothstep(-0.3, 0.4, n3) * 0.6);
   col = mix(col, u_colors[3], smoothstep(0.0, 0.7, n1 * n2) * 0.5);
 
-  float glow = smoothstep(0.8, 0.0, dist) * 0.3;
+  float glow = smoothstep(0.8, 0.0, dist) * 0.3 * (1.0 - 0.5 * u_suave);
   col += u_colors[1] * glow;
 
-  col = mix(col * 0.2, col, vignette);
+  // la viñeta oscurece los bordes al 20%: en una tarjeta está bien, pero en
+  // una franja a todo el ancho (cierre y pie) casi todo queda lejos del
+  // centro y el verde se ve negro. En modo suave no se oscurece nunca por
+  // debajo del fondo.
+  col = mix(mix(col * 0.2, col, vignette), max(col, u_bg), u_suave);
 
   float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453 + u_time);
   col += (grain - 0.5) * u_grain * 0.1;
@@ -114,10 +119,18 @@ export interface VelarisProps {
   height?: string;
   className?: string;
   children?: React.ReactNode;
+  /**
+   * Para las franjas a todo el ancho (el cierre Cta69 y el pie): verde SVEA
+   * con un degradado sutil (#0d3518 → #12482a), sin viñeta. El mismo tono
+   * en el computador y en el teléfono.
+   */
+  suave?: boolean;
 }
 
 /** La paleta del logo, la misma que usa «Compromiso y Garantía». */
 const COLORES_SVEA = ['#2d6a4f', '#0e7a3c', '#95d5b2', '#0d3518'] as const;
+/** La paleta suave: del verde del fondo a uno apenas más claro. */
+const COLORES_SUAVES = ['#0e3d1c', '#12482a', '#15502f', '#0d3518'] as const;
 
 function hexARgb(hex: string): [number, number, number] {
   const h = hex.replace('#', '');
@@ -130,13 +143,15 @@ function hexARgb(hex: string): [number, number, number] {
 
 export function Velaris({
   bg = '#0d3518',
-  colors = COLORES_SVEA,
+  colors: coloresPropios,
   speed = 2.0,
   grain = 0.3,
   height = '100%',
   className,
   children,
+  suave = false,
 }: VelarisProps) {
+  const colors = coloresPropios ?? (suave ? COLORES_SUAVES : COLORES_SVEA);
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
   const contenedorRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -187,6 +202,7 @@ export function Velaris({
       grain: gl.getUniformLocation(programa, 'u_grain'),
       colors: gl.getUniformLocation(programa, 'u_colors'),
       bg: gl.getUniformLocation(programa, 'u_bg'),
+      suave: gl.getUniformLocation(programa, 'u_suave'),
     };
 
     const paleta = new Float32Array(colors.slice(0, 4).flatMap(hexARgb));
@@ -205,6 +221,7 @@ export function Velaris({
       gl.uniform1f(loc.grain, grain);
       gl.uniform3f(loc.bg, fondo[0], fondo[1], fondo[2]);
       gl.uniform3fv(loc.colors, paleta);
+      gl.uniform1f(loc.suave, suave ? 1 : 0);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     };
 
@@ -259,7 +276,7 @@ export function Velaris({
       gl.deleteBuffer(buffer);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
-  }, [bg, colors, speed, grain]);
+  }, [bg, colors, speed, grain, suave]);
 
   return (
     <div

@@ -6,10 +6,9 @@
  * hoja de Elementor, sus scripts y los recursos del sitio viejo). Ahora van
  * con el lenguaje de /blog/ y de las guías: la cabecera clara con
  * BarraLectura, migas, insignia, H1 y bajada; el contenido en el slot; y
- * el final común de todas las páginas: el cierre Cta69 y Footer2. Cada
- * página puede pasar su propio cierre (`cierre`, /gracias/ trae el suyo del
- * original); sin él va el de la portada. El texto es el del original (scripts/verificar.mjs lo
- * compara palabra por palabra).
+ * el final común de todas las páginas: el cierre Cta69 (el mismo texto en
+ * todo el sitio, src/data/cierre.ts) y Footer2. El texto es el del
+ * original (scripts/verificar.mjs lo compara palabra por palabra).
  *
  * El <head> sale de src/data/paginas.json por SeoHead: en producción,
  * /gracias/ va «noindex, follow» y la política «index, follow».
@@ -35,27 +34,16 @@ interface Props {
   bajada?: string;
   /** en /gracias/: empuja los datos del formulario al dataLayer antes del GTM */
   gracias?: boolean;
-  /** el cierre (Cta69): titular, nota, botón y la palabra de fondo */
-  cierre?: { badge: string; titulo: string; nota: string; boton: { texto: string; href: string }; cinta: string; pie?: string };
   /** la cabecera SEO, cuando la página no está en paginas.json (la 404) */
   seo?: { title: string; description: string; robots: string; canonical: string; jsonld?: unknown[] };
 }
-const { ruta, miga, insignia, titulo, bajada, gracias = false, cierre: cierrePropio, seo } = Astro.props;
+const { ruta, miga, insignia, titulo, bajada, gracias = false, seo } = Astro.props;
 
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 const COPIA = !import.meta.env.SVEA_PRODUCCION;
 const pagina = seo ?? paginas.find((p) => p.ruta === ruta)!;
 if (!pagina) throw new Error(`falta ${ruta} en paginas.json`);
 const COTIZAR = `${BASE}/#form-home`;
-// sin cierre propio, el de la portada, con la línea de WhatsApp de los servicios
-const cierre = cierrePropio ?? {
-  badge: 'Primer paso',
-  titulo: '¿Listo para comenzar su proyecto?',
-  nota: 'Deje la complejidad normativa en nuestras manos. Nuestro equipo de expertos está listo para asesorarlo hoy mismo.',
-  boton: { texto: 'Contáctanos', href: COTIZAR },
-  cinta: 'Cumplimiento',
-  pie: 'WhatsApp directo: +56 9 2994 7924',
-};
 
 const fuentesCSS = `
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 900;font-display:swap;src:url(${BASE}/fonts/inter-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -99,17 +87,10 @@ const fuentesCSS = `
       <slot />
     </main>
 
-    <Cta69
-      badge={{ label: cierre.badge }}
-      heading={cierre.titulo}
-      button={{ label: cierre.boton.texto, href: cierre.boton.href }}
-      labels={{ marqueePhrase: cierre.cinta, note: cierre.nota, footnote: cierre.pie }}
-      client:idle
-    />
+    <Cta69 destino={COTIZAR} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
-  <div class="h-20 md:hidden" aria-hidden="true"></div>
   <BarraMovil base={BASE} copia={COPIA} cotizar={COTIZAR} client:idle />
 
   {COPIA && (

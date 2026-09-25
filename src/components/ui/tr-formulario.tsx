@@ -45,7 +45,8 @@ export function TrFormulario({ copia = false }: { copia?: boolean }) {
         <ContactCard
           title="Solicita tu Cotización"
           titleId="titulo-form-tr"
-          description="Te enviaremos tu cotización en menos de 24 horas · Autorización de Transporte de Residuos"
+          description="Te enviaremos tu cotización en menos de 24 horas · Autorización de Transporte de Residuos. Cuéntanos qué residuos transportas y te respondemos con el plazo y el valor."
+          beneficios={["Obtén tu Autorización de Transporte de Residuos peligrosos y no peligrosos.", "Gestión integral ante la SEREMI de Salud, con la documentación completa.", "Seguimiento hasta la aprobación del permiso.", "Cotiza ahora: respuesta en menos de 24 horas."]}
           contactInfo={[
             { icon: IconoWhatsApp, label: 'WhatsApp directo', value: '+56 9 2994 7924', href: WHATSAPP, externo: true },
             { icon: MailIcon, label: 'Correo', value: CORREO, href: `mailto:${CORREO}` },

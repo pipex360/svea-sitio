@@ -77,23 +77,11 @@ const fuentesCSS = `
     <TrServicio client:idle />
     <TrSiguiente base={BASE} client:idle />
     <TrFaq />
-    <Cta69
-      badge={{ label: 'Último paso' }}
-      heading="Obtén tu Autorización de Transporte de Residuos"
-      button={{ label: 'Cotiza tu Autorización ahora', href: '#formulario-tr' }}
-      labels={{
-        marqueePhrase: 'Residuos',
-        note: 'Gestión integral ante la SEREMI de Salud. Cotización en menos de 24 horas, documentación completa, seguimiento hasta la aprobación del permiso.',
-        footnote: 'WhatsApp directo: +56 9 2994 7924',
-      }}
-      client:idle
-    />
     <TrFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-tr" client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
-  <!-- en el teléfono, sitio para la barra de abajo -->
-  <div class="h-20 md:hidden" aria-hidden="true"></div>
   <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-tr" client:idle />
 
   {COPIA && (

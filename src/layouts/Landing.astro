@@ -54,6 +54,7 @@ import paginas from '../data/paginas.json';
 import type { Landing } from '../contenido/landings/tipos';
 import Foto from '../components/Foto.astro';
 import { precargaFoto } from '../lib/fotos';
+import { rangosHtml } from '../lib/utils';
 
 interface Props {
   datos: Landing;
@@ -95,17 +96,6 @@ const FLECHA = '<path d="M5 12h14" /><path d="m12 5 7 7-7 7" />';
 
 const m = d.medicion;
 
-// la palabra que cruza el fondo del cierre (Cta69): la misma de la página de
-// servicio de cada landing
-const CINTA: Record<string, string> = {
-  '/cotiza-calificacion-tecnica-industrial/': 'Calificación',
-  '/cotiza-estudio-de-carga-de-combustible/': 'Combustible',
-  '/cotiza-plan-emergencia/': 'Emergencia',
-  '/cotiza-plan-emergencia-condominio/': 'Evacuación',
-  '/cotiza-informe-sanitario/': 'Sanitario',
-  '/cotiza-autorizacion-transporte-residuos/': 'Residuos',
-};
-if (!CINTA[d.ruta]) throw new Error(`falta la palabra del cierre (CINTA) para ${d.ruta}`);
 
 // la tarjeta de las páginas de servicio (cti-servicio): sube 4 px, proyecta
 // sombra, oscurece el borde y se enciende la barra verde de arriba
@@ -370,38 +360,24 @@ const BARRA =
               </details>
             ))}
           </Reveal>
+          <!-- el resumen del cierre del original: desde el 25-sep el bloque
+               verde (Cta69) dice lo mismo en todo el sitio, y lo propio de
+               esta landing (plazo, norma, respaldo) queda aquí -->
+          <p class="lp-resumen">
+            <strong set:html={d.cierre.titulo} />
+            <span set:html={rangosHtml(d.cierre.texto)} />
+          </p>
         </div>
       </section>
 
-      <!-- cierre: el mismo de todas las páginas (Cta69: Velaris de fondo,
-           titular grande en blanco, botón invertido), con el WhatsApp al lado -->
-      <Cta69
-        badge={{ label: 'Último paso' }}
-        heading={d.cierre.titulo}
-        html
-        button={{ label: d.cierre.boton, href: '#formulario' }}
-        whatsapp={{ href: d.cierre.whatsapp, label: d.cierre.whatsappTexto }}
-        labels={{ marqueePhrase: CINTA[d.ruta], note: d.cierre.texto }}
-        client:idle
-      />
+      <!-- cierre: el mismo de todas las páginas, con el mismo texto
+           (src/data/cierre.ts); sólo el WhatsApp lleva el texto de la landing -->
+      <Cta69 destino="#formulario" whatsapp={d.cierre.whatsapp} client:idle />
     </main>
 
-    <!-- el pie de todas las páginas (Footer2), con las columnas del original de la landing -->
-    <Footer2
-      base={BASE}
-      tagline={d.pie.presentacion}
-      telefonoTexto="+56929947924"
-      menuItems={d.pie.columnas.map((c) => ({
-        title: c.titulo,
-        span: 2 as const,
-        links: c.enlaces.map((e) => ({ text: e.texto, url: enlace(e.href) })),
-      }))}
-      copyright="© 2026 SVEA Consultores. Todos los derechos reservados."
-      notas={['Términos de uso', 'Política de cookies']}
-      client:idle
-    />
-    <!-- en el teléfono, sitio para la barra de abajo -->
-    <div class="h-20 md:hidden" aria-hidden="true"></div>
+    <!-- el pie de todas las páginas, igual al del resto del sitio (25-sep):
+         con «Recursos y guías», el teléfono agrupado y sólo enlaces reales -->
+    <Footer2 base={BASE} tagline={d.pie.presentacion} client:idle />
 
     <!-- en el teléfono, cuando el formulario ya quedó arriba: cotizar o WhatsApp -->
     <div class:list={['lp-barra md:hidden', COPIA && 'con-aviso']} aria-hidden="true" inert>
@@ -555,6 +531,11 @@ const BARRA =
   .lp-titulo h2 em { font-style: normal; font-weight: 900; color: #0e7a3c; }
   .lp-titulo.lp-oscuro h2 em { color: #95d5b2; }
   .lp-ancla { scroll-margin-top: 12px; }
+  .lp-resumen { margin: 32px 0 0; padding: 22px 24px; border-radius: 12px; border: 1px solid rgba(14,122,60,.2); background: rgba(14,122,60,.05);
+    font-size: 16px; line-height: 1.6; color: rgba(0,0,0,.72); text-align: center; text-wrap: pretty; }
+  .lp-resumen strong { display: block; margin-bottom: 6px; font-family: Manrope, Inter, sans-serif; font-size: 20px; font-weight: 600; letter-spacing: -.015em; color: #000; }
+  .lp-resumen strong em { font-style: normal; color: #0e7a3c; }
+  .lp-resumen span strong { display: inline; margin: 0; font: inherit; font-weight: 600; color: #000; }
 
   /* la línea que une los pasos, sólo en escritorio */
   @media (min-width: 768px) {

@@ -132,28 +132,18 @@ const fuentesCSS = `
           <p>El cumplimiento normativo en Chile es una obligación que afecta a todas las empresas con operación industrial, comercial o residencial. La <a href="https://www.bcn.cl/leychile/navegar?idNorma=30667" target="_blank" rel="noopener">Ley 19.300 de Bases Generales del Medio Ambiente</a> establece el marco legal que regula las actividades con impacto ambiental. A partir de esta ley, distintos decretos supremos y normativas sectoriales exigen permisos, planes y estudios específicos según el rubro y nivel de riesgo de cada actividad.</p>
           <p>Cada guía está diseñada para explicar en lenguaje claro los requisitos técnicos, documentos necesarios, plazos de tramitación, costos involucrados y el proceso paso a paso ante las autoridades competentes como la SEREMI de Salud, Bomberos, la Superintendencia del Medio Ambiente y las municipalidades. Nuestro equipo técnico actualiza cada guía con los aranceles y procedimientos vigentes para que siempre tengas información confiable.</p>
           <p>Entre los temas que abordamos se encuentran: la elaboración de planes de emergencia y evacuación tanto para empresas industriales como para condominios residenciales; la calificación técnica industrial necesaria para obtener la patente municipal; el estudio de carga combustible que define la resistencia al fuego requerida para tu edificio o local comercial; la autorización sanitaria para el transporte de residuos peligrosos y no peligrosos; y el manejo integral de residuos peligrosos según el DS 148. Cada guía incluye preguntas frecuentes, tablas comparativas de costos y enlaces directos para solicitar cotización.</p>
+          <p>Y si prefieres que lo hagamos por ti: cotización en menos de 24 horas, informe en <span class="whitespace-nowrap">3-5 días hábiles</span> (<span class="whitespace-nowrap">5-10</span> en planes de emergencia) y gestión completa ante la autoridad.</p>
         </Reveal>
       </section>
 
     </main>
 
-    <!-- el cierre común de todas las páginas (Cta69), con el texto y los
-         dos botones del cierre del original -->
-    <Cta69
-      badge={{ label: 'Primer paso' }}
-      heading="¿Necesitas cumplir con la normativa?"
-      button={{ label: 'Ver servicios', href: `${BASE}/#contacto` }}
-      whatsapp={{ href: WHATSAPP, label: 'Cotizar por WhatsApp' }}
-      labels={{
-        marqueePhrase: 'Guías SVEA',
-        note: 'Cotización en menos de 24 horas · Informe en 3-5 días hábiles (5-10 en planes de emergencia) · Gestión completa',
-      }}
-      client:idle
-    />
+    <!-- el cierre común de todas las páginas (Cta69, src/data/cierre.ts);
+         los plazos del cierre del original quedan en el último párrafo de arriba -->
+    <Cta69 destino={`${BASE}/#form-home`} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
-  <div class="h-20 md:hidden" aria-hidden="true"></div>
   <BarraMovil base={BASE} copia={COPIA} cotizar={COTIZAR} client:idle />
 
   {COPIA && (

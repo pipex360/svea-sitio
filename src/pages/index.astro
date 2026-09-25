@@ -132,20 +132,6 @@ const clientes = logosClientes(BASE);
     <CumplimientoBento client:visible />
   </section>
 
-  <!-- Cierre de la sección: franja completa con la palabra de fondo -->
-  <div class="svea-nuevo">
-    <Cta69
-      badge={{ label: 'Primer paso' }}
-      heading="¿Listo para comenzar su proyecto?"
-      button={{ label: 'Contáctanos', href: `${BASE}/#form-home` }}
-      labels={{
-        marqueePhrase: 'Cumplimiento',
-        note: 'Deje la complejidad normativa en nuestras manos. Nuestro equipo de expertos está listo para asesorarlo hoy mismo.',
-        footnote: 'Proceso simple y transparente',
-      }}
-      client:idle
-    />
-  </div>
 
   <!-- Cómo trabajamos: esquema de nodos y los cinco pasos -->
   <div class="svea-nuevo">
@@ -162,13 +148,16 @@ const clientes = logosClientes(BASE);
     <Contacto copia={COPIA} client:load />
   </div>
 
+  <!-- el cierre común de todas las páginas: formulario → verde → pie -->
+  <div class="svea-nuevo">
+    <Cta69 destino={`${BASE}/#form-home`} client:idle />
+  </div>
+
   <!-- Pie de página -->
   <div class="svea-nuevo">
     <Footer2 base={BASE} client:idle />
   </div>
 
-  <!-- en el teléfono, sitio para la barra de abajo -->
-  <div class="h-20 md:hidden" aria-hidden="true"></div>
   <BarraMovil base={BASE} copia={COPIA} client:idle />
 
   {COPIA && (

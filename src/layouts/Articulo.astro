@@ -21,13 +21,14 @@
  *      los pasos y las tarjetas del original, ya con la ropa de la casa.
  *   4. Preguntas frecuentes en <details> (sin JavaScript, en el HTML).
  *   5. Compartir y la caja del autor.
- *   6. El formulario de cotización (LISTA ROJA, ver articulo-formulario.tsx).
- *      En el WordPress iba a mitad del texto; aquí va tras la lectura, a todo
- *      el ancho, como en las páginas de servicio. Donde estaba queda una
- *      llamada corta que salta a él.
- *   7. Servicio relacionado —la página de servicio de la guía, con su botón
- *      de cotizar— y las tarjetas de «Servicios relacionados» del original.
- *   8. Otras guías, cierre (Cta69) y pie (Footer2).
+ *   6. Servicio relacionado —la página de servicio de la guía, con su botón
+ *      de cotizar— y las tarjetas de «Servicios relacionados» del original
+ *      (sin repetir el servicio destacado).
+ *   7. Otras guías del mismo tema.
+ *   8. El final común de todas las páginas: el formulario de cotización
+ *      (LISTA ROJA, ver articulo-formulario.tsx), el cierre (Cta69) y el pie
+ *      (Footer2). En el WordPress el formulario iba a mitad del texto; donde
+ *      estaba queda una llamada corta que salta a él.
  *
  * El <head> sale de src/data/paginas.json por SeoHead (title, descripción,
  * canónica y JSON-LD de Rank Math, sin tocar).
@@ -272,7 +273,6 @@ const fuentesCSS = `
       </article>
     </div>
 
-    <ArticuloFormulario datos={{ ...datos.formulario }} asunto={datos.asunto} copia={COPIA} base={BASE} client:idle />
 
     <section class="art-servicio" aria-labelledby="titulo-servicios">
       <Reveal className="art-ancho" client:idle>
@@ -322,22 +322,11 @@ const fuentesCSS = `
       </Reveal>
     </section>
 
-    <Cta69
-      badge={{ label: 'Último paso' }}
-      heading="Te acompañamos hasta la resolución"
-      button={{ label: 'Solicitar cotización', href: FORM }}
-      labels={{
-        marqueePhrase: 'Guías SVEA',
-        note: 'Cotización en menos de 24 horas y gestión completa ante la autoridad, con respuesta a cada observación hasta la resolución.',
-        footnote: 'WhatsApp directo: +56 9 2994 7924',
-      }}
-      client:idle
-    />
+    <ArticuloFormulario datos={{ ...datos.formulario }} asunto={datos.asunto} copia={COPIA} base={BASE} client:idle />
+    <Cta69 destino={FORM} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
-  <!-- en el teléfono, sitio para la barra de abajo -->
-  <div class="h-20 md:hidden" aria-hidden="true"></div>
   <BarraMovil base={BASE} copia={COPIA} cotizar={FORM} client:idle />
 
   {COPIA && (

@@ -68,23 +68,11 @@ const fuentesCSS = `
     <PeServicio client:idle />
     <PeSiguiente base={BASE} client:idle />
     <PeFaq />
-    <Cta69
-      badge={{ label: 'Último paso' }}
-      heading="Protege a tu equipo hoy"
-      button={{ label: 'Cotiza tu Plan ahora', href: '#formulario-pe' }}
-      labels={{
-        marqueePhrase: 'Emergencia',
-        note: 'Obtén tu Plan de Emergencia y Evacuación con respaldo profesional. Cotización en menos de 24 horas, plan completo en 5-10 días hábiles, conforme al DS 594 y DS 44.',
-        footnote: 'WhatsApp directo: +56 9 2994 7924',
-      }}
-      client:idle
-    />
     <PeFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-pe" client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
-  <!-- en el teléfono, sitio para la barra de abajo -->
-  <div class="h-20 md:hidden" aria-hidden="true"></div>
   <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-pe" client:idle />
 
   {COPIA && (

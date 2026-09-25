@@ -47,6 +47,7 @@ export function PeFormulario({ copia = false }: { copia?: boolean }) {
           title="Solicita tu Cotización"
           titleId="titulo-form-pe"
           description="Te enviaremos tu cotización en menos de 24 horas. Cuéntanos de tu instalación y te respondemos con el plazo y el valor de tu Plan de Emergencia y Evacuación Industrial."
+          beneficios={["Obtén tu Plan de Emergencia y Evacuación con respaldo profesional.", "Plan completo en 5-10 días hábiles, conforme al DS 594 y DS 44.", "Protege a tu equipo hoy: cotiza ahora y recibe la cotización en menos de 24 horas."]}
           contactInfo={[
             { icon: IconoWhatsApp, label: 'WhatsApp directo', value: '+56 9 2994 7924', href: WHATSAPP, externo: true },
             { icon: MailIcon, label: 'Correo', value: CORREO, href: `mailto:${CORREO}` },

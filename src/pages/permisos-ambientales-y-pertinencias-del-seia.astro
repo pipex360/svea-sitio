@@ -70,22 +70,10 @@ const fuentesCSS = `
     <SeiaDescripcion base={BASE} client:idle />
     <SeiaAlcance base={BASE} client:idle />
     <SeiaFaq />
-    <Cta69
-      badge={{ label: 'Último paso' }}
-      heading="Evalúa la pertinencia de tu proyecto"
-      button={{ label: 'Solicitar asesoría', href: `${BASE}/#form-home` }}
-      labels={{
-        marqueePhrase: 'SEIA',
-        note: 'Revisamos tu proyecto, confeccionamos el informe de pertinencia del SEIA y hacemos el seguimiento de la tramitación ante el SEA.',
-        footnote: 'WhatsApp directo: +56 9 2994 7924',
-      }}
-      client:idle
-    />
+    <Cta69 destino={`${BASE}/#form-home`} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
-  <!-- en el teléfono, sitio para la barra de abajo -->
-  <div class="h-20 md:hidden" aria-hidden="true"></div>
   <BarraMovil base={BASE} copia={COPIA} client:idle />
 
   {COPIA && (

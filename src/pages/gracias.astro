@@ -10,8 +10,11 @@
  *
  * El texto es el del WordPress (originales-wp/gracias.html), bloque por
  * bloque: confirmación, «¿Qué sigue ahora?» con los tres pasos, contacto
- * directo, los seis servicios y el cierre, que es el Cta69 común de todas
- * las páginas (lo pinta PaginaSimple). Va noindex (paginas.json).
+ * directo, los servicios (desde el 25-sep los ocho, como la portada) y el
+ * cierre del original («Tu solicitud está en buenas manos»), que va como
+ * franja propia antes del Cta69 común de todas las páginas (lo pinta
+ * PaginaSimple con el mismo texto que el resto del sitio). Va noindex
+ * (paginas.json).
  */
 import PaginaSimple from '../layouts/PaginaSimple.astro';
 
@@ -45,13 +48,6 @@ const FLECHA = '<path d="M5 12h14" /><path d="m12 5 7 7-7 7" />';
   titulo="¡Gracias por <em>contactarnos!</em>"
   bajada="Hemos recibido tu solicitud correctamente. Nuestro equipo técnico te enviará una <strong>cotización personalizada en menos de 24 horas</strong>."
   gracias
-  cierre={{
-    badge: 'Solicitud recibida',
-    titulo: 'Tu solicitud está en buenas manos',
-    nota: 'Más de 250 empresas ya confían en SVEA Consultores para sus trámites ambientales e industriales. Cotización automática, seguimiento personalizado y acompañamiento hasta la resolución.',
-    boton: { texto: 'Volver al inicio', href: `${BASE}/` },
-    cinta: 'Cumplimiento',
-  }}
 >
   <div class="ps-ancho">
     <!-- ¿Qué sigue ahora? -->
@@ -107,6 +103,13 @@ const FLECHA = '<path d="M5 12h14" /><path d="m12 5 7 7-7 7" />';
       </ul>
     </section>
 
+    <!-- el cierre del original, antes del bloque verde común -->
+    <section class="gr-confianza" aria-labelledby="gr-confianza">
+      <h2 id="gr-confianza" class="ps-titulo">Tu solicitud está en buenas manos</h2>
+      <p>Más de 250 empresas ya confían en SVEA Consultores para sus trámites ambientales e industriales. Cotización automática, seguimiento personalizado y acompañamiento hasta la resolución.</p>
+      <a class="btn-linea chica" href={`${BASE}/`}>Volver al inicio</a>
+    </section>
+
   </div>
 </PaginaSimple>
 
@@ -130,6 +133,9 @@ const FLECHA = '<path d="M5 12h14" /><path d="m12 5 7 7-7 7" />';
   .ps .gr-botones .btn-whatsapp svg{width:20px;height:20px}
 
   .ps .gr-servicios{margin-top:88px}
+  .ps .gr-confianza{margin-top:88px;padding:40px 32px;border:1px solid var(--borde);border-radius:12px;background:var(--hoja);text-align:center}
+  .ps .gr-confianza .ps-titulo{margin:0 auto}
+  .ps .gr-confianza p{margin:14px auto 22px;max-width:60ch;font-size:17px;line-height:1.6;color:var(--suave)}
   .ps .gr-rejilla{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:36px 0 0;padding:0;list-style:none}
   .ps .gr-tarjeta{position:relative;display:block;height:100%;padding:22px 52px 22px 22px;border:1px solid var(--borde);border-radius:12px;background:#fff;
     color:inherit;text-decoration:none}

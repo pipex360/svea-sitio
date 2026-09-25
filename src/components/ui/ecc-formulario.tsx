@@ -45,6 +45,7 @@ export function EccFormulario({ copia = false }: { copia?: boolean }) {
           title="Solicita tu Cotización ECC"
           titleId="titulo-form-ecc"
           description="Te enviaremos tu cotización en menos de 24 horas. Cuéntanos de tu instalación y te respondemos con el plazo y el valor de tu Estudio de Carga de Combustible."
+          beneficios={["Obtén tu Estudio de Carga de Combustible con respaldo profesional.", "Informe en 3-5 días hábiles, conforme a la OGUC.", "Protege tu instalación hoy: cotización en menos de 24 horas."]}
           contactInfo={[
             { icon: IconoWhatsApp, label: 'WhatsApp directo', value: '+56 9 2994 7924', href: WHATSAPP, externo: true },
             { icon: MailIcon, label: 'Correo', value: CORREO, href: `mailto:${CORREO}` },

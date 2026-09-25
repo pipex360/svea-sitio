@@ -66,6 +66,7 @@ export function CtiFormulario({ copia = false }: { copia?: boolean }) {
           title="Solicita tu Cotización CTI"
           titleId="titulo-form-cti"
           description="Te enviaremos tu cotización en menos de 24 horas. Cuéntanos de tu instalación y te respondemos con el plazo y el valor de tu Calificación Técnica Industrial."
+          beneficios={["Obtén tu Calificación Técnica Industrial con respaldo profesional.", "Informe técnico en 3-5 días hábiles.", "Acompañamiento hasta la resolución de la SEREMI.", "Regulariza tu actividad hoy: cotización en menos de 24 horas."]}
           contactInfo={[
             { icon: IconoWhatsApp, label: 'WhatsApp directo', value: '+56 9 2994 7924', href: WHATSAPP, externo: true },
             { icon: MailIcon, label: 'Correo', value: CORREO, href: `mailto:${CORREO}` },

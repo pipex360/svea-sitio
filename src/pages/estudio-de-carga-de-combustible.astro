@@ -71,23 +71,11 @@ const fuentesCSS = `
     <EccServicio client:idle />
     <EccSiguiente base={BASE} client:idle />
     <EccFaq />
-    <Cta69
-      badge={{ label: 'Último paso' }}
-      heading="Protege tu instalación hoy"
-      button={{ label: 'Cotiza tu ECC ahora', href: '#formulario-ecc' }}
-      labels={{
-        marqueePhrase: 'Combustible',
-        note: 'Obtén tu Estudio de Carga de Combustible con respaldo profesional. Cotización en menos de 24 horas, informe en 3-5 días hábiles, conforme a la OGUC.',
-        footnote: 'WhatsApp directo: +56 9 2994 7924',
-      }}
-      client:idle
-    />
     <EccFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-ecc" client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
-  <!-- en el teléfono, sitio para la barra de abajo -->
-  <div class="h-20 md:hidden" aria-hidden="true"></div>
   <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-ecc" client:idle />
 
   {COPIA && (

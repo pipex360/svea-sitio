@@ -74,23 +74,11 @@ const fuentesCSS = `
     <IsServicio client:idle />
     <IsSiguiente base={BASE} client:idle />
     <IsFaq />
-    <Cta69
-      badge={{ label: 'Último paso' }}
-      heading="Obtén tu Informe Sanitario Favorable"
-      button={{ label: 'Solicitar cotización gratuita', href: '#formulario-is' }}
-      labels={{
-        marqueePhrase: 'Sanitario',
-        note: 'Gestión integral ante la SEREMI de Salud. Cotización en menos de 24 horas, evaluación completa y seguimiento hasta la resolución favorable.',
-        footnote: 'WhatsApp directo: +56 9 2994 7924',
-      }}
-      client:idle
-    />
     <IsFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-is" client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
-  <!-- en el teléfono, sitio para la barra de abajo -->
-  <div class="h-20 md:hidden" aria-hidden="true"></div>
   <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-is" client:idle />
 
   {COPIA && (

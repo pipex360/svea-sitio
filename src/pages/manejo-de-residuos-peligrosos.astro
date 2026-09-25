@@ -70,23 +70,11 @@ const fuentesCSS = `
     <RpServicio client:idle />
     <RpSiguiente base={BASE} client:idle />
     <RpFaq />
-    <Cta69
-      badge={{ label: 'Último paso' }}
-      heading="Asegura el cumplimiento normativo de tu empresa"
-      button={{ label: 'Cotiza tu Informe ahora', href: '#formulario-rp' }}
-      labels={{
-        marqueePhrase: 'Residuos',
-        note: 'Obtén tu Informe de Manejo de Residuos Peligrosos con respaldo profesional. Cotización en menos de 24 horas, informe técnico personalizado, cumplimiento D.S. 43 y D.S. 148.',
-        footnote: 'WhatsApp directo: +56 9 2994 7924',
-      }}
-      client:idle
-    />
     <RpFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-rp" client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
-  <!-- en el teléfono, sitio para la barra de abajo -->
-  <div class="h-20 md:hidden" aria-hidden="true"></div>
   <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-rp" client:idle />
 
   {COPIA && (

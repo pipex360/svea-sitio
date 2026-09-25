@@ -45,7 +45,8 @@ export function RpFormulario({ copia = false }: { copia?: boolean }) {
         <ContactCard
           title="Solicita tu Cotización"
           titleId="titulo-form-rp"
-          description="Te enviaremos tu cotización en menos de 24 horas"
+          description="Te enviaremos tu cotización en menos de 24 horas. Cuéntanos qué sustancias o residuos manejas y te respondemos con el plazo y el valor de tu informe."
+          beneficios={["Obtén tu Informe de Manejo de Residuos Peligrosos con respaldo profesional.", "Informe técnico personalizado a tu operación.", "Cumplimiento D.S. 43 y D.S. 148 del MINSAL.", "Asegura el cumplimiento normativo de tu empresa: cotiza ahora."]}
           contactInfo={[
             { icon: IconoWhatsApp, label: 'WhatsApp directo', value: '+56 9 2994 7924', href: WHATSAPP, externo: true },
             { icon: MailIcon, label: 'Correo', value: CORREO, href: `mailto:${CORREO}` },

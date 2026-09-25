@@ -34,12 +34,18 @@ export function BarraMovil({ base = '', copia = false, cotizar }: { base?: strin
   const [heroALaVista, setHeroALaVista] = useState(true);
 
   useEffect(() => {
-    const contacto = document.querySelector('#contacto, #formulario-cti');
+    // todos los formularios de la página (portada, servicios, guías): la
+    // barra no se monta encima de ninguno
+    const formularios = document.querySelectorAll('#contacto, [id^="formulario-"], #article-lead-form-wrapper');
     const hero = document.querySelector('#inicio');
     const observadores: IntersectionObserver[] = [];
-    if (contacto) {
-      const o = new IntersectionObserver(([e]) => setFormularioALaVista(e.isIntersecting), { threshold: 0.25 });
-      o.observe(contacto);
+    if (formularios.length) {
+      const vistos = new Set<Element>();
+      const o = new IntersectionObserver((es) => {
+        es.forEach((e) => (e.isIntersecting ? vistos.add(e.target) : vistos.delete(e.target)));
+        setFormularioALaVista(vistos.size > 0);
+      });
+      formularios.forEach((f) => o.observe(f));
       observadores.push(o);
     }
     if (hero) {

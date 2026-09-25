@@ -72,23 +72,11 @@ const fuentesCSS = `
     <PcServicio client:idle />
     <PcSiguiente base={BASE} client:idle />
     <PcFaq />
-    <Cta69
-      badge={{ label: 'Último paso' }}
-      heading="Protege a tu comunidad hoy"
-      button={{ label: 'Cotiza tu Plan ahora', href: '#formulario-pc' }}
-      labels={{
-        marqueePhrase: 'Evacuación',
-        note: 'Obtén tu Plan de Emergencia y Evacuación para Condominios con respaldo profesional. Cotización en menos de 24 horas, plan completo en 5-10 días hábiles, enfoque aplicable y personalizado.',
-        footnote: 'WhatsApp directo: +56 9 2994 7924',
-      }}
-      client:idle
-    />
     <PcFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-pc" client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
-  <!-- en el teléfono, sitio para la barra de abajo -->
-  <div class="h-20 md:hidden" aria-hidden="true"></div>
   <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-pc" client:idle />
 
   {COPIA && (
