@@ -91,10 +91,8 @@ const landing: Landing = {
       'En SVEA Consultores nos encargamos de todo el proceso: desde la clasificación de residuos hasta la obtención del permiso y la entrega de la documentación completa.',
     ],
     foto: {
-      archivo: 'tr/camion-carretera.webp',
-      alt: 'Autorización de transporte de residuos - camión en carretera - SVEA Consultores',
-      ancho: 1200,
-      alto: 675,
+      nombre: 'camion-tolva-transporte-residuos-carretera',
+      alt: 'Camión tolva circulando por la carretera con autorización de transporte de residuos',
     },
   },
   riesgos: {
@@ -286,7 +284,7 @@ const landing: Landing = {
     ],
     contacto: true,
   },
-  foto: 'servicio-tr',
+  foto: 'flota-camiones-autorizacion-transporte-residuos',
   medicion: {
     servicio: 'Autorización Transporte de Residuos',
     prefijoAsunto: '[ADS] Cotización Transporte Residuos - ',

@@ -40,7 +40,8 @@ export type Guia = {
   categoria: string;
   fecha: string;
   lectura: string;
-  imagen: { archivo: string; alt: string; ancho: number; alto: number };
+  /** la foto de la tarjeta y del og:image: nombre en mejoras/fotos (ver src/lib/fotos.ts) */
+  imagen: { nombre: string; alt: string };
   servicio: Servicio;
 };
 
@@ -105,7 +106,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Autorizaciones',
     fecha: 'Feb 2026',
     lectura: '12 min lectura',
-    imagen: { archivo: 'camion-excavadora-residuos', alt: 'Autorización transporte residuos Chile - Guía completa DS 148 y DS 594', ancho: 960, alto: 640 },
+    imagen: { nombre: 'camion-excavadora-carga-residuos', alt: 'Autorización transporte residuos Chile - Guía completa DS 148 y DS 594' },
     servicio: TR,
   },
   {
@@ -116,7 +117,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Residuos Peligrosos',
     fecha: 'Feb 2026',
     lectura: '12 min lectura',
-    imagen: { archivo: 'contenedores-sustancias-gaseosas', alt: 'Manejo de residuos peligrosos Chile - Guía DS 148', ancho: 1200, alto: 800 },
+    imagen: { nombre: 'contenedores-sustancias-peligrosas-almacenamiento', alt: 'Manejo de residuos peligrosos Chile - Guía DS 148' },
     servicio: RP,
   },
   {
@@ -127,7 +128,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Emergencias',
     fecha: 'Feb 2026',
     lectura: '13 min lectura',
-    imagen: { archivo: 'simulacro-evacuacion', alt: 'Plan de emergencia empresa Chile - Guía completa DS 44', ancho: 1200, alto: 659 },
+    imagen: { nombre: 'simulacro-incendio-extintor-plan-de-emergencia', alt: 'Plan de emergencia empresa Chile - Guía completa DS 44' },
     servicio: PE,
   },
   {
@@ -138,7 +139,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Condominios',
     fecha: 'Feb 2026',
     lectura: '12 min lectura',
-    imagen: { archivo: 'edificio-sento-angamos', alt: 'Plan de emergencia condominio Chile - Ley 21.442', ancho: 1200, alto: 675 },
+    imagen: { nombre: 'edificio-condominio-plan-de-emergencia', alt: 'Plan de emergencia condominio Chile - Ley 21.442' },
     servicio: PC,
   },
   {
@@ -150,7 +151,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos Industriales',
     fecha: 'Feb 2026',
     lectura: '13 min lectura',
-    imagen: { archivo: 'bodega-centro-logistico', alt: 'Calificación técnica industrial Chile - Requisitos SEREMI', ancho: 1200, alto: 675 },
+    imagen: { nombre: 'bodega-centro-logistico-carga-combustible', alt: 'Calificación técnica industrial Chile - Requisitos SEREMI' },
     servicio: CTI,
   },
   {
@@ -161,7 +162,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Seguridad Incendios',
     fecha: 'Feb 2026',
     lectura: '12 min lectura',
-    imagen: { archivo: 'bodega-productos', alt: 'Estudio de carga combustible Chile - Normativa OGUC', ancho: 1200, alto: 800 },
+    imagen: { nombre: 'bodega-productos-estudio-carga-combustible', alt: 'Estudio de carga combustible Chile - Normativa OGUC' },
     servicio: ECC,
   },
   // --- las tres que el índice del WordPress no listaba ----------------------
@@ -173,7 +174,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Seguridad Laboral',
     fecha: 'Mar 2026',
     lectura: '13 min lectura',
-    imagen: { archivo: 'senal-salida-emergencia', alt: 'Plan de emergencia DS 44 Chile - Señal de salida de emergencia en instalación industrial', ancho: 1200, alto: 800 },
+    imagen: { nombre: 'senal-salida-emergencia-evacuacion', alt: 'Plan de emergencia DS 44 Chile - Señal de salida de emergencia en instalación industrial' },
     servicio: PE,
   },
   {
@@ -184,7 +185,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Autorizaciones',
     fecha: 'Mar 2026',
     lectura: '11 min lectura',
-    imagen: { archivo: 'refineria-petroquimica', alt: 'Calificación inofensiva SEREMI Chile - Establecimiento comercial e industrial', ancho: 1200, alto: 799 },
+    imagen: { nombre: 'refineria-petroquimica-nocturna', alt: 'Calificación inofensiva SEREMI Chile - Establecimiento comercial e industrial' },
     servicio: CTI,
   },
   {
@@ -195,7 +196,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Cumplimiento',
     fecha: 'Abr 2026',
     lectura: '15 min lectura',
-    imagen: { archivo: 'planta-quimica', alt: 'Informe sanitario favorable Chile - Instalación industrial evaluada por la SEREMI de Salud', ancho: 1200, alto: 674 },
+    imagen: { nombre: 'planta-quimica-estanques-sustancias-peligrosas', alt: 'Informe sanitario favorable Chile - Instalación industrial evaluada por la SEREMI de Salud' },
     servicio: IS,
   },
   // --- las guías nuevas (sep-2026), sin original en el WordPress --------------
@@ -207,7 +208,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Autorizaciones',
     fecha: 'Sep 2026',
     lectura: '9 min lectura',
-    imagen: { archivo: 'centro-distribucion-aereo', alt: 'Patente definitiva - centro de distribución que requiere permisos de la SEREMI de Salud', ancho: 1200, alto: 800 },
+    imagen: { nombre: 'centro-distribucion-calificacion-tecnica-industrial', alt: 'Patente definitiva - centro de distribución que requiere permisos de la SEREMI de Salud' },
     servicio: CTI,
   },
   {
@@ -218,7 +219,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Seguridad Laboral',
     fecha: 'Sep 2026',
     lectura: '10 min lectura',
-    imagen: { archivo: 'escalera-evacuacion', alt: 'Checklist DS 44 - escalera de evacuación señalizada en un lugar de trabajo', ancho: 800, alto: 533 },
+    imagen: { nombre: 'escalera-evacuacion-edificio', alt: 'Checklist DS 44 - escalera de evacuación señalizada en un lugar de trabajo' },
     servicio: PE,
   },
   {
@@ -229,7 +230,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Autorizaciones',
     fecha: 'Sep 2026',
     lectura: '9 min lectura',
-    imagen: { archivo: 'camion-tolva-carretera', alt: 'Autorización de transporte de residuos no peligrosos - camión tolva en carretera', ancho: 1200, alto: 675 },
+    imagen: { nombre: 'camion-tolva-transporte-residuos-carretera', alt: 'Autorización de transporte de residuos no peligrosos - camión tolva en carretera' },
     servicio: TR,
   },
   {
@@ -240,7 +241,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Residuos Peligrosos',
     fecha: 'Sep 2026',
     lectura: '9 min lectura',
-    imagen: { archivo: 'bodega-residuos-peligrosos', alt: 'Declaración de residuos en SIDREP y SINADER - tambores de residuos peligrosos etiquetados', ancho: 1200, alto: 479 },
+    imagen: { nombre: 'tambores-bodega-residuos-peligrosos', alt: 'Declaración de residuos en SIDREP y SINADER - tambores de residuos peligrosos etiquetados' },
     servicio: RP,
   },
   {
@@ -251,7 +252,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Cumplimiento',
     fecha: 'Sep 2026',
     lectura: '9 min lectura',
-    imagen: { archivo: 'planta-industrial-nocturna', alt: 'Sumario sanitario SEREMI - planta industrial fiscalizada por la autoridad sanitaria', ancho: 1200, alto: 800 },
+    imagen: { nombre: 'planta-industrial-nocturna-informe-cti', alt: 'Sumario sanitario SEREMI - planta industrial fiscalizada por la autoridad sanitaria' },
     servicio: IS,
   },
   {
@@ -262,7 +263,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Autorizaciones',
     fecha: 'Sep 2026',
     lectura: '8 min lectura',
-    imagen: { archivo: 'revision-documentos-seremi', alt: 'Rechazo u observaciones de la SEREMI - revisión de documentos para responder', ancho: 1200, alto: 600 },
+    imagen: { nombre: 'revision-documentos-observaciones-seremi', alt: 'Rechazo u observaciones de la SEREMI - revisión de documentos para responder' },
     servicio: CTI,
   },
   {
@@ -273,7 +274,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Residuos Peligrosos',
     fecha: 'Sep 2026',
     lectura: '9 min lectura',
-    imagen: { archivo: 'estanques-planta-quimica', alt: 'Sustancias peligrosas DS 43 - estanques de almacenamiento en una planta química', ancho: 1200, alto: 674 },
+    imagen: { nombre: 'planta-quimica-estanques-sustancias-peligrosas', alt: 'Sustancias peligrosas DS 43 - estanques de almacenamiento en una planta química' },
     servicio: RP,
   },
 ];

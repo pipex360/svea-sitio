@@ -383,7 +383,7 @@ const landing: Landing = {
     "presentacion": "Expertos en elaboración de planes de emergencia para condominios y edificios, asegurando cumplimiento normativo y seguridad para tu comunidad.",
     "contacto": true
   },
-  "foto": "servicio-pc",
+  "foto": 'edificio-condominio-plan-de-emergencia',
   "medicion": {
     "servicio": "Plan de Emergencia Condominios",
     "prefijoAsunto": "[ADS] Cotización Plan Condominios - ",

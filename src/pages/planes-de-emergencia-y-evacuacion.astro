@@ -8,6 +8,7 @@
 import '../styles/tailwind.css';
 import MedicionSitio from '../components/MedicionSitio.astro';
 import HeroHalo from '../components/HeroHalo.astro';
+import { precargaFoto } from '../lib/fotos';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
 import { PeFormulario } from '../components/ui/pe-formulario';
@@ -44,12 +45,12 @@ const fuentesCSS = `
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero es el LCP: se precarga -->
-  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-pe-1080.webp 1080w, ${BASE}/img/hero/servicio-pe-1920.webp 1920w`} imagesizes="100vw" />
+  <link rel="preload" as="image" {...precargaFoto('escalera-emergencia-edificio-plan-de-emergencia', BASE)} />
 </head>
 <body>
   <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
-    fotos={[{ archivo: 'servicio-pe', alto: 1317 }]}
+    fotos={['escalera-emergencia-edificio-plan-de-emergencia']}
     copete="Servicios SVEA"
     titulo="Planes de Emergencia y Evacuación Industrial"
     parrafo="Protege a tus trabajadores y asegura la continuidad operativa de tu empresa. Desarrollamos planes personalizados que cumplen con la normativa vigente y garantizan una evacuación eficiente ante cualquier emergencia."

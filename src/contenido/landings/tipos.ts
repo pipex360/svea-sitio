@@ -57,7 +57,7 @@ export interface Landing {
     copete: string;
     titulo: string; // html
     parrafos: string[]; // html
-    foto: { archivo: string; alt: string; ancho: number; alto: number };
+    foto: { nombre: string; alt: string };
   };
 
   riesgos: {
@@ -113,7 +113,7 @@ export interface Landing {
     contacto: boolean;
   };
 
-  /** foto del servicio (mejoras/img/hero/<foto>-1080.webp), en el cierre */
+  /** la foto del hero: nombre en mejoras/fotos (ver src/lib/fotos.ts) */
   foto: string;
 
   /**

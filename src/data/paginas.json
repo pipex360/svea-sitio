@@ -9,7 +9,7 @@
     "canonical": "https://sveaconsultores.cl/autorizacion-transporte-residuos-chile/",
     "h1": "Autorización de Transporte de Residuos Chile: Guía Completa 2026",
     "h1_html": "Autorización de Transporte de Residuos Chile: Guía Completa 2026",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/truck-with-excavator-loading-for-removal-of-waste-building-demolition-debris-construction.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/camion-excavadora-carga-residuos.jpg",
     "palabras_origen": 2227,
     "jsonld": [
       {
@@ -23,12 +23,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -43,10 +43,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -60,7 +60,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -104,7 +104,7 @@
               "@id": "https://sveaconsultores.cl/autorizacion-transporte-residuos-chile/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -121,8 +121,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -343,7 +343,7 @@
         "@type": "Article",
         "headline": "Autorización de Transporte de Residuos en Chile: Guía Completa 2026",
         "description": "Guía completa sobre la autorización sanitaria para el transporte de residuos peligrosos y no peligrosos en Chile.",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/truck-with-excavator-loading-for-removal-of-waste-building-demolition-debris-construction.jpg",
+        "image": "https://sveaconsultores.cl/img/og/camion-excavadora-carga-residuos.jpg",
         "author": {
           "@type": "Organization",
           "name": "SVEA Consultores",
@@ -354,7 +354,7 @@
           "name": "SVEA Consultores",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
           }
         },
         "datePublished": "2026-02-18",
@@ -587,7 +587,7 @@
     "canonical": "https://sveaconsultores.cl/calificacion-inofensiva-seremi/",
     "h1": "Calificación Inofensiva SEREMI: Guía para Obtener tu Patente en Chile 2026",
     "h1_html": "Calificación Inofensiva SEREMI: Guía para Obtener tu Patente en Chile 2026",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/petrochemical-oil-refinery-in-bangkok-city-thaila-2024-10-18-22-56-40-utc-1024x682.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/refineria-petroquimica-nocturna.jpg",
     "palabras_origen": 1594,
     "jsonld": [
       {
@@ -601,12 +601,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -621,10 +621,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -638,7 +638,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -682,7 +682,7 @@
               "@id": "https://sveaconsultores.cl/calificacion-inofensiva-seremi/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -699,8 +699,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -921,7 +921,7 @@
         "@type": "Article",
         "headline": "Calificación Inofensiva SEREMI: Guía Completa para Obtener tu Patente en Chile 2026",
         "description": "Guía completa sobre la calificación de actividad inofensiva otorgada por la SEREMI de Salud en Chile. Requisitos, documentos, plazos y proceso paso a paso.",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/petrochemical-oil-refinery-in-bangkok-city-thaila-2024-10-18-22-56-40-utc-scaled.jpg",
+        "image": "https://sveaconsultores.cl/img/og/refineria-petroquimica-nocturna.jpg",
         "author": {
           "@type": "Organization",
           "name": "SVEA Consultores",
@@ -932,7 +932,7 @@
           "name": "SVEA Consultores",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
           }
         },
         "datePublished": "2026-03-09",
@@ -1165,7 +1165,7 @@
     "canonical": "https://sveaconsultores.cl/calificacion-tecnica-industrial-chile/",
     "h1": "Calificación Técnica Industrial Chile: Guía Definitiva 2026",
     "h1_html": "Calificación Técnica Industrial Chile: Guía Definitiva 2026",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/aerial-view-of-large-commercial-distribution-center-with-many-trucks.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/bodega-centro-logistico-carga-combustible.jpg",
     "palabras_origen": 2020,
     "jsonld": [
       {
@@ -1179,12 +1179,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -1199,10 +1199,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -1216,7 +1216,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -1260,7 +1260,7 @@
               "@id": "https://sveaconsultores.cl/calificacion-tecnica-industrial-chile/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -1277,8 +1277,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -1499,7 +1499,7 @@
         "@type": "Article",
         "headline": "Calificación Técnica Industrial en Chile: Guía Definitiva 2026",
         "description": "Guía completa sobre la Calificación Técnica Industrial en Chile. Requisitos SEREMI de Salud, documentos, categorías, plazos, costos y proceso paso a paso.",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/aerial-view-of-large-commercial-distribution-center-with-many-trucks.jpg",
+        "image": "https://sveaconsultores.cl/img/og/bodega-centro-logistico-carga-combustible.jpg",
         "author": {
           "@type": "Organization",
           "name": "SVEA Consultores",
@@ -1510,7 +1510,7 @@
           "name": "SVEA Consultores",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
           }
         },
         "datePublished": "2026-02-18",
@@ -1755,7 +1755,7 @@
     "canonical": "https://sveaconsultores.cl/estudio-de-carga-combustible-chile/",
     "h1": "Estudio de Carga Combustible Chile: Guía Completa 2026",
     "h1_html": "Estudio de Carga Combustible Chile: Guía Completa 2026",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/empty-warehouse-in-logistic-center-warehouse-for-storage-and-distribution-centers-.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/bodega-productos-estudio-carga-combustible.jpg",
     "palabras_origen": 2075,
     "jsonld": [
       {
@@ -1769,12 +1769,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -1789,10 +1789,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -1806,7 +1806,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -1850,7 +1850,7 @@
               "@id": "https://sveaconsultores.cl/estudio-de-carga-combustible-chile/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -1867,8 +1867,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -2089,7 +2089,7 @@
         "@type": "Article",
         "headline": "Estudio de Carga Combustible (Carga de Fuego) en Chile: Guía 2026",
         "description": "Guía completa sobre el Estudio de Carga Combustible en Chile. Normativa OGUC, NCh 1916, categorías de resistencia al fuego, cuándo es obligatorio y proceso paso a paso.",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/gaseous-substances-container-row-.jpg",
+        "image": "https://sveaconsultores.cl/img/og/bodega-productos-estudio-carga-combustible.jpg",
         "author": {
           "@type": "Organization",
           "name": "SVEA Consultores",
@@ -2100,7 +2100,7 @@
           "name": "SVEA Consultores",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
           }
         },
         "datePublished": "2026-02-18",
@@ -2347,7 +2347,7 @@
     "canonical": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos-chile/",
     "h1": "Manejo de Residuos Peligrosos Chile: Guía Completa 2026",
     "h1_html": "Manejo de Residuos Peligrosos Chile: Guía Completa 2026",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/warehousing-engineering-concept-hazardous-waste-storage.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/contenedores-sustancias-peligrosas-almacenamiento.jpg",
     "palabras_origen": 2296,
     "jsonld": [
       {
@@ -2361,12 +2361,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -2381,10 +2381,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -2398,7 +2398,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -2442,7 +2442,7 @@
               "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -2459,8 +2459,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -2681,7 +2681,7 @@
         "@type": "Article",
         "headline": "Manejo de Residuos Peligrosos en Chile: Guía Completa 2026",
         "description": "Guía completa sobre el manejo de residuos peligrosos en Chile. Obligaciones DS 148, plan de manejo RESPEL, clasificación, almacenamiento, transporte, declaración SIDREP y sanciones.",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/warehousing-engineering-concept-hazardous-waste-storage.jpg",
+        "image": "https://sveaconsultores.cl/img/og/contenedores-sustancias-peligrosas-almacenamiento.jpg",
         "author": {
           "@type": "Organization",
           "name": "SVEA Consultores",
@@ -2692,7 +2692,7 @@
           "name": "SVEA Consultores",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
           }
         },
         "datePublished": "2026-02-18",
@@ -2937,7 +2937,7 @@
     "canonical": "https://sveaconsultores.cl/plan-de-emergencia-condominio-chile/",
     "h1": "Plan de Emergencia Condominio Chile: Guía Definitiva 2026",
     "h1_html": "Plan de Emergencia Condominio Chile: Guía Definitiva 2026",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/emergency-exit-sign-on-the-platform-of-the-railway-repair-station-.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/edificio-condominio-plan-de-emergencia.jpg",
     "palabras_origen": 2352,
     "jsonld": [
       {
@@ -2951,12 +2951,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -2971,10 +2971,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -2988,7 +2988,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -3032,7 +3032,7 @@
               "@id": "https://sveaconsultores.cl/plan-de-emergencia-condominio-chile/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -3049,8 +3049,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -3271,7 +3271,7 @@
         "@type": "Article",
         "headline": "Plan de Emergencia (Plan de Contingencia) para Condominios en Chile: Guía Definitiva 2026",
         "description": "Guía completa sobre planes de emergencia y evacuación para condominios y edificios en Chile. Ley 21.442, obligaciones del comité, multas, contenido obligatorio y cómo elaborarlo.",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/basic-fire-fighting-and-evacuation-simulation-for-safety-in-emergency-situation.jpg",
+        "image": "https://sveaconsultores.cl/img/og/edificio-condominio-plan-de-emergencia.jpg",
         "author": {
           "@type": "Organization",
           "name": "SVEA Consultores",
@@ -3282,7 +3282,7 @@
           "name": "SVEA Consultores",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
           }
         },
         "datePublished": "2026-02-18",
@@ -3529,7 +3529,7 @@
     "canonical": "https://sveaconsultores.cl/plan-de-emergencia-ds-44-empresas-chile/",
     "h1": "Plan de Emergencia DS 44: Guía Completa para Empresas en Chile 2026",
     "h1_html": "Plan de Emergencia DS 44: Guía Completa para Empresas en Chile 2026",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/06/Sento-Angamos-scaled-1-1024x576.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/senal-salida-emergencia-evacuacion.jpg",
     "palabras_origen": 2145,
     "jsonld": [
       {
@@ -3543,12 +3543,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -3563,10 +3563,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -3580,7 +3580,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -3624,7 +3624,7 @@
               "@id": "https://sveaconsultores.cl/plan-de-emergencia-ds-44-empresas-chile/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -3641,8 +3641,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -3863,7 +3863,7 @@
         "@type": "Article",
         "headline": "Plan de Emergencia DS 44: Guía Completa para Empresas en Chile 2026",
         "description": "Guía completa sobre el plan de emergencia exigido por el Decreto Supremo 44 en Chile. Contenido obligatorio, simulacros, mapa de riesgos y fiscalización.",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/06/Sento-Angamos-scaled-1.jpg",
+        "image": "https://sveaconsultores.cl/img/og/senal-salida-emergencia-evacuacion.jpg",
         "author": {
           "@type": "Organization",
           "name": "SVEA Consultores",
@@ -3874,7 +3874,7 @@
           "name": "SVEA Consultores",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
           }
         },
         "datePublished": "2026-03-09",
@@ -4107,7 +4107,7 @@
     "canonical": "https://sveaconsultores.cl/plan-de-emergencia-empresa-chile/",
     "h1": "Plan de Emergencia Empresa Chile: Guía de Evacuación 2026",
     "h1_html": "Plan de Emergencia Empresa Chile: Guía de Evacuación 2026",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/basic-fire-fighting-and-evacuation-simulation-for-safety-in-emergency-situation.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/simulacro-incendio-extintor-plan-de-emergencia.jpg",
     "palabras_origen": 2650,
     "jsonld": [
       {
@@ -4121,12 +4121,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -4141,10 +4141,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -4158,7 +4158,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -4202,7 +4202,7 @@
               "@id": "https://sveaconsultores.cl/plan-de-emergencia-empresa-chile/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -4219,8 +4219,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -4441,7 +4441,7 @@
         "@type": "Article",
         "headline": "Plan de Emergencia y Evacuación para Empresas en Chile: Guía Completa 2026",
         "description": "Guía completa sobre planes de emergencia y evacuación para empresas en Chile. Normativa DS 594, DS 44, multas de hasta 1.000 UTM (SEREMI), contenido obligatorio y proceso de elaboración. Por SVEA Consultores.",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/basic-fire-fighting-and-evacuation-simulation-for-safety-in-emergency-situation.jpg",
+        "image": "https://sveaconsultores.cl/img/og/simulacro-incendio-extintor-plan-de-emergencia.jpg",
         "author": {
           "@type": "Organization",
           "name": "SVEA Consultores",
@@ -4452,7 +4452,7 @@
           "name": "SVEA Consultores",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
           }
         },
         "datePublished": "2026-02-18",
@@ -4709,7 +4709,7 @@
     "canonical": "https://sveaconsultores.cl/que-es-informe-sanitario/",
     "h1": "Informe Sanitario Favorable Chile: Guía Completa 2026",
     "h1_html": "Informe Sanitario Favorable Chile: Guía Completa 2026",
-    "og_image": "https://sveaconsultores.cl/img/articulos/bodega-productos.webp",
+    "og_image": "https://sveaconsultores.cl/img/og/planta-quimica-estanques-sustancias-peligrosas.jpg",
     "palabras_origen": 4200,
     "jsonld": [
       {
@@ -4723,12 +4723,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -4743,10 +4743,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -4760,7 +4760,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -4804,7 +4804,7 @@
               "@id": "https://sveaconsultores.cl/que-es-informe-sanitario/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -4821,8 +4821,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -5043,7 +5043,7 @@
         "@type": "Article",
         "headline": "Informe Sanitario Favorable Chile: Guía Completa 2026",
         "description": "Qué es el informe sanitario favorable, quién lo necesita, documentos requeridos, marco normativo, plazos, costos y cómo obtenerlo ante la SEREMI de Salud.",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/warehouse-worker-injury-workplace-compensation.jpg",
+        "image": "https://sveaconsultores.cl/img/og/planta-quimica-estanques-sustancias-peligrosas.jpg",
         "author": {
           "@type": "Organization",
           "name": "SVEA Consultores",
@@ -5054,7 +5054,7 @@
           "name": "SVEA Consultores",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
           }
         },
         "datePublished": "2026-04-13",
@@ -5273,7 +5273,7 @@
     "canonical": "https://sveaconsultores.cl/gracias/",
     "h1": "¡Gracias por   contactarnos!",
     "h1_html": "¡Gracias por<br> <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#6BBF3B] to-emerald-600 text-glow\">contactarnos!</span>",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+    "og_image": "https://sveaconsultores.cl/img/og/svea-consultores.jpg",
     "palabras_origen": 294,
     "jsonld": [
       {
@@ -5287,12 +5287,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -5307,10 +5307,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-            "width": "512",
-            "height": "512",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "caption": "Logotipo de Svea Consultores, expertos en consultoría ambiental y cumplimiento normativo",
             "inLanguage": "es"
           },
@@ -5325,7 +5325,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -5367,7 +5367,7 @@
               "@id": "https://sveaconsultores.cl/gracias/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -5384,8 +5384,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -5615,7 +5615,7 @@
     "canonical": "https://sveaconsultores.cl/",
     "h1": "Consultoría Ambiental y Cumplimiento Normativo para tu Empresa 2026",
     "h1_html": "Consultoría Ambiental y Cumplimiento Normativo para tu Empresa 2026",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+    "og_image": "https://sveaconsultores.cl/img/og/centro-logistico-aereo-permisos-seremi.jpg",
     "palabras_origen": 965,
     "jsonld": [
       {
@@ -5629,12 +5629,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -5654,10 +5654,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -5674,7 +5674,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -5717,7 +5717,7 @@
               "@id": "https://sveaconsultores.cl/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -5734,8 +5734,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -6104,7 +6104,7 @@
     "canonical": "https://sveaconsultores.cl/cotiza-calificacion-tecnica-industrial/",
     "h1": "Certificado de Actividad Inofensiva y  Calificación Técnica Industrial",
     "h1_html": "Certificado de Actividad<br>Inofensiva y <em>Calificación Técnica Industrial</em>",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/11/LOGO_GrupoMBO_Nuevo_4.png",
+    "og_image": "https://sveaconsultores.cl/img/og/centro-distribucion-calificacion-tecnica-industrial.jpg",
     "palabras_origen": 1069,
     "jsonld": [
       {
@@ -6118,12 +6118,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -6138,10 +6138,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -6155,7 +6155,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -6198,7 +6198,7 @@
               "@id": "https://sveaconsultores.cl/cotiza-calificacion-tecnica-industrial/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -6215,8 +6215,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -6697,7 +6697,7 @@
     "canonical": "https://sveaconsultores.cl/cotiza-estudio-de-carga-de-combustible/",
     "h1": "Estudio de Carga de Combustible y  Carga de Fuego",
     "h1_html": "Estudio de Carga de<br>Combustible y <em>Carga de Fuego</em>",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/11/LOGO_GrupoMBO_Nuevo_4.png",
+    "og_image": "https://sveaconsultores.cl/img/og/bodega-productos-estudio-carga-combustible.jpg",
     "palabras_origen": 993,
     "jsonld": [
       {
@@ -6711,12 +6711,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -6731,10 +6731,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -6748,7 +6748,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -6791,7 +6791,7 @@
               "@id": "https://sveaconsultores.cl/cotiza-estudio-de-carga-de-combustible/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -6808,8 +6808,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -7268,7 +7268,7 @@
     "canonical": "https://sveaconsultores.cl/cotiza-informe-sanitario/",
     "h1": "Informe Sanitario Favorable ante  SEREMI de Salud  También conocido como Resolución Sanitaria · Autorización Sanitaria",
     "h1_html": "Informe Sanitario Favorable ante <em>SEREMI de Salud</em><span class=\"h1-alt\">También conocido como Resolución Sanitaria · Autorización Sanitaria</span>",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/11/LOGO_GrupoMBO_Nuevo_4.png",
+    "og_image": "https://sveaconsultores.cl/img/og/flota-camiones-autorizacion-transporte-residuos.jpg",
     "palabras_origen": 1112,
     "jsonld": [
       {
@@ -7282,12 +7282,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -7302,10 +7302,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -7319,7 +7319,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -7362,7 +7362,7 @@
               "@id": "https://sveaconsultores.cl/cotiza-informe-sanitario/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -7379,8 +7379,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -7861,7 +7861,7 @@
     "canonical": "https://sveaconsultores.cl/cotiza-plan-emergencia-condominio/",
     "h1": "Plan de Emergencia Condominio y Edificio  Ley 21.442",
     "h1_html": "Plan de Emergencia<br>Condominio y Edificio<br><em>Ley 21.442</em>",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/11/LOGO_GrupoMBO_Nuevo_4.png",
+    "og_image": "https://sveaconsultores.cl/img/og/edificio-condominio-plan-de-emergencia.jpg",
     "palabras_origen": 1128,
     "jsonld": [
       {
@@ -7875,12 +7875,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -7895,10 +7895,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -7912,7 +7912,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -7955,7 +7955,7 @@
               "@id": "https://sveaconsultores.cl/cotiza-plan-emergencia-condominio/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -7972,8 +7972,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -8426,7 +8426,7 @@
     "canonical": "https://sveaconsultores.cl/cotiza-plan-emergencia/",
     "h1": "Plan de Emergencia y Evacuación  conforme al DS 594 y DS 44",
     "h1_html": "Plan de Emergencia<br>y Evacuación<br><em>conforme al DS 594 y DS 44</em>",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/11/LOGO_GrupoMBO_Nuevo_4.png",
+    "og_image": "https://sveaconsultores.cl/img/og/escalera-emergencia-edificio-plan-de-emergencia.jpg",
     "palabras_origen": 899,
     "jsonld": [
       {
@@ -8440,12 +8440,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -8460,10 +8460,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -8477,7 +8477,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -8520,7 +8520,7 @@
               "@id": "https://sveaconsultores.cl/cotiza-plan-emergencia/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -8537,8 +8537,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -9011,7 +9011,7 @@
     "canonical": "https://sveaconsultores.cl/autorizacion-de-transporte-de-residuos/",
     "h1": "Autorización de Transporte de Residuos Peligrosos y No Peligrosos",
     "h1_html": "Autorización de Transporte de Residuos Peligrosos y No Peligrosos",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/dump-truck-driving-on-highway-scene-top-view-of-dump-truck-on-highway-in-summer-truckers-and-dump.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/flota-camiones-autorizacion-transporte-residuos.jpg",
     "palabras_origen": 1086,
     "jsonld": [
       {
@@ -9025,12 +9025,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -9045,10 +9045,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -9062,7 +9062,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -9105,7 +9105,7 @@
               "@id": "https://sveaconsultores.cl/autorizacion-de-transporte-de-residuos/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -9122,8 +9122,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -9494,7 +9494,7 @@
     "canonical": "https://sveaconsultores.cl/blog/",
     "h1": "Guías Cumplimiento  Normativo  Chile",
     "h1_html": "Guías Cumplimiento <em>Normativo</em> Chile",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/truck-with-excavator-loading-for-removal-of-waste-building-demolition-debris-construction.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/bodega-centro-logistico-carga-combustible.jpg",
     "palabras_origen": 699,
     "jsonld": [
       {
@@ -9508,12 +9508,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -9528,10 +9528,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -9545,7 +9545,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -9588,7 +9588,7 @@
               "@id": "https://sveaconsultores.cl/blog/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -9605,8 +9605,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -9834,7 +9834,7 @@
           "url": "https://sveaconsultores.cl",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png"
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
           }
         }
       },
@@ -9870,7 +9870,7 @@
     "canonical": "https://sveaconsultores.cl/calificacion-tecnica-industrial/",
     "h1": "Calificación Técnica Industrial",
     "h1_html": "Calificación Técnica Industrial",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/chemical-plant.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/centro-distribucion-calificacion-tecnica-industrial.jpg",
     "palabras_origen": 1121,
     "jsonld": [
       {
@@ -9884,12 +9884,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -9904,10 +9904,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -9921,7 +9921,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -9964,7 +9964,7 @@
               "@id": "https://sveaconsultores.cl/calificacion-tecnica-industrial-chile/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -9981,8 +9981,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -10299,7 +10299,7 @@
     "canonical": "https://sveaconsultores.cl/estudio-de-carga-de-combustible/",
     "h1": "Estudio de Carga de Combustible",
     "h1_html": "Estudio de Carga de Combustible",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/warehouse-products-storage.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/bodega-productos-estudio-carga-combustible.jpg",
     "palabras_origen": 1082,
     "jsonld": [
       {
@@ -10313,12 +10313,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -10333,10 +10333,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -10350,7 +10350,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -10393,7 +10393,7 @@
               "@id": "https://sveaconsultores.cl/estudio-de-carga-combustible-chile/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -10410,8 +10410,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -10782,7 +10782,7 @@
     "canonical": "https://sveaconsultores.cl/informe-sanitario/",
     "h1": "Informe Sanitario",
     "h1_html": "Informe Sanitario",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/dump-truck-driving-on-highway-scene-top-view-of-dump-truck-on-highway-in-summer-truckers-and-dump.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/flota-camiones-autorizacion-transporte-residuos.jpg",
     "palabras_origen": 1345,
     "jsonld": [
       {
@@ -10796,12 +10796,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -10816,10 +10816,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -10833,7 +10833,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -10876,7 +10876,7 @@
               "@id": "https://sveaconsultores.cl/informe-sanitario/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -10893,8 +10893,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -11265,7 +11265,7 @@
     "canonical": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/",
     "h1": "Manejo de Sustancias y Residuos Peligrosos",
     "h1_html": "Manejo de Sustancias y Residuos Peligrosos",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/warehousing-engineering-concept-hazardous-waste-storage.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/planta-industrial-manejo-residuos-peligrosos.jpg",
     "palabras_origen": 1085,
     "jsonld": [
       {
@@ -11279,12 +11279,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -11299,10 +11299,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -11316,7 +11316,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -11359,7 +11359,7 @@
               "@id": "https://sveaconsultores.cl/manejo-de-residuos-peligrosos/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -11376,8 +11376,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -11748,7 +11748,7 @@
     "canonical": "https://sveaconsultores.cl/permisos-ambientales-y-pertinencias-del-seia/",
     "h1": "Permisos Ambientales y Pertinencias del SEIA",
     "h1_html": "Permisos Ambientales y Pertinencias del SEIA",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/11/LOGO_GrupoMBO_Nuevo_4.png",
+    "og_image": "https://sveaconsultores.cl/img/og/energia-renovable-permisos-ambientales-seia.jpg",
     "palabras_origen": 766,
     "jsonld": [
       {
@@ -11762,12 +11762,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -11782,10 +11782,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -11799,7 +11799,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -11842,7 +11842,7 @@
               "@id": "https://sveaconsultores.cl/permisos-ambientales-y-pertinencias-del-seia/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -11859,8 +11859,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -12090,7 +12090,7 @@
     "canonical": "https://sveaconsultores.cl/planes-de-emergencia-y-evacuacion-condominios/",
     "h1": "Plan de Emergencia y Evacuación para Condominios 2026 | Protege tu Comunidad",
     "h1_html": "Plan de Emergencia y Evacuación para Condominios 2026 | Protege tu Comunidad",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/06/plan-emergencia-evacuacion.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/edificio-condominio-plan-de-emergencia.jpg",
     "palabras_origen": 1022,
     "jsonld": [
       {
@@ -12104,12 +12104,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -12124,10 +12124,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -12141,7 +12141,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -12184,7 +12184,7 @@
               "@id": "https://sveaconsultores.cl/plan-de-emergencia-condominio-chile/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -12201,8 +12201,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -12573,7 +12573,7 @@
     "canonical": "https://sveaconsultores.cl/planes-de-emergencia-y-evacuacion/",
     "h1": "Planes de Emergencia y Evacuación Industrial 2026 | Protege tu Empresa",
     "h1_html": "Planes de Emergencia y Evacuación Industrial 2026 | Protege tu Empresa",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/basic-fire-fighting-and-evacuation-simulation-for-safety-in-emergency-situation.jpg",
+    "og_image": "https://sveaconsultores.cl/img/og/escalera-emergencia-edificio-plan-de-emergencia.jpg",
     "palabras_origen": 1092,
     "jsonld": [
       {
@@ -12587,12 +12587,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -12607,10 +12607,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png",
-            "width": "200",
-            "height": "200",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "inLanguage": "es"
           },
           {
@@ -12624,7 +12624,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -12667,7 +12667,7 @@
               "@id": "https://sveaconsultores.cl/plan-de-emergencia-empresa-chile/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/SVEA-CONSULTORES-LETRAS-BLANCAS.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -12684,8 +12684,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -13056,7 +13056,7 @@
     "canonical": "https://sveaconsultores.cl/politica-de-privacidad/",
     "h1": "Politica de privacidad",
     "h1_html": "Politica de privacidad",
-    "og_image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+    "og_image": "https://sveaconsultores.cl/img/og/svea-consultores.jpg",
     "palabras_origen": 501,
     "jsonld": [
       {
@@ -13070,12 +13070,12 @@
             "logo": {
               "@type": "ImageObject",
               "@id": "https://sveaconsultores.cl/#logo",
-              "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-              "contentUrl": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
+              "url": "https://sveaconsultores.cl/img/logo-svea.png",
+              "contentUrl": "https://sveaconsultores.cl/img/logo-svea.png",
               "caption": "SVEA Consultores",
               "inLanguage": "es",
-              "width": "512",
-              "height": "512"
+              "width": 404,
+              "height": 137
             }
           },
           {
@@ -13090,10 +13090,10 @@
           },
           {
             "@type": "ImageObject",
-            "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-            "url": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png",
-            "width": "512",
-            "height": "512",
+            "@id": "https://sveaconsultores.cl/img/logo-svea.png",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png",
+            "width": 404,
+            "height": 137,
             "caption": "Logotipo de Svea Consultores, expertos en consultoría ambiental y cumplimiento normativo",
             "inLanguage": "es"
           },
@@ -13108,7 +13108,7 @@
               "@id": "https://sveaconsultores.cl/#website"
             },
             "primaryImageOfPage": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es"
           },
@@ -13151,7 +13151,7 @@
               "@id": "https://sveaconsultores.cl/politica-de-privacidad/#webpage"
             },
             "image": {
-              "@id": "https://sveaconsultores.cl/wp-content/uploads/2025/03/cropped-Logo-SVEA-Photoroom-e1740949624534.png"
+              "@id": "https://sveaconsultores.cl/img/logo-svea.png"
             },
             "inLanguage": "es",
             "mainEntityOfPage": {
@@ -13168,8 +13168,8 @@
         "alternateName": "SVEA Consultoría Ambiental",
         "description": "Consultora ambiental chilena especializada en cumplimiento normativo industrial. Calificación Técnica Industrial (CTI), Estudios de Carga de Combustible, Planes de Emergencia y gestión de permisos ante la SEREMI de Salud.",
         "url": "https://sveaconsultores.cl",
-        "logo": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
-        "image": "https://sveaconsultores.cl/wp-content/uploads/2025/03/Diseno_sin_titulo-removebg-preview.png",
+        "logo": "https://sveaconsultores.cl/img/logo-svea.png",
+        "image": "https://sveaconsultores.cl/img/logo-svea.png",
         "telephone": "+56929947924",
         "email": "contacto@sveaconsultores.cl",
         "address": {
@@ -13399,7 +13399,7 @@
     "canonical": "https://sveaconsultores.cl/cotiza-autorizacion-transporte-residuos/",
     "h1": "Autorización de Transporte de Residuos Peligrosos y No Peligrosos",
     "h1_html": "Autorización de Transporte de Residuos<br><em>Peligrosos y No Peligrosos</em>",
-    "og_image": "",
+    "og_image": "https://sveaconsultores.cl/img/og/flota-camiones-autorizacion-transporte-residuos.jpg",
     "palabras_origen": 0,
     "jsonld": [],
     "contenido": null,
@@ -13422,7 +13422,7 @@
     "canonical": "https://sveaconsultores.cl/patente-definitiva-permisos-seremi/",
     "h1": "Patente definitiva: qué permisos de la SEREMI necesitas",
     "h1_html": "Patente definitiva: qué permisos de la SEREMI necesitas",
-    "og_image": "https://sveaconsultores.cl/img/articulos/centro-distribucion-aereo.webp",
+    "og_image": "https://sveaconsultores.cl/img/og/centro-distribucion-calificacion-tecnica-industrial.jpg",
     "palabras_origen": 0,
     "jsonld": [
       {
@@ -13430,7 +13430,7 @@
         "@type": "Article",
         "headline": "Patente definitiva: qué permisos de la SEREMI necesitas",
         "description": "Pasa de patente provisoria a definitiva: qué pide la municipalidad según tu rubro, cuándo entra la SEREMI de Salud y en qué orden hacer los trámites.",
-        "image": "https://sveaconsultores.cl/img/articulos/centro-distribucion-aereo.webp",
+        "image": "https://sveaconsultores.cl/img/og/centro-distribucion-calificacion-tecnica-industrial.jpg",
         "keywords": "Patente definitiva, patente provisoria, SEREMI",
         "inLanguage": "es-CL",
         "articleSection": "Guías de cumplimiento",
@@ -13494,7 +13494,7 @@
     "canonical": "https://sveaconsultores.cl/checklist-ds-44-fiscalizacion/",
     "h1": "Checklist DS 44: qué revisa la Dirección del Trabajo en una fiscalización",
     "h1_html": "Checklist DS 44: qué revisa la Dirección del Trabajo en una fiscalización",
-    "og_image": "https://sveaconsultores.cl/img/articulos/escalera-evacuacion.webp",
+    "og_image": "https://sveaconsultores.cl/img/og/escalera-evacuacion-edificio.jpg",
     "palabras_origen": 0,
     "jsonld": [
       {
@@ -13502,7 +13502,7 @@
         "@type": "Article",
         "headline": "Checklist DS 44: qué revisa la Dirección del Trabajo en una fiscalización",
         "description": "Checklist del DS 44 según el Formulario Único de Fiscalización: matriz de riesgos, programa preventivo, plan de emergencia, simulacro, comité y multas.",
-        "image": "https://sveaconsultores.cl/img/articulos/escalera-evacuacion.webp",
+        "image": "https://sveaconsultores.cl/img/og/escalera-evacuacion-edificio.jpg",
         "keywords": "DS 44, fiscalización, Dirección del Trabajo",
         "inLanguage": "es-CL",
         "articleSection": "Guías de cumplimiento",
@@ -13566,7 +13566,7 @@
     "canonical": "https://sveaconsultores.cl/autorizacion-transporte-residuos-no-peligrosos/",
     "h1": "Autorización para transportar residuos no peligrosos: paso a paso en SEREMI en Línea",
     "h1_html": "Autorización para transportar residuos no peligrosos: paso a paso en SEREMI en Línea",
-    "og_image": "https://sveaconsultores.cl/img/articulos/camion-tolva-carretera.webp",
+    "og_image": "https://sveaconsultores.cl/img/og/camion-tolva-transporte-residuos-carretera.jpg",
     "palabras_origen": 0,
     "jsonld": [
       {
@@ -13574,7 +13574,7 @@
         "@type": "Article",
         "headline": "Autorización para transportar residuos no peligrosos: paso a paso en SEREMI en Línea",
         "description": "Autorización para transportar residuos no peligrosos: quién la pide, antecedentes, paso a paso en SEREMI en Línea y diferencias con el DS 148.",
-        "image": "https://sveaconsultores.cl/img/articulos/camion-tolva-carretera.webp",
+        "image": "https://sveaconsultores.cl/img/og/camion-tolva-transporte-residuos-carretera.jpg",
         "keywords": "transporte de residuos no peligrosos, SEREMI",
         "inLanguage": "es-CL",
         "articleSection": "Guías de cumplimiento",
@@ -13638,7 +13638,7 @@
     "canonical": "https://sveaconsultores.cl/declaracion-residuos-sidrep-sinader/",
     "h1": "Declaración de residuos en SIDREP y SINADER: quién declara y cómo",
     "h1_html": "Declaración de residuos en SIDREP y SINADER: quién declara y cómo",
-    "og_image": "https://sveaconsultores.cl/img/articulos/bodega-residuos-peligrosos.webp",
+    "og_image": "https://sveaconsultores.cl/img/og/tambores-bodega-residuos-peligrosos.jpg",
     "palabras_origen": 0,
     "jsonld": [
       {
@@ -13646,7 +13646,7 @@
         "@type": "Article",
         "headline": "Declaración de residuos en SIDREP y SINADER: quién declara y cómo",
         "description": "Declaración de residuos en SIDREP (peligrosos, DS 148) y SINADER (no peligrosos, RETC): quién está obligado, plazos, Ventanilla Única y errores.",
-        "image": "https://sveaconsultores.cl/img/articulos/bodega-residuos-peligrosos.webp",
+        "image": "https://sveaconsultores.cl/img/og/tambores-bodega-residuos-peligrosos.jpg",
         "keywords": "SIDREP, SINADER, declaración de residuos",
         "inLanguage": "es-CL",
         "articleSection": "Guías de cumplimiento",
@@ -13710,7 +13710,7 @@
     "canonical": "https://sveaconsultores.cl/sumario-sanitario-seremi/",
     "h1": "Sumario sanitario de la SEREMI: qué hacer si te llega un acta o una multa",
     "h1_html": "Sumario sanitario de la SEREMI: qué hacer si te llega un acta o una multa",
-    "og_image": "https://sveaconsultores.cl/img/articulos/planta-industrial-nocturna.webp",
+    "og_image": "https://sveaconsultores.cl/img/og/planta-industrial-nocturna-informe-cti.jpg",
     "palabras_origen": 0,
     "jsonld": [
       {
@@ -13718,7 +13718,7 @@
         "@type": "Article",
         "headline": "Sumario sanitario de la SEREMI: qué hacer si te llega un acta o una multa",
         "description": "Sumario sanitario de la SEREMI de Salud: etapas desde el acta, multas de hasta 1.000 UTM, qué poner en tus descargos y plazos para pagar o reclamar.",
-        "image": "https://sveaconsultores.cl/img/articulos/planta-industrial-nocturna.webp",
+        "image": "https://sveaconsultores.cl/img/og/planta-industrial-nocturna-informe-cti.jpg",
         "keywords": "sumario sanitario, SEREMI, multa",
         "inLanguage": "es-CL",
         "articleSection": "Guías de cumplimiento",
@@ -13782,7 +13782,7 @@
     "canonical": "https://sveaconsultores.cl/rechazo-observaciones-seremi/",
     "h1": "La SEREMI rechazó u observó tu solicitud: cómo responder",
     "h1_html": "La SEREMI rechazó u observó tu solicitud: cómo responder",
-    "og_image": "https://sveaconsultores.cl/img/articulos/revision-documentos-seremi.webp",
+    "og_image": "https://sveaconsultores.cl/img/og/revision-documentos-observaciones-seremi.jpg",
     "palabras_origen": 0,
     "jsonld": [
       {
@@ -13790,7 +13790,7 @@
         "@type": "Article",
         "headline": "La SEREMI rechazó u observó tu solicitud: cómo responder",
         "description": "Cómo responder observaciones de la SEREMI de Salud, recursos de reposición y jerárquico, plazos de la Ley 19.880 y qué hacer si no responden.",
-        "image": "https://sveaconsultores.cl/img/articulos/revision-documentos-seremi.webp",
+        "image": "https://sveaconsultores.cl/img/og/revision-documentos-observaciones-seremi.jpg",
         "keywords": "SEREMI, observaciones, recurso de reposición",
         "inLanguage": "es-CL",
         "articleSection": "Guías de cumplimiento",
@@ -13854,7 +13854,7 @@
     "canonical": "https://sveaconsultores.cl/plan-manejo-sustancias-peligrosas-ds-43/",
     "h1": "Plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye",
     "h1_html": "Plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye",
-    "og_image": "https://sveaconsultores.cl/img/articulos/estanques-planta-quimica.webp",
+    "og_image": "https://sveaconsultores.cl/img/og/planta-quimica-estanques-sustancias-peligrosas.jpg",
     "palabras_origen": 0,
     "jsonld": [
       {
@@ -13862,7 +13862,7 @@
         "@type": "Article",
         "headline": "Plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye",
         "description": "DS 43: cuándo exige autorización sanitaria para almacenar sustancias peligrosas, qué bodega corresponde, qué incluye el plan y la declaración semestral.",
-        "image": "https://sveaconsultores.cl/img/articulos/estanques-planta-quimica.webp",
+        "image": "https://sveaconsultores.cl/img/og/planta-quimica-estanques-sustancias-peligrosas.jpg",
         "keywords": "DS 43, sustancias peligrosas, almacenamiento",
         "inLanguage": "es-CL",
         "articleSection": "Guías de cumplimiento",

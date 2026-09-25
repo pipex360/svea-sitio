@@ -30,14 +30,14 @@ import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
  *  con la simulación de incendio; los dos últimos sobre lo que incluye y para
  *  qué sirve, con la señal de salida de emergencia (las dos fotos y sus alt
  *  son las del WordPress). */
-const bloques = (base: string): BloqueScroll[] => {
+const bloques = (): BloqueScroll[] => {
   const simulacion = {
-    media: `${base}/img/pe/simulacion-incendio.webp`,
-    alt: 'Simulación de incendio en capacitación para planes de emergencia y evacuación industrial - SVEA Consultores',
+    foto: 'simulacro-incendio-extintor-plan-de-emergencia',
+    alt: 'Simulacro de incendio con extintor en una capacitación del plan de emergencia y evacuación',
   };
   const salida = {
-    media: `${base}/img/pe/salida-emergencia.webp`,
-    alt: 'Señal de salida de emergencia en instalación industrial - SVEA Consultores',
+    foto: 'senal-salida-emergencia-evacuacion',
+    alt: 'Señal de salida de emergencia en una instalación industrial con plan de evacuación',
   };
   return [
     {
@@ -91,7 +91,8 @@ export function PeQueEs({ base = '' }: { base?: string }) {
     <section className="bg-white px-6 py-20" id="que-es" aria-labelledby="titulo-que-es">
       <div className="mx-auto max-w-6xl">
         <Scroll01
-          bloques={bloques(base)}
+          base={base}
+          bloques={bloques()}
           encabezado={
             <h2
               id="titulo-que-es"

@@ -34,6 +34,7 @@
 import '../styles/tailwind.css';
 import MedicionSitio from '../components/MedicionSitio.astro';
 import HeroHalo from '../components/HeroHalo.astro';
+import { precargaFoto } from '../lib/fotos';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
 import { CtiFormulario } from '../components/ui/cti-formulario';
@@ -70,12 +71,12 @@ const fuentesCSS = `
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero es el LCP: se precarga -->
-  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-cti-1080.webp 1080w, ${BASE}/img/hero/servicio-cti-1920.webp 1920w`} imagesizes="100vw" />
+  <link rel="preload" as="image" {...precargaFoto('centro-distribucion-calificacion-tecnica-industrial', BASE)} />
 </head>
 <body>
   <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
-    fotos={[{ archivo: 'servicio-cti', alto: 1280 }]}
+    fotos={['centro-distribucion-calificacion-tecnica-industrial']}
     copete="Servicios SVEA"
     titulo="Calificación Técnica Industrial"
     parrafo="Regulariza tu infraestructura y obtén tu patente municipal. Nos encargamos de todo el proceso ante la SEREMI de Salud, desde el informe técnico hasta la resolución aprobada."

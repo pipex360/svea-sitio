@@ -23,14 +23,14 @@ import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 
 /** Los tres párrafos del original: los dos primeros sobre qué es el informe,
  *  con la bodega; el último sobre lo que hace SVEA, con la escena industrial. */
-const bloques = (base: string): BloqueScroll[] => {
+const bloques = (): BloqueScroll[] => {
   const bodega = {
-    media: `${base}/img/is/bodega-centro-logistico.webp`,
-    alt: 'Evaluación sanitaria de establecimiento - SVEA Consultores',
+    foto: 'bodega-centro-logistico-carga-combustible',
+    alt: 'Bodega de un centro logístico, establecimiento que requiere informe sanitario de la SEREMI de Salud',
   };
   const industria = {
-    media: `${base}/img/is/escena-industrial.webp`,
-    alt: 'Servicio de informe sanitario - SVEA Consultores',
+    foto: 'instalacion-industrial-informe-sanitario',
+    alt: 'Instalación industrial con estanques y cañerías evaluada para el informe sanitario',
   };
   return [
     {
@@ -102,7 +102,8 @@ export function IsQueEs({ base = '' }: { base?: string }) {
     <section className="bg-white px-6 py-20" id="que-es" aria-labelledby="titulo-que-es">
       <div className="mx-auto max-w-6xl">
         <Scroll01
-          bloques={bloques(base)}
+          base={base}
+          bloques={bloques()}
           encabezado={
             <>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]">

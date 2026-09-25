@@ -27,6 +27,7 @@ import { BarraMovil } from '../components/ui/barra-movil';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import { Reveal } from '../components/ui/reveal';
+import Foto from '../components/Foto.astro';
 import paginas from '../data/paginas.json';
 import { GUIAS, TEMAS } from '../contenido/articulos/guias';
 
@@ -103,15 +104,7 @@ const fuentesCSS = `
                 <li>
                   <a class="blog-tarjeta tarjeta-svea" href={`${BASE}/${g.slug}/`}>
                     <div class="blog-foto">
-                      <img
-                        src={`${BASE}/img/articulos/${g.imagen.archivo}.webp`}
-                        alt={g.imagen.alt}
-                        width={g.imagen.ancho}
-                        height={g.imagen.alto}
-                        loading={k === 0 && i < 3 ? undefined : 'lazy'}
-                        fetchpriority={k === 0 && i < 3 ? 'low' : undefined}
-                        decoding="async"
-                      />
+                      <Foto nombre={g.imagen.nombre} alt={g.imagen.alt} tamano="tarjeta" diferida={!(k === 0 && i < 3)} />
                       <span class="blog-cat">{g.tema}</span>
                     </div>
                     <div class="blog-texto">

@@ -14,6 +14,7 @@
 import '../styles/tailwind.css';
 import MedicionSitio from '../components/MedicionSitio.astro';
 import HeroHalo from '../components/HeroHalo.astro';
+import { precargaFoto } from '../lib/fotos';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
 import { IsFormulario } from '../components/ui/is-formulario';
@@ -50,12 +51,12 @@ const fuentesCSS = `
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero es el LCP: se precarga -->
-  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-is-1080.webp 1080w, ${BASE}/img/hero/servicio-is-1920.webp 1920w`} imagesizes="100vw" />
+  <link rel="preload" as="image" {...precargaFoto('flota-camiones-autorizacion-transporte-residuos', BASE)} />
 </head>
 <body>
   <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
-    fotos={[{ archivo: 'servicio-is', alto: 1257 }]}
+    fotos={['flota-camiones-autorizacion-transporte-residuos']}
     copete="Servicios SVEA"
     titulo="Informe Sanitario Favorable ante SEREMI de Salud"
     parrafo="Gestionamos tu informe sanitario favorable ante la SEREMI de Salud, asegurando el cumplimiento normativo de tu establecimiento. Desde la evaluación hasta la obtención de la resolución, tu empresa opera de forma segura y legal."

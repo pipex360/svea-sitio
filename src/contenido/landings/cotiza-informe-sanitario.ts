@@ -395,7 +395,7 @@ const landing: Landing = {
     "presentacion": "Expertos en informes sanitarios, resolución sanitaria y autorización sanitaria ante SEREMI. Cumplimiento normativo y seguridad operativa.",
     "contacto": true
   },
-  "foto": "servicio-is",
+  "foto": 'flota-camiones-autorizacion-transporte-residuos',
   "medicion": {
     "servicio": "Informe Sanitario Favorable",
     "prefijoAsunto": "[ADS] Cotización Informe Sanitario - ",

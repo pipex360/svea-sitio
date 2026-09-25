@@ -52,6 +52,8 @@ import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
 import type { Landing } from '../contenido/landings/tipos';
+import Foto from '../components/Foto.astro';
+import { precargaFoto } from '../lib/fotos';
 
 interface Props {
   datos: Landing;
@@ -96,13 +98,14 @@ const m = d.medicion;
 // la palabra que cruza el fondo del cierre (Cta69): la misma de la página de
 // servicio de cada landing
 const CINTA: Record<string, string> = {
-  'servicio-cti': 'Calificación',
-  'servicio-ecc': 'Combustible',
-  'servicio-pe': 'Emergencia',
-  'servicio-pc': 'Evacuación',
-  'servicio-is': 'Sanitario',
-  'servicio-tr': 'Residuos',
+  '/cotiza-calificacion-tecnica-industrial/': 'Calificación',
+  '/cotiza-estudio-de-carga-de-combustible/': 'Combustible',
+  '/cotiza-plan-emergencia/': 'Emergencia',
+  '/cotiza-plan-emergencia-condominio/': 'Evacuación',
+  '/cotiza-informe-sanitario/': 'Sanitario',
+  '/cotiza-autorizacion-transporte-residuos/': 'Residuos',
 };
+if (!CINTA[d.ruta]) throw new Error(`falta la palabra del cierre (CINTA) para ${d.ruta}`);
 
 // la tarjeta de las páginas de servicio (cti-servicio): sube 4 px, proyecta
 // sombra, oscurece el borde y se enciende la barra verde de arriba
@@ -128,9 +131,9 @@ const BARRA =
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero puede ser el LCP: se precarga, como en las páginas de servicio.
-       En el teléfono baja la de 800 px (≈50 KB, calidad 50): va bajo la veladura
-       blanca y no se nota, y es la diferencia entre ~87 y ~97 en Lighthouse. -->
-  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/${d.foto}-800.webp 800w, ${BASE}/img/hero/${d.foto}-1080.webp 1080w, ${BASE}/img/hero/${d.foto}-1920.webp 1920w`} imagesizes="100vw" fetchpriority="high" />
+       En el teléfono baja la AVIF de 640 px (≤60 KB): va bajo la veladura
+       blanca y no se nota. -->
+  <link rel="preload" as="image" {...precargaFoto(d.foto, BASE)} fetchpriority="high" />
 
   <MedicionSitio copia={COPIA} />
 </head>
@@ -153,16 +156,7 @@ const BARRA =
            invisible: el titular y la bajada salen con la primera pintura. -->
       <section id="inicio" class="lp-hero" aria-labelledby="lp-h1">
         <div class="lp-hero-fondo" aria-hidden="true">
-          <img
-            src={`${BASE}/img/hero/${d.foto}-1920.webp`}
-            srcset={`${BASE}/img/hero/${d.foto}-800.webp 800w, ${BASE}/img/hero/${d.foto}-1080.webp 1080w, ${BASE}/img/hero/${d.foto}-1920.webp 1920w`}
-            sizes="100vw"
-            width="1920"
-            height="1280"
-            alt=""
-            fetchpriority="high"
-            decoding="async"
-          />
+          <Foto nombre={d.foto} alt="" tamano="hero" prioridad />
           <div class="lp-velo-arriba"></div>
           <div class="lp-velo-abajo"></div>
           <div class="lp-aura"></div>
@@ -234,13 +228,10 @@ const BARRA =
               </Reveal>
             </div>
             <Reveal delay={0.1} client:idle>
-              <img
-                src={`${BASE}/img/${d.queEs.foto.archivo}`}
-                width={d.queEs.foto.ancho}
-                height={d.queEs.foto.alto}
+              <Foto
+                nombre={d.queEs.foto.nombre}
                 alt={d.queEs.foto.alt}
-                loading="lazy"
-                decoding="async"
+                tamano="mitad"
                 class="aspect-[4/3] w-full rounded-xl border border-border object-cover shadow-[0_18px_40px_-24px_rgba(0,0,0,0.25)]"
               />
             </Reveal>
@@ -390,7 +381,7 @@ const BARRA =
         html
         button={{ label: d.cierre.boton, href: '#formulario' }}
         whatsapp={{ href: d.cierre.whatsapp, label: d.cierre.whatsappTexto }}
-        labels={{ marqueePhrase: CINTA[d.foto], note: d.cierre.texto }}
+        labels={{ marqueePhrase: CINTA[d.ruta], note: d.cierre.texto }}
         client:idle
       />
     </main>

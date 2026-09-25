@@ -1,0 +1,718 @@
+{
+  "bodega-centro-logistico-carga-combustible": {
+    "ancho": 1600,
+    "alto": 900,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "bodega-centro-logistico-carga-combustible.jpg",
+    "peso": {
+      "640": {
+        "avif": 28,
+        "webp": 37
+      },
+      "1080": {
+        "avif": 60,
+        "webp": 78
+      },
+      "1600": {
+        "avif": 111,
+        "webp": 126
+      }
+    },
+    "origen": "165284:1790296138481"
+  },
+  "bodega-mercaderia-patente-definitiva": {
+    "ancho": 1600,
+    "alto": 1064,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "bodega-mercaderia-patente-definitiva.jpg",
+    "peso": {
+      "640": {
+        "avif": 15,
+        "webp": 17
+      },
+      "1080": {
+        "avif": 29,
+        "webp": 32
+      },
+      "1600": {
+        "avif": 48,
+        "webp": 53
+      }
+    },
+    "origen": "64404:1790296138490"
+  },
+  "bodega-productos-estudio-carga-combustible": {
+    "ancho": 1920,
+    "alto": 1281,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "bodega-productos-estudio-carga-combustible.jpg",
+    "peso": {
+      "640": {
+        "avif": 28,
+        "webp": 38
+      },
+      "1080": {
+        "avif": 60,
+        "webp": 81
+      },
+      "1600": {
+        "avif": 96,
+        "webp": 120
+      },
+      "1920": {
+        "avif": 140,
+        "webp": 147
+      }
+    },
+    "origen": "146752:1790296138474"
+  },
+  "camion-excavadora-carga-residuos": {
+    "ancho": 1600,
+    "alto": 1066,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "camion-excavadora-carga-residuos.jpg",
+    "peso": {
+      "640": {
+        "avif": 44,
+        "webp": 43
+      },
+      "1080": {
+        "avif": 88,
+        "webp": 101
+      },
+      "1600": {
+        "avif": 111,
+        "webp": 209
+      }
+    },
+    "origen": "279804:1790296138487"
+  },
+  "camion-tolva-transporte-residuos-carretera": {
+    "ancho": 1600,
+    "alto": 900,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "camion-tolva-transporte-residuos-carretera.jpg",
+    "peso": {
+      "640": {
+        "avif": 23,
+        "webp": 26
+      },
+      "1080": {
+        "avif": 58,
+        "webp": 62
+      },
+      "1600": {
+        "avif": 120,
+        "webp": 122
+      }
+    },
+    "origen": "135698:1790296138486"
+  },
+  "centro-distribucion-calificacion-tecnica-industrial": {
+    "ancho": 1920,
+    "alto": 1280,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "centro-distribucion-calificacion-tecnica-industrial.jpg",
+    "peso": {
+      "640": {
+        "avif": 36,
+        "webp": 45
+      },
+      "1080": {
+        "avif": 84,
+        "webp": 90
+      },
+      "1600": {
+        "avif": 105,
+        "webp": 127
+      },
+      "1920": {
+        "avif": 128,
+        "webp": 216
+      }
+    },
+    "origen": "345850:1790296138473"
+  },
+  "centro-logistico-aereo-permisos-seremi": {
+    "ancho": 1920,
+    "alto": 1257,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "centro-logistico-aereo-permisos-seremi.jpg",
+    "peso": {
+      "640": {
+        "avif": 27,
+        "webp": 36
+      },
+      "1080": {
+        "avif": 63,
+        "webp": 77
+      },
+      "1600": {
+        "avif": 111,
+        "webp": 113
+      },
+      "1920": {
+        "avif": 145,
+        "webp": 144
+      }
+    },
+    "origen": "264686:1790296138471"
+  },
+  "consultoria-ambiental-parque-energia-renovable": {
+    "ancho": 1920,
+    "alto": 1280,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "consultoria-ambiental-parque-energia-renovable.jpg",
+    "peso": {
+      "640": {
+        "avif": 15,
+        "webp": 18
+      },
+      "1080": {
+        "avif": 36,
+        "webp": 41
+      },
+      "1600": {
+        "avif": 64,
+        "webp": 72
+      },
+      "1920": {
+        "avif": 100,
+        "webp": 118
+      }
+    },
+    "origen": "135092:1790296138470"
+  },
+  "contenedores-sustancias-peligrosas-almacenamiento": {
+    "ancho": 1600,
+    "alto": 1067,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "contenedores-sustancias-peligrosas-almacenamiento.jpg",
+    "peso": {
+      "640": {
+        "avif": 25,
+        "webp": 34
+      },
+      "1080": {
+        "avif": 53,
+        "webp": 69
+      },
+      "1600": {
+        "avif": 98,
+        "webp": 127
+      }
+    },
+    "origen": "152250:1790296138486"
+  },
+  "edificio-condominio-plan-de-emergencia": {
+    "ancho": 1920,
+    "alto": 1080,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "edificio-condominio-plan-de-emergencia.jpg",
+    "peso": {
+      "640": {
+        "avif": 21,
+        "webp": 27
+      },
+      "1080": {
+        "avif": 42,
+        "webp": 54
+      },
+      "1600": {
+        "avif": 68,
+        "webp": 86
+      },
+      "1920": {
+        "avif": 94,
+        "webp": 123
+      }
+    },
+    "origen": "146888:1790296138475"
+  },
+  "energia-renovable-permisos-ambientales-seia": {
+    "ancho": 1920,
+    "alto": 1280,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "energia-renovable-permisos-ambientales-seia.jpg",
+    "peso": {
+      "640": {
+        "avif": 19,
+        "webp": 28
+      },
+      "1080": {
+        "avif": 41,
+        "webp": 59
+      },
+      "1600": {
+        "avif": 71,
+        "webp": 97
+      },
+      "1920": {
+        "avif": 104,
+        "webp": 137
+      }
+    },
+    "origen": "146622:1790296138478"
+  },
+  "escalera-emergencia-edificio-plan-de-emergencia": {
+    "ancho": 1920,
+    "alto": 1317,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "escalera-emergencia-edificio-plan-de-emergencia.jpg",
+    "peso": {
+      "640": {
+        "avif": 9,
+        "webp": 11
+      },
+      "1080": {
+        "avif": 18,
+        "webp": 23
+      },
+      "1600": {
+        "avif": 30,
+        "webp": 39
+      },
+      "1920": {
+        "avif": 43,
+        "webp": 57
+      }
+    },
+    "origen": "76282:1790296138476"
+  },
+  "escalera-evacuacion-edificio": {
+    "ancho": 800,
+    "alto": 533,
+    "anchos": [
+      640,
+      800
+    ],
+    "hero": false,
+    "og": "escalera-evacuacion-edificio.jpg",
+    "peso": {
+      "640": {
+        "avif": 17,
+        "webp": 20
+      },
+      "800": {
+        "avif": 27,
+        "webp": 35
+      }
+    },
+    "origen": "44056:1790296138484"
+  },
+  "flota-camiones-autorizacion-transporte-residuos": {
+    "ancho": 1920,
+    "alto": 1257,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "flota-camiones-autorizacion-transporte-residuos.jpg",
+    "peso": {
+      "640": {
+        "avif": 37,
+        "webp": 48
+      },
+      "1080": {
+        "avif": 80,
+        "webp": 87
+      },
+      "1600": {
+        "avif": 110,
+        "webp": 115
+      },
+      "1920": {
+        "avif": 136,
+        "webp": 150
+      }
+    },
+    "origen": "151478:1790296138475"
+  },
+  "instalacion-industrial-informe-sanitario": {
+    "ancho": 1280,
+    "alto": 853,
+    "anchos": [
+      640,
+      1080,
+      1280
+    ],
+    "hero": false,
+    "og": "instalacion-industrial-informe-sanitario.jpg",
+    "peso": {
+      "640": {
+        "avif": 16,
+        "webp": 21
+      },
+      "1080": {
+        "avif": 30,
+        "webp": 38
+      },
+      "1280": {
+        "avif": 41,
+        "webp": 50
+      }
+    },
+    "origen": "59202:1790296138488"
+  },
+  "planta-industrial-entorno-verde-seia": {
+    "ancho": 1200,
+    "alto": 800,
+    "anchos": [
+      640,
+      1080,
+      1200
+    ],
+    "hero": false,
+    "og": "planta-industrial-entorno-verde-seia.jpg",
+    "peso": {
+      "640": {
+        "avif": 30,
+        "webp": 37
+      },
+      "1080": {
+        "avif": 60,
+        "webp": 77
+      },
+      "1200": {
+        "avif": 80,
+        "webp": 103
+      }
+    },
+    "origen": "110406:1790296138489"
+  },
+  "planta-industrial-manejo-residuos-peligrosos": {
+    "ancho": 1920,
+    "alto": 1281,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "planta-industrial-manejo-residuos-peligrosos.jpg",
+    "peso": {
+      "640": {
+        "avif": 11,
+        "webp": 13
+      },
+      "1080": {
+        "avif": 24,
+        "webp": 29
+      },
+      "1600": {
+        "avif": 42,
+        "webp": 51
+      },
+      "1920": {
+        "avif": 62,
+        "webp": 80
+      }
+    },
+    "origen": "107710:1790296138477"
+  },
+  "planta-industrial-nocturna-informe-cti": {
+    "ancho": 1600,
+    "alto": 1066,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "planta-industrial-nocturna-informe-cti.jpg",
+    "peso": {
+      "640": {
+        "avif": 24,
+        "webp": 29
+      },
+      "1080": {
+        "avif": 52,
+        "webp": 66
+      },
+      "1600": {
+        "avif": 106,
+        "webp": 126
+      }
+    },
+    "origen": "160256:1790296138480"
+  },
+  "planta-quimica-calificacion-tecnica-industrial": {
+    "ancho": 1280,
+    "alto": 854,
+    "anchos": [
+      640,
+      1080,
+      1280
+    ],
+    "hero": false,
+    "og": "planta-quimica-calificacion-tecnica-industrial.jpg",
+    "peso": {
+      "640": {
+        "avif": 27,
+        "webp": 36
+      },
+      "1080": {
+        "avif": 53,
+        "webp": 73
+      },
+      "1280": {
+        "avif": 81,
+        "webp": 117
+      }
+    },
+    "origen": "138210:1790296138478"
+  },
+  "planta-quimica-estanques-sustancias-peligrosas": {
+    "ancho": 1920,
+    "alto": 1079,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "planta-quimica-estanques-sustancias-peligrosas.jpg",
+    "peso": {
+      "640": {
+        "avif": 16,
+        "webp": 18
+      },
+      "1080": {
+        "avif": 34,
+        "webp": 38
+      },
+      "1600": {
+        "avif": 57,
+        "webp": 64
+      },
+      "1920": {
+        "avif": 82,
+        "webp": 93
+      }
+    },
+    "origen": "104332:1790296138472"
+  },
+  "refineria-petroquimica-nocturna": {
+    "ancho": 1600,
+    "alto": 1066,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "refineria-petroquimica-nocturna.jpg",
+    "peso": {
+      "640": {
+        "avif": 40,
+        "webp": 42
+      },
+      "1080": {
+        "avif": 86,
+        "webp": 88
+      },
+      "1600": {
+        "avif": 129,
+        "webp": 142
+      }
+    },
+    "origen": "199022:1790296138491"
+  },
+  "revision-documentos-observaciones-seremi": {
+    "ancho": 1600,
+    "alto": 800,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "revision-documentos-observaciones-seremi.jpg",
+    "peso": {
+      "640": {
+        "avif": 8,
+        "webp": 9
+      },
+      "1080": {
+        "avif": 17,
+        "webp": 20
+      },
+      "1600": {
+        "avif": 35,
+        "webp": 44
+      }
+    },
+    "origen": "52962:1790296138492"
+  },
+  "senal-salida-emergencia-evacuacion": {
+    "ancho": 1600,
+    "alto": 1066,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "senal-salida-emergencia-evacuacion.jpg",
+    "peso": {
+      "640": {
+        "avif": 16,
+        "webp": 20
+      },
+      "1080": {
+        "avif": 31,
+        "webp": 36
+      },
+      "1600": {
+        "avif": 50,
+        "webp": 56
+      }
+    },
+    "origen": "67926:1790296138483"
+  },
+  "senaletica-evacuacion-condominio": {
+    "ancho": 853,
+    "alto": 480,
+    "anchos": [
+      640,
+      853
+    ],
+    "hero": false,
+    "og": "senaletica-evacuacion-condominio.jpg",
+    "peso": {
+      "640": {
+        "avif": 8,
+        "webp": 9
+      },
+      "853": {
+        "avif": 12,
+        "webp": 13
+      }
+    },
+    "origen": "16646:1790296138483"
+  },
+  "simulacro-incendio-extintor-plan-de-emergencia": {
+    "ancho": 1600,
+    "alto": 879,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "simulacro-incendio-extintor-plan-de-emergencia.jpg",
+    "peso": {
+      "640": {
+        "avif": 18,
+        "webp": 22
+      },
+      "1080": {
+        "avif": 38,
+        "webp": 45
+      },
+      "1600": {
+        "avif": 63,
+        "webp": 70
+      }
+    },
+    "origen": "80684:1790296138482"
+  },
+  "tambores-bodega-residuos-peligrosos": {
+    "ancho": 1600,
+    "alto": 639,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "tambores-bodega-residuos-peligrosos.jpg",
+    "peso": {
+      "640": {
+        "avif": 17,
+        "webp": 25
+      },
+      "1080": {
+        "avif": 37,
+        "webp": 52
+      },
+      "1600": {
+        "avif": 71,
+        "webp": 87
+      }
+    },
+    "origen": "96858:1790296138485"
+  }
+}

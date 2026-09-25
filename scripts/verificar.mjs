@@ -74,11 +74,22 @@ for (const p of esperadas) {
     else checks++;
     if (!/\/fonts\/inter-variable-latin\.woff2/.test(html)) fallos.push(`${p.ruta}  ✗ no sirve sus fuentes desde el sitio`);
     else checks++;
-    const fotoPropia = /\/img\/hero\//.test(html) || /(?:src|srcset)="\/img\/(?!logo-)[^"]+\.(?:webp|avif|jpe?g|png)/.test(html);
+    const fotoPropia = /(?:src|srcset|imagesrcset)="\/img\/fotos\/[^"]+\.(?:webp|avif)/.test(html);
     if ((p.ruta === '/' || CON_FOTO.has(p.ruta)) && !fotoPropia) fallos.push(`${p.ruta}  ✗ no sirve la foto del hero (ni otra imagen) desde el sitio`);
     else if (p.ruta === '/' || CON_FOTO.has(p.ruta)) checks++;
-  } else if (!html.includes('sveaconsultores.cl/wp-content')) fallos.push(`${p.ruta}  ✗ perdió los recursos del sitio original`);
-  else checks++;
+    // 4b. desde el 24-sep el WordPress se apaga: NINGUNA URL suya puede quedar,
+    // tampoco en Open Graph, Twitter ni JSON-LD (og:image y los logos del
+    // JSON-LD salen ahora de /img/og/ y /img/logo-svea.png)
+    if (/wp-content|wp-includes/.test(html)) fallos.push(`${p.ruta}  ✗ aún nombra al WordPress (wp-content) en algún <meta> o JSON-LD`);
+    else checks++;
+    // 4c. las fotos de contenido van como <picture> con AVIF y WebP, y con width/height
+    for (const img of html.match(/<img\b[^>]*\/img\/fotos\/[^>]*>/g) || []) {
+      if (!/\bwidth="\d+"/.test(img) || !/\bheight="\d+"/.test(img)) fallos.push(`${p.ruta}  ✗ una foto sin width/height: ${img.slice(0, 80)}`);
+      else checks++;
+    }
+    if (/<img\b[^>]*src="[^"]*\/img\/(?:hero|cti|ecc|pe|pc|rp|tr|is|seia|articulos)\//.test(html)) fallos.push(`${p.ruta}  ✗ una foto sigue en la ruta vieja (sin <picture>)`);
+    else checks++;
+  } else fallos.push(`${p.ruta}  ✗ no está en la lista de páginas rehechas: ya no queda ninguna copia del WordPress`);
 }
 
 // robots.txt bloquea todo

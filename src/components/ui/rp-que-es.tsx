@@ -32,14 +32,14 @@ import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 /** Los cuatro párrafos del original: los dos primeros sobre qué es y la
  *  normativa, con la bodega de residuos; los dos últimos sobre los riesgos y
  *  el servicio, con los contenedores IBC (las dos fotos del WordPress). */
-const bloques = (base: string): BloqueScroll[] => {
+const bloques = (): BloqueScroll[] => {
   const bodega = {
-    media: `${base}/img/rp/warehousing-hazardous-waste-storage.webp`,
-    alt: 'Almacenamiento de residuos peligrosos bajo normativa - SVEA Consultores',
+    foto: 'tambores-bodega-residuos-peligrosos',
+    alt: 'Tambores en una bodega de almacenamiento de residuos peligrosos según el DS 148',
   };
   const contenedores = {
-    media: `${base}/img/rp/gaseous-substances-container-row.webp`,
-    alt: 'Contenedores IBC con sustancias químicas bajo normativa chilena - SVEA Consultores',
+    foto: 'contenedores-sustancias-peligrosas-almacenamiento',
+    alt: 'Contenedores con sustancias peligrosas almacenados bajo normativa en una planta industrial',
   };
   return [
     {
@@ -93,7 +93,8 @@ export function RpQueEs({ base = '' }: { base?: string }) {
     <section className="bg-white px-6 py-20" id="que-es" aria-labelledby="titulo-que-es">
       <div className="mx-auto max-w-6xl">
         <Scroll01
-          bloques={bloques(base)}
+          base={base}
+          bloques={bloques()}
           encabezado={
             <h2
               id="titulo-que-es"

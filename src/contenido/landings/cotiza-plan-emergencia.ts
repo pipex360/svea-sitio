@@ -387,7 +387,7 @@ const landing: Landing = {
     "presentacion": "Expertos en gestión y tramitación de permisos para industrias, asegurando cumplimiento normativo y seguridad operativa.",
     "contacto": true
   },
-  "foto": "servicio-pe",
+  "foto": 'escalera-emergencia-edificio-plan-de-emergencia',
   "medicion": {
     "servicio": "Plan de Emergencia y Evacuación",
     "prefijoAsunto": "[ADS] Cotización Plan Emergencia - ",

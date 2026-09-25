@@ -394,7 +394,7 @@ const landing: Landing = {
     "presentacion": "Expertos en certificados de actividad inofensiva, calificación técnica industrial y gestión de permisos ante SEREMI. Cumplimiento normativo y seguridad operativa.",
     "contacto": true
   },
-  "foto": "servicio-cti",
+  "foto": 'centro-distribucion-calificacion-tecnica-industrial',
   "medicion": {
     "servicio": "Calificación Técnica Industrial",
     "prefijoAsunto": "[ADS] Cotización CTI - ",

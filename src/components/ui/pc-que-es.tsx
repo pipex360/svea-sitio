@@ -31,14 +31,14 @@ import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 /** Los cuatro párrafos del original: los dos primeros sobre qué es el plan
  *  y de qué se construye, con el plan de evacuación; los dos últimos sobre
  *  qué incluye y para qué sirve, con las escaleras de emergencia. */
-const bloques = (base: string): BloqueScroll[] => {
+const bloques = (): BloqueScroll[] => {
   const plan = {
-    media: `${base}/img/pc/plan-emergencia-evacuacion.webp`,
-    alt: 'Plan de Emergencia y Evacuación para Condominios - SVEA Consultores',
+    foto: 'senaletica-evacuacion-condominio',
+    alt: 'Señalética de evacuación iluminada en un edificio con plan de emergencia para condominios',
   };
   const escaleras = {
-    media: `${base}/img/pc/escaleras-de-emergencia.webp`,
-    alt: 'Escaleras de emergencia en condominio - SVEA Consultores',
+    foto: 'escalera-evacuacion-edificio',
+    alt: 'Escalera de evacuación de un edificio, vía de escape del plan de emergencia del condominio',
   };
   return [
     {
@@ -92,7 +92,8 @@ export function PcQueEs({ base = '' }: { base?: string }) {
     <section className="bg-white px-6 py-20" id="que-es" aria-labelledby="titulo-que-es">
       <div className="mx-auto max-w-6xl">
         <Scroll01
-          bloques={bloques(base)}
+          base={base}
+          bloques={bloques()}
           encabezado={
             <h2
               id="titulo-que-es"

@@ -28,14 +28,14 @@ import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 /** Los cuatro párrafos del original: los dos primeros sobre qué es el
  *  permiso, con el camión en carretera; los dos últimos sobre el riesgo de
  *  no tenerlo y lo que hace SVEA, con la carga de residuos. */
-const bloques = (base: string): BloqueScroll[] => {
+const bloques = (): BloqueScroll[] => {
   const carretera = {
-    media: `${base}/img/tr/camion-carretera.webp`,
-    alt: 'Autorización de transporte de residuos - camión en carretera - SVEA Consultores',
+    foto: 'camion-tolva-transporte-residuos-carretera',
+    alt: 'Camión tolva circulando por la carretera con autorización de transporte de residuos',
   };
   const carga = {
-    media: `${base}/img/tr/carga-residuos.webp`,
-    alt: 'Carga de residuos en camión para transporte autorizado - SVEA Consultores',
+    foto: 'camion-excavadora-carga-residuos',
+    alt: 'Excavadora cargando residuos en un camión para su transporte autorizado',
   };
   return [
     {
@@ -89,7 +89,8 @@ export function TrQueEs({ base = '' }: { base?: string }) {
     <section className="bg-white px-6 py-20" id="que-es" aria-labelledby="titulo-que-es">
       <div className="mx-auto max-w-6xl">
         <Scroll01
-          bloques={bloques(base)}
+          base={base}
+          bloques={bloques()}
           encabezado={
             <h2
               id="titulo-que-es"

@@ -45,6 +45,7 @@ import { Reveal } from '../components/ui/reveal';
 import { Velaris } from '../components/ui/velaris';
 import paginas from '../data/paginas.json';
 import { GUIAS, guia } from '../contenido/articulos/guias';
+import { fotosEnHtml, ogFoto } from '../lib/fotos';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { LogoMarquee } from '../components/ui/logo-marquee';
@@ -65,8 +66,9 @@ const esta = guia(slug);
 const servicio = esta.servicio;
 const otras = GUIAS.filter((g) => g.slug !== slug);
 
-/** Los enlaces internos del contenido van con la raíz del sitio: aquí se les pone la base. */
-const conBase = (html: string) => html.replace(/(href|src)="\/(?!\/)/g, `$1="${BASE}/`);
+/** Los enlaces internos del contenido van con la raíz del sitio: aquí se les pone la base.
+ *  Las fotos vienen como <img data-foto="nombre"> y pasan a su <picture> (src/lib/fotos.ts). */
+const conBase = (html: string) => fotosEnHtml(html.replace(/(href|src)="\/(?!\/)/g, `$1="${BASE}/`), BASE);
 
 /** El recuadro «Cotizar» del cuerpo trae el marcador <!--logos-clientes--> donde
  *  el WordPress tenía su propia cinta de 12 logos: ahí va la de la portada,
@@ -151,7 +153,7 @@ const fuentesCSS = `
     copia={COPIA}
     faq={FAQ}
     tipo="article"
-    articulo={{ titulo: esta.titulo, miga: datos.migaFinal, publicado, modificado, imagen: `https://sveaconsultores.cl/img/articulos/${esta.imagen.archivo}.webp`, seccion: esta.tema }}
+    articulo={{ titulo: esta.titulo, miga: datos.migaFinal, publicado, modificado, imagen: ogFoto(esta.imagen.nombre), seccion: esta.tema }}
   />
   <MedicionSitio copia={COPIA} />
 

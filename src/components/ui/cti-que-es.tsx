@@ -32,14 +32,14 @@ import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 /** Los cuatro párrafos del original, con la foto que acompaña a cada uno:
  *  las dos primeras sobre qué es y para qué sirve, con la planta química;
  *  las dos últimas sobre lo que hacemos nosotros, con la instalación. */
-const bloques = (base: string): BloqueScroll[] => {
+const bloques = (): BloqueScroll[] => {
   const planta = {
-    media: `${base}/img/cti/chemical-plant.webp`,
-    alt: 'Calificación técnica industrial - planta química evaluada por SVEA Consultores',
+    foto: 'planta-quimica-calificacion-tecnica-industrial',
+    alt: 'Planta química industrial que requiere calificación técnica industrial de la SEREMI de Salud',
   };
   const instalacion = {
-    media: `${base}/img/cti/industry-factory.webp`,
-    alt: 'Informe CTI SEREMI de Salud - instalación industrial nocturna',
+    foto: 'planta-industrial-nocturna-informe-cti',
+    alt: 'Planta industrial de noche: instalación que tramita su informe CTI ante la SEREMI de Salud',
   };
   return [
     {
@@ -81,7 +81,8 @@ export function CtiQueEs({ base = '' }: { base?: string }) {
     <section className="bg-white px-6 py-20" id="que-es" aria-labelledby="titulo-que-es">
       <div className="mx-auto max-w-6xl">
         <Scroll01
-          bloques={bloques(base)}
+          base={base}
+          bloques={bloques()}
           encabezado={
             <h2
               id="titulo-que-es"

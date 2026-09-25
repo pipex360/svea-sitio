@@ -31,6 +31,8 @@
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform } from 'motion/react';
 import { Children, Fragment, createElement, isValidElement, useRef, useState, type ReactNode } from 'react';
 
+import { Foto } from '@/components/ui/foto';
+
 /**
  * El encabezado se pinta dos veces (teléfono y escritorio) y en cada ancho
  * una de las dos copias está en display:none. Para que el HTML no traiga dos
@@ -60,8 +62,8 @@ function sinDuplicar(nodo: ReactNode): ReactNode {
 export type BloqueScroll = {
   /** el párrafo */
   texto: string;
-  /** la foto que acompaña a este párrafo */
-  media: string;
+  /** la foto que acompaña a este párrafo: nombre en mejoras/fotos (ver src/lib/fotos.ts) */
+  foto: string;
   alt: string;
 };
 
@@ -88,17 +90,20 @@ function Bloque({ bloque, quieto }: { bloque: BloqueScroll; quieto: boolean }) {
 export function Scroll01({
   bloques,
   encabezado,
+  base = '',
 }: {
   bloques: BloqueScroll[];
   encabezado?: React.ReactNode;
+  /** la ruta base del sitio, para las fotos */
+  base?: string;
 }) {
   const columna = useRef<HTMLDivElement | null>(null);
   const [activo, setActivo] = useState(0);
   const quieto = useReducedMotion() ?? false;
 
-  // una entrada por archivo distinto: la foto que se repite no se carga dos veces
-  const fotos = bloques.filter((b, i) => bloques.findIndex((o) => o.media === b.media) === i);
-  const fotoDe = (i: number) => fotos.findIndex((f) => f.media === bloques[i]?.media);
+  // una entrada por foto distinta: la que se repite no se carga dos veces
+  const fotos = bloques.filter((b, i) => bloques.findIndex((o) => o.foto === b.foto) === i);
+  const fotoDe = (i: number) => fotos.findIndex((f) => f.foto === bloques[i]?.foto);
 
   /**
    * Qué foto toca se saca del avance de la columna de texto, repartido en
@@ -125,12 +130,11 @@ export function Scroll01({
             <div key={b.texto.slice(0, 30)}>
               <p className="text-base leading-relaxed text-black/75">{b.texto}</p>
               {fotoDe(i) !== fotoDe(i + 1) && (
-                <img
-                  src={b.media}
+                <Foto
+                  nombre={b.foto}
                   alt={b.alt}
-                  width={1200}
-                  height={801}
-                  loading="lazy"
+                  tamano="mitad"
+                  base={base}
                   className="mt-6 w-full rounded-2xl border border-border object-cover"
                 />
               )}
@@ -143,18 +147,21 @@ export function Scroll01({
       <div className="hidden gap-10 md:grid md:grid-cols-2 lg:gap-14">
         <div className="sticky top-24 h-[70vh] self-start overflow-hidden rounded-2xl border border-border">
           {fotos.map((f, i) => (
-            <motion.img
-              key={f.media}
-              src={f.media}
-              alt={f.alt}
-              width={1200}
-              height={801}
-              loading={i === 0 ? undefined : 'lazy'}
-              className="absolute inset-0 h-full w-full object-cover"
+            <motion.div
+              key={f.foto}
+              className="absolute inset-0"
               initial={{ opacity: i === 0 ? 1 : 0 }}
               animate={{ opacity: activo === i ? 1 : 0 }}
               transition={{ duration: quieto ? 0 : 0.35, ease: 'linear' }}
-            />
+            >
+              <Foto
+                nombre={f.foto}
+                alt={f.alt}
+                tamano="mitad"
+                base={base}
+                className="h-full w-full object-cover"
+              />
+            </motion.div>
           ))}
         </div>
 

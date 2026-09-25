@@ -12,14 +12,14 @@
  */
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 
-const bloques = (base: string): BloqueScroll[] => {
+const bloques = (): BloqueScroll[] => {
   const planta = {
-    media: `${base}/img/seia/planta-ecologica.webp`,
-    alt: 'Permisos ambientales SEIA - planta industrial con gestión ambiental, SVEA Consultores',
+    foto: 'planta-industrial-entorno-verde-seia',
+    alt: 'Planta industrial en un entorno verde: proyecto que evalúa su pertinencia de ingreso al SEIA',
   };
   const renovable = {
-    media: `${base}/img/seia/energia-renovable.webp`,
-    alt: 'Pertinencia de ingreso al SEIA - proyecto de energía renovable',
+    foto: 'consultoria-ambiental-parque-energia-renovable',
+    alt: 'Parque de energía renovable con aerogeneradores, proyecto sujeto a permisos ambientales del SEIA',
   };
   return [
     {
@@ -45,7 +45,8 @@ export function SeiaDescripcion({ base = '' }: { base?: string }) {
     <section className="bg-white px-6 py-20" id="descripcion" aria-labelledby="titulo-descripcion">
       <div className="mx-auto max-w-6xl">
         <Scroll01
-          bloques={bloques(base)}
+          base={base}
+          bloques={bloques()}
           encabezado={
             <h2
               id="titulo-descripcion"

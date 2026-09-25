@@ -13,6 +13,7 @@
 import '../styles/tailwind.css';
 import MedicionSitio from '../components/MedicionSitio.astro';
 import HeroHalo from '../components/HeroHalo.astro';
+import { precargaFoto } from '../lib/fotos';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
 import { SeiaDescripcion } from '../components/ui/seia-descripcion';
@@ -47,12 +48,12 @@ const fuentesCSS = `
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero es el LCP: se precarga -->
-  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-seia-1080.webp 1080w, ${BASE}/img/hero/servicio-seia-1920.webp 1920w`} imagesizes="100vw" />
+  <link rel="preload" as="image" {...precargaFoto('energia-renovable-permisos-ambientales-seia', BASE)} />
 </head>
 <body>
   <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
-    fotos={[{ archivo: 'servicio-seia', alto: 1280 }]}
+    fotos={['energia-renovable-permisos-ambientales-seia']}
     copete="Servicios SVEA"
     titulo="Permisos Ambientales y Pertinencias del SEIA"
     parrafo="Te acompañamos en el cumplimiento normativo y la obtención de permisos ambientales a través del Sistema de Evaluación de Impacto Ambiental (SEIA)"

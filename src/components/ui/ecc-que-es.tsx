@@ -23,14 +23,14 @@ import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 /** Los cuatro párrafos del original: los dos primeros sobre qué es el
  *  estudio, con la bodega; los dos últimos sobre qué se evalúa y para qué
  *  sirve, con el centro logístico. */
-const bloques = (base: string): BloqueScroll[] => {
+const bloques = (): BloqueScroll[] => {
   const bodega = {
-    media: `${base}/img/ecc/warehouse-products-storage.webp`,
-    alt: 'Estudio de carga de combustible - bodega de almacenamiento evaluada por SVEA Consultores',
+    foto: 'bodega-productos-estudio-carga-combustible',
+    alt: 'Bodega con productos en racks: la carga que evalúa el estudio de carga de combustible',
   };
   const logistica = {
-    media: `${base}/img/ecc/empty-warehouse.webp`,
-    alt: 'Estudio de carga de combustible OGUC - centro logístico',
+    foto: 'bodega-centro-logistico-carga-combustible',
+    alt: 'Centro logístico con estanterías altas, objeto de un estudio de carga de combustible según la OGUC',
   };
   return [
     {
@@ -72,7 +72,8 @@ export function EccQueEs({ base = '' }: { base?: string }) {
     <section className="bg-white px-6 py-20" id="que-es" aria-labelledby="titulo-que-es">
       <div className="mx-auto max-w-6xl">
         <Scroll01
-          bloques={bloques(base)}
+          base={base}
+          bloques={bloques()}
           encabezado={
             <h2
               id="titulo-que-es"
