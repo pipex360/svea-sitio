@@ -16,6 +16,7 @@ import { Label } from '@/components/ui/label';
 import { Reveal } from '@/components/ui/reveal';
 import { Textarea } from '@/components/ui/textarea';
 import { CamposOrigen } from '@/components/ui/campos-origen';
+import { AvisoFormulario } from '@/components/ui/aviso-formulario';
 
 /** Los mismos enlaces del WordPress: el de WhatsApp lo cuenta el listener de GTM. */
 const WHATSAPP =
@@ -140,6 +141,7 @@ export function PcFormulario({ copia = false }: { copia?: boolean }) {
                 Respuesta en 24h
               </span>
             </p>
+            <AvisoFormulario />
           </form>
         </ContactCard>
       </Reveal>

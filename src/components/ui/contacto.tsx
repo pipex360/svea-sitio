@@ -42,6 +42,7 @@ import { Label } from '@/components/ui/label';
 import { Reveal } from '@/components/ui/reveal';
 import { Textarea } from '@/components/ui/textarea';
 import { CamposOrigen } from '@/components/ui/campos-origen';
+import { AvisoFormulario } from '@/components/ui/aviso-formulario';
 
 /** Los mismos enlaces del WordPress: el de WhatsApp lo cuenta el listener de GTM. */
 const WHATSAPP = 'https://api.whatsapp.com/send/?phone=56929947924&text=Hola%2C%20necesito%20asesor%C3%ADa%20t%C3%A9cnica';
@@ -188,6 +189,7 @@ export function Contacto({ copia = false }: { copia?: boolean }) {
                 </svg>
               </span>
             </button>
+            <AvisoFormulario />
           </form>
         </ContactCard>
       </Reveal>

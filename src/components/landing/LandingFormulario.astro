@@ -64,6 +64,8 @@ for (const c of f.campos) {
   if (c.mitad && ultima && ultima.length === 1 && ultima[0].mitad) ultima.push(c);
   else filas.push([c]);
 }
+import { AVISO_FORMULARIO } from '../ui/aviso-formulario';
+const BASE_AVISO = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 ---
 <!-- la tarjeta de «Contáctanos» de la portada (contact-card): esquinas
      rectas, cruces en las esquinas, el titular en blanco y el formulario
@@ -135,6 +137,10 @@ for (const c of f.campos) {
     <p class="flex items-center justify-center gap-1.5 text-xs text-black/55">
       <svg viewBox="0 0 24 24" class="size-3.5" fill="currentColor" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" /></svg>
       {f.confianza}
+    </p>
+    <!-- aviso de privacidad (25-sep): el mismo texto de ui/aviso-formulario.tsx -->
+    <p class="aviso-form m-0 text-center text-[12.5px] leading-snug text-black/55">
+      {AVISO_FORMULARIO} <a href={`${BASE_AVISO}/politica-de-privacidad/`} class="text-black/70 underline underline-offset-2 hover:text-black">política de privacidad</a>.
     </p>
   </form>
 

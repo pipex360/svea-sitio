@@ -36,6 +36,7 @@ import { CamposOrigen } from '@/components/ui/campos-origen';
 import { LogoMarquee } from '@/components/ui/logo-marquee';
 import { logosClientes } from '@/data/clientes';
 import { TituloClientes } from '@/components/ui/titulo-clientes';
+import { AvisoFormulario } from '@/components/ui/aviso-formulario';
 
 export type Campo = {
   label: string;
@@ -197,6 +198,7 @@ export function ArticuloFormulario({
                 );
               })}
             </p>
+            <AvisoFormulario />
           </form>
         </ContactCard>
       </div>
