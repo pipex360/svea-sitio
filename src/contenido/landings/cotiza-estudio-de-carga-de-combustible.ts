@@ -209,8 +209,8 @@ const landing: Landing = {
         "texto": "Sin informe de carga de combustible vigente, la empresa enfrenta responsabilidad directa ante un incendio."
       }
     ],
-    "llamado": "No arriesgues tu instalación. Obtén tu estudio de carga de fuego hoy.",
-    "boton": "Cotizar mi estudio ahora"
+    "llamado": "No arriesgues tu instalación. Obtén tu estudio de carga de fuego hoy: cotiza ahora.",
+    "boton": "Cotizar estudio de carga"
   },
   "incluye": {
     "copete": "Servicio integral",
@@ -326,7 +326,7 @@ const landing: Landing = {
   "cierre": {
     "titulo": "Obtén tu estudio de carga de combustible <em>hoy</em>",
     "texto": "Informe de carga de fuego con respaldo profesional. Cotización en menos de 24 horas, estudio en 3-5 días hábiles, conforme a la OGUC y NCh.",
-    "boton": "Cotiza tu estudio ahora",
+    "boton": "Cotizar estudio de carga",
     "whatsapp": "https://api.whatsapp.com/send?phone=56929947924&text=Hola%2C%20necesito%20cotizar%20un%20estudio%20de%20carga%20de%20combustible%20%2F%20carga%20de%20fuego%20para%20mi%20instalaci%C3%B3n.%20Llego%20desde%20Google.",
     "whatsappTexto": "WhatsApp directo"
   },

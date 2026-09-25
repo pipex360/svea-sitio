@@ -15,7 +15,7 @@ import type { Landing } from './tipos';
 const landing: Landing = {
   "ruta": "/cotiza-plan-emergencia-condominio/",
   "urgencia": "<strong>Ley 21.442 vigente</strong> — Tu condominio necesita un plan de emergencia y evacuación. Cotízalo hoy.",
-  "badge": "Cotización plan de emergencia en 24 horas",
+  "badge": "Cotización plan de emergencia en 24\u00a0horas",
   "h1": "Plan de Emergencia<br>Condominio y Edificio<br><em>Ley 21.442</em>",
   "subtitulo": "Plan de emergencia condominio · Plan de emergencia edificio · Ley 21.442 y OGUC",
   "bajada": "Nuestro <strong>plan de emergencia y evacuación</strong> para condominios cubre análisis de riesgos, protocolos de evacuación y roles para comité y administración. Tu <strong>plan de seguridad para condominios</strong> con respaldo profesional y aprobación normativa.",
@@ -174,7 +174,7 @@ const landing: Landing = {
         "control": "textarea",
         "label": "Mensaje (opcional)",
         "name": "Mensaje",
-        "placeholder": "¿Cuántos pisos y departamentos tiene? ¿Tiene subterráneo? ¿Necesitas el plan de emergencia por fiscalización u otro motivo?"
+        "placeholder": "Pisos, departamentos y motivo (p. ej., fiscalización)"
       }
     ],
     "boton": "COTIZAR PLAN DE EMERGENCIA GRATIS →",
@@ -202,8 +202,8 @@ const landing: Landing = {
         "texto": "Las personas vulnerables del condominio necesitan rutas de evacuación y procedimientos adaptados. Sin plan de emergencia edificio, quedan desprotegidas."
       },
       {
-        "titulo": "Observaciones de Bomberos y Seremi",
-        "texto": "Bomberos y la Seremi de Salud pueden exigir un plan de emergencia actualizado para emitir certificados o aprobar instalaciones del edificio."
+        "titulo": "Observaciones de Bomberos y SEREMI",
+        "texto": "Bomberos y la SEREMI de Salud pueden exigir un plan de emergencia actualizado para emitir certificados o aprobar instalaciones del edificio."
       }
     ],
     "llamado": "No esperes una emergencia. Protege a tu comunidad con un plan de emergencia condominio profesional.",
@@ -241,7 +241,7 @@ const landing: Landing = {
       },
       {
         "icono": "<polyline points=\"9 11 12 14 22 4\"/><path d=\"M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11\"/>",
-        "titulo": "Gestión con Bomberos y Seremi",
+        "titulo": "Gestión con Bomberos y SEREMI",
         "texto": "Apoyo en coordinación y respuesta a observaciones del revisor para la aprobación del plan de emergencia condominio."
       }
     ]

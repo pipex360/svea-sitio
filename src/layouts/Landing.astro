@@ -556,7 +556,7 @@ const BARRA =
   .lp-barra { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; gap: 10px; align-items: center;
     padding: 8px 16px max(8px, env(safe-area-inset-bottom)); background: #fff;
     border-top: 1px solid #e6e8e4;
-    transform: translateY(120%); transition: transform .3s ease-out; }
+    transform: translateY(calc(100% + 48px)); transition: transform .3s ease-out; }
   .lp-barra.visible { transform: none; }
   .lp-barra.con-aviso { bottom: 31px; }
   .lp-barra .btn-flecha { overflow: hidden; text-overflow: ellipsis; }

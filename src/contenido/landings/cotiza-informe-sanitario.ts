@@ -214,8 +214,8 @@ const landing: Landing = {
         "texto": "Si tu actividad no es compatible con la zonificación del Plan Regulador Comunal, la resolución sanitaria será rechazada sin asesoría previa."
       }
     ],
-    "llamado": "No arriesgues tu operación. Obtén tu informe sanitario favorable hoy.",
-    "boton": "Cotizar mi informe sanitario ahora"
+    "llamado": "No arriesgues tu operación. Obtén tu informe sanitario favorable hoy: cotiza ahora.",
+    "boton": "Cotizar informe sanitario"
   },
   "incluye": {
     "copete": "Servicio integral",
@@ -339,7 +339,7 @@ const landing: Landing = {
   "cierre": {
     "titulo": "Obtén tu informe sanitario / resolución sanitaria <em>hoy</em>",
     "texto": "Evaluación sanitaria profesional con respaldo normativo. Cotización en menos de 24 horas, expediente en 3-5 días hábiles y gestión ante la SEREMI hasta la resolución.",
-    "boton": "Cotiza tu informe sanitario ahora",
+    "boton": "Cotizar informe sanitario",
     "whatsapp": "https://api.whatsapp.com/send?phone=56929947924&text=Hola%2C%20necesito%20cotizar%20un%20informe%20sanitario%20%2F%20resoluci%C3%B3n%20sanitaria%20%2F%20autorizaci%C3%B3n%20sanitaria%20para%20mi%20empresa.%20Llego%20desde%20Google.",
     "whatsappTexto": "WhatsApp directo"
   },

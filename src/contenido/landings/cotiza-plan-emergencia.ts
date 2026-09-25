@@ -15,7 +15,7 @@ const landing: Landing = {
   "ruta": "/cotiza-plan-emergencia/",
   "urgencia": "<strong>DS 44 vigente desde 2025</strong> — Tu empresa necesita un plan de emergencia actualizado. Regulariza hoy.",
   "badge": "Cotización en menos de 24 horas",
-  "h1": "Plan de Emergencia<br>y Evacuación<br><em>conforme al DS 594 y DS 44</em>",
+  "h1": "Plan de Emergencia<br>y Evacuación<br><em>conforme al DS&nbsp;594 y DS&nbsp;44</em>",
   "subtitulo": "También denominado <em>plan de contingencia</em> · Exigido por DS 594 y DS 44",
   "bajada": "Elaboramos tu <strong>Plan de Emergencia y Contingencia</strong>: informe técnico, planos de evacuación, protocolos y legalización ante SEREMI, Bomberos y Carabineros. Tú no tienes que hacer nada.",
   "pills": [

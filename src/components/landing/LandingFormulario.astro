@@ -125,7 +125,7 @@ for (const c of f.campos) {
       </div>
     ))}
 
-    <button type="submit" class="btn-flecha ancha mt-1">
+    <button type="submit" class="btn-flecha ancha lp-enviar mt-1">
       <span>{botonTexto}</span>
       <span class="circulo">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
@@ -147,3 +147,12 @@ for (const c of f.campos) {
   </div>
 </div>
 </div>
+
+<style is:global>
+  /* en el teléfono el texto del envío cabe en una línea (25-sep) */
+  @media (max-width: 480px) {
+    .lp-enviar { padding-left: 20px; gap: 8px; font-size: 15.5px; }
+    .lp-enviar > span:first-child { white-space: nowrap; }
+    .lp-enviar .circulo { flex-shrink: 0; width: 36px; height: 36px; }
+  }
+</style>

@@ -67,7 +67,7 @@ export function BarraMovil({ base = '', copia = false, cotizar }: { base?: strin
           'fixed inset-x-0 z-40 grid grid-cols-2 gap-2 border-t border-border bg-white p-2 md:hidden',
           'pb-[max(8px,env(safe-area-inset-bottom))]',
           'transition-transform duration-300 ease-out motion-reduce:transition-none',
-          escondida ? 'translate-y-[120%]' : 'translate-y-0',
+          escondida ? 'translate-y-[calc(100%+48px)]' : 'translate-y-0',
         )}
         style={{ bottom: abajo }}
         aria-hidden={escondida}
