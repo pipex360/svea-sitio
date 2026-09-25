@@ -30,12 +30,12 @@ import { Reveal } from '@/components/ui/reveal';
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 
 /** Los cuatro párrafos del original: los dos primeros sobre qué es y la
- *  normativa, con la bodega de residuos; los dos últimos sobre los riesgos y
- *  el servicio, con los contenedores IBC (las dos fotos del WordPress). */
+ *  normativa, con el operario en la bodega de residuos; los dos últimos sobre los riesgos y
+ *  el servicio, con los contenedores IBC. */
 const bloques = (): BloqueScroll[] => {
   const bodega = {
-    foto: 'tambores-bodega-residuos-peligrosos',
-    alt: 'Tambores en una bodega de almacenamiento de residuos peligrosos según el DS 148',
+    foto: 'operario-bodega-residuos-peligrosos',
+    alt: 'Operario con chaleco reflectante mueve tambores en una bodega de residuos peligrosos según el DS 148',
   };
   const contenedores = {
     foto: 'contenedores-sustancias-peligrosas-almacenamiento',

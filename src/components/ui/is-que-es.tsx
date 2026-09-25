@@ -25,12 +25,12 @@ import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
  *  con la bodega; el último sobre lo que hace SVEA, con la escena industrial. */
 const bloques = (): BloqueScroll[] => {
   const bodega = {
-    foto: 'bodega-centro-logistico-carga-combustible',
-    alt: 'Bodega de un centro logístico, establecimiento que requiere informe sanitario de la SEREMI de Salud',
+    foto: 'cocina-industrial-acero-informe-sanitario',
+    alt: 'Cocina industrial de acero inoxidable, establecimiento que requiere informe sanitario de la SEREMI de Salud',
   };
   const industria = {
-    foto: 'instalacion-industrial-informe-sanitario',
-    alt: 'Instalación industrial con estanques y cañerías evaluada para el informe sanitario',
+    foto: 'manipulacion-alimentos-informe-sanitario',
+    alt: 'Operaria con delantal blanco y guantes en una planta de alimentos evaluada para el informe sanitario',
   };
   return [
     {

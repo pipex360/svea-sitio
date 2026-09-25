@@ -3,8 +3,8 @@
 /**
  * «Descripción General» de Permisos Ambientales y Pertinencias del SEIA, con
  * el formato de ecc-que-es.tsx: los tres párrafos del WordPress con la foto
- * fija al lado. Las dos primeras hablan de la planta ecológica (la foto del
- * original); la tercera, de la energía renovable.
+ * fija al lado. Las dos primeras van con el valle y la cordillera; la tercera, con el
+ * parque fotovoltaico.
  *
  * Texto del WordPress con un cambio: «garantizando» y «garantizamos» eran
  * promesas que no dependen de nosotros (la resolución la da el SEA), y se
@@ -14,12 +14,12 @@ import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 
 const bloques = (): BloqueScroll[] => {
   const planta = {
-    foto: 'planta-industrial-entorno-verde-seia',
-    alt: 'Planta industrial en un entorno verde: proyecto que evalúa su pertinencia de ingreso al SEIA',
+    foto: 'valle-cordillera-evaluacion-ambiental',
+    alt: 'Valle con árboles y cordillera en Chile, el entorno que se evalúa al consultar la pertinencia de ingreso al SEIA',
   };
   const renovable = {
-    foto: 'consultoria-ambiental-parque-energia-renovable',
-    alt: 'Parque de energía renovable con aerogeneradores, proyecto sujeto a permisos ambientales del SEIA',
+    foto: 'parque-fotovoltaico-pertinencia-seia',
+    alt: 'Paneles de un parque fotovoltaico, proyecto de energía sujeto a permisos ambientales del SEIA',
   };
   return [
     {

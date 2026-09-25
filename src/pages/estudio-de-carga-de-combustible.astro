@@ -48,12 +48,12 @@ const fuentesCSS = `
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero es el LCP: se precarga -->
-  <link rel="preload" as="image" {...precargaFoto('bodega-productos-estudio-carga-combustible', BASE)} />
+  <link rel="preload" as="image" {...precargaFoto('bodega-estanterias-estudio-carga-combustible', BASE)} />
 </head>
 <body>
   <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
-    fotos={['bodega-productos-estudio-carga-combustible']}
+    fotos={['bodega-estanterias-estudio-carga-combustible']}
     copete="Servicios SVEA"
     titulo="Estudio de Carga de Combustible"
     parrafo="Cuantifica el riesgo de incendio de tu instalación y cumple con la OGUC. Elaboramos el informe técnico completo para obtener tus permisos municipales y sectoriales."

@@ -26,16 +26,16 @@ import { Reveal } from '@/components/ui/reveal';
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 
 /** Los cuatro párrafos del original: los dos primeros sobre qué es el
- *  permiso, con el camión en carretera; los dos últimos sobre el riesgo de
- *  no tenerlo y lo que hace SVEA, con la carga de residuos. */
+ *  permiso, con los camiones en la carretera; los dos últimos sobre el riesgo de
+ *  no tenerlo y lo que hace SVEA, con el camión cisterna y su rombo de peligro. */
 const bloques = (): BloqueScroll[] => {
   const carretera = {
-    foto: 'camion-tolva-transporte-residuos-carretera',
-    alt: 'Camión tolva circulando por la carretera con autorización de transporte de residuos',
+    foto: 'camiones-carretera-cordillera-transporte-residuos',
+    alt: 'Camiones en una carretera con la cordillera al fondo, ruta del transporte de residuos autorizado por la SEREMI',
   };
   const carga = {
-    foto: 'camion-excavadora-carga-residuos',
-    alt: 'Excavadora cargando residuos en un camión para su transporte autorizado',
+    foto: 'camion-cisterna-transporte-residuos-peligrosos',
+    alt: 'Camión cisterna con el rombo de materiales peligrosos, vehículo con autorización sanitaria de transporte de residuos',
   };
   return [
     {

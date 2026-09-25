@@ -30,16 +30,16 @@ import { Reveal } from '@/components/ui/reveal';
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 
 /** Los cuatro párrafos del original, con la foto que acompaña a cada uno:
- *  las dos primeras sobre qué es y para qué sirve, con la planta química;
- *  las dos últimas sobre lo que hacemos nosotros, con la instalación. */
+ *  las dos primeras sobre qué es y para qué sirve, con los andenes de carga;
+ *  las dos últimas sobre lo que hacemos nosotros, con la planta y el camión. */
 const bloques = (): BloqueScroll[] => {
   const planta = {
-    foto: 'planta-quimica-calificacion-tecnica-industrial',
-    alt: 'Planta química industrial que requiere calificación técnica industrial de la SEREMI de Salud',
+    foto: 'andenes-carga-centro-distribucion-cti',
+    alt: 'Fila de andenes de carga de un centro de distribución, instalación que requiere calificación técnica industrial de la SEREMI de Salud',
   };
   const instalacion = {
-    foto: 'planta-industrial-nocturna-informe-cti',
-    alt: 'Planta industrial de noche: instalación que tramita su informe CTI ante la SEREMI de Salud',
+    foto: 'camion-planta-industrial-chile',
+    alt: 'Camión frente a una planta industrial en Chile, instalación que tramita su informe CTI ante la SEREMI de Salud',
   };
   return [
     {

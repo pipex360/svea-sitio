@@ -29,16 +29,16 @@ import { Reveal } from '@/components/ui/reveal';
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 
 /** Los cuatro párrafos del original: los dos primeros sobre qué es el plan
- *  y de qué se construye, con el plan de evacuación; los dos últimos sobre
- *  qué incluye y para qué sirve, con las escaleras de emergencia. */
+ *  y de qué se construye, con los condominios y la cordillera; los dos últimos sobre
+ *  qué incluye y para qué sirve, con los edificios al sol. */
 const bloques = (): BloqueScroll[] => {
   const plan = {
-    foto: 'senaletica-evacuacion-condominio',
-    alt: 'Señalética de evacuación iluminada en un edificio con plan de emergencia para condominios',
+    foto: 'condominios-santiago-cordillera-ley-21442',
+    alt: 'Condominios de Santiago con la cordillera al fondo, comunidades que deben tener plan de emergencia según la Ley 21.442',
   };
   const escaleras = {
-    foto: 'escalera-evacuacion-edificio',
-    alt: 'Escalera de evacuación de un edificio, vía de escape del plan de emergencia del condominio',
+    foto: 'edificios-santiago-comite-administracion',
+    alt: 'Edificios de departamentos en Santiago al sol, condominios cuyo comité de administración aprueba el plan de emergencia',
   };
   return [
     {

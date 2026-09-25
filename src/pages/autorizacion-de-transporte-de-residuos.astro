@@ -54,12 +54,12 @@ const fuentesCSS = `
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero es el LCP: se precarga -->
-  <link rel="preload" as="image" {...precargaFoto('flota-camiones-autorizacion-transporte-residuos', BASE)} />
+  <link rel="preload" as="image" {...precargaFoto('camion-transporte-residuos-planta-chile', BASE)} />
 </head>
 <body>
   <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
-    fotos={['flota-camiones-autorizacion-transporte-residuos']}
+    fotos={['camion-transporte-residuos-planta-chile']}
     copete="Servicios SVEA"
     titulo="Autorización de Transporte de Residuos Peligrosos y No Peligrosos"
     parrafo="Gestionamos la autorización de transporte de residuos ante la SEREMI de Salud, asegurando el cumplimiento normativo en cada etapa del proceso. Desde la clasificación hasta la obtención del permiso, tu empresa opera de forma segura y legal."

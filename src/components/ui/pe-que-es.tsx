@@ -27,17 +27,16 @@ import { Reveal } from '@/components/ui/reveal';
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 
 /** Los cuatro párrafos del original: los dos primeros sobre qué es el plan,
- *  con la simulación de incendio; los dos últimos sobre lo que incluye y para
- *  qué sirve, con la señal de salida de emergencia (las dos fotos y sus alt
- *  son las del WordPress). */
+ *  con los extintores; los dos últimos sobre lo que incluye y para
+ *  qué sirve, con la señalética de evacuación. */
 const bloques = (): BloqueScroll[] => {
   const simulacion = {
-    foto: 'simulacro-incendio-extintor-plan-de-emergencia',
-    alt: 'Simulacro de incendio con extintor en una capacitación del plan de emergencia y evacuación',
+    foto: 'extintores-pared-plan-emergencia-ds-44',
+    alt: 'Cuatro extintores colgados en una pared blanca, equipamiento que exige el plan de emergencia y evacuación',
   };
   const salida = {
-    foto: 'senal-salida-emergencia-evacuacion',
-    alt: 'Señal de salida de emergencia en una instalación industrial con plan de evacuación',
+    foto: 'senaletica-punto-reunion-evacuacion',
+    alt: 'Señalética de punto de reunión y vía de evacuación en un pasillo, parte del plan de emergencia y evacuación',
   };
   return [
     {
