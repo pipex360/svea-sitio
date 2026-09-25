@@ -15,6 +15,12 @@
  * BreadcrumbList (Inicio › Guías › título): los Article, BreadcrumbList y
  * Person heredados de paginas.json se descartan. En todas las páginas la
  * Person «admin» se quita y cualquier «author» que la apunte pasa a SVEA.
+ *
+ * Desde el 24-sep: ningún Article fuera de las guías; los Service sueltos de
+ * Rank Math se descartan, el ProfessionalService lleva el OfferCatalog de los
+ * 8 servicios y cada página de servicio suma UN Service, el suyo. inLanguage
+ * va «es-CL», igual que el <html lang>. Sin canónica (la 404) no hay
+ * <link rel=canonical> ni og:url.
  */
 interface Pagina {
   title: string;
@@ -36,6 +42,25 @@ interface Props {
 const { pagina, copia, faq = [], tipo = 'website', articulo } = Astro.props;
 const SITIO = 'https://sveaconsultores.cl';
 const ORG = { '@type': 'Organization', '@id': `${SITIO}/#organization`, name: 'SVEA Consultores', url: SITIO };
+/** Los 8 servicios: el catálogo del ProfessionalService y el Service de cada página de servicio. */
+const SERVICIOS_LD = [
+  { ruta: '/calificacion-tecnica-industrial/', name: 'Calificación Técnica Industrial (CTI)', alternateName: 'Certificado de Actividad Inofensiva', description: 'Evaluación de infraestructura y preparación de expedientes técnicos para la SEREMI de Salud, necesarios para la obtención de patente municipal industrial. Incluye inspección técnica, expediente completo, planos, memorias y tramitación ante la autoridad.' },
+  { ruta: '/informe-sanitario/', name: 'Informe Sanitario', alternateName: 'Informe Sanitario Favorable SEREMI', description: 'Preparación del expediente y tramitación del informe sanitario (resolución o autorización sanitaria) ante la SEREMI de Salud, con seguimiento hasta la resolución.' },
+  { ruta: '/estudio-de-carga-de-combustible/', name: 'Estudio de Carga de Combustible (ECC)', description: 'Evaluación del riesgo de incendio en instalaciones comerciales e industriales según los materiales presentes. Cálculo de carga de combustible por sector, clasificación de riesgo y recomendaciones de mitigación.' },
+  { ruta: '/planes-de-emergencia-y-evacuacion/', name: 'Plan de Emergencia y Evacuación Industrial', description: 'Planes personalizados de emergencia y evacuación para empresas e industrias. Protocolos de actuación ante incendio, sismo, derrame y otras emergencias. Incluye planos de evacuación, roles y capacitación.' },
+  { ruta: '/planes-de-emergencia-y-evacuacion-condominios/', name: 'Plan de Emergencia y Evacuación para Condominios', description: 'Planes de emergencia a medida para condominios y edificios residenciales. Protocolos claros de evacuación, roles de emergencia y señalética para resguardar la vida de los residentes.' },
+  { ruta: '/manejo-de-residuos-peligrosos/', name: 'Manejo de Sustancias y Residuos Peligrosos', description: 'Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.' },
+  { ruta: '/autorizacion-de-transporte-de-residuos/', name: 'Autorización de Transporte de Residuos Peligrosos y No Peligrosos', description: 'Gestión de permisos y autorizaciones para el transporte de residuos peligrosos y no peligrosos. Tramitación completa ante la autoridad sanitaria.' },
+  { ruta: '/permisos-ambientales-y-pertinencias-del-seia/', name: 'Permisos Ambientales y Pertinencias del SEIA', description: 'Evaluación de la pertinencia de ingreso al Sistema de Evaluación de Impacto Ambiental (SEIA) y gestión de los permisos ambientales aplicables al proyecto.' },
+];
+const CATALOGO = {
+  '@type': 'OfferCatalog',
+  name: 'Servicios de Consultoría Ambiental',
+  itemListElement: SERVICIOS_LD.map((x) => ({
+    '@type': 'Offer',
+    itemOffered: { '@type': 'Service', '@id': `${SITIO}${x.ruta}#service`, name: x.name, url: `${SITIO}${x.ruta}` },
+  })),
+};
 const robots = copia ? 'noindex, nofollow' : pagina.robots;
 const titulo = pagina.title.replace(/&[a-z]+;/g, (e) => ({ '&amp;': '&', '&oacute;': 'ó', '&eacute;': 'é', '&aacute;': 'á', '&iacute;': 'í', '&uacute;': 'ú', '&ntilde;': 'ñ' } as Record<string, string>)[e] ?? e);
 // El FAQPage sale SIEMPRE de las preguntas que se ven en la página: si la
@@ -64,10 +89,16 @@ const sinAdmin = (n: any) => {
 // en las guías, el Article y las migas los arma esta cabecera (uno de cada uno)
 const TIPOS_GUIA = new Set(['Article', 'BreadcrumbList']);
 // en /blog/ el Article heredado del WordPress («6 Guías…») sobra: la página es un Blog
+// Desde el 24-sep: ningún Article fuera de las guías (Rank Math ponía uno en
+// la portada, los servicios, /gracias/ y la política), y fuera también los
+// seis Service sueltos que Rank Math repetía en todas las páginas: cada
+// página de servicio lleva SU Service (abajo) y el catálogo va dentro del
+// ProfessionalService.
 const fuera = (n: any) =>
   !n || typeof n !== 'object' ? false
   : esAdmin(n) || (faq.length > 0 && esFaq(n))
-    || (articulo ? TIPOS_GUIA.has(n['@type']) : n['@type'] === 'Article' && /\/blog\/#richSnippet$/.test(n['@id'] ?? ''));
+    || n['@type'] === 'Article' || n['@type'] === 'Service'
+    || (articulo ? TIPOS_GUIA.has(n['@type']) : false);
 let migasVistas = 0;
 const bloques = (pagina.jsonld ?? [])
   .filter((b: any) => !fuera(b))
@@ -77,7 +108,25 @@ const bloques = (pagina.jsonld ?? [])
     b && Array.isArray(b['@graph'])
       ? { ...b, '@graph': b['@graph'].filter((n: any) => !fuera(n)).map(alDia).map(sinAdmin) }
       : sinAdmin(alDia(b)),
-  );
+  )
+  // el ProfessionalService de la empresa, con el catálogo de los 8 servicios
+  .map((b: any) => (b && b['@type'] === 'ProfessionalService' ? { ...b, hasOfferCatalog: CATALOGO } : b));
+// en una página de servicio, UN Service: el suyo
+const servicioLD = (() => {
+  const sv = SERVICIOS_LD.find((x) => `${SITIO}${x.ruta}` === pagina.canonical);
+  if (!sv) return null;
+  const { ruta, ...resto } = sv;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${SITIO}${ruta}#service`,
+    ...resto,
+    url: `${SITIO}${ruta}`,
+    provider: { '@id': `${SITIO}/#organization` },
+    serviceType: 'Consultoría Ambiental',
+    areaServed: { '@type': 'Country', name: 'Chile' },
+  };
+})();
 const url = pagina.canonical;
 const articuloLD = articulo
   ? {
@@ -135,8 +184,9 @@ const faqPage = faq.length
 <meta name="twitter:description" content={pagina.description} />
 {pagina.og_image && <meta name="twitter:image" content={pagina.og_image} />}
 {bloques.map((bloque) => (
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(bloque)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(bloque).replace(/"inLanguage":"es"/g, '"inLanguage":"es-CL"')} />
 ))}
+{servicioLD && <script type="application/ld+json" is:inline set:html={JSON.stringify(servicioLD)} />}
 {articuloLD && <script type="application/ld+json" is:inline set:html={JSON.stringify(articuloLD)} />}
 {migasLD && <script type="application/ld+json" is:inline set:html={JSON.stringify(migasLD)} />}
 {faqPage && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqPage)} />}
