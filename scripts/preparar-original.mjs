@@ -331,6 +331,52 @@ if (PRODUCCION) {
   const lineas = REDIRECCIONES.flatMap((r) => variantes(r.desde).map((d) => `${d} ${r.hacia} 301`));
   writeFileSync(path.join(DEST, '_redirects'), lineas.join('\n') + '\n');
   console.log(`_redirects: ${lineas.length} reglas 301`);
+
+  // .htaccess para el hosting de SVEA (LiteSpeed/Apache, v2n.cl), donde se
+  // publica: HTTPS, sin www, las mismas 301, el sitemap viejo de Rank Math,
+  // la 404 propia y caché larga para lo que lleva huella en el nombre.
+  const escapar = (s) => s.replace(/^\//, '').replace(/\/$/, '').replace(/[.+?()[\]{}|^$\\]/g, '\\$&');
+  const reglas = REDIRECCIONES.map((r) => `RewriteRule ^${escapar(r.desde)}/?$ ${r.hacia} [R=301,L]`);
+  const htaccess = `# Generado por scripts/preparar-original.mjs (build de producción). No editar a mano.
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# HTTPS y dominio sin www (como el WordPress)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\\. [NC]
+RewriteRule ^(.*)$ https://sveaconsultores.cl/$1 [R=301,L]
+# sitemap viejo de Rank Math -> sitemap nuevo
+RewriteRule ^(sitemap_index|page-sitemap|post-sitemap)\\.xml$ /sitemap-index.xml [R=301,L]
+# URLs viejas del WordPress (src/data/redirecciones.json)
+${reglas.join('\n')}
+# barra final: /pagina -> /pagina/ si existe esa carpeta
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+RewriteRule ^(.+[^/])$ /$1/ [R=301,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+<FilesMatch "\\.(html)$">
+Header set Cache-Control "public, max-age=0, must-revalidate"
+</FilesMatch>
+</IfModule>
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType image/avif "access plus 30 days"
+ExpiresByType image/webp "access plus 30 days"
+ExpiresByType image/jpeg "access plus 30 days"
+ExpiresByType image/png "access plus 30 days"
+ExpiresByType image/x-icon "access plus 30 days"
+</IfModule>
+`;
+  writeFileSync(path.join(DEST, '.htaccess'), htaccess);
+  console.log(`.htaccess: ${reglas.length} redirecciones + HTTPS, www, sitemap viejo y barra final`);
 }
 {
   const vercel = JSON.parse(readFileSync('vercel.json', 'utf8')).redirects ?? [];

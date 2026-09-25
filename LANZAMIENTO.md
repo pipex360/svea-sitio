@@ -11,16 +11,27 @@ La diferencia la hace la variable `SVEA_PRODUCCION=1`, que tienen que ver
 **los dos pasos** (`scripts/preparar-original.mjs` y `astro build`).
 `build:produccion` ya la pasa a ambos.
 
-## 1. El hosting DEBE usar `build:produccion`
+## 1. Dónde se publica: el hosting actual de SVEA (decisión 25-sep-2026)
 
-- **Vercel:** `vercel.json` ya lo fija (`"buildCommand": "npm run build:produccion"`,
-  `"outputDirectory": "dist"`). No sobrescribir el comando en el panel del
-  proyecto; si se hace, que sea `npm run build:produccion`.
-- **Netlify / Cloudflare Pages / otro:** comando de build `npm run build:produccion`,
-  carpeta de salida `dist`. Alternativa equivalente: comando `npm run build`
-  con la variable de entorno `SVEA_PRODUCCION=1` definida en el hosting.
-- **Nunca** publicar en el dominio un `dist/` hecho con `npm run build` a secas:
-  saldría bloqueado a Google y sin un solo lead.
+Se publica en el mismo hosting del WordPress (LiteSpeed, v2n.cl; ahí vive
+también el correo @sveaconsultores.cl, así que **no se toca el DNS**).
+
+1. `npm install && npm run build:produccion` → carpeta `dist/` (incluye
+   `.htaccess` con HTTPS, sin www, las 301, el sitemap viejo de Rank Math y la
+   barra final; ver `scripts/preparar-original.mjs`).
+2. `node scripts/verificar-produccion.mjs dist` y
+   `python3 scripts/chequeo-lanzamiento.py dist` → OK y 0 problemas.
+3. En el panel del hosting: **respaldo completo** del WordPress (archivos de
+   `public_html` + base de datos) y mover los archivos del WordPress a una
+   carpeta fuera de `public_html` (p. ej. `wordpress-respaldo-AAAAMMDD`), sin
+   borrarlos.
+4. Subir el **contenido** de `dist/` (incluido `.htaccess`, que es oculto) a
+   `public_html`.
+5. Si algo falla: vaciar `public_html` y devolver el WordPress desde la carpeta
+   de respaldo (vuelve en minutos).
+
+Vercel queda configurado (`vercel.json`) por si algún día se cambia, pero hoy
+NO se usa.
 
 ## 2. Verificar el build antes de apuntar el dominio
 
