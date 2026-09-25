@@ -22,11 +22,12 @@ const landing: Landing = {
   badge: 'Cotización en menos de 24 horas',
   h1: 'Autorización de Transporte de Residuos<br><em>Peligrosos y No Peligrosos</em>',
   bajada:
-    '<strong>Autorización sanitaria SEREMI para transporte de residuos</strong>: clasificamos tus residuos, armamos el expediente con el plan de contingencias y la memoria técnica de los vehículos, y hacemos el seguimiento ante la SEREMI de Salud hasta la resolución.',
+    '<strong>Autorización sanitaria SEREMI para transporte de residuos</strong>: clasificamos tus residuos, armamos el expediente con el plan de contingencias y la memoria técnica de cada camión o vehículo, lo ingresamos en SEREMI en Línea y hacemos el seguimiento ante la SEREMI de Salud hasta la resolución sanitaria.',
   pills: [
     'Residuos peligrosos (RESPEL) y no peligrosos',
     'Correcciones sin costo hasta la resolución',
     'Expediente listo en 3-5 días hábiles',
+    'Por camión o vehículo, con su memoria técnica',
   ],
   cifras: [
     { valor: '250+', texto: 'Proyectos realizados' },
@@ -167,7 +168,7 @@ const landing: Landing = {
       {
         icono: '<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/>',
         titulo: 'Obtención del Permiso de Transporte',
-        texto: 'Seguimiento y gestión ante la SEREMI de Salud hasta la resolución de la solicitud.',
+        texto: 'Ingreso en SEREMI en Línea, seguimiento y gestión ante la SEREMI de Salud hasta la resolución sanitaria de la solicitud.',
       },
       {
         icono: '<circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 000-7h-11a3.5 3.5 0 010-7H15"/><circle cx="18" cy="5" r="3"/>',
@@ -225,7 +226,7 @@ const landing: Landing = {
     items: [
       {
         p: '¿Cómo obtengo el permiso de transporte ante la SEREMI de Salud?',
-        r: 'El permiso se obtiene gestionando la solicitud de autorización a través de la SEREMI de Salud. Este proceso incluye la clasificación de los residuos, la presentación de la documentación necesaria y el cumplimiento de los requisitos establecidos por la autoridad sanitaria. En SVEA Consultores nos encargamos de todo el proceso.',
+        r: 'El permiso se obtiene gestionando la solicitud de autorización a través de la SEREMI de Salud. Este proceso incluye la clasificación de los residuos, la presentación de la documentación necesaria y el cumplimiento de los requisitos establecidos por la autoridad sanitaria. La solicitud se ingresa en SEREMI en Línea (seremienlinea.minsal.cl) y termina en una resolución sanitaria que indica qué vehículos quedan autorizados y para qué residuos. En SVEA Consultores nos encargamos de todo el proceso.',
       },
       {
         p: '¿Qué sanciones existen por transportar residuos sin autorización?',
@@ -245,7 +246,7 @@ const landing: Landing = {
       },
       {
         p: '¿Cuánto cuesta el servicio?',
-        r: 'El costo varía según la complejidad de la instalación, el tipo de residuo a transportar y la cantidad de vehículos involucrados. Contáctanos para una cotización personalizada sin compromiso. Respondemos en menos de 24 horas.',
+        r: 'El arancel de la SEREMI de Salud es de $30.400 (ChileAtiende, consultado el 24-09-2026). Aparte, el costo del servicio varía según la complejidad de la instalación, el tipo de residuo a transportar y la cantidad de vehículos involucrados. Contáctanos para una cotización personalizada sin compromiso. Respondemos en menos de 24 horas.',
       },
     ],
   },

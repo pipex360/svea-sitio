@@ -4,6 +4,10 @@
  * Texto, formulario y asunto extraídos del bloque HTML del original
  * (originales-wp/landings-ads/cotiza-plan-emergencia.html). No se retoca a mano sin
  * revisar el original: el cruce palabra por palabra lo compara.
+ *
+ * Agregado el 24-sep (sólo se suma texto, no se quita nada del original):
+ * «plan de evacuación» (pill, bajada e ítem de «qué incluye») y la línea de
+ * valor y cotización en «¿Cuánto cuesta?».
  */
 import type { Landing } from './tipos';
 
@@ -18,6 +22,7 @@ const landing: Landing = {
     "Conforme al DS 594 y DS 44",
     "Correcciones sin costo hasta la aprobación",
     "Plan de contingencia incluido",
+    "Plan de evacuación con sus planos",
     "Listo en 5-10 días hábiles"
   ],
   "cifras": [
@@ -216,7 +221,7 @@ const landing: Landing = {
   "incluye": {
     "copete": "Servicio integral",
     "titulo": "¿Qué incluye <em>nuestro servicio</em>?",
-    "bajada": "Desde la visita técnica hasta la aprobación final. Sin complicaciones.",
+    "bajada": "Desde la visita técnica hasta la aprobación final, con tu plan de evacuación incluido. Sin complicaciones.",
     "items": [
       {
         "icono": "<circle cx=\"11\" cy=\"11\" r=\"8\"/><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"/>",
@@ -236,7 +241,7 @@ const landing: Landing = {
       {
         "icono": "<polygon points=\"1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6\"/><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"18\"/><line x1=\"16\" y1=\"6\" x2=\"16\" y2=\"22\"/>",
         "titulo": "Planos de Evacuación",
-        "texto": "Vías de escape, zonas de seguridad, extintores y equipos."
+        "texto": "Tu plan de evacuación en planos: vías de escape, zonas de seguridad, extintores y equipos."
       },
       {
         "icono": "<path d=\"M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M23 21v-2a4 4 0 00-3-3.87\"/><path d=\"M16 3.13a4 4 0 010 7.75\"/>",
@@ -324,7 +329,7 @@ const landing: Landing = {
       },
       {
         "p": "¿Cuánto cuesta?",
-        "r": "Depende del tamaño y complejidad de la instalación. Solicita tu cotización personalizada sin compromiso y la recibirás en menos de 24 horas."
+        "r": "El valor del plan depende del tamaño y complejidad de la instalación (superficie, número de trabajadores y riesgos); cotización sin costo en 24 h. Solicita tu cotización personalizada sin compromiso y la recibirás en menos de 24 horas."
       }
     ]
   },

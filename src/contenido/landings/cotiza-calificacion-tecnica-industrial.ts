@@ -9,6 +9,10 @@
  * el 24-sep por decisión de Carlos (3-5 días hábiles en todos los servicios,
  * 5-10 en Plan de Emergencia empresa y condominios). Los plazos de la
  * autoridad (SEREMI, Bomberos) quedan como estaban.
+ *
+ * Agregado el 24-sep (sólo se suma texto, no se quita nada del original):
+ * «calificación inofensiva» y «calificación industrial SEREMI» en la bajada,
+ * una pill, un ítem de «qué incluye» y una pregunta frecuente.
  */
 import type { Landing } from './tipos';
 
@@ -17,9 +21,10 @@ const landing: Landing = {
   "urgencia": "<strong>¿Necesitas tu certificado de actividad inofensiva?</strong> — Sin calificación técnica industrial aprobada no puedes operar. Regulariza hoy.",
   "badge": "Cotización en menos de 24 horas",
   "h1": "Certificado de Actividad<br>Inofensiva y <em>Calificación Técnica Industrial</em>",
-  "bajada": "Gestionamos tu <strong>certificado de actividad inofensiva</strong> y la <strong>calificación técnica industrial</strong> completa ante la SEREMI de Salud: evaluación, expediente y tramitación. Tú no tienes que hacer nada.",
+  "bajada": "Gestionamos tu <strong>certificado de actividad inofensiva</strong> (la calificación inofensiva) y la <strong>calificación técnica industrial</strong> completa ante la SEREMI de Salud: evaluación, expediente y tramitación. Tú no tienes que hacer nada.",
   "pills": [
     "Certificado de actividad inofensiva ante SEREMI",
+    "Calificación industrial SEREMI de principio a fin",
     "Correcciones sin costo hasta la resolución",
     "Expediente listo en 3-5 días hábiles"
   ],
@@ -244,7 +249,7 @@ const landing: Landing = {
       {
         "icono": "<path d=\"M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M23 21v-2a4 4 0 00-3-3.87\"/><path d=\"M16 3.13a4 4 0 010 7.75\"/>",
         "titulo": "Tramitación SEREMI",
-        "texto": "Presentación y gestión directa ante la SEREMI de Salud para obtener tu certificado de actividad inofensiva."
+        "texto": "Presentación y gestión directa ante la SEREMI de Salud para obtener tu calificación industrial SEREMI y el certificado de actividad inofensiva."
       },
       {
         "icono": "<polyline points=\"9 11 12 14 22 4\"/><path d=\"M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11\"/>",
@@ -316,6 +321,10 @@ const landing: Landing = {
       {
         "p": "¿Cuánto demora obtener el certificado de actividad inofensiva?",
         "r": "El expediente técnico de calificación técnica industrial lo preparamos en 3 a 5 días hábiles. La tramitación ante SEREMI para obtener el certificado puede tomar 15 a 45 días adicionales (plazo referencial según nuestra experiencia), dependiendo de la autoridad. Nosotros gestionamos todo el proceso."
+      },
+      {
+        "p": "¿Calificación inofensiva o calificación industrial SEREMI: cuál necesito?",
+        "r": "Son parte del mismo trámite. La <strong>calificación industrial SEREMI</strong> (CTI) clasifica tu actividad como inofensiva, molesta, insalubre, contaminante o peligrosa; cuando el resultado es inofensiva, lo que recibes es la <strong>calificación inofensiva</strong>, que es la que pide la municipalidad para la patente. Antes de ingresar el expediente te decimos qué categoría esperar."
       },
       {
         "p": "¿Qué pasa si mi infraestructura no cumple con la calificación industrial?",
