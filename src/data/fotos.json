@@ -1,30 +1,4 @@
 {
-  "andenes-carga-centro-distribucion-cti": {
-    "ancho": 1600,
-    "alto": 1066,
-    "anchos": [
-      640,
-      1080,
-      1600
-    ],
-    "hero": false,
-    "og": "andenes-carga-centro-distribucion-cti.jpg",
-    "peso": {
-      "640": {
-        "avif": 11,
-        "webp": 14
-      },
-      "1080": {
-        "avif": 26,
-        "webp": 28
-      },
-      "1600": {
-        "avif": 51,
-        "webp": 53
-      }
-    },
-    "origen": "130494:1790300901970"
-  },
   "bodega-andenes-carga-permisos-seremi": {
     "ancho": 2400,
     "alto": 1600,
@@ -170,6 +144,32 @@
     },
     "origen": "642520:1790300901978"
   },
+  "bodega-operacion-montacargas-calificacion-tecnica": {
+    "ancho": 1600,
+    "alto": 1066,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "bodega-operacion-montacargas-calificacion-tecnica.jpg",
+    "peso": {
+      "640": {
+        "avif": 30,
+        "webp": 42
+      },
+      "1080": {
+        "avif": 63,
+        "webp": 85
+      },
+      "1600": {
+        "avif": 130,
+        "webp": 127
+      }
+    },
+    "origen": "365478:1790303742286"
+  },
   "bodega-productos-estudio-carga-combustible": {
     "ancho": 1920,
     "alto": 1281,
@@ -201,6 +201,37 @@
     },
     "origen": "146752:1790296138474"
   },
+  "brigada-simulacro-incendio-plan-de-emergencia": {
+    "ancho": 2400,
+    "alto": 1600,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "brigada-simulacro-incendio-plan-de-emergencia.jpg",
+    "peso": {
+      "640": {
+        "avif": 28,
+        "webp": 33
+      },
+      "1080": {
+        "avif": 64,
+        "webp": 76
+      },
+      "1600": {
+        "avif": 99,
+        "webp": 116
+      },
+      "1920": {
+        "avif": 132,
+        "webp": 139
+      }
+    },
+    "origen": "1031464:1790303551810"
+  },
   "camion-cisterna-transporte-residuos-peligrosos": {
     "ancho": 1600,
     "alto": 1067,
@@ -226,58 +257,6 @@
       }
     },
     "origen": "235468:1790300901979"
-  },
-  "camion-excavadora-carga-residuos": {
-    "ancho": 1600,
-    "alto": 1066,
-    "anchos": [
-      640,
-      1080,
-      1600
-    ],
-    "hero": false,
-    "og": "camion-excavadora-carga-residuos.jpg",
-    "peso": {
-      "640": {
-        "avif": 44,
-        "webp": 43
-      },
-      "1080": {
-        "avif": 88,
-        "webp": 101
-      },
-      "1600": {
-        "avif": 111,
-        "webp": 209
-      }
-    },
-    "origen": "279804:1790296138487"
-  },
-  "camion-planta-industrial-chile": {
-    "ancho": 1600,
-    "alto": 1067,
-    "anchos": [
-      640,
-      1080,
-      1600
-    ],
-    "hero": false,
-    "og": "camion-planta-industrial-chile.jpg",
-    "peso": {
-      "640": {
-        "avif": 24,
-        "webp": 31
-      },
-      "1080": {
-        "avif": 54,
-        "webp": 68
-      },
-      "1600": {
-        "avif": 108,
-        "webp": 123
-      }
-    },
-    "origen": "316790:1790301533435"
   },
   "camion-recolector-residuos-no-peligrosos": {
     "ancho": 1600,
@@ -305,33 +284,38 @@
     },
     "origen": "230972:1790300901983"
   },
-  "camion-tolva-transporte-residuos-carretera": {
-    "ancho": 1600,
-    "alto": 900,
+  "camion-tolva-carga-planta-residuos": {
+    "ancho": 2400,
+    "alto": 1600,
     "anchos": [
       640,
       1080,
-      1600
+      1600,
+      1920
     ],
-    "hero": false,
-    "og": "camion-tolva-transporte-residuos-carretera.jpg",
+    "hero": true,
+    "og": "camion-tolva-carga-planta-residuos.jpg",
     "peso": {
       "640": {
         "avif": 23,
         "webp": 26
       },
       "1080": {
-        "avif": 58,
-        "webp": 62
+        "avif": 54,
+        "webp": 65
       },
       "1600": {
-        "avif": 120,
-        "webp": 122
+        "avif": 108,
+        "webp": 115
+      },
+      "1920": {
+        "avif": 145,
+        "webp": 150
       }
     },
-    "origen": "135698:1790296138486"
+    "origen": "686568:1790303551810"
   },
-  "camion-transporte-residuos-planta-chile": {
+  "camion-tolva-carga-residuos-faena": {
     "ancho": 2400,
     "alto": 1600,
     "anchos": [
@@ -341,83 +325,104 @@
       1920
     ],
     "hero": true,
-    "og": "camion-transporte-residuos-planta-chile.jpg",
+    "og": "camion-tolva-carga-residuos-faena.jpg",
     "peso": {
       "640": {
-        "avif": 25,
-        "webp": 35
+        "avif": 38,
+        "webp": 54
       },
       "1080": {
-        "avif": 64,
-        "webp": 84
+        "avif": 80,
+        "webp": 86
       },
       "1600": {
-        "avif": 102,
-        "webp": 111
+        "avif": 116,
+        "webp": 128
       },
       "1920": {
-        "avif": 136,
-        "webp": 143
+        "avif": 146,
+        "webp": 158
       }
     },
-    "origen": "792164:1790301533245"
+    "origen": "722064:1790303742082"
   },
-  "camiones-carretera-cordillera-transporte-residuos": {
+  "camion-tolva-descarga-residuos-autorizados": {
     "ancho": 1600,
-    "alto": 900,
+    "alto": 1067,
     "anchos": [
       640,
       1080,
       1600
     ],
     "hero": false,
-    "og": "camiones-carretera-cordillera-transporte-residuos.jpg",
+    "og": "camion-tolva-descarga-residuos-autorizados.jpg",
     "peso": {
       "640": {
-        "avif": 18,
-        "webp": 23
+        "avif": 22,
+        "webp": 29
       },
       "1080": {
-        "avif": 49,
-        "webp": 58
+        "avif": 52,
+        "webp": 65
       },
       "1600": {
-        "avif": 108,
-        "webp": 126
+        "avif": 114,
+        "webp": 130
       }
     },
-    "origen": "469678:1790300901985"
+    "origen": "297146:1790303551811"
   },
-  "capacitacion-extintores-plan-de-emergencia": {
-    "ancho": 2400,
-    "alto": 1600,
+  "camion-tolva-escombros-transporte-residuos": {
+    "ancho": 1600,
+    "alto": 1067,
     "anchos": [
       640,
       1080,
-      1600,
-      1920
+      1600
     ],
-    "hero": true,
-    "og": "capacitacion-extintores-plan-de-emergencia.jpg",
+    "hero": false,
+    "og": "camion-tolva-escombros-transporte-residuos.jpg",
     "peso": {
       "640": {
-        "avif": 25,
-        "webp": 33
+        "avif": 17,
+        "webp": 21
       },
       "1080": {
-        "avif": 62,
-        "webp": 79
+        "avif": 37,
+        "webp": 45
       },
       "1600": {
-        "avif": 102,
-        "webp": 119
-      },
-      "1920": {
-        "avif": 139,
-        "webp": 145
+        "avif": 75,
+        "webp": 89
       }
     },
-    "origen": "851200:1790300901987"
+    "origen": "196252:1790303551811"
+  },
+  "carga-residuos-camion-tolva-retroexcavadora": {
+    "ancho": 1600,
+    "alto": 1067,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "carga-residuos-camion-tolva-retroexcavadora.jpg",
+    "peso": {
+      "640": {
+        "avif": 26,
+        "webp": 34
+      },
+      "1080": {
+        "avif": 63,
+        "webp": 84
+      },
+      "1600": {
+        "avif": 115,
+        "webp": 127
+      }
+    },
+    "origen": "412458:1790303551812"
   },
   "centro-distribucion-calificacion-tecnica-industrial": {
     "ancho": 1920,
@@ -506,6 +511,32 @@
       }
     },
     "origen": "408154:1790300901989"
+  },
+  "condominios-las-condes-plan-de-emergencia": {
+    "ancho": 1600,
+    "alto": 1067,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "condominios-las-condes-plan-de-emergencia.jpg",
+    "peso": {
+      "640": {
+        "avif": 40,
+        "webp": 42
+      },
+      "1080": {
+        "avif": 80,
+        "webp": 88
+      },
+      "1600": {
+        "avif": 128,
+        "webp": 143
+      }
+    },
+    "origen": "450042:1790303985043"
   },
   "condominios-santiago-cordillera-ley-21442": {
     "ancho": 1600,
@@ -647,9 +678,9 @@
     },
     "origen": "146888:1790296138475"
   },
-  "edificios-departamentos-santiago-plan-emergencia-condominio": {
+  "edificios-providencia-plan-emergencia-condominio": {
     "ancho": 2400,
-    "alto": 1594,
+    "alto": 1600,
     "anchos": [
       640,
       1080,
@@ -657,78 +688,26 @@
       1920
     ],
     "hero": true,
-    "og": "edificios-departamentos-santiago-plan-emergencia-condominio.jpg",
+    "og": "edificios-providencia-plan-emergencia-condominio.jpg",
     "peso": {
       "640": {
-        "avif": 29,
-        "webp": 39
+        "avif": 18,
+        "webp": 24
       },
       "1080": {
-        "avif": 67,
-        "webp": 90
+        "avif": 43,
+        "webp": 59
       },
       "1600": {
-        "avif": 103,
-        "webp": 114
+        "avif": 84,
+        "webp": 111
       },
       "1920": {
-        "avif": 134,
-        "webp": 144
+        "avif": 111,
+        "webp": 142
       }
     },
-    "origen": "738992:1790300901994"
-  },
-  "edificios-santiago-comite-administracion": {
-    "ancho": 1600,
-    "alto": 1067,
-    "anchos": [
-      640,
-      1080,
-      1600
-    ],
-    "hero": false,
-    "og": "edificios-santiago-comite-administracion.jpg",
-    "peso": {
-      "640": {
-        "avif": 23,
-        "webp": 32
-      },
-      "1080": {
-        "avif": 46,
-        "webp": 61
-      },
-      "1600": {
-        "avif": 80,
-        "webp": 99
-      }
-    },
-    "origen": "211256:1790300901996"
-  },
-  "extintores-pared-plan-emergencia-ds-44": {
-    "ancho": 1600,
-    "alto": 1066,
-    "anchos": [
-      640,
-      1080,
-      1600
-    ],
-    "hero": false,
-    "og": "extintores-pared-plan-emergencia-ds-44.jpg",
-    "peso": {
-      "640": {
-        "avif": 14,
-        "webp": 18
-      },
-      "1080": {
-        "avif": 27,
-        "webp": 37
-      },
-      "1600": {
-        "avif": 54,
-        "webp": 71
-      }
-    },
-    "origen": "165646:1790300901998"
+    "origen": "515866:1790303551812"
   },
   "firma-solicitud-seremi-en-linea": {
     "ancho": 1600,
@@ -755,6 +734,58 @@
       }
     },
     "origen": "141514:1790300901998"
+  },
+  "gabinete-extintor-red-humeda-plan-emergencia": {
+    "ancho": 1600,
+    "alto": 1068,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "gabinete-extintor-red-humeda-plan-emergencia.jpg",
+    "peso": {
+      "640": {
+        "avif": 13,
+        "webp": 14
+      },
+      "1080": {
+        "avif": 34,
+        "webp": 34
+      },
+      "1600": {
+        "avif": 76,
+        "webp": 76
+      }
+    },
+    "origen": "226266:1790303551812"
+  },
+  "inspeccion-bodega-calificacion-tecnica-industrial": {
+    "ancho": 1600,
+    "alto": 1068,
+    "anchos": [
+      640,
+      1080,
+      1600
+    ],
+    "hero": false,
+    "og": "inspeccion-bodega-calificacion-tecnica-industrial.jpg",
+    "peso": {
+      "640": {
+        "avif": 11,
+        "webp": 11
+      },
+      "1080": {
+        "avif": 20,
+        "webp": 22
+      },
+      "1600": {
+        "avif": 34,
+        "webp": 37
+      }
+    },
+    "origen": "85146:1790303551812"
   },
   "inspeccion-planta-fiscalizacion-seremi": {
     "ancho": 1600,
@@ -1031,31 +1062,62 @@
     },
     "origen": "67926:1790296138483"
   },
-  "senaletica-punto-reunion-evacuacion": {
+  "senal-salida-evacuacion-plan-emergencia": {
     "ancho": 1600,
-    "alto": 900,
+    "alto": 1067,
     "anchos": [
       640,
       1080,
       1600
     ],
     "hero": false,
-    "og": "senaletica-punto-reunion-evacuacion.jpg",
+    "og": "senal-salida-evacuacion-plan-emergencia.jpg",
     "peso": {
       "640": {
-        "avif": 7,
-        "webp": 8
+        "avif": 15,
+        "webp": 17
       },
       "1080": {
-        "avif": 14,
-        "webp": 15
+        "avif": 32,
+        "webp": 36
       },
       "1600": {
-        "avif": 41,
-        "webp": 37
+        "avif": 61,
+        "webp": 65
       }
     },
-    "origen": "207552:1790300902007"
+    "origen": "169522:1790303551813"
+  },
+  "simulacro-extintor-brigada-plan-emergencia": {
+    "ancho": 2400,
+    "alto": 1600,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "simulacro-extintor-brigada-plan-emergencia.jpg",
+    "peso": {
+      "640": {
+        "avif": 21,
+        "webp": 26
+      },
+      "1080": {
+        "avif": 46,
+        "webp": 55
+      },
+      "1600": {
+        "avif": 84,
+        "webp": 95
+      },
+      "1920": {
+        "avif": 112,
+        "webp": 122
+      }
+    },
+    "origen": "757558:1790303551813"
   },
   "simulacro-incendio-extintor-plan-de-emergencia": {
     "ancho": 1600,

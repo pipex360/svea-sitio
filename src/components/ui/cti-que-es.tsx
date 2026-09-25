@@ -30,16 +30,16 @@ import { Reveal } from '@/components/ui/reveal';
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 
 /** Los cuatro párrafos del original, con la foto que acompaña a cada uno:
- *  las dos primeras sobre qué es y para qué sirve, con los andenes de carga;
- *  las dos últimas sobre lo que hacemos nosotros, con la planta y el camión. */
+ *  las dos primeras sobre qué es y para qué sirve, con la operación de la bodega;
+ *  las dos últimas sobre lo que hacemos nosotros, con la inspección técnica. */
 const bloques = (): BloqueScroll[] => {
   const planta = {
-    foto: 'andenes-carga-centro-distribucion-cti',
-    alt: 'Fila de andenes de carga de un centro de distribución, instalación que requiere calificación técnica industrial de la SEREMI de Salud',
+    foto: 'bodega-operacion-montacargas-calificacion-tecnica',
+    alt: 'Operarios y grúas horquilla trabajando en una bodega industrial, establecimiento que requiere calificación técnica industrial de la SEREMI de Salud',
   };
   const instalacion = {
-    foto: 'camion-planta-industrial-chile',
-    alt: 'Camión frente a una planta industrial en Chile, instalación que tramita su informe CTI ante la SEREMI de Salud',
+    foto: 'inspeccion-bodega-calificacion-tecnica-industrial',
+    alt: 'Profesional con chaleco reflectante revisa una bodega con su carpeta, levantamiento técnico para el informe CTI ante la SEREMI de Salud',
   };
   return [
     {

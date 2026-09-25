@@ -26,12 +26,12 @@ import { Reveal } from '@/components/ui/reveal';
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 
 /** Los cuatro párrafos del original: los dos primeros sobre qué es el
- *  permiso, con los camiones en la carretera; los dos últimos sobre el riesgo de
+ *  permiso, con el camión tolva cargado de escombros; los dos últimos sobre el riesgo de
  *  no tenerlo y lo que hace SVEA, con el camión cisterna y su rombo de peligro. */
 const bloques = (): BloqueScroll[] => {
   const carretera = {
-    foto: 'camiones-carretera-cordillera-transporte-residuos',
-    alt: 'Camiones en una carretera con la cordillera al fondo, ruta del transporte de residuos autorizado por la SEREMI',
+    foto: 'camion-tolva-escombros-transporte-residuos',
+    alt: 'Camión tolva cargado de escombros, transporte de residuos que requiere autorización de la SEREMI de Salud',
   };
   const carga = {
     foto: 'camion-cisterna-transporte-residuos-peligrosos',

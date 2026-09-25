@@ -392,7 +392,7 @@ const landing: Landing = {
     "presentacion": "Expertos en gestión y tramitación de permisos para industrias, asegurando cumplimiento normativo y seguridad operativa.",
     "contacto": true
   },
-  "foto": 'capacitacion-extintores-plan-de-emergencia',
+  "foto": 'simulacro-extintor-brigada-plan-emergencia',
   "medicion": {
     "servicio": "Plan de Emergencia y Evacuación",
     "prefijoAsunto": "[ADS] Cotización Plan Emergencia - ",

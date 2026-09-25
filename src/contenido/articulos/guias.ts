@@ -106,7 +106,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Autorizaciones',
     fecha: 'Feb 2026',
     lectura: '12 min lectura',
-    imagen: { nombre: 'camion-excavadora-carga-residuos', alt: 'Autorización transporte residuos Chile - Guía completa DS 148 y DS 594' },
+    imagen: { nombre: 'camion-tolva-descarga-residuos-autorizados', alt: 'Autorización transporte residuos Chile - camión tolva descargando material en un sitio autorizado' },
     servicio: TR,
   },
   {

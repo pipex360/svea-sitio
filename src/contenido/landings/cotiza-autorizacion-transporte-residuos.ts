@@ -92,8 +92,8 @@ const landing: Landing = {
       'En SVEA Consultores nos encargamos de todo el proceso: desde la clasificación de residuos hasta la obtención del permiso y la entrega de la documentación completa.',
     ],
     foto: {
-      nombre: 'camion-cisterna-transporte-residuos-peligrosos',
-      alt: 'Camión cisterna con el rombo de materiales peligrosos, vehículo con autorización sanitaria de transporte de residuos',
+      nombre: 'carga-residuos-camion-tolva-retroexcavadora',
+      alt: 'Retroexcavadora carga residuos en un camión tolva, transporte que requiere autorización sanitaria de la SEREMI',
     },
   },
   riesgos: {
@@ -285,7 +285,7 @@ const landing: Landing = {
     ],
     contacto: true,
   },
-  foto: 'camion-transporte-residuos-planta-chile',
+  foto: 'camion-tolva-carga-planta-residuos',
   medicion: {
     servicio: 'Autorización Transporte de Residuos',
     prefijoAsunto: '[ADS] Cotización Transporte Residuos - ',

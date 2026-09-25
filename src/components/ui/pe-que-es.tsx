@@ -27,16 +27,16 @@ import { Reveal } from '@/components/ui/reveal';
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 
 /** Los cuatro párrafos del original: los dos primeros sobre qué es el plan,
- *  con los extintores; los dos últimos sobre lo que incluye y para
- *  qué sirve, con la señalética de evacuación. */
+ *  con el gabinete de extintor y red húmeda; los dos últimos sobre lo que incluye y para
+ *  qué sirve, con la señal de salida. */
 const bloques = (): BloqueScroll[] => {
   const simulacion = {
-    foto: 'extintores-pared-plan-emergencia-ds-44',
-    alt: 'Cuatro extintores colgados en una pared blanca, equipamiento que exige el plan de emergencia y evacuación',
+    foto: 'gabinete-extintor-red-humeda-plan-emergencia',
+    alt: 'Gabinete con señales de extintor y red húmeda, equipamiento que exige el plan de emergencia y evacuación',
   };
   const salida = {
-    foto: 'senaletica-punto-reunion-evacuacion',
-    alt: 'Señalética de punto de reunión y vía de evacuación en un pasillo, parte del plan de emergencia y evacuación',
+    foto: 'senal-salida-evacuacion-plan-emergencia',
+    alt: 'Letrero de salida sobre un pasillo, vía de evacuación señalizada según el plan de emergencia y evacuación',
   };
   return [
     {
