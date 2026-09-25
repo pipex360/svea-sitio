@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "node scripts/preparar-original.mjs && astro dev",
     "build": "node scripts/preparar-original.mjs && astro build",
+    "build:produccion": "SVEA_PRODUCCION=1 node scripts/preparar-original.mjs && SVEA_PRODUCCION=1 astro build",
+    "verificar:produccion": "node scripts/verificar-produccion.mjs dist",
     "preview": "astro preview",
     "check": "astro check"
   },

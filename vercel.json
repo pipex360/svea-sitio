@@ -1,4 +1,6 @@
 {
+  "buildCommand": "npm run build:produccion",
+  "outputDirectory": "dist",
   "redirects": [
     {
       "source": "/calificacion-inofensiva-seremi-2026/",
