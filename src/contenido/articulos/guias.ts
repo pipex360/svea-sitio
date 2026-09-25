@@ -196,7 +196,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Permisos y Cumplimiento',
     fecha: 'Abr 2026',
     lectura: '15 min lectura',
-    imagen: { nombre: 'planta-quimica-estanques-sustancias-peligrosas', alt: 'Informe sanitario favorable Chile - Instalación industrial evaluada por la SEREMI de Salud' },
+    imagen: { nombre: 'manipulacion-alimentos-informe-sanitario', alt: 'Informe sanitario favorable Chile - Manipulación de alimentos en una instalación evaluada por la SEREMI de Salud' },
     servicio: IS,
   },
   // --- las guías nuevas (sep-2026), sin original en el WordPress --------------
