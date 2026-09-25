@@ -14,25 +14,26 @@
  * este sitio: no tienen original en el WordPress.
  *
  * `categoria` es el rótulo del WordPress (se conserva en los datos); lo que
- * se muestra es `tema`, uno de los cuatro TEMAS.
+ * se muestra es `tema`, uno de los TEMAS.
  */
 
 /**
- * Los cuatro temas fijos del blog. Cada guía pertenece a uno; el mismo rótulo
+ * Los tres temas fijos del blog. Cada guía pertenece a uno; el mismo rótulo
  * se usa en la tarjeta de /blog/, en el chip de la cabecera del artículo, en
  * «Otras guías» y en las secciones (con ancla) de /blog/.
  */
 export const TEMAS = [
   { id: 'permisos-seremi', nombre: 'Permisos SEREMI', bajada: 'Calificación industrial, informe sanitario, patente y qué hacer ante observaciones o sumarios.' },
-  { id: 'emergencias', nombre: 'Emergencias', bajada: 'Planes de emergencia para empresas y condominios, DS 44 y fiscalización de la Dirección del Trabajo.' },
-  { id: 'incendio', nombre: 'Incendio', bajada: 'Carga de combustible y resistencia al fuego según la OGUC.' },
+  // 25-sep: «Emergencias» (4) e «Incendio» (1) se juntan: una sección de una
+  // sola tarjeta dejaba un hueco de dos tercios de pantalla en /blog/
+  { id: 'emergencias', nombre: 'Emergencias e incendio', bajada: 'Planes de emergencia para empresas y condominios, DS 44, fiscalización de la Dirección del Trabajo y carga de combustible según la OGUC.' },
   { id: 'residuos', nombre: 'Residuos y sustancias peligrosas', bajada: 'Manejo, transporte y declaración de residuos, y almacenamiento de sustancias peligrosas.' },
 ] as const;
 export type Tema = (typeof TEMAS)[number]['nombre'];
 
 export type Guia = {
   slug: string;
-  /** uno de los cuatro TEMAS: tarjeta, chip del artículo y sección de /blog/ */
+  /** uno de los TEMAS: tarjeta, chip del artículo y sección de /blog/ */
   tema: Tema;
   /** título de la tarjeta (el H2 de la tarjeta en /blog/) */
   titulo: string;
@@ -122,7 +123,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'plan-de-emergencia-empresa-chile',
-    tema: 'Emergencias',
+    tema: 'Emergencias e incendio',
     titulo: 'Plan de emergencia para empresas: qué debe incluir y cómo se elabora',
     bajada: 'Qué debe incluir el plan, tipos de emergencia, cómo elaborarlo paso a paso y qué necesitas para la aprobación de SEREMI y Bomberos.',
     categoria: 'Emergencias',
@@ -133,7 +134,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'plan-de-emergencia-condominio-chile',
-    tema: 'Emergencias',
+    tema: 'Emergencias e incendio',
     titulo: 'Plan de Emergencia Condominio Chile: Guía Definitiva 2026',
     bajada: 'La Ley 21.442 lo exige. Conoce los requisitos, el rol del Comité de Administración, multas y cómo proteger a tu comunidad.',
     categoria: 'Condominios',
@@ -156,7 +157,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'estudio-de-carga-combustible-chile',
-    tema: 'Incendio',
+    tema: 'Emergencias e incendio',
     titulo: 'Estudio de Carga Combustible Chile: Guía Completa 2026',
     bajada: 'Normativa OGUC, categorías de resistencia al fuego (A, B, C, D), metodología NCh 1916 y cómo el estudio puede ahorrarte millones.',
     categoria: 'Seguridad Incendios',
@@ -168,7 +169,7 @@ export const GUIAS: Guia[] = [
   // --- las tres que el índice del WordPress no listaba ----------------------
   {
     slug: 'plan-de-emergencia-ds-44-empresas-chile',
-    tema: 'Emergencias',
+    tema: 'Emergencias e incendio',
     titulo: 'DS 44: obligaciones, simulacro anual y fiscalización',
     bajada: 'Qué obliga el Decreto Supremo 44 a toda empresa: requisitos del plan de emergencia, simulacro anual, fiscalización de la Dirección del Trabajo y cómo evitar sanciones.',
     categoria: 'Seguridad Laboral',
@@ -213,7 +214,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'checklist-ds-44-fiscalizacion',
-    tema: 'Emergencias',
+    tema: 'Emergencias e incendio',
     titulo: 'Checklist DS 44: qué revisa la Dirección del Trabajo en una fiscalización',
     bajada: 'Lista práctica basada en el Formulario Único de Fiscalización del DS 44: matriz de riesgos, programa preventivo, plan de emergencia, comité y multas.',
     categoria: 'Seguridad Laboral',
