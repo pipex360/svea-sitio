@@ -5,9 +5,11 @@
  *
  * Sólo existe en la copia de trabajo (astro.config.mjs la inyecta cuando no
  * es producción) y va noindex: es para que Carlos vea cómo quedaría. Los
- * casos son EJEMPLOS con datos inventados y así lo dice la página; antes de
- * publicarla se reemplazan por proyectos reales (con permiso del cliente o
- * anonimizados por rubro y comuna) y se agrega a paginas.json.
+ * casos son REALES y anonimizados (rubro y comuna, sin nombre del cliente,
+ * decisión de Carlos 25-sep); cada cifra sale de la resolución SEREMI, la
+ * constancia de Bomberos o el entregable, con la fuente anotada en
+ * ~/Desktop/fotos-despues/casos-reales.md. Antes de publicar: revisar
+ * cifras y textos y agregarla a paginas.json.
  *
  * Estructura: primero «¿Cuál es tu rubro?» (qué permisos pide cada rubro,
  * con foto y enlaces a los servicios), después los casos filtrables por
@@ -74,77 +76,85 @@ const RUBROS: { id: string; nombre: string; foto: string; alt: string; texto: st
   },
 ];
 
-const CASOS: { r: string; s: Srv; foto: string; alt: string; empresa: string; lugar: string; titulo: string; desafio: string; hicimos: string; cifras: [string, string][] }[] = [
+const CASOS: { r: string; s: Srv; anio: number; foto: string; alt: string; empresa: string; lugar: string; titulo: string; desafio: string; hicimos: string; cifras: [string, string][] }[] = [
   {
-    r: 'bodegas', s: 'cti', foto: 'centro-distribucion-calificacion-tecnica-industrial', alt: 'Centro de distribución que obtuvo su calificación inofensiva',
-    empresa: 'Distribuidora de alimentos', lugar: 'Pudahuel, RM',
-    titulo: 'Calificación inofensiva para abrir una bodega nueva',
-    desafio: 'Arrendaron una bodega de 3.200 m² y la municipalidad les pedía la calificación de la SEREMI para dar la patente definitiva.',
-    hicimos: 'Visita técnica, memoria de la actividad, planos y el expediente completo en SEREMI en Línea.',
-    cifras: [['4 días', 'expediente listo'], ['32 días', 'resolución SEREMI'], ['Inofensiva', 'calificación']],
+    r: 'bodegas', s: 'ecc', anio: 2025, foto: 'bodega-centro-logistico-carga-combustible', alt: 'Bodega con estanterías altas evaluada con un estudio de carga de combustible',
+    empresa: 'Bodega de equipos eléctricos y baterías', lugar: 'Renca, RM',
+    titulo: 'Bodega de baterías calificada inofensiva en 9 días',
+    desafio: 'Iban a operar una bodega nueva de baterías, inversores y transformadores, y la SEREMI pedía el estudio de carga de combustible junto con la calificación.',
+    hicimos: 'Estudio de carga de combustible y calificación técnica industrial, ingresados el mismo día en que aceptaron el presupuesto.',
+    cifras: [['9 días', 'de ingreso a resolución'], ['1.605 m²', 'de bodega'], ['Inofensiva', 'calificación']],
   },
   {
-    r: 'bodegas', s: 'ecc', foto: 'racks-cajas-carton-carga-fuego', alt: 'Racks con cajas de cartón evaluados en un estudio de carga de combustible',
-    empresa: 'Centro de distribución', lugar: 'Lampa, RM',
-    titulo: 'Carga de combustible para la recepción municipal',
-    desafio: 'La Dirección de Obras exigía el estudio de carga de fuego para recibir la ampliación de la nave.',
-    hicimos: 'Levantamiento de materiales por sector, cálculo de carga térmica e informe conforme a la OGUC y la NCh.',
-    cifras: [['5 días', 'informe entregado'], ['6', 'sectores evaluados'], ['Recepción', 'final aprobada']],
+    r: 'bodegas', s: 'cti', anio: 2026, foto: 'bodega-andenes-carga-permisos-seremi', alt: 'Andenes de carga de una bodega con calificación de la SEREMI',
+    empresa: 'Distribuidora de alimentos para animales', lugar: 'La Pintana, RM',
+    titulo: 'Calificación inofensiva para una bodega con 35 camiones diarios',
+    desafio: 'Proyectaban una bodega de 2.058 m² con 50 trabajadores y un movimiento de 35 camiones cargados al día, y necesitaban la calificación de la SEREMI.',
+    hicimos: 'Memoria técnica de la actividad y el expediente en SEREMI en Línea, con seguimiento de la visita de revisión hasta la resolución.',
+    cifras: [['2.058 m²', 'construidos'], ['35', 'camiones al día'], ['Inofensiva', 'calificación']],
   },
   {
-    r: 'industria', s: 'cti', foto: 'revision-expediente-observaciones-seremi', alt: 'Revisión del expediente con las observaciones de la SEREMI',
-    empresa: 'Taller metalmecánico', lugar: 'Quilicura, RM',
-    titulo: 'Observaciones de la SEREMI resueltas a la primera',
-    desafio: 'Habían presentado el trámite por su cuenta y la SEREMI lo devolvió con observaciones sobre ruido y residuos.',
-    hicimos: 'Respondimos cada observación con mediciones y el plan de residuos, sin costo adicional de correcciones.',
-    cifras: [['1', 'ronda de correcciones'], ['Molesta', 'calificación'], ['Patente', 'definitiva otorgada']],
+    r: 'industria', s: 'cti', anio: 2025, foto: 'bodega-calificacion-tecnica-industrial', alt: 'Galpón industrial con calificación técnica de la SEREMI',
+    empresa: 'Planta de mantenimiento industrial', lugar: 'Pudahuel, RM',
+    titulo: 'Planta de soldadura y mecanizado calificada inofensiva',
+    desafio: 'Una planta nueva para soldar, tornear y mecanizar piezas y equipos industriales, con 36 trabajadores, necesitaba su calificación antes de operar.',
+    hicimos: 'Calificación técnica industrial y estudio de carga de combustible, con el ingreso en SEREMI en Línea y seguimiento hasta la resolución.',
+    cifras: [['48 días', 'de ingreso a resolución'], ['2.357 m²', 'construidos'], ['Inofensiva', 'calificación']],
   },
   {
-    r: 'industria', s: 'plan', foto: 'brigada-simulacro-incendio-plan-de-emergencia', alt: 'Brigada de emergencia durante un simulacro de incendio en una planta',
-    empresa: 'Planta de envases', lugar: 'San Bernardo, RM',
-    titulo: 'Plan de emergencia y simulacro para cumplir el DS 44',
-    desafio: 'Una fiscalización detectó que el plan estaba desactualizado y no había simulacro anual registrado.',
-    hicimos: 'Plan nuevo con planos de evacuación, brigadas, capacitación y el simulacro con su informe.',
-    cifras: [['8 días', 'plan entregado'], ['140', 'trabajadores capacitados'], ['0', 'multas tras la visita']],
+    r: 'industria', s: 'cti', anio: 2026, foto: 'gabinete-extintor-red-humeda-plan-emergencia', alt: 'Gabinetes de extintor y red húmeda en una planta industrial',
+    empresa: 'Fábrica de estructuras metálicas', lugar: 'San Joaquín, RM',
+    titulo: 'Fábrica metalmecánica en funcionamiento, regularizada ante la SEREMI',
+    desafio: 'La fábrica ya operaba, con gases industriales almacenados, y le faltaba la calificación de la SEREMI para su actividad.',
+    hicimos: 'Memoria técnica de la actividad existente y el expediente en SEREMI en Línea hasta la resolución.',
+    cifras: [['42 días', 'de ingreso a resolución'], ['3.284 m²', 'construidos'], ['Inofensiva', 'calificación']],
   },
   {
-    r: 'alimentos', s: 'is', foto: 'cocina-industrial-acero-informe-sanitario', alt: 'Cocina industrial de acero inoxidable con informe sanitario',
-    empresa: 'Casino de alimentación', lugar: 'Maipú, RM',
-    titulo: 'Informe sanitario para abrir una cocina industrial',
-    desafio: 'Iban a atender a 600 trabajadores de una faena y necesitaban el informe sanitario antes de partir.',
-    hicimos: 'Revisión de layout, flujos de alimentos y agua, observaciones previas y el ingreso a la SEREMI.',
-    cifras: [['600', 'raciones diarias'], ['1', 'visita de la SEREMI'], ['Aprobado', 'informe sanitario']],
+    r: 'alimentos', s: 'cti', anio: 2025, foto: 'manipulacion-alimentos-informe-sanitario', alt: 'Operaria con cofia y mascarilla en una planta de alimentos',
+    empresa: 'Fábrica de pan', lugar: 'La Florida, RM',
+    titulo: 'Fábrica de pan con 121 trabajadores calificada en 27 días',
+    desafio: 'Estaban regularizando las ampliaciones de la fábrica ante la municipalidad y necesitaban la calificación de la SEREMI.',
+    hicimos: 'Calificación técnica industrial ingresada dos días después de aceptar el presupuesto y, después, el plan de emergencia y evacuación de la planta.',
+    cifras: [['27 días', 'de ingreso a resolución'], ['121', 'trabajadores'], ['Inofensiva', 'calificación']],
   },
   {
-    r: 'salud', s: 'respel', foto: 'tambores-residuos-peligrosos-bodega', alt: 'Tambores de residuos peligrosos en una bodega conforme al DS 148',
-    empresa: 'Laboratorio clínico', lugar: 'Providencia, RM',
-    titulo: 'Plan de manejo de residuos peligrosos y SIDREP',
-    desafio: 'Superaban las 12 toneladas al año de residuos peligrosos y no tenían plan de manejo aprobado.',
-    hicimos: 'Clasificación de residuos, bodega RESPEL conforme al DS 148, plan de manejo y alta en SIDREP.',
-    cifras: [['12 t/año', 'umbral superado'], ['Aprobado', 'plan de manejo'], ['SIDREP', 'al día']],
+    r: 'alimentos', s: 'cti', anio: 2026, foto: 'cocina-industrial-acero-informe-sanitario', alt: 'Taller de elaboración de alimentos con mesones de acero inoxidable',
+    empresa: 'Taller de panadería sin gluten', lugar: 'Santiago, RM',
+    titulo: 'Panadería sin gluten en funcionamiento, calificada inofensiva',
+    desafio: 'El taller ya tenía su autorización sanitaria para elaborar alimentos, pero le faltaba la calificación industrial de la actividad.',
+    hicimos: 'Memoria técnica de la actividad existente y el expediente en SEREMI en Línea, con seguimiento hasta la resolución firmada.',
+    cifras: [['51 días', 'de ingreso a resolución'], ['Existente', 'actividad regularizada'], ['Inofensiva', 'calificación']],
   },
   {
-    r: 'condominios', s: 'cond', foto: 'edificios-providencia-plan-emergencia-condominio', alt: 'Edificios residenciales en Providencia con plan de emergencia y evacuación',
-    empresa: 'Condominio de 3 torres', lugar: 'Ñuñoa, RM',
-    titulo: 'Plan de emergencia para 240 departamentos',
-    desafio: 'El comité necesitaba el plan exigido por la Ley de Copropiedad y no sabía por dónde partir.',
-    hicimos: 'Análisis de riesgos por torre, rutas y puntos de encuentro, roles del personal y difusión a residentes.',
-    cifras: [['10 días', 'plan entregado'], ['3', 'torres cubiertas'], ['1', 'simulacro coordinado']],
+    r: 'salud', s: 'cti', anio: 2026, foto: 'inspeccion-bodega-calificacion-tecnica-industrial', alt: 'Revisión de productos embalados en una bodega calificada',
+    empresa: 'Acondicionamiento de medicamentos veterinarios', lugar: 'Lo Espejo, RM',
+    titulo: 'Giro nuevo de medicamentos veterinarios calificado inofensivo',
+    desafio: 'Su bodega ya estaba calificada, pero sumaba un giro nuevo: etiquetar y embalar medicamentos veterinarios en cámaras de frío.',
+    hicimos: 'Nueva calificación técnica industrial para el giro, con el expediente en SEREMI en Línea y seguimiento de la revisión hasta la resolución.',
+    cifras: [['42 días', 'de ingreso a resolución'], ['2 a 8 °C', 'cámaras de frío'], ['Inofensiva', 'calificación']],
   },
   {
-    r: 'transporte', s: 'tr', foto: 'camion-tolva-carga-residuos-faena', alt: 'Camión tolva cargando residuos en una faena con autorización sanitaria',
-    empresa: 'Retiro de escombros', lugar: 'Puente Alto, RM',
-    titulo: 'Autorización sanitaria para transportar residuos',
-    desafio: 'Querían licitar retiros para constructoras, pero sus camiones tolva no tenían autorización de la SEREMI.',
-    hicimos: 'Expediente por vehículo, procedimientos de carga y descarga, y la solicitud en SEREMI en Línea.',
-    cifras: [['4', 'camiones autorizados'], ['30 días', 'plazo SEREMI'], ['Licitación', 'adjudicada']],
+    r: 'salud', s: 'ecc', anio: 2026, foto: 'tambores-bodega-residuos-peligrosos', alt: 'Tambores rotulados en una bodega de sustancias y residuos peligrosos',
+    empresa: 'Laboratorio de análisis', lugar: 'Colina, RM',
+    titulo: 'Carga de combustible de dos bodegas de sustancias peligrosas',
+    desafio: 'Tenía una bodega de residuos peligrosos y otra de reactivos químicos, y necesitaba saber qué resistencia al fuego les exige la OGUC.',
+    hicimos: 'Dos estudios de carga de combustible según NCh 1916 y NCh 1993, con la clasificación de riesgo y la exigencia de resistencia al fuego de cada bodega.',
+    cifras: [['2', 'bodegas evaluadas'], ['83 m²', 'en total'], ['Dc1 y Dc2', 'clasificación NCh 1993']],
+  },
+  {
+    r: 'condominios', s: 'cond', anio: 2026, foto: 'condominios-las-condes-plan-de-emergencia', alt: 'Vista aérea de barrios residenciales de Santiago con plan de emergencia',
+    empresa: 'Condominio de casas', lugar: 'Maipú, RM',
+    titulo: 'Plan de emergencia para un condominio de 140 viviendas',
+    desafio: 'La comunidad necesitaba su plan de emergencia y evacuación para 140 viviendas de dos niveles.',
+    hicimos: 'Plan con roles, líderes de evacuación por sector y procedimientos para residentes, con constancia de recepción del Cuerpo de Bomberos.',
+    cifras: [['140', 'viviendas'], ['560', 'personas de carga de ocupación'], ['Recepcionado', 'por Bomberos']],
   },
 ];
 
 const rubroDe = (id: string) => RUBROS.find((x) => x.id === id)!;
 
-// Mientras los casos sean de ejemplo, la página va noindex y sólo en la
-// copia. Para publicarla: casos reales, PUBLICABLE = true, agregarla a
+// Mientras Carlos no revise los casos, la página va noindex y sólo en la
+// copia. Para publicarla: PUBLICABLE = true, agregarla a
 // paginas.json (title/description/og) y moverla a src/pages/casos.astro para
 // que entre al sitemap. El JSON-LD ya queda listo (CollectionPage con la
 // lista de casos, sin reseñas ni estrellas: Google no muestra las propias).
@@ -187,7 +197,7 @@ const seo = {
   seo={seo}
 >
   <div class="cs">
-    <p class="cs-aviso"><strong>Propuesta para revisar:</strong> los casos son ejemplos con datos inventados, para mostrar el formato. Antes de publicar se reemplazan por proyectos reales (con permiso del cliente o anonimizados por rubro y comuna).</p>
+    <p class="cs-aviso"><strong>Propuesta para revisar:</strong> casos reales de SVEA sin el nombre del cliente. Revisa cifras y textos antes de publicar.</p>
 
     <section class="cs-resumen" aria-label="SVEA en cifras">
       <div><strong>250+</strong><span>empresas atendidas</span></div>
@@ -239,7 +249,7 @@ const seo = {
               <span class="cs-etiqueta">{rubroDe(c.r).nombre}</span>
             </div>
             <div class="cs-caso-cuerpo">
-              <p class="cs-servicio"><a href={`${BASE}${SERVICIO[c.s].href}`}>{SERVICIO[c.s].nombre}</a><span class="cs-ejemplo">Ejemplo</span></p>
+              <p class="cs-servicio"><a href={`${BASE}${SERVICIO[c.s].href}`}>{SERVICIO[c.s].nombre}</a><span class="cs-anio">{c.anio}</span></p>
               <h3>{c.titulo}</h3>
               <p class="cs-quien">{c.empresa} · {c.lugar}</p>
               <ul class="cs-cifras">
@@ -255,20 +265,14 @@ const seo = {
             </div>
           </article>
         ))}
-        <a class="cs-caso cs-tuyo" href={`${BASE}/#form-home`} data-rubro="todos">
-          <span class="cs-sobre">Tu empresa</span>
-          <strong>¿Tu caso no aparece?</strong>
-          <span>Cuéntanos tu rubro y qué te pide la SEREMI o la municipalidad. Te respondemos con una cotización en menos de 24 horas.</span>
-          <span class="cs-tuyo-btn">Solicitar cotización →</span>
-        </a>
       </div>
       <p class="cs-vacio" hidden>Aún no hay casos publicados de este rubro. <a href={`${BASE}/#form-home`}>Cuéntanos el tuyo</a> y te decimos qué necesitas.</p>
     </section>
 
     <section class="cs-testimonio" aria-label="Testimonio">
       <blockquote>
-        <p>«Nos dijeron exactamente qué faltaba y se encargaron de todo con la SEREMI. Nosotros solo firmamos.»</p>
-        <footer>Gerente de operaciones · Distribuidora de alimentos, Pudahuel <span class="cs-ejemplo">Ejemplo</span></footer>
+        <p>«Muchas gracias por un trabajo bien hecho, recomendado su servicio.»</p>
+        <footer>Representante legal · Taller de panadería sin gluten, Santiago</footer>
       </blockquote>
     </section>
 
@@ -356,7 +360,7 @@ const seo = {
   .cs-servicio { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
   .cs-servicio a { color: var(--verde); text-decoration: none; }
   .cs-servicio a:hover { text-decoration: underline; }
-  .cs-ejemplo { font: 600 10.5px Inter, sans-serif; letter-spacing: .04em; text-transform: uppercase; padding: 2px 7px; border-radius: 999px; background: #fff3c4; color: #7a5b00; }
+  .cs-anio { font: 600 10.5px Inter, sans-serif; letter-spacing: .04em; padding: 2px 7px; border-radius: 999px; background: #f1f3f2; color: #6b746e; font-variant-numeric: tabular-nums; }
   .cs-caso h3 { margin: 0; font: 500 18px/1.3 Manrope, Inter, sans-serif; letter-spacing: -.015em; text-wrap: balance; }
   .cs-quien { margin: -4px 0 0; font-size: 13.5px; color: var(--suave); }
   .cs-cifras { margin: 4px 0 0; padding: 12px 0; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--borde); }
@@ -364,12 +368,6 @@ const seo = {
   .cs-cifras li + li { padding-left: 10px; border-left: 1px solid var(--borde); }
   .cs-cifras strong { font: 600 16px/1.15 Manrope, Inter, sans-serif; color: var(--verde); font-variant-numeric: tabular-nums; }
   .cs-cifras span { font-size: 12px; line-height: 1.3; color: var(--suave); }
-  .cs-tuyo { justify-content: center; gap: 12px; padding: 28px; min-height: 100%; background: #0d3518; border-color: #0d3518; color: #fff; text-decoration: none; }
-  .cs-tuyo .cs-sobre { color: #9BEB6B; }
-  .cs-tuyo strong { font: 500 24px/1.2 Manrope, Inter, sans-serif; letter-spacing: -.02em; }
-  .cs-tuyo span { font-size: 14.5px; line-height: 1.55; color: rgba(255,255,255,.8); }
-  .cs-tuyo .cs-tuyo-btn { margin-top: 8px; align-self: flex-start; padding: 10px 18px; border-radius: 999px; background: #fff; color: #0d3518; font-weight: 600; font-size: 14px; }
-  .cs-tuyo:hover { border-color: #0d3518; }
   .cs-caso details { font-size: 14px; }
   .cs-caso summary { cursor: pointer; list-style: none; font-weight: 600; color: var(--verde); padding: 2px 0; }
   .cs-caso summary::-webkit-details-marker { display: none; }
