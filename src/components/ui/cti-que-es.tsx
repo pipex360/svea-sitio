@@ -34,12 +34,12 @@ import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
  *  las dos últimas sobre lo que hacemos nosotros, con la inspección técnica. */
 const bloques = (): BloqueScroll[] => {
   const planta = {
-    foto: 'bodega-operacion-montacargas-calificacion-tecnica',
-    alt: 'Operarios y grúas horquilla trabajando en una bodega industrial, establecimiento que requiere calificación técnica industrial de la SEREMI de Salud',
+    foto: 'taller-metalmecanico-calificacion-tecnica-industrial',
+    alt: 'Operario con lentes de seguridad y mangas de protección trabaja una viga de acero en un taller metalmecánico, establecimiento que requiere calificación técnica industrial de la SEREMI de Salud',
   };
   const instalacion = {
-    foto: 'inspeccion-bodega-calificacion-tecnica-industrial',
-    alt: 'Profesional con chaleco reflectante revisa una bodega con su carpeta, levantamiento técnico para el informe CTI ante la SEREMI de Salud',
+    foto: 'tecnicos-casco-revision-calificacion-tecnica-industrial',
+    alt: 'Dos profesionales con casco y chaleco reflectante revisan una carpeta en una planta industrial, levantamiento técnico para el informe CTI ante la SEREMI de Salud',
   };
   return [
     {

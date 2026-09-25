@@ -34,8 +34,8 @@ const bloques = (): BloqueScroll[] => {
     alt: 'Camión tolva descargando residuos, transporte que requiere autorización de la SEREMI de Salud',
   };
   const carga = {
-    foto: 'camion-cisterna-acero-transporte-residuos-peligrosos',
-    alt: 'Semirremolques cisterna de acero inoxidable estacionados en un patio de ripio, vehículos que requieren autorización sanitaria de transporte de residuos peligrosos',
+    foto: 'camion-cisterna-inflamable-transporte-residuos-peligrosos',
+    alt: 'Camión cisterna con rombo de inflamable clase 3 y la leyenda «Transporta material inflamable», vehículo que requiere autorización sanitaria de transporte de residuos peligrosos',
   };
   return [
     {

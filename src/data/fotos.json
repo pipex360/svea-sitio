@@ -144,32 +144,6 @@
     },
     "origen": "642520:1790300901978"
   },
-  "bodega-operacion-montacargas-calificacion-tecnica": {
-    "ancho": 1600,
-    "alto": 1066,
-    "anchos": [
-      640,
-      1080,
-      1600
-    ],
-    "hero": false,
-    "og": "bodega-operacion-montacargas-calificacion-tecnica.jpg",
-    "peso": {
-      "640": {
-        "avif": 30,
-        "webp": 42
-      },
-      "1080": {
-        "avif": 63,
-        "webp": 85
-      },
-      "1600": {
-        "avif": 130,
-        "webp": 127
-      }
-    },
-    "origen": "365478:1790303742286"
-  },
   "bodega-productos-estudio-carga-combustible": {
     "ancho": 1920,
     "alto": 1281,
@@ -263,9 +237,9 @@
     },
     "origen": "1031464:1790303551810"
   },
-  "camion-cisterna-acero-transporte-residuos-peligrosos": {
+  "camion-cisterna-inflamable-transporte-residuos-peligrosos": {
     "ancho": 2400,
-    "alto": 1803,
+    "alto": 1970,
     "anchos": [
       640,
       1080,
@@ -273,26 +247,26 @@
       1920
     ],
     "hero": true,
-    "og": "camion-cisterna-acero-transporte-residuos-peligrosos.jpg",
+    "og": "camion-cisterna-inflamable-transporte-residuos-peligrosos.jpg",
     "peso": {
       "640": {
-        "avif": 35,
-        "webp": 50
+        "avif": 30,
+        "webp": 39
       },
       "1080": {
-        "avif": 76,
-        "webp": 87
+        "avif": 69,
+        "webp": 90
       },
       "1600": {
-        "avif": 115,
-        "webp": 137
+        "avif": 106,
+        "webp": 118
       },
       "1920": {
-        "avif": 144,
-        "webp": 171
+        "avif": 139,
+        "webp": 150
       }
     },
-    "origen": "879644:1790305711413"
+    "origen": "757108:1790342322097"
   },
   "camion-tolva-carga-planta-residuos": {
     "ancho": 2400,
@@ -1175,6 +1149,37 @@
     },
     "origen": "80684:1790296138482"
   },
+  "taller-metalmecanico-calificacion-tecnica-industrial": {
+    "ancho": 2400,
+    "alto": 1882,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "taller-metalmecanico-calificacion-tecnica-industrial.jpg",
+    "peso": {
+      "640": {
+        "avif": 26,
+        "webp": 36
+      },
+      "1080": {
+        "avif": 56,
+        "webp": 73
+      },
+      "1600": {
+        "avif": 97,
+        "webp": 114
+      },
+      "1920": {
+        "avif": 122,
+        "webp": 141
+      }
+    },
+    "origen": "649580:1790342322093"
+  },
   "tambores-azules-residuos-peligrosos-almacenamiento": {
     "ancho": 4160,
     "alto": 2340,
@@ -1288,6 +1293,37 @@
       }
     },
     "origen": "538558:1790300902009"
+  },
+  "tecnicos-casco-revision-calificacion-tecnica-industrial": {
+    "ancho": 2400,
+    "alto": 1702,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "tecnicos-casco-revision-calificacion-tecnica-industrial.jpg",
+    "peso": {
+      "640": {
+        "avif": 19,
+        "webp": 25
+      },
+      "1080": {
+        "avif": 40,
+        "webp": 51
+      },
+      "1600": {
+        "avif": 69,
+        "webp": 86
+      },
+      "1920": {
+        "avif": 87,
+        "webp": 108
+      }
+    },
+    "origen": "545672:1790342322095"
   },
   "valle-cordillera-evaluacion-ambiental": {
     "ancho": 1600,
