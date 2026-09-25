@@ -63,7 +63,7 @@ export function PeSiguiente({ base = '' }: { base?: string }) {
                 Guía completa en nuestro blog
               </span>
               <h3 className="text-xl font-bold tracking-tight text-black md:text-2xl">
-                Plan de Emergencia Empresa Chile: Guía de Evacuación 2026
+                Plan de emergencia para empresas: qué debe incluir y cómo se elabora
               </h3>
               <p className="mt-3 text-base leading-relaxed text-black/70">
                 Normativa DS 594 y DS 44, multas de hasta 1.000 UTM (SEREMI), contenido obligatorio y proceso paso a paso.

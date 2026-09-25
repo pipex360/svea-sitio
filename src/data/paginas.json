@@ -3523,12 +3523,12 @@
     "ruta": "/plan-de-emergencia-ds-44-empresas-chile/",
     "slug": "plan-de-emergencia-ds-44-empresas-chile",
     "tipo": "articulos",
-    "title": "Plan de Emergencia DS 44: Obligaciones, Simulacros y Fiscalización",
-    "description": "Qué exige el DS 44 (vigente desde febrero 2025): plan de emergencia, mapa de riesgos, MIPER, simulacro anual y fiscalización de la Dirección del Trabajo.",
+    "title": "DS 44: obligaciones, simulacro anual y fiscalización",
+    "description": "Qué exige el DS 44 desde febrero de 2025: obligaciones del empleador, simulacro anual, MIPER y fiscalización de la Dirección del Trabajo. Evita multas.",
     "robots": "index, follow",
     "canonical": "https://sveaconsultores.cl/plan-de-emergencia-ds-44-empresas-chile/",
-    "h1": "Plan de Emergencia DS 44: Guía Completa para Empresas en Chile 2026",
-    "h1_html": "Plan de Emergencia DS 44: Guía Completa para Empresas en Chile 2026",
+    "h1": "DS 44: obligaciones, simulacro anual y fiscalización",
+    "h1_html": "DS 44: obligaciones, simulacro anual y fiscalización",
     "og_image": "https://sveaconsultores.cl/img/og/senal-salida-emergencia-evacuacion.jpg",
     "palabras_origen": 2145,
     "jsonld": [
@@ -3573,7 +3573,7 @@
             "@type": "WebPage",
             "@id": "https://sveaconsultores.cl/plan-de-emergencia-ds-44-empresas-chile/#webpage",
             "url": "https://sveaconsultores.cl/plan-de-emergencia-ds-44-empresas-chile/",
-            "name": "Plan de Emergencia DS 44: Guía Completa para Empresas Chile 2026",
+            "name": "DS 44: obligaciones, simulacro anual y fiscalización",
             "datePublished": "2026-03-10T01:42:40+00:00",
             "dateModified": "2026-03-16T16:28:27+00:00",
             "isPartOf": {
@@ -3605,7 +3605,7 @@
           },
           {
             "@type": "Article",
-            "headline": "Plan de Emergencia DS 44: Guía Completa para Empresas Chile 2026",
+            "headline": "DS 44: obligaciones, simulacro anual y fiscalización",
             "keywords": "Plan de Emergencia DS 44",
             "datePublished": "2026-03-10T01:42:40+00:00",
             "dateModified": "2026-03-16T16:28:27+00:00",
@@ -3618,7 +3618,7 @@
               "@id": "https://sveaconsultores.cl/#organization"
             },
             "description": "El Plan de Emergencia DS 44 es obligatorio para empresas en Chile. Conoce los requisitos, contenidos y cómo cumplir la normativa. Cotiza con SVEA.",
-            "name": "Plan de Emergencia DS 44: Guía Completa para Empresas Chile 2026",
+            "name": "DS 44: obligaciones, simulacro anual y fiscalización",
             "@id": "https://sveaconsultores.cl/plan-de-emergencia-ds-44-empresas-chile/#richSnippet",
             "isPartOf": {
               "@id": "https://sveaconsultores.cl/plan-de-emergencia-ds-44-empresas-chile/#webpage"
@@ -3861,7 +3861,7 @@
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Plan de Emergencia DS 44: Guía Completa para Empresas en Chile 2026",
+        "headline": "DS 44: obligaciones, simulacro anual y fiscalización",
         "description": "Guía completa sobre el plan de emergencia exigido por el Decreto Supremo 44 en Chile. Contenido obligatorio, simulacros, mapa de riesgos y fiscalización.",
         "image": "https://sveaconsultores.cl/img/og/senal-salida-emergencia-evacuacion.jpg",
         "author": {
@@ -4101,12 +4101,12 @@
     "ruta": "/plan-de-emergencia-empresa-chile/",
     "slug": "plan-de-emergencia-empresa-chile",
     "tipo": "articulos",
-    "title": "Plan de Emergencia y Evacuación para Empresas: Qué Debe Incluir",
-    "description": "Contenido obligatorio de un plan de emergencia y evacuación en Chile, tipos de emergencia, cómo se elabora paso a paso y errores comunes.",
+    "title": "Plan de emergencia para empresas: qué incluye y cómo se hace",
+    "description": "Qué debe incluir un plan de emergencia y evacuación para empresas en Chile y cómo se elabora paso a paso: contenido mínimo, tipos de emergencia y errores.",
     "robots": "index, follow",
     "canonical": "https://sveaconsultores.cl/plan-de-emergencia-empresa-chile/",
-    "h1": "Plan de Emergencia Empresa Chile: Guía de Evacuación 2026",
-    "h1_html": "Plan de Emergencia Empresa Chile: Guía de Evacuación 2026",
+    "h1": "Plan de emergencia para empresas: qué debe incluir y cómo se elabora",
+    "h1_html": "Plan de emergencia para empresas: qué debe incluir y cómo se elabora",
     "og_image": "https://sveaconsultores.cl/img/og/simulacro-incendio-extintor-plan-de-emergencia.jpg",
     "palabras_origen": 2650,
     "jsonld": [

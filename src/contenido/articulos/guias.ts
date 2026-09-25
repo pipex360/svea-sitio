@@ -123,8 +123,8 @@ export const GUIAS: Guia[] = [
   {
     slug: 'plan-de-emergencia-empresa-chile',
     tema: 'Emergencias',
-    titulo: 'Plan de Emergencia Empresa Chile: Guía Definitiva 2026',
-    bajada: 'Requisitos del DS 44, multas por incumplimiento, cómo elaborar tu plan y qué necesitas para la aprobación de SEREMI y Bomberos.',
+    titulo: 'Plan de emergencia para empresas: qué debe incluir y cómo se elabora',
+    bajada: 'Qué debe incluir el plan, tipos de emergencia, cómo elaborarlo paso a paso y qué necesitas para la aprobación de SEREMI y Bomberos.',
     categoria: 'Emergencias',
     fecha: 'Feb 2026',
     lectura: '13 min lectura',
@@ -169,8 +169,8 @@ export const GUIAS: Guia[] = [
   {
     slug: 'plan-de-emergencia-ds-44-empresas-chile',
     tema: 'Emergencias',
-    titulo: 'Plan de Emergencia DS 44: Guía Completa para Empresas en Chile 2026',
-    bajada: 'El Decreto Supremo 44 exige a toda empresa contar con un plan de emergencia actualizado. Conoce los requisitos, contenido obligatorio, simulacros y cómo evitar sanciones.',
+    titulo: 'DS 44: obligaciones, simulacro anual y fiscalización',
+    bajada: 'Qué obliga el Decreto Supremo 44 a toda empresa: requisitos del plan de emergencia, simulacro anual, fiscalización de la Dirección del Trabajo y cómo evitar sanciones.',
     categoria: 'Seguridad Laboral',
     fecha: 'Mar 2026',
     lectura: '13 min lectura',
