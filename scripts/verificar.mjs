@@ -74,7 +74,8 @@ for (const p of esperadas) {
     else checks++;
     if (!/\/fonts\/inter-variable-latin\.woff2/.test(html)) fallos.push(`${p.ruta}  ✗ no sirve sus fuentes desde el sitio`);
     else checks++;
-    const fotoPropia = /(?:src|srcset|imagesrcset)="\/img\/fotos\/[^"]+\.(?:webp|avif)/.test(html);
+    // con o sin base (en GitHub Pages el sitio cuelga de /pagina-web-svea/)
+    const fotoPropia = /(?:src|srcset|imagesrcset)="(?:\/[\w-]+)?\/img\/fotos\/[^"]+\.(?:webp|avif)/.test(html);
     if ((p.ruta === '/' || CON_FOTO.has(p.ruta)) && !fotoPropia) fallos.push(`${p.ruta}  ✗ no sirve la foto del hero (ni otra imagen) desde el sitio`);
     else if (p.ruta === '/' || CON_FOTO.has(p.ruta)) checks++;
     // 4b. desde el 24-sep el WordPress se apaga: NINGUNA URL suya puede quedar,
