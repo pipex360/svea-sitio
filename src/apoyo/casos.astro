@@ -1,0 +1,364 @@
+---
+/**
+ * /casos/ — PROPUESTA de la página de casos de clientes, ordenada por RUBRO
+ * (24-sep).
+ *
+ * Sólo existe en la copia de trabajo (astro.config.mjs la inyecta cuando no
+ * es producción) y va noindex: es para que Carlos vea cómo quedaría. Los
+ * casos son EJEMPLOS con datos inventados y así lo dice la página; antes de
+ * publicarla se reemplazan por proyectos reales (con permiso del cliente o
+ * anonimizados por rubro y comuna) y se agrega a paginas.json.
+ *
+ * Estructura: primero «¿Cuál es tu rubro?» (qué permisos pide cada rubro,
+ * con foto y enlaces a los servicios), después los casos filtrables por
+ * rubro, cada uno con su foto. Las fotos salen del sistema del sitio
+ * (src/data/fotos.json); si una ya no existe, la tarjeta va sin foto en vez
+ * de romper el build.
+ */
+import PaginaSimple from '../layouts/PaginaSimple.astro';
+import Foto from '../components/Foto.astro';
+import { hayFoto } from '../lib/fotos';
+import { LogoMarquee } from '../components/ui/logo-marquee';
+import { logosClientes } from '../data/clientes';
+
+const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+
+const SERVICIO = {
+  cti: { nombre: 'Calificación Técnica Industrial', href: '/calificacion-tecnica-industrial/' },
+  ecc: { nombre: 'Estudio de Carga de Combustible', href: '/estudio-de-carga-de-combustible/' },
+  plan: { nombre: 'Plan de Emergencia', href: '/planes-de-emergencia-y-evacuacion/' },
+  cond: { nombre: 'Plan de Emergencia Condominios', href: '/planes-de-emergencia-y-evacuacion-condominios/' },
+  respel: { nombre: 'Residuos Peligrosos', href: '/manejo-de-residuos-peligrosos/' },
+  tr: { nombre: 'Transporte de Residuos', href: '/autorizacion-de-transporte-de-residuos/' },
+  is: { nombre: 'Informe Sanitario', href: '/informe-sanitario/' },
+  seia: { nombre: 'Permisos Ambientales y SEIA', href: '/permisos-ambientales-y-pertinencias-del-seia/' },
+} as const;
+type Srv = keyof typeof SERVICIO;
+
+const RUBROS: { id: string; nombre: string; foto: string; alt: string; texto: string; necesita: Srv[] }[] = [
+  {
+    id: 'bodegas', nombre: 'Bodegas y centros logísticos',
+    foto: 'bodega-operacion-montacargas-calificacion-tecnica', alt: 'Operación con grúa horquilla en una bodega que requiere calificación técnica industrial',
+    texto: 'Para la patente definitiva la municipalidad pide la calificación de la SEREMI, y la Dirección de Obras el estudio de carga de fuego.',
+    necesita: ['cti', 'ecc', 'plan'],
+  },
+  {
+    id: 'industria', nombre: 'Industria, plantas y talleres',
+    foto: 'inspeccion-planta-fiscalizacion-seremi', alt: 'Inspección técnica en una planta industrial fiscalizada por la SEREMI',
+    texto: 'Calificación industrial, residuos peligrosos que se declaran en SIDREP y un plan de emergencia conforme al DS 44.',
+    necesita: ['cti', 'respel', 'plan'],
+  },
+  {
+    id: 'alimentos', nombre: 'Alimentos y cocinas industriales',
+    foto: 'planta-alimentos-informe-sanitario', alt: 'Planta de alimentos con informe sanitario de la SEREMI',
+    texto: 'El informe sanitario para operar y la calificación del establecimiento, además del plan de emergencia del personal.',
+    necesita: ['is', 'cti', 'plan'],
+  },
+  {
+    id: 'salud', nombre: 'Salud, laboratorios y químicos',
+    foto: 'operario-bodega-residuos-peligrosos', alt: 'Operario con equipo de protección moviendo tambores en una bodega de residuos peligrosos',
+    texto: 'Plan de manejo de residuos peligrosos, bodega conforme al DS 148 y declaración en SIDREP.',
+    necesita: ['respel', 'plan', 'cti'],
+  },
+  {
+    id: 'condominios', nombre: 'Condominios y edificios',
+    foto: 'condominios-santiago-cordillera-ley-21442', alt: 'Condominios residenciales en Santiago con la cordillera de fondo',
+    texto: 'La Ley de Copropiedad exige un plan de emergencia y evacuación actualizado para cada comunidad.',
+    necesita: ['cond'],
+  },
+  {
+    id: 'transporte', nombre: 'Transporte y construcción',
+    foto: 'camion-tolva-carga-planta-residuos', alt: 'Cargador frontal llenando un camión tolva con residuos en una planta autorizada',
+    texto: 'Autorización sanitaria por vehículo para transportar residuos y, en proyectos grandes, pertinencia ante el SEIA.',
+    necesita: ['tr', 'seia'],
+  },
+];
+
+const CASOS: { r: string; s: Srv; foto: string; alt: string; empresa: string; lugar: string; titulo: string; desafio: string; hicimos: string; cifras: [string, string][] }[] = [
+  {
+    r: 'bodegas', s: 'cti', foto: 'centro-distribucion-calificacion-tecnica-industrial', alt: 'Centro de distribución que obtuvo su calificación inofensiva',
+    empresa: 'Distribuidora de alimentos', lugar: 'Pudahuel, RM',
+    titulo: 'Calificación inofensiva para abrir una bodega nueva',
+    desafio: 'Arrendaron una bodega de 3.200 m² y la municipalidad les pedía la calificación de la SEREMI para dar la patente definitiva.',
+    hicimos: 'Visita técnica, memoria de la actividad, planos y el expediente completo en SEREMI en Línea.',
+    cifras: [['4 días', 'expediente listo'], ['32 días', 'resolución SEREMI'], ['Inofensiva', 'calificación']],
+  },
+  {
+    r: 'bodegas', s: 'ecc', foto: 'racks-cajas-carton-carga-fuego', alt: 'Racks con cajas de cartón evaluados en un estudio de carga de combustible',
+    empresa: 'Centro de distribución', lugar: 'Lampa, RM',
+    titulo: 'Carga de combustible para la recepción municipal',
+    desafio: 'La Dirección de Obras exigía el estudio de carga de fuego para recibir la ampliación de la nave.',
+    hicimos: 'Levantamiento de materiales por sector, cálculo de carga térmica e informe conforme a la OGUC y la NCh.',
+    cifras: [['5 días', 'informe entregado'], ['6', 'sectores evaluados'], ['Recepción', 'final aprobada']],
+  },
+  {
+    r: 'industria', s: 'cti', foto: 'revision-expediente-observaciones-seremi', alt: 'Revisión del expediente con las observaciones de la SEREMI',
+    empresa: 'Taller metalmecánico', lugar: 'Quilicura, RM',
+    titulo: 'Observaciones de la SEREMI resueltas a la primera',
+    desafio: 'Habían presentado el trámite por su cuenta y la SEREMI lo devolvió con observaciones sobre ruido y residuos.',
+    hicimos: 'Respondimos cada observación con mediciones y el plan de residuos, sin costo adicional de correcciones.',
+    cifras: [['1', 'ronda de correcciones'], ['Molesta', 'calificación'], ['Patente', 'definitiva otorgada']],
+  },
+  {
+    r: 'industria', s: 'plan', foto: 'brigada-simulacro-incendio-plan-de-emergencia', alt: 'Brigada de emergencia durante un simulacro de incendio en una planta',
+    empresa: 'Planta de envases', lugar: 'San Bernardo, RM',
+    titulo: 'Plan de emergencia y simulacro para cumplir el DS 44',
+    desafio: 'Una fiscalización detectó que el plan estaba desactualizado y no había simulacro anual registrado.',
+    hicimos: 'Plan nuevo con planos de evacuación, brigadas, capacitación y el simulacro con su informe.',
+    cifras: [['8 días', 'plan entregado'], ['140', 'trabajadores capacitados'], ['0', 'multas tras la visita']],
+  },
+  {
+    r: 'alimentos', s: 'is', foto: 'cocina-industrial-acero-informe-sanitario', alt: 'Cocina industrial de acero inoxidable con informe sanitario',
+    empresa: 'Casino de alimentación', lugar: 'Maipú, RM',
+    titulo: 'Informe sanitario para abrir una cocina industrial',
+    desafio: 'Iban a atender a 600 trabajadores de una faena y necesitaban el informe sanitario antes de partir.',
+    hicimos: 'Revisión de layout, flujos de alimentos y agua, observaciones previas y el ingreso a la SEREMI.',
+    cifras: [['600', 'raciones diarias'], ['1', 'visita de la SEREMI'], ['Aprobado', 'informe sanitario']],
+  },
+  {
+    r: 'salud', s: 'respel', foto: 'tambores-residuos-peligrosos-bodega', alt: 'Tambores de residuos peligrosos en una bodega conforme al DS 148',
+    empresa: 'Laboratorio clínico', lugar: 'Providencia, RM',
+    titulo: 'Plan de manejo de residuos peligrosos y SIDREP',
+    desafio: 'Superaban las 12 toneladas al año de residuos peligrosos y no tenían plan de manejo aprobado.',
+    hicimos: 'Clasificación de residuos, bodega RESPEL conforme al DS 148, plan de manejo y alta en SIDREP.',
+    cifras: [['12 t/año', 'umbral superado'], ['Aprobado', 'plan de manejo'], ['SIDREP', 'al día']],
+  },
+  {
+    r: 'condominios', s: 'cond', foto: 'edificios-providencia-plan-emergencia-condominio', alt: 'Edificios residenciales en Providencia con plan de emergencia y evacuación',
+    empresa: 'Condominio de 3 torres', lugar: 'Ñuñoa, RM',
+    titulo: 'Plan de emergencia para 240 departamentos',
+    desafio: 'El comité necesitaba el plan exigido por la Ley de Copropiedad y no sabía por dónde partir.',
+    hicimos: 'Análisis de riesgos por torre, rutas y puntos de encuentro, roles del personal y difusión a residentes.',
+    cifras: [['10 días', 'plan entregado'], ['3', 'torres cubiertas'], ['1', 'simulacro coordinado']],
+  },
+  {
+    r: 'transporte', s: 'tr', foto: 'camion-tolva-carga-residuos-faena', alt: 'Camión tolva cargando residuos en una faena con autorización sanitaria',
+    empresa: 'Retiro de escombros', lugar: 'Puente Alto, RM',
+    titulo: 'Autorización sanitaria para transportar residuos',
+    desafio: 'Querían licitar retiros para constructoras, pero sus camiones tolva no tenían autorización de la SEREMI.',
+    hicimos: 'Expediente por vehículo, procedimientos de carga y descarga, y la solicitud en SEREMI en Línea.',
+    cifras: [['4', 'camiones autorizados'], ['30 días', 'plazo SEREMI'], ['Licitación', 'adjudicada']],
+  },
+];
+
+const rubroDe = (id: string) => RUBROS.find((x) => x.id === id)!;
+
+const seo = {
+  title: 'Casos de clientes por rubro | SVEA Consultores (propuesta)',
+  description: 'Propuesta de página de casos por rubro: bodegas, industria, alimentos, salud, condominios y transporte.',
+  robots: 'noindex, nofollow',
+  canonical: 'https://sveaconsultores.cl/casos/',
+};
+---
+<PaginaSimple
+  ruta="/casos/"
+  miga="Casos de clientes"
+  insignia="Casos por rubro"
+  titulo="Empresas que ya <em>regularizaron</em> con SVEA"
+  bajada="Bodegas, plantas, cocinas, laboratorios, condominios y transportistas de todo Chile. Busca tu rubro: qué permisos te piden, qué hicimos por empresas como la tuya y en cuánto tiempo."
+  seo={seo}
+>
+  <div class="cs">
+    <p class="cs-aviso"><strong>Propuesta para revisar:</strong> los casos son ejemplos con datos inventados, para mostrar el formato. Antes de publicar se reemplazan por proyectos reales (con permiso del cliente o anonimizados por rubro y comuna).</p>
+
+    <section class="cs-resumen" aria-label="SVEA en cifras">
+      <div><strong>250+</strong><span>empresas atendidas</span></div>
+      <div><strong>6</strong><span>rubros con experiencia</span></div>
+      <div><strong>3-5</strong><span>días hábiles para el expediente</span></div>
+      <div><strong>24 h</strong><span>para cotizar</span></div>
+    </section>
+
+    <section class="cs-rubros" aria-labelledby="t-rubros">
+      <div class="cs-cab">
+        <p class="cs-sobre">Paso 1</p>
+        <h2 id="t-rubros">¿Cuál es tu <em>rubro</em>?</h2>
+        <p>Cada rubro tiene sus permisos. Elige el tuyo y te mostramos los casos.</p>
+      </div>
+      <div class="cs-rubros-grilla">
+        {RUBROS.map((r) => (
+          <article class="cs-rubro">
+            <button type="button" class="cs-rubro-foto" data-ir={r.id} aria-label={`Ver casos de ${r.nombre}`}>
+              {hayFoto(r.foto) && <Foto nombre={r.foto} alt={r.alt} tamano="tarjeta" />}
+              <span class="cs-rubro-nombre">{r.nombre}</span>
+            </button>
+            <div class="cs-rubro-cuerpo">
+              <p>{r.texto}</p>
+              <p class="cs-necesita">Lo que suele necesitar:</p>
+              <ul>
+                {r.necesita.map((s) => <li><a href={`${BASE}${SERVICIO[s].href}`}>{SERVICIO[s].nombre}</a></li>)}
+              </ul>
+              <button type="button" class="cs-ver" data-ir={r.id}>Ver casos <span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="cs-casos" id="casos" aria-labelledby="t-casos">
+      <div class="cs-cab">
+        <p class="cs-sobre">Paso 2</p>
+        <h2 id="t-casos">Casos de empresas <em>como la tuya</em></h2>
+      </div>
+      <nav class="cs-filtros" aria-label="Filtrar casos por rubro">
+        <button type="button" class="activo" data-filtro="todos">Todos los rubros</button>
+        {RUBROS.map((r) => <button type="button" data-filtro={r.id}>{r.nombre}</button>)}
+      </nav>
+      <div class="cs-lista">
+        {CASOS.map((c) => (
+          <article class="cs-caso" data-rubro={c.r}>
+            <div class="cs-caso-foto">
+              {hayFoto(c.foto) && <Foto nombre={c.foto} alt={c.alt} tamano="mitad" />}
+              <span class="cs-etiqueta">{rubroDe(c.r).nombre}</span>
+            </div>
+            <div class="cs-caso-cuerpo">
+              <p class="cs-servicio"><a href={`${BASE}${SERVICIO[c.s].href}`}>{SERVICIO[c.s].nombre}</a><span class="cs-ejemplo">Ejemplo</span></p>
+              <h3>{c.titulo}</h3>
+              <p class="cs-quien">{c.empresa} · {c.lugar}</p>
+              <dl>
+                <div><dt>Lo que necesitaba</dt><dd>{c.desafio}</dd></div>
+                <div><dt>Lo que hicimos</dt><dd>{c.hicimos}</dd></div>
+              </dl>
+              <ul class="cs-cifras">
+                {c.cifras.map(([n, l]) => <li><strong>{n}</strong><span>{l}</span></li>)}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="cs-vacio" hidden>Aún no hay casos publicados de este rubro. <a href={`${BASE}/#form-home`}>Cuéntanos el tuyo</a> y te decimos qué necesitas.</p>
+    </section>
+
+    <section class="cs-testimonio" aria-label="Testimonio">
+      <blockquote>
+        <p>«Nos dijeron exactamente qué faltaba y se encargaron de todo con la SEREMI. Nosotros solo firmamos.»</p>
+        <footer>Gerente de operaciones · Distribuidora de alimentos, Pudahuel <span class="cs-ejemplo">Ejemplo</span></footer>
+      </blockquote>
+    </section>
+
+    <section class="cs-clientes">
+      <h2>Con la confianza de <em>más de 250 empresas</em> en todo Chile</h2>
+      <LogoMarquee logos={logosClientes(BASE)} client:idle />
+    </section>
+
+    <section class="cs-final">
+      <h2>¿Tu caso se parece a alguno?</h2>
+      <p>Cuéntanos tu rubro y qué necesitas: te enviamos una cotización en menos de 24 horas.</p>
+      <div class="cs-botones">
+        <a class="btn-flecha" href={`${BASE}/#form-home`}><span>Solicitar cotización</span><span class="circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="cs-wa" href="https://wa.me/56929947924">WhatsApp +56 9 2994 7924</a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const filtros = document.querySelectorAll<HTMLButtonElement>('.cs-filtros button');
+    const vacio = document.querySelector<HTMLElement>('.cs-vacio');
+    function filtrar(f: string) {
+      filtros.forEach((x) => x.classList.toggle('activo', x.dataset.filtro === f));
+      let n = 0;
+      document.querySelectorAll<HTMLElement>('.cs-caso').forEach((c) => {
+        c.hidden = f !== 'todos' && c.dataset.rubro !== f;
+        if (!c.hidden) n++;
+      });
+      if (vacio) vacio.hidden = n > 0;
+    }
+    filtros.forEach((b) => b.addEventListener('click', () => filtrar(b.dataset.filtro!)));
+    document.querySelectorAll<HTMLButtonElement>('[data-ir]').forEach((b) => b.addEventListener('click', () => {
+      filtrar(b.dataset.ir!);
+      document.getElementById('casos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }));
+  </script>
+</PaginaSimple>
+
+<style>
+  .cs { max-width: 72rem; margin: 0 auto; display: grid; gap: 64px; }
+  .cs-aviso { margin: 0; padding: 14px 18px; border: 1px dashed #d4a017; background: #fffbea; border-radius: 12px; font-size: 14px; line-height: 1.5; color: #5c4700; }
+  .cs-resumen { display: grid; grid-template-columns: repeat(4, 1fr); border-block: 1px solid var(--borde); margin-top: -32px; }
+  .cs-resumen div { display: grid; gap: 4px; padding: 20px 16px; }
+  .cs-resumen div + div { border-left: 1px solid var(--borde); }
+  .cs-resumen strong { font: 500 36px/1 Manrope, Inter, sans-serif; letter-spacing: -.03em; color: #0d3518; }
+  .cs-resumen span { font-size: 14px; color: var(--suave); }
+
+  .cs-cab { display: grid; gap: 8px; margin-bottom: 28px; }
+  .cs-sobre { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--verde); }
+  .cs-cab h2, .cs-clientes h2, .cs-final h2 { margin: 0; font: 500 clamp(26px, 3.2vw, 36px)/1.15 Manrope, Inter, sans-serif; letter-spacing: -.03em; text-wrap: balance; }
+  .cs-cab em, .cs-clientes em { font-style: normal; color: var(--verde); }
+  .cs-cab p:not(.cs-sobre) { margin: 0; color: var(--suave); }
+
+  .cs-rubros-grilla { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .cs-rubro { display: flex; flex-direction: column; border: 1px solid var(--borde); border-radius: 16px; overflow: hidden; background: #fff; transition: box-shadow .2s, border-color .2s, transform .2s; }
+  .cs-rubro:hover { border-color: #b9d8c3; box-shadow: 0 16px 36px -18px rgba(13,53,24,.35); transform: translateY(-2px); }
+  .cs-rubro-foto { position: relative; display: block; width: 100%; aspect-ratio: 16 / 10; padding: 0; border: 0; background: #dfe7e1; cursor: pointer; overflow: hidden; }
+  .cs-rubro-foto :global(img) { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s; }
+  .cs-rubro:hover .cs-rubro-foto :global(img) { transform: scale(1.04); }
+  .cs-rubro-foto::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,53,24,.85), rgba(13,53,24,0) 60%); }
+  .cs-rubro-nombre { position: absolute; left: 18px; right: 18px; bottom: 14px; z-index: 1; text-align: left; color: #fff; font: 600 19px/1.2 Manrope, Inter, sans-serif; letter-spacing: -.01em; }
+  .cs-rubro-cuerpo { display: flex; flex-direction: column; gap: 10px; padding: 18px 20px 20px; flex: 1; }
+  .cs-rubro-cuerpo p { margin: 0; font-size: 14.5px; line-height: 1.55; color: rgba(0,0,0,.72); }
+  .cs-rubro-cuerpo .cs-necesita { font-size: 12.5px; font-weight: 600; color: #0d3518; text-transform: uppercase; letter-spacing: .05em; margin-top: 4px; }
+  .cs-rubro-cuerpo ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+  .cs-rubro-cuerpo li a { display: inline-block; font-size: 13px; padding: 4px 10px; border-radius: 999px; background: #eef5f0; color: #0d3518; text-decoration: none; }
+  .cs-rubro-cuerpo li a:hover { background: #dcecdf; color: var(--verde); }
+  .cs-ver { margin-top: auto; align-self: flex-start; padding: 8px 0 0; border: 0; background: none; font: 600 14px Inter, sans-serif; color: var(--verde); cursor: pointer; }
+  .cs-ver:hover { text-decoration: underline; }
+
+  .cs-filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .cs-filtros button { font: 500 14px Inter, sans-serif; padding: 9px 16px; border-radius: 999px; border: 1px solid var(--borde); background: #fff; color: #161b22; cursor: pointer; transition: all .15s; }
+  .cs-filtros button:hover { border-color: var(--verde); color: var(--verde); }
+  .cs-filtros button.activo { background: var(--verde); border-color: var(--verde); color: #fff; }
+  .cs-casos { scroll-margin-top: 90px; }
+  .cs-lista { display: grid; gap: 20px; }
+  .cs-caso { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); border: 1px solid var(--borde); border-radius: 18px; overflow: hidden; background: #fff; transition: box-shadow .2s, border-color .2s; }
+  .cs-caso[hidden] { display: none; }
+  .cs-caso:hover { border-color: #b9d8c3; box-shadow: 0 16px 36px -18px rgba(13,53,24,.3); }
+  .cs-caso:nth-child(even) .cs-caso-foto { order: 2; }
+  .cs-caso-foto { position: relative; min-height: 280px; background: #dfe7e1; }
+  .cs-caso-foto :global(picture), .cs-caso-foto :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cs-etiqueta { position: absolute; left: 14px; top: 14px; z-index: 1; font: 600 12px Inter, sans-serif; padding: 5px 10px; border-radius: 999px; background: rgba(255,255,255,.92); color: #0d3518; }
+  .cs-caso-cuerpo { display: flex; flex-direction: column; gap: 14px; padding: 28px 32px; }
+  .cs-servicio { margin: 0; display: flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+  .cs-servicio a { color: var(--verde); text-decoration: none; }
+  .cs-servicio a:hover { text-decoration: underline; }
+  .cs-ejemplo { font: 600 11px Inter, sans-serif; letter-spacing: .04em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; background: #fff3c4; color: #7a5b00; }
+  .cs-caso h3 { margin: 0; font: 500 23px/1.25 Manrope, Inter, sans-serif; letter-spacing: -.02em; text-wrap: balance; }
+  .cs-quien { margin: -6px 0 0; font-size: 14px; color: var(--suave); }
+  .cs-caso dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .cs-caso dt { font-size: 13px; font-weight: 600; color: #0d3518; }
+  .cs-caso dd { margin: 4px 0 0; font-size: 14.5px; line-height: 1.55; color: rgba(0,0,0,.72); }
+  .cs-cifras { margin: auto 0 0; padding: 16px 0 0; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--borde); }
+  .cs-cifras li { display: grid; gap: 2px; align-content: start; padding-right: 8px; }
+  .cs-cifras li + li { padding-left: 14px; border-left: 1px solid var(--borde); }
+  .cs-cifras strong { font: 500 21px/1.1 Manrope, Inter, sans-serif; color: var(--verde); font-variant-numeric: tabular-nums; }
+  .cs-cifras span { font-size: 12.5px; color: var(--suave); }
+  .cs-vacio { margin: 0; padding: 24px; text-align: center; border: 1px dashed var(--borde); border-radius: 14px; color: var(--suave); }
+  .cs-vacio a { color: var(--verde); font-weight: 600; }
+
+  .cs-testimonio { background: #0d3518; color: #fff; border-radius: 20px; padding: 48px; }
+  .cs-testimonio blockquote { margin: 0; display: grid; gap: 16px; max-width: 48rem; }
+  .cs-testimonio p { margin: 0; font: 500 26px/1.35 Manrope, Inter, sans-serif; letter-spacing: -.02em; }
+  .cs-testimonio footer { font-size: 14px; color: rgba(255,255,255,.75); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .cs-clientes { text-align: center; display: grid; gap: 20px; }
+  .cs-final { text-align: center; display: grid; gap: 12px; justify-items: center; padding-bottom: 16px; }
+  .cs-final p { margin: 0; color: var(--suave); }
+  .cs-botones { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: center; margin-top: 8px; }
+  .cs-wa { color: var(--verde); font-weight: 600; text-decoration: none; }
+  .cs-wa:hover { text-decoration: underline; }
+
+  @media (max-width: 1023px) {
+    .cs-rubros-grilla { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cs-caso { grid-template-columns: 1fr; }
+    .cs-caso:nth-child(even) .cs-caso-foto { order: 0; }
+    .cs-caso-foto { min-height: 0; aspect-ratio: 16 / 9; }
+  }
+  @media (max-width: 640px) {
+    .cs { gap: 48px; }
+    .cs-resumen { grid-template-columns: repeat(2, 1fr); }
+    .cs-resumen div:nth-child(3) { border-left: 0; }
+    .cs-resumen div:nth-child(n+3) { border-top: 1px solid var(--borde); }
+    .cs-rubros-grilla { grid-template-columns: 1fr; }
+    .cs-caso-cuerpo { padding: 22px; }
+    .cs-caso dl { grid-template-columns: 1fr; }
+    .cs-testimonio { padding: 28px; }
+    .cs-testimonio p { font-size: 20px; }
+  }
+</style>

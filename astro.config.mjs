@@ -23,6 +23,7 @@ const indexable = (/** @type {string} */ url) => {
   return !ruta.startsWith('/cotiza-')
     && ruta !== '/gracias/'
     && ruta !== '/estado/'
+    && ruta !== '/casos/'
     && !ruta.startsWith('/404')
     && !NO_INDEXABLES.has(ruta);
 };
@@ -34,6 +35,8 @@ const paginaDeApoyo = {
     /** @param {{ injectRoute: (r: { pattern: string; entrypoint: string }) => void }} o */
     'astro:config:setup': ({ injectRoute }) => {
       if (!PRODUCCION) injectRoute({ pattern: '/estado', entrypoint: './src/apoyo/estado.astro' });
+      // propuesta de la página de casos (24-sep): sólo en la copia, noindex
+      if (!PRODUCCION) injectRoute({ pattern: '/casos', entrypoint: './src/apoyo/casos.astro' });
     },
   },
 };
