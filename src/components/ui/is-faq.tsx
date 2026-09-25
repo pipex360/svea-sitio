@@ -18,7 +18,7 @@ export const PREGUNTAS = [
   },
   {
     p: '¿Cuánto demora obtener el informe sanitario?',
-    r: 'El plazo depende de la complejidad del establecimiento y de la carga de trabajo de la SEREMI de Salud correspondiente. En general, desde la presentación del expediente, el proceso puede tomar entre 15 y 45 días hábiles. En SVEA nos encargamos de preparar una presentación completa desde el inicio para minimizar observaciones y acelerar los tiempos de resolución.',
+    r: 'El plazo depende de la complejidad del establecimiento y de la carga de trabajo de la SEREMI de Salud correspondiente. El plazo de la SEREMI varía según la región y la carga de trabajo; en nuestra experiencia, desde la presentación del expediente, el proceso suele tomar entre 15 y 45 días hábiles. En SVEA nos encargamos de preparar una presentación completa desde el inicio para minimizar observaciones y acelerar los tiempos de resolución.',
   },
   {
     p: '¿Qué documentos necesito para el informe sanitario?',

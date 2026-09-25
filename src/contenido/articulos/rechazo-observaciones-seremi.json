@@ -201,80 +201,6 @@
       "Datos protegidos",
       "Cotización sin costo",
       "Sin compromiso"
-    ],
-    "logos": [
-      {
-        "src": "/img/articulos/logo-25m.webp",
-        "alt": "Logo 25M",
-        "ancho": 400,
-        "alto": 85
-      },
-      {
-        "src": "/img/clientes/gespania.webp",
-        "alt": "Gespania",
-        "ancho": 299,
-        "alto": 149
-      },
-      {
-        "src": "/img/clientes/grupo-mbo.webp",
-        "alt": "Grupo MBO",
-        "ancho": 294,
-        "alto": 220
-      },
-      {
-        "src": "/img/clientes/nuevo-pudahuel.webp",
-        "alt": "Nuevo Pudahuel",
-        "ancho": 329,
-        "alto": 77
-      },
-      {
-        "src": "/img/clientes/natures-farm.webp",
-        "alt": "Nature's Farm",
-        "ancho": 286,
-        "alto": 217
-      },
-      {
-        "src": "/img/clientes/blt-mini-bodegas.webp",
-        "alt": "BLT",
-        "ancho": 516,
-        "alto": 220
-      },
-      {
-        "src": "/img/clientes/db-santasalo.webp",
-        "alt": "DB Santasalo",
-        "ancho": 388,
-        "alto": 127
-      },
-      {
-        "src": "/img/clientes/animal-services.webp",
-        "alt": "Animal Services",
-        "ancho": 215,
-        "alto": 162
-      },
-      {
-        "src": "/img/clientes/lira.webp",
-        "alt": "Lira",
-        "ancho": 242,
-        "alto": 220
-      },
-      {
-        "src": "/img/clientes/fuchs.webp",
-        "alt": "Fuchs Lubricants",
-        "ancho": 495,
-        "alto": 220
-      },
-      {
-        "src": "/img/clientes/delart-chocolat.webp",
-        "alt": "DelArt Chocolat",
-        "ancho": 443,
-        "alto": 220
-      },
-      {
-        "src": "/img/clientes/novametal.webp",
-        "alt": "Novametal",
-        "ancho": 166,
-        "alto": 122
-      }
     ]
   },
   "faq": {
@@ -351,7 +277,7 @@
     },
     {
       "tipo": "html",
-      "html": "<section id=\"recursos\">\n        <h2>Si la SEREMI rechaza: los recursos</h2>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Recurso</th><th>Plazo</th><th>Ante quién</th><th>Ley 19.880</th></tr></thead>\n            <tbody>\n                <tr><td><strong>Reposición</strong></td><td>5 días hábiles desde la notificación</td><td>El mismo órgano que dictó el acto</td><td>Art. 59</td></tr>\n                <tr><td><strong>Jerárquico</strong></td><td>5 días, en subsidio de la reposición o directo</td><td>El superior jerárquico de quien dictó el acto</td><td>Art. 59</td></tr>\n                <tr><td><strong>Revisión extraordinaria</strong></td><td>1 año en los casos de las letras a) y b)</td><td>El superior jerárquico o, si no lo hay, la misma autoridad</td><td>Art. 60</td></tr>\n            </tbody>\n        </table>\n        </div>\n        <p>La autoridad tiene hasta <strong>30 días</strong> para resolver la reposición o el jerárquico, y la resolución que acoge el recurso puede modificar, reemplazar o dejar sin efecto el acto (art. 59). La revisión extraordinaria es para casos graves, como una resolución dictada sin el debido emplazamiento o con un error de hecho manifiesto y determinante (art. 60).</p>\n        <p>Muchas veces lo más rápido no es recurrir sino <strong>presentar una nueva solicitud</strong> que corrija la causa del rechazo. Decide según el motivo: si la SEREMI se equivocó, recurre; si faltaba algo, corrige y reingresa.</p>\n    </section>\n\n<section id=\"sin-respuesta\">\n        <h2>Qué pasa si la SEREMI no responde</h2>\n        <p>El Código Sanitario (art. 7) obliga a la autoridad sanitaria a pronunciarse sobre una solicitud de autorización dentro de <strong>30 días hábiles</strong> desde su ingreso. Si no lo hace, la autorización se entiende concedida, salvo en las materias que por ley requieren autorización expresa, que no pueden funcionar sin ella.</p>\n        <p>La Ley 19.880 agrega reglas generales: el procedimiento no puede exceder de <strong>6 meses</strong> (art. 27); con el plazo vencido, puedes denunciar el incumplimiento ante la autoridad y, si no se pronuncia en <strong>5 días</strong>, la solicitud se entiende aceptada, con un certificado que lo acredita (art. 64, silencio positivo). En ciertos casos el silencio es negativo, por ejemplo cuando se trata de impugnaciones o de solicitudes que afectan el patrimonio fiscal (art. 65). También puedes dejar constancia del retraso por la Oficina de Informaciones, Reclamos y Sugerencias (OIRS) de la SEREMI.</p>\n        <div class=\"callout callout-info\">\n            <span class=\"callout-icon\">i</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Ley Marco de Autorizaciones Sectoriales</div>\n                <p>La Ley 21.770, publicada el 29 de septiembre de 2025, fija plazos máximos y reglas de silencio administrativo para las autorizaciones sectoriales. Su procedimiento entra en vigencia de forma gradual, autorización por autorización, a medida que se publican los decretos que las clasifican. Antes de invocar el silencio, confirma qué régimen rige tu trámite.</p>\n            </div>\n        </div>\n        <p>Si obtienes una autorización sanitaria por silencio y la necesitas para tu patente, el artículo 26 de la Ley de Rentas Municipales pide acompañar una declaración jurada de que la autoridad no se pronunció en plazo y el comprobante de la solicitud.</p>\n    </section>\n\n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿Te observaron o rechazaron la solicitud?</h3><p>Revisamos la resolución, corregimos el expediente y preparamos la respuesta punto por punto.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20la%20SEREMI%20observ%C3%B3%20mi%20solicitud%20y%20necesito%20ayuda%20para%20responder\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><div class=\"art-logos\" aria-label=\"Empresas que confían en SVEA\"><div class=\"logos-cinta art-logos-cinta\"><div class=\"art-logos-mitad\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"Logo 25M\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"Gespania\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"Grupo MBO\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"Nuevo Pudahuel\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"Nature's Farm\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"BLT\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"DB Santasalo\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"Animal Services\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"Lira\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"Fuchs Lubricants\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"DelArt Chocolat\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"Novametal\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div><div class=\"art-logos-mitad\" aria-hidden=\"true\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div></div></div></aside>\n<section id=\"errores\">\n        <h2>Errores comunes</h2>\n        <div class=\"error-item\"><h4>Responder solo con una carta</h4><p>Si la observación es a un documento, hay que subir el documento corregido.</p></div>\n        <div class=\"error-item\"><h4>Dejar vencer el plazo</h4><p>Vencido el plazo de una observación de forma, la solicitud puede tenerse por desistida y hay que empezar de nuevo.</p></div>\n        <div class=\"error-item\"><h4>Recurrir cuando conviene reingresar</h4><p>Un recurso contra un rechazo bien fundado solo suma semanas. Si faltaba un antecedente, corrige y presenta de nuevo.</p></div>\n        <div class=\"error-item\"><h4>Contradecir el expediente</h4><p>La respuesta no puede cambiar datos (superficies, procesos, número de vehículos) sin corregirlos en todos los documentos.</p></div>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (septiembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=5595\" target=\"_blank\" rel=\"noopener\">Código Sanitario, art. 7</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=210676\" target=\"_blank\" rel=\"noopener\">Ley 19.880, bases de los procedimientos administrativos (arts. 25 a 27, 31, 59, 60, 64 y 65)</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=1216930\" target=\"_blank\" rel=\"noopener\">Ley 21.770, Ley Marco de Autorizaciones Sectoriales</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=18967\" target=\"_blank\" rel=\"noopener\">Ley de Rentas Municipales, DL 3.063, art. 26</a></li><li><a href=\"https://seremienlinea.minsal.cl/\" target=\"_blank\" rel=\"noopener\">SEREMI en Línea, Ministerio de Salud</a></li></ul>\n    </section>\n"
+      "html": "<section id=\"recursos\">\n        <h2>Si la SEREMI rechaza: los recursos</h2>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Recurso</th><th>Plazo</th><th>Ante quién</th><th>Ley 19.880</th></tr></thead>\n            <tbody>\n                <tr><td><strong>Reposición</strong></td><td>5 días hábiles desde la notificación</td><td>El mismo órgano que dictó el acto</td><td>Art. 59</td></tr>\n                <tr><td><strong>Jerárquico</strong></td><td>5 días, en subsidio de la reposición o directo</td><td>El superior jerárquico de quien dictó el acto</td><td>Art. 59</td></tr>\n                <tr><td><strong>Revisión extraordinaria</strong></td><td>1 año en los casos de las letras a) y b)</td><td>El superior jerárquico o, si no lo hay, la misma autoridad</td><td>Art. 60</td></tr>\n            </tbody>\n        </table>\n        </div>\n        <p>La autoridad tiene hasta <strong>30 días</strong> para resolver la reposición o el jerárquico, y la resolución que acoge el recurso puede modificar, reemplazar o dejar sin efecto el acto (art. 59). La revisión extraordinaria es para casos graves, como una resolución dictada sin el debido emplazamiento o con un error de hecho manifiesto y determinante (art. 60).</p>\n        <p>Muchas veces lo más rápido no es recurrir sino <strong>presentar una nueva solicitud</strong> que corrija la causa del rechazo. Decide según el motivo: si la SEREMI se equivocó, recurre; si faltaba algo, corrige y reingresa.</p>\n    </section>\n\n<section id=\"sin-respuesta\">\n        <h2>Qué pasa si la SEREMI no responde</h2>\n        <p>El Código Sanitario (art. 7) obliga a la autoridad sanitaria a pronunciarse sobre una solicitud de autorización dentro de <strong>30 días hábiles</strong> desde su ingreso. Si no lo hace, la autorización se entiende concedida, salvo en las materias que por ley requieren autorización expresa, que no pueden funcionar sin ella.</p>\n        <p>La Ley 19.880 agrega reglas generales: el procedimiento no puede exceder de <strong>6 meses</strong> (art. 27); con el plazo vencido, puedes denunciar el incumplimiento ante la autoridad y, si no se pronuncia en <strong>5 días</strong>, la solicitud se entiende aceptada, con un certificado que lo acredita (art. 64, silencio positivo). En ciertos casos el silencio es negativo, por ejemplo cuando se trata de impugnaciones o de solicitudes que afectan el patrimonio fiscal (art. 65). También puedes dejar constancia del retraso por la Oficina de Informaciones, Reclamos y Sugerencias (OIRS) de la SEREMI.</p>\n        <div class=\"callout callout-info\">\n            <span class=\"callout-icon\">i</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Ley Marco de Autorizaciones Sectoriales</div>\n                <p>La Ley 21.770, publicada el 29 de septiembre de 2025, fija plazos máximos y reglas de silencio administrativo para las autorizaciones sectoriales. Su procedimiento entra en vigencia de forma gradual, autorización por autorización, a medida que se publican los decretos que las clasifican. Antes de invocar el silencio, confirma qué régimen rige tu trámite.</p>\n            </div>\n        </div>\n        <p>Si obtienes una autorización sanitaria por silencio y la necesitas para tu patente, el artículo 26 de la Ley de Rentas Municipales pide acompañar una declaración jurada de que la autoridad no se pronunció en plazo y el comprobante de la solicitud.</p>\n    </section>\n\n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿Te observaron o rechazaron la solicitud?</h3><p>Revisamos la resolución, corregimos el expediente y preparamos la respuesta punto por punto.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20la%20SEREMI%20observ%C3%B3%20mi%20solicitud%20y%20necesito%20ayuda%20para%20responder\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><!--logos-clientes--></aside>\n<section id=\"errores\">\n        <h2>Errores comunes</h2>\n        <div class=\"error-item\"><h4>Responder solo con una carta</h4><p>Si la observación es a un documento, hay que subir el documento corregido.</p></div>\n        <div class=\"error-item\"><h4>Dejar vencer el plazo</h4><p>Vencido el plazo de una observación de forma, la solicitud puede tenerse por desistida y hay que empezar de nuevo.</p></div>\n        <div class=\"error-item\"><h4>Recurrir cuando conviene reingresar</h4><p>Un recurso contra un rechazo bien fundado solo suma semanas. Si faltaba un antecedente, corrige y presenta de nuevo.</p></div>\n        <div class=\"error-item\"><h4>Contradecir el expediente</h4><p>La respuesta no puede cambiar datos (superficies, procesos, número de vehículos) sin corregirlos en todos los documentos.</p></div>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (septiembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=5595\" target=\"_blank\" rel=\"noopener\">Código Sanitario, art. 7</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=210676\" target=\"_blank\" rel=\"noopener\">Ley 19.880, bases de los procedimientos administrativos (arts. 25 a 27, 31, 59, 60, 64 y 65)</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=1216930\" target=\"_blank\" rel=\"noopener\">Ley 21.770, Ley Marco de Autorizaciones Sectoriales</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=18967\" target=\"_blank\" rel=\"noopener\">Ley de Rentas Municipales, DL 3.063, art. 26</a></li><li><a href=\"https://seremienlinea.minsal.cl/\" target=\"_blank\" rel=\"noopener\">SEREMI en Línea, Ministerio de Salud</a></li></ul>\n    </section>\n"
     }
   ],
   "relacionados": {

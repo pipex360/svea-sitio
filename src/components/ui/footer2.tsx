@@ -4,8 +4,9 @@
  * Es el Footer2 de shadcnblocks.com con los contenidos del pie que hoy sirve
  * el WordPress: el mismo texto de presentación, la dirección, el teléfono y el
  * correo, y los mismos enlaces internos (los seis servicios, con sus URL
- * exactas), más la columna «Recursos y guías» con los enlaces que el menú
- * del WordPress vivo lleva bajo ese nombre. Cinco cambios sobre el original:
+ * exactas), más la columna «Recursos y guías», que desde el 24-sep lleva las
+ * mismas seis guías y el mismo «Ver todas las guías» que el menú (GUIAS_MENU,
+ * en src/contenido/articulos/guias.ts). Cinco cambios sobre el original:
  *
  * 1. El logo de SVEA va solo, sin el título de texto al lado: el logo ya
  *    lleva el nombre y quedaría «SVEA SVEA».
@@ -41,6 +42,7 @@ import { useEffect, useRef } from 'react';
 
 import { Velaris } from '@/components/ui/velaris';
 import { cn } from '@/lib/utils';
+import { GUIAS_MENU, VER_TODAS_LAS_GUIAS } from '@/contenido/articulos/guias';
 
 interface MenuItem {
   title: string;
@@ -107,28 +109,16 @@ export function Footer2({
       ],
     },
     {
-      // Los mismos enlaces que lleva el menú del WordPress vivo bajo «Recursos y
-      // Guías». El menú desplegable de la cabecera (Radix) sólo dibuja su
-      // contenido al abrirse, así que estos enlaces no están en el HTML: aquí
-      // sí, para que Google los siga desde la portada como hasta ahora.
+      // Las mismas seis guías y el mismo «Ver todas las guías» que el menú
+      // «Recursos y guías» (GUIAS_MENU, en guias.ts): menú y pie no pueden
+      // diferir. El desplegable de la cabecera (Radix) sólo dibuja su contenido
+      // al abrirse, así que estos enlaces no están en su HTML: aquí sí, para
+      // que Google los siga desde todas las páginas.
       title: 'Recursos y guías',
       span: 2,
       links: [
-        { text: 'Guías de cumplimiento', url: `${base}/blog/` },
-        { text: '¿Qué es el Informe Sanitario?', url: `${base}/que-es-informe-sanitario/` },
-        { text: 'Calificación Técnica Industrial en Chile', url: `${base}/calificacion-tecnica-industrial-chile/` },
-        { text: 'Estudio de Carga de Combustible en Chile', url: `${base}/estudio-de-carga-combustible-chile/` },
-        { text: 'Manejo de Residuos Peligrosos en Chile', url: `${base}/manejo-de-residuos-peligrosos-chile/` },
-        { text: 'Plan de Emergencia para Empresas', url: `${base}/plan-de-emergencia-empresa-chile/` },
-        { text: 'Plan de Emergencia para Condominios', url: `${base}/plan-de-emergencia-condominio-chile/` },
-        { text: 'Autorización de Transporte de Residuos en Chile', url: `${base}/autorizacion-transporte-residuos-chile/` },
-        { text: 'Patente definitiva y permisos SEREMI', url: `${base}/patente-definitiva-permisos-seremi/` },
-        { text: 'Checklist DS 44', url: `${base}/checklist-ds-44-fiscalizacion/` },
-        { text: 'Transporte de residuos no peligrosos', url: `${base}/autorizacion-transporte-residuos-no-peligrosos/` },
-        { text: 'Declaración SIDREP y SINADER', url: `${base}/declaracion-residuos-sidrep-sinader/` },
-        { text: 'Sumario sanitario SEREMI', url: `${base}/sumario-sanitario-seremi/` },
-        { text: 'Rechazo u observaciones SEREMI', url: `${base}/rechazo-observaciones-seremi/` },
-        { text: 'Sustancias peligrosas DS 43', url: `${base}/plan-manejo-sustancias-peligrosas-ds-43/` },
+        ...GUIAS_MENU.map((g) => ({ text: g.rotulo, url: `${base}/${g.slug}/` })),
+        { text: VER_TODAS_LAS_GUIAS.rotulo, url: `${base}${VER_TODAS_LAS_GUIAS.ruta}` },
       ],
     },
   ],

@@ -20,6 +20,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { IconoWhatsApp } from '@/components/ui/icono-whatsapp';
 import { guiasPrincipales, masTramites, servicios } from '@/components/ui/navigation-menu-06';
+import { VER_TODAS_LAS_GUIAS } from '@/contenido/articulos/guias';
 
 const WHATSAPP = 'https://api.whatsapp.com/send/?phone=56929947924&text=Hola%2C%20necesito%20asesor%C3%ADa%20t%C3%A9cnica';
 const TELEFONO = '+56929947924';
@@ -121,8 +122,8 @@ export function MenuMovil({ base = '' }: { base?: string }) {
                 </li>
               ))}
               <li>
-                <a href={url('/blog/')} className={`${enlace} font-semibold`} onClick={cerrar}>
-                  Ver todas las guías →
+                <a href={url(VER_TODAS_LAS_GUIAS.ruta)} className={`${enlace} font-semibold`} onClick={cerrar}>
+                  {VER_TODAS_LAS_GUIAS.rotulo} →
                 </a>
               </li>
             </ul>

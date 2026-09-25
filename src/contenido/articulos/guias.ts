@@ -25,8 +25,8 @@
 export const TEMAS = [
   { id: 'permisos-seremi', nombre: 'Permisos SEREMI', bajada: 'Calificación industrial, informe sanitario, patente y qué hacer ante observaciones o sumarios.' },
   { id: 'emergencias', nombre: 'Emergencias', bajada: 'Planes de emergencia para empresas y condominios, DS 44 y fiscalización de la Dirección del Trabajo.' },
-  { id: 'incendio', nombre: 'Incendio', bajada: 'Carga de combustible, resistencia al fuego y almacenamiento de sustancias peligrosas.' },
-  { id: 'residuos', nombre: 'Residuos', bajada: 'Manejo, transporte y declaración de residuos peligrosos y no peligrosos.' },
+  { id: 'incendio', nombre: 'Incendio', bajada: 'Carga de combustible y resistencia al fuego según la OGUC.' },
+  { id: 'residuos', nombre: 'Residuos y sustancias peligrosas', bajada: 'Manejo, transporte y declaración de residuos, y almacenamiento de sustancias peligrosas.' },
 ] as const;
 export type Tema = (typeof TEMAS)[number]['nombre'];
 
@@ -99,7 +99,7 @@ const IS: Servicio = {
 export const GUIAS: Guia[] = [
   {
     slug: 'autorizacion-transporte-residuos-chile',
-    tema: 'Residuos',
+    tema: 'Residuos y sustancias peligrosas',
     titulo: 'Autorización Transporte de Residuos Chile: Guía Completa 2026',
     bajada: 'Requisitos SEREMI, documentos, costos, plazos y proceso completo para obtener la autorización sanitaria de transporte de residuos peligrosos y no peligrosos.',
     categoria: 'Permisos y Autorizaciones',
@@ -110,7 +110,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'manejo-de-residuos-peligrosos-chile',
-    tema: 'Residuos',
+    tema: 'Residuos y sustancias peligrosas',
     titulo: 'Manejo de Residuos Peligrosos en Chile: Guía Completa 2026',
     bajada: 'Normativa DS 148, clasificación de RESPEL, plan de manejo, almacenamiento, transporte, declaración SIDREP y obligaciones del generador.',
     categoria: 'Residuos Peligrosos',
@@ -223,7 +223,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'autorizacion-transporte-residuos-no-peligrosos',
-    tema: 'Residuos',
+    tema: 'Residuos y sustancias peligrosas',
     titulo: 'Autorización para transportar residuos no peligrosos: paso a paso',
     bajada: 'Quién la pide, qué antecedentes revisa la SEREMI, cómo se completa en SEREMI en Línea y en qué se diferencia de la de residuos peligrosos.',
     categoria: 'Permisos y Autorizaciones',
@@ -234,7 +234,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'declaracion-residuos-sidrep-sinader',
-    tema: 'Residuos',
+    tema: 'Residuos y sustancias peligrosas',
     titulo: 'Declaración de residuos en SIDREP y SINADER: quién declara y cómo',
     bajada: 'SIDREP para residuos peligrosos y SINADER para no peligrosos: obligados, plazos, acceso por la Ventanilla Única del RETC y errores comunes.',
     categoria: 'Residuos Peligrosos',
@@ -267,7 +267,7 @@ export const GUIAS: Guia[] = [
   },
   {
     slug: 'plan-manejo-sustancias-peligrosas-ds-43',
-    tema: 'Incendio',
+    tema: 'Residuos y sustancias peligrosas',
     titulo: 'Plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye',
     bajada: 'Umbrales de autorización sanitaria, tipos de bodega según la cantidad, documentos del plan de manejo y declaración semestral según el DS 43.',
     categoria: 'Residuos Peligrosos',
@@ -277,6 +277,22 @@ export const GUIAS: Guia[] = [
     servicio: RP,
   },
 ];
+
+/**
+ * Las seis guías del menú «Recursos y guías» (escritorio y móvil) y de la
+ * columna del mismo nombre en el pie (Footer2). Las tres leen esta lista, así
+ * que el menú y el pie no pueden diferir; después de las seis va siempre
+ * «Ver todas las guías» → /blog/.
+ */
+export const GUIAS_MENU: { slug: string; rotulo: string; descripcion: string }[] = [
+  { slug: 'calificacion-tecnica-industrial-chile', rotulo: 'Calificación Técnica Industrial en Chile', descripcion: 'Guía completa del trámite: quién lo necesita, plazos y documentos.' },
+  { slug: 'calificacion-inofensiva-seremi', rotulo: 'Calificación Inofensiva SEREMI', descripcion: 'Cómo obtener el certificado de actividad inofensiva y tu patente.' },
+  { slug: 'patente-definitiva-permisos-seremi', rotulo: 'Patente definitiva y permisos SEREMI', descripcion: 'Qué permisos de la SEREMI te piden para dejar la patente provisoria.' },
+  { slug: 'plan-de-emergencia-ds-44-empresas-chile', rotulo: 'Plan de Emergencia DS 44', descripcion: 'Qué exige el decreto, contenido obligatorio, simulacros y sanciones.' },
+  { slug: 'que-es-informe-sanitario', rotulo: '¿Qué es el Informe Sanitario?', descripcion: 'Quién lo necesita, documentos, plazos y costos ante la SEREMI.' },
+  { slug: 'sumario-sanitario-seremi', rotulo: 'Sumario sanitario SEREMI', descripcion: 'Qué hacer si la SEREMI te levanta un acta o te multa.' },
+];
+export const VER_TODAS_LAS_GUIAS = { rotulo: 'Ver todas las guías', ruta: '/blog/' };
 
 export const guia = (slug: string) => {
   const g = GUIAS.find((x) => x.slug === slug);

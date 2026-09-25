@@ -30,7 +30,7 @@ const landing: Landing = {
     },
     {
       "valor": "15-45",
-      "texto": "Días SEREMI"
+      "texto": "Días SEREMI (referencial)"
     },
     {
       "valor": "24h",
@@ -315,7 +315,7 @@ const landing: Landing = {
       },
       {
         "p": "¿Cuánto demora obtener el certificado de actividad inofensiva?",
-        "r": "El expediente técnico de calificación técnica industrial lo preparamos en 3 a 5 días hábiles. La tramitación ante SEREMI para obtener el certificado puede tomar 15 a 45 días adicionales, dependiendo de la autoridad. Nosotros gestionamos todo el proceso."
+        "r": "El expediente técnico de calificación técnica industrial lo preparamos en 3 a 5 días hábiles. La tramitación ante SEREMI para obtener el certificado puede tomar 15 a 45 días adicionales (plazo referencial según nuestra experiencia), dependiendo de la autoridad. Nosotros gestionamos todo el proceso."
       },
       {
         "p": "¿Qué pasa si mi infraestructura no cumple con la calificación industrial?",
@@ -337,7 +337,7 @@ const landing: Landing = {
   },
   "cierre": {
     "titulo": "Obtén tu certificado de actividad inofensiva <em>hoy</em>",
-    "texto": "Calificación técnica industrial con respaldo profesional. Cotización en menos de 24 horas, expediente en 3-5 días hábiles y resolución SEREMI en 15-45 días.",
+    "texto": "Calificación técnica industrial con respaldo profesional. Cotización en menos de 24 horas, expediente en 3-5 días hábiles y resolución SEREMI en 15-45 días (referencial).",
     "boton": "Cotiza tu certificado ahora",
     "whatsapp": "https://api.whatsapp.com/send?phone=56929947924&text=Hola%2C%20necesito%20cotizar%20un%20certificado%20de%20actividad%20inofensiva%20%2F%20calificaci%C3%B3n%20t%C3%A9cnica%20industrial%20para%20mi%20empresa.%20Llego%20desde%20Google.",
     "whatsappTexto": "WhatsApp directo"

@@ -33,6 +33,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { CamposOrigen } from '@/components/ui/campos-origen';
+import { LogoMarquee } from '@/components/ui/logo-marquee';
+import { logosClientes } from '@/data/clientes';
+import { TituloClientes } from '@/components/ui/titulo-clientes';
 
 export type Campo = {
   label: string;
@@ -53,7 +56,6 @@ export type DatosFormulario = {
   campos: Campo[];
   boton: string;
   confianza: string[];
-  logos: { src: string; alt: string; ancho: number; alto: number }[];
 };
 
 export type Asunto = { prefijo: string; campo: string; id: string } | null;
@@ -195,28 +197,13 @@ export function ArticuloFormulario({
             </p>
           </form>
         </ContactCard>
-
-        {datos.logos.length > 0 && (
-          <div className="art-logos art-logos--form" aria-label="Empresas que confían en SVEA">
-            <div className="logos-cinta art-logos-cinta">
-              {[0, 1].map((mitad) => (
-                <div key={mitad} className="art-logos-mitad" aria-hidden={mitad === 1 || undefined}>
-                  {datos.logos.map((l) => (
-                    <img
-                      key={l.src}
-                      src={`${base}${l.src}`}
-                      alt={mitad === 1 ? '' : l.alt}
-                      width={l.ancho}
-                      height={l.alto}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+      </div>
+      {/* los mismos clientes, el mismo título y la misma cinta que la portada
+          (src/data/clientes.ts); fuera del contenedor del formulario para que
+          ocupe el mismo ancho que allá (max-w-7xl) */}
+      <div className="mt-10" role="group" aria-label="Empresas que confían en SVEA">
+        <TituloClientes como="p" />
+        <LogoMarquee logos={logosClientes(base)} />
       </div>
     </section>
   );

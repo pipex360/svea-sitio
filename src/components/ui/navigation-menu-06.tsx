@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import * as React from 'react';
 import { cn } from '@/lib/utils';
+import { GUIAS_MENU, TEMAS, VER_TODAS_LAS_GUIAS } from '@/contenido/articulos/guias';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -81,12 +82,6 @@ export const masTramites: Entrada[] = [
     href: '/permisos-ambientales-y-pertinencias-del-seia/',
     description: 'Definimos si tu proyecto debe ingresar al SEIA y tramitamos los permisos.',
     icon: LeafIcon,
-  },
-  {
-    title: 'Guías de cumplimiento',
-    href: '/blog/',
-    description: 'Antes de cotizar: quién está obligado, por qué norma y cuánto demora.',
-    icon: BookOpenIcon,
   },
 ];
 
@@ -173,10 +168,17 @@ export const guias: Entrada[] = [
 
 /**
  * El menú «Recursos y guías» muestra sólo las seis guías principales y un
- * enlace a /blog/, donde están todas agrupadas por tema. `guias` sigue
- * exportando la lista completa.
+ * enlace a /blog/, donde están todas agrupadas por tema. Las seis salen de
+ * GUIAS_MENU (src/contenido/articulos/guias.ts), la misma lista que usa la
+ * columna del pie: menú y pie no pueden diferir. De `guias` (la lista
+ * completa) se toma sólo el icono.
  */
-export const guiasPrincipales: Entrada[] = guias.slice(0, 6);
+export const guiasPrincipales: Entrada[] = GUIAS_MENU.map((g) => ({
+  title: g.rotulo,
+  href: `/${g.slug}/`,
+  description: g.descripcion,
+  icon: guias.find((e) => e.href === `/${g.slug}/`)?.icon ?? BookOpenIcon,
+}));
 
 /** `base` es la subcarpeta donde vive el sitio (en GitHub Pages, /svea-sitio). */
 export default function MenuSvea({ base = '' }: { base?: string }) {
@@ -240,11 +242,11 @@ export default function MenuSvea({ base = '' }: { base?: string }) {
             </ul>
             <NavigationMenuLink asChild>
               <a
-                href={url('/blog/')}
-                className="mt-2 flex items-center justify-between rounded-md border border-border px-3 py-2.5 text-sm font-semibold text-foreground no-underline transition-colors hover:bg-accent"
+                href={url(VER_TODAS_LAS_GUIAS.ruta)}
+                className="mt-2 flex items-center justify-between gap-3 rounded-md border border-border px-3 py-2.5 text-sm font-semibold text-foreground no-underline transition-colors hover:bg-accent"
               >
-                Ver todas las guías
-                <span className="text-xs font-medium text-muted-foreground">Permisos SEREMI · Emergencias · Incendio · Residuos →</span>
+                {VER_TODAS_LAS_GUIAS.rotulo}
+                <span className="text-right text-xs font-medium text-muted-foreground">{TEMAS.map((t) => t.nombre).join(' · ')} →</span>
               </a>
             </NavigationMenuLink>
           </NavigationMenuContent>

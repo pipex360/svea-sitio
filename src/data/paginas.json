@@ -1160,7 +1160,7 @@
     "slug": "calificacion-tecnica-industrial-chile",
     "tipo": "articulos",
     "title": "Calificación Técnica Industrial: Requisitos, Plazos y Categorías",
-    "description": "Guía de la calificación técnica industrial en Chile: quién la necesita, las 4 categorías, documentos, plazos SEREMI (30-60 días hábiles) y sanciones.",
+    "description": "Guía de la calificación técnica industrial en Chile: quién la necesita, las 4 categorías, documentos, plazos SEREMI referenciales y sanciones.",
     "robots": "index, follow",
     "canonical": "https://sveaconsultores.cl/calificacion-tecnica-industrial-chile/",
     "h1": "Calificación Técnica Industrial Chile: Guía Definitiva 2026",
@@ -1537,7 +1537,7 @@
             "name": "¿Cuánto demora obtener la calificación técnica industrial?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "El plazo oficial de la SEREMI de Salud es de 30 a 60 días hábiles desde la presentación del expediente completo. Con asesoría profesional, los tiempos se reducen al evitar observaciones y rechazos."
+              "text": "El plazo de la SEREMI de Salud varía según la región y su carga de trabajo. Como plazo referencial según nuestra experiencia, toma de 30 a 60 días hábiles desde la presentación del expediente completo. Con asesoría profesional, los tiempos se reducen al evitar observaciones y rechazos."
             }
           },
           {
@@ -1561,7 +1561,7 @@
             "name": "¿La calificación técnica industrial tiene vigencia?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "La vigencia es indefinida. Solo debe tramitarse nuevamente si hay ampliación, cambio de giro, aumento del número de trabajadores o maquinarias, o traslado del establecimiento."
+              "text": "La vigencia la indica la resolución de la SEREMI. Además, debe tramitarse nuevamente si hay ampliación, cambio de giro, aumento del número de trabajadores o maquinarias, o traslado del establecimiento."
             }
           },
           {
@@ -4511,7 +4511,7 @@
             "name": "¿Qué diferencia hay entre el DS 594 y el DS 44 en materia de emergencias?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "El DS 594 regula las condiciones sanitarias y ambientales en lugares de trabajo, incluyendo la obligación de contar con planes de emergencia especialmente para empresas con sustancias peligrosas (Art. 42). El DS 44 (vigente desde febrero 2025) es más amplio: establece la obligación de implementar un sistema de gestión preventiva de riesgos laborales que incluye planes de emergencia, simulacros periódicos y un comité de gestión de desastres, aplicable a todas las empresas sin excepción."
+              "text": "El DS 594 regula las condiciones sanitarias y ambientales en lugares de trabajo, incluyendo la obligación de contar con planes de emergencia especialmente para empresas con sustancias peligrosas (Art. 42). El DS 44 (vigente desde febrero 2025) es más amplio: establece la obligación de implementar un sistema de gestión preventiva de riesgos laborales que incluye planes de emergencia, un simulacro al menos una vez al año (art. 19), aplicable a todas las empresas sin excepción."
             }
           }
         ]
@@ -4704,7 +4704,7 @@
     "slug": "que-es-informe-sanitario",
     "tipo": "articulos",
     "title": "¿Qué es el Informe Sanitario? Quién lo Necesita y Cómo se Tramita",
-    "description": "Diferencia entre informe sanitario, resolución y autorización sanitaria, qué evalúa la SEREMI, documentos, plazos (15-45 días hábiles) y costos.",
+    "description": "Diferencia entre informe sanitario, resolución y autorización sanitaria, qué evalúa la SEREMI, documentos, plazos referenciales y costos.",
     "robots": "index, follow",
     "canonical": "https://sveaconsultores.cl/que-es-informe-sanitario/",
     "h1": "Informe Sanitario Favorable Chile: Guía Completa 2026",
@@ -5089,7 +5089,7 @@
             "name": "¿Cuánto demora obtener el informe sanitario?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "El proceso completo toma entre 15 y 45 días hábiles aproximadamente. Esto incluye la elaboración del expediente técnico (3-5 días), la presentación ante SEREMI y la inspección en terreno. El plazo puede variar según la complejidad del proyecto y la carga de trabajo de la SEREMI."
+              "text": "Como plazo referencial según nuestra experiencia, el proceso completo toma entre 15 y 45 días hábiles aproximadamente. Esto incluye la elaboración del expediente técnico (3-5 días), la presentación ante SEREMI y la inspección en terreno. El plazo puede variar según la complejidad del proyecto y la carga de trabajo de la SEREMI."
             }
           },
           {
@@ -6457,7 +6457,7 @@
             "name": "¿Cuánto demora obtener el certificado de actividad inofensiva?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "El expediente técnico de calificación técnica industrial toma 5 a 10 días hábiles. La tramitación ante SEREMI para obtener el certificado puede tomar 15 a 45 días adicionales."
+              "text": "El expediente técnico de calificación técnica industrial toma 5 a 10 días hábiles. La tramitación ante SEREMI para obtener el certificado puede tomar 15 a 45 días adicionales (plazo referencial según nuestra experiencia)."
             }
           },
           {
@@ -7629,7 +7629,7 @@
             "name": "¿Cuánto demora obtener el informe sanitario favorable?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "El expediente técnico se prepara en 15 días hábiles. La tramitación ante la SEREMI puede tomar 15 a 45 días adicionales, dependiendo de la autoridad y complejidad del establecimiento."
+              "text": "El expediente técnico se prepara en 15 días hábiles. La tramitación ante la SEREMI puede tomar 15 a 45 días adicionales (plazo referencial según nuestra experiencia), dependiendo de la autoridad y complejidad del establecimiento."
             }
           },
           {
@@ -11135,7 +11135,7 @@
             "name": "¿Cuánto demora obtener el informe sanitario?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "El plazo depende de la complejidad del establecimiento y de la carga de trabajo de la SEREMI de Salud correspondiente. En general, desde la presentación del expediente, el proceso puede tomar entre 15 y 45 días hábiles. En SVEA nos encargamos de preparar una presentación completa desde el inicio para minimizar observaciones y acelerar los tiempos de resolución."
+              "text": "El plazo depende de la complejidad del establecimiento y de la carga de trabajo de la SEREMI de Salud correspondiente. El plazo de la SEREMI varía según la región y la carga de trabajo; en nuestra experiencia, desde la presentación del expediente, el proceso suele tomar entre 15 y 45 días hábiles. En SVEA nos encargamos de preparar una presentación completa desde el inicio para minimizar observaciones y acelerar los tiempos de resolución."
             }
           },
           {

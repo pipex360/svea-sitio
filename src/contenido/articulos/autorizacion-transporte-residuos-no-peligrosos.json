@@ -12,7 +12,7 @@
     }
   ],
   "migaFinal": "Transporte de residuos no peligrosos",
-  "categoria": "Residuos",
+  "categoria": "Residuos y sustancias peligrosas",
   "h1": "Autorización para transportar residuos no peligrosos: paso a paso en SEREMI en Línea",
   "bajada": "Quién debe pedirla, qué antecedentes revisa la SEREMI de Salud, cómo se completa la solicitud en la plataforma SEREMI en Línea y en qué se diferencia de la autorización para residuos peligrosos del DS 148.",
   "fecha": "Septiembre 2026",
@@ -199,80 +199,6 @@
       "Datos protegidos",
       "Cotización sin costo",
       "Sin compromiso"
-    ],
-    "logos": [
-      {
-        "src": "/img/articulos/logo-25m.webp",
-        "alt": "Logo 25M",
-        "ancho": 400,
-        "alto": 85
-      },
-      {
-        "src": "/img/clientes/gespania.webp",
-        "alt": "Gespania",
-        "ancho": 299,
-        "alto": 149
-      },
-      {
-        "src": "/img/clientes/grupo-mbo.webp",
-        "alt": "Grupo MBO",
-        "ancho": 294,
-        "alto": 220
-      },
-      {
-        "src": "/img/clientes/nuevo-pudahuel.webp",
-        "alt": "Nuevo Pudahuel",
-        "ancho": 329,
-        "alto": 77
-      },
-      {
-        "src": "/img/clientes/natures-farm.webp",
-        "alt": "Nature's Farm",
-        "ancho": 286,
-        "alto": 217
-      },
-      {
-        "src": "/img/clientes/blt-mini-bodegas.webp",
-        "alt": "BLT",
-        "ancho": 516,
-        "alto": 220
-      },
-      {
-        "src": "/img/clientes/db-santasalo.webp",
-        "alt": "DB Santasalo",
-        "ancho": 388,
-        "alto": 127
-      },
-      {
-        "src": "/img/clientes/animal-services.webp",
-        "alt": "Animal Services",
-        "ancho": 215,
-        "alto": 162
-      },
-      {
-        "src": "/img/clientes/lira.webp",
-        "alt": "Lira",
-        "ancho": 242,
-        "alto": 220
-      },
-      {
-        "src": "/img/clientes/fuchs.webp",
-        "alt": "Fuchs Lubricants",
-        "ancho": 495,
-        "alto": 220
-      },
-      {
-        "src": "/img/clientes/delart-chocolat.webp",
-        "alt": "DelArt Chocolat",
-        "ancho": 443,
-        "alto": 220
-      },
-      {
-        "src": "/img/clientes/novametal.webp",
-        "alt": "Novametal",
-        "ancho": 166,
-        "alto": 122
-      }
     ]
   },
   "faq": {
@@ -349,7 +275,7 @@
     },
     {
       "tipo": "html",
-      "html": "<section id=\"antecedentes\">\n        <h2>Antecedentes que debes reunir</h2>\n        <p>La ficha oficial del trámite en ChileAtiende enumera los requisitos. En la práctica, conviene reunirlos en cinco grupos:</p>\n        <h3>Titular</h3>\n        <ul class=\"checklist\">\n            <li><strong>Empresa:</strong> RUT, inicio de actividades y giro en el SII acorde al transporte de residuos, y representante legal.</li>\n        </ul>\n        <h3>Instalación o base de operaciones</h3>\n        <ul class=\"checklist\">\n            <li><strong>Servicios básicos:</strong> acreditación de agua potable, evacuación de aguas servidas y certificación eléctrica.</li>\n            <li><strong>Certificado de informaciones previas</strong> del lugar donde se estacionan los vehículos.</li>\n            <li><strong>Descripción de la actividad y de las instalaciones:</strong> superficie, cierre perimetral, zona de estacionamiento y si se hace limpieza de vehículos en el lugar, con plano.</li>\n        </ul>\n        <h3>Vehículos</h3>\n        <ul class=\"checklist\">\n            <li><strong>Documentación</strong> de cada vehículo, que acredite que sus características son apropiadas para los residuos que transportará.</li>\n            <li><strong>Fotografías de los cuatro costados</strong>, con la patente legible.</li>\n        </ul>\n        <h3>Residuos y personal</h3>\n        <ul class=\"checklist\">\n            <li><strong>Listado de residuos</strong> a transportar, cada uno con su código de la lista de residuos que ofrece la plataforma, su estado físico y su forma de transporte.</li>\n            <li><strong>Conductores:</strong> licencias vigentes y acreditación de su capacitación.</li>\n            <li><strong>Plan de emergencia y contingencia</strong> para accidentes o derrames durante el traslado.</li>\n        </ul>\n    </section>\n\n<section id=\"paso-a-paso\">\n        <h2>Paso a paso en SEREMI en Línea</h2>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Ingreso con ClaveÚnica</h4><p>Entra a seremienlinea.minsal.cl y busca el trámite de autorización para el transporte de residuos no peligrosos.</p></div></li>\n            <li><div class=\"step-content\"><h4>Dirección de la instalación</h4><p>La región que indiques define la SEREMI que revisará la solicitud.</p></div></li>\n            <li><div class=\"step-content\"><h4>Datos de la actividad</h4><p>Nombre de fantasía y actividad económica. Para la recogida de desechos no peligrosos, el código CIIU es el 381100.</p></div></li>\n            <li><div class=\"step-content\"><h4>Instalación de transporte</h4><p>Superficie, cierre y control de acceso, estacionamiento de camiones y zona de limpieza, si existe.</p></div></li>\n            <li><div class=\"step-content\"><h4>Vehículos y residuos</h4><p>Una ficha por vehículo (patente, marca, modelo, año, carrocería, capacidad y dimensiones) y una por residuo.</p></div></li>\n            <li><div class=\"step-content\"><h4>Adjuntos y pago</h4><p>Un archivo por antecedente y pago del arancel. Después, la SEREMI revisa, puede inspeccionar y te notifica observaciones o la resolución.</p></div></li>\n        </ol>\n        <p>Los nombres de las secciones cambian cuando el Ministerio de Salud actualiza la plataforma. Si algo no calza con esta guía, sigue lo que pide el formulario.</p>\n    </section>\n\n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿Quieres ingresar tu solicitud sin observaciones evitables?</h3><p>Revisamos tus antecedentes, preparamos memoria, plano y plan de contingencias, y cargamos la solicitud por ti. Expediente en 3 a 5 días hábiles.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20necesito%20cotizar%20la%20autorizaci%C3%B3n%20de%20transporte%20de%20residuos%20no%20peligrosos\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><div class=\"art-logos\" aria-label=\"Empresas que confían en SVEA\"><div class=\"logos-cinta art-logos-cinta\"><div class=\"art-logos-mitad\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"Logo 25M\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"Gespania\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"Grupo MBO\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"Nuevo Pudahuel\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"Nature's Farm\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"BLT\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"DB Santasalo\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"Animal Services\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"Lira\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"Fuchs Lubricants\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"DelArt Chocolat\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"Novametal\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div><div class=\"art-logos-mitad\" aria-hidden=\"true\"><img src=\"/img/articulos/logo-25m.webp\" alt=\"\" width=\"400\" height=\"85\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/gespania.webp\" alt=\"\" width=\"299\" height=\"149\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/grupo-mbo.webp\" alt=\"\" width=\"294\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/nuevo-pudahuel.webp\" alt=\"\" width=\"329\" height=\"77\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/natures-farm.webp\" alt=\"\" width=\"286\" height=\"217\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/blt-mini-bodegas.webp\" alt=\"\" width=\"516\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/db-santasalo.webp\" alt=\"\" width=\"388\" height=\"127\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/animal-services.webp\" alt=\"\" width=\"215\" height=\"162\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/lira.webp\" alt=\"\" width=\"242\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/fuchs.webp\" alt=\"\" width=\"495\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/delart-chocolat.webp\" alt=\"\" width=\"443\" height=\"220\" loading=\"lazy\" decoding=\"async\"><img src=\"/img/clientes/novametal.webp\" alt=\"\" width=\"166\" height=\"122\" loading=\"lazy\" decoding=\"async\"></div></div></div></aside>\n<section id=\"errores\">\n        <h2>Errores que hacen observar la solicitud</h2>\n        <div class=\"error-item\"><h4>Camiones que no están a nombre del titular</h4><p>Si el padrón está a nombre de un banco o de otra empresa (leasing, arriendo), adjunta el contrato que acredite el uso. Sin eso, la SEREMI no puede verificar el vehículo.</p></div>\n        <div class=\"error-item\"><h4>Documentos vencidos</h4><p>Permiso de circulación, SOAP o revisión técnica vencidos al momento del ingreso son una observación segura.</p></div>\n        <div class=\"error-item\"><h4>Datos que no coinciden</h4><p>La dirección, la superficie o el número de camiones de la memoria descriptiva deben ser los mismos del plano, del formulario y de las fotos.</p></div>\n        <div class=\"error-item\"><h4>Residuos mal codificados</h4><p>Declarar un residuo con un código que no corresponde, o mezclar residuos peligrosos en la lista, obliga a corregir y a veces a reingresar.</p></div>\n        <div class=\"error-item\"><h4>Estacionamiento sin condiciones</h4><p>Un piso de tierra o sin cierre perimetral en la zona de estacionamiento suele generar observaciones. Revisa las condiciones antes de ingresar.</p></div>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (septiembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.chileatiende.gob.cl/fichas/56762-autorizacion-para-el-transporte-de-residuos-solidos-industriales-no-peligrosos-rsinp\" target=\"_blank\" rel=\"noopener\">ChileAtiende: Autorización para el transporte de residuos sólidos industriales no peligrosos (RSINP)</a></li><li><a href=\"https://seremienlinea.minsal.cl/\" target=\"_blank\" rel=\"noopener\">SEREMI en Línea, Ministerio de Salud</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=5595\" target=\"_blank\" rel=\"noopener\">Código Sanitario, arts. 81 y 174</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=167766\" target=\"_blank\" rel=\"noopener\">DS 594, condiciones sanitarias y ambientales básicas en los lugares de trabajo, arts. 18 a 20</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=226458\" target=\"_blank\" rel=\"noopener\">DS 148, Reglamento Sanitario sobre Manejo de Residuos Peligrosos</a></li></ul>\n    </section>\n"
+      "html": "<section id=\"antecedentes\">\n        <h2>Antecedentes que debes reunir</h2>\n        <p>La ficha oficial del trámite en ChileAtiende enumera los requisitos. En la práctica, conviene reunirlos en cinco grupos:</p>\n        <h3>Titular</h3>\n        <ul class=\"checklist\">\n            <li><strong>Empresa:</strong> RUT, inicio de actividades y giro en el SII acorde al transporte de residuos, y representante legal.</li>\n        </ul>\n        <h3>Instalación o base de operaciones</h3>\n        <ul class=\"checklist\">\n            <li><strong>Servicios básicos:</strong> acreditación de agua potable, evacuación de aguas servidas y certificación eléctrica.</li>\n            <li><strong>Certificado de informaciones previas</strong> del lugar donde se estacionan los vehículos.</li>\n            <li><strong>Descripción de la actividad y de las instalaciones:</strong> superficie, cierre perimetral, zona de estacionamiento y si se hace limpieza de vehículos en el lugar, con plano.</li>\n        </ul>\n        <h3>Vehículos</h3>\n        <ul class=\"checklist\">\n            <li><strong>Documentación</strong> de cada vehículo, que acredite que sus características son apropiadas para los residuos que transportará.</li>\n            <li><strong>Fotografías de los cuatro costados</strong>, con la patente legible.</li>\n        </ul>\n        <h3>Residuos y personal</h3>\n        <ul class=\"checklist\">\n            <li><strong>Listado de residuos</strong> a transportar, cada uno con su código de la lista de residuos que ofrece la plataforma, su estado físico y su forma de transporte.</li>\n            <li><strong>Conductores:</strong> licencias vigentes y acreditación de su capacitación.</li>\n            <li><strong>Plan de emergencia y contingencia</strong> para accidentes o derrames durante el traslado.</li>\n        </ul>\n    </section>\n\n<section id=\"paso-a-paso\">\n        <h2>Paso a paso en SEREMI en Línea</h2>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Ingreso con ClaveÚnica</h4><p>Entra a seremienlinea.minsal.cl y busca el trámite de autorización para el transporte de residuos no peligrosos.</p></div></li>\n            <li><div class=\"step-content\"><h4>Dirección de la instalación</h4><p>La región que indiques define la SEREMI que revisará la solicitud.</p></div></li>\n            <li><div class=\"step-content\"><h4>Datos de la actividad</h4><p>Nombre de fantasía y actividad económica. Para la recogida de desechos no peligrosos, el código CIIU es el 381100.</p></div></li>\n            <li><div class=\"step-content\"><h4>Instalación de transporte</h4><p>Superficie, cierre y control de acceso, estacionamiento de camiones y zona de limpieza, si existe.</p></div></li>\n            <li><div class=\"step-content\"><h4>Vehículos y residuos</h4><p>Una ficha por vehículo (patente, marca, modelo, año, carrocería, capacidad y dimensiones) y una por residuo.</p></div></li>\n            <li><div class=\"step-content\"><h4>Adjuntos y pago</h4><p>Un archivo por antecedente y pago del arancel. Después, la SEREMI revisa, puede inspeccionar y te notifica observaciones o la resolución.</p></div></li>\n        </ol>\n        <p>Los nombres de las secciones cambian cuando el Ministerio de Salud actualiza la plataforma. Si algo no calza con esta guía, sigue lo que pide el formulario.</p>\n    </section>\n\n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿Quieres ingresar tu solicitud sin observaciones evitables?</h3><p>Revisamos tus antecedentes, preparamos memoria, plano y plan de contingencias, y cargamos la solicitud por ti. Expediente en 3 a 5 días hábiles.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20necesito%20cotizar%20la%20autorizaci%C3%B3n%20de%20transporte%20de%20residuos%20no%20peligrosos\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><!--logos-clientes--></aside>\n<section id=\"errores\">\n        <h2>Errores que hacen observar la solicitud</h2>\n        <div class=\"error-item\"><h4>Camiones que no están a nombre del titular</h4><p>Si el padrón está a nombre de un banco o de otra empresa (leasing, arriendo), adjunta el contrato que acredite el uso. Sin eso, la SEREMI no puede verificar el vehículo.</p></div>\n        <div class=\"error-item\"><h4>Documentos vencidos</h4><p>Permiso de circulación, SOAP o revisión técnica vencidos al momento del ingreso son una observación segura.</p></div>\n        <div class=\"error-item\"><h4>Datos que no coinciden</h4><p>La dirección, la superficie o el número de camiones de la memoria descriptiva deben ser los mismos del plano, del formulario y de las fotos.</p></div>\n        <div class=\"error-item\"><h4>Residuos mal codificados</h4><p>Declarar un residuo con un código que no corresponde, o mezclar residuos peligrosos en la lista, obliga a corregir y a veces a reingresar.</p></div>\n        <div class=\"error-item\"><h4>Estacionamiento sin condiciones</h4><p>Un piso de tierra o sin cierre perimetral en la zona de estacionamiento suele generar observaciones. Revisa las condiciones antes de ingresar.</p></div>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (septiembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.chileatiende.gob.cl/fichas/56762-autorizacion-para-el-transporte-de-residuos-solidos-industriales-no-peligrosos-rsinp\" target=\"_blank\" rel=\"noopener\">ChileAtiende: Autorización para el transporte de residuos sólidos industriales no peligrosos (RSINP)</a></li><li><a href=\"https://seremienlinea.minsal.cl/\" target=\"_blank\" rel=\"noopener\">SEREMI en Línea, Ministerio de Salud</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=5595\" target=\"_blank\" rel=\"noopener\">Código Sanitario, arts. 81 y 174</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=167766\" target=\"_blank\" rel=\"noopener\">DS 594, condiciones sanitarias y ambientales básicas en los lugares de trabajo, arts. 18 a 20</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=226458\" target=\"_blank\" rel=\"noopener\">DS 148, Reglamento Sanitario sobre Manejo de Residuos Peligrosos</a></li></ul>\n    </section>\n"
     }
   ],
   "relacionados": {

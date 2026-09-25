@@ -45,6 +45,10 @@ import { Reveal } from '../components/ui/reveal';
 import { Velaris } from '../components/ui/velaris';
 import paginas from '../data/paginas.json';
 import { GUIAS, guia } from '../contenido/articulos/guias';
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { LogoMarquee } from '../components/ui/logo-marquee';
+import { logosClientes } from '../data/clientes';
 
 interface Props { slug: string }
 const { slug } = Astro.props;
@@ -63,6 +67,12 @@ const otras = GUIAS.filter((g) => g.slug !== slug);
 
 /** Los enlaces internos del contenido van con la raíz del sitio: aquí se les pone la base. */
 const conBase = (html: string) => html.replace(/(href|src)="\/(?!\/)/g, `$1="${BASE}/`);
+
+/** El recuadro «Cotizar» del cuerpo trae el marcador <!--logos-clientes--> donde
+ *  el WordPress tenía su propia cinta de 12 logos: ahí va la de la portada,
+ *  con los mismos clientes (src/data/clientes.ts) y el mismo componente. */
+const cintaClientes = `<div role="group" aria-label="Empresas que confían en SVEA" style="margin-top:22px">${renderToStaticMarkup(createElement(LogoMarquee, { logos: logosClientes(BASE) }))}</div>`;
+const conClientes = (html: string) => html.replace('<!--logos-clientes-->', cintaClientes);
 
 /**
  * Orden de los títulos y accesibilidad del cuerpo, sin tocar los JSON:
@@ -206,7 +216,7 @@ const fuentesCSS = `
       <article class="art-cuerpo">
         {datos.bloques.map((b: { tipo: string; html?: string }) =>
           b.tipo === 'html' ? (
-            <Fragment set:html={ordenar(conBase(b.html!))} />
+            <Fragment set:html={conClientes(ordenar(conBase(b.html!)))} />
           ) : (
             <aside class="art-salto" aria-label="Cotización">
               <p><strong>{datos.formulario.titulo}.</strong> El formulario está al final de la guía.</p>
@@ -521,14 +531,6 @@ const fuentesCSS = `
     border-radius:14px;border:1px dashed rgba(14,122,60,.35);background:rgba(14,122,60,.04)}
   .art-salto p{margin:0!important;font-size:16px;line-height:1.5}
 
-  /* cinta de logos (la animación .logos-cinta vive en tailwind.css) */
-  .art-logos{margin-top:22px;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 15%,#000 85%,transparent);
-    mask-image:linear-gradient(to right,transparent,#000 15%,#000 85%,transparent)}
-  .art-logos-cinta{display:flex;width:max-content;align-items:center}
-  .art-logos-mitad{display:flex;flex-shrink:0;align-items:center;gap:36px;padding-right:36px}
-  .art-logos-mitad img{height:28px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(1);opacity:.7;border-radius:0!important;display:block}
-  .art-logos--form{max-width:72rem;margin:28px auto 0}
-
   /* preguntas frecuentes */
   .art-faq{margin-top:3em;scroll-margin-top:96px}
   .art-faq details{margin-bottom:10px;border:1px solid var(--borde);border-radius:12px;background:#fff;padding:0 20px}
@@ -557,7 +559,7 @@ const fuentesCSS = `
 
   /* formulario */
   .art-formulario{background:var(--hoja);padding:80px 24px;margin-top:56px;scroll-margin-top:64px}
-  .art-formulario>div{max-width:72rem;margin:0 auto;scroll-margin-top:80px}
+  .art-formulario>#article-lead-form-wrapper{max-width:72rem;margin:0 auto;scroll-margin-top:80px}
 
   /* servicio relacionado */
   .art-ancho{max-width:72rem;margin:0 auto}

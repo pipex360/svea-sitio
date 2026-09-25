@@ -197,7 +197,8 @@ for (const [ruta, id, origen, destino] of [
 // 5c. Las guías nuevas no tienen original: su article-lead-form tiene que
 // hablarle a Web3Forms y a n8n igual que el de los artículos del WordPress.
 // n8n clasifica el lead por la palabra del servicio en el asunto.
-const PALABRAS_N8N = ['CTI', 'ECC', 'Plan Emergencia', 'Condominios', 'Transporte', 'Manejo de residuos'];
+// «Informe Sanitario» ya lo usan la landing y el servicio de informe sanitario
+const PALABRAS_N8N = ['CTI', 'ECC', 'Plan Emergencia', 'Condominios', 'Transporte', 'Manejo de residuos', 'Informe Sanitario'];
 for (const slug of GUIAS_NUEVAS) {
   const ruta = `/${slug}/`;
   const html = readFileSync(path.join(DIST, slug, 'index.html'), 'utf8');

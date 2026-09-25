@@ -31,7 +31,7 @@ const landing: Landing = {
     },
     {
       "valor": "15-45",
-      "texto": "Días SEREMI"
+      "texto": "Días SEREMI (referencial)"
     },
     {
       "valor": "24h",
@@ -320,7 +320,7 @@ const landing: Landing = {
       },
       {
         "p": "¿Cuánto demora obtener el informe sanitario favorable?",
-        "r": "El expediente técnico lo preparamos en <strong>3 a 5 días hábiles</strong>. La tramitación ante la SEREMI puede tomar 15 a 45 días adicionales, dependiendo de la autoridad y complejidad del establecimiento. Nosotros gestionamos todo el proceso."
+        "r": "El expediente técnico lo preparamos en <strong>3 a 5 días hábiles</strong>. La tramitación ante la SEREMI puede tomar 15 a 45 días adicionales (plazo referencial según nuestra experiencia), dependiendo de la autoridad y complejidad del establecimiento. Nosotros gestionamos todo el proceso."
       },
       {
         "p": "¿Qué documentación necesito entregar?",
