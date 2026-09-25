@@ -325,37 +325,6 @@
     },
     "origen": "686568:1790303551810"
   },
-  "camion-tolva-carga-residuos-faena": {
-    "ancho": 2400,
-    "alto": 1600,
-    "anchos": [
-      640,
-      1080,
-      1600,
-      1920
-    ],
-    "hero": true,
-    "og": "camion-tolva-carga-residuos-faena.jpg",
-    "peso": {
-      "640": {
-        "avif": 38,
-        "webp": 54
-      },
-      "1080": {
-        "avif": 80,
-        "webp": 86
-      },
-      "1600": {
-        "avif": 116,
-        "webp": 128
-      },
-      "1920": {
-        "avif": 146,
-        "webp": 158
-      }
-    },
-    "origen": "722064:1790303742082"
-  },
   "camion-tolva-descarga-residuos-autorizados": {
     "ancho": 1600,
     "alto": 1067,
@@ -469,32 +438,6 @@
       }
     },
     "origen": "2546516:1790305593641"
-  },
-  "carga-residuos-camion-tolva-retroexcavadora": {
-    "ancho": 1600,
-    "alto": 1067,
-    "anchos": [
-      640,
-      1080,
-      1600
-    ],
-    "hero": false,
-    "og": "carga-residuos-camion-tolva-retroexcavadora.jpg",
-    "peso": {
-      "640": {
-        "avif": 26,
-        "webp": 34
-      },
-      "1080": {
-        "avif": 63,
-        "webp": 84
-      },
-      "1600": {
-        "avif": 115,
-        "webp": 127
-      }
-    },
-    "origen": "412458:1790303551812"
   },
   "centro-distribucion-calificacion-tecnica-industrial": {
     "ancho": 1920,
@@ -666,32 +609,6 @@
       }
     },
     "origen": "616554:1790304603422"
-  },
-  "contenedores-sustancias-peligrosas-almacenamiento": {
-    "ancho": 1600,
-    "alto": 1067,
-    "anchos": [
-      640,
-      1080,
-      1600
-    ],
-    "hero": false,
-    "og": "contenedores-sustancias-peligrosas-almacenamiento.jpg",
-    "peso": {
-      "640": {
-        "avif": 25,
-        "webp": 34
-      },
-      "1080": {
-        "avif": 53,
-        "webp": 69
-      },
-      "1600": {
-        "avif": 98,
-        "webp": 127
-      }
-    },
-    "origen": "152250:1790296138486"
   },
   "descargos-sumario-sanitario-documentos": {
     "ancho": 1600,
@@ -1148,32 +1065,6 @@
       }
     },
     "origen": "858014:1790300902004"
-  },
-  "racks-cajas-carton-carga-fuego": {
-    "ancho": 1600,
-    "alto": 1067,
-    "anchos": [
-      640,
-      1080,
-      1600
-    ],
-    "hero": false,
-    "og": "racks-cajas-carton-carga-fuego.jpg",
-    "peso": {
-      "640": {
-        "avif": 29,
-        "webp": 41
-      },
-      "1080": {
-        "avif": 61,
-        "webp": 80
-      },
-      "1600": {
-        "avif": 117,
-        "webp": 127
-      }
-    },
-    "origen": "294456:1790301533977"
   },
   "revision-expediente-observaciones-seremi": {
     "ancho": 1600,
