@@ -36,7 +36,7 @@
       "l": "Días hábiles expediente"
     },
     {
-      "n": "$30.400",
+      "n": "$132.500",
       "l": "Arancel (ChileAtiende)"
     }
   ],
@@ -227,8 +227,8 @@
       },
       {
         "p": "¿Cuánto cuesta el arancel?",
-        "r": "El arancel lo cobra la SEREMI de Salud y se paga en la misma plataforma al ingresar la solicitud. Según la ficha de ChileAtiende, la autorización tiene un valor de $30.400 (consultado el 24-09-2026); revisa el valor vigente en SEREMI en Línea o en ChileAtiende antes de ingresar; algunos solicitantes pueden acreditar un beneficio arancelario.",
-        "rTexto": "El arancel lo cobra la SEREMI de Salud y se paga en la misma plataforma al ingresar la solicitud. Según la ficha de ChileAtiende, la autorización tiene un valor de $30.400 (consultado el 24-09-2026); revisa el valor vigente en SEREMI en Línea o en ChileAtiende antes de ingresar; algunos solicitantes pueden acreditar un beneficio arancelario."
+        "r": "El arancel lo cobra la SEREMI de Salud y se paga en la misma plataforma al ingresar la solicitud. La autorización tiene un arancel de $132.500 por trámite (valor pagado en la SEREMI RM, diciembre de 2025; se reajusta cada año); revisa el valor vigente en SEREMI en Línea o en ChileAtiende antes de ingresar; algunos solicitantes pueden acreditar un beneficio arancelario.",
+        "rTexto": "El arancel lo cobra la SEREMI de Salud y se paga en la misma plataforma al ingresar la solicitud. La autorización tiene un arancel de $132.500 por trámite (valor pagado en la SEREMI RM, diciembre de 2025; se reajusta cada año); revisa el valor vigente en SEREMI en Línea o en ChileAtiende antes de ingresar; algunos solicitantes pueden acreditar un beneficio arancelario."
       },
       {
         "p": "¿Cuánto demora?",
