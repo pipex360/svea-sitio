@@ -45,6 +45,12 @@ const INCLUYE = [
     descripcion: 'Recomendaciones de optimización de almacenamiento y reducción de riesgos',
     icono: TrendingUpIcon,
   },
+  // 25-sep: la sexta tarjeta cierra la rejilla (eran 3+2 en pantalla ancha)
+  {
+    titulo: 'Cotización en menos de 24 horas',
+    descripcion: 'Recibes por correo el plazo y el valor de tu informe de manejo de residuos, sin compromiso',
+    icono: ClipboardCheckIcon,
+  },
 ];
 
 const PASOS = [

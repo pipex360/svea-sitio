@@ -50,6 +50,12 @@ const INCLUYE = [
     descripcion: 'No terminamos hasta que tengas tu resolución para tramitar la patente municipal',
     icono: HandshakeIcon,
   },
+  // 25-sep: la sexta tarjeta cierra la rejilla (eran 3+2 en pantalla ancha)
+  {
+    titulo: 'Cotización en menos de 24 horas',
+    descripcion: 'Recibes por correo el plazo y el valor de tu Calificación Técnica Industrial, sin compromiso',
+    icono: ClipboardCheckIcon,
+  },
 ];
 
 const PASOS = [

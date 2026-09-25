@@ -46,6 +46,12 @@ const INCLUYE = [
     descripcion: 'Documentación que acredita el cumplimiento normativo ante fiscalizaciones',
     icono: FileCheckIcon,
   },
+  // 25-sep: la sexta tarjeta cierra la rejilla (eran 3+2 en pantalla ancha)
+  {
+    titulo: 'Cotización en menos de 24 horas',
+    descripcion: 'Recibes por correo el plazo y el valor de tu autorización de transporte, sin compromiso',
+    icono: ClipboardCheckIcon,
+  },
 ];
 
 const PASOS = [

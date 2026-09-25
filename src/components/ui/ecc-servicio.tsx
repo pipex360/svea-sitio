@@ -45,6 +45,12 @@ const INCLUYE = [
     descripcion: 'Medidas correctivas y preventivas para reducir el riesgo y cumplir la normativa',
     icono: LightbulbIcon,
   },
+  // 25-sep: la sexta tarjeta cierra la rejilla (eran 3+2 en pantalla ancha)
+  {
+    titulo: 'Cotización en menos de 24 horas',
+    descripcion: 'Recibes por correo el plazo y el valor de tu Estudio de Carga de Combustible, sin compromiso',
+    icono: ClipboardCheckIcon,
+  },
 ];
 
 const PASOS = [

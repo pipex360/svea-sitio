@@ -65,7 +65,18 @@ if (!datos) throw new Error(`Falta src/contenido/articulos/${slug}.json`);
 const pagina = paginas.find((p) => p.ruta === `/${slug}/`)!;
 const esta = guia(slug);
 const servicio = esta.servicio;
-const otras = GUIAS.filter((g) => g.slug !== slug);
+// «Otras guías»: seis, primero las del mismo tema (25-sep: eran las quince
+// en dos columnas); el enlace «Ver todas las guías» lleva al resto
+const otras = [
+  ...GUIAS.filter((g) => g.slug !== slug && g.tema === esta.tema),
+  ...GUIAS.filter((g) => g.slug !== slug && g.tema !== esta.tema),
+].slice(0, 6);
+// «Servicios relacionados»: la tarjeta chica que repite el servicio destacado no se muestra
+const rutaDe = (h: string) => h.replace(/^https?:\/\/[^/]+/, '').replace(/#.*$/, '');
+const todasLasTarjetas = datos.relacionados.tarjetas as { titulo: string; texto: string; href: string; enlace: string }[];
+const tarjetas = todasLasTarjetas.filter((t) => rutaDe(t.href) !== servicio.ruta);
+// su texto (el del WordPress) pasa a la tarjeta destacada, que es el mismo servicio
+const textoDestacado = todasLasTarjetas.find((t) => rutaDe(t.href) === servicio.ruta)?.texto;
 
 /** Los enlaces internos del contenido van con la raíz del sitio: aquí se les pone la base.
  *  Las fotos vienen como <img data-foto="nombre"> y pasan a su <picture> (src/lib/fotos.ts). */
@@ -96,6 +107,29 @@ function ordenar(html: string) {
     if (hayH3) return todo;
     convertido = true;
     return /class="/.test(resto) ? `<h3${resto.replace(/class="/, 'class="art-h4 ')}>` : `<h3 class="art-h4"${resto}>`;
+  });
+}
+
+/**
+ * Tablas en el teléfono (25-sep): con min-width 560 px dentro de 340 px
+ * cortaban columnas sin aviso. Cada celda del cuerpo lleva `data-label` con
+ * el encabezado de su columna; bajo 640 px la tabla se apila (cada fila es
+ * una tarjeta: la primera celda como título y el resto «rótulo: valor»).
+ */
+function tablasApiladas(html: string) {
+  return html.replace(/<table\b[\s\S]*?<\/table>/g, (tabla) => {
+    const cab = tabla.match(/<thead\b[\s\S]*?<\/thead>/);
+    if (!cab) return tabla;
+    const rotulos = (cab[0].match(/<th\b[^>]*>[\s\S]*?<\/th>/g) || []).map((th) =>
+      th.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().replace(/"/g, '&quot;'));
+    return tabla.replace(/<tbody\b[\s\S]*?<\/tbody>/, (cuerpo) =>
+      cuerpo.replace(/<tr\b[^>]*>[\s\S]*?<\/tr>/g, (fila) => {
+        let i = 0;
+        return fila.replace(/<(td|th)\b([^>]*)>/g, (_t, tag, attrs) => {
+          const r = rotulos[i++] ?? '';
+          return r && !/data-label=/.test(attrs) ? `<${tag}${attrs} data-label="${r}">` : `<${tag}${attrs}>`;
+        });
+      }));
   });
 }
 
@@ -137,6 +171,19 @@ const ICONOS: Record<string, string> = {
   correo: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',
   enlace: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
 };
+
+// «Compartir», igual en todas las guías (25-sep): LinkedIn, WhatsApp, correo
+// y copiar enlace, armados con la URL pública y el título de la guía. Antes
+// cada guía traía su juego del WordPress (unas sin correo, una con X).
+const URL_GUIA = `https://sveaconsultores.cl/${slug}/`;
+const tituloUrl = encodeURIComponent(esta.titulo);
+const urlUrl = encodeURIComponent(URL_GUIA);
+const COMPARTIR = [
+  { href: `https://www.linkedin.com/sharing/share-offsite/?url=${urlUrl}`, titulo: 'Compartir en LinkedIn', externo: true, texto: 'in' },
+  { href: `https://api.whatsapp.com/send?text=${tituloUrl}%20${urlUrl}`, titulo: 'Compartir por WhatsApp', externo: true, texto: 'wa' },
+  { href: `mailto:?subject=${tituloUrl}&body=Te%20comparto%20esta%20gu%C3%ADa%3A%20${urlUrl}`, titulo: 'Enviar por email', texto: '@' },
+  { copiar: URL_GUIA, titulo: 'Copiar enlace', texto: '#' },
+];
 
 const fuentesCSS = `
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 900;font-display:swap;src:url(${BASE}/fonts/inter-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -219,7 +266,7 @@ const fuentesCSS = `
       <article class="art-cuerpo">
         {datos.bloques.map((b: { tipo: string; html?: string }) =>
           b.tipo === 'html' ? (
-            <Fragment set:html={conClientes(ordenar(conBase(b.html!)))} />
+            <Fragment set:html={conClientes(tablasApiladas(ordenar(conBase(b.html!))))} />
           ) : (
             <aside class="art-salto" aria-label="Cotización">
               <p><strong>{datos.formulario.titulo}.</strong> El formulario está al final de la guía.</p>
@@ -242,10 +289,10 @@ const fuentesCSS = `
         </section>
 
         <footer class="art-pie">
-          {datos.compartir && (
+          {(
             <div class="art-compartir">
-              <span>{datos.compartir.titulo}</span>
-              {datos.compartir.enlaces.map((e: any) => {
+              <span>{datos.compartir?.titulo ?? 'Compartir'}</span>
+              {COMPARTIR.map((e: any) => {
                 const c = compartir(e);
                 return e.copiar ? (
                   <button type="button" class="art-compartir-btn" data-copiar={e.copiar} title={c.nombre}>
@@ -279,19 +326,19 @@ const fuentesCSS = `
         <h2 id="titulo-servicios">{datos.relacionados.titulo}</h2>
         {datos.relacionados.intro && <p class="art-servicio-intro" set:html={conBase(datos.relacionados.intro)} />}
         <div class="art-servicio-principal">
-          <Velaris className="absolute inset-0" speed={1.2} client:idle />
+          <Velaris className="absolute inset-0" speed={1.2} suave client:idle />
           <div>
             <p class="art-eyebrow">Servicio relacionado</p>
             <h3>{servicio.nombre}</h3>
-            <p>{servicio.texto}</p>
+            {textoDestacado ? <p set:html={conBase(textoDestacado)} /> : <p>{servicio.texto}</p>}
           </div>
           <div class="art-servicio-botones">
-            <a class="btn-flecha inversa" href={`${BASE}${servicio.ruta}${servicio.formulario}`}><span>Cotizar {servicio.nombre}</span><Fragment set:html={flecha} /></a>
+            <a class="btn-flecha inversa" href={`${BASE}${servicio.ruta}${servicio.formulario}`}><span>Cotizar este servicio</span><Fragment set:html={flecha} /></a>
             <a class="art-boton-linea" href={`${BASE}${servicio.ruta}`}>Ver el servicio</a>
           </div>
         </div>
-        <div class="art-tarjetas">
-          {datos.relacionados.tarjetas.map((t: { titulo: string; texto: string; href: string; enlace: string }) => (
+        <div class:list={['art-tarjetas', tarjetas.length === 2 && 'dos', tarjetas.length === 0 && 'hidden']}>
+          {tarjetas.map((t) => (
             <div class="art-tarjeta tarjeta-svea">
               <h3>{t.titulo}</h3>
               <p set:html={conBase(t.texto)} />
@@ -502,6 +549,22 @@ const fuentesCSS = `
   .art .art-cuerpo th{text-align:left;padding:12px 16px;background:#0d3518;color:#fff;font-weight:600;font-size:14px;letter-spacing:.01em}
   .art .art-cuerpo td{padding:12px 16px;border-top:1px solid var(--borde);vertical-align:top}
   .art .art-cuerpo tbody tr:nth-child(even) td{background:var(--hoja)}
+  .art .art-cuerpo td,.art .art-cuerpo th{overflow-wrap:normal;word-break:normal;hyphens:manual}
+  /* en el teléfono, cada fila es una tarjeta (data-label lo pone tablasApiladas) */
+  @media (max-width:640px){
+    .art .art-cuerpo .art-tabla{overflow:visible;border:0;border-radius:0}
+    .art .art-cuerpo table{min-width:0;font-size:15.5px}
+    .art .art-cuerpo table,.art .art-cuerpo tbody,.art .art-cuerpo tr,.art .art-cuerpo td{display:block;width:100%}
+    .art .art-cuerpo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    .art .art-cuerpo tbody tr{margin:0 0 12px;border:1px solid var(--borde);border-radius:12px;overflow:hidden;background:#fff}
+    .art .art-cuerpo tbody tr:nth-child(even) td{background:#fff}
+    .art .art-cuerpo td{padding:8px 16px;border-top:0}
+    .art .art-cuerpo td[data-label]::before{content:attr(data-label);display:block;margin-bottom:2px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(0,0,0,.5)}
+    .art .art-cuerpo td:first-child{padding:12px 16px;background:#0d3518!important;color:#fff;font-weight:600}
+    .art .art-cuerpo td:first-child strong{color:#fff}
+    .art .art-cuerpo td:first-child::before{color:rgba(255,255,255,.6)}
+    .art .art-cuerpo td:last-child{padding-bottom:14px}
+  }
 
   /* fotos */
   .art .art-cuerpo .article-img{margin:2em 0}
@@ -569,11 +632,15 @@ const fuentesCSS = `
   .art-eyebrow{margin:0 0 8px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#95d5b2}
   .art-servicio-principal h3{margin:0 0 8px;font-family:Manrope,Inter,sans-serif;font-weight:600;font-size:28px;letter-spacing:-.02em;color:#fff}
   .art-servicio-principal p{margin:0;max-width:56ch;line-height:1.6}
+  .art-servicio-principal p a{color:#95d5b2;text-decoration:underline}
   .art-servicio-botones{display:flex;flex-direction:column;gap:10px;align-items:stretch}
-  .art-servicio-principal .btn-flecha{justify-content:space-between}
+  .art-servicio-principal .btn-flecha{justify-content:space-between;white-space:nowrap}
+  .art-servicio-principal .btn-flecha .circulo{flex-shrink:0}
+  @media (max-width:640px){.art-servicio-botones{width:100%}.art-servicio-principal .btn-flecha{width:100%}}
   .art-servicio-principal .art-boton-linea{background:transparent;color:#fff!important;border-color:rgba(255,255,255,.35)!important}
   .art-servicio-principal .art-boton-linea:hover{border-color:#fff!important}
   .art-tarjetas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+  .art-tarjetas.dos{grid-template-columns:repeat(2,minmax(0,1fr))}
   .art-tarjeta{display:flex;flex-direction:column;padding:24px;border:1px solid var(--borde);border-radius:12px;background:#fff}
   .art-tarjeta h3{margin:0 0 8px;font-size:18px;font-weight:700;color:#000}
   .art-tarjeta p{margin:0 0 18px;font-size:15px;line-height:1.6;color:var(--suave)}
@@ -585,7 +652,7 @@ const fuentesCSS = `
   .art-otras{padding:48px 24px 96px}
   .art-otras-cab{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px}
   .art-otras-cab h2{margin:0!important}
-  .art-otras-lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .art-otras-lista{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
   .art-otras-lista a{display:flex;flex-direction:column;gap:6px;height:100%;padding:20px 22px;border:1px solid var(--borde);border-radius:12px;
     background:#fff;text-decoration:none;color:inherit}
   .art-otras-cat{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--verde)}
@@ -601,8 +668,9 @@ const fuentesCSS = `
     .art-indice>summary::after{content:"+";font-size:20px;font-weight:400;color:rgba(0,0,0,.5)}
     .art-indice[open]>summary::after{content:"–"}
     .art-indice ol{margin-bottom:14px}
-    .art-tarjetas{grid-template-columns:minmax(0,1fr)}
+    .art-tarjetas,.art-tarjetas.dos{grid-template-columns:minmax(0,1fr)}
     .art-servicio-principal{grid-template-columns:minmax(0,1fr)}
+    .art-otras-lista{grid-template-columns:repeat(2,minmax(0,1fr))}
   }
   @media (max-width:820px){
     .art-cabecera{padding:20px 24px 36px}

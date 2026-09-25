@@ -46,6 +46,12 @@ const INCLUYE = [
     descripcion: 'Apoyo en coordinación y observaciones del revisor, según requisitos del proyecto',
     icono: SirenIcon,
   },
+  // 25-sep: la sexta tarjeta cierra la rejilla (eran 3+2 en pantalla ancha)
+  {
+    titulo: 'Cotización en menos de 24 horas',
+    descripcion: 'Recibes por correo el plazo y el valor de tu Plan de Emergencia y Evacuación, sin compromiso',
+    icono: ClipboardCheckIcon,
+  },
 ];
 
 const PASOS = [
