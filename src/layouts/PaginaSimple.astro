@@ -37,12 +37,14 @@ interface Props {
   gracias?: boolean;
   /** el cierre (Cta69): titular, nota, botón y la palabra de fondo */
   cierre?: { badge: string; titulo: string; nota: string; boton: { texto: string; href: string }; cinta: string; pie?: string };
+  /** la cabecera SEO, cuando la página no está en paginas.json (la 404) */
+  seo?: { title: string; description: string; robots: string; canonical: string; jsonld?: unknown[] };
 }
-const { ruta, miga, insignia, titulo, bajada, gracias = false, cierre: cierrePropio } = Astro.props;
+const { ruta, miga, insignia, titulo, bajada, gracias = false, cierre: cierrePropio, seo } = Astro.props;
 
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 const COPIA = !import.meta.env.SVEA_PRODUCCION;
-const pagina = paginas.find((p) => p.ruta === ruta)!;
+const pagina = seo ?? paginas.find((p) => p.ruta === ruta)!;
 if (!pagina) throw new Error(`falta ${ruta} en paginas.json`);
 const COTIZAR = `${BASE}/#form-home`;
 // sin cierre propio, el de la portada, con la línea de WhatsApp de los servicios

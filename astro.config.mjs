@@ -14,7 +14,7 @@ const PRODUCCION = !!process.env.SVEA_PRODUCCION;
 const SITIO = 'https://sveaconsultores.cl';
 
 // al sitemap sólo van las URLs indexables: fuera las landings de Ads
-// (/cotiza-*), /gracias/, /estado/ y todo lo que paginas.json marca noindex
+// (/cotiza-*), /gracias/, /estado/, la 404 y todo lo que paginas.json marca noindex
 const NO_INDEXABLES = new Set(
   paginas.filter((p) => /noindex/i.test(p.robots)).map((p) => p.ruta),
 );
@@ -23,6 +23,7 @@ const indexable = (/** @type {string} */ url) => {
   return !ruta.startsWith('/cotiza-')
     && ruta !== '/gracias/'
     && ruta !== '/estado/'
+    && !ruta.startsWith('/404')
     && !NO_INDEXABLES.has(ruta);
 };
 

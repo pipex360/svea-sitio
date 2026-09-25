@@ -122,13 +122,13 @@ const faqPage = faq.length
 <title set:html={pagina.title}></title>
 <meta name="description" content={pagina.description} />
 <meta name="robots" content={robots} />
-<link rel="canonical" href={pagina.canonical} />
+{pagina.canonical && <link rel="canonical" href={pagina.canonical} />}
 <meta property="og:locale" content="es_CL" />
 <meta property="og:type" content={tipo} />
 <meta property="og:site_name" content="SVEA Consultores" />
 <meta property="og:title" content={titulo} />
 <meta property="og:description" content={pagina.description} />
-<meta property="og:url" content={pagina.canonical} />
+{pagina.canonical && <meta property="og:url" content={pagina.canonical} />}
 {pagina.og_image && <meta property="og:image" content={pagina.og_image} />}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={titulo} />
