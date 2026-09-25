@@ -94,8 +94,11 @@ COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
   return s;
 }
 
+// Google Drive para Mac deja un archivo «Icon\r» en cada carpeta: no se publica
+const sinIconoDrive = (ruta) => path.basename(ruta) !== 'Icon\r';
+
 rmSync(DEST, { recursive: true, force: true });
-mkdirSync(DEST, { recursive: true });
+mkdirSync(DEST, { recursive: true, filter: sinIconoDrive });
 
 /**
  * «Calificación Técnica Industrial»: rehecha entera en
@@ -147,25 +150,25 @@ for (const [ruta, archivo] of Object.entries(ARCHIVOS)) {
   if (!existsSync(origen)) { console.log('falta el original:', ruta); continue; }
   const destino = ruta === '/' ? path.join(DEST, 'index.html')
     : path.join(DEST, ruta.replace(/^\/|\/$/g, ''), 'index.html');
-  mkdirSync(path.dirname(destino), { recursive: true });
+  mkdirSync(path.dirname(destino), { recursive: true, filter: sinIconoDrive });
   writeFileSync(destino, limpiar(readFileSync(origen, 'utf8'), ruta));
   n++;
 }
 
 // recursos propios de las mejoras (logo, etc.): se publican bajo /img/
 if (existsSync('mejoras/img')) {
-  cpSync('mejoras/img', path.join(DEST, 'img'), { recursive: true });
+  cpSync('mejoras/img', path.join(DEST, 'img'), { recursive: true, filter: sinIconoDrive });
   console.log('recursos propios copiados a /img/');
 }
 // íconos de la pestaña (favicon, el logo verde de SVEA): van en la raíz,
 // donde los navegadores y Google buscan /favicon.ico
 if (existsSync('mejoras/icono')) {
-  cpSync('mejoras/icono', DEST, { recursive: true });
+  cpSync('mejoras/icono', DEST, { recursive: true, filter: sinIconoDrive });
   console.log('íconos copiados a la raíz');
 }
 // las fuentes (Inter y Manrope variables, subconjunto latino) se sirven desde el sitio
 if (existsSync('mejoras/fonts')) {
-  cpSync('mejoras/fonts', path.join(DEST, 'fonts'), { recursive: true });
+  cpSync('mejoras/fonts', path.join(DEST, 'fonts'), { recursive: true, filter: sinIconoDrive });
   console.log('fuentes copiadas a /fonts/');
 }
 
@@ -303,7 +306,7 @@ const pie = recortaDiv(cuerpo, /<section class="elementor-section elementor-top-
 if (!pie) throw new Error('no se encontró el pie de página en la home');
 cuerpo = cuerpo.slice(0, pie[0]) + '<!--SVEA:PIE-->' + cuerpo.slice(pie[1]);
 
-mkdirSync('src/contenido', { recursive: true });
+mkdirSync('src/contenido', { recursive: true, filter: sinIconoDrive });
 writeFileSync('src/contenido/home-wp-cabeza.html',
   cabeza.join('\n') + `\n<style>.elementor-element-${HERO_VIEJO},.elementor-element-${BARRA_VIEJA},.elementor-element-${CARRUSEL},.elementor-element-${SERVICIOS}{display:none !important}</style>`);
 writeFileSync('src/contenido/home-wp-cuerpo.html', cuerpo);

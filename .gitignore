@@ -6,3 +6,6 @@ public/
 
 # node_modules vive fuera de Drive (~/Library/Caches/svea-sitio) y aquí es un enlace
 node_modules
+
+# Google Drive para Mac deja un «Icon\r» en cada carpeta
+Icon?
