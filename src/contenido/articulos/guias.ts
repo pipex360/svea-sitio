@@ -117,7 +117,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Residuos Peligrosos',
     fecha: 'Feb 2026',
     lectura: '12 min lectura',
-    imagen: { nombre: 'contenedores-sustancias-peligrosas-almacenamiento', alt: 'Manejo de residuos peligrosos Chile - Guía DS 148' },
+    imagen: { nombre: 'tambores-azules-residuos-peligrosos-almacenamiento', alt: 'Manejo de residuos peligrosos Chile - Guía DS 148: tambores metálicos azules apilados' },
     servicio: RP,
   },
   {

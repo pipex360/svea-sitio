@@ -382,7 +382,7 @@ const landing: Landing = {
     "presentacion": "Expertos en estudios de carga de combustible, informes de carga de fuego y gestión de permisos ante SEREMI. Cumplimiento normativo OGUC y seguridad contra incendios.",
     "contacto": true
   },
-  "foto": 'bodega-estanterias-estudio-carga-combustible',
+  "foto": 'operario-transpaleta-racks-estudio-carga-combustible',
   "medicion": {
     "servicio": "Estudio de Carga de Combustible",
     "prefijoAsunto": "[ADS] Cotización ECC - ",

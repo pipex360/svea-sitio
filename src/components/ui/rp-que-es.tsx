@@ -38,8 +38,8 @@ const bloques = (): BloqueScroll[] => {
     alt: 'Operario con chaleco reflectante mueve tambores en una bodega de residuos peligrosos según el DS 148',
   };
   const contenedores = {
-    foto: 'contenedores-sustancias-peligrosas-almacenamiento',
-    alt: 'Contenedores con sustancias peligrosas almacenados bajo normativa en una planta industrial',
+    foto: 'tambores-azules-residuos-peligrosos-almacenamiento',
+    alt: 'Tambores metálicos azules apilados, vistos desde arriba: almacenamiento de residuos peligrosos bajo normativa',
   };
   return [
     {

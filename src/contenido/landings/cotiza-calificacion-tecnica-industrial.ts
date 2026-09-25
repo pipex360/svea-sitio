@@ -403,7 +403,7 @@ const landing: Landing = {
     "presentacion": "Expertos en certificados de actividad inofensiva, calificación técnica industrial y gestión de permisos ante SEREMI. Cumplimiento normativo y seguridad operativa.",
     "contacto": true
   },
-  "foto": 'bodega-calificacion-tecnica-industrial',
+  "foto": 'operarios-grua-horquilla-bodega-calificacion-tecnica',
   "medicion": {
     "servicio": "Calificación Técnica Industrial",
     "prefijoAsunto": "[ADS] Cotización CTI - ",

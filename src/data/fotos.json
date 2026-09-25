@@ -781,6 +781,37 @@
     },
     "origen": "515866:1790303551812"
   },
+  "edificios-santiago-cordillera-nevada-plan-emergencia-condominio": {
+    "ancho": 2400,
+    "alto": 1115,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "edificios-santiago-cordillera-nevada-plan-emergencia-condominio.jpg",
+    "peso": {
+      "640": {
+        "avif": 20,
+        "webp": 26
+      },
+      "1080": {
+        "avif": 43,
+        "webp": 56
+      },
+      "1600": {
+        "avif": 71,
+        "webp": 92
+      },
+      "1920": {
+        "avif": 88,
+        "webp": 110
+      }
+    },
+    "origen": "403574:1790331641167"
+  },
   "firma-solicitud-seremi-en-linea": {
     "ancho": 1600,
     "alto": 1068,
@@ -885,6 +916,37 @@
     },
     "origen": "148976:1790300901999"
   },
+  "linea-seleccion-tomates-informe-sanitario": {
+    "ancho": 2400,
+    "alto": 1349,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "linea-seleccion-tomates-informe-sanitario.jpg",
+    "peso": {
+      "640": {
+        "avif": 23,
+        "webp": 33
+      },
+      "1080": {
+        "avif": 43,
+        "webp": 62
+      },
+      "1600": {
+        "avif": 69,
+        "webp": 97
+      },
+      "1920": {
+        "avif": 86,
+        "webp": 118
+      }
+    },
+    "origen": "361644:1790331640855"
+  },
   "manipulacion-alimentos-informe-sanitario": {
     "ancho": 1600,
     "alto": 1067,
@@ -936,6 +998,68 @@
       }
     },
     "origen": "287850:1790300902000"
+  },
+  "operario-transpaleta-racks-estudio-carga-combustible": {
+    "ancho": 2400,
+    "alto": 1600,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "operario-transpaleta-racks-estudio-carga-combustible.jpg",
+    "peso": {
+      "640": {
+        "avif": 21,
+        "webp": 25
+      },
+      "1080": {
+        "avif": 43,
+        "webp": 49
+      },
+      "1600": {
+        "avif": 72,
+        "webp": 80
+      },
+      "1920": {
+        "avif": 89,
+        "webp": 99
+      }
+    },
+    "origen": "343458:1790332058803"
+  },
+  "operarios-grua-horquilla-bodega-calificacion-tecnica": {
+    "ancho": 2400,
+    "alto": 1600,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "operarios-grua-horquilla-bodega-calificacion-tecnica.jpg",
+    "peso": {
+      "640": {
+        "avif": 22,
+        "webp": 26
+      },
+      "1080": {
+        "avif": 44,
+        "webp": 49
+      },
+      "1600": {
+        "avif": 74,
+        "webp": 80
+      },
+      "1920": {
+        "avif": 91,
+        "webp": 99
+      }
+    },
+    "origen": "358586:1790332059129"
   },
   "parque-fotovoltaico-pertinencia-seia": {
     "ancho": 1600,
@@ -1185,6 +1309,37 @@
       }
     },
     "origen": "80684:1790296138482"
+  },
+  "tambores-azules-residuos-peligrosos-almacenamiento": {
+    "ancho": 4160,
+    "alto": 2340,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "tambores-azules-residuos-peligrosos-almacenamiento.jpg",
+    "peso": {
+      "640": {
+        "avif": 21,
+        "webp": 26
+      },
+      "1080": {
+        "avif": 45,
+        "webp": 55
+      },
+      "1600": {
+        "avif": 88,
+        "webp": 102
+      },
+      "1920": {
+        "avif": 123,
+        "webp": 142
+      }
+    },
+    "origen": "2215994:1790331221268"
   },
   "tambores-bodega-residuos-peligrosos": {
     "ancho": 1600,
