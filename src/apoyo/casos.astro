@@ -327,6 +327,7 @@ const seo = {
 
 <style>
   .cs { max-width: 72rem; margin: 0 auto; display: grid; gap: 64px; }
+  .cs > * { min-width: 0; }
   .cs-aviso { margin: 0; padding: 14px 18px; border: 1px dashed #d4a017; background: #fffbea; border-radius: 12px; font-size: 14px; line-height: 1.5; color: #5c4700; }
   .cs-resumen { display: grid; grid-template-columns: repeat(4, 1fr); border-block: 1px solid var(--borde); margin-top: -32px; }
   .cs-resumen div { display: grid; gap: 4px; padding: 20px 16px; }
@@ -396,7 +397,8 @@ const seo = {
   .cs-testimonio blockquote { margin: 0; display: grid; gap: 16px; max-width: 48rem; }
   .cs-testimonio p { margin: 0; font: 500 26px/1.35 Manrope, Inter, sans-serif; letter-spacing: -.02em; }
   .cs-testimonio footer { font-size: 14px; color: rgba(255,255,255,.75); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-  .cs-clientes { text-align: center; display: grid; gap: 20px; }
+  .cs-clientes { text-align: center; display: block; }
+  .cs-clientes h2 { margin-bottom: 20px !important; }
   .cs-final { text-align: center; display: grid; gap: 12px; justify-items: center; padding-bottom: 16px; }
   .cs-final p { margin: 0; color: var(--suave); }
   .cs-botones { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: center; margin-top: 8px; }
