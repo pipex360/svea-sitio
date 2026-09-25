@@ -307,23 +307,23 @@
     "og": "camion-tolva-carga-planta-residuos.jpg",
     "peso": {
       "640": {
-        "avif": 23,
+        "avif": 22,
         "webp": 26
       },
       "1080": {
-        "avif": 54,
-        "webp": 65
+        "avif": 53,
+        "webp": 63
       },
       "1600": {
-        "avif": 108,
-        "webp": 115
+        "avif": 104,
+        "webp": 120
       },
       "1920": {
-        "avif": 145,
-        "webp": 150
+        "avif": 140,
+        "webp": 144
       }
     },
-    "origen": "686568:1790303551810"
+    "origen": "672212:1790334421692"
   },
   "camion-tolva-descarga-residuos-autorizados": {
     "ancho": 1600,
@@ -1017,23 +1017,23 @@
     "og": "planta-alimentos-informe-sanitario.jpg",
     "peso": {
       "640": {
-        "avif": 18,
-        "webp": 22
+        "avif": 17,
+        "webp": 20
       },
       "1080": {
-        "avif": 34,
-        "webp": 41
+        "avif": 33,
+        "webp": 39
       },
       "1600": {
-        "avif": 57,
-        "webp": 66
+        "avif": 53,
+        "webp": 62
       },
       "1920": {
-        "avif": 69,
-        "webp": 81
+        "avif": 66,
+        "webp": 77
       }
     },
-    "origen": "265716:1790300902003"
+    "origen": "261182:1790334362283"
   },
   "planta-industrial-cordillera-permisos-ambientales-seia": {
     "ancho": 2400,
@@ -1257,32 +1257,6 @@
       }
     },
     "origen": "96858:1790296138485"
-  },
-  "tambores-metalicos-sidrep-declaracion": {
-    "ancho": 1600,
-    "alto": 900,
-    "anchos": [
-      640,
-      1080,
-      1600
-    ],
-    "hero": false,
-    "og": "tambores-metalicos-sidrep-declaracion.jpg",
-    "peso": {
-      "640": {
-        "avif": 21,
-        "webp": 26
-      },
-      "1080": {
-        "avif": 43,
-        "webp": 52
-      },
-      "1600": {
-        "avif": 91,
-        "webp": 102
-      }
-    },
-    "origen": "270060:1790300902008"
   },
   "tambores-plasticos-sustancias-peligrosas-ds-43": {
     "ancho": 1600,

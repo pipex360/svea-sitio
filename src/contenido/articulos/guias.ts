@@ -241,7 +241,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Residuos Peligrosos',
     fecha: 'Sep 2026',
     lectura: '9 min lectura',
-    imagen: { nombre: 'tambores-metalicos-sidrep-declaracion', alt: 'Declaración de residuos en SIDREP y SINADER - tambores metálicos azules vistos desde arriba' },
+    imagen: { nombre: 'tambores-bodega-residuos-peligrosos', alt: 'Declaración de residuos en SIDREP y SINADER - tambores de residuos peligrosos etiquetados con su número UN y sus pictogramas de peligro' },
     servicio: RP,
   },
   {
