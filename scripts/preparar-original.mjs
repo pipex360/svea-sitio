@@ -157,6 +157,12 @@ if (existsSync('mejoras/img')) {
   cpSync('mejoras/img', path.join(DEST, 'img'), { recursive: true });
   console.log('recursos propios copiados a /img/');
 }
+// íconos de la pestaña (favicon, el logo verde de SVEA): van en la raíz,
+// donde los navegadores y Google buscan /favicon.ico
+if (existsSync('mejoras/icono')) {
+  cpSync('mejoras/icono', DEST, { recursive: true });
+  console.log('íconos copiados a la raíz');
+}
 // las fuentes (Inter y Manrope variables, subconjunto latino) se sirven desde el sitio
 if (existsSync('mejoras/fonts')) {
   cpSync('mejoras/fonts', path.join(DEST, 'fonts'), { recursive: true });
