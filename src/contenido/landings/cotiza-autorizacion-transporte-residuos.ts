@@ -30,7 +30,7 @@ const landing: Landing = {
     'Por camión o vehículo, con su memoria técnica',
   ],
   cifras: [
-    { valor: '250+', texto: 'Proyectos realizados' },
+    { valor: '250+', texto: 'Empresas atendidas' },
     { valor: '3-5', texto: 'Días hábiles expediente' },
     { valor: '24h', texto: 'Cotización' },
   ],

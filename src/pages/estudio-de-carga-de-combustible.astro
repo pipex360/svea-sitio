@@ -11,6 +11,7 @@
 import '../styles/tailwind.css';
 import MedicionSitio from '../components/MedicionSitio.astro';
 import HeroHalo from '../components/HeroHalo.astro';
+import FranjaClientes from '../components/FranjaClientes.astro';
 import { precargaFoto } from '../lib/fotos';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
@@ -65,6 +66,9 @@ const fuentesCSS = `
     ]}
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-ecc" client:idle />
+
+  <!-- clientes: la misma franja de la portada, justo después del hero -->
+  <FranjaClientes base={BASE} />
 
   <div class="svea-nuevo">
     <EccQueEs base={BASE} client:idle />

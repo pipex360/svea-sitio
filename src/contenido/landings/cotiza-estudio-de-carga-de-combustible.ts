@@ -26,7 +26,7 @@ const landing: Landing = {
   "cifras": [
     {
       "valor": "250+",
-      "texto": "Estudios elaborados"
+      "texto": "Empresas atendidas"
     },
     {
       "valor": "3-5",

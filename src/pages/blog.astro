@@ -28,6 +28,7 @@ import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import { Reveal } from '../components/ui/reveal';
 import Foto from '../components/Foto.astro';
+import FranjaClientes from '../components/FranjaClientes.astro';
 import paginas from '../data/paginas.json';
 import { GUIAS, TEMAS } from '../contenido/articulos/guias';
 
@@ -85,6 +86,9 @@ const fuentesCSS = `
     </header>
 
     <BarraPegajosa base={BASE} cotizar={COTIZAR} client:idle />
+
+    <!-- clientes: la misma franja de la portada y los servicios -->
+    <FranjaClientes base={BASE} />
 
     <main class="blog-cuerpo">
       <div class="blog-ancho">

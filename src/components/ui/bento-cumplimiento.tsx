@@ -219,7 +219,7 @@ export function CumplimientoBento() {
     <BentoGridShowcase
       className="mx-auto max-w-7xl"
       integration={<Compromiso />}
-      trackers={<Dato meta={250} sufijo="+" rotulo="Trámites Gestionados" />}
+      trackers={<Dato meta={250} sufijo="+" rotulo="Empresas atendidas" />}
       statistic={
         <Dato
           meta={8}

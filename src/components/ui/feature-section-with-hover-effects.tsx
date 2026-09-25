@@ -3,6 +3,8 @@
  *
  * Adaptado del componente de 21st.dev. Tres cambios respecto del original:
  *
+ * (Son ocho desde el 25-sep: cuatro columnas en pantalla ancha, 4+4.)
+ *
  * 1. Los iconos son de lucide-react, no de @tabler/icons-react. El menú de
  *    arriba ya usa lucide para estos mismos seis servicios; dos juegos de
  *    iconos distintos para el mismo servicio en la misma pantalla se nota.
@@ -22,8 +24,10 @@
 import {
   BuildingIcon,
   FactoryIcon,
+  ClipboardCheckIcon,
   FlameIcon,
   FlaskConicalIcon,
+  MountainSnowIcon,
   type LucideIcon,
   SirenIcon,
   TruckIcon,
@@ -83,6 +87,22 @@ const SERVICIOS: Servicio[] = [
     href: '/planes-de-emergencia-y-evacuacion-condominios/',
     Icono: BuildingIcon,
   },
+  // 25-sep: la portada dice «8 servicios especializados»; faltaban estos dos
+  // (sus textos salen de las bajadas de sus páginas de servicio)
+  {
+    titulo: 'Informe Sanitario',
+    descripcion:
+      'Gestionamos tu autorización sanitaria ante la SEREMI de Salud, requisito para obtener la patente municipal y operar legalmente.',
+    href: '/informe-sanitario/',
+    Icono: ClipboardCheckIcon,
+  },
+  {
+    titulo: 'Permisos Ambientales y SEIA',
+    descripcion:
+      'Evaluamos la pertinencia de tu proyecto en el SEIA y elaboramos la documentación de tus permisos ambientales ante el SEA.',
+    href: '/permisos-ambientales-y-pertinencias-del-seia/',
+    Icono: MountainSnowIcon,
+  },
 ];
 
 export function FeaturesSectionWithHoverEffects({
@@ -104,7 +124,7 @@ export function FeaturesSectionWithHoverEffects({
         className,
       )}
     >
-      <div className="-mb-px -mr-px grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="-mb-px -mr-px grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
         {SERVICIOS.map((servicio, i) => (
           <Reveal key={servicio.titulo} delay={i * 0.08} className="flex">
             <Servicio {...servicio} numero={i + 1} base={base} />
