@@ -18,7 +18,7 @@ jobs:
   construir:
     runs-on: ubuntu-latest
     env:
-      BASE_URL: /svea-sitio
+      BASE_URL: /pagina-web-svea
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
