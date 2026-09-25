@@ -52,7 +52,7 @@ const bloques = (): BloqueScroll[] => {
     },
     {
       texto:
-        'Incluye la definición de rutas de evacuación, puntos de reunión, asignación de roles y responsabilidades, sistemas de comunicación y medidas de protección que garantizan una evacuación rápida, organizada y segura.',
+        'Incluye la definición de rutas de evacuación, puntos de reunión, asignación de roles y responsabilidades, sistemas de comunicación y medidas de protección orientadas a una evacuación rápida, organizada y segura.',
       ...salida,
     },
     {

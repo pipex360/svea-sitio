@@ -8,7 +8,7 @@ import { ChevronDownIcon } from 'lucide-react';
 export const PREGUNTAS = [
   {
     p: '¿Qué incluye un plan de emergencia y evacuación?',
-    r: 'Un plan de emergencia y evacuación incluye procedimientos detallados para actuar ante emergencias, rutas de evacuación, puntos de reunión, asignación de roles y responsabilidades, y medidas de protección para garantizar la seguridad de los ocupantes de la instalación.',
+    r: 'Un plan de emergencia y evacuación incluye procedimientos detallados para actuar ante emergencias, rutas de evacuación, puntos de reunión, asignación de roles y responsabilidades, y medidas de protección diseñadas para la seguridad de los ocupantes de la instalación.',
   },
   {
     p: '¿Quién debe implementar un plan de emergencia y evacuación?',
