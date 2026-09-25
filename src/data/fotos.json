@@ -577,23 +577,23 @@
     "og": "consultoria-ambiental-santiago-cordillera.jpg",
     "peso": {
       "640": {
-        "avif": 36,
-        "webp": 52
+        "avif": 33,
+        "webp": 47
       },
       "1080": {
-        "avif": 81,
-        "webp": 85
+        "avif": 66,
+        "webp": 90
       },
       "1600": {
-        "avif": 101,
-        "webp": 149
+        "avif": 112,
+        "webp": 120
       },
       "1920": {
-        "avif": 129,
-        "webp": 183
+        "avif": 142,
+        "webp": 147
       }
     },
-    "origen": "779492:1790301532319"
+    "origen": "616554:1790304603422"
   },
   "contenedores-sustancias-peligrosas-almacenamiento": {
     "ancho": 1600,
