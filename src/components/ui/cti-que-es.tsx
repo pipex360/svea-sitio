@@ -26,8 +26,8 @@ import {
   WrenchIcon,
 } from 'lucide-react';
 
-import { Reveal } from '@/components/ui/reveal';
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
+import { ServiceGrid, type Ficha } from '@/components/ui/service-grid';
 
 /** Los cuatro párrafos del original, con la foto que acompaña a cada uno:
  *  las dos primeras sobre qué es y para qué sirve, con la planta química;
@@ -65,15 +65,16 @@ const bloques = (base: string): BloqueScroll[] => {
   ];
 };
 
-const QUIENES = [
-  { texto: 'Fábricas e industrias', icono: FactoryIcon },
-  { texto: 'Bodegas y centros de distribución', icono: WarehouseIcon },
-  { texto: 'Talleres mecánicos e industriales', icono: WrenchIcon },
-  { texto: 'Empresas con modificaciones', icono: BuildingIcon },
-  { texto: 'Locales comerciales regulados', icono: StoreIcon },
-  { texto: 'Centros de almacenamiento', icono: PackageIcon },
-  { texto: 'Cambios de giro o ampliaciones', icono: RefreshCwIcon },
-  { texto: 'Actividades inofensivas (B32/04)', icono: LeafIcon },
+/** Los ocho del original, con el icono que le toca a cada instalación. */
+const QUIENES: Ficha[] = [
+  { nombre: 'Fábricas e industrias', icono: FactoryIcon },
+  { nombre: 'Bodegas y centros de distribución', icono: WarehouseIcon },
+  { nombre: 'Talleres mecánicos e industriales', icono: WrenchIcon },
+  { nombre: 'Empresas con modificaciones', icono: BuildingIcon },
+  { nombre: 'Locales comerciales regulados', icono: StoreIcon },
+  { nombre: 'Centros de almacenamiento', icono: PackageIcon },
+  { nombre: 'Cambios de giro o ampliaciones', icono: RefreshCwIcon },
+  { nombre: 'Actividades inofensivas (B32/04)', icono: LeafIcon },
 ];
 
 export function CtiQueEs({ base = '' }: { base?: string }) {
@@ -92,24 +93,15 @@ export function CtiQueEs({ base = '' }: { base?: string }) {
           }
         />
 
-        <Reveal className="mt-20">
-          <h3 className="mb-6 text-center text-xl font-bold tracking-tight text-black md:text-2xl">
-            ¿Quién necesita una Calificación Técnica Industrial?
-          </h3>
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {QUIENES.map(({ texto, icono: Icono }) => (
-              <li
-                key={texto}
-                className="flex items-center gap-3 rounded-xl border border-border bg-hoja p-4 transition-colors duration-200 hover:border-black/30"
-              >
-                <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white text-svea">
-                  <Icono className="size-4" aria-hidden="true" />
-                </span>
-                <span className="text-sm font-medium leading-snug text-black">{texto}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+        <ServiceGrid
+          className="mt-20"
+          titulo={
+            <h3 className="text-balance text-2xl font-bold tracking-tight text-black md:text-3xl">
+              ¿Quién necesita una Calificación Técnica Industrial?
+            </h3>
+          }
+          fichas={QUIENES}
+        />
       </div>
     </section>
   );
