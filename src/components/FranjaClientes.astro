@@ -1,0 +1,25 @@
+---
+/**
+ * La franja de clientes de la portada («Con la confianza de más de 250
+ * empresas» y la cinta de logos), para usarla igual en las páginas de
+ * servicio y en /blog/: justo después del hero, como en la portada.
+ * Los logos salen de la lista única de src/data/clientes.ts.
+ *
+ * `degradado`: en la portada el fondo va de blanco a la hoja gris porque la
+ * sección siguiente es gris; en el resto va blanco.
+ */
+import { LogoMarquee } from './ui/logo-marquee';
+import { TituloClientes } from './ui/titulo-clientes';
+import { Reveal } from './ui/reveal';
+import { logosClientes } from '../data/clientes';
+
+interface Props { base: string; degradado?: boolean }
+const { base, degradado = false } = Astro.props;
+const clientes = logosClientes(base);
+---
+<section class:list={['svea-nuevo px-4 py-12 md:py-14', degradado ? 'bg-gradient-to-b from-white to-hoja' : 'bg-white']} aria-label="Clientes">
+  <Reveal client:idle>
+    <TituloClientes />
+  </Reveal>
+  <LogoMarquee logos={clientes} />
+</section>

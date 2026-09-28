@@ -21,25 +21,28 @@
  *
  * El botón es el mismo de la casa (`.btn-flecha`, el del hero), invertido.
  * Se hidrata (`client:idle`) por el Velaris y el revelado al bajar.
+ *
+ * Es el cierre común de TODAS las páginas (portada, servicios, landings,
+ * guías, blog y páginas sueltas) y desde el 25-sep el texto es uno solo
+ * (src/data/cierre.ts): Carlos pidió que «la parte final sea siempre igual».
+ * La página sólo dice a dónde lleva el botón (`destino`) y, si quiere, el
+ * enlace de WhatsApp (`whatsapp`, las landings precargan su propio texto).
+ * El fondo es Velaris en su versión `suave`: verde SVEA sin la viñeta que en
+ * una franja ancha lo dejaba casi negro.
  */
 
 import { Badge7 } from '@/components/ui/cta69-utils/badge7';
+import { IconoWhatsApp } from '@/components/ui/icono-whatsapp';
 import { Reveal } from '@/components/ui/reveal';
 import { Velaris } from '@/components/ui/velaris';
+import { CIERRE } from '@/data/cierre';
 import { cn } from '@/lib/utils';
 
 interface Cta69Props {
-  badge?: { label: string };
-  heading?: string;
-  button?: { label: string; href: string };
-  labels?: {
-    /** la frase que se repite deslizándose de fondo */
-    marqueePhrase?: string;
-    /** la línea de apoyo bajo el titular */
-    note?: string;
-    /** la letra chica bajo el botón */
-    footnote?: string;
-  };
+  /** a dónde lleva «Solicitar cotización»: el formulario de la página */
+  destino: string;
+  /** el enlace de WhatsApp (por defecto, el del sitio) */
+  whatsapp?: string;
   className?: string;
 }
 
@@ -54,16 +57,16 @@ interface Cta69Props {
  */
 const REPETICIONES = 8;
 
-export function Cta69({ badge, heading, button, labels = {}, className }: Cta69Props) {
-  const frase = labels.marqueePhrase;
+export function Cta69({ destino, whatsapp = CIERRE.whatsapp, className }: Cta69Props) {
+  const frase = CIERRE.cinta;
   // El separador va dentro de la frase y no como relleno entre los <span>:
   // el relleno sólo se aplica entre elementos, así que dejaba un hueco ancho
   // por copia en vez del mismo hueco pequeño entre cada repetición.
   const linea = frase ? `${frase} · `.repeat(REPETICIONES) : '';
 
   return (
-    <section className={cn('relative w-full overflow-hidden bg-[#081c15] py-16 md:py-24', className)}>
-      <Velaris className="absolute inset-0" />
+    <section className={cn('relative w-full overflow-hidden bg-[#0d3518] py-16 md:py-24', className)}>
+      <Velaris className="absolute inset-0" suave />
 
       {frase && (
         <div
@@ -88,45 +91,44 @@ export function Cta69({ badge, heading, button, labels = {}, className }: Cta69P
       )}
 
       <Reveal className="relative mx-auto flex max-w-3xl flex-col items-center px-4 text-center md:px-6">
-        {badge && (
-          <Badge7 label={badge.label} className="border-white/25 bg-white/10 text-white" />
-        )}
+        <Badge7 label={CIERRE.badge} className="border-white/25 bg-white/10 text-white" />
 
-        {heading && (
-          <h2 className="mt-8 text-balance text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl">
-            {heading}
-          </h2>
-        )}
+        <h2 className="mt-8 text-balance text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl">
+          {CIERRE.titulo}
+        </h2>
 
-        {labels.note && (
-          <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-white/80 md:text-xl">
-            {labels.note}
-          </p>
-        )}
+        <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-white/80 md:text-xl">{CIERRE.nota}</p>
 
-        {button && (
-          <div className="mt-12">
-            <a href={button.href} className="btn-flecha inversa">
-              <span>{button.label}</span>
-              <span className="circulo">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </span>
-            </a>
-          </div>
-        )}
+        <div className="mt-12 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
+          <a href={destino} className="btn-flecha inversa">
+            <span>{CIERRE.boton}</span>
+            <span className="circulo">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+          <a href={whatsapp} target="_blank" rel="noopener" className="btn-whatsapp">
+            <IconoWhatsApp className="size-5" />
+            {CIERRE.whatsappTexto}
+          </a>
+        </div>
 
-        {labels.footnote && <p className="mt-8 text-base text-white/60">{labels.footnote}</p>}
+        <p className="mt-8 text-base text-white/60">
+          {CIERRE.pie} ·{' '}
+          <a href={CIERRE.telefono.href} className="whitespace-nowrap text-white/80 no-underline hover:text-white">
+            {CIERRE.telefono.texto}
+          </a>
+        </p>
       </Reveal>
     </section>
   );

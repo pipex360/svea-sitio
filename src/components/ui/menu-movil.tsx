@@ -19,7 +19,8 @@ import { MenuIcon, XIcon } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 import { IconoWhatsApp } from '@/components/ui/icono-whatsapp';
-import { guias, masTramites, servicios } from '@/components/ui/navigation-menu-06';
+import { guiasPrincipales, masTramites, servicios } from '@/components/ui/navigation-menu-06';
+import { VER_TODAS_LAS_GUIAS } from '@/contenido/articulos/guias';
 
 const WHATSAPP = 'https://api.whatsapp.com/send/?phone=56929947924&text=Hola%2C%20necesito%20asesor%C3%ADa%20t%C3%A9cnica';
 const TELEFONO = '+56929947924';
@@ -112,7 +113,7 @@ export function MenuMovil({ base = '' }: { base?: string }) {
               Recursos y guías
             </h3>
             <ul>
-              {guias.map((g) => (
+              {guiasPrincipales.map((g) => (
                 <li key={g.href}>
                   <a href={url(g.href)} className={enlace} onClick={cerrar}>
                     <g.icon className="mr-3 size-5 shrink-0 text-black/50" aria-hidden="true" />
@@ -120,6 +121,11 @@ export function MenuMovil({ base = '' }: { base?: string }) {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href={url(VER_TODAS_LAS_GUIAS.ruta)} className={`${enlace} font-semibold`} onClick={cerrar}>
+                  {VER_TODAS_LAS_GUIAS.rotulo} →
+                </a>
+              </li>
             </ul>
 
             <a href={url('/#contacto')} className={`${enlace} mt-4 font-semibold`} onClick={cerrar}>

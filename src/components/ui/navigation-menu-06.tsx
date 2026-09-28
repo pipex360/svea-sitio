@@ -1,17 +1,24 @@
 import {
   BookOpenIcon,
   BuildingIcon,
+  ClipboardCheckIcon,
   FactoryIcon,
   FileCheckIcon,
+  FileSpreadsheetIcon,
+  FileWarningIcon,
   FlameIcon,
   FlaskConicalIcon,
+  GavelIcon,
   LeafIcon,
   type LucideIcon,
+  RecycleIcon,
   SirenIcon,
+  StoreIcon,
   TruckIcon,
 } from 'lucide-react';
 import * as React from 'react';
 import { cn } from '@/lib/utils';
+import { GUIAS_MENU, TEMAS, VER_TODAS_LAS_GUIAS } from '@/contenido/articulos/guias';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -76,18 +83,12 @@ export const masTramites: Entrada[] = [
     description: 'Definimos si tu proyecto debe ingresar al SEIA y tramitamos los permisos.',
     icon: LeafIcon,
   },
-  {
-    title: 'Guías de cumplimiento',
-    href: '/blog/',
-    description: 'Antes de cotizar: quién está obligado, por qué norma y cuánto demora.',
-    icon: BookOpenIcon,
-  },
 ];
 
 export const guias: Entrada[] = [
   {
     title: 'Calificación inofensiva SEREMI',
-    href: '/calificacion-inofensiva-seremi-2026/',
+    href: '/calificacion-inofensiva-seremi/',
     description: 'Cómo obtener el certificado de actividad inofensiva y tu patente.',
     icon: FileCheckIcon,
   },
@@ -121,7 +122,63 @@ export const guias: Entrada[] = [
     description: 'Peligrosos y no peligrosos: qué resolución necesitas y cómo se obtiene.',
     icon: TruckIcon,
   },
+  {
+    title: 'Patente definitiva',
+    href: '/patente-definitiva-permisos-seremi/',
+    description: 'Qué permisos de la SEREMI te piden para dejar la patente provisoria.',
+    icon: StoreIcon,
+  },
+  {
+    title: 'Checklist DS 44',
+    href: '/checklist-ds-44-fiscalizacion/',
+    description: 'Lo que revisa la Dirección del Trabajo en una fiscalización.',
+    icon: ClipboardCheckIcon,
+  },
+  {
+    title: 'Transporte de residuos no peligrosos',
+    href: '/autorizacion-transporte-residuos-no-peligrosos/',
+    description: 'La autorización paso a paso en SEREMI en Línea.',
+    icon: RecycleIcon,
+  },
+  {
+    title: 'Declaración SIDREP y SINADER',
+    href: '/declaracion-residuos-sidrep-sinader/',
+    description: 'Quién declara residuos, en qué sistema y en qué plazo.',
+    icon: FileSpreadsheetIcon,
+  },
+  {
+    title: 'Sumario sanitario',
+    href: '/sumario-sanitario-seremi/',
+    description: 'Qué hacer si la SEREMI te levanta un acta o te multa.',
+    icon: GavelIcon,
+  },
+  {
+    title: 'Rechazo u observaciones SEREMI',
+    href: '/rechazo-observaciones-seremi/',
+    description: 'Cómo responder, qué recursos tienes y en qué plazos.',
+    icon: FileWarningIcon,
+  },
+  {
+    title: 'Sustancias peligrosas DS 43',
+    href: '/plan-manejo-sustancias-peligrosas-ds-43/',
+    description: 'Cuándo exigen autorización y qué incluye el plan de manejo.',
+    icon: FlaskConicalIcon,
+  },
 ];
+
+/**
+ * El menú «Recursos y guías» muestra sólo las seis guías principales y un
+ * enlace a /blog/, donde están todas agrupadas por tema. Las seis salen de
+ * GUIAS_MENU (src/contenido/articulos/guias.ts), la misma lista que usa la
+ * columna del pie: menú y pie no pueden diferir. De `guias` (la lista
+ * completa) se toma sólo el icono.
+ */
+export const guiasPrincipales: Entrada[] = GUIAS_MENU.map((g) => ({
+  title: g.rotulo,
+  href: `/${g.slug}/`,
+  description: g.descripcion,
+  icon: guias.find((e) => e.href === `/${g.slug}/`)?.icon ?? BookOpenIcon,
+}));
 
 /** `base` es la subcarpeta donde vive el sitio (en GitHub Pages, /svea-sitio). */
 export default function MenuSvea({ base = '' }: { base?: string }) {
@@ -177,12 +234,21 @@ export default function MenuSvea({ base = '' }: { base?: string }) {
               Guías de cumplimiento normativo
             </h6>
             <ul className="mt-2.5 grid w-[400px] gap-1 md:w-[560px] md:grid-cols-2">
-              {guias.map((g) => (
+              {guiasPrincipales.map((g) => (
                 <ListItem key={g.title} href={url(g.href)} icon={g.icon} title={g.title}>
                   {g.description}
                 </ListItem>
               ))}
             </ul>
+            <NavigationMenuLink asChild>
+              <a
+                href={url(VER_TODAS_LAS_GUIAS.ruta)}
+                className="mt-2 flex items-center justify-between gap-3 rounded-md border border-border px-3 py-2.5 text-sm font-semibold text-foreground no-underline transition-colors hover:bg-accent"
+              >
+                {VER_TODAS_LAS_GUIAS.rotulo}
+                <span className="text-right text-xs font-medium text-muted-foreground">{TEMAS.map((t) => t.nombre).join(' · ')} →</span>
+              </a>
+            </NavigationMenuLink>
           </NavigationMenuContent>
         </NavigationMenuItem>
 

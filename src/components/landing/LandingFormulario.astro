@@ -1,0 +1,164 @@
+---
+/**
+ * El formulario de las landings de Google Ads. LISTA ROJA.
+ *
+ * El flujo de n8n lee el remitente y el asunto que manda Web3Forms, y
+ * clasifica el lead por la palabra de servicio del asunto. Por eso todo lo
+ * que no se ve sale tal cual del original, desde los datos de la landing:
+ *
+ * - el id del <form>, el action (web3forms; en la copia, «#» y no envía);
+ * - los doce campos ocultos en su orden, con name, value e id exactos
+ *   (access_key, subject con su dynamic-subject-l*, from_name, redirect,
+ *   Servicio, Fuente, gclid y los cinco utm_* con sus field-*);
+ * - el botcheck;
+ * - los campos visibles con el mismo name, type, required y placeholder, y
+ *   las opciones del <select> con su value en el mismo orden. El <select> va
+ *   dentro de <svea-select> (src/lib/selector-svea.ts): el selector con el
+ *   diseño del sitio; el que viaja en el envío sigue siendo el <select>.
+ *
+ * Cambia sólo la ropa. Las etiquetas quedan visibles y ligadas a su campo
+ * (for/id), el teclado del teléfono sale numérico y el navegador puede
+ * autocompletar: nada de eso viaja en el envío.
+ */
+import type { Landing } from '../../contenido/landings/tipos';
+
+interface Props {
+  f: Landing['formulario'];
+  copia: boolean;
+}
+const { f, copia } = Astro.props;
+
+const AUTOCOMPLETAR: Record<string, string> = {
+  Nombre: 'name',
+  'Teléfono': 'tel',
+  Email: 'email',
+  Empresa: 'organization',
+};
+const idCampo = (name: string) => `${f.id}-${name.toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '-')}`;
+// «SOLICITAR COTIZACIÓN GRATUITA →» → «Solicitar cotización gratuita»: la flecha
+// ya va en el círculo del botón
+const boton = f.boton.replace(/\s*→\s*$/, '').toLocaleLowerCase('es-CL');
+const botonTexto = boton.charAt(0).toLocaleUpperCase('es-CL') + boton.slice(1);
+
+// Astro escribe `value=""` como `value` a secas. Da lo mismo al enviar, pero
+// la huella de la LISTA ROJA (scripts/verificar.mjs) compara `value="…"`
+// literal, así que los ocultos y las opciones se escriben a mano.
+const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const ocultosHtml = f.ocultos
+  .map((o) => `<input type="hidden" name="${esc(o.name)}"${o.id ? ` id="${esc(o.id)}"` : ''} value="${esc(o.value)}">`)
+  .join('\n    ');
+const opcionesHtml = (opciones: { value: string; texto: string; placeholder?: boolean }[]) =>
+  opciones
+    .map((o) => `<option value="${esc(o.value)}"${o.placeholder ? ' disabled selected' : ''}>${esc(o.texto)}</option>`)
+    .join('');
+
+const clasesControl =
+  'block w-full rounded-lg border border-input bg-white px-3 text-[15px] text-black placeholder:text-black/40 ' +
+  'focus-visible:border-svea focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-svea/25';
+
+// los campos se agrupan en filas: los marcados «mitad» van de a dos
+type Fila = Landing['formulario']['campos'];
+const filas: Fila[] = [];
+for (const c of f.campos) {
+  const ultima = filas[filas.length - 1];
+  if (c.mitad && ultima && ultima.length === 1 && ultima[0].mitad) ultima.push(c);
+  else filas.push([c]);
+}
+import { AVISO_FORMULARIO } from '../ui/aviso-formulario';
+const BASE_AVISO = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+---
+<!-- la tarjeta de «Contáctanos» de la portada (contact-card): esquinas
+     rectas, cruces en las esquinas, el titular en blanco y el formulario
+     sobre la hoja -->
+<div class="lp-form-card relative border border-border bg-white shadow-[0_18px_40px_-24px_rgba(0,0,0,0.25)]">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="absolute -left-3 -top-3 size-6 text-black/40"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="absolute -right-3 -top-3 size-6 text-black/40"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="absolute -bottom-3 -left-3 size-6 text-black/40"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="absolute -bottom-3 -right-3 size-6 text-black/40"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+  <div class="px-5 pb-5 pt-6 sm:px-7 sm:pt-7">
+    <h2 class="font-display text-[22px] font-semibold leading-tight tracking-tight text-black sm:text-2xl">{f.titulo}</h2>
+    <p class="mt-1 text-sm text-black/60" set:html={f.bajada} />
+  </div>
+
+  <div class="border-t border-border bg-hoja p-5 sm:p-7">
+  <form
+    id={f.id}
+    action={copia ? '#' : 'https://api.web3forms.com/submit'}
+    method={copia ? undefined : 'POST'}
+    onsubmit={copia ? 'return false' : undefined}
+    data-copia={copia ? '1' : undefined}
+    class="space-y-3.5"
+  >
+    <Fragment set:html={ocultosHtml} />
+    <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" aria-hidden="true" />
+
+    {filas.map((fila) => (
+      <div class={fila.length > 1 ? 'grid gap-3.5 sm:grid-cols-2' : undefined}>
+        {fila.map((c) => (
+          <div class="flex flex-col gap-1.5">
+            <label for={idCampo(c.name)} class="text-sm font-medium text-black">{c.label}</label>
+            {c.control === 'input' && (
+              <input
+                id={idCampo(c.name)}
+                type={c.type}
+                name={c.name}
+                required={c.required}
+                placeholder={c.placeholder}
+                autocomplete={AUTOCOMPLETAR[c.name]}
+                inputmode={c.type === 'tel' ? 'tel' : undefined}
+                class={`${clasesControl} h-11`}
+              />
+            )}
+            {c.control === 'select' && (
+              <svea-select><select id={idCampo(c.name)} name={c.name} required={c.required} class={`${clasesControl} h-11 pr-8`}><Fragment set:html={opcionesHtml(c.opciones)} /></select></svea-select>
+            )}
+            {c.control === 'textarea' && (
+              <textarea
+                id={idCampo(c.name)}
+                name={c.name}
+                required={c.required}
+                placeholder={c.placeholder}
+                rows="3"
+                class={`${clasesControl} resize-none py-2.5`}
+              />
+            )}
+          </div>
+        ))}
+      </div>
+    ))}
+
+    <button type="submit" class="btn-flecha ancha lp-enviar mt-1">
+      <span>{botonTexto}</span>
+      <span class="circulo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+      </span>
+    </button>
+
+    <p class="flex items-center justify-center gap-1.5 text-xs text-black/55">
+      <svg viewBox="0 0 24 24" class="size-3.5" fill="currentColor" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" /></svg>
+      {f.confianza}
+    </p>
+    <!-- aviso de privacidad (25-sep): el mismo texto de ui/aviso-formulario.tsx -->
+    <p class="aviso-form m-0 text-center text-[12.5px] leading-snug text-black/55">
+      {AVISO_FORMULARIO} <a href={`${BASE_AVISO}/politica-de-privacidad/`} class="text-black/70 underline underline-offset-2 hover:text-black">política de privacidad</a>.
+    </p>
+  </form>
+
+  <div class="mt-5 flex gap-3 rounded-lg border border-border bg-white p-4">
+    <svg viewBox="0 0 24 24" class="mt-0.5 size-5 shrink-0 text-svea" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+    <p class="text-sm leading-snug text-black/70">
+      <strong class="block font-semibold text-black">{f.garantia.titulo}</strong>
+      {f.garantia.texto}
+    </p>
+  </div>
+</div>
+</div>
+
+<style is:global>
+  /* en el teléfono el texto del envío cabe en una línea (25-sep) */
+  @media (max-width: 480px) {
+    .lp-enviar { padding-left: 20px; gap: 8px; font-size: 15.5px; }
+    .lp-enviar > span:first-child { white-space: nowrap; }
+    .lp-enviar .circulo { flex-shrink: 0; width: 36px; height: 36px; }
+  }
+</style>

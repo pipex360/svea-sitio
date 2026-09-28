@@ -1,0 +1,220 @@
+---
+/**
+ * La medición del sitio, una sola para todas las páginas.
+ *
+ * Sólo sale en producción (SVEA_PRODUCCION=1). En la copia de trabajo no
+ * pinta nada: scripts/verificar.mjs falla si aparece un GTM, un G- o un AW-.
+ *
+ * Reparto (decisión del 24-sep, tras auditar el WordPress vivo):
+ *
+ *   · Google Ads va ENTERO por GTM-NGVMRNDM: el contenedor trae el Google
+ *     tag AW-16836158536, el Conversion Linker, la conversión del formulario
+ *     (086iCJjJlsobEMjIjdw-, disparada por la vista de /gracias/) y la del
+ *     clic de WhatsApp (9SA2CNy8qcobEMjIjdw-, clic en enlaces a
+ *     api.whatsapp.com). Aquí NO va ningún gtag('event','conversion'): el
+ *     WordPress los mandaba además inline y contaba cada lead dos veces.
+ *   · GA4 (G-FWQ05WDLZ3) va por gtag.js desde el código, porque el GTM no
+ *     trae GA4: page_view (el config), `form_submit_cotizacion` con el
+ *     parámetro `servicio`, y `clic_whatsapp`. Sin conversiones de Ads.
+ *
+ * Además:
+ *   · Enhanced Conversions: al enviar un formulario se guardan en
+ *     sessionStorage el email y el teléfono normalizados (+56…). En /gracias/
+ *     se empujan al dataLayer como `user_data` ANTES de cargar el GTM, para
+ *     que el tag de conversión los tenga en su disparo (vista de página), y
+ *     se borran.
+ *   · gclid y utm_*: se guardan en sessionStorage al llegar con ellos en la
+ *     URL y se copian a los campos ocultos del mismo nombre de cualquier
+ *     formulario (web3forms los manda en el correo).
+ *
+ * Aviso de cookies (25-sep, PREPARADO Y APAGADO, ver src/lib/aviso-cookies.ts):
+ *   con el interruptor encendido, ANTES de todo lo demás se declara
+ *   gtag('consent','default',…) en las DOS colas (dataLayer del GTM y
+ *   dataLayerGA de GA4): los cuatro tipos en 'granted', salvo que el visitante
+ *   ya haya rechazado (localStorage svea_cookies = 'rechazadas'), en cuyo caso
+ *   van 'denied' y no se guarda ni se envía el user_data de Enhanced
+ *   Conversions. El aviso (AvisoCookies.astro) llama a
+ *   window.sveaConsentimiento(true|false) → gtag('consent','update',…).
+ *   Con el interruptor apagado ese bloque no se pinta y las dos guardas
+ *   (window.sveaCookiesRechazadas) nunca se cumplen: la medición es la misma.
+ *
+ * Uso: `<MedicionSitio copia={COPIA} />` dentro del <head>, y
+ * `<MedicionSitio copia={COPIA} parte="body" />` como primer hijo del <body>
+ * (el <noscript> del GTM). En /gracias/, `gracias` en el del <head>.
+ */
+interface Props {
+  copia: boolean;
+  parte?: 'head' | 'body';
+  /** la página de gracias: empuja user_data antes del GTM */
+  gracias?: boolean;
+}
+import { AVISO_COOKIES, LLAVE_COOKIES } from '../lib/aviso-cookies';
+const { copia, parte = 'head', gracias = false } = Astro.props;
+const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGVMRNDM" height="0" width="0" style="display:none;visibility:hidden"></iframe>';
+---
+{parte === 'head' && (
+  <Fragment>
+    {/* Conversión de WhatsApp en Google Ads: el activador publicado en el GTM
+        (heredado del plugin «Click to Chat» del WordPress) es «Clic en todos los
+        elementos» con Click Classes que contiene «ctc-analytics» y Click URL que
+        contiene «api.whatsapp.com». Para que siga contando sin tocar el GTM,
+        todo enlace de WhatsApp lleva esa clase y sus hijos no reciben el clic
+        (así el elemento clicado es el propio enlace, con su clase y su URL). */}
+    <style is:inline>a[href*="api.whatsapp.com"] *,a[href*="wa.me/"] *{pointer-events:none}</style>
+    <script is:inline>(function(){var S='a[href*="api.whatsapp.com"],a[href*="wa.me/"]';function marcar(r){(r.querySelectorAll?r:document).querySelectorAll(S).forEach(function(a){a.classList.add('ctc-analytics')})}document.addEventListener('DOMContentLoaded',function(){marcar(document)});document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest(S);if(a)a.classList.add('ctc-analytics')},true)})();</script>
+  </Fragment>
+)}
+{!copia && parte === 'head' && (
+  <Fragment>
+    {AVISO_COOKIES && (
+      <script is:inline define:vars={{ llave: LLAVE_COOKIES }}>
+      // Consent Mode v2: el estado por defecto, ANTES de cargar GTM y GA4
+      (function (w) {
+        var rechazo = false;
+        try { rechazo = localStorage.getItem(llave) === 'rechazadas'; } catch (e) {}
+        w.sveaCookiesRechazadas = rechazo;
+        w.dataLayer = w.dataLayer || [];
+        w.dataLayerGA = w.dataLayerGA || [];
+        function gtm() { w.dataLayer.push(arguments); }
+        function ga() { w.dataLayerGA.push(arguments); }
+        function estado(si) {
+          var v = si ? 'granted' : 'denied';
+          return { ad_storage: v, analytics_storage: v, ad_user_data: v, ad_personalization: v };
+        }
+        gtm('consent', 'default', estado(!rechazo));
+        ga('consent', 'default', estado(!rechazo));
+        // lo llama el aviso al elegir: actualiza las dos colas
+        w.sveaConsentimiento = function (si) {
+          w.sveaCookiesRechazadas = !si;
+          gtm('consent', 'update', estado(si));
+          ga('consent', 'update', estado(si));
+          if (!si) { try { sessionStorage.removeItem('svea_user_data'); } catch (e) {} }
+        };
+      })(window);
+      </script>
+    )}
+    {gracias && (
+      <script is:inline>
+      // Enhanced Conversions: los datos del formulario, antes del GTM
+      (function () {
+        window.dataLayer = window.dataLayer || [];
+        try {
+          var ud = JSON.parse(sessionStorage.getItem('svea_user_data') || 'null');
+          sessionStorage.removeItem('svea_user_data');
+          if (window.sveaCookiesRechazadas) return;   // rechazó en el aviso de cookies
+          if (ud && (ud.email || ud.phone_number)) window.dataLayer.push({ user_data: ud });
+        } catch (e) {}
+      })();
+      </script>
+    )}
+    <!-- Carga de GTM (Google Ads) y gtag.js (GA4). Para no frenar la
+         primera pintura, se inyectan cuando la página ya cargó (o antes, a la
+         primera interacción; como tope a los 4 s). En /gracias/ van de
+         inmediato: ahí dispara la conversión del formulario.
+         GA4 usa su PROPIA cola (dataLayerGA): si comparte «dataLayer» con el
+         GTM, el Google tag del GTM vuelve a cargar gtag.js para G- y los
+         page_view se duplican. -->
+    <script is:inline define:vars={{ inmediato: gracias }}>
+    (function (w, d) {
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayerGA = w.dataLayerGA || [];
+      w.gtagGA = function () { w.dataLayerGA.push(arguments); };
+      w.gtagGA('js', new Date());
+      w.gtagGA('config', 'G-FWQ05WDLZ3');
+      var hecho = false;
+      function cargar() {
+        if (hecho) return; hecho = true;
+        w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName('script')[0];
+        var g = d.createElement('script'); g.async = true;
+        g.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-NGVMRNDM';
+        f.parentNode.insertBefore(g, f);
+        var a = d.createElement('script'); a.async = true;
+        a.src = 'https://www.googletagmanager.com/gtag/js?id=G-FWQ05WDLZ3&l=dataLayerGA';
+        f.parentNode.insertBefore(a, f);
+      }
+      if (inmediato) { cargar(); return; }
+      if (d.readyState === 'complete') setTimeout(cargar, 800);
+      else w.addEventListener('load', function () { setTimeout(cargar, 800); });
+      setTimeout(cargar, 4000);
+      ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (ev) {
+        w.addEventListener(ev, cargar, { once: true, passive: true });
+      });
+    })(window, document);
+    </script>
+    <script is:inline>
+
+    (function () {
+      var CAMPOS = ['gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      var ss = {
+        get: function (k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
+        set: function (k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} },
+        del: function (k) { try { sessionStorage.removeItem(k); } catch (e) {} },
+      };
+
+      // gclid y utm_*: al llegar con cualquiera de ellos, el juego completo
+      // se reemplaza (gana el último clic); si no, queda el de la sesión.
+      var q = new URLSearchParams(location.search);
+      if (CAMPOS.some(function (f) { return q.get(f); })) {
+        CAMPOS.forEach(function (f) { var v = q.get(f); if (v) ss.set(f, v); else ss.del(f); });
+      }
+      function rellenar(raiz) {
+        CAMPOS.forEach(function (f) {
+          var v = ss.get(f);
+          if (!v) return;
+          raiz.querySelectorAll('input[name="' + f + '"]').forEach(function (el) { if (!el.value) el.value = v; });
+        });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { rellenar(document); });
+      else rellenar(document);
+
+      // teléfono en E.164 para Enhanced Conversions; si no se puede, se omite
+      function telefono(v) {
+        var d = String(v || '').replace(/\D/g, '').replace(/^00/, '');
+        if (d.length === 9) return '+56' + d;                        // 9 XXXX XXXX · 2 XXXX XXXX
+        if (d.length === 11 && d.indexOf('56') === 0) return '+' + d; // 56 9 XXXX XXXX
+        if (/^\s*\+/.test(v) && d.length >= 10 && d.length <= 15) return '+' + d;
+        return '';
+      }
+
+      // envío de cualquier formulario de Web3Forms
+      document.addEventListener('submit', function (e) {
+        var form = e.target;
+        if (!form || !form.matches || !form.matches('form[action*="web3forms"]')) return;
+        rellenar(form);
+        var s = form.querySelector('[name="Servicio"]');
+        window.gtagGA('event', 'form_submit_cotizacion', {
+          servicio: (s && s.value) || '',
+          event_category: 'Lead',
+          event_label: document.title,
+          form_id: form.id || '',
+          transport_type: 'beacon',
+        });
+        var em = form.querySelector('input[type="email"], input[name="Email"]');
+        var te = form.querySelector('input[type="tel"], input[name="Teléfono"]');
+        var ud = {};
+        if (em && em.value.trim()) ud.email = em.value.trim().toLowerCase();
+        var tel = telefono(te && te.value);
+        if (tel) ud.phone_number = tel;
+        if (window.sveaCookiesRechazadas) return;   // rechazó en el aviso de cookies
+        if (ud.email || ud.phone_number) ss.set('svea_user_data', JSON.stringify(ud));
+      }, true);
+
+      // clic en WhatsApp (la conversión de Ads la cuenta el GTM)
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest && e.target.closest('a[href*="api.whatsapp.com"], a[href*="wa.me/"]');
+        if (!a) return;
+        window.gtagGA('event', 'clic_whatsapp', {
+          event_category: 'Lead',
+          event_label: document.title,
+          link_url: a.href,
+          transport_type: 'beacon',
+        });
+      }, true);
+    })();
+    </script>
+  </Fragment>
+)}
+{!copia && parte === 'body' && (
+  <noscript set:html={NOSCRIPT}></noscript>
+)}

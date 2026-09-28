@@ -1,0 +1,48 @@
+---
+/**
+ * Encabezado de sección de las landings: copete, titular y bajada, con el
+ * formato de los de la portada (copete con su raya, titular medio con la
+ * parte en <em> en negrita y en el verde del logo) y el revelado de casa.
+ */
+import { Reveal } from '../ui/reveal';
+
+interface Props {
+  copete: string;
+  titulo: string; // html
+  bajada?: string; // html
+  id: string;
+  centrado?: boolean;
+  oscuro?: boolean;
+}
+const { copete, titulo, bajada, id, centrado = false, oscuro = false } = Astro.props;
+const clase = ['lp-titulo mb-10 md:mb-12', centrado && 'mx-auto max-w-3xl text-center', oscuro && 'lp-oscuro'].filter(Boolean).join(' ');
+const raya = oscuro ? 'h-px w-8 bg-white/30' : 'h-px w-8 bg-border';
+---
+<Reveal className={clase} client:idle>
+  <p
+    class:list={[
+      'mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] md:text-[13px]',
+      centrado && 'justify-center',
+      oscuro ? 'text-white/70' : 'text-black/60',
+    ]}
+  >
+    <span aria-hidden="true" class={raya}></span>
+    {copete}
+    {centrado && <span aria-hidden="true" class={raya}></span>}
+  </p>
+  <h2
+    id={id}
+    class:list={[
+      'max-w-3xl text-balance text-3xl font-medium tracking-tight md:text-5xl',
+      centrado && 'mx-auto',
+      oscuro ? 'text-white' : 'text-black',
+    ]}
+    set:html={titulo}
+  />
+  {bajada && (
+    <p
+      class:list={['mt-4 max-w-2xl text-base leading-relaxed md:text-lg', centrado && 'mx-auto', oscuro ? 'text-white/80' : 'text-black/75']}
+      set:html={bajada}
+    />
+  )}
+</Reveal>

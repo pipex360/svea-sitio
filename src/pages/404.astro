@@ -1,0 +1,156 @@
+---
+/**
+ * La 404 propia (dist/404.html, que Vercel, Netlify y Cloudflare sirven
+ * solos ante una URL que no existe).
+ *
+ * Con el diseño de las páginas sueltas (PaginaSimple): mensaje, un buscador
+ * que filtra en la página los servicios y las guías (sin servidor), botón a
+ * la portada y a WhatsApp. Va SIEMPRE noindex —también en producción— y sin
+ * canónica; astro.config.mjs la deja fuera del sitemap. La medición
+ * (MedicionSitio) sale en producción como en cualquier otra página, así se
+ * ven en GA4 las URLs rotas que llegan de afuera.
+ */
+import PaginaSimple from '../layouts/PaginaSimple.astro';
+import { GUIAS } from '../contenido/articulos/guias';
+
+const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+const WHATSAPP = 'https://api.whatsapp.com/send/?phone=56929947924&text=Hola%2C%20llegu%C3%A9%20a%20una%20p%C3%A1gina%20que%20no%20existe%20en%20el%20sitio%20y%20necesito%20ayuda';
+
+const SERVICIOS = [
+  { href: '/calificacion-tecnica-industrial/', titulo: 'Calificación Técnica Industrial', texto: 'CTI y certificado de actividad inofensiva ante la SEREMI' },
+  { href: '/informe-sanitario/', titulo: 'Informe Sanitario', texto: 'Informe sanitario favorable de la SEREMI de Salud' },
+  { href: '/estudio-de-carga-de-combustible/', titulo: 'Estudio de Carga de Combustible', texto: 'Carga de fuego según OGUC y NCh 1916' },
+  { href: '/planes-de-emergencia-y-evacuacion/', titulo: 'Plan de Emergencia Industrial', texto: 'Plan de emergencia y evacuación DS 44' },
+  { href: '/planes-de-emergencia-y-evacuacion-condominios/', titulo: 'Plan de Emergencia Condominios', texto: 'Ley 21.442 para comunidades y edificios' },
+  { href: '/manejo-de-residuos-peligrosos/', titulo: 'Manejo de Residuos Peligrosos', texto: 'Plan de manejo RESPEL, DS 148 y DS 43' },
+  { href: '/autorizacion-de-transporte-de-residuos/', titulo: 'Transporte de Residuos', texto: 'Autorización sanitaria de transporte' },
+  { href: '/permisos-ambientales-y-pertinencias-del-seia/', titulo: 'Permisos ambientales y SEIA', texto: 'Pertinencias y permisos ambientales' },
+];
+const guias = GUIAS.map((g) => ({ href: `/${g.slug}/`, titulo: g.titulo, texto: g.tema }));
+
+const seo = {
+  title: 'Página no encontrada · SVEA Consultores',
+  description: 'La página que buscas no existe o cambió de dirección. Revisa nuestros servicios y guías de permisos SEREMI.',
+  robots: 'noindex, follow',
+  canonical: '',
+};
+const FLECHA = '<path d="M5 12h14" /><path d="m12 5 7 7-7 7" />';
+const LUPA = '<circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />';
+---
+<PaginaSimple
+  ruta="/404/"
+  seo={seo}
+  miga="Página no encontrada"
+  insignia="Error 404"
+  titulo="Esta página <em>no existe</em>"
+  bajada="Puede que la dirección esté mal escrita o que la página haya cambiado de lugar. Busca lo que necesitas aquí abajo, vuelve a la portada o escríbenos por WhatsApp."
+>
+  <div class="ps-ancho">
+    <div class="nf-acciones">
+      <a class="btn-flecha" href={`${BASE}/`}>
+        <span>Ir a la portada</span>
+        <span class="circulo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={FLECHA} /></span>
+      </a>
+      <a class="btn-whatsapp" href={WHATSAPP} target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.634-1.215A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-2.115 0-4.142-.662-5.846-1.908l-.42-.294-2.748.721.734-2.682-.322-.455A9.72 9.72 0 012.25 12 9.75 9.75 0 0112 2.25 9.75 9.75 0 0121.75 12 9.75 9.75 0 0112 21.75z"/></svg>
+        WhatsApp directo
+      </a>
+    </div>
+
+    <div class="nf-buscador" role="search">
+      <label for="nf-q" class="nf-etiqueta">Buscar un servicio o una guía</label>
+      <div class="nf-campo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={LUPA} />
+        <input id="nf-q" type="search" autocomplete="off" placeholder="Ej: informe sanitario, DS 44, residuos…" aria-describedby="nf-estado" />
+      </div>
+      <p id="nf-estado" class="nf-estado" aria-live="polite"></p>
+    </div>
+
+    <section class="nf-grupo" aria-labelledby="nf-servicios">
+      <p class="ps-eyebrow">Servicios</p>
+      <h2 id="nf-servicios" class="ps-titulo">Nuestros servicios</h2>
+      <ul class="nf-rejilla">
+        {SERVICIOS.map((s) => (
+          <li data-nf>
+            <a class="nf-tarjeta tarjeta-svea" href={`${BASE}${s.href}`}>
+              <h3>{s.titulo}</h3>
+              <p>{s.texto}</p>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={FLECHA} />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="nf-grupo" aria-labelledby="nf-guias">
+      <p class="ps-eyebrow">Recursos</p>
+      <h2 id="nf-guias" class="ps-titulo">Guías de permisos y normativa</h2>
+      <ul class="nf-rejilla">
+        {guias.map((s) => (
+          <li data-nf>
+            <a class="nf-tarjeta tarjeta-svea" href={`${BASE}${s.href}`}>
+              <h3>{s.titulo}</h3>
+              <p>{s.texto}</p>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={FLECHA} />
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p class="nf-todas"><a href={`${BASE}/blog/`}>Ver todas las guías</a></p>
+    </section>
+  </div>
+</PaginaSimple>
+
+<script is:inline>
+  // buscador de la 404: filtra las tarjetas por su texto, sin acentos
+  (function () {
+    var q = document.getElementById('nf-q');
+    var estado = document.getElementById('nf-estado');
+    if (!q) return;
+    var norm = function (s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); };
+    var items = Array.prototype.slice.call(document.querySelectorAll('[data-nf]'));
+    var textos = items.map(function (li) { return norm(li.textContent || ''); });
+    q.addEventListener('input', function () {
+      var t = norm(q.value.trim());
+      var palabras = t.split(/\s+/).filter(Boolean);
+      var n = 0;
+      items.forEach(function (li, i) {
+        var ok = palabras.every(function (p) { return textos[i].indexOf(p) >= 0; });
+        li.hidden = !ok;
+        if (ok) n++;
+      });
+      document.querySelectorAll('.nf-grupo').forEach(function (g) {
+        g.hidden = !g.querySelector('[data-nf]:not([hidden])');
+      });
+      estado.textContent = t ? (n ? n + (n === 1 ? ' resultado' : ' resultados') : 'Sin resultados: prueba con otra palabra o escríbenos por WhatsApp.') : '';
+    });
+  })();
+</script>
+
+<style is:global>
+  .ps .nf-acciones{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+  .ps .nf-acciones .btn-whatsapp svg{width:20px;height:20px}
+  .ps .nf-buscador{display:block;margin-top:48px;max-width:640px}
+  .ps .nf-etiqueta{display:block;margin-bottom:10px;font-size:15px;font-weight:600;color:#000}
+  .ps .nf-campo{position:relative}
+  .ps .nf-campo svg{position:absolute;left:16px;top:50%;width:20px;height:20px;transform:translateY(-50%);color:rgba(0,0,0,.45);pointer-events:none}
+  .ps .nf-campo input{box-sizing:border-box;width:100%;height:52px;padding:0 16px 0 46px;border:1px solid var(--borde);border-radius:12px;background:#fff;
+    font:inherit;font-size:16px;color:#000;transition:border-color .2s,box-shadow .2s}
+  .ps .nf-campo input:focus{outline:none;border-color:var(--verde);box-shadow:0 0 0 3px rgba(14,122,60,.15)}
+  .ps .nf-estado{min-height:1.4em;margin:10px 0 0;font-size:14px;color:var(--suave)}
+  .ps .nf-grupo{margin-top:56px}
+  .ps .nf-rejilla{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:32px 0 0;padding:0;list-style:none}
+  .ps .nf-rejilla [hidden]{display:none}
+  .ps .nf-tarjeta{position:relative;display:block;height:100%;box-sizing:border-box;padding:22px 52px 22px 22px;border:1px solid var(--borde);border-radius:12px;background:#fff;
+    color:inherit;text-decoration:none}
+  .ps .nf-tarjeta h3{margin:0 0 6px;font-family:Manrope,Inter,sans-serif;font-size:17px;font-weight:600;letter-spacing:-.01em;color:#000}
+  .ps .nf-tarjeta p{margin:0;font-size:14.5px;line-height:1.55;color:var(--suave)}
+  .ps .nf-tarjeta svg{position:absolute;right:20px;top:24px;width:18px;height:18px;color:var(--verde);transition:transform .2s}
+  .ps .nf-tarjeta:hover svg{transform:translateX(3px)}
+  .ps .nf-tarjeta:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  .ps .nf-todas{margin:24px 0 0;font-size:15px;font-weight:600}
+  .ps .nf-todas a{color:var(--verde)}
+  @media (prefers-reduced-motion:reduce){.ps .nf-tarjeta svg{transition:none}}
+  @media (max-width:1023px){.ps .nf-rejilla{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:820px){.ps .nf-rejilla{grid-template-columns:minmax(0,1fr)}}
+</style>

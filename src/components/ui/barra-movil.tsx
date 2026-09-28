@@ -34,12 +34,18 @@ export function BarraMovil({ base = '', copia = false, cotizar }: { base?: strin
   const [heroALaVista, setHeroALaVista] = useState(true);
 
   useEffect(() => {
-    const contacto = document.querySelector('#contacto, #formulario-cti');
+    // todos los formularios de la página (portada, servicios, guías): la
+    // barra no se monta encima de ninguno
+    const formularios = document.querySelectorAll('#contacto, [id^="formulario-"], #article-lead-form-wrapper');
     const hero = document.querySelector('#inicio');
     const observadores: IntersectionObserver[] = [];
-    if (contacto) {
-      const o = new IntersectionObserver(([e]) => setFormularioALaVista(e.isIntersecting), { threshold: 0.25 });
-      o.observe(contacto);
+    if (formularios.length) {
+      const vistos = new Set<Element>();
+      const o = new IntersectionObserver((es) => {
+        es.forEach((e) => (e.isIntersecting ? vistos.add(e.target) : vistos.delete(e.target)));
+        setFormularioALaVista(vistos.size > 0);
+      });
+      formularios.forEach((f) => o.observe(f));
       observadores.push(o);
     }
     if (hero) {
@@ -61,9 +67,10 @@ export function BarraMovil({ base = '', copia = false, cotizar }: { base?: strin
           'fixed inset-x-0 z-40 grid grid-cols-2 gap-2 border-t border-border bg-white p-2 md:hidden',
           'pb-[max(8px,env(safe-area-inset-bottom))]',
           'transition-transform duration-300 ease-out motion-reduce:transition-none',
-          escondida ? 'translate-y-[120%]' : 'translate-y-0',
+          escondida ? 'translate-y-[calc(100%+48px)]' : 'translate-y-0',
         )}
         style={{ bottom: abajo }}
+        data-fijo-abajo=""
         aria-hidden={escondida}
         inert={escondida || undefined}
       >
@@ -78,7 +85,7 @@ export function BarraMovil({ base = '', copia = false, cotizar }: { base?: strin
         </a>
         <a
           href={destino}
-          className="flex h-12 items-center justify-center gap-2 rounded-full bg-black text-sm font-semibold text-white no-underline"
+          className="flex h-12 items-center justify-center gap-2 rounded-full bg-[#0e7a3c] text-sm font-semibold text-white no-underline"
         >
           Cotizar
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="size-4">
@@ -95,6 +102,7 @@ export function BarraMovil({ base = '', copia = false, cotizar }: { base?: strin
         rel="noopener"
         className="fixed right-6 z-40 hidden h-14 items-center gap-3 rounded-full bg-[#25d366] pl-4 pr-6 text-sm font-semibold text-white no-underline shadow-[0_12px_30px_-10px_rgba(37,211,102,0.6)] transition-transform duration-200 hover:scale-[1.03] motion-reduce:transition-none md:flex"
         style={{ bottom: abajo + 24 }}
+        data-fijo-abajo=""
       >
         <IconoWhatsApp className="size-6" />
         Hablemos

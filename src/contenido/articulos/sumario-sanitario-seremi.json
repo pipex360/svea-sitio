@@ -1,0 +1,320 @@
+{
+  "slug": "sumario-sanitario-seremi",
+  "ruta": "/sumario-sanitario-seremi/",
+  "migasOriginal": [
+    {
+      "texto": "Inicio",
+      "href": "/"
+    },
+    {
+      "texto": "Blog",
+      "href": "/blog/"
+    }
+  ],
+  "migaFinal": "Sumario sanitario",
+  "categoria": "Permisos SEREMI",
+  "h1": "Sumario sanitario de la SEREMI: qué hacer si te llega un acta o una multa",
+  "bajada": "Qué es el sumario sanitario, cómo avanza desde el acta de inspección hasta la sentencia, qué sanciones puede aplicar la SEREMI de Salud, qué poner en tus descargos y qué plazos tienes para pagar o reclamar.",
+  "fecha": "Septiembre 2026",
+  "actualizado": {
+    "iso": "2026-09-24",
+    "texto": "24 de septiembre de 2026"
+  },
+  "lectura": "9 min de lectura",
+  "autor": "Equipo técnico SVEA Consultores",
+  "cifras": [
+    {
+      "n": "1.000 UTM",
+      "l": "Multa máxima"
+    },
+    {
+      "n": "5",
+      "l": "Días hábiles para pagar o reclamar"
+    },
+    {
+      "n": "x2",
+      "l": "Multa por reincidencia"
+    },
+    {
+      "n": "Art. 174",
+      "l": "Código Sanitario: multas"
+    }
+  ],
+  "indiceTitulo": "En este artículo",
+  "indice": [
+    {
+      "href": "#que-es",
+      "texto": "Qué es un sumario sanitario"
+    },
+    {
+      "href": "#etapas",
+      "texto": "Del acta a la sentencia"
+    },
+    {
+      "href": "#sanciones",
+      "texto": "Qué sanciones puede aplicar"
+    },
+    {
+      "href": "#descargos",
+      "texto": "Qué va en tus descargos"
+    },
+    {
+      "href": "#recursos",
+      "texto": "Reclamo y recursos"
+    },
+    {
+      "href": "#errores",
+      "texto": "Errores comunes"
+    },
+    {
+      "href": "#regularizar",
+      "texto": "Cómo te ayuda SVEA"
+    },
+    {
+      "href": "#fuentes",
+      "texto": "Fuentes"
+    },
+    {
+      "href": "#faq",
+      "texto": "Preguntas frecuentes"
+    }
+  ],
+  "formulario": {
+    "titulo": "Cotiza la regularización de tu local",
+    "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+    "ocultos": [
+      {
+        "name": "access_key",
+        "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+      },
+      {
+        "name": "subject",
+        "value": "Nueva cotización Informe Sanitario (Blog) - SVEA Consultores",
+        "id": "dynamic-subject-art-sumario"
+      },
+      {
+        "name": "from_name",
+        "value": "SVEA Consultores Blog - Informe Sanitario"
+      },
+      {
+        "name": "redirect",
+        "value": "https://sveaconsultores.cl/gracias/"
+      },
+      {
+        "name": "Servicio",
+        "value": "Informe Sanitario"
+      },
+      {
+        "name": "Origen",
+        "value": "Artículo SEO - Sumario sanitario"
+      }
+    ],
+    "campos": [
+      {
+        "label": "Nombre completo *",
+        "id": "art-nombre",
+        "name": "Nombre",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Ej: Juan Pérez",
+        "ancho": false
+      },
+      {
+        "label": "Empresa *",
+        "id": "art-empresa",
+        "name": "Empresa",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Nombre de tu empresa",
+        "ancho": false
+      },
+      {
+        "label": "Teléfono *",
+        "id": "art-telefono",
+        "name": "Teléfono",
+        "tipo": "tel",
+        "requerido": true,
+        "placeholder": "+569 1234 5678",
+        "ancho": false
+      },
+      {
+        "label": "Email *",
+        "id": "art-email",
+        "name": "Email",
+        "tipo": "email",
+        "requerido": true,
+        "placeholder": "correo@empresa.cl",
+        "ancho": false
+      },
+      {
+        "label": "Tipo de servicio",
+        "id": "art-tipo",
+        "name": "Tipo de Servicio",
+        "tipo": "select",
+        "requerido": false,
+        "placeholder": null,
+        "ancho": true,
+        "opciones": [
+          {
+            "value": "",
+            "texto": "Selecciona una opción",
+            "seleccionada": true,
+            "desactivada": true
+          },
+          {
+            "value": "Informe Sanitario",
+            "texto": "Informe sanitario",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Calificación Técnica Industrial",
+            "texto": "Calificación técnica industrial (CTI)",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Estudio de Carga de Combustible",
+            "texto": "Estudio de carga de combustible",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Plan de Emergencia",
+            "texto": "Plan de emergencia",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "No estoy seguro",
+            "texto": "No estoy seguro",
+            "seleccionada": false,
+            "desactivada": false
+          }
+        ]
+      },
+      {
+        "label": "Mensaje (opcional)",
+        "id": "art-mensaje",
+        "name": "Mensaje",
+        "tipo": "textarea",
+        "requerido": false,
+        "placeholder": "¿Qué dice el acta de la SEREMI y cuándo es la citación?",
+        "ancho": true,
+        "filas": 3
+      }
+    ],
+    "boton": "Solicitar cotización gratuita →",
+    "confianza": [
+      "Datos protegidos",
+      "Cotización sin costo",
+      "Sin compromiso"
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      {
+        "p": "¿Qué es un sumario sanitario?",
+        "r": "Es el procedimiento del Libro X del Código Sanitario con que la SEREMI de Salud investiga y sanciona infracciones a las normas sanitarias. Se inicia de oficio, normalmente tras una inspección con acta, o por denuncia de un particular (art. 161).",
+        "rTexto": "Es el procedimiento del Libro X del Código Sanitario con que la SEREMI de Salud investiga y sanciona infracciones a las normas sanitarias. Se inicia de oficio, normalmente tras una inspección con acta, o por denuncia de un particular (art. 161)."
+      },
+      {
+        "p": "¿Cuánto es la multa de un sumario sanitario?",
+        "r": "El artículo 174 del Código Sanitario fija multas desde un décimo de UTM hasta 1.000 UTM, y la reincidencia puede sancionarse hasta con el doble. Además puede haber clausura, cancelación de autorizaciones o paralización de faenas.",
+        "rTexto": "El artículo 174 del Código Sanitario fija multas desde un décimo de UTM hasta 1.000 UTM, y la reincidencia puede sancionarse hasta con el doble. Además puede haber clausura, cancelación de autorizaciones o paralización de faenas."
+      },
+      {
+        "p": "¿Qué pasa si no voy a la citación?",
+        "r": "El acta del funcionario basta para dar por establecida la infracción (art. 166), así que la autoridad puede resolver sin tus descargos. Si no puedes asistir, infórmalo con anticipación y presenta tus antecedentes por escrito.",
+        "rTexto": "El acta del funcionario basta para dar por establecida la infracción (art. 166), así que la autoridad puede resolver sin tus descargos. Si no puedes asistir, infórmalo con anticipación y presenta tus antecedentes por escrito."
+      },
+      {
+        "p": "¿Cuánto plazo tengo para pagar o reclamar?",
+        "r": "Cinco días hábiles desde la notificación de la sentencia, tanto para acreditar el pago de la multa (art. 168) como para reclamar ante la justicia ordinaria civil (art. 171).",
+        "rTexto": "Cinco días hábiles desde la notificación de la sentencia, tanto para acreditar el pago de la multa (art. 168) como para reclamar ante la justicia ordinaria civil (art. 171)."
+      },
+      {
+        "p": "¿Me pueden cerrar el local de inmediato?",
+        "r": "Sí, cuando existe un riesgo inminente para la salud: el funcionario puede ordenar la clausura o la prohibición de funcionamiento con el solo mérito del acta, entregando copia al interesado (art. 178).",
+        "rTexto": "Sí, cuando existe un riesgo inminente para la salud: el funcionario puede ordenar la clausura o la prohibición de funcionamiento con el solo mérito del acta, entregando copia al interesado (art. 178)."
+      },
+      {
+        "p": "¿Se puede evitar la multa?",
+        "r": "En una primera infracción, y si hay antecedentes que lo justifiquen, la autoridad puede amonestar sin multar y exigir que se corrija la falta en un plazo (art. 177). Es una facultad, no un derecho, por eso conviene llegar con la falta corregida y documentada.",
+        "rTexto": "En una primera infracción, y si hay antecedentes que lo justifiquen, la autoridad puede amonestar sin multar y exigir que se corrija la falta en un plazo (art. 177). Es una facultad, no un derecho, por eso conviene llegar con la falta corregida y documentada."
+      }
+    ]
+  },
+  "autorCaja": {
+    "inicial": "S",
+    "nombre": "Equipo técnico SVEA Consultores",
+    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+  },
+  "compartir": {
+    "titulo": "Compartir",
+    "enlaces": [
+      {
+        "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://sveaconsultores.cl/sumario-sanitario-seremi/",
+        "texto": "in",
+        "titulo": "LinkedIn",
+        "externo": true
+      },
+      {
+        "href": "https://api.whatsapp.com/send?text=Sumario%20sanitario%20https://sveaconsultores.cl/sumario-sanitario-seremi/",
+        "texto": "wa",
+        "titulo": "WhatsApp",
+        "externo": true
+      },
+      {
+        "href": "mailto:?subject=Sumario%20sanitario&body=Te%20comparto%20esta%20gu%C3%ADa%3A%20https://sveaconsultores.cl/sumario-sanitario-seremi/",
+        "texto": "@",
+        "titulo": "Email",
+        "externo": false
+      }
+    ]
+  },
+  "bloques": [
+    {
+      "tipo": "html",
+      "html": "<p class=\"art-entrada\">\n        Un fiscalizador de la <strong>SEREMI de Salud</strong> visita tu local, levanta un <strong>acta</strong> y te cita a una fecha. Así empieza casi siempre un <strong>sumario sanitario</strong>, el procedimiento con que la autoridad sanitaria sanciona las infracciones al Código Sanitario y sus reglamentos. Lo que hagas entre el acta y la citación pesa mucho en el resultado.\n    </p>\n\n<section id=\"que-es\">\n        <h2>Qué es un sumario sanitario</h2>\n        <p>Está regulado en el <strong>Libro X del Código Sanitario</strong>. La autoridad sanitaria puede inspeccionar cualquier sitio, local o lugar de trabajo (art. 155). Si en la inspección constata una infracción, el funcionario levanta un <strong>acta</strong> con los hechos, y la firma como <strong>ministro de fe</strong> (art. 156). El sumario puede iniciarse <strong>de oficio</strong>, por una fiscalización, o por <strong>denuncia de particulares</strong>, como un vecino (art. 161).</p>\n        <div class=\"callout callout-warning\">\n            <span class=\"callout-icon\">!</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">El acta ya es prueba</div>\n                <p>El artículo 166 dispone que basta el acta que levanta el funcionario para dar por establecida la infracción. Si no concurres a la citación con tus pruebas, lo más probable es que la resolución se base solo en ella.</p>\n            </div>\n        </div>\n    </section>\n\n<section id=\"etapas\">\n        <h2>Las etapas, del acta a la sentencia</h2>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Inspección y acta</h4><p>El funcionario deja constancia de los hechos. Pide copia y revisa qué norma se cita en cada punto.</p></div></li>\n            <li><div class=\"step-content\"><h4>Citación</h4><p>En los sumarios de oficio se cita al infractor, que debe concurrir el día y hora señalados <strong>con todos sus medios probatorios</strong> (art. 163). Si hubo denuncia, se cita también al denunciante y se examinan testigos (art. 164).</p></div></li>\n            <li><div class=\"step-content\"><h4>Descargos y prueba</h4><p>Es tu oportunidad de explicar, acreditar lo que ya corregiste y aportar antecedentes técnicos.</p></div></li>\n            <li><div class=\"step-content\"><h4>Sentencia</h4><p>Establecida la infracción, la autoridad dicta sentencia sin más trámite (art. 167).</p></div></li>\n            <li><div class=\"step-content\"><h4>Pago o reclamo</h4><p>La multa se paga y se acredita dentro de <strong>5 días hábiles</strong> desde la notificación (art. 168). En el mismo plazo puedes reclamar ante los tribunales (art. 171).</p></div></li>\n        </ol>\n    </section>\n\n<section id=\"sanciones\">\n        <h2>Qué sanciones puede aplicar la SEREMI</h2>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Sanción o medida</th><th>Qué dice la ley</th><th>Artículo</th></tr></thead>\n            <tbody>\n                <tr><td><strong>Multa</strong></td><td>De un décimo de UTM hasta 1.000 UTM; la reincidencia puede sancionarse hasta con el doble.</td><td>174</td></tr>\n                <tr><td><strong>Clausura y otras</strong></td><td>Clausura del local, cancelación de la autorización o de los permisos, paralización de obras o faenas, retiro o decomiso de productos.</td><td>174</td></tr>\n                <tr><td><strong>Medida inmediata</strong></td><td>Con riesgo inminente para la salud, el ministro de fe puede ordenar clausura o prohibición de funcionamiento con el solo mérito del acta.</td><td>178</td></tr>\n                <tr><td><strong>Amonestación</strong></td><td>En una primera infracción, y si hay antecedentes que lo justifiquen, la autoridad puede amonestar sin multar y exigir que se corrija en un plazo.</td><td>177</td></tr>\n                <tr><td><strong>Aviso a la municipalidad</strong></td><td>Si se cancela la autorización de funcionamiento, se comunica a la municipalidad para cancelar la patente.</td><td>175</td></tr>\n            </tbody>\n        </table>\n        </div>\n        <p>Las multas tienen mérito ejecutivo y las cobra la Tesorería General de la República, con intereses y reajustes si se pagan tarde (art. 174 bis).</p>\n    </section>\n\n<figure class=\"article-img\">\n        <img data-foto=\"preparacion-descargos-sumario-sanitario\" alt=\"Profesional ordena en su escritorio los documentos para preparar los descargos de un sumario sanitario de la SEREMI\">\n        <figcaption>La SEREMI puede inspeccionar cualquier local o lugar de trabajo, con o sin denuncia previa.</figcaption>\n    </figure>\n"
+    },
+    {
+      "tipo": "formulario"
+    },
+    {
+      "tipo": "html",
+      "html": "<section id=\"descargos\">\n        <h2>Qué va en tus descargos</h2>\n        <ul class=\"checklist\">\n            <li><strong>Identificación:</strong> número del sumario o del acta, razón social, RUT y dirección del establecimiento.</li>\n            <li><strong>Hechos, punto por punto:</strong> reconoce lo que es efectivo y controvierte lo que no, siempre con pruebas.</li>\n            <li><strong>Correcciones acreditadas:</strong> fotos con fecha, facturas, certificados, contratos con empresas autorizadas.</li>\n            <li><strong>Antecedentes técnicos:</strong> la calificación técnica, el informe o la autorización sanitaria, el estudio de carga de combustible o el plan de emergencia, obtenidos o ingresados.</li>\n            <li><strong>Contexto:</strong> si es tu primera infracción, dilo; la ley permite la amonestación en esos casos (art. 177), aunque es una facultad de la autoridad.</li>\n            <li><strong>Petición concreta:</strong> qué solicitas y, si falta algo, en qué plazo lo cumplirás.</li>\n        </ul>\n        <div class=\"callout callout-info\">\n            <span class=\"callout-icon\">i</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Corregir antes de la citación cambia la conversación</div>\n                <p>Llegar con la falta ya corregida, o con el trámite ingresado en SEREMI en Línea, es mucho más sólido que prometer que se va a hacer.</p>\n            </div>\n        </div>\n    </section>\n\n<section id=\"recursos\">\n        <h2>Si ya te sancionaron: reclamo y recursos</h2>\n        <p>El Código Sanitario permite <strong>reclamar ante la justicia ordinaria civil dentro de los 5 días hábiles</strong> siguientes a la notificación de la sentencia; el reclamo se tramita en forma breve y sumaria (art. 171). El tribunal lo rechaza si los hechos están comprobados en el sumario, si constituyen infracción y si la sanción es la que corresponde.</p>\n        <p>Ojo con dos reglas: la sentencia sanitaria <strong>puede cumplirse aunque el reclamo esté pendiente</strong> (art. 172), y la clausura no se suspende salvo que lo ordene la autoridad o lo resuelva la justicia (art. 170). La Ley 19.880 se aplica en forma supletoria a los procedimientos administrativos especiales (art. 1) y contempla el recurso de reposición dentro de 5 días ante el mismo órgano (art. 59). Como los plazos son cortos y corren en paralelo, conviene decidir la estrategia con un abogado apenas llegue la notificación.</p>\n    </section>\n\n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿Te llegó un acta de la SEREMI?</h3><p>Revisamos el acta, te decimos qué permisos o documentos faltan y preparamos los antecedentes técnicos para regularizar. Expedientes en 3 a 5 días hábiles.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20recib%C3%AD%20un%20acta%20de%20la%20SEREMI%20y%20necesito%20regularizar\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><!--logos-clientes--></aside>\n<section id=\"errores\">\n        <h2>Errores comunes</h2>\n        <div class=\"error-item\"><h4>No ir a la citación</h4><p>El acta basta para dar por establecida la infracción. Si no te presentas, pierdes la oportunidad de aportar prueba.</p></div>\n        <div class=\"error-item\"><h4>Pagar y no corregir</h4><p>La multa no regulariza nada. Si la falta sigue, una nueva fiscalización puede terminar en otra sanción, y la reincidencia puede llegar al doble.</p></div>\n        <div class=\"error-item\"><h4>Corregir sin dejar evidencia</h4><p>Sin fotos, facturas o certificados, la corrección no existe para el sumario.</p></div>\n        <div class=\"error-item\"><h4>Dejar pasar los 5 días hábiles</h4><p>Tanto el pago como el reclamo judicial tienen ese plazo desde la notificación.</p></div>\n        <div class=\"error-item\"><h4>Seguir operando con una clausura</h4><p>Agrava la situación y puede terminar en la cancelación de la patente.</p></div>\n    </section>\n\n<section id=\"regularizar\">\n        <h2>Cómo te ayuda SVEA a regularizar</h2>\n        <p>Muchos sumarios nacen de un permiso que nunca se tramitó. Preparamos la <a href=\"/calificacion-tecnica-industrial/\">calificación técnica industrial</a>, el <a href=\"/informe-sanitario/\">informe sanitario</a>, el <a href=\"/estudio-de-carga-de-combustible/\">estudio de carga de combustible</a> y los <a href=\"/planes-de-emergencia-y-evacuacion/\">planes de emergencia</a> que suelen faltar, con expedientes en 3 a 5 días hábiles (planes de emergencia en 5 a 10), para que llegues a la citación con el trámite ingresado.</p>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (septiembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=5595\" target=\"_blank\" rel=\"noopener\">Código Sanitario, Libro X (arts. 155 a 178)</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=210676\" target=\"_blank\" rel=\"noopener\">Ley 19.880, bases de los procedimientos administrativos (arts. 1 y 59)</a></li><li><a href=\"https://seremienlinea.minsal.cl/\" target=\"_blank\" rel=\"noopener\">SEREMI en Línea, Ministerio de Salud</a></li></ul>\n    </section>\n"
+    }
+  ],
+  "relacionados": {
+    "titulo": "Servicios relacionados",
+    "intro": "",
+    "tarjetas": [
+      {
+        "titulo": "Informe Sanitario",
+        "texto": "Expediente técnico y gestión ante la SEREMI para el informe sanitario favorable.",
+        "href": "/informe-sanitario/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Calificación Técnica Industrial",
+        "texto": "Expediente completo para industrias y bodegas ante la SEREMI de Salud.",
+        "href": "/calificacion-tecnica-industrial/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Planes de Emergencia y Evacuación",
+        "texto": "Plan de emergencia conforme al DS 44 y al DS 594, con mapa de riesgos y simulacro.",
+        "href": "/planes-de-emergencia-y-evacuacion/",
+        "enlace": "Conocer servicio →"
+      }
+    ]
+  },
+  "asunto": {
+    "prefijo": "[BLOG] Cotización Informe Sanitario - ",
+    "campo": "Empresa",
+    "id": "dynamic-subject-art-sumario"
+  }
+}

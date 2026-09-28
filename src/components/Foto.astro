@@ -1,0 +1,43 @@
+---
+/**
+ * Una foto de contenido: <picture> con AVIF y WebP en varios anchos, `sizes`
+ * según dónde va (ver TAMANOS en src/lib/fotos.ts), width/height para que no
+ * salte el layout, carga diferida salvo `prioridad` (la del hero, que es el
+ * LCP: entonces va con fetchpriority="high" y sin lazy).
+ *
+ *   <Foto nombre="bodega-productos-estudio-carga-combustible" alt="…" tamano="mitad" />
+ */
+import { atributosFoto, type Tamano } from '../lib/fotos';
+
+interface Props {
+  nombre: string;
+  alt: string;
+  tamano: Tamano | string;
+  /** la del hero / LCP: carga inmediata con prioridad alta */
+  prioridad?: boolean;
+  /** carga diferida (lazy); false para lo que se ve al abrir la página sin ser el LCP */
+  diferida?: boolean;
+  class?: string;
+  style?: string;
+}
+
+const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+const { nombre, alt, tamano, prioridad = false, diferida = !prioridad, class: clase, style } = Astro.props;
+// con prioridad (el hero) va sólo en WebP: el AVIF tarda más en decodificar y atrasa el LCP (ver src/lib/fotos.ts)
+const a = atributosFoto(nombre, tamano, BASE, prioridad);
+---
+<picture>
+  {a.srcsetAvif && <source type="image/avif" srcset={a.srcsetAvif} sizes={a.sizes} />}
+  <source type="image/webp" srcset={a.srcsetWebp} sizes={a.sizes} />
+  <img
+    src={a.src}
+    width={a.width}
+    height={a.height}
+    alt={alt}
+    class={clase}
+    style={style}
+    decoding="async"
+    loading={diferida && !prioridad ? 'lazy' : undefined}
+    fetchpriority={prioridad ? 'high' : undefined}
+  />
+</picture>

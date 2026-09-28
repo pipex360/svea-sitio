@@ -4,8 +4,9 @@
  * Es el Footer2 de shadcnblocks.com con los contenidos del pie que hoy sirve
  * el WordPress: el mismo texto de presentación, la dirección, el teléfono y el
  * correo, y los mismos enlaces internos (los seis servicios, con sus URL
- * exactas), más la columna «Recursos y guías» con los enlaces que el menú
- * del WordPress vivo lleva bajo ese nombre. Cinco cambios sobre el original:
+ * exactas), más la columna «Recursos y guías», que desde el 24-sep lleva las
+ * mismas seis guías y el mismo «Ver todas las guías» que el menú (GUIAS_MENU,
+ * en src/contenido/articulos/guias.ts). Cinco cambios sobre el original:
  *
  * 1. El logo de SVEA va solo, sin el título de texto al lado: el logo ya
  *    lleva el nombre y quedaría «SVEA SVEA».
@@ -41,6 +42,7 @@ import { useEffect, useRef } from 'react';
 
 import { Velaris } from '@/components/ui/velaris';
 import { cn } from '@/lib/utils';
+import { GUIAS_MENU, VER_TODAS_LAS_GUIAS } from '@/contenido/articulos/guias';
 
 interface MenuItem {
   title: string;
@@ -55,7 +57,11 @@ interface Footer2Props {
   tagline?: string;
   contacto?: { direccion: string; telefono: string; correo: string };
   menuItems?: MenuItem[];
+  /** cómo se escribe el teléfono (el href lleva siempre el crudo) */
+  telefonoTexto?: string;
   copyright?: string;
+  /** textos sueltos de la fila de abajo, sin enlace (los del pie de las landings) */
+  notas?: string[];
   bottomLinks?: { text: string; url: string }[];
   className?: string;
 }
@@ -103,25 +109,22 @@ export function Footer2({
       ],
     },
     {
-      // Los mismos enlaces que lleva el menú del WordPress vivo bajo «Recursos y
-      // Guías». El menú desplegable de la cabecera (Radix) sólo dibuja su
-      // contenido al abrirse, así que estos enlaces no están en el HTML: aquí
-      // sí, para que Google los siga desde la portada como hasta ahora.
+      // Las mismas seis guías y el mismo «Ver todas las guías» que el menú
+      // «Recursos y guías» (GUIAS_MENU, en guias.ts): menú y pie no pueden
+      // diferir. El desplegable de la cabecera (Radix) sólo dibuja su contenido
+      // al abrirse, así que estos enlaces no están en su HTML: aquí sí, para
+      // que Google los siga desde todas las páginas.
       title: 'Recursos y guías',
       span: 2,
       links: [
-        { text: 'Guías de cumplimiento', url: `${base}/blog/` },
-        { text: '¿Qué es el Informe Sanitario?', url: `${base}/que-es-informe-sanitario/` },
-        { text: 'Calificación Técnica Industrial en Chile', url: `${base}/calificacion-tecnica-industrial-chile/` },
-        { text: 'Estudio de Carga de Combustible en Chile', url: `${base}/estudio-de-carga-combustible-chile/` },
-        { text: 'Manejo de Residuos Peligrosos en Chile', url: `${base}/manejo-de-residuos-peligrosos-chile/` },
-        { text: 'Plan de Emergencia para Empresas', url: `${base}/plan-de-emergencia-empresa-chile/` },
-        { text: 'Plan de Emergencia para Condominios', url: `${base}/plan-de-emergencia-condominio-chile/` },
-        { text: 'Autorización de Transporte de Residuos en Chile', url: `${base}/autorizacion-transporte-residuos-chile/` },
+        ...GUIAS_MENU.map((g) => ({ text: g.rotulo, url: `${base}/${g.slug}/` })),
+        { text: VER_TODAS_LAS_GUIAS.rotulo, url: `${base}${VER_TODAS_LAS_GUIAS.ruta}` },
       ],
     },
   ],
+  telefonoTexto = '+56 9 2994 7924',
   copyright = `© ${new Date().getFullYear()} SVEA Consultores. Todos los derechos reservados.`,
+  notas = [],
   bottomLinks = [{ text: 'Política de privacidad', url: `${base}/politica-de-privacidad/` }],
   className,
 }: Footer2Props) {
@@ -139,8 +142,11 @@ export function Footer2({
   }, []);
 
   return (
-    <footer className={cn('relative overflow-hidden bg-[#081c15] py-14 text-white md:py-16', className)}>
-      <Velaris className="absolute inset-0" />
+    // pb en el teléfono: el alto de la barra fija de abajo (WhatsApp/Cotizar,
+    // 64 px) más el aire normal del pie. Así la barra se monta sobre el verde
+    // del pie y no hace falta un relleno blanco debajo.
+    <footer className={cn('relative overflow-hidden bg-[#0d3518] pb-[120px] pt-14 text-white md:py-16', className)}>
+      <Velaris className="absolute inset-0" suave />
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-2 gap-x-8 gap-y-0 lg:grid-cols-7 lg:gap-8">
           <div className="col-span-2 mb-6 lg:mb-0">
@@ -154,7 +160,7 @@ export function Footer2({
                 {/* el número se escribe agrupado, como en la cabecera y en
                     «Contáctanos»; el href lleva el crudo */}
                 <a href={`tel:${contacto.telefono}`} className="inline-block py-1.5 no-underline transition-colors hover:text-white">
-                  +56 9 2994 7924
+                  {telefonoTexto}
                 </a>
               </p>
               <p>
@@ -205,7 +211,10 @@ export function Footer2({
         <div className="mt-10 flex flex-col justify-between gap-4 border-t border-white/15 pt-6 text-sm font-medium text-white/65 md:flex-row md:items-center md:pr-44">
           <p>{copyright}</p>
           <div className="flex items-center gap-5">
-            <ul className="flex gap-4">
+            <ul className="flex flex-wrap items-center gap-x-4">
+              {notas.map((nota) => (
+                <li key={nota} className="py-2.5">{nota}</li>
+              ))}
               {bottomLinks.map((link) => (
                 <li key={link.text} className="underline underline-offset-4 transition-colors hover:text-white">
                   <a href={link.url} className="inline-block py-2.5">{link.text}</a>

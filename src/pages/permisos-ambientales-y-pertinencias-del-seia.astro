@@ -1,0 +1,101 @@
+---
+/**
+ * Permisos Ambientales y Pertinencias del SEIA, rehecha con el mismo formato
+ * que estudio-de-carga-de-combustible.astro. El original (Elementor, sin
+ * contenedor «x-page») tenía hero, «Descripción General», «Objetivo»,
+ * «Alcance» y cuatro preguntas frecuentes, y NO tenía formulario propio:
+ * sus botones llevaban al formulario de la portada. Desde el 25-sep lleva
+ * el suyo (seia-formulario.tsx), como las demás páginas de servicio, y los
+ * botones apuntan a él (#formulario-seia).
+ *
+ * Texto idéntico al WordPress salvo las cuatro promesas con «garantiz-»,
+ * cambiadas por lo que sí depende de nosotros (ver cada componente).
+ */
+import '../styles/tailwind.css';
+import MedicionSitio from '../components/MedicionSitio.astro';
+import HeroHalo from '../components/HeroHalo.astro';
+import FranjaClientes from '../components/FranjaClientes.astro';
+import { precargaFoto } from '../lib/fotos';
+import { BarraPegajosa } from '../components/ui/barra-pegajosa';
+import { BarraMovil } from '../components/ui/barra-movil';
+import { SeiaDescripcion } from '../components/ui/seia-descripcion';
+import { SeiaAlcance } from '../components/ui/seia-alcance';
+import { SeiaFaq, PREGUNTAS } from '../components/ui/seia-faq';
+import { SeiaFormulario } from '../components/ui/seia-formulario';
+import SeoHead from '../components/SeoHead.astro';
+import { Cta69 } from '../components/ui/cta69';
+import { Footer2 } from '../components/ui/footer2';
+import paginas from '../data/paginas.json';
+
+const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+const pagina = paginas.find((p) => p.ruta === '/permisos-ambientales-y-pertinencias-del-seia/')!;
+
+// Mientras esto sea la copia de trabajo, los formularios no envían.
+const COPIA = !import.meta.env.SVEA_PRODUCCION;
+
+const fuentesCSS = `
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 900;font-display:swap;src:url(${BASE}/fonts/inter-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:500 800;font-display:swap;src:url(${BASE}/fonts/manrope-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+`;
+---
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <SeoHead pagina={pagina} copia={COPIA} faq={PREGUNTAS} />
+  <MedicionSitio copia={COPIA} />
+
+  <link rel="preload" href={`${BASE}/fonts/inter-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
+  <style set:html={fuentesCSS}></style>
+  <!-- la foto del hero es el LCP: se precarga -->
+  <link rel="preload" as="image" {...precargaFoto('valle-elqui-cultivos-pertinencia-seia', BASE)} />
+</head>
+<body>
+  <MedicionSitio copia={COPIA} parte="body" />
+  <HeroHalo
+    fotos={['valle-elqui-cultivos-pertinencia-seia']}
+    copete="Servicios SVEA"
+    titulo="Permisos Ambientales y Pertinencias del SEIA"
+    parrafo="Te acompañamos en el cumplimiento normativo y la obtención de permisos ambientales a través del Sistema de Evaluación de Impacto Ambiental (SEIA)"
+    boton={{ texto: 'Solicitar asesoría', href: '#formulario-seia' }}
+    principal={{ valor: 'Pertinencia SEIA', texto: 'Informe de evaluación de tu proyecto' }}
+    secundarias={[
+      { destacado: 'Permisos ambientales', texto: 'elaboración de la documentación' },
+      { destacado: 'Seguimiento', texto: 'de la tramitación ante el SEA' },
+    ]}
+  />
+  <BarraPegajosa base={BASE} cotizar="#formulario-seia" client:idle />
+
+  <!-- clientes: la misma franja de la portada, justo después del hero -->
+  <FranjaClientes base={BASE} />
+
+  <div class="svea-nuevo">
+    <SeiaDescripcion base={BASE} client:idle />
+    <SeiaAlcance base={BASE} client:idle />
+    <SeiaFaq />
+    <SeiaFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-seia" client:idle />
+    <Footer2 base={BASE} client:idle />
+  </div>
+
+  <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-seia" client:idle />
+
+  {COPIA && (
+    <div class="aviso-copia">
+      COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
+      <a href={`${BASE}/estado/`}>ver todas las páginas</a>
+    </div>
+  )}
+</body>
+</html>
+
+<style is:global>
+  body { margin: 0; }
+  .aviso-copia{
+    position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#161b18;color:#fff;
+    font:400 12px/1.4 system-ui,sans-serif;padding:7px 12px;text-align:center}
+  .aviso-copia a{color:#9BEB6B}
+</style>

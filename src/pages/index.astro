@@ -16,8 +16,12 @@
  * comprobaciones. Esta página ya no lo lee.
  */
 import '../styles/tailwind.css';
+import MedicionSitio from '../components/MedicionSitio.astro';
+import AvisoCookies from '../components/AvisoCookies.astro';
+import SeoHead from '../components/SeoHead.astro';
 import HeroHalo from '../components/HeroHalo.astro';
-import { LogoMarquee } from '../components/ui/logo-marquee';
+import FranjaClientes from '../components/FranjaClientes.astro';
+import { precargaFoto } from '../lib/fotos';
 import { FeaturesSectionWithHoverEffects } from '../components/ui/feature-section-with-hover-effects';
 import { CumplimientoBento } from '../components/ui/bento-cumplimiento';
 import { Cta69 } from '../components/ui/cta69';
@@ -50,66 +54,32 @@ const fuentesCSS = `
 @font-face{font-family:'Manrope';font-style:normal;font-weight:500 800;font-display:swap;src:url(${BASE}/fonts/manrope-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 `;
 
-// Los 12 clientes del carrusel original, recortados y servidos desde el
-// repositorio. La proporción equilibra el tamaño de cada uno.
-const clientes = [
-  { archivo: 'db-santasalo', alt: 'DB Santasalo', ratio: 3.06 },
-  { archivo: 'grupo-mbo', alt: 'Grupo MBO', ratio: 1.34 },
-  { archivo: 'nuevo-pudahuel', alt: 'Nuevo Pudahuel', ratio: 4.27 },
-  { archivo: 'gespania', alt: 'Gespania', ratio: 2.01 },
-  { archivo: 'natures-farm', alt: "Nature's Farm", ratio: 1.32 },
-  { archivo: 'blt-mini-bodegas', alt: 'BLT Mini Bodegas', ratio: 2.35 },
-  { archivo: 'sungrow', alt: 'Sungrow', ratio: 4.21 },
-  { archivo: 'fuchs', alt: 'Fuchs Lubricants', ratio: 2.25 },
-  { archivo: 'novametal', alt: 'Novametal', ratio: 1.36 },
-  { archivo: 'lira', alt: 'Lira', ratio: 1.1 },
-  { archivo: 'animal-services', alt: 'Animal Services', ratio: 1.33 },
-  { archivo: 'delart-chocolat', alt: 'DelArt Chocolat', ratio: 2.01 },
-  { archivo: 'myv', alt: 'Martínez y Valdivieso', ratio: 3.0 },
-  { archivo: 'bodegas-san-francisco', alt: 'Bodegas San Francisco', ratio: 9.99 },
-  { archivo: 'newrest', alt: 'Newrest Catering Chile', ratio: 4.16 },
-  { archivo: 'flexpark', alt: 'Flexpark', ratio: 4.42 },
-  { archivo: 'galilea-centro', alt: 'Inmobiliaria Galilea Centro', ratio: 1.06 },
-  { archivo: 'dcp-logistica', alt: 'DCP Logística · Distribuidora y Comercial Pacífico', ratio: 2.56 },
-].map((c) => ({ src: `${BASE}/img/clientes/${c.archivo}.webp`, alt: c.alt, ratio: c.ratio }));
 ---
 <!doctype html>
-<html lang="es">
+<html lang="es-CL">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- SEO reproducido desde 04-seo-por-url/seo-por-url.csv: uno de cada uno -->
-  <title set:html={pagina.title}></title>
-  <meta name="description" content={pagina.description} />
-  <meta name="robots" content="noindex, nofollow" />
-  <link rel="canonical" href={pagina.canonical} />
-
+  <!-- SEO desde src/data/paginas.json (Rank Math): en la copia, noindex -->
+  <SeoHead pagina={pagina} copia={COPIA} />
+  <MedicionSitio copia={COPIA} />
 
   <!-- fuentes propias: dos archivos variables, subconjunto latino, precargados -->
   <link rel="preload" href={`${BASE}/fonts/inter-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la primera foto del hero es el LCP: se precarga -->
-  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/hero-1-energia-1080.webp 1080w, ${BASE}/img/hero/hero-1-energia-1920.webp 1920w`} imagesizes="100vw" />
+  <link rel="preload" as="image" {...precargaFoto('edificios-santiago-cordillera-nevada-plan-emergencia-condominio', BASE)} />
 </head>
 <body>
+  <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo />
   <BarraPegajosa base={BASE} client:idle />
 
-  <!-- Clientes: carrusel con desenfoque en los bordes. El fondo va de blanco a
-       la hoja gris para que Servicios, que ya es gris, empiece sin un borde:
-       el corte blanco/gris justo bajo los logos se leía como una línea. -->
-  <section class="svea-nuevo bg-gradient-to-b from-white to-hoja px-4 py-14">
-    <Reveal client:idle>
-      <h2 class="mb-5 text-center text-lg font-medium text-foreground md:text-2xl">
-        Con la confianza de
-        <span class="font-black tracking-tight text-svea">más de 250 empresas</span>
-        en todo el Chile
-      </h2>
-    </Reveal>
-    <LogoMarquee logos={clientes} />
-  </section>
+  <!-- Clientes: carrusel con desenfoque en los bordes; el fondo va de blanco
+       a la hoja gris de Servicios (FranjaClientes) -->
+  <FranjaClientes base={BASE} degradado />
 
   <!-- Servicios: rejilla con realce al pasar el cursor -->
   <section class="svea-nuevo bg-hoja px-4 py-20" id="servicios" aria-labelledby="titulo-servicios">
@@ -137,7 +107,7 @@ const clientes = [
         Cumplimiento Ambiental <span class="font-black text-svea">Sin Complicaciones.</span>
       </h2>
       <p class="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-black/75 md:text-lg">
-        Ofrecemos soluciones técnicas y normativas para garantizar la optimización en proyectos
+        Ofrecemos soluciones técnicas y normativas para optimizar tus proyectos
         industriales. Experiencia, calidad y transparencia en un solo lugar.
       </p>
       <div class="flex flex-wrap items-center justify-center gap-3">
@@ -153,20 +123,6 @@ const clientes = [
     <CumplimientoBento client:visible />
   </section>
 
-  <!-- Cierre de la sección: franja completa con la palabra de fondo -->
-  <div class="svea-nuevo">
-    <Cta69
-      badge={{ label: 'Primer paso' }}
-      heading="¿Listo para comenzar su proyecto?"
-      button={{ label: 'Contáctanos', href: `${BASE}/#form-home` }}
-      labels={{
-        marqueePhrase: 'Cumplimiento',
-        note: 'Deje la complejidad normativa en nuestras manos. Nuestro equipo de expertos está listo para asesorarlo hoy mismo.',
-        footnote: 'Proceso simple y transparente',
-      }}
-      client:idle
-    />
-  </div>
 
   <!-- Cómo trabajamos: esquema de nodos y los cinco pasos -->
   <div class="svea-nuevo">
@@ -183,19 +139,27 @@ const clientes = [
     <Contacto copia={COPIA} client:load />
   </div>
 
+  <!-- el cierre común de todas las páginas: formulario → verde → pie -->
+  <div class="svea-nuevo">
+    <Cta69 destino={`${BASE}/#form-home`} client:idle />
+  </div>
+
   <!-- Pie de página -->
   <div class="svea-nuevo">
     <Footer2 base={BASE} client:idle />
   </div>
 
-  <!-- en el teléfono, sitio para la barra de abajo -->
-  <div class="h-20 md:hidden" aria-hidden="true"></div>
   <BarraMovil base={BASE} copia={COPIA} client:idle />
 
-  <div class="aviso-copia">
-    COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
-    <a href={`${BASE}/estado/`}>ver las 27 páginas</a>
-  </div>
+  {COPIA && (
+    <div class="aviso-copia">
+      COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
+      <a href={`${BASE}/estado/`}>ver todas las páginas</a>
+    </div>
+  )}
+  <!-- la lista desplegable con el diseño del sitio (src/lib/selector-svea.ts) -->
+  <script>import '../lib/selector-svea';</script>
+  <AvisoCookies copia={COPIA} />
 </body>
 </html>
 
