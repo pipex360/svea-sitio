@@ -326,3 +326,19 @@ svea-select:defined > select {
   opacity: 0 !important;
   pointer-events: none !important;
 }
+
+/* Portada y CTI (28-sep): el botón de cotizar va negro plano, sin el
+   círculo con la flecha. Rige bajo body.botones-planos; las demás páginas
+   siguen con la flecha. En el cierre verde oscuro queda blanco: negro sobre
+   ese fondo casi no se ve. */
+.botones-planos .btn-flecha { gap: 0; justify-content: center; }
+.botones-planos .btn-flecha .circulo { display: none; }
+.botones-planos .btn-flecha:not(.chica) { height: 56px; padding: 0 32px; }
+@media (max-width: 480px) {
+  .botones-planos .btn-flecha:not(.chica) { height: 52px; padding: 0 24px; }
+}
+/* el de la cabecera conserva su tamaño chico */
+.botones-planos .halo-cab .btn-flecha:not(.chica) { height: 40px; padding: 0 24px; }
+@media (max-width: 820px) {
+  .botones-planos .halo-cab .btn-flecha:not(.chica) { height: 44px; padding: 0 18px; }
+}
