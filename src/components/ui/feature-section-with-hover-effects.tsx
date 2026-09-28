@@ -33,10 +33,11 @@ import * as React from 'react';
 import { Reveal } from '@/components/ui/reveal';
 import { cn } from '@/lib/utils';
 
-type Servicio = {
+export type Servicio = {
   titulo: string;
   descripcion: string;
-  href: string;
+  /** sin enlace, la tarjeta es un bloque de texto (sin «Conocer más») */
+  href?: string;
   Icono: LucideIcon;
 };
 
@@ -88,9 +89,12 @@ const SERVICIOS: Servicio[] = [
 export function FeaturesSectionWithHoverEffects({
   base = '',
   className,
+  servicios = SERVICIOS,
 }: {
   base?: string;
   className?: string;
+  /** otras tarjetas con el mismo diseño (p. ej. lo que incluye la CTI) */
+  servicios?: Servicio[];
 }) {
   return (
     // El panel: un bloque blanco con esquinas redondas sobre la hoja gris de
@@ -105,7 +109,7 @@ export function FeaturesSectionWithHoverEffects({
       )}
     >
       <div className="-mb-px -mr-px grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {SERVICIOS.map((servicio, i) => (
+        {servicios.map((servicio, i) => (
           <Reveal key={servicio.titulo} delay={i * 0.08} className="flex">
             <Servicio {...servicio} numero={i + 1} base={base} />
           </Reveal>
@@ -122,9 +126,11 @@ const Servicio = ({
   Icono,
   numero,
   base,
-}: Servicio & { numero: number; base: string }) => (
-  <a
-    href={`${base}${href}`}
+}: Servicio & { numero: number; base: string }) => {
+  const Caja = href ? 'a' : 'div';
+  return (
+  <Caja
+    {...(href ? { href: `${base}${href}` } : {})}
     className="group/servicio relative flex w-full flex-col border-b border-r border-border bg-white py-10 no-underline transition-colors"
   >
     {/* el realce entra desde abajo, en negro muy diluido */}
@@ -155,16 +161,19 @@ const Servicio = ({
       {descripcion}
     </p>
 
-    <span className="relative z-10 mt-auto px-8 pt-6 text-sm font-medium text-black">
-      Conocer más
-      <span
-        aria-hidden="true"
-        className="ml-1 inline-block transition-transform duration-200 group-hover/servicio:translate-x-1"
-      >
-        →
+    {href && (
+      <span className="relative z-10 mt-auto px-8 pt-6 text-sm font-medium text-black">
+        Conocer más
+        <span
+          aria-hidden="true"
+          className="ml-1 inline-block transition-transform duration-200 group-hover/servicio:translate-x-1"
+        >
+          →
+        </span>
       </span>
-    </span>
-  </a>
-);
+    )}
+  </Caja>
+  );
+};
 
 export default FeaturesSectionWithHoverEffects;

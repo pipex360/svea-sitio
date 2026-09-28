@@ -82,7 +82,7 @@ const FILAS: readonly { label: string; cells: readonly [Celda, Celda, Celda] }[]
   { label: 'La propuesta llega por email, automáticamente', cells: [false, false, true] },
   { label: 'Seguimiento del trámite por WhatsApp', cells: [false, false, true] },
   { label: 'Elaboración de la documentación técnica', cells: [false, true, true] },
-  { label: 'Informe técnico listo en', cells: ['Semanas', 'A veces', '5-10 días hábiles'] },
+  { label: 'Informe técnico listo en', cells: ['Semanas', 'A veces', '3-5 días hábiles'] },
   { label: 'Gestión completa ante la autoridad', cells: [false, 'A veces', true] },
   { label: 'Sabes en qué va tu trámite sin preguntar', cells: [false, false, true] },
 ];
