@@ -8,8 +8,7 @@
  * Rompe a propósito con el resto de la portada (fondo claro, tarjetas
  * blancas con icono): aquí mandan el color y las fotos.
  *
- * - Los títulos de los pasos van en serif (Newsreader 500, un archivo de
- *   24 KB, sólo en esta sección), como en la referencia.
+ * - Los títulos van en Manrope, la fuente de titulares del sitio.
  * - Las fotos salen del sistema de fotos del sitio (<picture> AVIF/WebP,
  *   carga diferida). El recorte es `border-top-left-radius: 100%`: CSS, sin
  *   JavaScript ni máscaras.
@@ -41,20 +40,20 @@ const FRANJAS: Record<string, { fondo: string; claro: boolean; foto: string; alt
   desarrollo: {
     fondo: 'bg-[#2b7a8c]',
     claro: false,
-    foto: 'revision-expediente-observaciones-seremi',
-    alt: 'Revisión de la documentación técnica del expediente',
+    foto: 'preparacion-descargos-sumario-sanitario',
+    alt: 'Profesional elaborando la documentación técnica sobre su escritorio',
   },
   gestion: {
     fondo: 'bg-[#d08a2e]',
     claro: true,
-    foto: 'inspeccion-planta-fiscalizacion-seremi',
-    alt: 'Visita de la autoridad a una planta durante la tramitación',
+    foto: 'revision-expediente-observaciones-seremi',
+    alt: 'Revisión del expediente en el mesón de la autoridad durante la tramitación',
   },
   entrega: {
     fondo: 'bg-[#e9efe6]',
     claro: true,
-    foto: 'operarios-grua-horquilla-bodega-calificacion-tecnica',
-    alt: 'Operarios trabajando en una bodega con su documentación aprobada',
+    foto: 'tecnicos-casco-revision-calificacion-tecnica-industrial',
+    alt: 'Dos técnicos con casco revisan en planta la documentación aprobada',
   },
 };
 
@@ -66,7 +65,7 @@ export function Proceso({ base = '' }: { base?: string }) {
           <p className="text-sm font-medium text-white/60">Proceso simple y transparente</p>
           <h2
             id="titulo-proceso"
-            className="serif-proceso mt-3 text-5xl leading-[1.02] text-white md:text-7xl lg:text-6xl"
+            className="mt-3 font-[Manrope,Inter,sans-serif] text-5xl font-medium leading-[1.05] tracking-[-0.04em] text-white md:text-6xl"
           >
             ¿Cómo Trabajamos?
           </h2>
@@ -105,7 +104,7 @@ export function Proceso({ base = '' }: { base?: string }) {
                   <p className={cn('text-sm font-medium', f.claro ? 'text-black/70' : 'text-white/80')}>
                     Paso {paso.numero}
                   </p>
-                  <h3 className="serif-proceso mt-4 text-3xl leading-[1.05] sm:text-[2.6rem]">{paso.titulo}</h3>
+                  <h3 className="mt-4 font-[Manrope,Inter,sans-serif] text-3xl font-medium leading-[1.1] tracking-[-0.03em] sm:text-[2.4rem]">{paso.titulo}</h3>
                   <p className={cn('mt-3 text-base leading-relaxed', f.claro ? 'text-black/75' : 'text-white/85')}>
                     {paso.descripcion}
                   </p>
