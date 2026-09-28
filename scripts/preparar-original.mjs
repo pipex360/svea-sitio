@@ -12,6 +12,14 @@
  *   2. Los formularios no envían. Nadie genera un lead falso desde la copia.
  *   3. Todas las páginas van noindex y el robots.txt bloquea todo, para que
  *      Google no indexe una copia del sitio y compita consigo mismo.
+ *
+ * Desde el 24-sep ya no queda ninguna copia del WordPress en public/: todas
+ * las páginas están rehechas en Astro (REHECHAS, abajo), incluidas /gracias/ y
+ * /politica-de-privacidad/. Los originales siguen en originales-wp/ como
+ * fuente de verdad para scripts/verificar.mjs.
+ *
+ * Con SVEA_PRODUCCION=1 (el build que va a sveaconsultores.cl) el robots.txt
+ * es el de producción —todo permitido y el sitemap— en vez del que bloquea.
  */
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, cpSync } from 'node:fs';
 import path from 'node:path';
@@ -79,15 +87,18 @@ function limpiar(html, ruta) {
 <div style="position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#161b18;color:#fff;
 font:400 12px/1.4 system-ui,sans-serif;padding:7px 12px;text-align:center">
 COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
-<a href="${BASE}/estado/" style="color:#9BEB6B">ver las 27 páginas</a>
+<a href="${BASE}/estado/" style="color:#9BEB6B">ver todas las páginas</a>
 </div>
 </body>`);
 
   return s;
 }
 
+// Google Drive para Mac deja un archivo «Icon\r» en cada carpeta: no se publica
+const sinIconoDrive = (ruta) => path.basename(ruta) !== 'Icon\r';
+
 rmSync(DEST, { recursive: true, force: true });
-mkdirSync(DEST, { recursive: true });
+mkdirSync(DEST, { recursive: true, filter: sinIconoDrive });
 
 /**
  * «Calificación Técnica Industrial»: rehecha entera en
@@ -96,28 +107,68 @@ mkdirSync(DEST, { recursive: true });
  * ni cambien los campos del formulario— y no se copia a public/.
  */
 const CTI = { ruta: '/calificacion-tecnica-industrial/' };
+// Las demás páginas rehechas con el mismo formato (src/pages/<ruta>.astro).
+const REHECHAS = new Set([
+  CTI.ruta,
+  '/estudio-de-carga-de-combustible/',
+  '/planes-de-emergencia-y-evacuacion/',
+  '/planes-de-emergencia-y-evacuacion-condominios/',
+  '/manejo-de-residuos-peligrosos/',
+  '/autorizacion-de-transporte-de-residuos/',
+  '/informe-sanitario/',
+  '/permisos-ambientales-y-pertinencias-del-seia/',
+  // las landings de Google Ads (src/layouts/Landing.astro)
+  '/cotiza-calificacion-tecnica-industrial/',
+  '/cotiza-estudio-de-carga-de-combustible/',
+  '/cotiza-plan-emergencia/',
+  '/cotiza-plan-emergencia-condominio/',
+  '/cotiza-informe-sanitario/',
+  '/cotiza-autorizacion-transporte-residuos/',
+  // los artículos (src/layouts/Articulo.astro) y el índice del blog
+  '/autorizacion-transporte-residuos-chile/',
+  '/calificacion-inofensiva-seremi/',
+  '/calificacion-tecnica-industrial-chile/',
+  '/estudio-de-carga-combustible-chile/',
+  '/manejo-de-residuos-peligrosos-chile/',
+  '/plan-de-emergencia-condominio-chile/',
+  '/plan-de-emergencia-ds-44-empresas-chile/',
+  '/plan-de-emergencia-empresa-chile/',
+  '/que-es-informe-sanitario/',
+  // las guías nuevas (sep-2026), sin original en el WordPress
+  ...paginas.filter((p) => p.nueva).map((p) => p.ruta),
+  '/blog/',
+  // las dos páginas sueltas (src/pages/gracias.astro y politica-de-privacidad.astro)
+  '/gracias/',
+  '/politica-de-privacidad/',
+]);
 
 let n = 0;
 for (const [ruta, archivo] of Object.entries(ARCHIVOS)) {
   if (ruta === '/') continue;              // la home la arma src/pages/index.astro
-  if (ruta === CTI.ruta) continue;         // y ésta, src/pages/calificacion-tecnica-industrial.astro
+  if (REHECHAS.has(ruta)) continue;       // y éstas, src/pages/<ruta>.astro
   const origen = path.join(ORIG, archivo);
   if (!existsSync(origen)) { console.log('falta el original:', ruta); continue; }
   const destino = ruta === '/' ? path.join(DEST, 'index.html')
     : path.join(DEST, ruta.replace(/^\/|\/$/g, ''), 'index.html');
-  mkdirSync(path.dirname(destino), { recursive: true });
+  mkdirSync(path.dirname(destino), { recursive: true, filter: sinIconoDrive });
   writeFileSync(destino, limpiar(readFileSync(origen, 'utf8'), ruta));
   n++;
 }
 
 // recursos propios de las mejoras (logo, etc.): se publican bajo /img/
 if (existsSync('mejoras/img')) {
-  cpSync('mejoras/img', path.join(DEST, 'img'), { recursive: true });
+  cpSync('mejoras/img', path.join(DEST, 'img'), { recursive: true, filter: sinIconoDrive });
   console.log('recursos propios copiados a /img/');
+}
+// íconos de la pestaña (favicon, el logo verde de SVEA): van en la raíz,
+// donde los navegadores y Google buscan /favicon.ico
+if (existsSync('mejoras/icono')) {
+  cpSync('mejoras/icono', DEST, { recursive: true, filter: sinIconoDrive });
+  console.log('íconos copiados a la raíz');
 }
 // las fuentes (Inter y Manrope variables, subconjunto latino) se sirven desde el sitio
 if (existsSync('mejoras/fonts')) {
-  cpSync('mejoras/fonts', path.join(DEST, 'fonts'), { recursive: true });
+  cpSync('mejoras/fonts', path.join(DEST, 'fonts'), { recursive: true, filter: sinIconoDrive });
   console.log('fuentes copiadas a /fonts/');
 }
 
@@ -255,14 +306,87 @@ const pie = recortaDiv(cuerpo, /<section class="elementor-section elementor-top-
 if (!pie) throw new Error('no se encontró el pie de página en la home');
 cuerpo = cuerpo.slice(0, pie[0]) + '<!--SVEA:PIE-->' + cuerpo.slice(pie[1]);
 
-mkdirSync('src/contenido', { recursive: true });
+mkdirSync('src/contenido', { recursive: true, filter: sinIconoDrive });
 writeFileSync('src/contenido/home-wp-cabeza.html',
   cabeza.join('\n') + `\n<style>.elementor-element-${HERO_VIEJO},.elementor-element-${BARRA_VIEJA},.elementor-element-${CARRUSEL},.elementor-element-${SERVICIOS}{display:none !important}</style>`);
 writeFileSync('src/contenido/home-wp-cuerpo.html', cuerpo);
 console.log('home: recursos y cuerpo entregados a Astro');
 
-// que nadie indexe la copia
-writeFileSync(path.join(DEST, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
+// que nadie indexe la copia; en producción, todo abierto y el sitemap
+// (lo genera @astrojs/sitemap sólo en producción, ver astro.config.mjs)
+const PRODUCCION = !!process.env.SVEA_PRODUCCION;
+writeFileSync(path.join(DEST, 'robots.txt'), PRODUCCION
+  ? `User-agent: *\nAllow: /\nSitemap: ${DOM}/sitemap-index.xml\n`
+  : 'User-agent: *\nDisallow: /\n');
+console.log(`robots.txt de ${PRODUCCION ? 'PRODUCCIÓN (Allow + sitemap)' : 'la copia (Disallow: /)'}`);
+
+// --- redirecciones 301 (ver REDIRECCIONES.md) -------------------------------
+// La lista vive en src/data/redirecciones.json. En producción se escribe
+// public/_redirects (Netlify / Cloudflare Pages), con y sin barra final; la
+// copia de trabajo no lleva. vercel.json (raíz) debe tener las mismas: si no
+// calza, se corta aquí para que nadie publique con una redirección perdida.
+const REDIRECCIONES = JSON.parse(readFileSync('src/data/redirecciones.json', 'utf8'));
+const variantes = (d) => [d, d.replace(/\/$/, '')].filter((x, i, a) => x && a.indexOf(x) === i);
+if (PRODUCCION) {
+  const lineas = REDIRECCIONES.flatMap((r) => variantes(r.desde).map((d) => `${d} ${r.hacia} 301`));
+  writeFileSync(path.join(DEST, '_redirects'), lineas.join('\n') + '\n');
+  console.log(`_redirects: ${lineas.length} reglas 301`);
+
+  // .htaccess para el hosting de SVEA (LiteSpeed/Apache, v2n.cl), donde se
+  // publica: HTTPS, sin www, las mismas 301, el sitemap viejo de Rank Math,
+  // la 404 propia y caché larga para lo que lleva huella en el nombre.
+  const escapar = (s) => s.replace(/^\//, '').replace(/\/$/, '').replace(/[.+?()[\]{}|^$\\]/g, '\\$&');
+  const reglas = REDIRECCIONES.map((r) => `RewriteRule ^${escapar(r.desde)}/?$ ${r.hacia} [R=301,L]`);
+  const htaccess = `# Generado por scripts/preparar-original.mjs (build de producción). No editar a mano.
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# HTTPS y dominio sin www (como el WordPress)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\\. [NC]
+RewriteRule ^(.*)$ https://sveaconsultores.cl/$1 [R=301,L]
+# sitemap viejo de Rank Math -> sitemap nuevo
+RewriteRule ^(sitemap_index|page-sitemap|post-sitemap)\\.xml$ /sitemap-index.xml [R=301,L]
+# URLs viejas del WordPress (src/data/redirecciones.json)
+${reglas.join('\n')}
+# barra final: /pagina -> /pagina/ si existe esa carpeta
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+RewriteRule ^(.+[^/])$ /$1/ [R=301,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+<FilesMatch "\\.(html)$">
+Header set Cache-Control "public, max-age=0, must-revalidate"
+</FilesMatch>
+</IfModule>
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType image/avif "access plus 30 days"
+ExpiresByType image/webp "access plus 30 days"
+ExpiresByType image/jpeg "access plus 30 days"
+ExpiresByType image/png "access plus 30 days"
+ExpiresByType image/x-icon "access plus 30 days"
+</IfModule>
+`;
+  writeFileSync(path.join(DEST, '.htaccess'), htaccess);
+  console.log(`.htaccess: ${reglas.length} redirecciones + HTTPS, www, sitemap viejo y barra final`);
+}
+{
+  const vercel = JSON.parse(readFileSync('vercel.json', 'utf8')).redirects ?? [];
+  const clave = (s, d, c) => `${s} ${d} ${c}`;
+  const esperadas = new Set(REDIRECCIONES.flatMap((r) => variantes(r.desde).map((d) => clave(d, r.hacia, 301))));
+  const hay = new Set(vercel.map((v) => clave(v.source, v.destination, v.statusCode)));
+  const faltan = [...esperadas].filter((x) => !hay.has(x));
+  const sobran = [...hay].filter((x) => !esperadas.has(x));
+  if (faltan.length || sobran.length) throw new Error(`vercel.json no calza con src/data/redirecciones.json · faltan: ${faltan.join(' | ')} · sobran: ${sobran.join(' | ')}`);
+}
 
 console.log(`${n} páginas copiadas del sitio actual · base "${BASE || '/'}"`);
 const faltan = paginas.filter((p) => !ARCHIVOS[p.ruta]).map((p) => p.ruta);

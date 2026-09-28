@@ -1,0 +1,310 @@
+{
+  "slug": "autorizacion-transporte-residuos-no-peligrosos",
+  "ruta": "/autorizacion-transporte-residuos-no-peligrosos/",
+  "migasOriginal": [
+    {
+      "texto": "Inicio",
+      "href": "/"
+    },
+    {
+      "texto": "Blog",
+      "href": "/blog/"
+    }
+  ],
+  "migaFinal": "Transporte de residuos no peligrosos",
+  "categoria": "Residuos y sustancias peligrosas",
+  "h1": "Autorización para transportar residuos no peligrosos: paso a paso en SEREMI en Línea",
+  "bajada": "Quién debe pedirla, qué antecedentes revisa la SEREMI de Salud, cómo se completa la solicitud en la plataforma SEREMI en Línea y en qué se diferencia de la autorización para residuos peligrosos del DS 148.",
+  "fecha": "Septiembre 2026",
+  "actualizado": {
+    "iso": "2026-09-24",
+    "texto": "24 de septiembre de 2026"
+  },
+  "lectura": "9 min de lectura",
+  "autor": "Equipo técnico SVEA Consultores",
+  "cifras": [
+    {
+      "n": "En línea",
+      "l": "Se tramita en SEREMI en Línea"
+    },
+    {
+      "n": "4",
+      "l": "Costados fotografiados por vehículo"
+    },
+    {
+      "n": "3-5",
+      "l": "Días hábiles expediente"
+    },
+    {
+      "n": "$135.700",
+      "l": "Arancel (ChileAtiende)"
+    }
+  ],
+  "indiceTitulo": "En este artículo",
+  "indice": [
+    {
+      "href": "#quien",
+      "texto": "Quién necesita la autorización"
+    },
+    {
+      "href": "#normativa",
+      "texto": "Qué norma la exige"
+    },
+    {
+      "href": "#diferencias",
+      "texto": "No peligrosos vs. peligrosos"
+    },
+    {
+      "href": "#antecedentes",
+      "texto": "Antecedentes que debes reunir"
+    },
+    {
+      "href": "#paso-a-paso",
+      "texto": "Paso a paso en SEREMI en Línea"
+    },
+    {
+      "href": "#errores",
+      "texto": "Errores que hacen observar la solicitud"
+    },
+    {
+      "href": "#fuentes",
+      "texto": "Fuentes"
+    },
+    {
+      "href": "#faq",
+      "texto": "Preguntas frecuentes"
+    }
+  ],
+  "formulario": {
+    "titulo": "Cotiza tu autorización de transporte sin compromiso",
+    "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+    "ocultos": [
+      {
+        "name": "access_key",
+        "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+      },
+      {
+        "name": "subject",
+        "value": "Nueva cotización Transporte Residuos (Blog) - SVEA Consultores",
+        "id": "dynamic-subject-art-trnp"
+      },
+      {
+        "name": "from_name",
+        "value": "SVEA Consultores Blog - Transporte Residuos"
+      },
+      {
+        "name": "redirect",
+        "value": "https://sveaconsultores.cl/gracias/"
+      },
+      {
+        "name": "Servicio",
+        "value": "Autorización Transporte de Residuos"
+      },
+      {
+        "name": "Origen",
+        "value": "Artículo SEO - Transporte Residuos No Peligrosos"
+      }
+    ],
+    "campos": [
+      {
+        "label": "Nombre completo *",
+        "id": "art-nombre",
+        "name": "Nombre",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Ej: Juan Pérez",
+        "ancho": false
+      },
+      {
+        "label": "Empresa *",
+        "id": "art-empresa",
+        "name": "Empresa",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Nombre de tu empresa",
+        "ancho": false
+      },
+      {
+        "label": "Teléfono *",
+        "id": "art-telefono",
+        "name": "Teléfono",
+        "tipo": "tel",
+        "requerido": true,
+        "placeholder": "+569 1234 5678",
+        "ancho": false
+      },
+      {
+        "label": "Email *",
+        "id": "art-email",
+        "name": "Email",
+        "tipo": "email",
+        "requerido": true,
+        "placeholder": "correo@empresa.cl",
+        "ancho": false
+      },
+      {
+        "label": "Tipo de autorización",
+        "id": "art-tipo",
+        "name": "Tipo de Autorización",
+        "tipo": "select",
+        "requerido": false,
+        "placeholder": null,
+        "ancho": true,
+        "opciones": [
+          {
+            "value": "",
+            "texto": "Selecciona una opción",
+            "seleccionada": true,
+            "desactivada": true
+          },
+          {
+            "value": "Transporte RSINP",
+            "texto": "Transporte de residuos no peligrosos",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Transporte RESPEL",
+            "texto": "Transporte de residuos peligrosos",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Ambas autorizaciones",
+            "texto": "Ambas autorizaciones",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "No estoy seguro",
+            "texto": "No estoy seguro",
+            "seleccionada": false,
+            "desactivada": false
+          }
+        ]
+      },
+      {
+        "label": "Mensaje (opcional)",
+        "id": "art-mensaje",
+        "name": "Mensaje",
+        "tipo": "textarea",
+        "requerido": false,
+        "placeholder": "¿Cuántos vehículos necesitas autorizar? ¿Qué residuos transportas?",
+        "ancho": true,
+        "filas": 3
+      }
+    ],
+    "boton": "Solicitar cotización gratuita →",
+    "confianza": [
+      "Datos protegidos",
+      "Cotización sin costo",
+      "Sin compromiso"
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      {
+        "p": "¿Quién debe pedir la autorización, la empresa que genera los residuos (el generador) o el transportista?",
+        "r": "La pide quien realiza el transporte, sea una empresa de transporte o una empresa que traslada sus propios residuos. El generador, por su parte, debe acreditar que quien transporta, trata y dispone sus residuos está autorizado (DS 594, art. 19).",
+        "rTexto": "La pide quien realiza el transporte, sea una empresa de transporte o una empresa que traslada sus propios residuos. El generador, por su parte, debe acreditar que quien transporta, trata y dispone sus residuos está autorizado (DS 594, art. 19)."
+      },
+      {
+        "p": "¿Sirve esta autorización para residuos peligrosos?",
+        "r": "No. Los residuos peligrosos requieren una autorización específica de la SEREMI según el DS 148 (art. 36), con plan de contingencias, Documento de Declaración y Hojas de Seguridad en cada traslado.",
+        "rTexto": "No. Los residuos peligrosos requieren una autorización específica de la SEREMI según el DS 148 (art. 36), con plan de contingencias, Documento de Declaración y Hojas de Seguridad en cada traslado."
+      },
+      {
+        "p": "¿Cómo se ingresa la solicitud?",
+        "r": "En la plataforma SEREMI en Línea del Ministerio de Salud (seremienlinea.minsal.cl), con ClaveÚnica. Allí se completan los datos de la instalación, los vehículos y los residuos, y se adjuntan los antecedentes.",
+        "rTexto": "En la plataforma SEREMI en Línea del Ministerio de Salud (seremienlinea.minsal.cl), con ClaveÚnica. Allí se completan los datos de la instalación, los vehículos y los residuos, y se adjuntan los antecedentes."
+      },
+      {
+        "p": "¿Qué pasa si mi camión está en leasing?",
+        "r": "Si el padrón está a nombre del banco o de otra empresa, adjunta el contrato de leasing o el documento que acredite tu derecho a usar el vehículo, junto con el certificado de anotaciones vigentes.",
+        "rTexto": "Si el padrón está a nombre del banco o de otra empresa, adjunta el contrato de leasing o el documento que acredite tu derecho a usar el vehículo, junto con el certificado de anotaciones vigentes."
+      },
+      {
+        "p": "¿Cuánto cuesta el arancel?",
+        "r": "El arancel lo cobra la SEREMI de Salud y se paga en la misma plataforma al ingresar la solicitud. La autorización tiene un arancel de $135.700 por trámite (valor en la SEREMI RM, septiembre de 2026; se reajusta cada año); revisa el valor vigente en SEREMI en Línea o en ChileAtiende antes de ingresar; algunos solicitantes pueden acreditar un beneficio arancelario.",
+        "rTexto": "El arancel lo cobra la SEREMI de Salud y se paga en la misma plataforma al ingresar la solicitud. La autorización tiene un arancel de $135.700 por trámite (valor en la SEREMI RM, septiembre de 2026; se reajusta cada año); revisa el valor vigente en SEREMI en Línea o en ChileAtiende antes de ingresar; algunos solicitantes pueden acreditar un beneficio arancelario."
+      },
+      {
+        "p": "¿Cuánto demora?",
+        "r": "En SVEA preparamos el expediente en 3 a 5 días hábiles. El plazo de revisión de la SEREMI varía según la región y las observaciones que haga.",
+        "rTexto": "En SVEA preparamos el expediente en 3 a 5 días hábiles. El plazo de revisión de la SEREMI varía según la región y las observaciones que haga."
+      }
+    ]
+  },
+  "autorCaja": {
+    "inicial": "S",
+    "nombre": "Equipo técnico SVEA Consultores",
+    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+  },
+  "compartir": {
+    "titulo": "Compartir",
+    "enlaces": [
+      {
+        "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://sveaconsultores.cl/autorizacion-transporte-residuos-no-peligrosos/",
+        "texto": "in",
+        "titulo": "LinkedIn",
+        "externo": true
+      },
+      {
+        "href": "https://api.whatsapp.com/send?text=Transporte%20de%20residuos%20no%20peligrosos%20https://sveaconsultores.cl/autorizacion-transporte-residuos-no-peligrosos/",
+        "texto": "wa",
+        "titulo": "WhatsApp",
+        "externo": true
+      },
+      {
+        "href": "mailto:?subject=Transporte%20de%20residuos%20no%20peligrosos&body=Te%20comparto%20esta%20gu%C3%ADa%3A%20https://sveaconsultores.cl/autorizacion-transporte-residuos-no-peligrosos/",
+        "texto": "@",
+        "titulo": "Email",
+        "externo": false
+      }
+    ]
+  },
+  "bloques": [
+    {
+      "tipo": "html",
+      "html": "<p class=\"art-entrada\">\n        Si trasladas escombros, tierra, madera, chatarra u otros <strong>residuos industriales no peligrosos</strong> por calles y caminos, necesitas una <strong>autorización sanitaria de la SEREMI de Salud</strong>. El trámite se hace en línea, en <strong>SEREMI en Línea</strong>, y la mayoría de las observaciones nacen de antecedentes que no calzan entre sí. Esta guía se enfoca en los no peligrosos; para el panorama completo, revisa nuestra <a href=\"/autorizacion-transporte-residuos-chile/\">guía de autorización de transporte de residuos</a>.\n    </p>\n\n<section id=\"quien\">\n        <h2>Quién necesita la autorización</h2>\n        <p>La autorización la pide <strong>quien transporta</strong>: la persona natural o jurídica que realiza el traslado y cuenta con vehículos e instalaciones apropiadas. Da lo mismo si eres una empresa de transporte que presta el servicio a terceros o una empresa que traslada sus propios residuos industriales en sus camiones.</p>\n        <p>La empresa que genera los residuos (el generador) también tiene un deber: el DS 594 (art. 19) exige a la empresa que trata o dispone sus residuos industriales fuera del predio, directamente o contratando a terceros, acreditar que <strong>el transporte, el tratamiento y la disposición final</strong> los hacen personas o empresas autorizadas. Por eso tus clientes te pedirán copia de la resolución.</p>\n    </section>\n\n<section id=\"normativa\">\n        <h2>Qué norma la exige</h2>\n        <ul class=\"checklist\">\n            <li><strong>Código Sanitario, art. 81:</strong> los vehículos que transportan basuras y desperdicios de cualquier naturaleza deben reunir los requisitos que señale la autoridad sanitaria, que además los vigila.</li>\n            <li><strong>DS 594, arts. 18 a 20:</strong> define residuo industrial y exige que el transporte, el tratamiento y la disposición fuera del predio estén a cargo de personas autorizadas.</li>\n            <li><strong>Código Sanitario, art. 174:</strong> las infracciones se sancionan con multas desde un décimo de UTM hasta 1.000 UTM, además de otras medidas como la clausura.</li>\n        </ul>\n    </section>\n\n<section id=\"diferencias\">\n        <h2>No peligrosos vs. peligrosos (DS 148)</h2>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Aspecto</th><th>Residuos no peligrosos</th><th>Residuos peligrosos</th></tr></thead>\n            <tbody>\n                <tr><td><strong>Norma</strong></td><td>Código Sanitario y DS 594</td><td>DS 148 de 2003, arts. 36 a 41</td></tr>\n                <tr><td><strong>Plan de contingencias</strong></td><td>Se adjunta un plan de emergencia y contingencias</td><td>Obligatorio, con contenido mínimo fijado en el art. 37</td></tr>\n                <tr><td><strong>Documentos en el viaje</strong></td><td>No aplica el Documento de Declaración del DS 148</td><td>Documento de Declaración y Hojas de Seguridad (art. 39)</td></tr>\n                <tr><td><strong>Personal</strong></td><td>Conductores con licencia vigente y capacitación</td><td>Capacitación para operar el vehículo y enfrentar emergencias (art. 40)</td></tr>\n                <tr><td><strong>Declaración de residuos</strong></td><td>Generadores y destinatarios en SINADER</td><td>SIDREP, en cada movimiento</td></tr>\n            </tbody>\n        </table>\n        </div>\n        <div class=\"callout callout-warning\">\n            <span class=\"callout-icon\">!</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Son autorizaciones distintas</div>\n                <p>La autorización para no peligrosos no te habilita para trasladar residuos peligrosos. Si en una misma obra retiras, por ejemplo, envases con restos de químicos, ese residuo exige un transportista autorizado según el DS 148.</p>\n            </div>\n        </div>\n    </section>\n\n<figure class=\"article-img\">\n        <img data-foto=\"camion-tolva-escombros-residuos-no-peligrosos\" alt=\"Autorización de transporte de residuos no peligrosos - camión tolva cargado con escombros en una obra\">\n        <figcaption>Cada vehículo se declara por separado, con sus documentos y fotografías.</figcaption>\n    </figure>\n"
+    },
+    {
+      "tipo": "formulario"
+    },
+    {
+      "tipo": "html",
+      "html": "<section id=\"antecedentes\">\n        <h2>Antecedentes que debes reunir</h2>\n        <p>La ficha oficial del trámite en ChileAtiende enumera los requisitos. En la práctica, conviene reunirlos en cinco grupos:</p>\n        <h3>Titular</h3>\n        <ul class=\"checklist\">\n            <li><strong>Empresa:</strong> RUT, inicio de actividades y giro en el SII acorde al transporte de residuos, y representante legal.</li>\n        </ul>\n        <h3>Instalación o base de operaciones</h3>\n        <ul class=\"checklist\">\n            <li><strong>Servicios básicos:</strong> acreditación de agua potable, evacuación de aguas servidas y certificación eléctrica.</li>\n            <li><strong>Certificado de informaciones previas</strong> del lugar donde se estacionan los vehículos.</li>\n            <li><strong>Descripción de la actividad y de las instalaciones:</strong> superficie, cierre perimetral, zona de estacionamiento y si se hace limpieza de vehículos en el lugar, con plano.</li>\n        </ul>\n        <h3>Vehículos</h3>\n        <ul class=\"checklist\">\n            <li><strong>Documentación</strong> de cada vehículo, que acredite que sus características son apropiadas para los residuos que transportará.</li>\n            <li><strong>Fotografías de los cuatro costados</strong>, con la patente legible.</li>\n        </ul>\n        <h3>Residuos y personal</h3>\n        <ul class=\"checklist\">\n            <li><strong>Listado de residuos</strong> a transportar, cada uno con su código de la lista de residuos que ofrece la plataforma, su estado físico y su forma de transporte.</li>\n            <li><strong>Conductores:</strong> licencias vigentes y acreditación de su capacitación.</li>\n            <li><strong>Plan de emergencia y contingencia</strong> para accidentes o derrames durante el traslado.</li>\n        </ul>\n    </section>\n\n<section id=\"paso-a-paso\">\n        <h2>Paso a paso en SEREMI en Línea</h2>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Ingreso con ClaveÚnica</h4><p>Entra a seremienlinea.minsal.cl y busca el trámite de autorización para el transporte de residuos no peligrosos.</p></div></li>\n            <li><div class=\"step-content\"><h4>Dirección de la instalación</h4><p>La región que indiques define la SEREMI que revisará la solicitud.</p></div></li>\n            <li><div class=\"step-content\"><h4>Datos de la actividad</h4><p>Nombre de fantasía y actividad económica. Para la recogida de desechos no peligrosos, el código CIIU es el 381100.</p></div></li>\n            <li><div class=\"step-content\"><h4>Instalación de transporte</h4><p>Superficie, cierre y control de acceso, estacionamiento de camiones y zona de limpieza, si existe.</p></div></li>\n            <li><div class=\"step-content\"><h4>Vehículos y residuos</h4><p>Una ficha por vehículo (patente, marca, modelo, año, carrocería, capacidad y dimensiones) y una por residuo.</p></div></li>\n            <li><div class=\"step-content\"><h4>Adjuntos y pago</h4><p>Un archivo por antecedente y pago del arancel. Después, la SEREMI revisa, puede inspeccionar y te notifica observaciones o la resolución.</p></div></li>\n        </ol>\n        <p>Los nombres de las secciones cambian cuando el Ministerio de Salud actualiza la plataforma. Si algo no calza con esta guía, sigue lo que pide el formulario.</p>\n    </section>\n\n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿Quieres ingresar tu solicitud sin observaciones evitables?</h3><p>Revisamos tus antecedentes, preparamos memoria, plano y plan de contingencias, y cargamos la solicitud por ti. Expediente en 3 a 5 días hábiles.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20necesito%20cotizar%20la%20autorizaci%C3%B3n%20de%20transporte%20de%20residuos%20no%20peligrosos\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><!--logos-clientes--></aside>\n<section id=\"errores\">\n        <h2>Errores que hacen observar la solicitud</h2>\n        <div class=\"error-item\"><h4>Camiones que no están a nombre del titular</h4><p>Si el padrón está a nombre de un banco o de otra empresa (leasing, arriendo), adjunta el contrato que acredite el uso. Sin eso, la SEREMI no puede verificar el vehículo.</p></div>\n        <div class=\"error-item\"><h4>Documentos vencidos</h4><p>Permiso de circulación, SOAP o revisión técnica vencidos al momento del ingreso son una observación segura.</p></div>\n        <div class=\"error-item\"><h4>Datos que no coinciden</h4><p>La dirección, la superficie o el número de camiones de la memoria descriptiva deben ser los mismos del plano, del formulario y de las fotos.</p></div>\n        <div class=\"error-item\"><h4>Residuos mal codificados</h4><p>Declarar un residuo con un código que no corresponde, o mezclar residuos peligrosos en la lista, obliga a corregir y a veces a reingresar.</p></div>\n        <div class=\"error-item\"><h4>Estacionamiento sin condiciones</h4><p>Un piso de tierra o sin cierre perimetral en la zona de estacionamiento suele generar observaciones. Revisa las condiciones antes de ingresar.</p></div>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (septiembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.chileatiende.gob.cl/fichas/56762-autorizacion-para-el-transporte-de-residuos-solidos-industriales-no-peligrosos-rsinp\" target=\"_blank\" rel=\"noopener\">ChileAtiende: Autorización para el transporte de residuos sólidos industriales no peligrosos (RSINP)</a></li><li><a href=\"https://seremienlinea.minsal.cl/\" target=\"_blank\" rel=\"noopener\">SEREMI en Línea, Ministerio de Salud</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=5595\" target=\"_blank\" rel=\"noopener\">Código Sanitario, arts. 81 y 174</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=167766\" target=\"_blank\" rel=\"noopener\">DS 594, condiciones sanitarias y ambientales básicas en los lugares de trabajo, arts. 18 a 20</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=226458\" target=\"_blank\" rel=\"noopener\">DS 148, Reglamento Sanitario sobre Manejo de Residuos Peligrosos</a></li></ul>\n    </section>\n"
+    }
+  ],
+  "relacionados": {
+    "titulo": "Servicios relacionados",
+    "intro": "",
+    "tarjetas": [
+      {
+        "titulo": "Autorización de Transporte de Residuos",
+        "texto": "Expediente, vehículos y tramitación ante la SEREMI para residuos peligrosos y no peligrosos.",
+        "href": "/autorizacion-de-transporte-de-residuos/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Planes de Emergencia y Evacuación",
+        "texto": "Plan de emergencia conforme al DS 44 y al DS 594, con mapa de riesgos y simulacro.",
+        "href": "/planes-de-emergencia-y-evacuacion/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Manejo de Residuos Peligrosos",
+        "texto": "Plan de manejo RESPEL, almacenamiento y declaración en SIDREP según el DS 148.",
+        "href": "/manejo-de-residuos-peligrosos/",
+        "enlace": "Conocer servicio →"
+      }
+    ]
+  },
+  "asunto": {
+    "prefijo": "[BLOG] Cotización Transporte Residuos - ",
+    "campo": "Empresa",
+    "id": "dynamic-subject-art-trnp"
+  }
+}

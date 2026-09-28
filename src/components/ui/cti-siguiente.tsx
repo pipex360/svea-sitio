@@ -7,7 +7,7 @@
  *
  * Las dos hacen lo mismo —mandar al visitante a otra página del sitio— así
  * que van juntas, una al lado de la otra. Los dos enlaces se conservan tal
- * cual, y el de la guía importa el doble: es la canónica de esta página.
+ * cual; el de la guía conecta el servicio con su artículo.
  */
 
 import { ArrowRightIcon, BookOpenIcon, FlameIcon } from 'lucide-react';

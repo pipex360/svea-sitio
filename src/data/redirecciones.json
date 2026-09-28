@@ -1,0 +1,19 @@
+[
+  {"desde": "/calificacion-inofensiva-seremi-2026/", "hacia": "/calificacion-inofensiva-seremi/", "motivo": "slug sin año (24-sep-2026, aprobado por Carlos)"},
+  {"desde": "/lp/plan-de-emergencia/", "hacia": "/planes-de-emergencia-y-evacuacion/", "motivo": "landing vieja del WordPress"},
+  {"desde": "/plan-de-emergencia/", "hacia": "/planes-de-emergencia-y-evacuacion/", "motivo": "URL vieja del WordPress"},
+  {"desde": "/inicio/", "hacia": "/", "motivo": "página «Inicio» duplicada del WordPress"},
+  {"desde": "/category/uncategorized/", "hacia": "/blog/", "motivo": "archivo de categoría del WordPress"},
+  {"desde": "/author/admin/", "hacia": "/blog/", "motivo": "archivo de autor del WordPress"},
+  {"desde": "/cotiza-plan-condominios/", "hacia": "/cotiza-plan-emergencia-condominio/", "motivo": "landing de Ads renombrada"},
+  {"desde": "/calificacion-inofensiva-2026/", "hacia": "/calificacion-inofensiva-seremi/", "motivo": "URL vieja o mal escrita con impresiones en Search Console (25-sep-2026)"},
+  {"desde": "/calificacion-inofensiva-seremi-2016/", "hacia": "/calificacion-inofensiva-seremi/", "motivo": "URL vieja o mal escrita con impresiones en Search Console (25-sep-2026)"},
+  {"desde": "/calificacion-industrial-chile-guia-definitiva-2026/", "hacia": "/calificacion-tecnica-industrial-chile/", "motivo": "URL vieja o mal escrita con impresiones en Search Console (25-sep-2026)"},
+  {"desde": "/calificacion-technica-industrial/", "hacia": "/calificacion-tecnica-industrial/", "motivo": "URL vieja o mal escrita con impresiones en Search Console (25-sep-2026)"},
+  {"desde": "/estudio-de-cara-combustible-chile/", "hacia": "/estudio-de-carga-combustible-chile/", "motivo": "URL vieja o mal escrita con impresiones en Search Console (25-sep-2026)"},
+  {"desde": "/estudio-de-carga-de-combustible-chile/", "hacia": "/estudio-de-carga-combustible-chile/", "motivo": "URL vieja o mal escrita con impresiones en Search Console (25-sep-2026)"},
+  {"desde": "/plan-de-emergencia-condominio-chile-guia-definitiva-2026-svea-consultores/", "hacia": "/plan-de-emergencia-condominio-chile/", "motivo": "URL vieja o mal escrita con impresiones en Search Console (25-sep-2026)"},
+  {"desde": "/plan-de-empresa-chile/", "hacia": "/plan-de-emergencia-empresa-chile/", "motivo": "URL vieja o mal escrita con impresiones en Search Console (25-sep-2026)"},
+  {"desde": "/plan-de-empresa-empresa-chile/", "hacia": "/plan-de-emergencia-empresa-chile/", "motivo": "URL vieja o mal escrita con impresiones en Search Console (25-sep-2026)"},
+  {"desde": "/chile/", "hacia": "/", "motivo": "URL vieja o mal escrita con impresiones en Search Console (25-sep-2026)"}
+]

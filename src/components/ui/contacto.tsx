@@ -13,7 +13,11 @@
  *   incluido el `subject` con su `id="dynamic-subject-home"` y el `redirect`
  *   absoluto (https://sveaconsultores.cl/gracias/), tal cual lo envía hoy.
  * - Los seis campos visibles conservan `name`, `type`, `required` y las
- *   siete opciones del <select> con sus `value` exactos.
+ *   opciones del <select> con sus `value` exactos (las siete del original y,
+ *   desde el 24-sep, «Informe Sanitario» y «Permisos ambientales y SEIA»
+ *   antes de «Otro»). El <select> va dentro de <svea-select>
+ *   (src/lib/selector-svea.ts), que le pone el selector con el diseño del
+ *   sitio y lo mantiene sincronizado: el que viaja sigue siendo el <select>.
  * - El asunto se arma al enviar con el mismo algoritmo que el <script> del
  *   WordPress: «Servicio - Nombre | Empresa - fecha hora» en es-CL.
  *
@@ -37,6 +41,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Reveal } from '@/components/ui/reveal';
 import { Textarea } from '@/components/ui/textarea';
+import { CamposOrigen } from '@/components/ui/campos-origen';
+import { AvisoFormulario } from '@/components/ui/aviso-formulario';
 
 /** Los mismos enlaces del WordPress: el de WhatsApp lo cuenta el listener de GTM. */
 const WHATSAPP = 'https://api.whatsapp.com/send/?phone=56929947924&text=Hola%2C%20necesito%20asesor%C3%ADa%20t%C3%A9cnica';
@@ -49,6 +55,10 @@ const SERVICIOS = [
   ['Plan de Emergencia Condominios', 'Plan de Emergencia y Evacuación Condominios'],
   ['Manejo de Sustancias y Residuos Peligrosos', 'Manejo de Sustancias y Residuos Peligrosos'],
   ['Transporte de Residuos', 'Autorización Transporte de Residuos'],
+  // 24-sep: dos servicios que el WordPress no ofrecía en esta lista (cambian la
+  // huella a propósito: originales-wp/home.html las lleva también)
+  ['Informe Sanitario', 'Informe Sanitario'],
+  ['Permisos ambientales y SEIA', 'Permisos ambientales y SEIA'],
   ['Otro', 'Otro / Consulta general'],
 ] as const;
 
@@ -117,6 +127,8 @@ export function Contacto({ copia = false }: { copia?: boolean }) {
                 WordPress para la copia, pero este valor viaja en el POST y no se toca */}
             <input type="hidden" name="redirect" value="https://sveaconsultores.cl/gracias/" />
             <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} aria-hidden="true" />
+            {/* gclid y utm_*: los rellena la medición (MedicionSitio.astro) */}
+            <CamposOrigen />
 
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="flex flex-col gap-1.5">
@@ -141,7 +153,7 @@ export function Contacto({ copia = false }: { copia?: boolean }) {
 
             <div className="flex flex-col gap-1.5">
               <Label htmlFor="contacto-servicio">Servicio</Label>
-              <span className="relative block">
+              <svea-select>
                 <select id="contacto-servicio" name="Servicio" required defaultValue="" className={campoSelect}>
                   <option value="" disabled>
                     Selecciona un servicio
@@ -152,19 +164,7 @@ export function Contacto({ copia = false }: { copia?: boolean }) {
                     </option>
                   ))}
                 </select>
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-black/50"
-                >
-                  <path d="m6 9 6 6 6-6" />
-                </svg>
-              </span>
+              </svea-select>
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -189,6 +189,7 @@ export function Contacto({ copia = false }: { copia?: boolean }) {
                 </svg>
               </span>
             </button>
+            <AvisoFormulario />
           </form>
         </ContactCard>
       </Reveal>

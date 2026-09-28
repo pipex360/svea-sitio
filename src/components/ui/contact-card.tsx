@@ -10,11 +10,16 @@
  *    cliente de correo y el WhatsApp abre la conversación. En el original
  *    eran texto plano.
  * 3. Las cruces de las esquinas van `aria-hidden`: son decoración.
+ *
+ * `beneficios` (25-sep): tres o cuatro puntos con check bajo el texto, para
+ * que la columna izquierda no quede vacía al lado de un formulario alto. En
+ * las páginas de servicio llevan lo que decía el cierre propio de cada una
+ * (respaldo, plazos, norma), que desde el 25-sep es común a todo el sitio.
  */
-import { PlusIcon } from 'lucide-react';
+import { CheckIcon, PlusIcon } from 'lucide-react';
 import type React from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn, rangosHtml } from '@/lib/utils';
 
 type ContactInfoProps = React.ComponentProps<'div'> & {
   /** de lucide o propio, como el logotipo de WhatsApp */
@@ -32,6 +37,8 @@ type ContactCardProps = React.ComponentProps<'div'> & {
   titleId?: string;
   description?: string;
   contactInfo?: ContactInfoProps[];
+  /** puntos con check bajo el texto */
+  beneficios?: string[];
   formSectionClassName?: string;
 };
 
@@ -41,6 +48,7 @@ export function ContactCard({
   titleId,
   description,
   contactInfo,
+  beneficios,
   className,
   formSectionClassName,
   children,
@@ -79,6 +87,18 @@ export function ContactCard({
             <p className="max-w-xl text-base leading-relaxed text-black/75 md:text-lg">
               {description}
             </p>
+          )}
+          {beneficios && beneficios.length > 0 && (
+            <ul className="mt-2 grid max-w-xl gap-3">
+              {beneficios.map((b) => (
+                <li key={b} className="flex items-start gap-3 text-[15px] leading-relaxed text-black/80 md:text-base">
+                  <span aria-hidden="true" className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-svea text-white">
+                    <CheckIcon className="size-3.5" strokeWidth={3} />
+                  </span>
+                  <span dangerouslySetInnerHTML={{ __html: rangosHtml(b) }} />
+                </li>
+              ))}
+            </ul>
           )}
           <div className="mt-auto grid gap-2 pt-6 sm:grid-cols-2 lg:grid-cols-3">
             {contactInfo?.map((info) => (

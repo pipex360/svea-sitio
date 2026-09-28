@@ -1,0 +1,177 @@
+{
+  "buildCommand": "npm run build:produccion",
+  "outputDirectory": "dist",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/calificacion-inofensiva-seremi-2026/",
+      "destination": "/calificacion-inofensiva-seremi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/calificacion-inofensiva-seremi-2026",
+      "destination": "/calificacion-inofensiva-seremi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lp/plan-de-emergencia/",
+      "destination": "/planes-de-emergencia-y-evacuacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lp/plan-de-emergencia",
+      "destination": "/planes-de-emergencia-y-evacuacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plan-de-emergencia/",
+      "destination": "/planes-de-emergencia-y-evacuacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plan-de-emergencia",
+      "destination": "/planes-de-emergencia-y-evacuacion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/inicio/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/inicio",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/uncategorized/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/uncategorized",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/admin/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/admin",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cotiza-plan-condominios/",
+      "destination": "/cotiza-plan-emergencia-condominio/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cotiza-plan-condominios",
+      "destination": "/cotiza-plan-emergencia-condominio/",
+      "statusCode": 301
+    },
+    {
+      "source": "/calificacion-inofensiva-2026/",
+      "destination": "/calificacion-inofensiva-seremi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/calificacion-inofensiva-2026",
+      "destination": "/calificacion-inofensiva-seremi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/calificacion-inofensiva-seremi-2016/",
+      "destination": "/calificacion-inofensiva-seremi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/calificacion-inofensiva-seremi-2016",
+      "destination": "/calificacion-inofensiva-seremi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/calificacion-industrial-chile-guia-definitiva-2026/",
+      "destination": "/calificacion-tecnica-industrial-chile/",
+      "statusCode": 301
+    },
+    {
+      "source": "/calificacion-industrial-chile-guia-definitiva-2026",
+      "destination": "/calificacion-tecnica-industrial-chile/",
+      "statusCode": 301
+    },
+    {
+      "source": "/calificacion-technica-industrial/",
+      "destination": "/calificacion-tecnica-industrial/",
+      "statusCode": 301
+    },
+    {
+      "source": "/calificacion-technica-industrial",
+      "destination": "/calificacion-tecnica-industrial/",
+      "statusCode": 301
+    },
+    {
+      "source": "/estudio-de-cara-combustible-chile/",
+      "destination": "/estudio-de-carga-combustible-chile/",
+      "statusCode": 301
+    },
+    {
+      "source": "/estudio-de-cara-combustible-chile",
+      "destination": "/estudio-de-carga-combustible-chile/",
+      "statusCode": 301
+    },
+    {
+      "source": "/estudio-de-carga-de-combustible-chile/",
+      "destination": "/estudio-de-carga-combustible-chile/",
+      "statusCode": 301
+    },
+    {
+      "source": "/estudio-de-carga-de-combustible-chile",
+      "destination": "/estudio-de-carga-combustible-chile/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plan-de-emergencia-condominio-chile-guia-definitiva-2026-svea-consultores/",
+      "destination": "/plan-de-emergencia-condominio-chile/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plan-de-emergencia-condominio-chile-guia-definitiva-2026-svea-consultores",
+      "destination": "/plan-de-emergencia-condominio-chile/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plan-de-empresa-chile/",
+      "destination": "/plan-de-emergencia-empresa-chile/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plan-de-empresa-chile",
+      "destination": "/plan-de-emergencia-empresa-chile/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plan-de-empresa-empresa-chile/",
+      "destination": "/plan-de-emergencia-empresa-chile/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plan-de-empresa-empresa-chile",
+      "destination": "/plan-de-emergencia-empresa-chile/",
+      "statusCode": 301
+    },
+    {
+      "source": "/chile/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/chile",
+      "destination": "/",
+      "statusCode": 301
+    }
+  ]
+}

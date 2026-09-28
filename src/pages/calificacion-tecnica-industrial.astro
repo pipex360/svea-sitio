@@ -24,23 +24,26 @@
  * enlaces y ya se ve en la portada.
  *
  * El SEO sale de src/data/paginas.json, que se genera desde el CSV de Rank
- * Math. Ojo con la canónica: apunta al artículo
- * /calificacion-tecnica-industrial-chile/, no a esta URL. Es así en el sitio
- * vivo y está pendiente de confirmar con Carlos; aquí se reproduce tal cual.
+ * Math. Canónica: apunta a sí misma (decidido con Carlos el 24-sep; en el
+ * WordPress apuntaba al artículo /calificacion-tecnica-industrial-chile/).
  *
  * `scripts/verificar.mjs` comprueba en cada corrida que ninguna palabra del
  * original se haya perdido y que los campos del formulario sigan siendo los
  * mismos.
  */
 import '../styles/tailwind.css';
+import MedicionSitio from '../components/MedicionSitio.astro';
 import HeroHalo from '../components/HeroHalo.astro';
+import FranjaClientes from '../components/FranjaClientes.astro';
+import { precargaFoto } from '../lib/fotos';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
 import { CtiFormulario } from '../components/ui/cti-formulario';
 import { CtiQueEs } from '../components/ui/cti-que-es';
 import { CtiServicio } from '../components/ui/cti-servicio';
 import { CtiSiguiente } from '../components/ui/cti-siguiente';
-import { CtiFaq } from '../components/ui/cti-faq';
+import { CtiFaq, PREGUNTAS } from '../components/ui/cti-faq';
+import SeoHead from '../components/SeoHead.astro';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
@@ -57,66 +60,57 @@ const fuentesCSS = `
 `;
 ---
 <!doctype html>
-<html lang="es">
+<html lang="es-CL">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- SEO reproducido desde 04-seo-por-url/seo-por-url.csv: uno de cada uno -->
-  <title set:html={pagina.title}></title>
-  <meta name="description" content={pagina.description} />
-  <meta name="robots" content="noindex, nofollow" />
-  <link rel="canonical" href={pagina.canonical} />
+  <SeoHead pagina={pagina} copia={COPIA} faq={PREGUNTAS} />
+  <MedicionSitio copia={COPIA} />
 
   <link rel="preload" href={`${BASE}/fonts/inter-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero es el LCP: se precarga -->
-  <link rel="preload" as="image" imagesrcset={`${BASE}/img/hero/servicio-cti-1080.webp 1080w, ${BASE}/img/hero/servicio-cti-1920.webp 1920w`} imagesizes="100vw" />
+  <link rel="preload" as="image" {...precargaFoto('bodega-calificacion-tecnica-industrial', BASE)} />
 </head>
 <body>
+  <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
-    fotos={[{ archivo: 'servicio-cti', alto: 1280 }]}
+    fotos={['bodega-calificacion-tecnica-industrial']}
     copete="Servicios SVEA"
     titulo="Calificación Técnica Industrial"
     parrafo="Regulariza tu infraestructura y obtén tu patente municipal. Nos encargamos de todo el proceso ante la SEREMI de Salud, desde el informe técnico hasta la resolución aprobada."
     boton={{ texto: 'Cotiza tu CTI ahora', href: '#formulario-cti' }}
-    principal={{ valor: '100', texto: 'aprobación en trámites realizados', contador: 'pct' }}
+    principal={{ valor: '3-5', texto: 'días hábiles para el informe técnico' }}
     secundarias={[
-      { destacado: '5-10 días hábiles', texto: 'informe técnico CTI' },
+      { destacado: 'Hasta la resolución', texto: 'acompañamiento ante la SEREMI' },
       { destacado: 'Cotización en 24 hrs', texto: 'automática por email' },
     ]}
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-cti" client:idle />
+
+  <!-- clientes: la misma franja de la portada, justo después del hero -->
+  <FranjaClientes base={BASE} />
 
   <div class="svea-nuevo">
     <CtiQueEs base={BASE} client:idle />
     <CtiServicio client:idle />
     <CtiSiguiente base={BASE} client:idle />
     <CtiFaq />
-    <Cta69
-      badge={{ label: 'Último paso' }}
-      heading="Regulariza tu actividad hoy"
-      button={{ label: 'Cotiza tu CTI ahora', href: '#formulario-cti' }}
-      labels={{
-        marqueePhrase: 'Calificación',
-        note: 'Obtén tu Calificación Técnica Industrial con respaldo profesional. Cotización en menos de 24 horas, informe en 5-10 días hábiles, 100% tasa de aprobación.',
-        footnote: 'WhatsApp directo: +56 9 2994 7924',
-      }}
-      client:idle
-    />
     <CtiFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-cti" client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
-  <!-- en el teléfono, sitio para la barra de abajo -->
-  <div class="h-20 md:hidden" aria-hidden="true"></div>
   <BarraMovil base={BASE} copia={COPIA} cotizar="#formulario-cti" client:idle />
 
-  <div class="aviso-copia">
-    COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
-    <a href={`${BASE}/estado/`}>ver las 27 páginas</a>
-  </div>
+  {COPIA && (
+    <div class="aviso-copia">
+      COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
+      <a href={`${BASE}/estado/`}>ver todas las páginas</a>
+    </div>
+  )}
 </body>
 </html>
 

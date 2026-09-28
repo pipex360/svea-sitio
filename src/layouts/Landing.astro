@@ -1,0 +1,574 @@
+---
+/**
+ * Plantilla de las landings de Google Ads (/cotiza-*).
+ *
+ * Son la página de destino de los anuncios: lo que importa es que el
+ * formulario se vea y se envíe, y que la página aparezca rápido en el
+ * teléfono. Las copias del WordPress tardaban ~10 s en mostrar contenido
+ * (LCP) porque todo nacía con opacity:0 (la clase .rv) y esperaba a un
+ * IntersectionObserver. Aquí:
+ *
+ * - Nada de lo que se ve al abrir nace invisible. El titular es texto y
+ *   sale con la primera pintura, con Inter y Manrope precargadas desde el
+ *   propio sitio; la foto del hero se precarga con prioridad alta.
+ * - Se ve como la portada (24-sep, pedido de Carlos): los mismos tokens de
+ *   color (blanco, hoja, verde SVEA, el verde profundo de Velaris), el hero
+ *   con el lenguaje de HeroHalo (foto del servicio, veladura blanca y halo),
+ *   la tarjeta del formulario como la de «Contáctanos», las tarjetas de las
+ *   páginas de servicio (suben, sombra y barra verde), el revelado de casa
+ *   (Reveal) y el mismo final que todas las páginas: Cta69 y Footer2.
+ * - Lo interactivo son islas de React que se hidratan con `client:idle`
+ *   (Reveal, Velaris, Cta69, Footer2): nada de eso está en la primera
+ *   pintura. Con prefers-reduced-motion no se mueve nada.
+ * - Cero recursos del WordPress: logo, logos de clientes y la foto del
+ *   hero salen de /img/ en webp.
+ * - Sin menú: una landing no debe sacar a la persona. Arriba, logo y
+ *   teléfono; en el hero, el formulario (en el teléfono, justo después del
+ *   titular y la bajada).
+ *
+ * Todo el texto sale de src/contenido/landings/<slug>.ts, extraído del
+ * bloque de cada original. El formulario es LISTA ROJA (LandingFormulario).
+ *
+ * Medición, sólo en producción (SVEA_PRODUCCION=1): MedicionSitio.astro, la
+ * misma de todo el sitio (GTM-NGVMRNDM con las conversiones de Ads, GA4 por
+ * gtag.js, form_submit_cotizacion, clic_whatsapp, Enhanced Conversions y
+ * gclid/utm). Ya no va ningún gtag('event','conversion') inline: el GTM
+ * cuenta la conversión del formulario (vista de /gracias/) y la del clic de
+ * WhatsApp; mandarlas también desde aquí las contaba dos veces.
+ * En la copia de trabajo no sale ni un gtag ni el GTM (scripts/verificar.mjs
+ * falla si aparece): sólo el asunto y el gclid/utm, que no miden nada.
+ */
+import '../styles/tailwind.css';
+import SeoHead from '../components/SeoHead.astro';
+import MedicionSitio from '../components/MedicionSitio.astro';
+import AvisoCookies from '../components/AvisoCookies.astro';
+import LandingFormulario from '../components/landing/LandingFormulario.astro';
+import LandingTitulo from '../components/landing/LandingTitulo.astro';
+import { LogoMarquee } from '../components/ui/logo-marquee';
+import { logosClientes } from '../data/clientes';
+import { TituloClientes } from '../components/ui/titulo-clientes';
+import { Reveal } from '../components/ui/reveal';
+import { Velaris } from '../components/ui/velaris';
+import { Cta69 } from '../components/ui/cta69';
+import { Footer2 } from '../components/ui/footer2';
+import paginas from '../data/paginas.json';
+import type { Landing } from '../contenido/landings/tipos';
+import Foto from '../components/Foto.astro';
+import { precargaFoto } from '../lib/fotos';
+import { rangosHtml } from '../lib/utils';
+
+interface Props {
+  datos: Landing;
+}
+const { datos: d } = Astro.props;
+
+const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+const COPIA = !import.meta.env.SVEA_PRODUCCION;
+const pagina = paginas.find((p) => p.ruta === d.ruta)!;
+if (!pagina) throw new Error(`falta ${d.ruta} en paginas.json`);
+
+const TEL = '+56 9 2994 7924';
+const TEL_HREF = 'tel:+56929947924';
+
+// para el FAQPage de SeoHead (sólo se usa si paginas.json no trae uno)
+const sinEtiquetas = (s: string) => s.replace(/<[^>]+>/g, '').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+const PREGUNTAS = d.faq.items.map(({ p, r }) => ({ p, r: sinEtiquetas(r) }));
+
+// los enlaces del pie del original apuntan al dominio; aquí, al sitio (con su base)
+const enlace = (href: string) =>
+  href
+    .replace('https://sveaconsultores.cl/#Nosotros', `${BASE}/#nosotros`)
+    .replace('https://sveaconsultores.cl/#Formulario', `${BASE}/#contacto`)
+    .replace(/^https:\/\/sveaconsultores\.cl\//, `${BASE}/`);
+
+// los mismos clientes que la portada (src/data/clientes.ts)
+const clientes = logosClientes(BASE);
+
+const fuentesCSS = `
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 900;font-display:swap;src:url(${BASE}/fonts/inter-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:500 800;font-display:swap;src:url(${BASE}/fonts/manrope-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+`;
+
+const WA_SVG =
+  '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.634-1.215A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-2.115 0-4.142-.662-5.846-1.908l-.42-.294-2.748.721.734-2.682-.322-.455A9.72 9.72 0 012.25 12 9.75 9.75 0 0112 2.25 9.75 9.75 0 0121.75 12 9.75 9.75 0 0112 21.75z"/>';
+const TEL_SVG =
+  '<path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>';
+const FLECHA = '<path d="M5 12h14" /><path d="m12 5 7 7-7 7" />';
+
+const m = d.medicion;
+
+
+// la tarjeta de las páginas de servicio (cti-servicio): sube 4 px, proyecta
+// sombra, oscurece el borde y se enciende la barra verde de arriba
+const TARJETA = [
+  'group/tarjeta relative overflow-hidden rounded-xl border border-border bg-white p-5 md:p-6',
+  'transition-[transform,box-shadow,border-color] duration-200 ease-out',
+  'hover:-translate-y-1 hover:border-black/30',
+  'hover:shadow-[0_18px_40px_-20px_rgba(0,0,0,0.3),0_2px_8px_-4px_rgba(0,0,0,0.12)]',
+  'motion-reduce:transition-[box-shadow,border-color] motion-reduce:hover:translate-y-0',
+].join(' ');
+const BARRA =
+  'absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-svea transition-transform duration-300 ease-out group-hover/tarjeta:scale-x-100 motion-reduce:transition-none';
+---
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <SeoHead pagina={pagina} copia={COPIA} faq={PREGUNTAS} />
+
+  <link rel="preload" href={`${BASE}/fonts/inter-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
+  <style set:html={fuentesCSS}></style>
+  <!-- la foto del hero puede ser el LCP: se precarga, como en las páginas de servicio.
+       En el teléfono baja la AVIF de 640 px (≤60 KB): va bajo la veladura
+       blanca y no se nota. -->
+  <link rel="preload" as="image" {...precargaFoto(d.foto, BASE)} fetchpriority="high" />
+
+  <MedicionSitio copia={COPIA} />
+</head>
+<body class="lp">
+  <MedicionSitio copia={COPIA} parte="body" />
+
+  <div class="svea-nuevo">
+    <!-- franja de urgencia del original, en el verde profundo de la casa -->
+    <div class="lp-urgencia bg-[#0d3518] px-4 py-2.5 text-center text-[13px] leading-snug text-white/75 md:text-sm">
+      <span class="lp-punto" aria-hidden="true"></span>
+      <span set:html={d.urgencia} />
+    </div>
+
+    <main>
+      <!-- HERO con el lenguaje de la portada (HeroHalo): la foto del servicio
+           de fondo, veladuras blancas y el halo tras el mensaje. Encima, la
+           cabecera de landing (logo y teléfono, sin menú). En el teléfono el
+           orden es titular, bajada, formulario, pills y cifras; en escritorio
+           el formulario va a la derecha, a la altura del titular. Nada nace
+           invisible: el titular y la bajada salen con la primera pintura. -->
+      <section id="inicio" class="lp-hero" aria-labelledby="lp-h1">
+        <div class="lp-hero-fondo" aria-hidden="true">
+          <Foto nombre={d.foto} alt="" tamano="hero" prioridad />
+          <div class="lp-velo-arriba"></div>
+          <div class="lp-velo-abajo"></div>
+          <div class="lp-aura"></div>
+        </div>
+
+        <!-- cabecera de landing: logo y teléfono, sin menú -->
+        <header class="relative z-10">
+          <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 md:px-6 md:py-5">
+            <img src={`${BASE}/img/logo-svea.webp`} width="404" height="137" alt="SVEA Consultores" class="h-8 w-auto md:h-10" fetchpriority="high" />
+            <a href={TEL_HREF} class="lp-tel" aria-label={`Llamar al ${TEL}`}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={TEL_SVG} />
+              <span>{TEL}</span>
+            </a>
+          </div>
+        </header>
+
+        <div class="relative z-10 mx-auto grid max-w-6xl gap-x-12 gap-y-8 px-4 pb-14 pt-4 md:px-6 md:pt-10 lg:grid-cols-[minmax(0,1fr)_440px] lg:grid-rows-[auto_1fr] lg:gap-y-10 lg:pb-20 lg:pt-12">
+          <div class="lg:col-start-1 lg:row-start-1">
+            <p class="lp-copete">
+              <span class="lp-latido" aria-hidden="true"></span>{d.badge}
+            </p>
+            <h1 id="lp-h1" class="lp-h1">
+              <Fragment set:html={d.h1} />
+              {d.h1Alterno && <span class="mt-3 block font-sans text-base font-medium tracking-normal text-black/55 md:text-lg">{d.h1Alterno}</span>}
+            </h1>
+            {d.subtitulo && <p class="lp-subtitulo mt-3 text-sm font-medium text-black/60" set:html={d.subtitulo} />}
+            <p class="lp-bajada" set:html={d.bajada} />
+          </div>
+
+          <div id="formulario" class="lp-ancla lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start">
+            <LandingFormulario f={d.formulario} copia={COPIA} />
+          </div>
+
+          <div class="lg:col-start-1 lg:row-start-2">
+            <ul class="flex flex-wrap gap-2">
+              {d.pills.map((p) => (
+                <li class="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-3.5 py-2 text-sm font-medium text-black/80 backdrop-blur-sm">
+                  <svg viewBox="0 0 24 24" class="size-4 shrink-0 text-svea" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                  {p}
+                </li>
+              ))}
+            </ul>
+            <!-- las cifras van escritas: el contador del original nacía en 0 -->
+            <ul class="lp-cifras mt-8 grid max-w-lg grid-cols-3 divide-x divide-black/10 border-y border-black/10">
+              {d.cifras.map((c) => (
+                <li class="px-3 py-4 first:pl-0">
+                  <p class="lp-cifra">{c.valor}</p>
+                  <p class="mt-1.5 text-xs leading-snug text-black/60 md:text-sm">{c.texto}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- clientes -->
+      <section class="bg-white px-4 py-8" aria-label="Clientes de SVEA Consultores">
+        <TituloClientes />
+        <LogoMarquee logos={clientes} />
+      </section>
+
+      {d.queEs && (
+        <section class="bg-white px-4 py-16 md:px-6 md:py-24" aria-labelledby="lp-que-es">
+          <div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <LandingTitulo copete={d.queEs.copete} titulo={d.queEs.titulo} id="lp-que-es" />
+              <Reveal className="-mt-4 space-y-4 text-base leading-relaxed text-black/75 md:text-lg" client:idle>
+                {d.queEs.parrafos.map((p) => <p set:html={p} />)}
+              </Reveal>
+            </div>
+            <Reveal delay={0.1} client:idle>
+              <Foto
+                nombre={d.queEs.foto.nombre}
+                alt={d.queEs.foto.alt}
+                tamano="mitad"
+                class="aspect-[4/3] w-full rounded-xl border border-border object-cover shadow-[0_18px_40px_-24px_rgba(0,0,0,0.25)]"
+              />
+            </Reveal>
+          </div>
+        </section>
+      )}
+
+      <!-- riesgos -->
+      <section class="bg-hoja px-4 py-16 md:px-6 md:py-24" aria-labelledby="lp-riesgos">
+        <div class="mx-auto max-w-6xl">
+          <LandingTitulo copete={d.riesgos.copete} titulo={d.riesgos.titulo} bajada={d.riesgos.bajada} id="lp-riesgos" />
+          <div class="grid gap-4 md:grid-cols-2">
+            {d.riesgos.items.map((r, i) => (
+              <Reveal delay={(i % 2) * 0.08} className={TARJETA} client:idle>
+                <span aria-hidden="true" class={BARRA} />
+                <article class="flex gap-4">
+                  <span class="grid size-10 shrink-0 place-items-center rounded-lg bg-destructive/10 text-destructive" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                  </span>
+                  <div>
+                    <h3 class="text-lg font-bold tracking-tight text-black">{r.titulo}</h3>
+                    <p class="mt-1.5 text-[15px] leading-relaxed text-black/65" set:html={r.texto} />
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mt-8" client:idle>
+            <div class="relative overflow-hidden rounded-xl border border-[#0b3d25] bg-[#0d3518] text-white">
+              <Velaris className="absolute inset-0" speed={1.2} client:idle />
+              <div class="relative z-10 flex flex-col items-start gap-5 p-6 md:flex-row md:items-center md:justify-between md:p-8">
+                <p class="max-w-xl text-lg font-medium leading-snug">{d.riesgos.llamado}</p>
+                <a href="#formulario" class="btn-flecha inversa chica shrink-0">
+                  <span>{d.riesgos.boton}</span>
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {d.listas && (
+        <section class="bg-white px-4 py-16 md:px-6 md:py-24">
+          <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
+            {d.listas.map((l, i) => (
+              <div>
+                <LandingTitulo copete={l.copete} titulo={l.titulo} id={`lp-lista-${i}`} />
+                <Reveal delay={i * 0.08} client:idle>
+                  <ul class="-mt-2 grid gap-2.5 sm:grid-cols-2">
+                    {l.items.map((it) => (
+                      <li class="flex items-center gap-2.5 rounded-lg border border-border bg-hoja px-4 py-3 text-[15px] font-medium text-black/80 transition-colors duration-200 hover:border-black/30">
+                        <svg viewBox="0 0 24 24" class="size-4 shrink-0 text-svea" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                        {it}
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- qué incluye -->
+      <section class:list={['px-4 py-16 md:px-6 md:py-24', d.listas ? 'bg-hoja' : 'bg-white']} aria-labelledby="lp-incluye">
+        <div class="mx-auto max-w-6xl">
+          <LandingTitulo copete={d.incluye.copete} titulo={d.incluye.titulo} bajada={d.incluye.bajada} id="lp-incluye" centrado />
+          <ol class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {d.incluye.items.map((it, i) => (
+              <Reveal as="li" delay={(i % 3) * 0.08} className={TARJETA} client:idle>
+                <span aria-hidden="true" class={BARRA} />
+                <span class="absolute right-5 top-5 font-mono text-xs font-semibold text-black/40">{String(i + 1).padStart(2, '0')}</span>
+                <span class="grid size-10 place-items-center rounded-lg bg-hoja text-svea" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" set:html={it.icono} />
+                </span>
+                <h3 class="mt-3 text-lg font-bold tracking-tight text-black">{it.titulo}</h3>
+                <p class="mt-1.5 text-[15px] leading-relaxed text-black/65" set:html={it.texto} />
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <!-- proceso: la franja oscura con el verde en movimiento (Velaris), como el CTA de la portada -->
+      <section class="relative overflow-hidden bg-[#0d3518] px-4 py-16 text-white md:px-6 md:py-24" aria-labelledby="lp-proceso">
+        <Velaris className="absolute inset-0" client:idle />
+        <div class="relative z-10 mx-auto max-w-6xl">
+          <LandingTitulo copete={d.proceso.copete} titulo={d.proceso.titulo} id="lp-proceso" centrado oscuro />
+          <Reveal client:idle>
+            <ol class="lp-pasos grid gap-6 md:grid-cols-5 md:gap-4">
+              {d.proceso.pasos.map((p, i) => (
+                <li class="relative flex gap-4 md:flex-col md:items-center md:text-center">
+                  <span class="relative z-10 grid size-11 shrink-0 place-items-center rounded-full bg-white font-display text-lg font-semibold text-svea">{i + 1}</span>
+                  <div>
+                    <h3 class="text-base font-bold text-white">{p.titulo}</h3>
+                    <p class="mt-1 text-sm text-white/70">{p.texto}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
+        </div>
+      </section>
+
+      <!-- normativa -->
+      <section class="bg-hoja px-4 py-16 md:px-6 md:py-24" aria-labelledby="lp-normativa">
+        <div class="mx-auto max-w-6xl">
+          <LandingTitulo copete={d.normativa.copete} titulo={d.normativa.titulo} bajada={d.normativa.bajada} id="lp-normativa" centrado />
+          <div class="grid gap-4 md:grid-cols-3">
+            {d.normativa.items.map((n, i) => (
+              <Reveal delay={(i % 3) * 0.08} className={TARJETA} client:idle>
+                <span aria-hidden="true" class={BARRA} />
+                <article>
+                  <span class="inline-block rounded-full bg-svea/10 px-3 py-1 text-xs font-bold tracking-wide text-svea">{n.sigla}</span>
+                  <h3 class="mt-4 text-lg font-bold tracking-tight text-black">{n.titulo}</h3>
+                  <p class="mt-1.5 text-[15px] leading-relaxed text-black/65" set:html={n.texto} />
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- preguntas frecuentes -->
+      <section class="bg-white px-4 py-16 md:px-6 md:py-24" aria-labelledby="lp-faq">
+        <div class="mx-auto max-w-3xl">
+          <LandingTitulo copete={d.faq.copete} titulo={d.faq.titulo} id="lp-faq" centrado />
+          <Reveal className="space-y-3" client:idle>
+            {d.faq.items.map((q, i) => (
+              <details open={i === 0} class="acordeon group rounded-xl border border-border bg-white px-5 transition-colors duration-200 hover:border-black/30">
+                <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 text-left">
+                  <h3 class="text-base font-bold tracking-tight text-black">{q.p}</h3>
+                  <svg viewBox="0 0 24 24" class="size-5 shrink-0 text-black/40 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+                </summary>
+                <p class="pb-5 text-[15px] leading-relaxed text-black/70" set:html={q.r} />
+              </details>
+            ))}
+          </Reveal>
+          <!-- el resumen del cierre del original: desde el 25-sep el bloque
+               verde (Cta69) dice lo mismo en todo el sitio, y lo propio de
+               esta landing (plazo, norma, respaldo) queda aquí -->
+          <p class="lp-resumen">
+            <strong set:html={d.cierre.titulo} />
+            <span set:html={rangosHtml(d.cierre.texto)} />
+          </p>
+        </div>
+      </section>
+
+      <!-- cierre: el mismo de todas las páginas, con el mismo texto
+           (src/data/cierre.ts); sólo el WhatsApp lleva el texto de la landing -->
+      <Cta69 destino="#formulario" whatsapp={d.cierre.whatsapp} client:idle />
+    </main>
+
+    <!-- el pie de todas las páginas, igual al del resto del sitio (25-sep):
+         con «Recursos y guías», el teléfono agrupado y sólo enlaces reales -->
+    <Footer2 base={BASE} tagline={d.pie.presentacion} client:idle />
+
+    <!-- en el teléfono, cuando el formulario ya quedó arriba: cotizar o WhatsApp -->
+    <div class:list={['lp-barra md:hidden', COPIA && 'con-aviso']} aria-hidden="true" inert>
+      <a href="#formulario" class="btn-flecha chica flex-1 justify-center"><span>{d.cierre.boton}</span></a>
+      <a href={d.cierre.whatsapp} target="_blank" rel="noopener" class="lp-wa grid size-11 shrink-0 place-items-center rounded-full" aria-label="Escribir por WhatsApp">
+        <svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true" set:html={WA_SVG} />
+      </a>
+    </div>
+    <!-- en escritorio, el botón flotante de WhatsApp de la portada; aparece
+         cuando el formulario del hero ya quedó arriba, para no taparlo -->
+    <a href={d.cierre.whatsapp} target="_blank" rel="noopener" class:list={['lp-wa lp-wa-flota', COPIA && 'con-aviso']} aria-hidden="true" tabindex="-1">
+      <svg viewBox="0 0 24 24" class="size-6" fill="currentColor" aria-hidden="true" set:html={WA_SVG} />
+      {d.cierre.whatsappTexto}
+    </a>
+  </div>
+
+  {COPIA && (
+    <div class="aviso-copia">
+      COPIA DE TRABAJO · sin medición y con los formularios desactivados ·
+      <a href={`${BASE}/estado/`}>ver todas las páginas</a>
+    </div>
+  )}
+
+  <!-- la barra del teléfono y el WhatsApp flotante aparecen cuando el
+       formulario del hero quedó arriba -->
+  <script is:inline>
+  (function () {
+    var barra = document.querySelector('.lp-barra');
+    var flota = document.querySelector('.lp-wa-flota');
+    var form = document.getElementById('formulario');
+    if (!form || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (es) {
+      var e = es[0];
+      var pasado = !e.isIntersecting && e.boundingClientRect.top < 0;
+      [barra, flota].forEach(function (el) {
+        if (!el) return;
+        el.classList.toggle('visible', pasado);
+        if (pasado) { el.removeAttribute('inert'); el.removeAttribute('aria-hidden'); el.removeAttribute('tabindex'); }
+        else { el.setAttribute('aria-hidden', 'true'); if (el === barra) el.setAttribute('inert', ''); else el.setAttribute('tabindex', '-1'); }
+      });
+    }).observe(form);
+  })();
+  </script>
+
+  <!-- C · asunto dinámico, la misma lógica del original: el prefijo y la
+       palabra de servicio los lee n8n -->
+  <script is:inline define:vars={{ prefijoAsunto: m.prefijoAsunto, formId: d.formulario.id, subjectId: m.subjectId }}>
+  document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', function () {
+      var campoNombre  = form.querySelector('input[name="Nombre"]');
+      var campoEmpresa = form.querySelector('input[name="Empresa"]') ||
+                         form.querySelector('input[name="Condominio"]');
+      var nombre  = ((campoNombre && campoNombre.value) || '').trim() || 'Sin nombre';
+      var empresa = ((campoEmpresa && campoEmpresa.value) || '').trim();
+      var ahora = new Date();
+      var fecha = ahora.toLocaleDateString('es-CL') + ' ' +
+                  ahora.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
+      var asunto = prefijoAsunto + nombre + (empresa ? ' | ' + empresa : '') + ' - ' + fecha;
+      var destino = document.getElementById(subjectId);
+      if (destino) destino.value = asunto;
+    });
+  });
+  </script>
+
+  {COPIA && (
+    <Fragment>
+      <!-- D · gclid y utm_* en la copia (en producción lo hace MedicionSitio) -->
+      <script is:inline>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var campos = ['gclid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+        campos.forEach(function (f) {
+          var val = params.get(f);
+          if (val) {
+            var el = document.getElementById('field-' + f);
+            if (el) el.value = val;
+          }
+        });
+        if (params.get('gclid')) {
+          sessionStorage.setItem('gclid', params.get('gclid'));
+        } else if (sessionStorage.getItem('gclid')) {
+          var el = document.getElementById('field-gclid');
+          if (el && !el.value) el.value = sessionStorage.getItem('gclid');
+        }
+      })();
+      </script>
+    </Fragment>
+  )}
+  <!-- la lista desplegable con el diseño del sitio (src/lib/selector-svea.ts) -->
+  <script>import '../lib/selector-svea';</script>
+  <AvisoCookies copia={COPIA} />
+</body>
+</html>
+
+<style is:global>
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body.lp { margin: 0; background: #fff; color: #161b22; font-family: Inter, ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+  .lp-urgencia strong { color: #fff; font-weight: 600; }
+  .lp-punto { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: #e5484d; vertical-align: 1px; box-shadow: 0 0 0 3px rgba(229,72,77,.25); }
+
+  /* HERO: el mismo lenguaje de HeroHalo (portada y servicios): la foto de
+     fondo, veladura blanca arriba y abajo, y el halo con su deriva lenta
+     detrás del mensaje. La foto no se anima (con una sola foto HeroHalo
+     también la deja fija). */
+  .lp-hero { position: relative; overflow: hidden; background: #fff; }
+  .lp-hero-fondo { position: absolute; inset: 0; pointer-events: none; }
+  .lp-hero-fondo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .lp-velo-arriba { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,.7), rgba(255,255,255,.3) 50%, rgba(255,255,255,.2)); }
+  .lp-velo-abajo { position: absolute; left: 0; right: 0; bottom: 0; height: 60%; background: linear-gradient(to top, #fff, rgba(255,255,255,.55) 45%, transparent); }
+  .lp-aura { position: absolute; inset: -8%; will-change: transform;
+    background:
+      radial-gradient(58% 52% at 30% 40%, rgba(255,255,255,.92), rgba(255,255,255,.55) 45%, rgba(255,255,255,0) 72%),
+      radial-gradient(42% 38% at 10% 26%, rgba(255,255,255,.55), rgba(255,255,255,0) 70%);
+    animation: lp-deriva 22s ease-in-out infinite; }
+  @keyframes lp-deriva { 0%,100% { transform: translate3d(0,0,0); } 50% { transform: translate3d(3%,-2%,0); } }
+  /* en el teléfono la foto ocupa lo de arriba (titular y bajada) y se funde
+     en blanco antes del formulario */
+  @media (max-width: 1023px) {
+    .lp-hero-fondo { bottom: auto; height: 640px; }
+    .lp-velo-abajo { height: 60%; }
+    .lp-aura { background:
+      radial-gradient(80% 46% at 42% 34%, rgba(255,255,255,.92), rgba(255,255,255,.55) 48%, rgba(255,255,255,0) 76%),
+      radial-gradient(60% 34% at 16% 22%, rgba(255,255,255,.5), rgba(255,255,255,0) 72%); }
+  }
+
+  .lp-tel { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; font-size: 15px; font-weight: 500; color: #000; text-decoration: none; transition: color .2s; }
+  .lp-tel:hover { color: #0e7a3c; }
+  .lp-tel svg { width: 17px; height: 17px; color: rgba(0,0,0,.5); }
+
+  .lp-copete { margin: 0 0 14px; display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(0,0,0,.6); }
+  /* el punto verde que late de las cifras de la portada */
+  .lp-latido { position: relative; width: 10px; height: 10px; border-radius: 50%; background: #0e7a3c; flex-shrink: 0; }
+  .lp-latido::before { content: ""; position: absolute; inset: -5px; border-radius: 50%; background: rgba(14,122,60,.25); animation: lp-late 1.8s ease-out infinite; }
+  @keyframes lp-late { 0% { transform: scale(.6); opacity: 1; } 100% { transform: scale(1.8); opacity: 0; } }
+
+  /* el H1 con la tipografía y la escala del de la portada */
+  .lp-h1 { margin: 0; max-width: 22ch; font-family: Manrope, Inter, sans-serif; font-weight: 500; letter-spacing: -.04em; line-height: 1.1;
+    font-size: clamp(36px, 4.2vw, 56px); color: #000; text-wrap: balance; }
+  .lp-h1 em { font-style: normal; color: #0e7a3c; }
+  .lp-bajada { margin: 20px 0 0; max-width: 44ch; font-size: 18px; line-height: 1.6; color: rgba(0,0,0,.7); }
+  .lp-subtitulo em { font-style: normal; font-weight: 600; color: rgba(0,0,0,.7); }
+  @media (max-width: 820px) { .lp-bajada { font-size: 16px; } }
+  .lp-cifra { font-family: Manrope, Inter, sans-serif; font-weight: 500; font-size: 30px; letter-spacing: -.03em; line-height: 1; color: #000; }
+  @media (min-width: 768px) { .lp-cifra { font-size: 38px; } }
+
+  /* los titulares de sección: como los de la portada, la parte en <em> en
+     el verde del logo y en negrita */
+  .lp-titulo h2 em { font-style: normal; font-weight: 900; color: #0e7a3c; }
+  .lp-titulo.lp-oscuro h2 em { color: #95d5b2; }
+  .lp-ancla { scroll-margin-top: 12px; }
+  .lp-resumen { margin: 32px 0 0; padding: 22px 24px; border-radius: 12px; border: 1px solid rgba(14,122,60,.2); background: rgba(14,122,60,.05);
+    font-size: 16px; line-height: 1.6; color: rgba(0,0,0,.72); text-align: center; text-wrap: pretty; }
+  .lp-resumen strong { display: block; margin-bottom: 6px; font-family: Manrope, Inter, sans-serif; font-size: 20px; font-weight: 600; letter-spacing: -.015em; color: #000; }
+  .lp-resumen strong em { font-style: normal; color: #0e7a3c; }
+  .lp-resumen span strong { display: inline; margin: 0; font: inherit; font-weight: 600; color: #000; }
+
+  /* la línea que une los pasos, sólo en escritorio */
+  @media (min-width: 768px) {
+    .lp-pasos li:not(:last-child)::after { content: ""; position: absolute; top: 22px; left: calc(50% + 30px); right: calc(-50% + 30px); height: 1px; background: rgba(255,255,255,.25); }
+  }
+
+  /* WhatsApp: el verde de WhatsApp con el texto blanco, como en la portada */
+  .lp-wa { background: #25d366; color: #fff !important; text-decoration: none; transition: background .2s, transform .2s, opacity .25s; }
+  .lp-wa:hover { background: #1fbe5b; }
+  .lp-wa-flota { position: fixed; right: 24px; bottom: 24px; z-index: 40; display: none; height: 56px; align-items: center; gap: 12px;
+    padding: 0 24px 0 16px; border-radius: 999px; font-size: 14px; font-weight: 600;
+    box-shadow: 0 12px 30px -10px rgba(37,211,102,.6); opacity: 0; transform: translateY(12px); pointer-events: none; }
+  .lp-wa-flota.con-aviso { bottom: 55px; }
+  .lp-wa-flota.visible { opacity: 1; transform: none; pointer-events: auto; }
+  .lp-wa-flota.visible:hover { transform: scale(1.03); }
+  @media (min-width: 768px) { .lp-wa-flota { display: flex; } }
+
+  .lp-barra { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; gap: 10px; align-items: center;
+    padding: 8px 16px max(8px, env(safe-area-inset-bottom)); background: #fff;
+    border-top: 1px solid #e6e8e4;
+    transform: translateY(calc(100% + 48px)); transition: transform .3s ease-out; }
+  .lp-barra.visible { transform: none; }
+  .lp-barra.con-aviso { bottom: 31px; }
+  .lp-barra .btn-flecha { overflow: hidden; text-overflow: ellipsis; }
+  @media (prefers-reduced-motion: reduce) {
+    .lp-barra, .lp-wa, .lp-wa-flota { transition: none; }
+    .lp-aura, .lp-latido::before { animation: none; }
+    .lp-wa-flota.visible:hover { transform: none; }
+  }
+
+  .aviso-copia { position: fixed; left: 0; right: 0; bottom: 0; z-index: 99999; background: #161b18; color: #fff;
+    font: 400 12px/1.4 system-ui, sans-serif; padding: 7px 12px; text-align: center; }
+  .aviso-copia a { color: #9BEB6B; }
+</style>

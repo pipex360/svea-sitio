@@ -1,0 +1,317 @@
+{
+  "slug": "plan-de-emergencia-ds-44-empresas-chile",
+  "ruta": "/plan-de-emergencia-ds-44-empresas-chile/",
+  "migasOriginal": [
+    {
+      "texto": "Inicio",
+      "href": "/"
+    },
+    {
+      "texto": "Blog",
+      "href": "/blog/"
+    }
+  ],
+  "migaFinal": "Plan de Emergencia DS 44",
+  "categoria": "Emergencias",
+  "h1": "DS 44: obligaciones, simulacro anual y fiscalización",
+  "bajada": "Qué obliga el Decreto Supremo 44 a toda empresa: requisitos del plan de emergencia, simulacro anual, fiscalización de la Dirección del Trabajo y cómo evitar sanciones.",
+  "fecha": "Marzo 2026",
+  "lectura": "13 min de lectura",
+  "autor": "Equipo técnico SVEA Consultores",
+  "cifras": [
+    {
+      "n": "Feb 2025",
+      "l": "Vigencia DS 44"
+    },
+    {
+      "n": "1/año",
+      "l": "Simulacro mínimo"
+    },
+    {
+      "n": "8 h",
+      "l": "Curso de capacitación (art. 16)"
+    },
+    {
+      "n": "2 años",
+      "l": "Máximo entre capacitaciones"
+    }
+  ],
+  "indiceTitulo": "En este artículo",
+  "indice": [
+    {
+      "href": "#que-es",
+      "texto": "Qué es el DS 44 y por qué exige un plan de emergencia"
+    },
+    {
+      "href": "#quien-debe",
+      "texto": "A quién aplica esta obligación"
+    },
+    {
+      "href": "#contenido",
+      "texto": "Contenido obligatorio del plan de emergencia"
+    },
+    {
+      "href": "#mapa-riesgos",
+      "texto": "Mapa de riesgos y matriz MIPER"
+    },
+    {
+      "href": "#simulacros",
+      "texto": "Simulacros y ensayos anuales"
+    },
+    {
+      "href": "#coordinacion",
+      "texto": "Coordinación entre empleadores"
+    },
+    {
+      "href": "#fiscalizacion",
+      "texto": "Fiscalización y sanciones"
+    },
+    {
+      "href": "#proceso",
+      "texto": "Cómo SVEA te ayuda a cumplir"
+    },
+    {
+      "href": "#errores",
+      "texto": "Errores comunes que debes evitar"
+    },
+    {
+      "href": "#fuentes",
+      "texto": "Fuentes"
+    },
+    {
+      "href": "#faq",
+      "texto": "Preguntas frecuentes"
+    }
+  ],
+  "formulario": {
+    "titulo": "Cotiza tu plan de emergencia DS 44 sin compromiso",
+    "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+    "ocultos": [
+      {
+        "name": "access_key",
+        "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+      },
+      {
+        "name": "subject",
+        "value": "Nueva cotización Plan Emergencia DS 44 (Blog) - SVEA Consultores"
+      },
+      {
+        "name": "from_name",
+        "value": "SVEA Consultores Blog - Plan Emergencia DS 44"
+      },
+      {
+        "name": "redirect",
+        "value": "https://sveaconsultores.cl/gracias/"
+      },
+      {
+        "name": "Servicio",
+        "value": "Plan de Emergencia DS 44"
+      },
+      {
+        "name": "Origen",
+        "value": "Artículo SEO - Plan Emergencia DS 44"
+      }
+    ],
+    "campos": [
+      {
+        "label": "Nombre completo *",
+        "id": "art-nombre",
+        "name": "Nombre",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Ej: Juan Pérez",
+        "ancho": false
+      },
+      {
+        "label": "Empresa *",
+        "id": "art-empresa",
+        "name": "Empresa",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Nombre de tu empresa",
+        "ancho": false
+      },
+      {
+        "label": "Teléfono *",
+        "id": "art-telefono",
+        "name": "Teléfono",
+        "tipo": "tel",
+        "requerido": true,
+        "placeholder": "+569 1234 5678",
+        "ancho": false
+      },
+      {
+        "label": "Email *",
+        "id": "art-email",
+        "name": "Email",
+        "tipo": "email",
+        "requerido": true,
+        "placeholder": "correo@empresa.cl",
+        "ancho": false
+      },
+      {
+        "label": "Tipo de servicio",
+        "id": "art-tipo",
+        "name": "Tipo de Servicio",
+        "tipo": "select",
+        "requerido": false,
+        "placeholder": null,
+        "ancho": true,
+        "opciones": [
+          {
+            "value": "",
+            "texto": "Selecciona una opción",
+            "seleccionada": true,
+            "desactivada": true
+          },
+          {
+            "value": "Plan Emergencia DS 44",
+            "texto": "Plan de emergencia DS 44",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Plan Emergencia + Simulacro",
+            "texto": "Plan de emergencia + simulacro",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Actualización plan existente",
+            "texto": "Actualización de plan existente",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Asesoría integral SST",
+            "texto": "Asesoría integral en seguridad laboral",
+            "seleccionada": false,
+            "desactivada": false
+          }
+        ]
+      },
+      {
+        "label": "Mensaje (opcional)",
+        "id": "art-mensaje",
+        "name": "Mensaje",
+        "tipo": "textarea",
+        "requerido": false,
+        "placeholder": "¿Cuántos trabajadores tiene tu empresa? ¿Ya cuentas con un plan anterior?",
+        "ancho": true,
+        "filas": 3
+      }
+    ],
+    "boton": "Solicitar cotización gratuita →",
+    "confianza": [
+      "Datos protegidos",
+      "Cotización sin costo",
+      "Sin compromiso"
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      {
+        "p": "¿Qué es el plan de emergencia del DS 44?",
+        "r": "Es un plan obligatorio de gestión, reducción y respuesta ante emergencias, catástrofes o desastres que toda empresa en Chile debe tener desde febrero de 2025. Reemplaza las exigencias de los derogados DS 40 y DS 54, con un enfoque más integral que incluye mapa de riesgos, matriz MIPER y simulacros documentados.",
+        "rTexto": "Es un plan obligatorio de gestión, reducción y respuesta ante emergencias, catástrofes o desastres que toda empresa en Chile debe tener desde febrero de 2025. Reemplaza las exigencias de los derogados DS 40 y DS 54, con un enfoque más integral que incluye mapa de riesgos, matriz MIPER y simulacros documentados."
+      },
+      {
+        "p": "¿A quién aplica el plan de emergencia del DS 44?",
+        "r": "A todas las entidades empleadoras en Chile, sin excepción. Desde la microempresa con 1 trabajador hasta grandes corporaciones. Las obligaciones específicas de estructura preventiva varían según el número de trabajadores (delegado, comité paritario, departamento de prevención).",
+        "rTexto": "A todas las entidades empleadoras en Chile, sin excepción. Desde la microempresa con 1 trabajador hasta grandes corporaciones. Las obligaciones específicas de estructura preventiva varían según el número de trabajadores (delegado, comité paritario, departamento de prevención)."
+      },
+      {
+        "p": "¿Cada cuánto debo hacer simulacros según el DS 44?",
+        "r": "El DS 44 exige al menos un simulacro anual del plan de emergencia. Debe estar documentado con registro de participantes, tiempos de evacuación y observaciones de mejora. Además, el plan debe actualizarse cuando cambien las condiciones del lugar de trabajo.",
+        "rTexto": "El DS 44 exige al menos un simulacro anual del plan de emergencia. Debe estar documentado con registro de participantes, tiempos de evacuación y observaciones de mejora. Además, el plan debe actualizarse cuando cambien las condiciones del lugar de trabajo."
+      },
+      {
+        "p": "¿Qué sanciones hay por no tener plan de emergencia DS 44?",
+        "r": "La Dirección del Trabajo fiscaliza mediante el FUF DS 44. Las multas varían según el tamaño de la empresa. En caso de accidente laboral grave o fatal sin plan de emergencia, la responsabilidad penal del empleador se agrava significativamente. También puede haber suspensión de actividades.",
+        "rTexto": "La Dirección del Trabajo fiscaliza mediante el FUF DS 44. Las multas varían según el tamaño de la empresa. En caso de accidente laboral grave o fatal sin plan de emergencia, la responsabilidad penal del empleador se agrava significativamente. También puede haber suspensión de actividades."
+      },
+      {
+        "p": "¿Qué diferencia hay entre el plan del DS 44 y el del DS 594?",
+        "r": "El DS 44 amplía las exigencias del DS 594 en materia de emergencias. Exige un plan de gestión integral con mapa de riesgos, matriz MIPER, protocolos específicos por tipo de emergencia, simulacros anuales documentados y coordinación obligatoria entre empleadores que compartan el mismo lugar de trabajo.",
+        "rTexto": "El DS 44 amplía las exigencias del DS 594 en materia de emergencias. Exige un plan de gestión integral con mapa de riesgos, matriz MIPER, protocolos específicos por tipo de emergencia, simulacros anuales documentados y coordinación obligatoria entre empleadores que compartan el mismo lugar de trabajo."
+      },
+      {
+        "p": "¿Cuánto cuesta elaborar un plan de emergencia DS 44?",
+        "r": "El costo varía según el tamaño de la empresa, cantidad de trabajadores y complejidad de la operación. En SVEA Consultores cotizamos cada caso; el servicio incluye levantamiento en terreno, elaboración del plan, mapa de riesgos, MIPER y simulacro.",
+        "rTexto": "El costo varía según el tamaño de la empresa, cantidad de trabajadores y complejidad de la operación. En SVEA Consultores cotizamos cada caso; el servicio incluye levantamiento en terreno, elaboración del plan, mapa de riesgos, MIPER y simulacro."
+      }
+    ]
+  },
+  "autorCaja": {
+    "inicial": "S",
+    "nombre": "Equipo técnico SVEA Consultores",
+    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+  },
+  "compartir": {
+    "titulo": "Compartir",
+    "enlaces": [
+      {
+        "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://sveaconsultores.cl/plan-de-emergencia-ds-44-empresas-chile/",
+        "texto": "in",
+        "titulo": "Compartir en LinkedIn",
+        "externo": true
+      },
+      {
+        "href": "https://api.whatsapp.com/send?text=Plan%20de%20Emergencia%20DS%2044%20Chile%20-%20Guía%20Completa%20https://sveaconsultores.cl/plan-de-emergencia-ds-44-empresas-chile/",
+        "texto": "wa",
+        "titulo": "Compartir por WhatsApp",
+        "externo": true
+      },
+      {
+        "href": "mailto:?subject=Plan%20de%20Emergencia%20DS%2044%20Chile&body=Te%20comparto%20esta%20guía%3A%20https://sveaconsultores.cl/plan-de-emergencia-ds-44-empresas-chile/",
+        "texto": "@",
+        "titulo": "Enviar por email",
+        "externo": false
+      }
+    ]
+  },
+  "bloques": [
+    {
+      "tipo": "html",
+      "html": "<p class=\"art-entrada\">\n        Desde el <strong>1 de febrero de 2025</strong>, el <strong>Decreto Supremo 44</strong> del Ministerio del Trabajo obliga a todas las empresas en Chile a contar con un <strong>plan de emergencia DS 44</strong> actualizado. Este plan reemplaza y amplía las exigencias de los derogados DS 40 y DS 54, incorporando un enfoque integral de gestión de riesgos, simulacros obligatorios y un nuevo sistema de fiscalización con multas significativas. Esta guía se centra en las obligaciones del decreto, el simulacro anual y la fiscalización.\n    </p>\n    \n<section id=\"que-es\">\n        <h2>Qué es el DS 44 y por qué exige un plan de emergencia</h2>\n        <p>El <strong>Decreto Supremo 44</strong> (publicado en julio 2024, vigente desde febrero 2025) es el nuevo reglamento sobre gestión preventiva de los riesgos laborales en Chile. Unifica y reemplaza los antiguos DS 40 y DS 54, estableciendo un marco moderno alineado con estándares internacionales de la OIT.</p>\n        <p>Entre sus obligaciones centrales, el DS 44 exige que toda entidad empleadora elabore e implemente un <strong>plan de gestión, reducción y respuesta ante emergencias, catástrofes o desastres</strong>. Este plan debe cubrir tanto eventos internos (incendios, derrames, fallas estructurales) como externos (terremotos, inundaciones, tsunamis) que puedan afectar gravemente el funcionamiento de la empresa.</p>\n        <p>El <strong>plan de emergencia DS 44</strong> no es solo un documento: debe ser un sistema vivo que se actualice regularmente, se ensaye mediante simulacros al menos una vez al año, y que involucre activamente a los trabajadores en su diseño e implementación.</p>\n        <p>Esta guía explica <strong>qué exige la norma y cómo fiscaliza la Dirección del Trabajo</strong>. Si buscas cómo se hace el plan paso a paso y qué debe incluir, lee nuestra guía <a href=\"/plan-de-emergencia-empresa-chile/\">plan de emergencia para empresas: qué debe incluir y cómo se elabora</a>; y para preparar una inspección, el <a href=\"/checklist-ds-44-fiscalizacion/\">checklist DS 44</a>.</p>\n        <div class=\"callout callout-danger\">\n            <span class=\"callout-icon\">!</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Atención: la fiscalización ya está activa</div>\n                <p>La Dirección del Trabajo ya está fiscalizando el cumplimiento del DS 44 mediante el Formulario Único de Fiscalización (FUF). Las empresas sin plan de emergencia se exponen a multas y sanciones administrativas inmediatas.</p>\n            </div>\n        </div>\n    </section>\n    \n<section id=\"quien-debe\">\n        <h2>A quién aplica esta obligación</h2>\n        <p>El <strong>plan de emergencia DS 44</strong> es obligatorio para <strong>todas las entidades empleadoras en Chile</strong>, sin importar su tamaño. Sin embargo, la estructura organizativa de prevención varía según el número de trabajadores:</p>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Trabajadores</th><th>Estructura requerida</th><th>Obligaciones clave</th></tr></thead>\n            <tbody>\n                <tr><td><strong>1 a 9</strong></td><td>Sin Comité ni Delegado: la gestión la asume la entidad empleadora, con apoyo de su organismo administrador</td><td>Plan de emergencia, MIPER básica, reglamento interno (RIHS)</td></tr>\n                <tr><td><strong>10 a 25</strong></td><td>Delegado de Seguridad y Salud</td><td>Todo lo anterior + mapa de riesgos, programa preventivo anual</td></tr>\n                <tr><td><strong>26 a 100</strong></td><td>Comité Paritario (CPHS)</td><td>Todo lo anterior + sistema de gestión SST, simulacros documentados</td></tr>\n                <tr><td><strong>Más de 100</strong></td><td>Departamento de Prevención</td><td>Todo lo anterior + auditoría interna anual, vigilancia epidemiológica</td></tr>\n            </tbody>\n        </table>\n        </div><div class=\"callout callout-info\">\n            <span class=\"callout-icon\">i</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Enfoque de género obligatorio</div>\n                <p>El DS 44 introduce por primera vez la obligación de incorporar la perspectiva de género en la gestión de riesgos laborales, incluyendo el plan de emergencia. Esto significa considerar las diferencias en exposición a riesgos según sexo o género de los trabajadores.</p>\n            </div>\n        </div>\n    </section>\n    \n<section id=\"contenido\">\n        <h2>Contenido obligatorio del plan de emergencia DS 44</h2>\n        <p>El <strong>plan de emergencia DS 44</strong> debe contener como mínimo los siguientes elementos:</p>\n        <ul class=\"checklist\">\n            <li><strong>Identificación de emergencias previsibles:</strong> Listado de todos los eventos internos y externos que puedan alterar gravemente el funcionamiento de la empresa (incendios, sismos, derrames, explosiones, inundaciones, etc.).</li>\n            <li><strong>Protocolos de actuación:</strong> Procedimientos específicos para cada tipo de emergencia identificada, con responsables asignados y cadena de mando clara.</li>\n            <li><strong>Procedimiento de evacuación:</strong> Rutas de evacuación señalizadas, puntos de encuentro, procedimiento para personas con movilidad reducida y plano de evacuación actualizado.</li>\n            <li><strong>Medios de protección disponibles:</strong> Inventario de extintores, red húmeda/seca, detectores de humo, alarmas, kit de primeros auxilios, linternas de emergencia y su ubicación en el mapa de riesgos.</li>\n            <li><strong>Roles y responsabilidades:</strong> Designación de líderes de evacuación por piso o zona, coordinador general de emergencias, encargado de comunicaciones y encargado de primeros auxilios.</li>\n            <li><strong>Coordinación con servicios externos:</strong> Protocolos de contacto con Bomberos, ambulancias, Carabineros y organismos administradores de la Ley 16.744 (ACHS, IST, Mutual, ISL).</li>\n            <li><strong>Programa de capacitación:</strong> Plan de formación para todos los trabajadores sobre los protocolos de emergencia, uso de extintores y primeros auxilios. El art. 16 del DS 44 exige un curso de al menos 8 horas para las personas trabajadoras, repetido con la periodicidad del programa preventivo (máximo cada dos años); aparte, los integrantes del Comité Paritario y el delegado SST hacen el curso de orientación en prevención de riesgos que dicta su organismo administrador.</li>\n            <li><strong>Calendario de simulacros:</strong> Al menos un simulacro anual documentado con registro de participantes, tiempos de evacuación y observaciones de mejora.</li>\n        </ul>\n        <p>Si prefieres delegarlo, <a href=\"/planes-de-emergencia-y-evacuacion/#formulario-pe\">cotiza tu plan de emergencia DS 44 con SVEA</a>: incluye la matriz MIPER, el mapa de riesgos y el simulacro documentado.</p>\n    </section>\n    \n<figure class=\"article-img\">\n        <img data-foto=\"simulacro-incendio-extintor-plan-de-emergencia\" alt=\"Simulacro de incendio con extintor, ejercicio anual que exige el DS 44 al plan de emergencia de la empresa\">\n        <figcaption>El DS 44 exige al menos un simulacro anual documentado con registro de participantes y tiempos de evacuación.</figcaption>\n    </figure>\n    "
+    },
+    {
+      "tipo": "formulario"
+    },
+    {
+      "tipo": "html",
+      "html": "<section id=\"mapa-riesgos\">\n        <h2>Mapa de riesgos y matriz MIPER</h2>\n        <p>El DS 44 introduce dos herramientas que alimentan directamente el <strong>plan de emergencia DS 44</strong>:</p>\n        <div class=\"emergency-grid\">\n            <div class=\"emergency-card emergency-card--a\">\n                <div class=\"emergency-card-letter\" style=\"--letra:#DC2626\">MR</div>\n                <h4>Mapa de Riesgos</h4>\n                <p>Representación gráfica del lugar de trabajo que indica la ubicación de peligros, rutas de evacuación, extintores, puntos de encuentro y zonas de riesgo. Debe estar visible para todos los trabajadores.</p>\n            </div>\n            <div class=\"emergency-card emergency-card--b\">\n                <div class=\"emergency-card-letter\" style=\"--letra:#3B82F6\">MI</div>\n                <h4>Matriz MIPER</h4>\n                <p>Matriz de Identificación de Peligros y Evaluación de Riesgos laborales. Debe elaborarse según la Guía Técnica del ISP, con enfoque de género, y actualizarse cuando cambien las condiciones de trabajo.</p>\n            </div>\n        </div>\n        <p>Ambas herramientas deben estar articuladas con el plan de emergencia: los riesgos identificados en la MIPER y representados en el mapa determinan los escenarios de emergencia que el plan debe cubrir.</p>\n    </section>\n    \n<section id=\"simulacros\">\n        <h2>Simulacros y ensayos anuales</h2>\n        <p>El DS 44 establece la obligación de realizar <strong>al menos un simulacro anual</strong> del plan de emergencia. El simulacro debe:</p>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Planificarse con anticipación</h4><p>Definir fecha, escenario de emergencia a simular, participantes y criterios de evaluación. Comunicar a todos los trabajadores con anticipación.</p></div></li>\n            <li><div class=\"step-content\"><h4>Ejecutarse en condiciones realistas</h4><p>Activar la alarma, seguir los protocolos establecidos, evacuar a los puntos de encuentro y cronometrar los tiempos de respuesta.</p></div></li>\n            <li><div class=\"step-content\"><h4>Documentarse completamente</h4><p>Registrar asistencia, tiempos de evacuación, incidentes durante el ejercicio, y fotografías del proceso. Este registro es fiscalizable.</p></div></li>\n            <li><div class=\"step-content\"><h4>Evaluarse y mejorar</h4><p>Analizar resultados, identificar debilidades, implementar mejoras en el plan y comunicar las conclusiones a todos los trabajadores.</p></div></li>\n        </ol>\n    </section>\n    \n<section id=\"coordinacion\">\n        <h2>Coordinación entre empleadores</h2>\n        <p>Cuando en un mismo lugar de trabajo coexisten trabajadores de distintas empresas (subcontratistas, servicios transitorios, proveedores), el DS 44 exige coordinación en materia de emergencias:</p>\n        <ul class=\"checklist\">\n            <li><strong>Plan coordinado:</strong> La empresa principal debe asegurar que todos los empleadores del lugar de trabajo conozcan y se integren al plan de emergencia.</li>\n            <li><strong>Simulacros conjuntos:</strong> Los simulacros deben incluir a todos los trabajadores presentes, independientemente de su empleador.</li>\n            <li><strong>Comunicación de riesgos:</strong> La empresa principal debe informar a los subcontratistas sobre los riesgos del lugar de trabajo que puedan generar emergencias.</li>\n        </ul>\n    </section>\n    \n<section id=\"fiscalizacion\">\n        <h2>Fiscalización y sanciones</h2>\n        <p>El cumplimiento del <strong>plan de emergencia DS 44</strong> es fiscalizado por:</p>\n        <div class=\"callout callout-danger\">\n            <span class=\"callout-icon\">!</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">¿Quién fiscaliza y cómo?</div>\n                <p><strong>Dirección del Trabajo:</strong> Mediante inspecciones con el Formulario Único de Fiscalización (FUF DS 44). Verifica existencia del plan, registros de simulacros, MIPER y mapa de riesgos. <strong>SEREMI de Salud:</strong> Fiscaliza condiciones sanitarias y ambientales asociadas. <strong>Organismos administradores (ACHS, IST, Mutual, ISL):</strong> Asesoran y verifican la implementación del sistema de gestión.</p>\n            </div>\n        </div>\n        <div class=\"callout callout-warning\">\n            <span class=\"callout-icon\">!</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Consecuencias del incumplimiento</div>\n                <p><strong>Multas administrativas</strong> proporcionales al tamaño de la empresa. <strong>Suspensión de actividades</strong> en caso de riesgo grave e inminente. <strong>Responsabilidad penal agravada</strong> si ocurre un accidente laboral grave o fatal en una empresa sin plan de emergencia vigente. <strong>Aumento de la tasa de cotización</strong> adicional del seguro de accidentes laborales.</p>\n            </div>\n        </div>\n    </section>\n    \n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>Cumple con el DS 44 sin complicaciones</h3><p>Plan de emergencia profesional. Mapa de riesgos. Simulacros.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20necesito%20cotizar%20plan%20de%20emergencia%20DS%2044\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><!--logos-clientes--></aside>\n<section id=\"proceso\">\n        <h2>Cómo SVEA Consultores te ayuda a cumplir</h2>\n        <p>En SVEA Consultores gestionamos todo el proceso para que tu empresa cumpla con el <strong>plan de emergencia DS 44</strong>:</p>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Diagnóstico inicial</h4><p>Evaluamos el estado actual de tu empresa: ¿tienes plan anterior? ¿MIPER? ¿mapa de riesgos? Identificamos brechas de cumplimiento.</p></div></li>\n            <li><div class=\"step-content\"><h4>Levantamiento en terreno</h4><p>Visitamos tus instalaciones para identificar peligros, rutas de evacuación, medios de protección y condiciones especiales (trabajadores sensibles, turnos, subcontratistas).</p></div></li>\n            <li><div class=\"step-content\"><h4>Elaboración del plan</h4><p>Preparamos el plan de emergencia completo: protocolos de actuación, mapa de riesgos, matriz MIPER, plano de evacuación y programa de capacitación. <strong>Informe en 5-10 días hábiles.</strong></p></div></li>\n            <li><div class=\"step-content\"><h4>Simulacro y capacitación</h4><p>Coordinamos y ejecutamos el simulacro anual con registro documentado. Capacitamos a tus trabajadores en protocolos de emergencia, uso de extintores y primeros auxilios.</p></div></li>\n            <li><div class=\"step-content\"><h4>Entrega y seguimiento</h4><p>Entregamos toda la documentación lista para fiscalización. Incluimos calendario de actualización y recordatorio de simulacro anual.</p></div></li>\n        </ol>\n    </section>\n    \n<section id=\"errores\">\n        <h2>Errores comunes que debes evitar</h2>\n        <div class=\"error-item\"><h4>Usar el plan anterior sin actualizarlo al DS 44</h4><p>Los planes basados en los derogados DS 40 y DS 54 ya no cumplen. El DS 44 exige elementos nuevos como el mapa de riesgos, la MIPER con enfoque de género y la coordinación entre empleadores.</p></div>\n        <div class=\"error-item\"><h4>No realizar el simulacro anual</h4><p>Es una de las materias más fiscalizadas. Sin registro documentado del simulacro (asistencia, tiempos, fotos), la empresa se expone a multas inmediatas.</p></div>\n        <div class=\"error-item\"><h4>Plan genérico descargado de internet</h4><p>La Dirección del Trabajo verifica que el plan sea específico para tu empresa: con tus riesgos, tu layout, tus trabajadores. Un plan genérico no pasa la fiscalización.</p></div>\n        <div class=\"error-item\"><h4>No incluir a subcontratistas</h4><p>Si en tu lugar de trabajo hay trabajadores de otras empresas, el plan debe incluirlos. La falta de coordinación es una infracción específica del DS 44.</p></div>\n        <div class=\"error-item\"><h4>No capacitar a los trabajadores</h4><p>El art. 16 del DS 44 exige a la entidad empleadora un curso de al menos 8 horas para las personas trabajadoras que incluya el plan de emergencia y la prevención de incendios, repetido como máximo cada dos años. Sin registro de capacitación, hay infracción.</p></div>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (septiembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=1205298\" target=\"_blank\" rel=\"noopener\">DS 44/2024 (MINTRAB), reglamento sobre gestión preventiva de los riesgos laborales</a></li><li><a href=\"https://www.dt.gob.cl/portal/1626/w3-article-127643.html\" target=\"_blank\" rel=\"noopener\">Dirección del Trabajo: DS 44, Formulario Único de Fiscalización y Tipificador</a></li><li><a href=\"https://www.suseso.gob.cl/613/w3-propertyvalue-779257.html\" target=\"_blank\" rel=\"noopener\">SUSESO: curso de orientación en prevención de riesgos (DS 44)</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=167766\" target=\"_blank\" rel=\"noopener\">DS 594 (MINSAL), condiciones sanitarias y ambientales básicas en los lugares de trabajo</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=207436\" target=\"_blank\" rel=\"noopener\">Código del Trabajo, arts. 184 y 506</a></li></ul>\n    </section>\n"
+    }
+  ],
+  "relacionados": {
+    "titulo": "Servicios relacionados",
+    "intro": "",
+    "tarjetas": [
+      {
+        "titulo": "Plan de Emergencia Empresas",
+        "texto": "Plan personalizado para protección de personas y continuidad operativa ante emergencias industriales.",
+        "href": "/planes-de-emergencia-y-evacuacion/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Calificación Técnica Industrial",
+        "texto": "Evaluación técnica y expediente para obtención de patente municipal industrial ante SEREMI.",
+        "href": "/calificacion-tecnica-industrial/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Manejo de Residuos Peligrosos",
+        "texto": "Plan de manejo RESPEL, clasificación, almacenamiento y gestión según DS 148.",
+        "href": "/manejo-de-residuos-peligrosos/",
+        "enlace": "Conocer servicio →"
+      }
+    ]
+  },
+  "asunto": null,
+  "actualizado": {
+    "iso": "2026-09-24",
+    "texto": "24 de septiembre de 2026"
+  }
+}

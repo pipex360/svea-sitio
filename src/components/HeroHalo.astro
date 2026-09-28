@@ -16,22 +16,26 @@
  * Con varias fotos se turnan con el fundido y el Ken Burns; con una sola
  * queda fija.
  *
- * Las fotos son las tres del slideshow original, servidas desde el sitio en
- * WebP a 1920 y 1080 px (mejoras/img/hero): 132/258/102 KB en vez de los
- * 539/925/379 KB en JPG que bajaban del WordPress. La primera se precarga
- * desde la cabecera de la página, porque es el LCP.
+ * Las fotos son las tres del slideshow original, servidas desde el sitio
+ * como <picture> (640/1080/1600/1920 px, ver src/lib/fotos.ts): en el
+ * teléfono bajan ~60 KB y en escritorio ≤150 KB, contra los 539/925/379 KB
+ * en JPG que bajaban del WordPress. La primera se precarga desde la cabecera
+ * de la página (precargaFoto) porque está en el camino del LCP, y por eso va
+ * sólo en WebP (el AVIF se decodifica más lento); las otras dos, diferidas,
+ * en AVIF y WebP.
  */
 import MenuSvea from './ui/navigation-menu-06';
 import { MenuMovil } from './ui/menu-movil';
+import Foto from './Foto.astro';
+import { rangosHtml } from '../lib/utils';
 
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 
-export type Foto = { archivo: string; alto: number };
 export type Cifra = { destacado: string; texto: string };
 
 interface Props {
-  /** Las fotos del fondo. Con más de una se turnan con el fundido y el Ken Burns. */
-  fotos?: Foto[];
+  /** Las fotos del fondo, por su nombre en mejoras/fotos (ver src/lib/fotos.ts). Con más de una se turnan con el fundido y el Ken Burns. */
+  fotos?: string[];
   copete?: string;
   titulo?: string;
   parrafo?: string;
@@ -43,9 +47,9 @@ interface Props {
 
 const {
   fotos = [
-    { archivo: 'hero-1-energia', alto: 1280 },
-    { archivo: 'hero-2-logistica', alto: 1257 },
-    { archivo: 'hero-3-planta', alto: 1079 },
+    'edificios-santiago-cordillera-nevada-plan-emergencia-condominio',
+    'centro-logistico-aereo-permisos-seremi',
+    'tecnicos-casco-planta-cumplimiento-normativo',
   ],
   copete,
   titulo = 'Consultoría Ambiental y Cumplimiento Normativo',
@@ -53,9 +57,9 @@ const {
   boton = { texto: 'Solicitar cotización', href: `${BASE}/#form-home` },
   principal = { valor: '250', texto: 'empresas atendidas', contador: 'mas' },
   secundarias = [
-    { destacado: '100%', texto: 'satisfacción' },
+    { destacado: 'SEREMI', texto: 'trámites gestionados de punta a punta' },
     { destacado: '24 hrs', texto: 'cotización' },
-    { destacado: 'Aprobación', texto: 'garantizada' },
+    { destacado: 'Correcciones', texto: 'sin costo hasta la resolución' },
   ],
 } = Astro.props as Props;
 ---
@@ -87,17 +91,8 @@ const {
   <section class="halo-seccion" id="inicio" aria-label="Presentación">
     <div class="halo-tarjeta">
       <div class:list={['halo-fondo', { una: fotos.length === 1 }]} aria-hidden="true">
-        {fotos.map((f, i) => (
-          <img
-            src={`${BASE}/img/hero/${f.archivo}-1920.webp`}
-            srcset={`${BASE}/img/hero/${f.archivo}-1080.webp 1080w, ${BASE}/img/hero/${f.archivo}-1920.webp 1920w`}
-            sizes="100vw"
-            width="1920"
-            height={f.alto}
-            alt=""
-            fetchpriority={i === 0 ? 'high' : undefined}
-            loading={i === 0 ? undefined : 'lazy'}
-          />
+        {fotos.map((nombre, i) => (
+          <Foto nombre={nombre} alt="" tamano="hero" prioridad={i === 0} />
         ))}
       </div>
       <div class="halo-velo-arriba" aria-hidden="true"></div>
@@ -107,7 +102,7 @@ const {
       <div class="halo-contenido">
         {copete && <p class="halo-copete">{copete}</p>}
         <h1>{titulo}</h1>
-        <p>{parrafo}</p>
+        <p set:html={rangosHtml(parrafo)} />
         <a class="btn-flecha" href={boton.href}>
           <span>{boton.texto}</span>
           <span class="circulo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
@@ -118,12 +113,12 @@ const {
             <span class="punto" aria-hidden="true"></span>
             {principal.contador
               ? <b class={`cifra ${principal.contador === 'mas' ? 'pre' : 'pct'}`} style={`--meta:${principal.valor}`}></b>
-              : <b>{principal.valor}</b>}
-            <span>{principal.texto}</span>
+              : <b set:html={rangosHtml(principal.valor)} />}
+            <span set:html={rangosHtml(principal.texto)} />
           </div>
           <div class="secundarias">
             {secundarias.map((c) => (
-              <span><i>→</i><b>{c.destacado}</b> {c.texto}</span>
+              <span><i>→</i><b set:html={rangosHtml(c.destacado)} /> <Fragment set:html={rangosHtml(c.texto)} /></span>
             ))}
           </div>
         </div>
@@ -163,16 +158,17 @@ const {
   .halo-tarjeta{position:relative;width:100%;max-width:none;margin:0;overflow:hidden;border-radius:0;
     height:100vh;height:100svh;min-height:560px}
   .halo-fondo{position:absolute;inset:0}
+  /* cada foto va en un <picture> (AVIF + WebP): el turno se cuenta por picture */
   .halo-fondo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
     transform-origin:center center;will-change:opacity,transform;
     animation:halo-fundido 18s linear infinite}
-  .halo-fondo img:nth-child(1){animation-delay:0s;opacity:1;animation-name:halo-fundido-primera}
+  .halo-fondo picture:nth-child(1) img{animation-delay:0s;opacity:1;animation-name:halo-fundido-primera}
   /* Con una sola foto no hay turnos: el fundido la apagaba y dejaba el hero
      en blanco diez de cada dieciocho segundos (medido en la página de la
      CTI). Queda fija. */
   .halo-fondo.una img{animation:none;opacity:1;transform:none}
-  .halo-fondo img:nth-child(2){animation-delay:6s}
-  .halo-fondo img:nth-child(3){animation-delay:12s}
+  .halo-fondo picture:nth-child(2) img{animation-delay:6s}
+  .halo-fondo picture:nth-child(3) img{animation-delay:12s}
   /* Ken Burns: la foto se acerca mientras está a la vista y recupera su
      tamaño mientras está invisible, para que el ciclo no dé un salto. */
   @keyframes halo-fundido{
@@ -245,7 +241,7 @@ const {
   }
   @media (prefers-reduced-motion:reduce){
     .halo-fondo img,.halo-aura,.halo-pulso .punto::before{animation:none}
-    .halo-fondo img:nth-child(1){opacity:1}
+    .halo-fondo picture:nth-child(1) img{opacity:1}
     .halo .cifra{animation:none;--n:var(--meta)}
   }
 </style>

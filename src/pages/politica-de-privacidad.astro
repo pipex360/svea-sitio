@@ -1,0 +1,255 @@
+---
+/**
+ * /politica-de-privacidad/ — VERSIÓN 2.0 (25-sep-2026), para la Ley 21.719
+ * (vigente desde el 1-dic-2026). El texto sale de la propuesta del informe
+ * «Revisión política de privacidad (Ley 21.719).md» (Drive: Página Web), con
+ * los datos del responsable que dio Carlos y lo que el informe dejaba entre
+ * corchetes resuelto por el lado prudente (ver el reporte del 25-sep).
+ *
+ * Tutea, como todo el sitio. El texto del WordPress (la versión 1, de
+ * «usted») queda ÍNTEGRO al final, plegado en «Versión anterior de esta
+ * política»: así la página no pierde ninguna palabra del original
+ * (scripts/verificar.mjs, 6b) y se puede demostrar qué decía antes (la ley
+ * pide fecha y versión, art. 14 ter a).
+ *
+ * Lo de cookies depende del interruptor AVISO_COOKIES (src/lib/aviso-cookies.ts):
+ * apagado, la política no promete un aviso que no existe.
+ */
+import PaginaSimple from '../layouts/PaginaSimple.astro';
+import { AVISO_COOKIES } from '../lib/aviso-cookies';
+
+const VERSION = '2.0';
+const ACTUALIZADA = '25 de septiembre de 2026';
+const ACTUALIZADA_ISO = '2026-09-25';
+---
+<PaginaSimple
+  ruta="/politica-de-privacidad/"
+  miga="Política de privacidad"
+  insignia="Legal"
+  titulo="Política de <em>privacidad</em>"
+>
+  <article class="pp">
+    <p class="pp-version"><strong>Versión {VERSION}</strong> · actualizada el <time datetime={ACTUALIZADA_ISO}>{ACTUALIZADA}</time>. Reemplaza la versión publicada en el sitio anterior (la encuentras íntegra al final, en «Versión anterior de esta política»).</p>
+
+    <p class="pp-intro">En <strong>SVEA Consultores</strong> nos comprometemos a proteger la privacidad de nuestros usuarios y clientes. Esta Política de Privacidad describe cómo recopilamos, utilizamos y protegemos la información personal que se nos proporciona a través de nuestro sitio web <a href="https://www.sveaconsultores.cl">www.sveaconsultores.cl</a>, especialmente a través del formulario de contacto dirigido a clientes potenciales, y cómo puedes ejercer tus derechos según la Ley N° 19.628 sobre protección de datos personales, modificada por la Ley N° 21.719.</p>
+
+    <h2 id="responsable">1. Quién es responsable de tus datos</h2>
+    <ul class="pp-contacto">
+      <li><strong>Responsable:</strong> Svea Consultores («SVEA Consultores»), RUT 77.969.103-9.</li>
+      <!-- Ley 21.719 (vigente 1-dic-2026): agregar aquí el nombre del representante legal cuando entre en vigencia -->
+      <li><strong>Representante legal:</strong> el representante legal de Svea Consultores.</li>
+      <li><strong>Domicilio:</strong> Apoquindo #6410, Oficina 605, Las Condes, Santiago de Chile.</li>
+      <li><strong>Correo para temas de datos personales:</strong> <a href="mailto:contacto@sveaconsultores.cl">contacto@sveaconsultores.cl</a></li>
+      <li><strong>Teléfono:</strong> <a href="tel:+56929947924">+56 9 2994 7924</a></li>
+    </ul>
+    <p>No hemos designado un delegado de protección de datos (la ley lo deja como algo voluntario). Las solicitudes las atiende directamente el representante legal de Svea Consultores.</p>
+
+    <h2 id="informacion">2. Información que recopilamos</h2>
+    <p><strong>Lo que tú nos entregas.</strong> Cuando completas nuestro formulario de contacto o de cotización, podemos recopilar la siguiente información:</p>
+    <ul>
+      <li>Nombre completo</li>
+      <li>Dirección de correo electrónico</li>
+      <li>Número de teléfono</li>
+      <li>Empresa u organización (obligatorio en la mayoría de los formularios)</li>
+      <li>Tipo de establecimiento y servicio que te interesa (en algunos formularios)</li>
+      <li>Información relacionada con tu consulta o requerimiento (el mensaje, opcional)</li>
+    </ul>
+    <p>Los campos marcados con asterisco son necesarios para brindarte una respuesta adecuada y personalizada: sin ellos no podemos preparar tu cotización. Sólo te pedimos la información necesaria para cotizar. Te pedimos no incluir en el mensaje datos de salud u otros datos sensibles: no los necesitamos.</p>
+    <p>Si nos escribes por WhatsApp, recibimos tu número de teléfono, tu nombre de perfil y lo que nos escribas.</p>
+    <p><strong>Lo que se registra de forma automática cuando navegas como usuario del sitio.</strong></p>
+    <ul>
+      <li><strong>Datos de la campaña por la que llegaste:</strong> si entras desde un anuncio, el identificador de clic de Google Ads (gclid) y los parámetros utm (fuente, medio, campaña, contenido y término). Se guardan en tu navegador sólo mientras dura la visita y viajan junto con el formulario, para saber qué anuncio generó tu consulta.</li>
+      <li><strong>Datos de navegación</strong>, mediante cookies y tecnologías similares de Google: páginas visitadas, tipo de dispositivo y navegador, ubicación aproximada, clics en los botones de WhatsApp y envíos de formulario. El detalle está en la sección 8.</li>
+    </ul>
+
+    <h2 id="finalidades">3. Para qué usamos tu información y con qué fundamento</h2>
+    <p>Utilizamos los datos recopilados exclusivamente para:</p>
+    <div class="pp-tabla">
+      <table>
+        <thead><tr><th scope="col">Para qué</th><th scope="col">Fundamento legal (Ley 19.628)</th></tr></thead>
+        <tbody>
+          <tr><td>Contactarte en relación con tu solicitud de información o servicios: responder tu consulta, preparar y enviarte la cotización, llamarte o escribirte por correo o WhatsApp sobre ella.</td><td>Medidas precontractuales que tú solicitaste (art. 13 letra c).</td></tr>
+          <tr><td>Si nos contratas: prestar el servicio, facturar y cumplir obligaciones legales y tributarias.</td><td>Ejecución del contrato (art. 13 letra c) y obligación legal (art. 13 letra b).</td></tr>
+          <tr><td>Ofrecerte asesoría personalizada sobre los servicios que ofrecemos y hacer seguimiento de la cotización que pediste.</td><td>Nuestro interés legítimo en dar seguimiento a una cotización pedida por ti (art. 13 letra d). Puedes oponerte cuando quieras.</td></tr>
+          <tr><td>Mejorar la calidad de atención y nuestros procesos internos: saber qué páginas y anuncios generan consultas (estadísticas de Google Analytics, conversiones de Google Ads, gclid y utm).</td><td>Nuestro interés legítimo en saber qué funciona en el sitio y en nuestros anuncios (art. 13 letra d). Puedes oponerte cuando quieras (sección 8).</td></tr>
+          <tr><td>Mostrarte anuncios de SVEA en otros sitios según tus visitas anteriores (remarketing) y enviar a Google tu correo y teléfono cifrados para medir las conversiones (conversiones mejoradas).</td><td>Nuestro interés legítimo en medir y dar a conocer nuestros servicios (art. 13 letra d). Tienes siempre derecho a oponerte a este uso, que es publicidad (art. 8° letra b de la ley): te explicamos cómo en la sección 8.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>No utilizamos tu información con fines distintos a los aquí mencionados sin tu consentimiento. No te enviaremos boletines ni promociones generales si no nos lo pides expresamente.</p>
+    <p><strong>Decisiones automatizadas.</strong> No tomamos decisiones sobre ti basadas únicamente en un tratamiento automatizado. Usamos herramientas automáticas para ordenar los correos que llegan (por ejemplo, separar las solicitudes de cotización del resto), y la publicidad de Google puede usar tu historial de navegación para elegir qué anuncios mostrarte (remarketing), pero ninguna de ellas decide si te atendemos, qué servicio te ofrecemos ni cuánto te cobramos.</p>
+
+    <h2 id="terceros">4. Compartición de la información: con quién la compartimos</h2>
+    <p><strong>SVEA Consultores</strong> no vende ni alquila tus datos personales, y no los comparte con terceros, salvo que sea necesario para cumplir con obligaciones legales, para prestar un servicio que hayas solicitado expresamente, o para que nuestros proveedores tecnológicos nos presten sus servicios. Esos proveedores actúan como encargados: tratan los datos por cuenta nuestra, según nuestras instrucciones y sin poder usarlos para fines propios.</p>
+    <div class="pp-tabla">
+      <table>
+        <thead><tr><th scope="col">Proveedor</th><th scope="col">Para qué</th><th scope="col">Dónde trata los datos</th></tr></thead>
+        <tbody>
+          <tr><td>Web3Forms</td><td>Recibe el formulario y nos lo reenvía por correo.</td><td>Es un servicio extranjero: puede tratar los datos fuera de Chile.</td></tr>
+          <tr><td>Google (correo, Google Tag Manager, Google Analytics, Google Ads)</td><td>Correo electrónico, estadísticas del sitio y medición de anuncios.</td><td>Estados Unidos y otros países.</td></tr>
+          <tr><td>Vercel</td><td>Alojamiento del sitio web (registra datos técnicos como la dirección IP).</td><td>Estados Unidos y su red de servidores en otros países.</td></tr>
+          <tr><td>n8n</td><td>Automatización que ordena los correos que llegan.</td><td>Puede tratar los datos fuera de Chile.</td></tr>
+          <tr><td>Supabase</td><td>Base de datos donde gestionamos las solicitudes y clientes.</td><td>Puede tratar los datos fuera de Chile.</td></tr>
+          <tr><td>WhatsApp (Meta)</td><td>Sólo si nos contactas por ese medio.</td><td>Estados Unidos y otros países.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Si en el futuro sumamos otra herramienta que trate tus datos (por ejemplo, un sistema para gestionar clientes o una herramienta de inteligencia artificial para ordenar los correos), la agregaremos a esta lista antes de usarla con tus datos.</p>
+    <p>Cuando haya un trámite encargado por ti que lo exige, entregamos los datos necesarios a la autoridad que corresponda (por ejemplo, la SEREMI de Salud o el SII).</p>
+
+    <h2 id="transferencias">5. Transferencias internacionales</h2>
+    <p>Como muestra la tabla anterior, algunos proveedores guardan o procesan datos fuera de Chile, principalmente en Estados Unidos. A la fecha de esta versión, la Agencia de Protección de Datos Personales aún no publica la lista de países con nivel adecuado de protección. Mientras tanto, estas transferencias se amparan en los términos y cláusulas de protección de datos que cada proveedor ofrece a sus clientes (art. 27 letra b de la ley). Cada proveedor tiene publicados sus términos de protección de datos; puedes pedirnos más detalle escribiéndonos.</p>
+
+    <h2 id="seguridad">6. Protección de la información</h2>
+    <p>Implementamos medidas de seguridad técnicas y organizativas para proteger tus datos contra el acceso no autorizado, uso indebido, pérdida o alteración. Entre otras: el sitio funciona sólo con conexión cifrada (HTTPS); el formulario no guarda tus datos en el sitio, sino que los envía directamente a nuestro correo; el acceso a correos y bases de datos está restringido al equipo que los necesita, con contraseña; y trabajamos con proveedores que cifran la información. Si ocurriera una vulneración de seguridad que pusiera en riesgo tus derechos, la informaremos a la Agencia de Protección de Datos Personales como exige la ley.</p>
+
+    <h2 id="conservacion">7. Conservación de datos</h2>
+    <p>La información recopilada se conservará solo durante el tiempo necesario para cumplir con los fines mencionados anteriormente, y conforme a las leyes vigentes en materia de protección de datos personales en Chile. En concreto:</p>
+    <ul>
+      <li><strong>Si pediste una cotización y no nos contrataste:</strong> hasta 24 meses desde el último contacto; después la eliminamos o anonimizamos.</li>
+      <li><strong>Si eres cliente:</strong> mientras dure la relación y luego por los plazos que exigen las normas tributarias y legales.</li>
+      <li><strong>Datos de navegación y cookies:</strong> según la duración indicada en la sección 8.</li>
+    </ul>
+
+    <h2 id="cookies">8. Cookies, Google Ads y remarketing</h2>
+    <p>Este sitio puede utilizar funciones de Google Ads, incluido el seguimiento de conversiones y remarketing, que recopilan información mediante cookies. Estas cookies permiten mostrarte anuncios relevantes en función de tus visitas anteriores a nuestro sitio.</p>
+    <div class="pp-tabla">
+      <table>
+        <thead><tr><th scope="col">Herramienta</th><th scope="col">Qué hace</th><th scope="col">Cookies o datos</th><th scope="col">Duración</th></tr></thead>
+        <tbody>
+          <tr><td>Google Tag Manager</td><td>Carga las demás herramientas de Google.</td><td>No guarda cookies propias.</td><td>—</td></tr>
+          <tr><td>Google Ads: conversiones y remarketing</td><td>Cuenta cuántos anuncios terminan en un formulario o en un clic a WhatsApp, y permite mostrarte anuncios de SVEA después de tu visita.</td><td><code>_gcl_au</code> y cookies de Google Ads</td><td>Hasta 90 días, según informa Google.</td></tr>
+          <tr><td>Google Ads: conversiones mejoradas</td><td>Al enviar un formulario, tu correo y teléfono se guardan un momento en tu navegador y, en la página de «gracias», se envían a Google cifrados (hash), para relacionar el envío con el anuncio que viste. Luego se borran del navegador.</td><td>Correo y teléfono cifrados</td><td>Se borran del navegador en la página de «gracias».</td></tr>
+          <tr><td>Google Analytics 4</td><td>Estadísticas de visitas, envíos de formulario y clics en WhatsApp.</td><td><code>_ga</code>, <code>_ga_*</code></td><td>Hasta 2 años, según informa Google.</td></tr>
+          <tr><td>Seguimiento de campaña</td><td>Guarda el gclid y los utm de tu llegada para adjuntarlos al formulario.</td><td>Almacenamiento de sesión del navegador</td><td>Se borra al cerrar la pestaña.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Cómo controlarlas:</strong></p>
+    <ul>
+      {AVISO_COOKIES && (
+        <li>En el aviso de cookies del sitio puedes aceptar o rechazar las cookies de medición y publicidad. Si las rechazas, Google no guarda cookies en tu navegador ni recibe tu correo y teléfono cifrados. Puedes cambiar tu decisión cuando quieras: <button type="button" class="pp-boton" data-cc-abrir>Cambiar mi elección de cookies</button></li>
+      )}
+      <li><strong>Puedes desactivar el uso de cookies de publicidad personalizada</strong> accediendo a la configuración de anuncios de Google en: <a href="https://adssettings.google.com/" target="_blank" rel="noopener">https://adssettings.google.com/</a> (hoy «Mi Centro de anuncios»).</li>
+      <li>Puedes bloquear o borrar las cookies desde la configuración de tu navegador. Si tu navegador no acepta cookies, el sitio igual funciona; Google sólo recopila lo que permitas.</li>
+      <li>También puedes escribirnos a <a href="mailto:contacto@sveaconsultores.cl">contacto@sveaconsultores.cl</a> para oponerte a este uso de tus datos (sección 9).</li>
+    </ul>
+
+    <h2 id="derechos">9. Tus derechos</h2>
+    <p>Tienes derecho a:</p>
+    <ul>
+      <li>Acceder a tus datos personales y saber para qué y con quién los tratamos.</li>
+      <li>Solicitar la rectificación o eliminación (supresión) de tus datos.</li>
+      <li>Oponerte (el derecho a oponerse) al tratamiento de tu información, en especial al que usamos para seguimiento comercial o publicidad.</li>
+      <li>Pedir la portabilidad: recibir una copia de los datos que nos entregaste en un formato electrónico de uso común.</li>
+      <li>Pedir el bloqueo temporal de tus datos mientras resolvemos una solicitud de rectificación, eliminación u oposición.</li>
+      <li>No ser objeto de decisiones basadas únicamente en tratamiento automatizado que te afecten significativamente.</li>
+      <li>Retirar tu consentimiento en cualquier momento, sin que eso afecte lo que hicimos antes con tu consentimiento.</li>
+    </ul>
+    <p><strong>Cómo ejercerlos.</strong> Para ejercer estos derechos, puedes contactarnos a través de:</p>
+    <ul class="pp-contacto">
+      <li><strong>Correo:</strong> <a href="mailto:contacto@sveaconsultores.cl">contacto@sveaconsultores.cl</a></li>
+      <li><strong>Teléfono:</strong> <a href="tel:+56929947924">+56 9 2994 7924</a></li>
+    </ul>
+    <p>Indica tu nombre, un correo o dirección para responderte, qué derecho quieres ejercer y sobre qué datos. Podemos pedirte un antecedente para comprobar tu identidad. Es gratis. Te confirmaremos que recibimos tu solicitud y te responderemos por escrito en un plazo máximo de 30 días corridos, prorrogable por una sola vez por otros 30. Si pides el bloqueo temporal, te respondemos dentro de 2 días hábiles.</p>
+    <p><strong>Si no estás conforme.</strong> Si rechazamos tu solicitud o no te respondemos a tiempo, puedes reclamar ante la <strong>Agencia de Protección de Datos Personales</strong> dentro de 30 días hábiles.</p>
+
+    <h2 id="cambios">10. Cambios en esta política</h2>
+    <p><strong>SVEA Consultores</strong> se reserva el derecho de modificar esta política en cualquier momento. Cualquier cambio será publicado en esta misma página con su respectiva fecha de actualización y número de versión, y conservaremos aquí las versiones anteriores.</p>
+
+    <p class="pp-cierre"><strong>Enviar un formulario no significa que aceptes usos distintos de los descritos en esta política.</strong> Usamos tus datos para responder la solicitud que nos hiciste, y puedes oponerte en cualquier momento a su uso para medición y publicidad.</p>
+
+    <h2 id="version-anterior">Versión anterior de esta política</h2>
+    <details class="pp-anterior">
+      <summary>Versión 1 (sitio anterior, sin fecha), reemplazada por la versión {VERSION} el {ACTUALIZADA}</summary>
+      <div class="pp-anterior-texto">
+        <p>En <strong>SVEA Consultores</strong> nos comprometemos a proteger la privacidad de nuestros usuarios y clientes. Esta Política de Privacidad describe cómo recopilamos, utilizamos y protegemos la información personal que se nos proporciona a través de nuestro sitio web <a href="https://www.sveaconsultores.cl">www.sveaconsultores.cl</a>, especialmente a través del formulario de contacto dirigido a clientes potenciales.</p>
+
+        <h3>1. Información que recopilamos</h3>
+        <p>Cuando usted completa nuestro formulario de contacto, podemos recopilar la siguiente información:</p>
+        <ul>
+          <li>Nombre completo</li>
+          <li>Dirección de correo electrónico</li>
+          <li>Número de teléfono</li>
+          <li>Empresa u organización (opcional)</li>
+          <li>Información relacionada con su consulta o requerimiento</li>
+        </ul>
+        <p>Esta información se recopila con su consentimiento explícito y es necesaria para brindarle una respuesta adecuada y personalizada.</p>
+
+        <h3>2. Uso de la información</h3>
+        <p>Utilizamos los datos recopilados exclusivamente para:</p>
+        <ul>
+          <li>Contactarlo en relación con su solicitud de información o servicios.</li>
+          <li>Ofrecerle asesoría personalizada sobre los servicios que ofrecemos.</li>
+          <li>Mejorar la calidad de atención y nuestros procesos internos.</li>
+        </ul>
+        <p>No utilizamos su información con fines distintos a los aquí mencionados sin su consentimiento.</p>
+
+        <h3>3. Compartición de la información</h3>
+        <p><strong>SVEA Consultores</strong> no vende, alquila ni comparte sus datos personales con terceros, salvo que sea necesario para cumplir con obligaciones legales o para prestar un servicio que usted haya solicitado expresamente.</p>
+
+        <h3>4. Protección de la información</h3>
+        <p>Implementamos medidas de seguridad técnicas y organizativas para proteger sus datos contra el acceso no autorizado, uso indebido, pérdida o alteración.</p>
+
+        <h3>5. Conservación de datos</h3>
+        <p>La información recopilada se conservará solo durante el tiempo necesario para cumplir con los fines mencionados anteriormente, y conforme a las leyes vigentes en materia de protección de datos personales en Chile.</p>
+
+        <h3>6. Derechos del usuario</h3>
+        <p>Usted tiene derecho a:</p>
+        <ul>
+          <li>Acceder a sus datos personales.</li>
+          <li>Solicitar la rectificación o eliminación de sus datos.</li>
+          <li>Oponerse al tratamiento de su información.</li>
+          <li>Retirar su consentimiento en cualquier momento.</li>
+        </ul>
+        <p>Para ejercer estos derechos, puede contactarnos a través de:</p>
+        <ul class="pp-contacto">
+          <li><strong>Correo:</strong> <a href="mailto:contacto@sveaconsultores.cl">contacto@sveaconsultores.cl</a></li>
+          <li><strong>Teléfono:</strong> <a href="tel:+56929947924">+56 9 2994 7924</a></li>
+        </ul>
+
+        <h3>7. Uso de Google Ads y remarketing</h3>
+        <p>Este sitio puede utilizar funciones de Google Ads, incluido el seguimiento de conversiones y remarketing, que recopilan información mediante cookies. Estas cookies permiten mostrarle anuncios relevantes en función de sus visitas anteriores a nuestro sitio.</p>
+        <p><strong>Usted puede desactivar el uso de cookies de publicidad personalizada</strong> accediendo a la configuración de anuncios de Google en: <a href="https://adssettings.google.com/" target="_blank" rel="noopener">https://adssettings.google.com/</a></p>
+
+        <h3>8. Cambios en esta política</h3>
+        <p><strong>SVEA Consultores</strong> se reserva el derecho de modificar esta política en cualquier momento. Cualquier cambio será publicado en esta misma página con su respectiva fecha de actualización.</p>
+
+        <p><strong>Al enviar sus datos a través del formulario de contacto, usted acepta nuestra Política de Privacidad.</strong></p>
+      </div>
+    </details>
+  </article>
+</PaginaSimple>
+
+<style is:global>
+  .ps .pp{max-width:44rem;margin:0 auto;font-size:17px;line-height:1.75;color:#262b31}
+  .ps .pp p{margin:0 0 1.1em}
+  .ps .pp-version{font-size:14.5px;line-height:1.55;color:rgba(0,0,0,.62);padding:12px 16px;border-radius:12px;background:var(--hoja);border:1px solid var(--borde)}
+  .ps .pp-intro{font-size:18.5px;color:#161b22}
+  .ps .pp strong{color:#000;font-weight:600}
+  .ps .pp a{color:var(--verde);text-decoration:underline;text-underline-offset:3px;font-weight:500;overflow-wrap:anywhere}
+  .ps .pp h2{margin:2.2em 0 .6em;padding-top:1.4em;border-top:1px solid var(--borde);font-family:Manrope,Inter,sans-serif;
+    font-size:clamp(21px,2.2vw,25px);font-weight:600;letter-spacing:-.02em;line-height:1.25;color:#000;scroll-margin-top:90px}
+  .ps .pp h3{margin:1.6em 0 .4em;font-family:Manrope,Inter,sans-serif;font-size:18px;font-weight:600;color:#000}
+  .ps .pp ul{margin:0 0 1.1em;padding-left:1.3em;list-style:disc}
+  .ps .pp li{margin:.3em 0;padding:0;list-style:inherit}
+  .ps .pp li::marker{color:var(--verde)}
+  .ps .pp .pp-contacto{list-style:none;padding-left:0}
+  .ps .pp code{font-size:.88em;background:var(--hoja);padding:1px 5px;border-radius:5px}
+  .ps .pp-tabla{margin:0 0 1.3em;overflow-x:auto;border:1px solid var(--borde);border-radius:12px}
+  .ps .pp table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5}
+  .ps .pp th{text-align:left;font-weight:600;color:#000;background:var(--hoja);padding:10px 14px;border-bottom:1px solid var(--borde)}
+  .ps .pp td{vertical-align:top;padding:10px 14px;border-top:1px solid var(--borde)}
+  .ps .pp tbody tr:first-child td{border-top:0}
+  @media (max-width:640px){
+    .ps .pp table{font-size:14px;min-width:34rem}
+  }
+  .ps .pp-boton{display:inline-block;margin-top:4px;padding:6px 14px;border-radius:999px;border:1px solid rgba(0,0,0,.25);background:#fff;
+    font:600 14px/1.3 Inter,system-ui,sans-serif;color:#000;cursor:pointer}
+  .ps .pp-boton:hover{border-color:#000}
+  .ps .pp-cierre{margin-top:2.4em!important;padding:20px 22px;border-radius:14px;background:var(--hoja);border:1px solid var(--borde)}
+  .ps .pp-anterior{border:1px solid var(--borde);border-radius:12px;padding:0 18px}
+  .ps .pp-anterior summary{cursor:pointer;padding:14px 0;font-weight:600;color:#000;font-size:16px}
+  .ps .pp-anterior[open] summary{border-bottom:1px solid var(--borde);margin-bottom:1em}
+  .ps .pp-anterior-texto{font-size:15.5px;color:rgba(0,0,0,.7)}
+</style>

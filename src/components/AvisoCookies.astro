@@ -1,0 +1,112 @@
+---
+/**
+ * Aviso de cookies (25-sep). PREPARADO Y APAGADO: sólo se pinta con el
+ * interruptor de src/lib/aviso-cookies.ts encendido (o SVEA_AVISO_COOKIES=1).
+ *
+ * · Una barra chica abajo: en el teléfono ocupa el ancho con 8 px de margen;
+ *   en escritorio es una tarjeta abajo a la IZQUIERDA (el WhatsApp flotante
+ *   está a la derecha). Mientras está abierta, <html> lleva `cc-abierto` y la
+ *   variable --cc-alto: la barra fija del teléfono, la de las landings y el
+ *   WhatsApp flotante (los que llevan [data-fijo-abajo] o .lp-barra /
+ *   .lp-wa-flota) suben lo que mide, y el <body> suma ese espacio abajo para
+ *   que no tape el final de la página ni ningún formulario.
+ * · «Aceptar» y «Rechazar» igual de visibles. La elección queda en
+ *   localStorage (svea_cookies) y se aplica con window.sveaConsentimiento,
+ *   que declara MedicionSitio.astro (en la copia de trabajo no existe: el
+ *   aviso sólo se guarda la elección).
+ * · Cualquier elemento con [data-cc-abrir] (p. ej. el botón de la política)
+ *   vuelve a abrir el aviso para cambiar la elección.
+ */
+import { AVISO_COOKIES, LLAVE_COOKIES } from '../lib/aviso-cookies';
+
+interface Props {
+  /** en la copia hay una franja fija de 31 px abajo: el aviso va encima */
+  copia?: boolean;
+}
+const { copia = false } = Astro.props;
+const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+---
+{AVISO_COOKIES && (
+  <Fragment>
+    <div id="aviso-cookies" class:list={['cc', copia && 'cc-copia']} role="region" aria-label="Aviso de cookies" hidden>
+      <p class="cc-texto">
+        Usamos cookies de Google para medir las visitas y nuestros anuncios. Puedes rechazarlas.
+        <a href={`${BASE}/politica-de-privacidad/#cookies`}>Más información</a>
+      </p>
+      <div class="cc-botones">
+        <button type="button" class="cc-btn" data-cc="rechazar">Rechazar</button>
+        <button type="button" class="cc-btn" data-cc="aceptar">Aceptar</button>
+      </div>
+    </div>
+
+    <script is:inline define:vars={{ llave: LLAVE_COOKIES }}>
+    (function (w, d) {
+      var caja = d.getElementById('aviso-cookies');
+      if (!caja) return;
+      var raiz = d.documentElement;
+      var ro = null;
+      function medir() { raiz.style.setProperty('--cc-alto', (caja.offsetHeight + 16) + 'px'); }
+      function abrir() {
+        caja.hidden = false;
+        raiz.classList.add('cc-abierto');
+        medir();
+        if ('ResizeObserver' in w && !ro) { ro = new ResizeObserver(medir); ro.observe(caja); }
+      }
+      function cerrar() {
+        caja.hidden = true;
+        raiz.classList.remove('cc-abierto');
+        raiz.style.removeProperty('--cc-alto');
+      }
+      function elegir(si) {
+        try { localStorage.setItem(llave, si ? 'aceptadas' : 'rechazadas'); } catch (e) {}
+        if (typeof w.sveaConsentimiento === 'function') w.sveaConsentimiento(si);
+        cerrar();
+      }
+      var guardada = null;
+      try { guardada = localStorage.getItem(llave); } catch (e) {}
+      if (guardada !== 'aceptadas' && guardada !== 'rechazadas') abrir();
+      caja.addEventListener('click', function (e) {
+        var b = e.target.closest && e.target.closest('[data-cc]');
+        if (b) elegir(b.getAttribute('data-cc') === 'aceptar');
+      });
+      d.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('[data-cc-abrir]');
+        if (!a) return;
+        e.preventDefault();
+        abrir();
+        var b = caja.querySelector('[data-cc="rechazar"]');
+        if (b) b.focus();
+      });
+    })(window, document);
+    </script>
+  </Fragment>
+)}
+
+<style is:global>
+  .cc{position:fixed;z-index:60;left:8px;right:8px;bottom:8px;display:flex;flex-direction:column;gap:8px;
+    padding:10px 12px;border-radius:12px;background:#fff;border:1px solid rgba(0,0,0,.12);
+    box-shadow:0 10px 30px -12px rgba(0,0,0,.35);font:400 12.5px/1.45 Inter,system-ui,sans-serif;color:rgba(0,0,0,.72)}
+  .cc[hidden]{display:none}
+  .cc.cc-copia{bottom:39px}
+  .cc-texto{margin:0}
+  .cc-texto a{color:#0e7a3c;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+  .cc-botones{display:flex;gap:8px}
+  .cc-btn{flex:1;height:34px;padding:0 14px;border-radius:999px;border:1px solid rgba(0,0,0,.25);background:#fff;color:#000;
+    font:600 13px/1 Inter,system-ui,sans-serif;cursor:pointer}
+  .cc-btn:hover{border-color:#000}
+  .cc-btn:focus-visible{outline:2px solid #0e7a3c;outline-offset:2px}
+  @media (min-width:768px){
+    .cc{left:24px;right:auto;bottom:24px;max-width:380px;padding:14px 16px}
+    .cc.cc-copia{bottom:55px}
+  }
+  /* mientras está abierto, lo fijo abajo sube lo que mide el aviso */
+  html.cc-abierto [data-fijo-abajo],
+  html.cc-abierto .lp-barra,
+  html.cc-abierto .lp-wa-flota{margin-bottom:var(--cc-alto,0px)}
+  html.cc-abierto body{padding-bottom:var(--cc-alto,0px)}
+  @media (min-width:768px){
+    /* en escritorio el aviso va a la izquierda: el WhatsApp de la derecha no se mueve */
+    html.cc-abierto [data-fijo-abajo],
+    html.cc-abierto .lp-wa-flota{margin-bottom:0}
+  }
+</style>
