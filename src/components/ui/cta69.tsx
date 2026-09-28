@@ -53,6 +53,8 @@ interface Cta69Props {
   heading?: string;
   button?: { label: string; href: string };
   labels?: { marqueePhrase?: string; note?: string; footnote?: string };
+  /** sin el fondo WebGL ni la palabra deslizándose: un bloque verde oscuro, texto a la izquierda */
+  sencillo?: boolean;
 }
 
 /**
@@ -74,6 +76,7 @@ export function Cta69({
   heading,
   button,
   labels,
+  sencillo = false,
 }: Cta69Props) {
   const propio = Boolean(heading);
   const frase = propio ? labels?.marqueePhrase : CIERRE.cinta;
@@ -84,9 +87,9 @@ export function Cta69({
 
   return (
     <section className={cn('relative w-full overflow-hidden bg-[#081c15] py-16 md:py-24', className)}>
-      <Velaris className="absolute inset-0" />
+      {!sencillo && <Velaris className="absolute inset-0" />}
 
-      {frase && (
+      {frase && !sencillo && (
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 flex select-none items-center overflow-hidden"
@@ -108,10 +111,26 @@ export function Cta69({
         </div>
       )}
 
-      <Reveal className="relative mx-auto flex max-w-3xl flex-col items-center px-4 text-center md:px-6">
-        <Badge7 label={badge?.label ?? CIERRE.badge} className="border-white/25 bg-white/10 text-white" />
+      <Reveal
+        className={cn(
+          'relative mx-auto flex flex-col px-4 md:px-6',
+          sencillo ? 'max-w-6xl items-start text-left' : 'max-w-3xl items-center text-center',
+        )}
+      >
+        {sencillo ? (
+          <p className="text-sm font-semibold uppercase tracking-[0.08em] text-white/70">{badge?.label ?? CIERRE.badge}</p>
+        ) : (
+          <Badge7 label={badge?.label ?? CIERRE.badge} className="border-white/25 bg-white/10 text-white" />
+        )}
 
-        <h2 className="mt-8 text-balance text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl">
+        <h2
+          className={cn(
+            'mt-8 text-balance text-white',
+            sencillo
+              ? 'max-w-3xl text-4xl leading-[1.08] md:text-6xl'
+              : 'text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl',
+          )}
+        >
           {heading ?? CIERRE.titulo}
         </h2>
 
@@ -121,7 +140,7 @@ export function Cta69({
           </p>
         )}
 
-        <div className="mt-12 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
+        <div className={cn('mt-12 flex w-full flex-col gap-3 sm:w-auto sm:flex-row', sencillo ? 'items-start' : 'items-center justify-center')}>
           <a href={button?.href ?? destino} className="btn-flecha inversa">
             <span>{button?.label ?? CIERRE.boton}</span>
             <span className="circulo">

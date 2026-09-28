@@ -42,29 +42,29 @@ export const PREGUNTAS = [
 export function CtiFaq() {
   return (
     <section className="bg-hoja px-6 py-20" id="preguntas" aria-labelledby="titulo-faq">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-6xl md:grid md:grid-cols-12 md:gap-10">
         <h2
           id="titulo-faq"
-          className="mb-10 text-balance text-center text-3xl font-medium tracking-tight text-black md:text-5xl"
+          className="mb-10 text-balance text-4xl leading-[1.08] text-black md:col-span-4 md:mb-0 md:text-5xl"
         >
-          Preguntas Frecuentes <span className="font-black text-svea">sobre la CTI</span>
+          Preguntas Frecuentes sobre la CTI
         </h2>
 
-        <div className="space-y-3">
+        <div className="border-t border-black md:col-span-8">
           {PREGUNTAS.map(({ p, r }, i) => (
             <details
               key={p}
               open={i === 0}
-              className="acordeon group rounded-xl border border-border bg-white px-5"
+              className="acordeon group border-b border-black/15"
             >
-              <summary className="flex cursor-pointer items-center justify-between gap-4 py-4 text-left">
-                <h3 className="text-base font-bold tracking-tight text-black">{p}</h3>
+              <summary className="flex cursor-pointer items-start justify-between gap-4 py-5 text-left">
+                <h3 className="serif text-xl leading-snug text-black">{p}</h3>
                 <ChevronDownIcon
                   aria-hidden="true"
-                  className="size-5 shrink-0 text-black/40 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none"
+                  className="mt-1 size-5 shrink-0 text-black transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none"
                 />
               </summary>
-              <p className="pb-5 text-base leading-relaxed text-black/70">{r}</p>
+              <p className="max-w-2xl pb-6 text-base leading-7 text-black/75">{r}</p>
             </details>
           ))}
         </div>

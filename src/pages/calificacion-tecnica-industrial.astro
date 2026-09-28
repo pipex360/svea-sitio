@@ -55,6 +55,8 @@ const COPIA = !import.meta.env.SVEA_PRODUCCION;
 
 const fuentesCSS = `
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 900;font-display:swap;src:url(${BASE}/fonts/inter-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:500;font-display:swap;src:url(${BASE}/fonts/newsreader-500-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Newsreader';font-style:italic;font-weight:400;font-display:swap;src:url(${BASE}/fonts/newsreader-italic-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:'Manrope';font-style:normal;font-weight:500 800;font-display:swap;src:url(${BASE}/fonts/manrope-variable-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 `;
 ---
@@ -69,11 +71,12 @@ const fuentesCSS = `
 
   <link rel="preload" href={`${BASE}/fonts/inter-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={`${BASE}/fonts/newsreader-500-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
   <!-- la foto del hero es el LCP: se precarga -->
   <link rel="preload" as="image" {...precargaFoto('instalacion-industrial-calificacion-tecnica-industrial', BASE)} />
 </head>
-<body>
+<body class="editorial">
   <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
     fotos={['instalacion-industrial-calificacion-tecnica-industrial']}
@@ -90,9 +93,9 @@ const fuentesCSS = `
   <BarraPegajosa base={BASE} cotizar="#formulario-cti" client:idle />
 
   <div class="svea-nuevo">
-    <CtiQueEs base={BASE} client:idle />
-    <CtiServicio client:idle />
-    <CtiSiguiente base={BASE} client:idle />
+    <CtiQueEs base={BASE} />
+    <CtiServicio />
+    <CtiSiguiente base={BASE} />
     <CtiFaq />
     <Cta69
       badge={{ label: 'Último paso' }}
@@ -103,6 +106,7 @@ const fuentesCSS = `
         note: 'Obtén tu Calificación Técnica Industrial con respaldo profesional. Cotización en menos de 24 horas, informe en 3-5 días hábiles, 100% tasa de aprobación.',
         footnote: 'WhatsApp directo: +56 9 2994 7924',
       }}
+      sencillo
       client:idle
     />
     <CtiFormulario copia={COPIA} client:idle />
@@ -119,6 +123,24 @@ const fuentesCSS = `
   )}
 </body>
 </html>
+
+<style is:global>
+  /* La CTI, en prueba de estilo editorial (28-sep): titulares en serif,
+     botón verde plano sin el círculo con flecha, y los rótulos sin rayitas.
+     Sólo rige bajo body.editorial; las demás páginas no cambian. */
+  .editorial { --serif: 'Newsreader', Georgia, 'Times New Roman', serif; }
+  .editorial h1, .editorial h2, .editorial .serif { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; }
+  .editorial .halo h1 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.015em; line-height: 1.05; max-width: 16ch; }
+  .editorial .halo-copete { color: #0e7a3c; letter-spacing: 0.08em; }
+  .editorial .halo-pulso .principal b { font-family: var(--serif); font-weight: 500; }
+  .editorial .btn-flecha { border-radius: 6px; background: #0e7a3c; padding: 13px 22px; gap: 0; font-size: 16px; font-weight: 600; }
+  .editorial .btn-flecha:hover { background: #0b6230; }
+  .editorial .btn-flecha .circulo { display: none; }
+  .editorial .btn-flecha.chica { padding: 9px 18px; font-size: 15px; }
+  .editorial .btn-flecha.inversa { background: #fff; }
+  .editorial .btn-flecha.inversa:hover { background: #eef3ee; }
+  .editorial .btn-flecha.inversa span { color: #0d3518 !important; }
+</style>
 
 <style is:global>
   body { margin: 0; }
