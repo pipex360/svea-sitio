@@ -30,16 +30,16 @@ import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 import { ServiceGrid, type Ficha } from '@/components/ui/service-grid';
 
 /** Los cuatro párrafos del original, con la foto que acompaña a cada uno:
- *  las dos primeras sobre qué es y para qué sirve, con la operación de la bodega;
- *  las dos últimas sobre lo que hacemos nosotros, con la inspección técnica. */
+ *  las dos primeras sobre qué es y para qué sirve, con la planta química;
+ *  las dos últimas sobre lo que hacemos nosotros, con la instalación. */
 const bloques = (): BloqueScroll[] => {
   const planta = {
-    foto: 'taller-metalmecanico-calificacion-tecnica-industrial',
-    alt: 'Operario con lentes de seguridad y mangas de protección trabaja una viga de acero en un taller metalmecánico, establecimiento que requiere calificación técnica industrial de la SEREMI de Salud',
+    foto: 'planta-quimica-calificacion-tecnica-industrial',
+    alt: 'Calificación técnica industrial - planta química evaluada por SVEA Consultores',
   };
   const instalacion = {
-    foto: 'tecnicos-casco-revision-calificacion-tecnica-industrial',
-    alt: 'Dos profesionales con casco y chaleco reflectante revisan una carpeta en una planta industrial, levantamiento técnico para el informe CTI ante la SEREMI de Salud',
+    foto: 'instalacion-industrial-nocturna-informe-cti',
+    alt: 'Informe CTI SEREMI de Salud - instalación industrial nocturna',
   };
   return [
     {

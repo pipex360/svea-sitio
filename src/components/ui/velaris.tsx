@@ -128,7 +128,7 @@ export interface VelarisProps {
 }
 
 /** La paleta del logo, la misma que usa «Compromiso y Garantía». */
-const COLORES_SVEA = ['#2d6a4f', '#0e7a3c', '#95d5b2', '#0d3518'] as const;
+const COLORES_SVEA = ['#2d6a4f', '#0e7a3c', '#95d5b2', '#081c15'] as const;
 /** La paleta suave: del verde del fondo a uno apenas más claro. */
 const COLORES_SUAVES = ['#0e3d1c', '#12482a', '#15502f', '#0d3518'] as const;
 
@@ -142,7 +142,7 @@ function hexARgb(hex: string): [number, number, number] {
 }
 
 export function Velaris({
-  bg = '#0d3518',
+  bg = '#081c15',
   colors: coloresPropios,
   speed = 2.0,
   grain = 0.3,

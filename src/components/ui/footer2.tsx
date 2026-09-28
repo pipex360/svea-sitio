@@ -145,8 +145,8 @@ export function Footer2({
     // pb en el teléfono: el alto de la barra fija de abajo (WhatsApp/Cotizar,
     // 64 px) más el aire normal del pie. Así la barra se monta sobre el verde
     // del pie y no hace falta un relleno blanco debajo.
-    <footer className={cn('relative overflow-hidden bg-[#0d3518] pb-[120px] pt-14 text-white md:py-16', className)}>
-      <Velaris className="absolute inset-0" suave />
+    <footer className={cn('relative overflow-hidden bg-[#081c15] pb-[120px] pt-14 text-white md:py-16', className)}>
+      <Velaris className="absolute inset-0" />
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-2 gap-x-8 gap-y-0 lg:grid-cols-7 lg:gap-8">
           <div className="col-span-2 mb-6 lg:mb-0">

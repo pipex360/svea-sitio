@@ -40,10 +40,19 @@ import { cn } from '@/lib/utils';
 
 interface Cta69Props {
   /** a dónde lleva «Solicitar cotización»: el formulario de la página */
-  destino: string;
+  destino?: string;
   /** el enlace de WhatsApp (por defecto, el del sitio) */
   whatsapp?: string;
   className?: string;
+  /**
+   * Textos propios de la página (portada y CTI). Si vienen, el cierre usa
+   * éstos en vez del común de src/data/cierre.ts y se ve como el original:
+   * un solo botón y la letra chica debajo, sin el de WhatsApp.
+   */
+  badge?: { label: string };
+  heading?: string;
+  button?: { label: string; href: string };
+  labels?: { marqueePhrase?: string; note?: string; footnote?: string };
 }
 
 /**
@@ -57,16 +66,25 @@ interface Cta69Props {
  */
 const REPETICIONES = 8;
 
-export function Cta69({ destino, whatsapp = CIERRE.whatsapp, className }: Cta69Props) {
-  const frase = CIERRE.cinta;
+export function Cta69({
+  destino,
+  whatsapp = CIERRE.whatsapp,
+  className,
+  badge,
+  heading,
+  button,
+  labels,
+}: Cta69Props) {
+  const propio = Boolean(heading);
+  const frase = propio ? labels?.marqueePhrase : CIERRE.cinta;
   // El separador va dentro de la frase y no como relleno entre los <span>:
   // el relleno sólo se aplica entre elementos, así que dejaba un hueco ancho
   // por copia en vez del mismo hueco pequeño entre cada repetición.
   const linea = frase ? `${frase} · `.repeat(REPETICIONES) : '';
 
   return (
-    <section className={cn('relative w-full overflow-hidden bg-[#0d3518] py-16 md:py-24', className)}>
-      <Velaris className="absolute inset-0" suave />
+    <section className={cn('relative w-full overflow-hidden bg-[#081c15] py-16 md:py-24', className)}>
+      <Velaris className="absolute inset-0" />
 
       {frase && (
         <div
@@ -91,17 +109,21 @@ export function Cta69({ destino, whatsapp = CIERRE.whatsapp, className }: Cta69P
       )}
 
       <Reveal className="relative mx-auto flex max-w-3xl flex-col items-center px-4 text-center md:px-6">
-        <Badge7 label={CIERRE.badge} className="border-white/25 bg-white/10 text-white" />
+        <Badge7 label={badge?.label ?? CIERRE.badge} className="border-white/25 bg-white/10 text-white" />
 
         <h2 className="mt-8 text-balance text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl">
-          {CIERRE.titulo}
+          {heading ?? CIERRE.titulo}
         </h2>
 
-        <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-white/80 md:text-xl">{CIERRE.nota}</p>
+        {(propio ? labels?.note : CIERRE.nota) && (
+          <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-white/80 md:text-xl">
+            {propio ? labels?.note : CIERRE.nota}
+          </p>
+        )}
 
         <div className="mt-12 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
-          <a href={destino} className="btn-flecha inversa">
-            <span>{CIERRE.boton}</span>
+          <a href={button?.href ?? destino} className="btn-flecha inversa">
+            <span>{button?.label ?? CIERRE.boton}</span>
             <span className="circulo">
               <svg
                 viewBox="0 0 24 24"
@@ -117,18 +139,24 @@ export function Cta69({ destino, whatsapp = CIERRE.whatsapp, className }: Cta69P
               </svg>
             </span>
           </a>
-          <a href={whatsapp} target="_blank" rel="noopener" className="btn-whatsapp">
-            <IconoWhatsApp className="size-5" />
-            {CIERRE.whatsappTexto}
-          </a>
+          {!propio && (
+            <a href={whatsapp} target="_blank" rel="noopener" className="btn-whatsapp">
+              <IconoWhatsApp className="size-5" />
+              {CIERRE.whatsappTexto}
+            </a>
+          )}
         </div>
 
-        <p className="mt-8 text-base text-white/60">
-          {CIERRE.pie} ·{' '}
-          <a href={CIERRE.telefono.href} className="whitespace-nowrap text-white/80 no-underline hover:text-white">
-            {CIERRE.telefono.texto}
-          </a>
-        </p>
+        {propio ? (
+          labels?.footnote && <p className="mt-8 text-base text-white/60">{labels.footnote}</p>
+        ) : (
+          <p className="mt-8 text-base text-white/60">
+            {CIERRE.pie} ·{' '}
+            <a href={CIERRE.telefono.href} className="whitespace-nowrap text-white/80 no-underline hover:text-white">
+              {CIERRE.telefono.texto}
+            </a>
+          </p>
+        )}
       </Reveal>
     </section>
   );

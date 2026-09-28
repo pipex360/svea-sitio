@@ -74,7 +74,7 @@ const PASOS: Paso[] = [
     id: 'desarrollo',
     numero: '03',
     titulo: 'Desarrollo',
-    descripcion: 'Elaboramos la documentación técnica en 3-5 días hábiles',
+    descripcion: 'Elaboramos la documentación técnica en 5-10 días hábiles',
     icono: PencilRuler,
     x: 282,
     y: 372,

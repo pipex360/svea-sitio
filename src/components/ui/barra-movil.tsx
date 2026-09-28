@@ -85,7 +85,7 @@ export function BarraMovil({ base = '', copia = false, cotizar }: { base?: strin
         </a>
         <a
           href={destino}
-          className="flex h-12 items-center justify-center gap-2 rounded-full bg-[#0e7a3c] text-sm font-semibold text-white no-underline"
+          className="flex h-12 items-center justify-center gap-2 rounded-full bg-black text-sm font-semibold text-white no-underline"
         >
           Cotizar
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="size-4">

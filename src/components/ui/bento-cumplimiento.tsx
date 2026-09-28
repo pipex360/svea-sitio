@@ -206,7 +206,7 @@ const Innovacion = () => (
       </div>
       <div className="mt-6 border-t border-white/20 pt-4">
         <p className="text-2xl font-bold leading-none tracking-tight text-white">
-          3-5 <span className="text-sm font-medium text-white/70">días hábiles</span>
+          5-10 <span className="text-sm font-medium text-white/70">días hábiles</span>
         </p>
         <p className="mt-1 text-xs text-white/60">Informe técnico listo para revisión</p>
       </div>
@@ -219,13 +219,13 @@ export function CumplimientoBento() {
     <BentoGridShowcase
       className="mx-auto max-w-7xl"
       integration={<Compromiso />}
-      trackers={<Dato meta={250} sufijo="+" rotulo="Empresas atendidas" />}
+      trackers={<Dato meta={250} sufijo="+" rotulo="Trámites Gestionados" />}
       statistic={
         <Dato
-          meta={8}
-          sufijo=""
-          rotulo="Servicios Especializados"
-          pie="CTI, carga de combustible, planes de emergencia, residuos, informe sanitario y SEIA"
+          meta={100}
+          sufijo="%"
+          rotulo="Tasa de Aprobación"
+          pie="En trámites realizados"
           grande
           puntos
         />

@@ -167,7 +167,7 @@
   height: auto;
   padding: 8px 8px 8px 32px;
   border-radius: 999px;
-  background: #0e7a3c;
+  background: #000;
   color: #fff !important;
   font-size: 18px;
   font-weight: 500;
@@ -175,7 +175,7 @@
   transition: background 0.2s;
 }
 .btn-flecha span { color: #fff !important; }
-.btn-flecha:hover { background: #0b6230; }
+.btn-flecha:hover { background: #1f2937; }
 .btn-flecha .circulo {
   display: flex;
   align-items: center;
@@ -186,14 +186,14 @@
   background: #fff;
 }
 .btn-flecha .circulo,
-.btn-flecha .circulo svg { color: #0e7a3c !important; }
+.btn-flecha .circulo svg { color: #000 !important; }
 .btn-flecha .circulo svg { width: 20px; height: 20px; }
 
 /* Invertido, para fondos oscuros: blanco con la flecha en negro. */
-.btn-flecha.inversa { background: #fff; color: #0d3518 !important; }
-.btn-flecha.inversa span { color: #0d3518 !important; }
+.btn-flecha.inversa { background: #fff; color: #000 !important; }
+.btn-flecha.inversa span { color: #000 !important; }
 .btn-flecha.inversa:hover { background: #e5e7eb; }
-.btn-flecha.inversa .circulo { background: #0e7a3c; }
+.btn-flecha.inversa .circulo { background: #000; }
 .btn-flecha.inversa .circulo,
 .btn-flecha.inversa .circulo svg { color: #fff !important; }
 

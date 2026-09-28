@@ -91,7 +91,7 @@ export function Proceso({ base = '' }: { base?: string }) {
       </ol>
 
       <p className="mx-auto mt-12 flex max-w-5xl flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm font-bold text-black">
-        <span>Informe técnico listo en 3-5 días hábiles</span>
+        <span>Informe técnico listo en 5-10 días hábiles</span>
         <span aria-hidden="true" className="font-normal text-black/25">
           ·
         </span>

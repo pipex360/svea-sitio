@@ -28,7 +28,7 @@
         "webp": 140
       }
     },
-    "origen": "734242:1790301532788"
+    "origen": "734242:1790621234573"
   },
   "bodega-cajas-estudio-carga-combustible": {
     "ancho": 1600,
@@ -54,7 +54,7 @@
         "webp": 125
       }
     },
-    "origen": "361194:1790301533811"
+    "origen": "361194:1790621234575"
   },
   "bodega-calificacion-tecnica-industrial": {
     "ancho": 2400,
@@ -85,7 +85,7 @@
         "webp": 138
       }
     },
-    "origen": "705290:1790300901977"
+    "origen": "705290:1790621234576"
   },
   "bodega-centro-logistico-carga-combustible": {
     "ancho": 1600,
@@ -111,7 +111,7 @@
         "webp": 126
       }
     },
-    "origen": "165284:1790296138481"
+    "origen": "165284:1790621234577"
   },
   "bodega-estanterias-estudio-carga-combustible": {
     "ancho": 2400,
@@ -142,7 +142,7 @@
         "webp": 140
       }
     },
-    "origen": "642520:1790300901978"
+    "origen": "642520:1790621234578"
   },
   "bodega-productos-estudio-carga-combustible": {
     "ancho": 1920,
@@ -173,7 +173,7 @@
         "webp": 147
       }
     },
-    "origen": "146752:1790296138474"
+    "origen": "146752:1790621234578"
   },
   "bodega-racks-mercaderia-carga-combustible": {
     "ancho": 2400,
@@ -204,7 +204,7 @@
         "webp": 147
       }
     },
-    "origen": "645190:1790306480328"
+    "origen": "645190:1790621234580"
   },
   "brigada-simulacro-incendio-plan-de-emergencia": {
     "ancho": 2400,
@@ -235,7 +235,7 @@
         "webp": 139
       }
     },
-    "origen": "1031464:1790303551810"
+    "origen": "1031464:1790621234582"
   },
   "camion-cisterna-inflamable-transporte-residuos-peligrosos": {
     "ancho": 2400,
@@ -266,7 +266,7 @@
         "webp": 150
       }
     },
-    "origen": "757108:1790342322097"
+    "origen": "757108:1790621234584"
   },
   "camion-tolva-carga-planta-residuos": {
     "ancho": 2400,
@@ -297,7 +297,7 @@
         "webp": 144
       }
     },
-    "origen": "672212:1790334421692"
+    "origen": "672212:1790621234586"
   },
   "camion-tolva-descarga-residuos-autorizados": {
     "ancho": 1600,
@@ -323,7 +323,7 @@
         "webp": 130
       }
     },
-    "origen": "297146:1790303551811"
+    "origen": "297146:1790621234586"
   },
   "camion-tolva-descarga-transporte-residuos-autorizado": {
     "ancho": 2400,
@@ -354,7 +354,7 @@
         "webp": 140
       }
     },
-    "origen": "643502:1790306423143"
+    "origen": "643502:1790621234588"
   },
   "camion-tolva-escombros-obra-autorizacion-transporte": {
     "ancho": 1800,
@@ -380,7 +380,7 @@
         "webp": 129
       }
     },
-    "origen": "670680:1790306479983"
+    "origen": "670680:1790621234589"
   },
   "camion-tolva-escombros-residuos-no-peligrosos": {
     "ancho": 7952,
@@ -411,7 +411,7 @@
         "webp": 115
       }
     },
-    "origen": "2546516:1790305593641"
+    "origen": "2546516:1790621234595"
   },
   "centro-distribucion-calificacion-tecnica-industrial": {
     "ancho": 1920,
@@ -442,7 +442,7 @@
         "webp": 216
       }
     },
-    "origen": "345850:1790296138473"
+    "origen": "345850:1790621234595"
   },
   "centro-logistico-aereo-permisos-seremi": {
     "ancho": 1920,
@@ -473,7 +473,38 @@
         "webp": 144
       }
     },
-    "origen": "264686:1790296138471"
+    "origen": "264686:1790621234595"
+  },
+  "centro-logistico-consultoria-ambiental-permisos": {
+    "ancho": 1920,
+    "alto": 1257,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "centro-logistico-consultoria-ambiental-permisos.jpg",
+    "peso": {
+      "640": {
+        "avif": 27,
+        "webp": 36
+      },
+      "1080": {
+        "avif": 63,
+        "webp": 77
+      },
+      "1600": {
+        "avif": 111,
+        "webp": 113
+      },
+      "1920": {
+        "avif": 145,
+        "webp": 144
+      }
+    },
+    "origen": "264686:1790621453391"
   },
   "cocina-industrial-acero-informe-sanitario": {
     "ancho": 1600,
@@ -499,7 +530,7 @@
         "webp": 119
       }
     },
-    "origen": "408154:1790300901989"
+    "origen": "408154:1790621234597"
   },
   "condominios-las-condes-plan-de-emergencia": {
     "ancho": 1600,
@@ -525,7 +556,7 @@
         "webp": 143
       }
     },
-    "origen": "450042:1790303985043"
+    "origen": "450042:1790621234598"
   },
   "condominios-santiago-cordillera-ley-21442": {
     "ancho": 1600,
@@ -551,7 +582,7 @@
         "webp": 124
       }
     },
-    "origen": "286090:1790300901990"
+    "origen": "286090:1790621234598"
   },
   "edificio-condominio-plan-de-emergencia": {
     "ancho": 1920,
@@ -582,7 +613,7 @@
         "webp": 123
       }
     },
-    "origen": "146888:1790296138475"
+    "origen": "146888:1790621234599"
   },
   "edificios-providencia-plan-emergencia-condominio": {
     "ancho": 2400,
@@ -613,7 +644,7 @@
         "webp": 142
       }
     },
-    "origen": "515866:1790303551812"
+    "origen": "515866:1790621234600"
   },
   "edificios-santiago-cordillera-nevada-plan-emergencia-condominio": {
     "ancho": 2400,
@@ -644,7 +675,7 @@
         "webp": 110
       }
     },
-    "origen": "403574:1790331641167"
+    "origen": "403574:1790621234600"
   },
   "firma-solicitud-seremi-en-linea": {
     "ancho": 1600,
@@ -670,7 +701,7 @@
         "webp": 32
       }
     },
-    "origen": "141514:1790300901998"
+    "origen": "141514:1790621234601"
   },
   "gabinete-extintor-red-humeda-plan-emergencia": {
     "ancho": 1600,
@@ -696,7 +727,7 @@
         "webp": 76
       }
     },
-    "origen": "226266:1790303551812"
+    "origen": "226266:1790621234601"
   },
   "inspeccion-bodega-calificacion-tecnica-industrial": {
     "ancho": 1600,
@@ -722,7 +753,7 @@
         "webp": 37
       }
     },
-    "origen": "85146:1790303551812"
+    "origen": "85146:1790621234601"
   },
   "inspeccion-planta-fiscalizacion-seremi": {
     "ancho": 1600,
@@ -748,7 +779,64 @@
         "webp": 62
       }
     },
-    "origen": "148976:1790300901999"
+    "origen": "148976:1790621234602"
+  },
+  "instalacion-industrial-calificacion-tecnica-industrial": {
+    "ancho": 1920,
+    "alto": 1280,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "instalacion-industrial-calificacion-tecnica-industrial.jpg",
+    "peso": {
+      "640": {
+        "avif": 36,
+        "webp": 45
+      },
+      "1080": {
+        "avif": 84,
+        "webp": 90
+      },
+      "1600": {
+        "avif": 105,
+        "webp": 127
+      },
+      "1920": {
+        "avif": 128,
+        "webp": 216
+      }
+    },
+    "origen": "345850:1790621453415"
+  },
+  "instalacion-industrial-nocturna-informe-cti": {
+    "ancho": 1200,
+    "alto": 800,
+    "anchos": [
+      640,
+      1080,
+      1200
+    ],
+    "hero": false,
+    "og": "instalacion-industrial-nocturna-informe-cti.jpg",
+    "peso": {
+      "640": {
+        "avif": 24,
+        "webp": 30
+      },
+      "1080": {
+        "avif": 52,
+        "webp": 66
+      },
+      "1200": {
+        "avif": 72,
+        "webp": 99
+      }
+    },
+    "origen": "113242:1790621453438"
   },
   "linea-seleccion-tomates-informe-sanitario": {
     "ancho": 2400,
@@ -779,7 +867,7 @@
         "webp": 118
       }
     },
-    "origen": "361644:1790331640855"
+    "origen": "361644:1790621234602"
   },
   "manipulacion-alimentos-informe-sanitario": {
     "ancho": 1600,
@@ -805,7 +893,7 @@
         "webp": 40
       }
     },
-    "origen": "114190:1790300901999"
+    "origen": "114190:1790621234603"
   },
   "operario-bodega-residuos-peligrosos": {
     "ancho": 1600,
@@ -831,7 +919,7 @@
         "webp": 118
       }
     },
-    "origen": "287850:1790300902000"
+    "origen": "287850:1790621234603"
   },
   "operario-transpaleta-racks-estudio-carga-combustible": {
     "ancho": 2400,
@@ -862,7 +950,7 @@
         "webp": 99
       }
     },
-    "origen": "343458:1790332058803"
+    "origen": "343458:1790621234604"
   },
   "operarios-grua-horquilla-bodega-calificacion-tecnica": {
     "ancho": 2400,
@@ -893,7 +981,7 @@
         "webp": 99
       }
     },
-    "origen": "358586:1790332059129"
+    "origen": "358586:1790621234605"
   },
   "parque-fotovoltaico-pertinencia-seia": {
     "ancho": 1600,
@@ -919,7 +1007,7 @@
         "webp": 187
       }
     },
-    "origen": "558778:1790301533634"
+    "origen": "558778:1790621234606"
   },
   "planta-alimentos-informe-sanitario": {
     "ancho": 2400,
@@ -950,7 +1038,95 @@
         "webp": 77
       }
     },
-    "origen": "261182:1790334362283"
+    "origen": "261182:1790621234607"
+  },
+  "planta-energia-consultoria-ambiental-cumplimiento-normativo": {
+    "ancho": 1920,
+    "alto": 1280,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "planta-energia-consultoria-ambiental-cumplimiento-normativo.jpg",
+    "peso": {
+      "640": {
+        "avif": 15,
+        "webp": 18
+      },
+      "1080": {
+        "avif": 36,
+        "webp": 41
+      },
+      "1600": {
+        "avif": 64,
+        "webp": 72
+      },
+      "1920": {
+        "avif": 100,
+        "webp": 118
+      }
+    },
+    "origen": "135092:1790621453379"
+  },
+  "planta-industrial-consultoria-ambiental-seremi": {
+    "ancho": 1920,
+    "alto": 1079,
+    "anchos": [
+      640,
+      1080,
+      1600,
+      1920
+    ],
+    "hero": true,
+    "og": "planta-industrial-consultoria-ambiental-seremi.jpg",
+    "peso": {
+      "640": {
+        "avif": 16,
+        "webp": 18
+      },
+      "1080": {
+        "avif": 34,
+        "webp": 38
+      },
+      "1600": {
+        "avif": 57,
+        "webp": 64
+      },
+      "1920": {
+        "avif": 82,
+        "webp": 93
+      }
+    },
+    "origen": "104332:1790621453403"
+  },
+  "planta-quimica-calificacion-tecnica-industrial": {
+    "ancho": 1200,
+    "alto": 801,
+    "anchos": [
+      640,
+      1080,
+      1200
+    ],
+    "hero": false,
+    "og": "planta-quimica-calificacion-tecnica-industrial.jpg",
+    "peso": {
+      "640": {
+        "avif": 24,
+        "webp": 33
+      },
+      "1080": {
+        "avif": 51,
+        "webp": 71
+      },
+      "1200": {
+        "avif": 70,
+        "webp": 103
+      }
+    },
+    "origen": "115896:1790621453426"
   },
   "preparacion-descargos-sumario-sanitario": {
     "ancho": 2400,
@@ -981,7 +1157,7 @@
         "webp": 76
       }
     },
-    "origen": "283020:1790335229726"
+    "origen": "283020:1790621234607"
   },
   "revision-expediente-observaciones-seremi": {
     "ancho": 1600,
@@ -1007,7 +1183,7 @@
         "webp": 39
       }
     },
-    "origen": "134178:1790300902005"
+    "origen": "134178:1790621234608"
   },
   "senal-salida-emergencia-evacuacion": {
     "ancho": 1600,
@@ -1033,7 +1209,7 @@
         "webp": 56
       }
     },
-    "origen": "67926:1790296138483"
+    "origen": "67926:1790621234608"
   },
   "senal-salida-evacuacion-plan-emergencia": {
     "ancho": 1600,
@@ -1059,7 +1235,7 @@
         "webp": 65
       }
     },
-    "origen": "169522:1790303551813"
+    "origen": "169522:1790621234608"
   },
   "simulacro-extintor-brigada-plan-emergencia": {
     "ancho": 2400,
@@ -1090,7 +1266,7 @@
         "webp": 122
       }
     },
-    "origen": "757558:1790303551813"
+    "origen": "757558:1790621234610"
   },
   "simulacro-incendio-extintor-plan-de-emergencia": {
     "ancho": 1600,
@@ -1116,7 +1292,7 @@
         "webp": 70
       }
     },
-    "origen": "80684:1790296138482"
+    "origen": "80684:1790621234610"
   },
   "taller-metalmecanico-calificacion-tecnica-industrial": {
     "ancho": 2400,
@@ -1147,7 +1323,7 @@
         "webp": 141
       }
     },
-    "origen": "649580:1790342322093"
+    "origen": "649580:1790621234611"
   },
   "tambores-azules-residuos-peligrosos-almacenamiento": {
     "ancho": 4160,
@@ -1178,7 +1354,7 @@
         "webp": 142
       }
     },
-    "origen": "2215994:1790331221268"
+    "origen": "2215994:1790621234615"
   },
   "tambores-bodega-residuos-peligrosos": {
     "ancho": 1600,
@@ -1204,7 +1380,7 @@
         "webp": 87
       }
     },
-    "origen": "96858:1790296138485"
+    "origen": "96858:1790621234615"
   },
   "tambores-plasticos-sustancias-peligrosas-ds-43": {
     "ancho": 1600,
@@ -1230,7 +1406,7 @@
         "webp": 118
       }
     },
-    "origen": "260246:1790300902009"
+    "origen": "260246:1790621234616"
   },
   "tambores-residuos-peligrosos-bodega": {
     "ancho": 2374,
@@ -1261,7 +1437,7 @@
         "webp": 148
       }
     },
-    "origen": "538558:1790300902009"
+    "origen": "538558:1790621234617"
   },
   "tecnicos-casco-planta-cumplimiento-normativo": {
     "ancho": 2400,
@@ -1292,7 +1468,7 @@
         "webp": 103
       }
     },
-    "origen": "534678:1790348630084"
+    "origen": "534678:1790621234618"
   },
   "tecnicos-casco-revision-calificacion-tecnica-industrial": {
     "ancho": 2400,
@@ -1323,7 +1499,7 @@
         "webp": 108
       }
     },
-    "origen": "545672:1790342322095"
+    "origen": "545672:1790621234619"
   },
   "valle-cordillera-evaluacion-ambiental": {
     "ancho": 1600,
@@ -1349,7 +1525,7 @@
         "webp": 123
       }
     },
-    "origen": "462596:1790300902009"
+    "origen": "462596:1790621234620"
   },
   "valle-elqui-cultivos-pertinencia-seia": {
     "ancho": 2400,
@@ -1380,6 +1556,6 @@
         "webp": 196
       }
     },
-    "origen": "1155038:1790335393909"
+    "origen": "1155038:1790621234623"
   }
 }
