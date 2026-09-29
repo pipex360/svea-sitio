@@ -497,6 +497,8 @@ const fuentesCSS = `
     background:linear-gradient(90deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.88) 30%,rgba(255,255,255,.9) 70%,rgba(255,255,255,.6) 100%),
       linear-gradient(to top,rgba(244,246,244,.95) 0%,transparent 35%)}
   .art-cab>*:not(.art-cab-foto){position:relative;z-index:1}
+  /* la barra con el menú va por encima del titular: su desplegable se abría detrás del texto */
+  .art-cab>.art-barra{z-index:40}
   .art-cabecera{min-height:min(60svh,620px);display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start}
   .art-cabecera>.art-cifras,.art-cabecera>.art-migas{align-self:stretch}
   @media (max-width:820px){
