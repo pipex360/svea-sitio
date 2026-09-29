@@ -33,12 +33,14 @@ export function CtiSiguiente({ base = '' }: { base?: string }) {
               href={`${base}/estudio-de-carga-de-combustible/`}
               className="group/ecc relative flex h-full flex-col sm:min-h-[520px] justify-end overflow-hidden rounded-3xl border border-[#d8d3c7] no-underline shadow-[0_18px_34px_-16px_rgba(55,47,36,0.35)] transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100"
             >
+              {/* la foto sube para que en la franja visible de arriba se vean las
+                  estanterías y la mercadería, no el techo de la bodega */}
               <Foto
                 nombre="bodega-estanterias-estudio-carga-combustible"
                 alt="Bodega con estanterías evaluada en un Estudio de Carga de Combustible"
                 tamano="(min-width: 1024px) 560px, 100vw"
                 base={base}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover/ecc:scale-105 motion-reduce:transition-none"
+                className="absolute inset-x-0 -top-[45%] h-[145%] w-full object-cover transition-transform duration-500 ease-out group-hover/ecc:scale-105 motion-reduce:transition-none sm:-top-[22%] sm:h-[122%]"
               />
               <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/40 to-transparent" />
               <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-white/90 via-white/60 to-transparent backdrop-blur-[1px]" />
