@@ -53,6 +53,11 @@ interface Cta69Props {
   heading?: string;
   button?: { label: string; href: string };
   labels?: { marqueePhrase?: string; note?: string; footnote?: string };
+  /**
+   * El color de la sección de arriba (p. ej. '#000000'): el fondo verde nace
+   * de ese color con un degradado de 240 px, en vez de empezar con un corte.
+   */
+  fundirDesde?: string;
 }
 
 /**
@@ -74,6 +79,7 @@ export function Cta69({
   heading,
   button,
   labels,
+  fundirDesde,
 }: Cta69Props) {
   const propio = Boolean(heading);
   const frase = propio ? labels?.marqueePhrase : CIERRE.cinta;
@@ -85,6 +91,14 @@ export function Cta69({
   return (
     <section className={cn('relative w-full overflow-hidden bg-[#081c15] py-16 md:py-24', className)}>
       <Velaris className="absolute inset-0" />
+
+      {fundirDesde && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-60"
+          style={{ background: `linear-gradient(to bottom, ${fundirDesde} 0%, ${fundirDesde}cc 30%, transparent 100%)` }}
+        />
+      )}
 
       {frase && (
         <div
