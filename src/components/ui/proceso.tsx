@@ -4,8 +4,8 @@
  * «¿Cómo Trabajamos?», con la forma de la sección «Issues» de arup.com.
  *
  * Escritorio (lg+), medido sobre arup.com a 1440 px: fondo negro, 64 px
- * arriba y abajo, 32 px a los lados; el titular a la izquierda y el botón
- * con borde arriba a la derecha; las tarjetas de 600 px de alto y un tercio
+ * arriba y abajo, 32 px a los lados; el titular a la izquierda y las flechas
+ * arriba a la derecha; las tarjetas de 600 px de alto y un tercio
  * del ancho (24 px entre ellas, esquinas de 12 px), con la foto dentro de un
  * círculo de 680 px que empieza a 220 px del borde de arriba y se sale por
  * abajo y por el lado. Como aquí son cinco pasos y no tres, la fila se
@@ -112,13 +112,7 @@ export function Proceso({ base = '' }: { base?: string }) {
               Informe técnico listo en 3-5 días hábiles · Cotización en menos de 24 horas
             </p>
           </div>
-          <div className="mt-8 flex items-center gap-3 lg:mt-0 lg:shrink-0">
-            <a
-              href={`${base}/#form-home`}
-              className="inline-flex h-14 items-center rounded-full border border-white/50 px-8 text-lg text-white no-underline transition-colors duration-200 hover:border-white hover:bg-white hover:text-black lg:h-11 lg:px-6 lg:text-xl"
-            >
-              Solicitar cotización
-            </a>
+          <div className="mt-8 hidden items-center gap-3 lg:mt-0 lg:flex lg:shrink-0">
             <button
               type="button"
               onClick={() => mover(-1)}
