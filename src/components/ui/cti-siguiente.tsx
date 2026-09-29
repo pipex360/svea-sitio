@@ -123,8 +123,8 @@ export function CtiSiguiente({ base = '' }: { base?: string }) {
             <TarjetaFoto
               href={`${base}/calificacion-tecnica-industrial-chile/`}
               base={base}
-              foto="centro-distribucion-calificacion-tecnica-industrial"
-              alt="Centro de distribución visto desde el aire: instalación que requiere calificación técnica industrial"
+              foto="inspeccion-planta-fiscalizacion-seremi"
+              alt="Profesional revisa con su carpeta una planta industrial, evaluación para la calificación técnica industrial"
               icono={BookOpenIcon}
               pildora="Guía completa en nuestro blog"
               titulo="Calificación Técnica Industrial Chile: Guía Definitiva 2026"
