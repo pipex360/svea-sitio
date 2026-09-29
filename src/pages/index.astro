@@ -130,17 +130,7 @@ const fuentesCSS = `
 
   <!-- Cierre de la sección: franja completa con la palabra de fondo -->
   <div class="svea-nuevo">
-    <Cta69
-      badge={{ label: 'Primer paso' }}
-      heading="¿Listo para comenzar tu proyecto?"
-      button={{ label: 'Contáctanos', href: `${BASE}/#form-home` }}
-      labels={{
-        marqueePhrase: 'Tramitamos',
-        note: 'Deja la complejidad normativa en nuestras manos: cotización en menos de 24 horas y acompañamiento hasta la resolución.',
-        footnote: 'Cotización en menos de 24 horas',
-      }}
-      client:idle
-    />
+    <Cta69 destino={`${BASE}/#form-home`} badge={{ label: 'Primer paso' }} client:idle />
   </div>
 
 
@@ -152,11 +142,6 @@ const fuentesCSS = `
   <!-- Contáctanos y el formulario (lista roja: ver contacto.tsx) -->
   <div class="svea-nuevo">
     <Contacto copia={COPIA} client:load />
-  </div>
-
-  <!-- el cierre común de todas las páginas: formulario → verde → pie -->
-  <div class="svea-nuevo">
-    <Cta69 destino={`${BASE}/#form-home`} client:idle />
   </div>
 
   <!-- Pie de página -->
