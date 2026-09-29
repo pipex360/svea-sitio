@@ -8,13 +8,13 @@
 import '../styles/tailwind.css';
 import MedicionSitio from '../components/MedicionSitio.astro';
 import HeroHalo from '../components/HeroHalo.astro';
-import FranjaClientes from '../components/FranjaClientes.astro';
 import { precargaFoto } from '../lib/fotos';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
 import { PeFormulario } from '../components/ui/pe-formulario';
 import { PeQueEs } from '../components/ui/pe-que-es';
 import { PeServicio } from '../components/ui/pe-servicio';
+import { PePasos } from '../components/ui/pe-pasos';
 import { PeSiguiente } from '../components/ui/pe-siguiente';
 import { PeFaq, PREGUNTAS } from '../components/ui/pe-faq';
 import SeoHead from '../components/SeoHead.astro';
@@ -48,32 +48,35 @@ const fuentesCSS = `
   <!-- la foto del hero es el LCP: se precarga -->
   <link rel="preload" as="image" {...precargaFoto('brigada-simulacro-incendio-plan-de-emergencia', BASE)} />
 </head>
-<body>
+<body class="botones-planos">
   <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
-    fotos={['brigada-simulacro-incendio-plan-de-emergencia']}
+    fotos={[
+      'brigada-simulacro-incendio-plan-de-emergencia',
+      'simulacro-extintor-brigada-plan-emergencia',
+      'tecnicos-casco-planta-cumplimiento-normativo',
+    ]}
     copete="Servicios SVEA"
     titulo="Planes de Emergencia y Evacuación Industrial"
     parrafo="Protege a tus trabajadores y asegura la continuidad operativa de tu empresa. Desarrollamos planes personalizados que cumplen con la normativa vigente y están orientados a una evacuación eficiente ante cualquier emergencia."
     boton={{ texto: 'Cotiza tu Plan de Emergencia', href: '#formulario-pe' }}
-    principal={{ valor: '5-10', texto: 'días hábiles · Plan completo entregado' }}
+    principal={{ valor: '100', texto: 'trámites revisados', contador: 'pct' }}
     secundarias={[
+      { destacado: '5-10 días hábiles', texto: 'plan completo entregado' },
       { destacado: 'DS 594 y DS 44', texto: 'Normativa aplicada' },
       { destacado: 'Cotización en 24 hrs', texto: 'Automática por email' },
     ]}
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-pe" client:idle />
 
-  <!-- clientes: la misma franja de la portada, justo después del hero -->
-  <FranjaClientes base={BASE} />
-
   <div class="svea-nuevo">
     <PeQueEs base={BASE} client:idle />
     <PeServicio client:idle />
+    <PePasos base={BASE} client:idle />
     <PeSiguiente base={BASE} client:idle />
     <PeFaq />
-    <PeFormulario copia={COPIA} client:idle />
     <Cta69 destino="#formulario-pe" client:idle />
+    <PeFormulario copia={COPIA} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 

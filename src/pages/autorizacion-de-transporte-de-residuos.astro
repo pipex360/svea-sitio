@@ -17,13 +17,13 @@
 import '../styles/tailwind.css';
 import MedicionSitio from '../components/MedicionSitio.astro';
 import HeroHalo from '../components/HeroHalo.astro';
-import FranjaClientes from '../components/FranjaClientes.astro';
 import { precargaFoto } from '../lib/fotos';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
 import { TrFormulario } from '../components/ui/tr-formulario';
 import { TrQueEs } from '../components/ui/tr-que-es';
 import { TrServicio } from '../components/ui/tr-servicio';
+import { TrPasos } from '../components/ui/tr-pasos';
 import { TrSiguiente } from '../components/ui/tr-siguiente';
 import { TrFaq, PREGUNTAS } from '../components/ui/tr-faq';
 import SeoHead from '../components/SeoHead.astro';
@@ -57,15 +57,19 @@ const fuentesCSS = `
   <!-- la foto del hero es el LCP: se precarga -->
   <link rel="preload" as="image" {...precargaFoto('camion-tolva-descarga-transporte-residuos-autorizado', BASE)} />
 </head>
-<body>
+<body class="botones-planos">
   <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
-    fotos={['camion-tolva-descarga-transporte-residuos-autorizado']}
+    fotos={[
+      'camion-tolva-descarga-transporte-residuos-autorizado',
+      'camion-tolva-carga-planta-residuos',
+      'camion-tolva-escombros-residuos-no-peligrosos',
+    ]}
     copete="Servicios SVEA"
     titulo="Autorización de Transporte de Residuos Peligrosos y No Peligrosos"
     parrafo="Gestionamos la autorización de transporte de residuos ante la SEREMI de Salud, asegurando el cumplimiento normativo en cada etapa del proceso. Desde la clasificación hasta la obtención del permiso, tu empresa opera de forma segura y legal."
     boton={{ texto: 'Cotiza tu Autorización', href: '#formulario-tr' }}
-    principal={{ valor: 'SEREMI de Salud', texto: 'Gestión integral del permiso' }}
+    principal={{ valor: '100', texto: 'trámites revisados', contador: 'pct' }}
     secundarias={[
       { destacado: 'Documentación completa', texto: 'Clasificación + plan de manejo' },
       { destacado: 'Cotización en 24 hrs', texto: 'Automática por email' },
@@ -73,16 +77,14 @@ const fuentesCSS = `
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-tr" client:idle />
 
-  <!-- clientes: la misma franja de la portada, justo después del hero -->
-  <FranjaClientes base={BASE} />
-
   <div class="svea-nuevo">
     <TrQueEs base={BASE} client:idle />
     <TrServicio client:idle />
+    <TrPasos base={BASE} client:idle />
     <TrSiguiente base={BASE} client:idle />
     <TrFaq />
-    <TrFormulario copia={COPIA} client:idle />
     <Cta69 destino="#formulario-tr" client:idle />
+    <TrFormulario copia={COPIA} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 

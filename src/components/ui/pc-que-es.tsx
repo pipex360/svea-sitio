@@ -25,8 +25,8 @@ import {
   ZapIcon,
 } from 'lucide-react';
 
-import { Reveal } from '@/components/ui/reveal';
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
+import { ServiceGrid, type Ficha } from '@/components/ui/service-grid';
 
 /** Los cuatro párrafos del original: los dos primeros sobre qué es el plan
  *  y de qué se construye, con los condominios y la cordillera; los dos últimos sobre
@@ -64,28 +64,26 @@ const bloques = (): BloqueScroll[] => {
   ];
 };
 
-const QUIENES = [
-  { texto: 'Edificios residenciales', icono: Building2Icon },
-  { texto: 'Condominios horizontales', icono: HomeIcon },
-  { texto: 'Comités de administración', icono: UsersIcon },
-  { texto: 'Comunidades con alta concurrencia', icono: UsersRoundIcon },
-  { texto: 'Con subterráneos/estacionamientos', icono: CircleParkingIcon },
-  { texto: 'Con salas técnicas (caldera/generador)', icono: CogIcon },
-  { texto: 'Con locales en primer piso', icono: StoreIcon },
-  { texto: 'Conserjería 24/7', icono: ConciergeBellIcon },
+const QUIENES: Ficha[] = [
+  { nombre: 'Edificios residenciales', icono: Building2Icon },
+  { nombre: 'Condominios horizontales', icono: HomeIcon },
+  { nombre: 'Comités de administración', icono: UsersIcon },
+  { nombre: 'Comunidades con alta concurrencia', icono: UsersRoundIcon },
+  { nombre: 'Con subterráneos/estacionamientos', icono: CircleParkingIcon },
+  { nombre: 'Con salas técnicas (caldera/generador)', icono: CogIcon },
+  { nombre: 'Con locales en primer piso', icono: StoreIcon },
+  { nombre: 'Conserjería 24/7', icono: ConciergeBellIcon },
 ];
 
-const EMERGENCIAS = [
-  { texto: 'Incendios (departamentos/áreas comunes)', icono: FlameIcon },
-  { texto: 'Sismos', icono: ActivityIcon },
-  { texto: 'Amenazas externas / evacuación preventiva', icono: ShieldAlertIcon },
-  { texto: 'Cortes eléctricos y fallas críticas', icono: ZapIcon },
-  { texto: 'Accidentes en áreas comunes', icono: TriangleAlertIcon },
-  { texto: 'Eventos climáticos (inundación/viento)', icono: CloudRainWindIcon },
+const EMERGENCIAS: Ficha[] = [
+  { nombre: 'Incendios (departamentos/áreas comunes)', icono: FlameIcon },
+  { nombre: 'Sismos', icono: ActivityIcon },
+  { nombre: 'Amenazas externas / evacuación preventiva', icono: ShieldAlertIcon },
+  { nombre: 'Cortes eléctricos y fallas críticas', icono: ZapIcon },
+  { nombre: 'Accidentes en áreas comunes', icono: TriangleAlertIcon },
+  { nombre: 'Eventos climáticos (inundación/viento)', icono: CloudRainWindIcon },
 ];
 
-const ficha =
-  'flex items-center gap-3 rounded-xl border border-border bg-hoja p-4 transition-colors duration-200 hover:border-black/30';
 
 export function PcQueEs({ base = '' }: { base?: string }) {
   return (
@@ -105,42 +103,36 @@ export function PcQueEs({ base = '' }: { base?: string }) {
           }
         />
 
-        <Reveal className="mt-20">
-          <h3 className="mb-6 text-center text-xl font-bold tracking-tight text-black md:text-2xl">
+        <ServiceGrid
+          className="mt-20"
+          columnas="sm:grid-cols-3 lg:grid-cols-4"
+          titulo={
+            <>
+          <h3 className="text-balance text-2xl font-bold tracking-tight text-black md:text-3xl">
             ¿Quién necesita un Plan de Emergencia y Evacuación?
           </h3>
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {QUIENES.map(({ texto, icono: Icono }) => (
-              <li key={texto} className={ficha}>
-                <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white text-svea">
-                  <Icono className="size-4" aria-hidden="true" />
-                </span>
-                <span className="text-sm font-medium leading-snug text-black">{texto}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+            </>
+          }
+          fichas={QUIENES}
+        />
 
-        <Reveal className="mt-16">
+        <ServiceGrid
+          className="mt-16"
+          columnas="sm:grid-cols-3"
+          titulo={
+            <>
           <p className="mb-3 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]">
             <span aria-hidden="true" className="h-px w-8 bg-border" />
             Cobertura integral
             <span aria-hidden="true" className="h-px w-8 bg-border" />
           </p>
-          <h3 className="mb-6 text-center text-xl font-bold tracking-tight text-black md:text-2xl">
+          <h3 className="text-balance text-2xl font-bold tracking-tight text-black md:text-3xl">
             ¿Qué tipos de emergencias cubre?
           </h3>
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {EMERGENCIAS.map(({ texto, icono: Icono }) => (
-              <li key={texto} className={ficha}>
-                <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white text-svea">
-                  <Icono className="size-4" aria-hidden="true" />
-                </span>
-                <span className="text-sm font-medium leading-snug text-black">{texto}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+            </>
+          }
+          fichas={EMERGENCIAS}
+        />
       </div>
     </section>
   );

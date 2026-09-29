@@ -18,8 +18,8 @@ import {
   WrenchIcon,
 } from 'lucide-react';
 
-import { Reveal } from '@/components/ui/reveal';
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
+import { ServiceGrid, type Ficha } from '@/components/ui/service-grid';
 
 /** Los tres párrafos del original: los dos primeros sobre qué es el informe,
  *  con la bodega; el último sobre lo que hace SVEA, con la escena industrial. */
@@ -51,48 +51,49 @@ const bloques = (): BloqueScroll[] => {
   ];
 };
 
-const QUIENES = [
+const QUIENES: Ficha[] = [
   {
-    titulo: 'Industrias y fábricas',
+    nombre: 'Industrias y fábricas',
     descripcion: 'Plantas de producción, manufactura y procesamiento industrial.',
     icono: FactoryIcon,
   },
   {
-    titulo: 'Bodegas y centros de distribución',
+    nombre: 'Bodegas y centros de distribución',
     descripcion: 'Almacenamiento, logística y distribución de productos.',
     icono: WarehouseIcon,
   },
   {
-    titulo: 'Talleres mecánicos e industriales',
+    nombre: 'Talleres mecánicos e industriales',
     descripcion: 'Talleres de reparación, mantención y servicios técnicos.',
     icono: WrenchIcon,
   },
   {
-    titulo: 'Locales comerciales',
+    nombre: 'Locales comerciales',
     descripcion: 'Tiendas, supermercados, ferreterías y comercio en general.',
     icono: StoreIcon,
   },
   {
-    titulo: 'Restaurantes y servicios de alimentación',
+    nombre: 'Restaurantes y servicios de alimentación',
     descripcion: 'Cocinas, cafeterías, panaderías y servicios de catering.',
     icono: UtensilsIcon,
   },
   {
-    titulo: 'Centros médicos y clínicas',
+    nombre: 'Centros médicos y clínicas',
     descripcion: 'Consultas, laboratorios, centros de salud y clínicas veterinarias.',
     icono: StethoscopeIcon,
   },
   {
-    titulo: 'Establecimientos educacionales',
+    nombre: 'Establecimientos educacionales',
     descripcion: 'Colegios, jardines infantiles, institutos y universidades.',
     icono: GraduationCapIcon,
   },
   {
-    titulo: 'Cualquier actividad con patente',
+    nombre: 'Cualquier actividad con patente',
     descripcion: 'Todo establecimiento que requiera patente municipal para funcionar.',
     icono: BuildingIcon,
   },
 ];
+
 
 const copete =
   'mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]';
@@ -119,36 +120,27 @@ export function IsQueEs({ base = '' }: { base?: string }) {
           }
         />
 
-        <Reveal className="mt-20">
+        <ServiceGrid
+          className="mt-20"
+          columnas="sm:grid-cols-3 lg:grid-cols-4"
+          titulo={
+            <>
           <p className={copete}>
             <span aria-hidden="true" className="h-px w-8 bg-border" />
             Aplicabilidad
             <span aria-hidden="true" className="h-px w-8 bg-border" />
           </p>
-          <h3 className="mb-3 text-center text-xl font-bold tracking-tight text-black md:text-2xl">
+          <h3 className="text-balance text-2xl font-bold tracking-tight text-black md:text-3xl">
             ¿Quién necesita este servicio?
           </h3>
-          <p className="mx-auto mb-8 max-w-2xl text-center text-base leading-relaxed text-black/65">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-base leading-relaxed text-black/65">
             El informe sanitario favorable es requerido por una amplia variedad de establecimientos que
             necesitan obtener o renovar su patente municipal.
           </p>
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {QUIENES.map(({ titulo, descripcion, icono: Icono }) => (
-              <li
-                key={titulo}
-                className="flex flex-col gap-3 rounded-xl border border-border bg-hoja p-4 transition-colors duration-200 hover:border-black/30"
-              >
-                <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white text-svea">
-                  <Icono className="size-4" aria-hidden="true" />
-                </span>
-                <span>
-                  <span className="block text-sm font-bold leading-snug text-black">{titulo}</span>
-                  <span className="mt-1 block text-sm leading-snug text-black/60">{descripcion}</span>
-                </span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+            </>
+          }
+          fichas={QUIENES}
+        />
       </div>
     </section>
   );

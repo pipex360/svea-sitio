@@ -26,8 +26,8 @@ import {
   ZapIcon,
 } from 'lucide-react';
 
-import { Reveal } from '@/components/ui/reveal';
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
+import { ServiceGrid, type Ficha } from '@/components/ui/service-grid';
 
 /** Los cuatro párrafos del original: los dos primeros sobre qué es y la
  *  normativa, con el operario en la bodega de residuos; los dos últimos sobre los riesgos y
@@ -65,28 +65,26 @@ const bloques = (): BloqueScroll[] => {
   ];
 };
 
-const QUIENES = [
-  { texto: 'Fábricas e industrias', icono: FactoryIcon },
-  { texto: 'Laboratorios', icono: FlaskConicalIcon },
-  { texto: 'Talleres mecánicos', icono: WrenchIcon },
-  { texto: 'Centros de salud', icono: HospitalIcon },
-  { texto: 'Estaciones de servicio', icono: FuelIcon },
-  { texto: 'Bodegas de químicos', icono: WarehouseIcon },
-  { texto: 'Empresas de construcción', icono: HardHatIcon },
-  { texto: 'Transportistas de RESPEL', icono: TruckIcon },
+const QUIENES: Ficha[] = [
+  { nombre: 'Fábricas e industrias', icono: FactoryIcon },
+  { nombre: 'Laboratorios', icono: FlaskConicalIcon },
+  { nombre: 'Talleres mecánicos', icono: WrenchIcon },
+  { nombre: 'Centros de salud', icono: HospitalIcon },
+  { nombre: 'Estaciones de servicio', icono: FuelIcon },
+  { nombre: 'Bodegas de químicos', icono: WarehouseIcon },
+  { nombre: 'Empresas de construcción', icono: HardHatIcon },
+  { nombre: 'Transportistas de RESPEL', icono: TruckIcon },
 ];
 
-const TIPOS = [
-  { texto: 'Inflamables (solventes, combustibles)', icono: FlameIcon },
-  { texto: 'Tóxicos (metales pesados, pesticidas)', icono: SkullIcon },
-  { texto: 'Corrosivos (ácidos, bases)', icono: TestTubeIcon },
-  { texto: 'Reactivos (oxidantes, peróxidos)', icono: ZapIcon },
-  { texto: 'Aceites usados e hidrocarburos', icono: DropletIcon },
-  { texto: 'Residuos industriales mixtos', icono: LayersIcon },
+const TIPOS: Ficha[] = [
+  { nombre: 'Inflamables (solventes, combustibles)', icono: FlameIcon },
+  { nombre: 'Tóxicos (metales pesados, pesticidas)', icono: SkullIcon },
+  { nombre: 'Corrosivos (ácidos, bases)', icono: TestTubeIcon },
+  { nombre: 'Reactivos (oxidantes, peróxidos)', icono: ZapIcon },
+  { nombre: 'Aceites usados e hidrocarburos', icono: DropletIcon },
+  { nombre: 'Residuos industriales mixtos', icono: LayersIcon },
 ];
 
-const ficha =
-  'flex items-center gap-3 rounded-xl border border-border bg-hoja p-4 transition-colors duration-200 hover:border-black/30';
 
 export function RpQueEs({ base = '' }: { base?: string }) {
   return (
@@ -105,42 +103,36 @@ export function RpQueEs({ base = '' }: { base?: string }) {
           }
         />
 
-        <Reveal className="mt-20">
-          <h3 className="mb-6 text-center text-xl font-bold tracking-tight text-black md:text-2xl">
+        <ServiceGrid
+          className="mt-20"
+          columnas="sm:grid-cols-3 lg:grid-cols-4"
+          titulo={
+            <>
+          <h3 className="text-balance text-2xl font-bold tracking-tight text-black md:text-3xl">
             ¿Quién necesita gestionar sus residuos peligrosos?
           </h3>
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {QUIENES.map(({ texto, icono: Icono }) => (
-              <li key={texto} className={ficha}>
-                <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white text-svea">
-                  <Icono className="size-4" aria-hidden="true" />
-                </span>
-                <span className="text-sm font-medium leading-snug text-black">{texto}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+            </>
+          }
+          fichas={QUIENES}
+        />
 
-        <Reveal className="mt-16">
+        <ServiceGrid
+          className="mt-16"
+          columnas="sm:grid-cols-3"
+          titulo={
+            <>
           <p className="mb-3 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]">
             <span aria-hidden="true" className="h-px w-8 bg-border" />
             Cobertura integral
             <span aria-hidden="true" className="h-px w-8 bg-border" />
           </p>
-          <h3 className="mb-6 text-center text-xl font-bold tracking-tight text-black md:text-2xl">
+          <h3 className="text-balance text-2xl font-bold tracking-tight text-black md:text-3xl">
             ¿Qué tipos de residuos peligrosos gestionamos?
           </h3>
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {TIPOS.map(({ texto, icono: Icono }) => (
-              <li key={texto} className={ficha}>
-                <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white text-svea">
-                  <Icono className="size-4" aria-hidden="true" />
-                </span>
-                <span className="text-sm font-medium leading-snug text-black">{texto}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+            </>
+          }
+          fichas={TIPOS}
+        />
       </div>
     </section>
   );

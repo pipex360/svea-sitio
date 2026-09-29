@@ -17,6 +17,7 @@ import {
   UsersIcon,
 } from 'lucide-react';
 
+import { FeaturesSectionWithHoverEffects } from '@/components/ui/feature-section-with-hover-effects';
 import { Reveal } from '@/components/ui/reveal';
 import { cn } from '@/lib/utils';
 
@@ -54,7 +55,7 @@ const INCLUYE = [
   },
 ];
 
-const PASOS = [
+export const PASOS = [
   { titulo: 'Cotización', descripcion: 'Recibe tu cotización en menos de 24 horas', icono: ClipboardCheckIcon },
   { titulo: 'Visita Técnica', descripcion: 'Inspección presencial para análisis de riesgos', icono: TruckIcon },
   { titulo: 'Análisis y Diseño', descripcion: 'Evaluación de riesgos y diseño de protocolos', icono: PencilRulerIcon },
@@ -72,7 +73,7 @@ const tarjeta = cn(
 
 export function PeServicio() {
   return (
-    <section className="bg-hoja px-6 py-20" id="servicio" aria-labelledby="titulo-servicio">
+    <section className="bg-hoja px-4 py-20" id="servicio" aria-labelledby="titulo-servicio">
       <Reveal className="mx-auto mb-12 max-w-3xl text-center">
         <p className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]">
           <span aria-hidden="true" className="h-px w-8 bg-border" />
@@ -87,46 +88,9 @@ export function PeServicio() {
         </h2>
       </Reveal>
 
-      <ul className="mx-auto grid max-w-6xl gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {INCLUYE.map(({ titulo, descripcion, icono: Icono }, i) => (
-          <Reveal as="li" key={titulo} delay={i * 0.08} className={tarjeta}>
-            <span
-              aria-hidden="true"
-              className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-svea transition-transform duration-300 ease-out group-hover/tarjeta:scale-x-100 motion-reduce:transition-none"
-            />
-            <span className="mb-3 grid size-10 place-items-center rounded-lg bg-hoja text-svea">
-              <Icono className="size-5" aria-hidden="true" />
-            </span>
-            <h3 className="text-base font-bold tracking-tight text-black">{titulo}</h3>
-            <p className="mt-1 text-sm leading-relaxed text-black/65">{descripcion}</p>
-          </Reveal>
-        ))}
-      </ul>
-
-      <Reveal className="mx-auto mt-16 max-w-6xl">
-        <h3 className="mb-6 text-center text-xl font-bold tracking-tight text-black md:text-2xl">
-          ¿Cómo obtienes tu Plan de Emergencia?
-        </h3>
-        <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:gap-3">
-          {PASOS.map(({ titulo, descripcion, icono: Icono }, i) => (
-            <li key={titulo} className="rounded-xl border border-border bg-white p-5">
-              <div className="mb-3 flex items-center gap-2.5">
-                <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-hoja text-black">
-                  <Icono className="size-4" aria-hidden="true" />
-                </span>
-                <span className="font-mono text-xs font-semibold text-black/40">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-              </div>
-              <h4 className="text-base font-bold tracking-tight text-black">{titulo}</h4>
-              <p className="mt-1 text-sm leading-relaxed text-black/60">{descripcion}</p>
-            </li>
-          ))}
-        </ol>
-        <p className="mt-6 text-center text-sm text-black/60">
-          Plan listo en 5-10 días hábiles · Cotización en menos de 24 horas
-        </p>
-      </Reveal>
+      <FeaturesSectionWithHoverEffects
+        servicios={INCLUYE.map(({ titulo, descripcion, icono }) => ({ titulo, descripcion, Icono: icono }))}
+      />
     </section>
   );
 }

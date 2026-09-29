@@ -14,13 +14,13 @@
 import '../styles/tailwind.css';
 import MedicionSitio from '../components/MedicionSitio.astro';
 import HeroHalo from '../components/HeroHalo.astro';
-import FranjaClientes from '../components/FranjaClientes.astro';
 import { precargaFoto } from '../lib/fotos';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
 import { IsFormulario } from '../components/ui/is-formulario';
 import { IsQueEs } from '../components/ui/is-que-es';
 import { IsServicio } from '../components/ui/is-servicio';
+import { IsPasos } from '../components/ui/is-pasos';
 import { IsSiguiente } from '../components/ui/is-siguiente';
 import { IsFaq, PREGUNTAS } from '../components/ui/is-faq';
 import SeoHead from '../components/SeoHead.astro';
@@ -54,15 +54,19 @@ const fuentesCSS = `
   <!-- la foto del hero es el LCP: se precarga -->
   <link rel="preload" as="image" {...precargaFoto('planta-alimentos-informe-sanitario', BASE)} />
 </head>
-<body>
+<body class="botones-planos">
   <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
-    fotos={['planta-alimentos-informe-sanitario']}
+    fotos={[
+      'planta-alimentos-informe-sanitario',
+      'linea-seleccion-tomates-informe-sanitario',
+      'tecnicos-casco-revision-calificacion-tecnica-industrial',
+    ]}
     copete="Servicios SVEA"
     titulo="Informe Sanitario Favorable ante SEREMI de Salud"
     parrafo="Gestionamos tu informe sanitario favorable ante la SEREMI de Salud, asegurando el cumplimiento normativo de tu establecimiento. Desde la evaluación hasta la obtención de la resolución, tu empresa opera de forma segura y legal."
     boton={{ texto: 'Cotiza tu Informe Sanitario', href: '#formulario-is' }}
-    principal={{ valor: 'SEREMI de Salud', texto: 'Gestión integral del permiso' }}
+    principal={{ valor: '100', texto: 'trámites revisados', contador: 'pct' }}
     secundarias={[
       { destacado: 'Evaluación completa', texto: 'Infraestructura + procesos' },
       { destacado: 'Cotización en 24 hrs', texto: 'Automática por email' },
@@ -70,16 +74,14 @@ const fuentesCSS = `
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-is" client:idle />
 
-  <!-- clientes: la misma franja de la portada, justo después del hero -->
-  <FranjaClientes base={BASE} />
-
   <div class="svea-nuevo">
     <IsQueEs base={BASE} client:idle />
     <IsServicio client:idle />
+    <IsPasos base={BASE} client:idle />
     <IsSiguiente base={BASE} client:idle />
     <IsFaq />
-    <IsFormulario copia={COPIA} client:idle />
     <Cta69 destino="#formulario-is" client:idle />
+    <IsFormulario copia={COPIA} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 

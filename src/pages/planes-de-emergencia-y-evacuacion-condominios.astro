@@ -12,13 +12,13 @@
 import '../styles/tailwind.css';
 import MedicionSitio from '../components/MedicionSitio.astro';
 import HeroHalo from '../components/HeroHalo.astro';
-import FranjaClientes from '../components/FranjaClientes.astro';
 import { precargaFoto } from '../lib/fotos';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
 import { PcFormulario } from '../components/ui/pc-formulario';
 import { PcQueEs } from '../components/ui/pc-que-es';
 import { PcServicio } from '../components/ui/pc-servicio';
+import { PcPasos } from '../components/ui/pc-pasos';
 import { PcSiguiente } from '../components/ui/pc-siguiente';
 import { PcFaq, PREGUNTAS } from '../components/ui/pc-faq';
 import SeoHead from '../components/SeoHead.astro';
@@ -52,32 +52,35 @@ const fuentesCSS = `
   <!-- la foto del hero es el LCP: se precarga -->
   <link rel="preload" as="image" {...precargaFoto('edificios-providencia-plan-emergencia-condominio', BASE)} />
 </head>
-<body>
+<body class="botones-planos">
   <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
-    fotos={['edificios-providencia-plan-emergencia-condominio']}
+    fotos={[
+      'edificios-providencia-plan-emergencia-condominio',
+      'edificio-condominio-plan-de-emergencia',
+      'edificios-santiago-cordillera-nevada-plan-emergencia-condominio',
+    ]}
     copete="Servicios SVEA"
     titulo="Plan de Emergencia y Evacuación para Condominios"
     parrafo="Protege a tus residentes, define roles claros para Comité y Administración y asegura una evacuación eficiente. Elaboramos planes personalizados según la realidad del condominio, con foco en prevención, orden y cumplimiento normativo."
     boton={{ texto: 'Cotiza tu Plan para Condominio', href: '#formulario-pc' }}
-    principal={{ valor: '5-10', texto: 'días hábiles · Plan completo entregado' }}
+    principal={{ valor: '100', texto: 'trámites revisados', contador: 'pct' }}
     secundarias={[
+      { destacado: '5-10 días hábiles', texto: 'plan completo entregado' },
       { destacado: 'Enfoque 100% aplicable', texto: 'a la realidad del condominio' },
       { destacado: 'Cotización en 24 hrs', texto: 'automática por email' },
     ]}
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-pc" client:idle />
 
-  <!-- clientes: la misma franja de la portada, justo después del hero -->
-  <FranjaClientes base={BASE} />
-
   <div class="svea-nuevo">
     <PcQueEs base={BASE} client:idle />
     <PcServicio client:idle />
+    <PcPasos base={BASE} client:idle />
     <PcSiguiente base={BASE} client:idle />
     <PcFaq />
-    <PcFormulario copia={COPIA} client:idle />
     <Cta69 destino="#formulario-pc" client:idle />
+    <PcFormulario copia={COPIA} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 

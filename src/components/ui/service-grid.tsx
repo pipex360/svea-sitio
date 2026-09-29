@@ -33,6 +33,8 @@ import { cn } from '@/lib/utils';
 export type Ficha = {
   nombre: string;
   icono: React.ComponentType<{ className?: string }>;
+  /** una línea bajo el nombre, si la ficha la trae */
+  descripcion?: string;
 };
 
 export function ServiceGrid({
@@ -64,7 +66,7 @@ export function ServiceGrid({
       )}
 
       <ul className={cn('grid grid-cols-2 gap-6 md:gap-8', columnas)}>
-        {fichas.map(({ nombre, icono: Icono }, i) => (
+        {fichas.map(({ nombre, icono: Icono, descripcion }, i) => (
           <Reveal as="li" key={nombre} delay={i * 0.06}>
             <motion.div
               whileHover={quieto ? undefined : { scale: 1.05, y: -5 }}
@@ -75,6 +77,7 @@ export function ServiceGrid({
                 <Icono className="size-10 sm:size-12" aria-hidden="true" />
               </span>
               <span className="text-sm font-medium leading-snug text-black">{nombre}</span>
+              {descripcion && <span className="-mt-1 text-sm leading-snug text-black/60">{descripcion}</span>}
             </motion.div>
           </Reveal>
         ))}

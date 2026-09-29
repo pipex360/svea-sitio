@@ -10,13 +10,13 @@
 import '../styles/tailwind.css';
 import MedicionSitio from '../components/MedicionSitio.astro';
 import HeroHalo from '../components/HeroHalo.astro';
-import FranjaClientes from '../components/FranjaClientes.astro';
 import { precargaFoto } from '../lib/fotos';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
 import { RpFormulario } from '../components/ui/rp-formulario';
 import { RpQueEs } from '../components/ui/rp-que-es';
 import { RpServicio } from '../components/ui/rp-servicio';
+import { RpPasos } from '../components/ui/rp-pasos';
 import { RpSiguiente } from '../components/ui/rp-siguiente';
 import { RpFaq, PREGUNTAS } from '../components/ui/rp-faq';
 import SeoHead from '../components/SeoHead.astro';
@@ -50,15 +50,19 @@ const fuentesCSS = `
   <!-- la foto del hero es el LCP: se precarga -->
   <link rel="preload" as="image" {...precargaFoto('tambores-residuos-peligrosos-bodega', BASE)} />
 </head>
-<body>
+<body class="botones-planos">
   <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
-    fotos={['tambores-residuos-peligrosos-bodega']}
+    fotos={[
+      'tambores-residuos-peligrosos-bodega',
+      'camion-cisterna-inflamable-transporte-residuos-peligrosos',
+      'operarios-grua-horquilla-bodega-calificacion-tecnica',
+    ]}
     copete="Servicios SVEA"
     titulo="Manejo de Sustancias y Residuos Peligrosos"
     parrafo="Gestión integral conforme a los Decretos 43/2015 y 148/2003 del MINSAL. Desde el almacenamiento seguro hasta el transporte y disposición final, aseguramos el cumplimiento normativo en cada etapa, protegiendo el medio ambiente y la salud pública."
     boton={{ texto: 'Cotiza tu Informe de Residuos', href: '#formulario-rp' }}
-    principal={{ valor: 'D.S. 43 y D.S. 148', texto: 'Cumplimiento MINSAL' }}
+    principal={{ valor: '100', texto: 'trámites revisados', contador: 'pct' }}
     secundarias={[
       { destacado: 'Informe técnico completo', texto: 'personalizado a tu operación' },
       { destacado: 'Cotización en 24 hrs', texto: 'automática por email' },
@@ -66,16 +70,14 @@ const fuentesCSS = `
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-rp" client:idle />
 
-  <!-- clientes: la misma franja de la portada, justo después del hero -->
-  <FranjaClientes base={BASE} />
-
   <div class="svea-nuevo">
     <RpQueEs base={BASE} client:idle />
     <RpServicio client:idle />
+    <RpPasos base={BASE} client:idle />
     <RpSiguiente base={BASE} client:idle />
     <RpFaq />
-    <RpFormulario copia={COPIA} client:idle />
     <Cta69 destino="#formulario-rp" client:idle />
+    <RpFormulario copia={COPIA} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 

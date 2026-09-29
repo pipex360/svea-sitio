@@ -22,8 +22,8 @@ import {
   WrenchIcon,
 } from 'lucide-react';
 
-import { Reveal } from '@/components/ui/reveal';
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
+import { ServiceGrid, type Ficha } from '@/components/ui/service-grid';
 
 /** Los cuatro párrafos del original: los dos primeros sobre qué es el
  *  permiso, con el camión tolva descargando; los dos últimos sobre el riesgo de
@@ -61,28 +61,26 @@ const bloques = (): BloqueScroll[] => {
   ];
 };
 
-const QUIENES = [
-  { texto: 'Fábricas e industrias', icono: FactoryIcon },
-  { texto: 'Centros de almacenamiento', icono: WarehouseIcon },
-  { texto: 'Talleres industriales', icono: WrenchIcon },
-  { texto: 'Empresas de construcción', icono: BuildingIcon },
-  { texto: 'Empresas de transporte', icono: TruckIcon },
-  { texto: 'Centros de salud', icono: HospitalIcon },
-  { texto: 'Estaciones de servicio', icono: FuelIcon },
-  { texto: 'Plantas de reciclaje', icono: RecycleIcon },
+const QUIENES: Ficha[] = [
+  { nombre: 'Fábricas e industrias', icono: FactoryIcon },
+  { nombre: 'Centros de almacenamiento', icono: WarehouseIcon },
+  { nombre: 'Talleres industriales', icono: WrenchIcon },
+  { nombre: 'Empresas de construcción', icono: BuildingIcon },
+  { nombre: 'Empresas de transporte', icono: TruckIcon },
+  { nombre: 'Centros de salud', icono: HospitalIcon },
+  { nombre: 'Estaciones de servicio', icono: FuelIcon },
+  { nombre: 'Plantas de reciclaje', icono: RecycleIcon },
 ];
 
-const TIPOS = [
-  { texto: 'Residuos peligrosos (RESPEL)', icono: TriangleAlertIcon },
-  { texto: 'Residuos industriales no peligrosos', icono: Trash2Icon },
-  { texto: 'Aceites usados e hidrocarburos', icono: DropletIcon },
-  { texto: 'Residuos químicos y solventes', icono: FlaskConicalIcon },
-  { texto: 'Escombros y residuos de construcción', icono: HardHatIcon },
-  { texto: 'Residuos hospitalarios y biomédicos', icono: HospitalIcon },
+const TIPOS: Ficha[] = [
+  { nombre: 'Residuos peligrosos (RESPEL)', icono: TriangleAlertIcon },
+  { nombre: 'Residuos industriales no peligrosos', icono: Trash2Icon },
+  { nombre: 'Aceites usados e hidrocarburos', icono: DropletIcon },
+  { nombre: 'Residuos químicos y solventes', icono: FlaskConicalIcon },
+  { nombre: 'Escombros y residuos de construcción', icono: HardHatIcon },
+  { nombre: 'Residuos hospitalarios y biomédicos', icono: HospitalIcon },
 ];
 
-const item =
-  'flex items-center gap-3 rounded-xl border border-border bg-hoja p-4 transition-colors duration-200 hover:border-black/30';
 
 export function TrQueEs({ base = '' }: { base?: string }) {
   return (
@@ -101,42 +99,36 @@ export function TrQueEs({ base = '' }: { base?: string }) {
           }
         />
 
-        <Reveal className="mt-20">
-          <h3 className="mb-6 text-center text-xl font-bold tracking-tight text-black md:text-2xl">
+        <ServiceGrid
+          className="mt-20"
+          columnas="sm:grid-cols-3 lg:grid-cols-4"
+          titulo={
+            <>
+          <h3 className="text-balance text-2xl font-bold tracking-tight text-black md:text-3xl">
             ¿Quién necesita la autorización de transporte?
           </h3>
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {QUIENES.map(({ texto, icono: Icono }) => (
-              <li key={texto} className={item}>
-                <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white text-svea">
-                  <Icono className="size-4" aria-hidden="true" />
-                </span>
-                <span className="text-sm font-medium leading-snug text-black">{texto}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+            </>
+          }
+          fichas={QUIENES}
+        />
 
-        <Reveal className="mt-16">
+        <ServiceGrid
+          className="mt-16"
+          columnas="sm:grid-cols-3"
+          titulo={
+            <>
           <p className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/60 md:text-[13px]">
             <span aria-hidden="true" className="h-px w-8 bg-border" />
             Cobertura integral
             <span aria-hidden="true" className="h-px w-8 bg-border" />
           </p>
-          <h3 className="mb-6 text-center text-xl font-bold tracking-tight text-black md:text-2xl">
+          <h3 className="text-balance text-2xl font-bold tracking-tight text-black md:text-3xl">
             ¿Qué tipos de residuos cubrimos?
           </h3>
-          <ul className="mx-auto grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {TIPOS.map(({ texto, icono: Icono }) => (
-              <li key={texto} className={item}>
-                <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white text-svea">
-                  <Icono className="size-4" aria-hidden="true" />
-                </span>
-                <span className="text-sm font-medium leading-snug text-black">{texto}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+            </>
+          }
+          fichas={TIPOS}
+        />
       </div>
     </section>
   );
