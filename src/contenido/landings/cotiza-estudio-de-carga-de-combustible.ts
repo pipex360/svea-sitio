@@ -258,8 +258,8 @@ const landing: Landing = {
         "texto": "En menos de 24h"
       },
       {
-        "titulo": "Inspección",
-        "texto": "Visita a tu instalación"
+        "titulo": "Levantamiento",
+        "texto": "Planos e inventario"
       },
       {
         "titulo": "Cálculo",

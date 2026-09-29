@@ -79,7 +79,7 @@ const COLUMNAS: readonly Columna[] = [
 
 const FILAS: readonly { label: string; cells: readonly [Celda, Celda, Celda] }[] = [
   { label: 'Cotización en menos de 24 horas', cells: [false, 'A veces', true] },
-  { label: 'La propuesta llega por email, automáticamente', cells: [false, false, true] },
+  { label: 'La propuesta llega por email con plazo y valor', cells: [false, false, true] },
   { label: 'Seguimiento del trámite por WhatsApp', cells: [false, false, true] },
   { label: 'Elaboración de la documentación técnica', cells: [false, true, true] },
   { label: 'Informe técnico listo en', cells: ['Semanas', 'A veces', '3-5 días hábiles'] },
@@ -122,11 +122,11 @@ export function Comparison02({ base = '' }: { base?: string }) {
             id="titulo-diferencia"
             className="mb-4 text-balance text-3xl font-medium tracking-tight text-black md:text-5xl"
           >
-            Cotización Automática y <span className="font-black text-svea">Seguimiento Digital</span>
+            Cotización en 24 Horas y <span className="font-black text-svea">Seguimiento Digital</span>
           </h2>
           <TextoScroll
             className="mx-auto max-w-2xl text-base leading-relaxed text-black/75 md:text-lg"
-            texto="Somos la única consultora ambiental en Chile con cotización automática en menos de 24 horas y seguimiento digital de tu trámite. Sin llamadas de seguimiento, sin incertidumbre."
+            texto="Cotización en menos de 24 horas y seguimiento digital de tu trámite. Sin llamadas de seguimiento, sin incertidumbre."
           />
         </Reveal>
 

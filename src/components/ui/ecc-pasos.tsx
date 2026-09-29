@@ -18,11 +18,11 @@ const PASOS = [
     alt: 'Firma de la solicitud de cotización del Estudio de Carga de Combustible',
   },
   {
-    id: 'visita',
-    titulo: 'Visita Técnica',
-    descripcion: 'Inspección presencial para identificar materiales combustibles',
+    id: 'levantamiento',
+    titulo: 'Levantamiento',
+    descripcion: 'Revisamos planos e inventario para identificar los materiales combustibles',
     foto: 'inspeccion-bodega-calificacion-tecnica-industrial',
-    alt: 'Profesional inspecciona una bodega e identifica los materiales combustibles',
+    alt: 'Profesional revisa una bodega e identifica los materiales combustibles',
   },
   {
     id: 'calculo',

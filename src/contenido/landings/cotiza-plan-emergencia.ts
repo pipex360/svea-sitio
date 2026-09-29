@@ -221,7 +221,7 @@ const landing: Landing = {
   "incluye": {
     "copete": "Servicio integral",
     "titulo": "¿Qué incluye <em>nuestro servicio</em>?",
-    "bajada": "Desde la visita técnica hasta la aprobación final, con tu plan de evacuación incluido. Sin complicaciones.",
+    "bajada": "Desde la visita técnica hasta la revisión de Bomberos, con tu plan de evacuación incluido. Sin complicaciones.",
     "items": [
       {
         "icono": "<circle cx=\"11\" cy=\"11\" r=\"8\"/><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"/>",
