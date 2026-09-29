@@ -20,6 +20,8 @@
 
 import { useEffect, useState } from 'react';
 
+import { PhoneIcon } from 'lucide-react';
+
 import { MenuMovil } from '@/components/ui/menu-movil';
 import MenuSvea from '@/components/ui/navigation-menu-06';
 import { cn } from '@/lib/utils';
@@ -52,6 +54,15 @@ export function BarraPegajosa({ base = '', cotizar }: { base?: string; cotizar?:
         </a>
         <MenuSvea base={base} />
         <div className="flex items-center gap-3.5">
+          {/* sólo el icono de llamar, sin el número (29-sep) */}
+          <a
+            href="tel:+56929947924"
+            aria-label="Llamar a SVEA Consultores"
+            title="Llamar a SVEA Consultores"
+            className="grid size-11 place-items-center rounded-full text-black no-underline transition-colors hover:bg-black/5"
+          >
+            <PhoneIcon className="size-[21px]" aria-hidden="true" />
+          </a>
           {/* en el teléfono, el ☰; el botón de cotizar ya está en la barra de abajo */}
           <a className="btn-flecha chica max-md:hidden" href={destino} style={{ gap: 0 }}>
             <span>Solicitar cotización</span>

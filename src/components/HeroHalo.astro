@@ -74,6 +74,8 @@ const {
       <MenuSvea base={BASE} client:idle />
 
       <div class="halo-cab-acciones">
+        <!-- sólo el icono de llamar, sin el número (29-sep) -->
+        <a class="halo-llamar" href="tel:+56929947924" aria-label="Llamar a SVEA Consultores" title="Llamar a SVEA Consultores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg></a>
         <a class="btn-flecha max-md:hidden" href={`${BASE}/#form-home`} style="gap:0"><span>Solicitar cotización</span></a>
         <MenuMovil base={BASE} client:idle />
       </div>
@@ -144,8 +146,9 @@ const {
     font-size:15px;font-weight:500;color:#000;text-decoration:none;transition:color .2s}
   .halo-tel:hover{color:#0e7a3c}
   .halo-tel svg{width:17px;height:17px;color:rgba(0,0,0,.5)}
-  .halo-llamar{display:grid;place-items:center;width:44px;height:44px;color:#000;text-decoration:none}
+  .halo-llamar{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;transition:background .2s;color:#000;text-decoration:none}
   .halo-llamar svg{width:21px;height:21px}
+  .halo-llamar:hover{background:rgba(0,0,0,.06)}
   .halo-marca img{height:40px;width:auto;display:block}
 
   .halo-seccion{flex:1;display:flex;align-items:flex-end;padding:0}
