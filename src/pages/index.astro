@@ -100,6 +100,11 @@ const fuentesCSS = `
     <FeaturesSectionWithHoverEffects base={BASE} client:idle />
   </section>
 
+  <!-- Cómo trabajamos: fondo negro y los cinco pasos en franjas de color con foto -->
+  <div class="svea-nuevo">
+    <Proceso base={BASE} client:idle />
+  </div>
+
   <!-- Cumplimiento: rejilla bento con las cifras y el cierre -->
   <section class="svea-nuevo bg-white px-6 py-20" id="nosotros" aria-labelledby="titulo-nosotros">
     <Reveal className="mx-auto mb-14 max-w-3xl text-center" client:idle>
@@ -122,11 +127,6 @@ const fuentesCSS = `
     </Reveal>
     <CumplimientoBento client:visible />
   </section>
-
-  <!-- Cómo trabajamos: fondo negro y los cinco pasos en franjas de color con foto -->
-  <div class="svea-nuevo">
-    <Proceso base={BASE} client:idle />
-  </div>
 
   <!-- Cierre de la sección: franja completa con la palabra de fondo -->
   <div class="svea-nuevo">
