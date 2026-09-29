@@ -111,7 +111,6 @@ export function PasoAPaso({
   parrafo,
   linea,
   pasos,
-  children,
 }: {
   base?: string;
   /** el id de la sección; el del titular es `titulo-<id>` */
@@ -121,8 +120,6 @@ export function PasoAPaso({
   parrafo?: string;
   linea?: string;
   pasos: PasoFranja[];
-  /** lo que va debajo de las tarjetas, dentro de la misma sección */
-  children?: React.ReactNode;
 }) {
   const fila = useRef<HTMLOListElement>(null);
   const mover = (lado: 1 | -1) => {
@@ -229,7 +226,6 @@ export function PasoAPaso({
             );
           })}
         </ol>
-        {children}
       </div>
     </section>
   );
