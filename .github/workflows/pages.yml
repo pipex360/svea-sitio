@@ -1,44 +1,32 @@
-name: Publicar sitio
+name: Control de calidad
+
+# El repositorio es privado y GitHub Pages no se publica desde aquí: el sitio
+# va al hosting de SVEA (ver LANZAMIENTO.md). Esta acción sólo comprueba, en
+# cada cambio, que la copia de trabajo y el build de producción pasen los
+# controles del repo.
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
 
 jobs:
-  construir:
+  controles:
     runs-on: ubuntu-latest
-    env:
-      BASE_URL: /svea-sitio
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm install
-      - run: npm run build
-      - name: Control de calidad
-        run: node scripts/verificar.mjs
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-  publicar:
-    needs: construir
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Copia de trabajo
+        run: npm run build && node scripts/verificar.mjs
+      - name: Build de producción
+        run: |
+          SVEA_PRODUCCION=1 node scripts/preparar-original.mjs
+          SVEA_PRODUCCION=1 npx astro build --outDir /tmp/svea-prod
+          node scripts/verificar-produccion.mjs /tmp/svea-prod
