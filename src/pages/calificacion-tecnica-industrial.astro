@@ -44,6 +44,7 @@ import { CtiPasos } from '../components/ui/cti-pasos';
 import { CtiSiguiente } from '../components/ui/cti-siguiente';
 import { CtiFaq, PREGUNTAS } from '../components/ui/cti-faq';
 import SeoHead from '../components/SeoHead.astro';
+import FranjaClientes from '../components/FranjaClientes.astro';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
@@ -94,24 +95,27 @@ const fuentesCSS = `
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-cti" client:idle />
 
+  <!-- clientes: la misma franja de la portada, justo después del hero -->
+  <FranjaClientes base={BASE} />
+
   <div class="svea-nuevo">
     <CtiQueEs base={BASE} client:idle />
     <CtiServicio client:idle />
     <CtiPasos base={BASE} client:idle />
     <CtiSiguiente base={BASE} client:idle />
     <CtiFaq />
+    <CtiFormulario copia={COPIA} client:idle />
     <Cta69
       badge={{ label: 'Último paso' }}
       heading="Regulariza tu actividad hoy"
       button={{ label: 'Cotiza tu CTI ahora', href: '#formulario-cti' }}
       labels={{
         marqueePhrase: 'Calificación',
-        note: 'Obtén tu Calificación Técnica Industrial con respaldo profesional. Cotización en menos de 24 horas, informe en 3-5 días hábiles, 100% tasa de aprobación.',
+        note: 'Obtén tu Calificación Técnica Industrial con respaldo profesional. Cotización en menos de 24 horas, informe en 3-5 días hábiles.',
         footnote: 'WhatsApp directo: +56 9 2994 7924',
       }}
       client:idle
     />
-    <CtiFormulario copia={COPIA} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 

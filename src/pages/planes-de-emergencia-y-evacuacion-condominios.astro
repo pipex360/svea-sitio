@@ -22,6 +22,7 @@ import { PcPasos } from '../components/ui/pc-pasos';
 import { PcSiguiente } from '../components/ui/pc-siguiente';
 import { PcFaq, PREGUNTAS } from '../components/ui/pc-faq';
 import SeoHead from '../components/SeoHead.astro';
+import FranjaClientes from '../components/FranjaClientes.astro';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
@@ -72,14 +73,17 @@ const fuentesCSS = `
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-pc" client:idle />
 
+  <!-- clientes: la misma franja de la portada, justo después del hero -->
+  <FranjaClientes base={BASE} />
+
   <div class="svea-nuevo">
     <PcQueEs base={BASE} client:idle />
     <PcServicio client:idle />
     <PcPasos base={BASE} client:idle />
     <PcSiguiente base={BASE} client:idle />
     <PcFaq />
-    <Cta69 destino="#formulario-pc" client:idle />
     <PcFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-pc" client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 

@@ -21,6 +21,7 @@ import { EccPasos } from '../components/ui/ecc-pasos';
 import { EccSiguiente } from '../components/ui/ecc-siguiente';
 import { EccFaq, PREGUNTAS } from '../components/ui/ecc-faq';
 import SeoHead from '../components/SeoHead.astro';
+import FranjaClientes from '../components/FranjaClientes.astro';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
@@ -71,14 +72,17 @@ const fuentesCSS = `
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-ecc" client:idle />
 
+  <!-- clientes: la misma franja de la portada, justo después del hero -->
+  <FranjaClientes base={BASE} />
+
   <div class="svea-nuevo">
     <EccQueEs base={BASE} client:idle />
     <EccServicio client:idle />
     <EccPasos base={BASE} client:idle />
     <EccSiguiente base={BASE} client:idle />
     <EccFaq />
-    <Cta69 destino="#formulario-ecc" client:idle />
     <EccFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-ecc" client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 

@@ -28,6 +28,7 @@ import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import { Reveal } from '../components/ui/reveal';
 import Foto from '../components/Foto.astro';
+import FranjaClientes from '../components/FranjaClientes.astro';
 import { TarjetaFoto } from '../components/ui/tarjeta-foto';
 import { BookOpenIcon } from 'lucide-react';
 import paginas from '../data/paginas.json';
@@ -68,7 +69,7 @@ const fuentesCSS = `
       <BarraLectura cotizar={COTIZAR} />
       <!-- 29-sep: la portada del blog con foto, como las guías y los servicios -->
       <div class="blog-cab-foto" aria-hidden="true">
-        <Foto nombre="tecnicos-casco-revision-calificacion-tecnica-industrial" alt="" tamano="hero" prioridad />
+        <Foto nombre="tecnicos-casco-revision-calificacion-tecnica-industrial" alt="" tamano="hero" diferida={false} />
       </div>
       <div class="blog-cabecera">
         <nav class="blog-migas" aria-label="Migas de pan">
@@ -92,6 +93,9 @@ const fuentesCSS = `
 
     <BarraPegajosa base={BASE} cotizar={COTIZAR} client:idle />
 
+    <!-- clientes: la misma franja de la portada y los servicios -->
+    <FranjaClientes base={BASE} />
+
     <main class="blog-cuerpo">
       <div class="blog-ancho">
         <p class="blog-eyebrow">Nuestras Guías</p>
@@ -104,14 +108,10 @@ const fuentesCSS = `
               <h2 id={`tema-${t.id}`}>{t.nombre}</h2>
               <p>{t.bajada}</p>
             </div>
+            <Reveal client:idle>
             <ul class="blog-rejilla">
               {t.guias.map((g, i) => (
-                <Reveal
-                  as="li"
-                  className={t.guias.length % 3 === 2 && i === 0 ? 'blog-destacada h-full' : 'h-full'}
-                  delay={0.05 * (i % 3)}
-                  client:idle
-                >
+                <li class:list={[t.guias.length % 3 === 2 && i === 0 ? 'blog-destacada' : '', 'h-full']}>
                   <TarjetaFoto
                     href={`${BASE}/${g.slug}/`}
                     base={BASE}
@@ -126,9 +126,10 @@ const fuentesCSS = `
                   >
                     {g.bajada}
                   </TarjetaFoto>
-                </Reveal>
+                </li>
               ))}
             </ul>
+            </Reveal>
           </section>
         ))}
       </div>

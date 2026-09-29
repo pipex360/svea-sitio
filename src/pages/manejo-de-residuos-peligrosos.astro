@@ -20,6 +20,7 @@ import { RpPasos } from '../components/ui/rp-pasos';
 import { RpSiguiente } from '../components/ui/rp-siguiente';
 import { RpFaq, PREGUNTAS } from '../components/ui/rp-faq';
 import SeoHead from '../components/SeoHead.astro';
+import FranjaClientes from '../components/FranjaClientes.astro';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
@@ -70,14 +71,17 @@ const fuentesCSS = `
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-rp" client:idle />
 
+  <!-- clientes: la misma franja de la portada, justo después del hero -->
+  <FranjaClientes base={BASE} />
+
   <div class="svea-nuevo">
     <RpQueEs base={BASE} client:idle />
     <RpServicio client:idle />
     <RpPasos base={BASE} client:idle />
     <RpSiguiente base={BASE} client:idle />
     <RpFaq />
-    <Cta69 destino="#formulario-rp" client:idle />
     <RpFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-rp" client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 

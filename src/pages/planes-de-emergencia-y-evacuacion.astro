@@ -18,6 +18,7 @@ import { PePasos } from '../components/ui/pe-pasos';
 import { PeSiguiente } from '../components/ui/pe-siguiente';
 import { PeFaq, PREGUNTAS } from '../components/ui/pe-faq';
 import SeoHead from '../components/SeoHead.astro';
+import FranjaClientes from '../components/FranjaClientes.astro';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
@@ -68,14 +69,17 @@ const fuentesCSS = `
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-pe" client:idle />
 
+  <!-- clientes: la misma franja de la portada, justo después del hero -->
+  <FranjaClientes base={BASE} />
+
   <div class="svea-nuevo">
     <PeQueEs base={BASE} client:idle />
     <PeServicio client:idle />
     <PePasos base={BASE} client:idle />
     <PeSiguiente base={BASE} client:idle />
     <PeFaq />
-    <Cta69 destino="#formulario-pe" client:idle />
     <PeFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-pe" client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 

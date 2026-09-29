@@ -24,6 +24,7 @@ import { IsPasos } from '../components/ui/is-pasos';
 import { IsSiguiente } from '../components/ui/is-siguiente';
 import { IsFaq, PREGUNTAS } from '../components/ui/is-faq';
 import SeoHead from '../components/SeoHead.astro';
+import FranjaClientes from '../components/FranjaClientes.astro';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
@@ -74,14 +75,17 @@ const fuentesCSS = `
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-is" client:idle />
 
+  <!-- clientes: la misma franja de la portada, justo después del hero -->
+  <FranjaClientes base={BASE} />
+
   <div class="svea-nuevo">
     <IsQueEs base={BASE} client:idle />
     <IsServicio client:idle />
     <IsPasos base={BASE} client:idle />
     <IsSiguiente base={BASE} client:idle />
     <IsFaq />
-    <Cta69 destino="#formulario-is" client:idle />
     <IsFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-is" client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 

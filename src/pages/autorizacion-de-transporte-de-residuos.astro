@@ -27,6 +27,7 @@ import { TrPasos } from '../components/ui/tr-pasos';
 import { TrSiguiente } from '../components/ui/tr-siguiente';
 import { TrFaq, PREGUNTAS } from '../components/ui/tr-faq';
 import SeoHead from '../components/SeoHead.astro';
+import FranjaClientes from '../components/FranjaClientes.astro';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
@@ -77,14 +78,17 @@ const fuentesCSS = `
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-tr" client:idle />
 
+  <!-- clientes: la misma franja de la portada, justo después del hero -->
+  <FranjaClientes base={BASE} />
+
   <div class="svea-nuevo">
     <TrQueEs base={BASE} client:idle />
     <TrServicio client:idle />
     <TrPasos base={BASE} client:idle />
     <TrSiguiente base={BASE} client:idle />
     <TrFaq />
-    <Cta69 destino="#formulario-tr" client:idle />
     <TrFormulario copia={COPIA} client:idle />
+    <Cta69 destino="#formulario-tr" client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 
