@@ -570,14 +570,23 @@ const fuentesCSS = `
   .art .art-cuerpo .checklist>li::before{content:"";position:absolute;left:0;top:15px;width:24px;height:24px;border-radius:50%;
     background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/14px no-repeat}
 
-  /* pasos */
-  .art .art-cuerpo .process-steps{counter-reset:paso;margin:1.6em 0;position:relative}
-  .art .art-cuerpo .process-steps>li{counter-increment:paso;position:relative;padding:0 0 26px 60px}
-  .art .art-cuerpo .process-steps>li::before{content:counter(paso);position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;
-    display:grid;place-items:center;background:#0e7a3c;color:#fff;font:600 16px/1 Manrope,Inter,sans-serif}
-  .art .art-cuerpo .process-steps>li:not(:last-child)::after{content:"";position:absolute;left:19.5px;top:46px;bottom:6px;width:1px;background:var(--borde)}
-  .art .art-cuerpo .process-steps h4,.art .art-cuerpo .process-steps h3.art-h4{padding-top:8px}
-  .art .art-cuerpo .step-content p{margin:0}
+  /* pasos (29-sep): cada paso es una franja con su color, como el paso a
+     paso de los servicios: «Paso 01» arriba, el título grande y el texto */
+  .art .art-cuerpo .process-steps{counter-reset:paso;display:grid;gap:12px;margin:1.6em 0;padding:0;list-style:none}
+  .art .art-cuerpo .process-steps>li{counter-increment:paso;position:relative;margin:0;padding:22px 24px 22px 28px;border-radius:16px;
+    background:var(--f,#0e7a3c);color:rgba(255,255,255,.88);overflow:hidden}
+  .art .art-cuerpo .process-steps>li:nth-child(5n+1){--f:#0e7a3c}
+  .art .art-cuerpo .process-steps>li:nth-child(5n+2){--f:#6bbf3b;color:rgba(0,0,0,.78)}
+  .art .art-cuerpo .process-steps>li:nth-child(5n+3){--f:#2b7a8c}
+  .art .art-cuerpo .process-steps>li:nth-child(5n+4){--f:#d08a2e;color:rgba(0,0,0,.78)}
+  .art .art-cuerpo .process-steps>li:nth-child(5n+5){--f:#e9efe6;color:rgba(0,0,0,.78)}
+  .art .art-cuerpo .process-steps>li::before{content:"Paso " counter(paso, decimal-leading-zero);display:block;margin-bottom:10px;
+    font:500 14px/1 Inter,sans-serif;opacity:.8}
+  .art .art-cuerpo .process-steps h4,.art .art-cuerpo .process-steps h3.art-h4{margin:0 0 8px;padding:0;color:inherit;
+    font:500 clamp(22px,2.4vw,28px)/1.15 Manrope,Inter,sans-serif;letter-spacing:-.03em}
+  .art .art-cuerpo .process-steps strong{color:inherit}
+  .art .art-cuerpo .process-steps a{color:inherit;text-decoration:underline}
+  .art .art-cuerpo .step-content p{margin:0;font-size:16.5px;line-height:1.6}
 
   /* destacados */
   .art .art-cuerpo .callout{display:flex;gap:16px;margin:1.8em 0;padding:20px 22px;border-radius:14px;border:1px solid;
@@ -598,16 +607,32 @@ const fuentesCSS = `
   .art .art-cuerpo .highlight-box a{color:#95d5b2}
   .art .art-cuerpo .highlight-box p:last-child{margin-bottom:0}
 
-  .art .art-cuerpo .error-item{position:relative;margin:14px 0;padding:18px 20px 18px 56px;border:1px solid var(--borde);border-radius:14px;background:#fff}
-  .art .art-cuerpo .error-item::before{content:"";position:absolute;left:18px;top:20px;width:24px;height:24px;border-radius:50%;
-    background:#fdecec url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b91c1c' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E") center/12px no-repeat}
+  /* errores (29-sep): tarjeta blanca con la franja roja a la izquierda y la cruz */
+  .art .art-cuerpo .error-item{position:relative;margin:12px 0;padding:20px 22px 20px 64px;border:1px solid var(--borde);border-radius:16px;background:#fff;
+    overflow:hidden;box-shadow:0 10px 24px -18px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s,border-color .2s}
+  .art .art-cuerpo .error-item::after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#dc2626}
+  .art .art-cuerpo .error-item:hover{transform:translateY(-2px);border-color:rgba(0,0,0,.2);box-shadow:0 18px 36px -20px rgba(0,0,0,.3)}
+  .art .art-cuerpo .error-item::before{content:"";position:absolute;left:20px;top:21px;width:28px;height:28px;border-radius:50%;
+    background:#fdecec url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b91c1c' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E") center/13px no-repeat}
+  .art .art-cuerpo .error-item h4,.art .art-cuerpo .error-item h3.art-h4{margin:0 0 6px;padding:0}
   .art .art-cuerpo .error-item p{margin:0;font-size:16.5px;line-height:1.65}
 
-  .art .art-cuerpo .emergency-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:1.6em 0}
-  .art .art-cuerpo .emergency-card{padding:20px;border:1px solid var(--borde);border-radius:14px;background:var(--hoja)}
-  .art .art-cuerpo .emergency-card-letter{display:grid;place-items:center;width:36px;height:36px;margin-bottom:12px;border-radius:10px;
-    background:var(--letra,var(--verde));color:#fff;font:700 16px/1 Manrope,Inter,sans-serif}
-  .art .art-cuerpo .emergency-card p{margin:0;font-size:15.5px;line-height:1.6}
+  /* categorías y tipos (29-sep): tarjeta blanca con el color de su letra en
+     la franja de arriba y un tinte suave; la letra en un sello grande */
+  .art .art-cuerpo .emergency-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:1.6em 0}
+  .art .art-cuerpo .emergency-card{position:relative;isolation:isolate;overflow:hidden;padding:26px 24px 24px;border:1px solid var(--borde);
+    border-radius:18px;background:#fff;box-shadow:0 12px 28px -20px rgba(0,0,0,.28);transition:transform .2s,box-shadow .2s,border-color .2s}
+  .art .art-cuerpo .emergency-card:hover{transform:translateY(-3px);border-color:rgba(0,0,0,.2);box-shadow:0 22px 44px -22px rgba(0,0,0,.32)}
+  .art .art-cuerpo .emergency-card-letter{display:grid;place-items:center;min-width:52px;width:fit-content;height:52px;padding:0 12px;margin-bottom:16px;
+    border-radius:14px;background:var(--letra,var(--verde));color:#fff;font:700 20px/1 Manrope,Inter,sans-serif;letter-spacing:-.02em;
+    box-shadow:0 8px 18px -10px var(--letra,var(--verde))}
+  /* la franja de color y el tinte salen de la letra (el color vive en ella) */
+  .art .art-cuerpo .emergency-card-letter::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--letra,var(--verde))}
+  .art .art-cuerpo .emergency-card-letter::after{content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(160deg,color-mix(in srgb,var(--letra,#0e7a3c) 12%,#fff) 0%,#fff 55%)}
+  .art .art-cuerpo .emergency-card h4,.art .art-cuerpo .emergency-card h3.art-h4{margin:0 0 8px;padding:0;font:600 20px/1.25 Manrope,Inter,sans-serif;letter-spacing:-.02em;color:#000}
+  .art .art-cuerpo .emergency-card p{margin:0;font-size:15.5px;line-height:1.6;color:var(--suave)}
+  @media (prefers-reduced-motion:reduce){.art .art-cuerpo .emergency-card,.art .art-cuerpo .error-item{transition:none}.art .art-cuerpo .emergency-card:hover,.art .art-cuerpo .error-item:hover{transform:none}}
 
   /* tablas */
   .art .art-cuerpo .art-tabla{margin:1.8em 0;overflow-x:auto;border:1px solid var(--borde);border-radius:14px;-webkit-overflow-scrolling:touch}
