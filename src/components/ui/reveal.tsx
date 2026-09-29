@@ -38,6 +38,7 @@ export function Reveal({
   delay = 0,
   className,
   as = 'div',
+  estilo,
 }: {
   children: React.ReactNode;
   /** Segundos de espera antes de entrar; sirve para escalonar hermanos. */
@@ -45,6 +46,8 @@ export function Reveal({
   className?: string;
   /** `li` para los hijos de una lista: un <div> dentro de <ol> no es HTML válido. */
   as?: 'div' | 'li';
+  /** estilos en línea (p. ej. variables CSS) */
+  estilo?: React.CSSProperties;
 }) {
   const Caja = as === 'li' ? motion.li : motion.div;
   const ref = useRef<HTMLDivElement & HTMLLIElement>(null);
@@ -68,6 +71,7 @@ export function Reveal({
       custom={delay}
       variants={VARIANTES}
       className={className}
+      style={estilo}
     >
       {children}
     </Caja>
