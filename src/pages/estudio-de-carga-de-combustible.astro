@@ -11,13 +11,13 @@
 import '../styles/tailwind.css';
 import MedicionSitio from '../components/MedicionSitio.astro';
 import HeroHalo from '../components/HeroHalo.astro';
-import FranjaClientes from '../components/FranjaClientes.astro';
 import { precargaFoto } from '../lib/fotos';
 import { BarraPegajosa } from '../components/ui/barra-pegajosa';
 import { BarraMovil } from '../components/ui/barra-movil';
 import { EccFormulario } from '../components/ui/ecc-formulario';
 import { EccQueEs } from '../components/ui/ecc-que-es';
 import { EccServicio } from '../components/ui/ecc-servicio';
+import { EccPasos } from '../components/ui/ecc-pasos';
 import { EccSiguiente } from '../components/ui/ecc-siguiente';
 import { EccFaq, PREGUNTAS } from '../components/ui/ecc-faq';
 import SeoHead from '../components/SeoHead.astro';
@@ -51,7 +51,7 @@ const fuentesCSS = `
   <!-- la foto del hero es el LCP: se precarga -->
   <link rel="preload" as="image" {...precargaFoto('bodega-estanterias-estudio-carga-combustible', BASE)} />
 </head>
-<body>
+<body class="botones-planos">
   <MedicionSitio copia={COPIA} parte="body" />
   <HeroHalo
     fotos={['bodega-estanterias-estudio-carga-combustible']}
@@ -67,16 +67,14 @@ const fuentesCSS = `
   />
   <BarraPegajosa base={BASE} cotizar="#formulario-ecc" client:idle />
 
-  <!-- clientes: la misma franja de la portada, justo después del hero -->
-  <FranjaClientes base={BASE} />
-
   <div class="svea-nuevo">
     <EccQueEs base={BASE} client:idle />
     <EccServicio client:idle />
+    <EccPasos base={BASE} client:idle />
     <EccSiguiente base={BASE} client:idle />
     <EccFaq />
-    <EccFormulario copia={COPIA} client:idle />
     <Cta69 destino="#formulario-ecc" client:idle />
+    <EccFormulario copia={COPIA} client:idle />
     <Footer2 base={BASE} client:idle />
   </div>
 

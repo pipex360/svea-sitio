@@ -17,8 +17,8 @@ import {
   WrenchIcon,
 } from 'lucide-react';
 
-import { Reveal } from '@/components/ui/reveal';
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
+import { ServiceGrid, type Ficha } from '@/components/ui/service-grid';
 
 /** Los cuatro párrafos del original: los dos primeros sobre qué es el
  *  estudio, con la bodega; los dos últimos sobre qué se evalúa y para qué
@@ -56,15 +56,15 @@ const bloques = (): BloqueScroll[] => {
   ];
 };
 
-const QUIENES = [
-  { texto: 'Fábricas e industrias', icono: FactoryIcon },
-  { texto: 'Bodegas de almacenamiento', icono: WarehouseIcon },
-  { texto: 'Talleres mecánicos', icono: WrenchIcon },
-  { texto: 'Centros comerciales', icono: StoreIcon },
-  { texto: 'Centros logísticos', icono: TruckIcon },
-  { texto: 'Empresas con modificaciones', icono: BuildingIcon },
-  { texto: 'Instalaciones con inflamables', icono: FlameIcon },
-  { texto: 'Ampliaciones o cambio de giro', icono: RefreshCwIcon },
+const QUIENES: Ficha[] = [
+  { nombre: 'Fábricas e industrias', icono: FactoryIcon },
+  { nombre: 'Bodegas de almacenamiento', icono: WarehouseIcon },
+  { nombre: 'Talleres mecánicos', icono: WrenchIcon },
+  { nombre: 'Centros comerciales', icono: StoreIcon },
+  { nombre: 'Centros logísticos', icono: TruckIcon },
+  { nombre: 'Empresas con modificaciones', icono: BuildingIcon },
+  { nombre: 'Instalaciones con inflamables', icono: FlameIcon },
+  { nombre: 'Ampliaciones o cambio de giro', icono: RefreshCwIcon },
 ];
 
 export function EccQueEs({ base = '' }: { base?: string }) {
@@ -84,24 +84,15 @@ export function EccQueEs({ base = '' }: { base?: string }) {
           }
         />
 
-        <Reveal className="mt-20">
-          <h3 className="mb-6 text-center text-xl font-bold tracking-tight text-black md:text-2xl">
-            ¿Quién necesita un Estudio de Carga de Combustible?
-          </h3>
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {QUIENES.map(({ texto, icono: Icono }) => (
-              <li
-                key={texto}
-                className="flex items-center gap-3 rounded-xl border border-border bg-hoja p-4 transition-colors duration-200 hover:border-black/30"
-              >
-                <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white text-svea">
-                  <Icono className="size-4" aria-hidden="true" />
-                </span>
-                <span className="text-sm font-medium leading-snug text-black">{texto}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+        <ServiceGrid
+          className="mt-20"
+          titulo={
+            <h3 className="text-balance text-2xl font-bold tracking-tight text-black md:text-3xl">
+              ¿Quién necesita un Estudio de Carga de Combustible?
+            </h3>
+          }
+          fichas={QUIENES}
+        />
       </div>
     </section>
   );

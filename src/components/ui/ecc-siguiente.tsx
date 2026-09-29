@@ -1,12 +1,15 @@
 'use client';
 
 /**
- * «Sigue por aquí» del ECC: la venta cruzada de la Calificación Técnica
- * Industrial y la guía del blog, con el formato de cti-siguiente.tsx.
+ * «Sigue por aquí»: la venta cruzada de la Calificación Técnica Industrial y
+ * el enlace a la guía del blog, con las mismas tarjetas con foto de fondo de
+ * la CTI (TarjetaFoto). Los dos enlaces y sus textos se conservan tal cual.
  */
-import { ArrowRightIcon, BookOpenIcon, FactoryIcon } from 'lucide-react';
+
+import { BookOpenIcon, FactoryIcon } from 'lucide-react';
 
 import { Reveal } from '@/components/ui/reveal';
+import { TarjetaFoto } from '@/components/ui/tarjeta-foto';
 
 export function EccSiguiente({ base = '' }: { base?: string }) {
   return (
@@ -16,56 +19,40 @@ export function EccSiguiente({ base = '' }: { base?: string }) {
           Sigue por aquí
         </h2>
         <div className="grid gap-4 lg:grid-cols-2">
-          <Reveal>
-            <a
+          <Reveal className="h-full">
+            <TarjetaFoto
               href={`${base}/calificacion-tecnica-industrial/`}
-              className="group/enlace flex h-full flex-col rounded-2xl border border-border bg-hoja p-7 no-underline transition-[transform,box-shadow,border-color] duration-200 ease-out hover:-translate-y-1 hover:border-black/30 hover:shadow-[0_18px_40px_-20px_rgba(0,0,0,0.3)] motion-reduce:hover:translate-y-0"
+              base={base}
+              foto="instalacion-industrial-calificacion-tecnica-industrial"
+              alt="Instalación industrial vista desde el aire, que requiere calificación técnica industrial"
+              icono={FactoryIcon}
+              pildora="Servicio complementario"
+              titulo="¿Necesitas también una Calificación Técnica Industrial?"
+              verificado
+              boton="Conocer CTI"
+              arriba="pt-14"
             >
-              <span className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-svea/20 bg-svea/5 px-3 py-1.5 text-xs font-semibold text-svea">
-                <FactoryIcon className="size-3.5" aria-hidden="true" />
-                Servicio complementario
-              </span>
-              <h3 className="text-xl font-bold tracking-tight text-black md:text-2xl">
-                ¿Necesitas también una Calificación Técnica Industrial?
-              </h3>
-              <p className="mt-3 text-base leading-relaxed text-black/70">
-                La mayoría de las empresas que requieren Estudio de Carga de Combustible también
-                necesitan una Calificación Técnica Industrial (CTI) para obtener su patente municipal.
-                Te cotizamos ambos servicios juntos con condiciones preferenciales.
-              </p>
-              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-black">
-                Conocer CTI
-                <ArrowRightIcon
-                  className="size-4 transition-transform duration-200 group-hover/enlace:translate-x-1 motion-reduce:transition-none"
-                  aria-hidden="true"
-                />
-              </span>
-            </a>
+              La mayoría de las empresas que requieren Estudio de Carga de Combustible también
+              necesitan una Calificación Técnica Industrial (CTI) para obtener su patente municipal.
+              Te cotizamos ambos servicios juntos con condiciones preferenciales.
+            </TarjetaFoto>
           </Reveal>
 
-          <Reveal delay={0.08}>
-            <a
+          <Reveal delay={0.08} className="h-full">
+            <TarjetaFoto
               href={`${base}/estudio-de-carga-combustible-chile/`}
-              className="group/enlace flex h-full flex-col rounded-2xl border border-border bg-hoja p-7 no-underline transition-[transform,box-shadow,border-color] duration-200 ease-out hover:-translate-y-1 hover:border-black/30 hover:shadow-[0_18px_40px_-20px_rgba(0,0,0,0.3)] motion-reduce:hover:translate-y-0"
+              base={base}
+              foto="bodega-centro-logistico-carga-combustible"
+              alt="Centro logístico con mercadería almacenada, objeto de un estudio de carga de combustible"
+              icono={BookOpenIcon}
+              pildora="Guía completa 2026"
+              titulo="Estudio de Carga Combustible en Chile: Todo lo que necesitas saber"
+              boton="Leer guía"
+              arriba="pt-40"
             >
-              <span className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-white px-3 py-1.5 text-xs font-semibold text-black/70">
-                <BookOpenIcon className="size-3.5" aria-hidden="true" />
-                Guía completa 2026
-              </span>
-              <h3 className="text-xl font-bold tracking-tight text-black md:text-2xl">
-                Estudio de Carga Combustible en Chile: Todo lo que necesitas saber
-              </h3>
-              <p className="mt-3 text-base leading-relaxed text-black/70">
-                Normativa OGUC, categorías de resistencia al fuego, metodología NCh 1916, cuándo es obligatorio y errores comunes.
-              </p>
-              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-black">
-                Leer guía
-                <ArrowRightIcon
-                  className="size-4 transition-transform duration-200 group-hover/enlace:translate-x-1 motion-reduce:transition-none"
-                  aria-hidden="true"
-                />
-              </span>
-            </a>
+              Normativa OGUC, categorías de resistencia al fuego, metodología NCh 1916, cuándo es
+              obligatorio y errores comunes.
+            </TarjetaFoto>
           </Reveal>
         </div>
       </div>
