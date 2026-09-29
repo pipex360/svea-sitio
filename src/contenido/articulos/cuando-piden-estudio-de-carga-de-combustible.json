@@ -1,0 +1,324 @@
+{
+  "slug": "cuando-piden-estudio-de-carga-de-combustible",
+  "ruta": "/cuando-piden-estudio-de-carga-de-combustible/",
+  "migasOriginal": [
+    {
+      "texto": "Inicio",
+      "href": "/"
+    },
+    {
+      "texto": "Blog",
+      "href": "/blog/"
+    }
+  ],
+  "migaFinal": "Cuándo piden el estudio de carga de combustible",
+  "categoria": "Incendio",
+  "h1": "Cuándo te piden el estudio de carga de combustible: DOM, SEREMI, patente y seguros",
+  "bajada": "Quién exige el estudio de carga de combustible en Chile y en qué trámite: permiso de edificación y recepción en la DOM, calificación técnica e informe sanitario de la SEREMI, patente municipal, bodegas con sustancias peligrosas y pólizas de incendio.",
+  "fecha": "Septiembre 2026",
+  "actualizado": {
+    "iso": "2026-09-29",
+    "texto": "29 de septiembre de 2026"
+  },
+  "lectura": "9 min de lectura",
+  "autor": "Equipo técnico SVEA Consultores",
+  "cifras": [
+    {
+      "n": "4",
+      "l": "Destinos obligados (Tabla 3 OGUC)"
+    },
+    {
+      "n": "Tipo a",
+      "l": "Si no se presenta el estudio"
+    },
+    {
+      "n": "DS 43",
+      "l": "Bodegas de sustancias peligrosas (art. 28)"
+    },
+    {
+      "n": "3-5",
+      "l": "Días hábiles para el informe"
+    }
+  ],
+  "indiceTitulo": "En este artículo",
+  "indice": [
+    {
+      "href": "#resumen",
+      "texto": "Quién lo pide y para qué"
+    },
+    {
+      "href": "#dom",
+      "texto": "La DOM: permiso, recepción y regularización"
+    },
+    {
+      "href": "#seremi",
+      "texto": "La SEREMI: CTI e informe sanitario"
+    },
+    {
+      "href": "#patente",
+      "texto": "La patente municipal"
+    },
+    {
+      "href": "#bodegas",
+      "texto": "Estudio de carga de combustible para bodegas"
+    },
+    {
+      "href": "#seguros",
+      "texto": "Aseguradoras y Bomberos"
+    },
+    {
+      "href": "#sin-estudio",
+      "texto": "Qué pasa si no lo tienes"
+    },
+    {
+      "href": "#que-presentar",
+      "texto": "Qué debe contener el estudio"
+    },
+    {
+      "href": "#fuentes",
+      "texto": "Fuentes"
+    },
+    {
+      "href": "#faq",
+      "texto": "Preguntas frecuentes"
+    }
+  ],
+  "formulario": {
+    "titulo": "Cotiza tu Estudio de Carga de Combustible sin compromiso",
+    "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+    "ocultos": [
+      {
+        "name": "access_key",
+        "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+      },
+      {
+        "name": "subject",
+        "value": "Nueva cotización ECC (Blog) - SVEA Consultores",
+        "id": "dynamic-subject-art-ecc-cuando"
+      },
+      {
+        "name": "from_name",
+        "value": "SVEA Consultores Blog - ECC"
+      },
+      {
+        "name": "redirect",
+        "value": "https://sveaconsultores.cl/gracias/"
+      },
+      {
+        "name": "Servicio",
+        "value": "Estudio de Carga Combustible"
+      },
+      {
+        "name": "Origen",
+        "value": "Artículo SEO - ECC cuándo lo piden"
+      }
+    ],
+    "campos": [
+      {
+        "label": "Nombre completo *",
+        "id": "art-nombre",
+        "name": "Nombre",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Ej: Juan Pérez",
+        "ancho": false
+      },
+      {
+        "label": "Empresa *",
+        "id": "art-empresa",
+        "name": "Empresa",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Nombre de tu empresa",
+        "ancho": false
+      },
+      {
+        "label": "Teléfono *",
+        "id": "art-telefono",
+        "name": "Teléfono",
+        "tipo": "tel",
+        "requerido": true,
+        "placeholder": "+569 1234 5678",
+        "ancho": false
+      },
+      {
+        "label": "Email *",
+        "id": "art-email",
+        "name": "Email",
+        "tipo": "email",
+        "requerido": true,
+        "placeholder": "correo@empresa.cl",
+        "ancho": false
+      },
+      {
+        "label": "Tipo de edificación",
+        "id": "art-tipo",
+        "name": "Tipo de Edificación",
+        "tipo": "select",
+        "requerido": false,
+        "placeholder": null,
+        "ancho": true,
+        "opciones": [
+          {
+            "value": "",
+            "texto": "Selecciona una opción",
+            "seleccionada": true,
+            "desactivada": true
+          },
+          {
+            "value": "Bodega / Centro distribución",
+            "texto": "Bodega / Centro de distribución",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Fábrica / Industria",
+            "texto": "Fábrica / Industria",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Supermercado / Centro comercial",
+            "texto": "Supermercado / Centro comercial",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Depósito combustibles",
+            "texto": "Depósito de combustibles / lubricantes",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Otro",
+            "texto": "Otro",
+            "seleccionada": false,
+            "desactivada": false
+          }
+        ]
+      },
+      {
+        "label": "Mensaje (opcional)",
+        "id": "art-mensaje",
+        "name": "Mensaje",
+        "tipo": "textarea",
+        "requerido": false,
+        "placeholder": "¿Necesitas el ECC por patente, permiso de edificación, recepción o calificación SEREMI?",
+        "ancho": true,
+        "filas": 3
+      }
+    ],
+    "boton": "Solicitar cotización gratuita →",
+    "confianza": [
+      "Datos protegidos",
+      "Cotización sin costo",
+      "Sin compromiso"
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      {
+        "p": "¿El estudio de carga de combustible es obligatorio para una bodega?",
+        "r": "La OGUC clasifica los establecimientos de bodegaje según su densidad de carga combustible (Tabla 3 del art. 4.3.4) y dispone que, si no se presenta el estudio, la edificación debe proyectarse y construirse como tipo a, el más exigente. En la práctica la DOM lo espera en el permiso, la recepción, la ampliación o la regularización de una bodega.",
+        "rTexto": "La OGUC clasifica los establecimientos de bodegaje según su densidad de carga combustible (Tabla 3 del art. 4.3.4) y dispone que, si no se presenta el estudio, la edificación debe proyectarse y construirse como tipo a, el más exigente. En la práctica la DOM lo espera en el permiso, la recepción, la ampliación o la regularización de una bodega."
+      },
+      {
+        "p": "¿La SEREMI de Salud pide el estudio de carga de combustible?",
+        "r": "Para la calificación técnica industrial y el informe sanitario se presenta una memoria de medidas de control de riesgos, incluidas las de incendio. El estudio es el antecedente que la respalda, y las empresas que tramitan la CTI de una bodega o planta suelen presentarlo en el mismo expediente.",
+        "rTexto": "Para la calificación técnica industrial y el informe sanitario se presenta una memoria de medidas de control de riesgos, incluidas las de incendio. El estudio es el antecedente que la respalda, y las empresas que tramitan la CTI de una bodega o planta suelen presentarlo en el mismo expediente."
+      },
+      {
+        "p": "¿Bomberos aprueba el estudio de carga de combustible?",
+        "r": "No. Según el art. 1.4.19 de la OGUC, los estudios de carga combustible que acompañan una solicitud ante la DOM no requieren aprobación de otros organismos si están suscritos por un profesional especialista. Bomberos puede pedirlo cuando revisa un proyecto de protección contra incendio.",
+        "rTexto": "No. Según el art. 1.4.19 de la OGUC, los estudios de carga combustible que acompañan una solicitud ante la DOM no requieren aprobación de otros organismos si están suscritos por un profesional especialista. Bomberos puede pedirlo cuando revisa un proyecto de protección contra incendio."
+      },
+      {
+        "p": "¿Quién puede firmar el estudio de carga de combustible?",
+        "r": "Un profesional especialista según la definición del art. 1.1.2 de la OGUC: un profesional competente u otro cuya especialidad tenga directa relación con el estudio, como ingenieros. No existe un registro especial para firmarlo.",
+        "rTexto": "Un profesional especialista según la definición del art. 1.1.2 de la OGUC: un profesional competente u otro cuya especialidad tenga directa relación con el estudio, como ingenieros. No existe un registro especial para firmarlo."
+      },
+      {
+        "p": "¿Tengo que rehacer el estudio si cambio lo que almaceno?",
+        "r": "Sí, cuando cambia de forma relevante el tipo o la cantidad de material, la altura de apilamiento o la superficie. El estudio describe un contenido concreto; si la bodega guarda otra cosa, la clasificación puede cambiar de fila en la Tabla 3.",
+        "rTexto": "Sí, cuando cambia de forma relevante el tipo o la cantidad de material, la altura de apilamiento o la superficie. El estudio describe un contenido concreto; si la bodega guarda otra cosa, la clasificación puede cambiar de fila en la Tabla 3."
+      },
+      {
+        "p": "¿Cuánto demora obtenerlo?",
+        "r": "En SVEA el informe se entrega en 3 a 5 días hábiles desde que recibimos los planos y el inventario, sin necesidad de coordinar una salida a terreno. La cotización llega en menos de 24 horas y las correcciones por observaciones de la autoridad no tienen costo.",
+        "rTexto": "En SVEA el informe se entrega en 3 a 5 días hábiles desde que recibimos los planos y el inventario, sin necesidad de coordinar una salida a terreno. La cotización llega en menos de 24 horas y las correcciones por observaciones de la autoridad no tienen costo."
+      }
+    ]
+  },
+  "autorCaja": {
+    "inicial": "S",
+    "nombre": "Equipo técnico SVEA Consultores",
+    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 empresas atendidas."
+  },
+  "compartir": {
+    "titulo": "Compartir",
+    "enlaces": [
+      {
+        "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://sveaconsultores.cl/cuando-piden-estudio-de-carga-de-combustible/",
+        "texto": "in",
+        "titulo": "LinkedIn",
+        "externo": true
+      },
+      {
+        "href": "https://api.whatsapp.com/send?text=Cuándo%20piden%20el%20estudio%20de%20carga%20de%20combustible%20https://sveaconsultores.cl/cuando-piden-estudio-de-carga-de-combustible/",
+        "texto": "wa",
+        "titulo": "WhatsApp",
+        "externo": true
+      },
+      {
+        "href": "mailto:?subject=Cuándo%20piden%20el%20estudio%20de%20carga%20de%20combustible&body=Te%20comparto%20esta%20gu%C3%ADa%3A%20https://sveaconsultores.cl/cuando-piden-estudio-de-carga-de-combustible/",
+        "texto": "@",
+        "titulo": "Email",
+        "externo": false
+      }
+    ]
+  },
+  "bloques": [
+    {
+      "tipo": "html",
+      "html": "<p class=\"art-entrada\">\n        El <strong>estudio de carga de combustible</strong> aparece en distintos momentos de la vida de una bodega o una planta: al pedir el permiso de edificación, al recibir la obra, al tramitar la calificación de la SEREMI de Salud, al sacar la patente y al asegurar el recinto. Esta guía ordena <strong>quién te lo pide, en qué trámite y por qué</strong>, y qué pasa si no lo presentas.\n    </p>\n\n<section id=\"resumen\">\n        <h2>Quién pide el estudio de carga de combustible y para qué</h2>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Quién</th><th>En qué trámite</th><th>Base</th></tr></thead>\n            <tbody>\n                <tr><td><strong>DOM</strong> (Dirección de Obras Municipales)</td><td>Permiso de edificación, recepción definitiva, ampliación, cambio de destino y regularización de industrias, bodegas, supermercados y depósitos de combustibles</td><td>OGUC arts. 4.3.4 (Tabla 3) y 1.4.19</td></tr>\n                <tr><td><strong>SEREMI de Salud</strong></td><td>Calificación técnica industrial e informe sanitario: la memoria de medidas contra incendio se respalda con el estudio</td><td>OGUC art. 4.14.2; DS 594</td></tr>\n                <tr><td><strong>Municipalidad</strong> (patentes)</td><td>Patente industrial o de bodegaje: pide la recepción de la DOM y la calificación de la SEREMI, y ambas se apoyan en el estudio</td><td>Requisitos de patente de cada comuna</td></tr>\n                <tr><td><strong>SEREMI de Salud</strong> (sustancias peligrosas)</td><td>Bodegas comunes con sustancias peligrosas: se diseñan según la OGUC considerando el estudio de carga combustible</td><td>DS 43 art. 28</td></tr>\n                <tr><td><strong>Aseguradoras y corredores</strong></td><td>Suscripción y renovación de pólizas de incendio de bodegas e industrias: no lo exige una norma, pero lo usan para evaluar el riesgo</td><td>Condiciones de cada póliza</td></tr>\n                <tr><td><strong>Bomberos</strong></td><td>Cuando revisa un proyecto de protección contra incendio o la municipalidad le pide informe; no aprueba el estudio, pero suele leerlo</td><td>Prácticas locales</td></tr>\n            </tbody>\n        </table></div>\n        <p>Cómo se hace el cálculo lo explicamos en la guía <a href=\"/calculo-carga-de-fuego-nch-1916/\">cómo se calcula la carga de fuego según la NCh 1916</a>; cómo se lee el resultado, en <a href=\"/resistencia-al-fuego-oguc/\">resistencia al fuego según la OGUC</a>.</p>\n    </section>\n\n<section id=\"dom\">\n        <h2>La DOM: permiso de edificación, recepción y regularización</h2>\n        <p>La obligación nace en la OGUC. El art. 4.3.4 clasifica según su densidad de carga combustible a cuatro destinos: <strong>establecimientos industriales, establecimientos de bodegaje, supermercados y centros comerciales, y edificios para combustibles, lubricantes y aceites</strong>. Y cierra con una regla que decide todo: para esos destinos, <strong>cuando no se presenta un estudio de carga combustible, la edificación debe proyectarse y construirse según el tipo a</strong>, el más exigente (muros cortafuego F-180, elementos soportantes F-120).</p>\n        <p>Por eso la DOM lo espera dentro del expediente en estos casos:</p>\n        <ul class=\"checklist\">\n            <li><strong>Permiso de edificación</strong> de una obra nueva con alguno de esos destinos: el estudio justifica el tipo con que se proyecta.</li>\n            <li><strong>Recepción definitiva:</strong> lo construido debe cumplir el tipo declarado; si el contenido real difiere del proyecto, el estudio se actualiza.</li>\n            <li><strong>Ampliación o cambio de destino:</strong> pasar una nave de taller a bodega, o agregar un altillo, cambia la fila de la Tabla 3.</li>\n            <li><strong>Regularización</strong> de una construcción existente: la DOM aplica la misma tabla a lo que ya está construido.</li>\n        </ul>\n        <div class=\"callout callout-info\"><span class=\"callout-icon\">i</span><div class=\"callout-body\"><div class=\"callout-title\">Quién lo firma y quién lo aprueba</div><p>La OGUC define el estudio de carga combustible como una evaluación conforme a las normas NCh 1916 y NCh 1993, <strong>suscrita por un profesional especialista</strong> (art. 1.1.2). Y el art. 1.4.19 aclara que los estudios de carga combustible que acompañan una solicitud ante la DOM <strong>no requieren aprobación de otros organismos</strong> si están debidamente suscritos por ese profesional. La DOM lo revisa y lo puede observar; la decisión es suya.</p></div></div>\n    </section>\n\n<section id=\"seremi\">\n        <h2>La SEREMI de Salud: calificación técnica e informe sanitario</h2>\n        <p>Los establecimientos industriales y de bodegaje son calificados caso a caso por la SEREMI de Salud como peligrosos, insalubres, molestos o inofensivos (art. 4.14.2 de la OGUC). Para esa <a href=\"/calificacion-tecnica-industrial/\">calificación técnica industrial</a> se presenta, entre otros antecedentes, una memoria con las medidas de control de riesgos, incluidas las de incendio, y el DS 594 exige medidas de prevención y protección contra incendios en todo lugar de trabajo.</p>\n        <p>Ahí el estudio de carga de combustible es el antecedente que respalda esa memoria: dice cuánta energía hay almacenada, en qué sector se concentra y qué resistencia al fuego corresponde a la construcción. En la práctica, <strong>la mayoría de las empresas que tramitan la CTI de una bodega presentan el estudio en el mismo expediente</strong>, y lo mismo ocurre con el informe sanitario. Cómo se arma ese expediente lo explica nuestra guía de la <a href=\"/calificacion-tecnica-industrial-chile/\">calificación técnica industrial</a>.</p>\n    </section>\n\n<figure class=\"article-img\">\n        <img data-foto=\"bodega-cajas-estudio-carga-combustible\" alt=\"Bodega con cajas de cartón apiladas en pallets, el tipo de recinto al que la DOM y la SEREMI piden el estudio de carga de combustible\">\n        <figcaption>Bodegas y centros de distribución: el destino de la Tabla 3 de la OGUC al que más se le pide el estudio.</figcaption>\n    </figure>\n"
+    },
+    {
+      "tipo": "formulario"
+    },
+    {
+      "tipo": "html",
+      "html": "<section id=\"patente\">\n        <h2>La patente municipal</h2>\n        <p>El departamento de patentes no revisa el estudio, pero pide los permisos que dependen de él: la <strong>recepción definitiva de la DOM</strong> y, para industrias y bodegas, la <strong>calificación de la SEREMI de Salud</strong>. Si alguno de los dos está detenido por falta del estudio, la patente definitiva también se detiene. El orden recomendable para no perder meses está en la guía de <a href=\"/patente-definitiva-permisos-seremi/\">patente definitiva y permisos SEREMI</a>.</p>\n    </section>\n\n<section id=\"bodegas\">\n        <h2>Estudio de carga de combustible para bodegas</h2>\n        <p>Las bodegas son el caso más frecuente, porque la Tabla 3 de la OGUC las nombra como destino («establecimientos de bodegaje») y porque su contenido cambia con el negocio. Te lo van a pedir si:</p>\n        <ul class=\"checklist\">\n            <li><strong>Construyes o recibes una bodega, galpón o centro de distribución</strong>, aunque el producto almacenado no sea inflamable: cartón, madera, textiles y plásticos son carga de fuego.</li>\n            <li><strong>Arriendas una nave y cambias lo que se guarda:</strong> el estudio anterior describía otro contenido; el tuyo debe reflejar tu inventario y tu altura de apilamiento.</li>\n            <li><strong>Operas mini bodegas o bodegaje para terceros:</strong> el cálculo se hace con el escenario de máxima ocupación y con los productos permitidos por contrato.</li>\n            <li><strong>Tu local comercial tiene bodega:</strong> el art. 4.3.4 permite destinar a bodega hasta un 25 % de la superficie en locales de más de 200 m² (hasta un 50 % en los de 200 m² o menos); si se supera, el edificio se trata como de uso mixto.</li>\n            <li><strong>Almacenas sustancias peligrosas:</strong> el art. 28 del DS 43 dispone que las bodegas comunes se diseñen conforme a la OGUC considerando el estudio de carga combustible. Los umbrales y el plan de manejo están en la guía de <a href=\"/plan-manejo-sustancias-peligrosas-ds-43/\">sustancias peligrosas DS 43</a>.</li>\n        </ul>\n    </section>\n\n<section id=\"seguros\">\n        <h2>Aseguradoras y Bomberos</h2>\n        <p>Ninguna norma obliga a entregar el estudio a la compañía de seguros, pero al suscribir o renovar una <strong>póliza de incendio</strong> de una bodega o planta, el asegurador evalúa el riesgo y suele pedir antecedentes: contenido, sectorización, protección activa y pasiva. El estudio de carga de combustible responde esas preguntas con un número y una clasificación, y evita discusiones después de un siniestro sobre qué había almacenado.</p>\n        <p><strong>Bomberos</strong> no aprueba ni firma el estudio (art. 1.4.19 de la OGUC). Sí puede leerlo cuando revisa el proyecto de red húmeda, rociadores o detección, o cuando la municipalidad le pide un informe sobre el recinto. Un estudio claro, con planos y sectores, facilita esa revisión.</p>\n    </section>\n\n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿Te pidieron el estudio de carga de combustible?</h3><p>Dinos para qué trámite es (DOM, SEREMI, patente o seguro), mándanos los planos y el inventario, y te entregamos el informe firmado en 3 a 5 días hábiles. Si la autoridad lo observa, las correcciones no tienen costo.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20me%20pidieron%20un%20estudio%20de%20carga%20de%20combustible%20y%20necesito%20cotizarlo\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><!--logos-clientes--></aside>\n\n<section id=\"sin-estudio\">\n        <h2>Qué pasa si no lo tienes</h2>\n        <div class=\"callout callout-danger\"><span class=\"callout-icon\">!</span><div class=\"callout-body\"><div class=\"callout-title\">Sin estudio, tipo a</div><p>Es la consecuencia directa que fija la OGUC: la edificación de esos destinos se proyecta y construye como tipo a, con las exigencias más altas de la tabla del art. 4.3.3. En una bodega de estructura metálica eso significa proteger pilares, vigas y techumbre para F-120 y F-60, y muros cortafuego F-180, lo que puede costar mucho más que el estudio.</p></div></div>\n        <ul class=\"checklist\">\n            <li><strong>Observaciones o rechazo del expediente</strong> en la DOM, con el permiso o la recepción detenidos hasta subsanar.</li>\n            <li><strong>Calificación de la SEREMI observada</strong>, porque la memoria de incendio queda sin respaldo, y con ella la patente definitiva.</li>\n            <li><strong>Adecuaciones constructivas</strong> exigidas después de construir, cuando un estudio a tiempo habría permitido proyectar en tipo c o d.</li>\n            <li><strong>Problemas con la póliza</strong> si la aseguradora determina que el contenido real no corresponde a lo declarado.</li>\n        </ul>\n        <p>Si ya recibiste una observación, en <a href=\"/rechazo-observaciones-seremi/\">cómo responder a un rechazo u observación de la SEREMI</a> explicamos los plazos y la forma de contestar.</p>\n    </section>\n\n<section id=\"que-presentar\">\n        <h2>Qué debe contener el estudio que presentas</h2>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Identificación del recinto y del trámite</h4><p>Dirección, rol, destino, superficie, número de pisos según el art. 4.3.5 y para qué solicitud se presenta.</p></div></li>\n            <li><div class=\"step-content\"><h4>Inventario de materiales combustibles</h4><p>Por sector: masa de cada material, calor de combustión usado y su fuente.</p></div></li>\n            <li><div class=\"step-content\"><h4>Cálculo según NCh 1916 y NCh 1993</h4><p>Densidad media y densidad puntual máxima de cada sector, con las tablas de cálculo.</p></div></li>\n            <li><div class=\"step-content\"><h4>Clasificación según la OGUC</h4><p>Tipo a, b, c o d por la Tabla 3 del art. 4.3.4 y la resistencia al fuego exigida a cada elemento según el art. 4.3.3.</p></div></li>\n            <li><div class=\"step-content\"><h4>Planos y conclusiones</h4><p>Planta con sectores y zonas de mayor concentración, verificación de los elementos existentes y recomendaciones, firmado por el profesional especialista. Se entrega en PDF, listo para adjuntar al expediente.</p></div></li>\n        </ol>\n        <p>Nuestro <a href=\"/estudio-de-carga-de-combustible/\">servicio de estudio de carga de combustible</a> entrega ese informe a partir de los planos e inventario de la empresa, con correcciones sin costo si la autoridad lo observa. Puedes <a href=\"/estudio-de-carga-de-combustible/#formulario-ecc\">cotizarlo aquí</a>.</p>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (septiembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=8201\" target=\"_blank\" rel=\"noopener\">Ordenanza General de Urbanismo y Construcciones (DS 47 de 1992, MINVU), texto vigente en la Biblioteca del Congreso Nacional: arts. 1.1.2, 1.4.19, 4.3.2 a 4.3.5, 4.3.24 y 4.3.26</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=1088802\" target=\"_blank\" rel=\"noopener\">DS 43 de 2015 (MINSAL), Reglamento de Almacenamiento de Sustancias Peligrosas, art. 28</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=167766\" target=\"_blank\" rel=\"noopener\">DS 594 de 1999 (MINSAL), condiciones sanitarias y ambientales básicas en los lugares de trabajo</a></li><li><a href=\"https://www.chileatiende.gob.cl/fichas/169-calificacion-de-industrias-infraestructura-y-actividades-de-servicios\" target=\"_blank\" rel=\"noopener\">ChileAtiende: calificación de industrias, infraestructura y actividades de servicios (SEREMI de Salud)</a></li><li><a href=\"https://www.inn.cl/\" target=\"_blank\" rel=\"noopener\">Instituto Nacional de Normalización (INN): NCh 1916 Of.99, NCh 1993 Of.98, NCh 1914/2 y NCh 935/1</a></li></ul>\n    </section>\n"
+    }
+  ],
+  "relacionados": {
+    "titulo": "Servicios relacionados",
+    "intro": "",
+    "tarjetas": [
+      {
+        "titulo": "Estudio de Carga de Combustible",
+        "texto": "Cálculo de la carga de fuego según NCh 1916 a partir de tus planos e inventario, clasificación según la OGUC e informe firmado por profesional en 3 a 5 días hábiles.",
+        "href": "/estudio-de-carga-de-combustible/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Calificación Técnica Industrial",
+        "texto": "La calificación de la SEREMI de Salud que la municipalidad pide para la patente de industrias y bodegas. Suele ir junto al estudio de carga de combustible.",
+        "href": "/calificacion-tecnica-industrial/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Planes de Emergencia y Evacuación",
+        "texto": "Plan de emergencia conforme al DS 44 y al DS 594, con mapa de riesgos, protocolos y planos de evacuación.",
+        "href": "/planes-de-emergencia-y-evacuacion/",
+        "enlace": "Conocer servicio →"
+      }
+    ]
+  },
+  "asunto": {
+    "prefijo": "[BLOG] Cotización ECC - ",
+    "campo": "Empresa",
+    "id": "dynamic-subject-art-ecc-cuando"
+  }
+}

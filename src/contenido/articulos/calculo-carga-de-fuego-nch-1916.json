@@ -1,0 +1,320 @@
+{
+  "slug": "calculo-carga-de-fuego-nch-1916",
+  "ruta": "/calculo-carga-de-fuego-nch-1916/",
+  "migasOriginal": [
+    {
+      "texto": "Inicio",
+      "href": "/"
+    },
+    {
+      "texto": "Blog",
+      "href": "/blog/"
+    }
+  ],
+  "migaFinal": "Cálculo de carga de fuego NCh 1916",
+  "categoria": "Incendio",
+  "h1": "Cómo se calcula la carga de fuego según la NCh 1916 (con ejemplo)",
+  "bajada": "Fórmula de la NCh 1916, calores de combustión de referencia, diferencia entre densidad media y puntual máxima, y un ejemplo numérico completo de una bodega de 1.000 m² clasificada según la OGUC.",
+  "fecha": "Septiembre 2026",
+  "actualizado": {
+    "iso": "2026-09-29",
+    "texto": "29 de septiembre de 2026"
+  },
+  "lectura": "10 min de lectura",
+  "autor": "Equipo técnico SVEA Consultores",
+  "cifras": [
+    {
+      "n": "MJ/m²",
+      "l": "Unidad de la densidad"
+    },
+    {
+      "n": "16,8 MJ/kg",
+      "l": "Madera de referencia (NCh 1916)"
+    },
+    {
+      "n": "2 × 2 m",
+      "l": "Área de la densidad puntual (NCh 1993)"
+    },
+    {
+      "n": "3-5",
+      "l": "Días hábiles para el informe"
+    }
+  ],
+  "indiceTitulo": "En este artículo",
+  "indice": [
+    {
+      "href": "#que-es",
+      "texto": "Qué es la carga de fuego"
+    },
+    {
+      "href": "#formula",
+      "texto": "La fórmula de la NCh 1916"
+    },
+    {
+      "href": "#calores",
+      "texto": "Calores de combustión de referencia"
+    },
+    {
+      "href": "#puntual",
+      "texto": "Densidad media y puntual máxima"
+    },
+    {
+      "href": "#ejemplo",
+      "texto": "Ejemplo de cálculo en una bodega"
+    },
+    {
+      "href": "#datos",
+      "texto": "Qué datos necesitas entregar"
+    },
+    {
+      "href": "#errores",
+      "texto": "Errores frecuentes"
+    },
+    {
+      "href": "#fuentes",
+      "texto": "Fuentes"
+    },
+    {
+      "href": "#faq",
+      "texto": "Preguntas frecuentes"
+    }
+  ],
+  "formulario": {
+    "titulo": "Cotiza tu Estudio de Carga de Combustible sin compromiso",
+    "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+    "ocultos": [
+      {
+        "name": "access_key",
+        "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+      },
+      {
+        "name": "subject",
+        "value": "Nueva cotización ECC (Blog) - SVEA Consultores",
+        "id": "dynamic-subject-art-ecc-calculo"
+      },
+      {
+        "name": "from_name",
+        "value": "SVEA Consultores Blog - ECC"
+      },
+      {
+        "name": "redirect",
+        "value": "https://sveaconsultores.cl/gracias/"
+      },
+      {
+        "name": "Servicio",
+        "value": "Estudio de Carga Combustible"
+      },
+      {
+        "name": "Origen",
+        "value": "Artículo SEO - ECC cálculo NCh 1916"
+      }
+    ],
+    "campos": [
+      {
+        "label": "Nombre completo *",
+        "id": "art-nombre",
+        "name": "Nombre",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Ej: Juan Pérez",
+        "ancho": false
+      },
+      {
+        "label": "Empresa *",
+        "id": "art-empresa",
+        "name": "Empresa",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Nombre de tu empresa",
+        "ancho": false
+      },
+      {
+        "label": "Teléfono *",
+        "id": "art-telefono",
+        "name": "Teléfono",
+        "tipo": "tel",
+        "requerido": true,
+        "placeholder": "+569 1234 5678",
+        "ancho": false
+      },
+      {
+        "label": "Email *",
+        "id": "art-email",
+        "name": "Email",
+        "tipo": "email",
+        "requerido": true,
+        "placeholder": "correo@empresa.cl",
+        "ancho": false
+      },
+      {
+        "label": "Tipo de edificación",
+        "id": "art-tipo",
+        "name": "Tipo de Edificación",
+        "tipo": "select",
+        "requerido": false,
+        "placeholder": null,
+        "ancho": true,
+        "opciones": [
+          {
+            "value": "",
+            "texto": "Selecciona una opción",
+            "seleccionada": true,
+            "desactivada": true
+          },
+          {
+            "value": "Bodega / Centro distribución",
+            "texto": "Bodega / Centro de distribución",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Fábrica / Industria",
+            "texto": "Fábrica / Industria",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Supermercado / Centro comercial",
+            "texto": "Supermercado / Centro comercial",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Depósito combustibles",
+            "texto": "Depósito de combustibles / lubricantes",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Otro",
+            "texto": "Otro",
+            "seleccionada": false,
+            "desactivada": false
+          }
+        ]
+      },
+      {
+        "label": "Mensaje (opcional)",
+        "id": "art-mensaje",
+        "name": "Mensaje",
+        "tipo": "textarea",
+        "requerido": false,
+        "placeholder": "¿Necesitas el ECC por patente, permiso de edificación, recepción o calificación SEREMI?",
+        "ancho": true,
+        "filas": 3
+      }
+    ],
+    "boton": "Solicitar cotización gratuita →",
+    "confianza": [
+      "Datos protegidos",
+      "Cotización sin costo",
+      "Sin compromiso"
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      {
+        "p": "¿Carga de fuego y carga combustible son lo mismo?",
+        "r": "Sí. «Carga combustible» es el término de la OGUC y de la NCh 1916; «carga de fuego», «carga calórica» y «carga térmica» son nombres de uso común para el mismo concepto: la energía que liberarían los materiales combustibles de un recinto al quemarse, expresada por metro cuadrado.",
+        "rTexto": "Sí. «Carga combustible» es el término de la OGUC y de la NCh 1916; «carga de fuego», «carga calórica» y «carga térmica» son nombres de uso común para el mismo concepto: la energía que liberarían los materiales combustibles de un recinto al quemarse, expresada por metro cuadrado."
+      },
+      {
+        "p": "¿En qué unidad se expresa la carga de fuego?",
+        "r": "En megajoules por metro cuadrado (MJ/m²), que es la unidad de la Tabla 3 de la OGUC. También se usa Mcal/m² (1 MJ/m² = 238,85 kcal/m²) y kilos de madera equivalente por m², tomando 16,8 MJ/kg para la madera según la NCh 1916.",
+        "rTexto": "En megajoules por metro cuadrado (MJ/m²), que es la unidad de la Tabla 3 de la OGUC. También se usa Mcal/m² (1 MJ/m² = 238,85 kcal/m²) y kilos de madera equivalente por m², tomando 16,8 MJ/kg para la madera según la NCh 1916."
+      },
+      {
+        "p": "¿Puedo calcular la carga de fuego yo mismo con una planilla?",
+        "r": "Como estimación, sí: masa de cada material por su calor de combustión, dividido por la superficie. Pero el estudio que reciben la DOM y la SEREMI debe estar suscrito por un profesional especialista (art. 1.1.2 de la OGUC) e incluir la densidad puntual máxima, la clasificación y los planos.",
+        "rTexto": "Como estimación, sí: masa de cada material por su calor de combustión, dividido por la superficie. Pero el estudio que reciben la DOM y la SEREMI debe estar suscrito por un profesional especialista (art. 1.1.2 de la OGUC) e incluir la densidad puntual máxima, la clasificación y los planos."
+      },
+      {
+        "p": "¿Qué es la densidad de carga combustible puntual máxima?",
+        "r": "La densidad más alta que existe en un área de 2 m por 2 m del edificio o sector, según la NCh 1993. Sirve para detectar concentraciones de material, como un rack lleno, que la densidad media esconde. La OGUC clasifica con la mayor de las dos densidades.",
+        "rTexto": "La densidad más alta que existe en un área de 2 m por 2 m del edificio o sector, según la NCh 1993. Sirve para detectar concentraciones de material, como un rack lleno, que la densidad media esconde. La OGUC clasifica con la mayor de las dos densidades."
+      },
+      {
+        "p": "¿Cuánto demora el cálculo y el informe?",
+        "r": "En SVEA el informe está listo en 3 a 5 días hábiles desde que recibimos los planos y el inventario. No requiere coordinar una salida a terreno: trabajamos con los antecedentes que entrega la empresa. La cotización llega en menos de 24 horas.",
+        "rTexto": "En SVEA el informe está listo en 3 a 5 días hábiles desde que recibimos los planos y el inventario. No requiere coordinar una salida a terreno: trabajamos con los antecedentes que entrega la empresa. La cotización llega en menos de 24 horas."
+      },
+      {
+        "p": "¿Los materiales no combustibles suman a la carga de fuego?",
+        "r": "No. Acero, hormigón, vidrio, cerámica y metales no aportan calor de combustión, así que racks metálicos o envases de vidrio no entran en la suma. Sí entran sus contenidos, etiquetas, cajas y pallets.",
+        "rTexto": "No. Acero, hormigón, vidrio, cerámica y metales no aportan calor de combustión, así que racks metálicos o envases de vidrio no entran en la suma. Sí entran sus contenidos, etiquetas, cajas y pallets."
+      }
+    ]
+  },
+  "autorCaja": {
+    "inicial": "S",
+    "nombre": "Equipo técnico SVEA Consultores",
+    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 empresas atendidas."
+  },
+  "compartir": {
+    "titulo": "Compartir",
+    "enlaces": [
+      {
+        "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://sveaconsultores.cl/calculo-carga-de-fuego-nch-1916/",
+        "texto": "in",
+        "titulo": "LinkedIn",
+        "externo": true
+      },
+      {
+        "href": "https://api.whatsapp.com/send?text=Cálculo%20de%20carga%20de%20fuego%20NCh%201916%20https://sveaconsultores.cl/calculo-carga-de-fuego-nch-1916/",
+        "texto": "wa",
+        "titulo": "WhatsApp",
+        "externo": true
+      },
+      {
+        "href": "mailto:?subject=Cálculo%20de%20carga%20de%20fuego%20NCh%201916&body=Te%20comparto%20esta%20gu%C3%ADa%3A%20https://sveaconsultores.cl/calculo-carga-de-fuego-nch-1916/",
+        "texto": "@",
+        "titulo": "Email",
+        "externo": false
+      }
+    ]
+  },
+  "bloques": [
+    {
+      "tipo": "html",
+      "html": "<p class=\"art-entrada\">\n        La <strong>carga de fuego</strong> (la OGUC y las normas chilenas la llaman <strong>carga combustible</strong>) es la energía que liberarían todos los materiales combustibles de un recinto si se quemaran por completo. Se calcula con el método de la <strong>NCh 1916</strong>, se expresa en <strong>MJ/m²</strong> y es el número con que la OGUC decide cuánta resistencia al fuego debe tener tu bodega o planta. Aquí te mostramos la fórmula, los valores que se usan y un ejemplo completo de una bodega.\n    </p>\n\n<section id=\"que-es\">\n        <h2>Qué es la carga de fuego y por qué se mide en MJ/m²</h2>\n        <p>La NCh 1916 define la <strong>carga combustible</strong> como la cantidad total de calor que se desprendería por combustión completa al incendiarse un edificio o parte de él. Se expresa en megajoules (MJ). Como una bodega grande y una chica con el mismo contenido no tienen el mismo riesgo, lo que interesa es la <strong>densidad de carga combustible</strong>: la carga dividida por la superficie de planta, en <strong>MJ/m²</strong>.</p>\n        <p>Hay dos densidades y las dos cuentan:</p>\n        <ul class=\"checklist\">\n            <li><strong>Densidad media (NCh 1916):</strong> toda la carga del sector dividida por toda su superficie de planta.</li>\n            <li><strong>Densidad puntual máxima (NCh 1993):</strong> la densidad más alta que existe en un área de 2 m por 2 m del sector. Es la que castiga las zonas donde se apila mucho material en poco piso, como un rack.</li>\n        </ul>\n        <div class=\"callout callout-info\"><span class=\"callout-icon\">i</span><div class=\"callout-body\"><div class=\"callout-title\">Carga de fuego, carga combustible y carga calórica</div><p>Son el mismo concepto. En Google se busca «carga de fuego»; en la OGUC, en la NCh 1916 y en los informes que revisa la DOM se llama «carga combustible». Algunos también hablan de «carga calórica» o «carga térmica».</p></div></div>\n        <p>La NCh 1916 también permite expresar el resultado en <strong>kilos de madera equivalente</strong>, tomando 16,8 MJ/kg (4,0 Mcal/kg) como calor de combustión promedio de la madera. Y la propia Tabla 3 de la OGUC recuerda la conversión: 1 MJ/m² = 238,85 kcal/m². Por eso a veces verás cifras en Mcal/m²: son las mismas, en otra unidad.</p>\n    </section>\n\n<section id=\"formula\">\n        <h2>La fórmula de la NCh 1916, paso a paso</h2>\n        <p>El procedimiento de la norma es una suma ponderada: la masa de cada material combustible multiplicada por su calor de combustión, y el total dividido por la superficie del sector.</p>\n        <div class=\"highlight-box\"><h3>Densidad de carga combustible media</h3><p><strong>q = Σ (m<sub>i</sub> × H<sub>i</sub>) ÷ A</strong>, donde <strong>m<sub>i</sub></strong> es la masa de cada material (kg), <strong>H<sub>i</sub></strong> su calor de combustión (MJ/kg) y <strong>A</strong> la superficie de planta del sector (m²). El resultado queda en MJ/m².</p></div>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Definir el sector</h4><p>Un edificio entero o un sector separado en planta (un muro de compartimentación F-120 o superior, según el art. 4.3.24 de la OGUC, permite calcular cada sector aparte). La superficie A es la de planta de ese sector.</p></div></li>\n            <li><div class=\"step-content\"><h4>Inventariar todo lo combustible</h4><p>Productos almacenados, embalajes, pallets, film, mobiliario, revestimientos, aislaciones y estructura de madera. La NCh 1916 incluye los materiales de construcción, el alhajamiento y los enseres en uso: no sólo lo que se vende.</p></div></li>\n            <li><div class=\"step-content\"><h4>Convertir cantidades a masa</h4><p>Unidades × peso unitario, o volumen × densidad. Lo que importa es el peso neto de lo combustible: el acero de un rack o el vidrio de un envase no suman.</p></div></li>\n            <li><div class=\"step-content\"><h4>Asignar el calor de combustión</h4><p>Se usa el <strong>calor de combustión inferior</strong> de cada material (el que determina la NCh 1914/2), tomado del anexo de la NCh 1916, de la hoja de datos del producto o de tablas técnicas reconocidas.</p></div></li>\n            <li><div class=\"step-content\"><h4>Sumar y dividir</h4><p>La suma de todos los productos m × H es la carga combustible del sector; dividida por A da la densidad media. Aparte se calcula la densidad puntual máxima sobre los 4 m² más cargados.</p></div></li>\n            <li><div class=\"step-content\"><h4>Clasificar según la OGUC</h4><p>Con las dos densidades, el destino y el número de pisos se entra a la Tabla 3 del art. 4.3.4 y sale el tipo a, b, c o d. Lo explicamos en la guía de <a href=\"/resistencia-al-fuego-oguc/\">resistencia al fuego según la OGUC</a>.</p></div></li>\n        </ol>\n    </section>\n\n<section id=\"calores\">\n        <h2>Calores de combustión de referencia</h2>\n        <p>El calor de combustión (también llamado poder calorífico) es la energía que libera un kilo de material al quemarse. Los valores de esta tabla son de referencia, tomados de la NCh 1916 (madera) y de la tabla 1.4 del reglamento español de seguridad contra incendios en establecimientos industriales, que se usa como consulta habitual. En el informe se usa el valor del anexo de la NCh 1916 o el del fabricante cuando el producto lo tiene.</p>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Material</th><th>MJ/kg</th><th>Mcal/kg</th></tr></thead>\n            <tbody>\n                <tr><td>Madera (referencia NCh 1916)</td><td>16,8</td><td>4,0</td></tr>\n                <tr><td>Papel, cartón, algodón, textiles</td><td>16,7</td><td>4</td></tr>\n                <tr><td>Cuero, lana, PVC (cloruro de polivinilo)</td><td>21</td><td>5</td></tr>\n                <tr><td>Poliuretano, alcohol etílico</td><td>25,1</td><td>6</td></tr>\n                <tr><td>Polietileno, poliestireno, caucho, gasóleo</td><td>42</td><td>10</td></tr>\n            </tbody>\n        </table></div>\n        <p>La lectura práctica: <strong>un kilo de plástico o de aceite vale entre dos y tres kilos de cartón</strong>. Una bodega de envases de polietileno, film o neumáticos concentra mucha más carga de fuego que una de papel con el mismo peso.</p>\n    </section>\n\n<figure class=\"article-img\">\n        <img data-foto=\"operario-transpaleta-racks-estudio-carga-combustible\" alt=\"Operario con transpaleta entre racks de una bodega: el inventario por rack es la base del cálculo de la carga de fuego\">\n        <figcaption>El inventario por rack y por sector es la base del cálculo: masa de cada material por su calor de combustión.</figcaption>\n    </figure>\n"
+    },
+    {
+      "tipo": "formulario"
+    },
+    {
+      "tipo": "html",
+      "html": "<section id=\"puntual\">\n        <h2>Densidad media y densidad puntual máxima: por qué se calculan las dos</h2>\n        <p>La densidad media reparte toda la carga sobre todo el piso, incluidos pasillos y andenes vacíos. En una bodega con racks la energía está concentrada: una posición de 2 m × 2 m con cinco niveles de cajas puede tener diez veces la densidad media del recinto. Por eso la NCh 1993 define la <strong>densidad puntual máxima</strong> sobre un área de 2 m por 2 m, y la Tabla 3 de la OGUC trae una columna para cada densidad.</p>\n        <div class=\"callout callout-danger\"><span class=\"callout-icon\">!</span><div class=\"callout-body\"><div class=\"callout-title\">Manda la mayor de las dos</div><p>La nota de la Tabla 3 del art. 4.3.4 es explícita: para clasificar un edificio o sector se aplica la densidad de carga combustible <strong>mayor de ambas columnas</strong>. Un estudio que sólo calcula la media queda incompleto.</p></div></div>\n    </section>\n\n<section id=\"ejemplo\">\n        <h2>Ejemplo de cálculo de carga de fuego en una bodega</h2>\n        <p>Bodega de <strong>1.000 m²</strong> (50 m × 20 m) en un solo nivel, 8 m de altura libre, estructura y racks metálicos, piso de hormigón. Almacena productos de papel en cajas de cartón, con film de polietileno y pallets de madera. Los pesos salen del inventario que entrega la empresa.</p>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Material combustible</th><th>Masa (kg)</th><th>Calor de combustión (MJ/kg)</th><th>Carga (MJ)</th></tr></thead>\n            <tbody>\n                <tr><td>Cartón y papel (cajas y producto)</td><td>40.000</td><td>16,7</td><td>668.000</td></tr>\n                <tr><td>Film y envases de polietileno</td><td>6.000</td><td>42</td><td>252.000</td></tr>\n                <tr><td>Pallets de madera (800 × 25 kg)</td><td>20.000</td><td>16,7</td><td>334.000</td></tr>\n                <tr><td>Racks metálicos, estructura de acero, piso de hormigón</td><td>—</td><td>no combustible</td><td>0</td></tr>\n                <tr><td><strong>Carga combustible total</strong></td><td></td><td></td><td><strong>1.254.000</strong></td></tr>\n            </tbody>\n        </table></div>\n        <h3>Densidad media</h3>\n        <p>1.254.000 MJ ÷ 1.000 m² = <strong>1.254 MJ/m²</strong> (unos 300 Mcal/m², o 75 kg de madera equivalente por m²).</p>\n        <h3>Densidad puntual máxima</h3>\n        <p>La posición más cargada ocupa 4 m² de piso (2 m × 2 m) con cinco niveles: 1.200 kg de cartón, 250 kg de polietileno y cinco pallets (125 kg de madera).</p>\n        <p>1.200 × 16,7 + 250 × 42 + 125 × 16,7 = 20.040 + 10.500 + 2.088 = 32.628 MJ ÷ 4 m² = <strong>8.157 MJ/m²</strong>.</p>\n        <h3>Clasificación según la Tabla 3 de la OGUC</h3>\n        <p>Para «establecimientos de bodegaje», la media de 1.254 MJ/m² cae en la fila «sobre 1.000 y hasta 2.000», y la puntual de 8.157 MJ/m² en «sobre 6.000 y hasta 10.000»: es la misma fila. Con <strong>1 piso, el tipo es d</strong>, el menos exigente.</p>\n        <div class=\"callout callout-warning\"><span class=\"callout-icon\">!</span><div class=\"callout-body\"><div class=\"callout-title\">La altura cuenta como pisos</div><p>El art. 4.3.5 de la OGUC entiende por piso hasta 3,5 m de altura: lo que sobrepasa se divide por 3,5 m y la fracción cuenta como un piso más. Esta bodega de 8 m se cuenta como 3 pisos (8 ÷ 3,5 = 2,3), y en la misma fila la Tabla 3 pasa de d a <strong>c</strong>. La excepción es para naves de un piso con densidad media <strong>inferior a 500 MJ/m²</strong> y sin altillos, que se consideran de 1 piso cualquiera sea su altura. Es la regla que más cambia el resultado en bodegas altas, y el profesional que firma la aplica al caso concreto.</p></div></div>\n        <p>Con el mismo inventario en una nave de 3,5 m, o con la mitad del stock (media bajo 500 MJ/m²) en la nave de 8 m, el resultado sería tipo d. Por eso el estudio se hace con los datos reales de la instalación y no con promedios por rubro.</p>\n    </section>\n<section id=\"datos\">\n        <h2>Qué datos necesitas entregar para el cálculo</h2>\n        <p>En SVEA hacemos el levantamiento con los planos y el inventario que nos entrega la empresa: no hace falta coordinar una salida a terreno. Con estos antecedentes el informe queda listo en 3 a 5 días hábiles.</p>\n        <ul class=\"checklist\">\n            <li><strong>Planos de planta y corte</strong> (o un croquis acotado) con superficies, altura libre, altillos y muros que separen sectores.</li>\n            <li><strong>Inventario</strong> de lo almacenado por familia de producto: cantidades, peso unitario o peso total, y material (cartón, plástico, madera, textil, líquidos).</li>\n            <li><strong>Embalajes y pallets:</strong> tipo de pallet, cantidad, film y cajas, que muchos olvidan y pesan mucho.</li>\n            <li><strong>Racks:</strong> número de posiciones, niveles y qué se guarda en las posiciones más cargadas, para la densidad puntual.</li>\n            <li><strong>Materialidad</strong> de estructura, cubierta, revestimientos y aislaciones (una cubierta con aislante de poliestireno suma carga).</li>\n            <li><strong>Destino y trámite</strong> para el que se pide el estudio: DOM, SEREMI o patente, porque cambia lo que debe decir el informe.</li>\n        </ul>\n        <p>Si no tienes pesos exactos, se estiman con densidades y volúmenes; lo importante es que el inventario refleje el escenario de máxima ocupación de la bodega, no un día flojo. Qué trámites lo piden lo detallamos en <a href=\"/cuando-piden-estudio-de-carga-de-combustible/\">cuándo te piden el estudio de carga de combustible</a>.</p>\n    </section>\n\n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿Necesitas el cálculo de carga de fuego de tu bodega o planta?</h3><p>Con tus planos e inventario calculamos las densidades media y puntual según NCh 1916, clasificamos según la OGUC y te entregamos el informe firmado en 3 a 5 días hábiles. Cotización en menos de 24 horas.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20necesito%20cotizar%20un%20estudio%20de%20carga%20de%20combustible%20(c%C3%A1lculo%20NCh%201916)\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><!--logos-clientes--></aside>\n\n<section id=\"errores\">\n        <h2>Errores frecuentes al calcular la carga de fuego</h2>\n        <div class=\"error-item\"><h4>Contar sólo el producto y olvidar el embalaje</h4><p>Cajas, film, pallets y esquineros pueden ser un tercio de la carga de una bodega de productos no combustibles.</p></div>\n        <div class=\"error-item\"><h4>Usar el calor de combustión superior</h4><p>La carga combustible se calcula con el calor de combustión inferior (NCh 1914/2); el superior infla el resultado.</p></div>\n        <div class=\"error-item\"><h4>Dividir por la superficie del terreno</h4><p>A es la superficie de planta del sector analizado, no del predio ni de todo el edificio si hay sectores separados.</p></div>\n        <div class=\"error-item\"><h4>No calcular la densidad puntual</h4><p>La Tabla 3 usa la mayor de las dos densidades; en bodegas con racks la puntual suele ser la que decide.</p></div>\n        <div class=\"error-item\"><h4>Ignorar la altura y los altillos</h4><p>El número de pisos de la Tabla 3 se cuenta según el art. 4.3.5, y una nave alta con más de 500 MJ/m² deja de ser «de un piso».</p></div>\n        <div class=\"error-item\"><h4>Presentar una planilla sin firma</h4><p>La OGUC define el estudio como suscrito por un profesional especialista (art. 1.1.2). Un Excel sirve para estimar, no para el expediente.</p></div>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (septiembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=8201\" target=\"_blank\" rel=\"noopener\">Ordenanza General de Urbanismo y Construcciones (DS 47 de 1992, MINVU), texto vigente en la Biblioteca del Congreso Nacional: arts. 1.1.2, 1.4.19, 4.3.2 a 4.3.5, 4.3.24 y 4.3.26</a></li><li><a href=\"https://www.inn.cl/\" target=\"_blank\" rel=\"noopener\">Instituto Nacional de Normalización (INN): NCh 1916 Of.99, NCh 1993 Of.98, NCh 1914/2 y NCh 935/1</a></li><li><a href=\"https://www.boe.es/buscar/act.php?id=BOE-A-2004-21216\" target=\"_blank\" rel=\"noopener\">RD 2267/2004 (España), Reglamento de seguridad contra incendios en establecimientos industriales, anexo I, tabla 1.4 (poder calorífico de referencia)</a></li></ul>\n    </section>\n"
+    }
+  ],
+  "relacionados": {
+    "titulo": "Servicios relacionados",
+    "intro": "",
+    "tarjetas": [
+      {
+        "titulo": "Estudio de Carga de Combustible",
+        "texto": "Cálculo de la carga de fuego según NCh 1916 a partir de tus planos e inventario, clasificación según la OGUC e informe firmado por profesional en 3 a 5 días hábiles.",
+        "href": "/estudio-de-carga-de-combustible/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Calificación Técnica Industrial",
+        "texto": "La calificación de la SEREMI de Salud que la municipalidad pide para la patente de industrias y bodegas. Suele ir junto al estudio de carga de combustible.",
+        "href": "/calificacion-tecnica-industrial/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Planes de Emergencia y Evacuación",
+        "texto": "Plan de emergencia conforme al DS 44 y al DS 594, con mapa de riesgos, protocolos y planos de evacuación.",
+        "href": "/planes-de-emergencia-y-evacuacion/",
+        "enlace": "Conocer servicio →"
+      }
+    ]
+  },
+  "asunto": {
+    "prefijo": "[BLOG] Cotización ECC - ",
+    "campo": "Empresa",
+    "id": "dynamic-subject-art-ecc-calculo"
+  }
+}

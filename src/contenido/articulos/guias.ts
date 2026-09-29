@@ -278,21 +278,65 @@ export const GUIAS: Guia[] = [
     imagen: { nombre: 'tambores-plasticos-sustancias-peligrosas-ds-43', alt: 'Sustancias peligrosas DS 43 - tambores plásticos con tapa naranja almacenados' },
     servicio: RP,
   },
+  // --- el clúster del estudio de carga de combustible (29-sep-2026): tres
+  // guías que cuelgan de la página de servicio ECC y complementan a
+  // estudio-de-carga-combustible-chile sin repetir su tema ------------------
+  {
+    slug: 'calculo-carga-de-fuego-nch-1916',
+    tema: 'Emergencias e incendio',
+    titulo: 'Cómo se calcula la carga de fuego según la NCh 1916 (con ejemplo)',
+    bajada: 'Fórmula de la NCh 1916, calores de combustión de referencia, densidad media y puntual máxima, y un ejemplo numérico de una bodega de 1.000 m² clasificada según la OGUC.',
+    categoria: 'Seguridad Incendios',
+    fecha: 'Sep 2026',
+    lectura: '10 min lectura',
+    imagen: { nombre: 'bodega-racks-mercaderia-carga-combustible', alt: 'Cálculo de carga de fuego NCh 1916 - racks de una bodega cargados con mercadería en pallets' },
+    servicio: ECC,
+  },
+  {
+    slug: 'cuando-piden-estudio-de-carga-de-combustible',
+    tema: 'Emergencias e incendio',
+    titulo: 'Cuándo te piden el estudio de carga de combustible: DOM, SEREMI, patente y seguros',
+    bajada: 'Quién exige el estudio y en qué trámite: permiso de edificación y recepción en la DOM, calificación técnica e informe sanitario de la SEREMI, patente, bodegas con sustancias peligrosas y pólizas de incendio.',
+    categoria: 'Seguridad Incendios',
+    fecha: 'Sep 2026',
+    lectura: '9 min lectura',
+    imagen: { nombre: 'bodega-andenes-carga-permisos-seremi', alt: 'Cuándo piden el estudio de carga de combustible - andenes de carga de una bodega con camiones' },
+    servicio: ECC,
+  },
+  {
+    slug: 'resistencia-al-fuego-oguc',
+    tema: 'Emergencias e incendio',
+    titulo: 'Resistencia al fuego según la OGUC: tipos a, b, c y d y la tabla de exigencias',
+    bajada: 'Qué significan F-15 a F-180, la tabla del art. 4.3.3 por elemento, cómo se determina el tipo con las tablas del art. 4.3.4 y qué implica para una bodega o una planta industrial.',
+    categoria: 'Seguridad Incendios',
+    fecha: 'Sep 2026',
+    lectura: '11 min lectura',
+    imagen: { nombre: 'bodega-estanterias-estudio-carga-combustible', alt: 'Resistencia al fuego OGUC - estanterías altas de una bodega cuya estructura debe cumplir la resistencia al fuego exigida' },
+    servicio: ECC,
+  },
 ];
 
 /**
- * Las seis guías del menú «Recursos y guías» (escritorio y móvil) y de la
+ * Las ocho guías del menú «Recursos y guías» (escritorio y móvil) y de la
  * columna del mismo nombre en el pie (Footer2). Las tres leen esta lista, así
- * que el menú y el pie no pueden diferir; después de las seis va siempre
+ * que el menú y el pie no pueden diferir; después de las ocho va siempre
  * «Ver todas las guías» → /blog/.
+ *
+ * 29-sep: una guía por servicio (y dos de la CTI, pedido de Carlos): CTI,
+ * calificación inofensiva, carga de combustible, plan de emergencia DS 44,
+ * condominios, residuos peligrosos, transporte de residuos e informe
+ * sanitario. Patente definitiva y sumario sanitario salen del menú (siguen
+ * en /blog/). Ocho entradas = 2 columnas × 4 filas en el desplegable.
  */
 export const GUIAS_MENU: { slug: string; rotulo: string; descripcion: string }[] = [
   { slug: 'calificacion-tecnica-industrial-chile', rotulo: 'Calificación Técnica Industrial en Chile', descripcion: 'Guía completa del trámite: quién lo necesita, plazos y documentos.' },
   { slug: 'calificacion-inofensiva-seremi', rotulo: 'Calificación Inofensiva SEREMI', descripcion: 'Cómo obtener el certificado de actividad inofensiva y tu patente.' },
-  { slug: 'patente-definitiva-permisos-seremi', rotulo: 'Patente definitiva y permisos SEREMI', descripcion: 'Qué permisos de la SEREMI te piden para dejar la patente provisoria.' },
+  { slug: 'estudio-de-carga-combustible-chile', rotulo: 'Estudio de Carga de Combustible', descripcion: 'Qué es, cuándo lo exige la OGUC y cómo se calcula la carga de fuego.' },
   { slug: 'plan-de-emergencia-ds-44-empresas-chile', rotulo: 'Plan de Emergencia DS 44', descripcion: 'Qué exige el decreto, contenido obligatorio, simulacros y sanciones.' },
+  { slug: 'plan-de-emergencia-condominio-chile', rotulo: 'Plan de Emergencia en Condominios', descripcion: 'Lo que la Ley 21.442 pide a la administración de tu comunidad.' },
+  { slug: 'manejo-de-residuos-peligrosos-chile', rotulo: 'Manejo de Residuos Peligrosos', descripcion: 'DS 148: clasificación, plan de manejo, bodega y declaración SIDREP.' },
+  { slug: 'autorizacion-transporte-residuos-chile', rotulo: 'Autorización de Transporte de Residuos', descripcion: 'Peligrosos y no peligrosos: qué resolución necesitas y cómo se obtiene.' },
   { slug: 'que-es-informe-sanitario', rotulo: '¿Qué es el Informe Sanitario?', descripcion: 'Quién lo necesita, documentos, plazos y costos ante la SEREMI.' },
-  { slug: 'sumario-sanitario-seremi', rotulo: 'Sumario sanitario SEREMI', descripcion: 'Qué hacer si la SEREMI te levanta un acta o te multa.' },
 ];
 export const VER_TODAS_LAS_GUIAS = { rotulo: 'Ver todas las guías', ruta: '/blog/' };
 

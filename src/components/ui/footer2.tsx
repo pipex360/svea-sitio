@@ -109,7 +109,7 @@ export function Footer2({
       ],
     },
     {
-      // Las mismas seis guías y el mismo «Ver todas las guías» que el menú
+      // Las mismas ocho guías y el mismo «Ver todas las guías» que el menú
       // «Recursos y guías» (GUIAS_MENU, en guias.ts): menú y pie no pueden
       // diferir. El desplegable de la cabecera (Radix) sólo dibuja su contenido
       // al abrirse, así que estos enlaces no están en su HTML: aquí sí, para

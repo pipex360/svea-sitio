@@ -1,0 +1,320 @@
+{
+  "slug": "resistencia-al-fuego-oguc",
+  "ruta": "/resistencia-al-fuego-oguc/",
+  "migasOriginal": [
+    {
+      "texto": "Inicio",
+      "href": "/"
+    },
+    {
+      "texto": "Blog",
+      "href": "/blog/"
+    }
+  ],
+  "migaFinal": "Resistencia al fuego OGUC",
+  "categoria": "Incendio",
+  "h1": "Resistencia al fuego según la OGUC: tipos a, b, c y d y la tabla de exigencias",
+  "bajada": "Qué significan F-15 a F-180, la tabla del art. 4.3.3 con la resistencia al fuego de cada elemento, cómo se determina el tipo de un edificio con las tablas del art. 4.3.4 y qué implica para una bodega o una planta industrial.",
+  "fecha": "Septiembre 2026",
+  "actualizado": {
+    "iso": "2026-09-29",
+    "texto": "29 de septiembre de 2026"
+  },
+  "lectura": "11 min de lectura",
+  "autor": "Equipo técnico SVEA Consultores",
+  "cifras": [
+    {
+      "n": "4",
+      "l": "Tipos de edificio (a, b, c, d)"
+    },
+    {
+      "n": "F-180",
+      "l": "Exigencia máxima (muro cortafuego, tipo a)"
+    },
+    {
+      "n": "3,5 m",
+      "l": "Altura que cuenta como un piso (art. 4.3.5)"
+    },
+    {
+      "n": "3",
+      "l": "Tablas del art. 4.3.4"
+    }
+  ],
+  "indiceTitulo": "En este artículo",
+  "indice": [
+    {
+      "href": "#que-es",
+      "texto": "Qué significa F-15 a F-180"
+    },
+    {
+      "href": "#tabla",
+      "texto": "Tabla de resistencia al fuego (art. 4.3.3)"
+    },
+    {
+      "href": "#como-se-determina",
+      "texto": "Cómo se determina el tipo (art. 4.3.4)"
+    },
+    {
+      "href": "#tabla-3",
+      "texto": "Tabla 3: el tipo según la carga combustible"
+    },
+    {
+      "href": "#pisos",
+      "texto": "Reglas del art. 4.3.5"
+    },
+    {
+      "href": "#bodega",
+      "texto": "Qué implica para una bodega"
+    },
+    {
+      "href": "#errores",
+      "texto": "Errores comunes"
+    },
+    {
+      "href": "#fuentes",
+      "texto": "Fuentes"
+    },
+    {
+      "href": "#faq",
+      "texto": "Preguntas frecuentes"
+    }
+  ],
+  "formulario": {
+    "titulo": "Cotiza tu Estudio de Carga de Combustible sin compromiso",
+    "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+    "ocultos": [
+      {
+        "name": "access_key",
+        "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+      },
+      {
+        "name": "subject",
+        "value": "Nueva cotización ECC (Blog) - SVEA Consultores",
+        "id": "dynamic-subject-art-ecc-oguc"
+      },
+      {
+        "name": "from_name",
+        "value": "SVEA Consultores Blog - ECC"
+      },
+      {
+        "name": "redirect",
+        "value": "https://sveaconsultores.cl/gracias/"
+      },
+      {
+        "name": "Servicio",
+        "value": "Estudio de Carga Combustible"
+      },
+      {
+        "name": "Origen",
+        "value": "Artículo SEO - ECC resistencia al fuego OGUC"
+      }
+    ],
+    "campos": [
+      {
+        "label": "Nombre completo *",
+        "id": "art-nombre",
+        "name": "Nombre",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Ej: Juan Pérez",
+        "ancho": false
+      },
+      {
+        "label": "Empresa *",
+        "id": "art-empresa",
+        "name": "Empresa",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Nombre de tu empresa",
+        "ancho": false
+      },
+      {
+        "label": "Teléfono *",
+        "id": "art-telefono",
+        "name": "Teléfono",
+        "tipo": "tel",
+        "requerido": true,
+        "placeholder": "+569 1234 5678",
+        "ancho": false
+      },
+      {
+        "label": "Email *",
+        "id": "art-email",
+        "name": "Email",
+        "tipo": "email",
+        "requerido": true,
+        "placeholder": "correo@empresa.cl",
+        "ancho": false
+      },
+      {
+        "label": "Tipo de edificación",
+        "id": "art-tipo",
+        "name": "Tipo de Edificación",
+        "tipo": "select",
+        "requerido": false,
+        "placeholder": null,
+        "ancho": true,
+        "opciones": [
+          {
+            "value": "",
+            "texto": "Selecciona una opción",
+            "seleccionada": true,
+            "desactivada": true
+          },
+          {
+            "value": "Bodega / Centro distribución",
+            "texto": "Bodega / Centro de distribución",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Fábrica / Industria",
+            "texto": "Fábrica / Industria",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Supermercado / Centro comercial",
+            "texto": "Supermercado / Centro comercial",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Depósito combustibles",
+            "texto": "Depósito de combustibles / lubricantes",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Otro",
+            "texto": "Otro",
+            "seleccionada": false,
+            "desactivada": false
+          }
+        ]
+      },
+      {
+        "label": "Mensaje (opcional)",
+        "id": "art-mensaje",
+        "name": "Mensaje",
+        "tipo": "textarea",
+        "requerido": false,
+        "placeholder": "¿Necesitas el ECC por patente, permiso de edificación, recepción o calificación SEREMI?",
+        "ancho": true,
+        "filas": 3
+      }
+    ],
+    "boton": "Solicitar cotización gratuita →",
+    "confianza": [
+      "Datos protegidos",
+      "Cotización sin costo",
+      "Sin compromiso"
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      {
+        "p": "¿Qué significa F-60 o F-120 en la OGUC?",
+        "r": "Es la clase de resistencia al fuego: los minutos que el elemento mantiene su comportamiento ante el fuego en el ensayo normalizado (NCh 935/1). F-60 son 60 minutos y F-120, dos horas. La OGUC usa las clases F-15, F-30, F-60, F-90, F-120, F-150 y F-180.",
+        "rTexto": "Es la clase de resistencia al fuego: los minutos que el elemento mantiene su comportamiento ante el fuego en el ensayo normalizado (NCh 935/1). F-60 son 60 minutos y F-120, dos horas. La OGUC usa las clases F-15, F-30, F-60, F-90, F-120, F-150 y F-180."
+      },
+      {
+        "p": "¿Cuáles son los tipos de edificio según resistencia al fuego en la OGUC?",
+        "r": "Cuatro: a, b, c y d, del más al menos exigente (art. 4.3.3). El tipo se determina con las tablas del art. 4.3.4 según el destino, el número de pisos y la superficie edificada, el número de ocupantes o la densidad de carga combustible.",
+        "rTexto": "Cuatro: a, b, c y d, del más al menos exigente (art. 4.3.3). El tipo se determina con las tablas del art. 4.3.4 según el destino, el número de pisos y la superficie edificada, el número de ocupantes o la densidad de carga combustible."
+      },
+      {
+        "p": "¿Cómo sé qué tipo le corresponde a mi bodega?",
+        "r": "Con la Tabla 3 del art. 4.3.4: se entra con la mayor de las densidades de carga combustible (media según NCh 1916 y puntual máxima según NCh 1993) y con el número de pisos contado según el art. 4.3.5. Para eso hace falta un estudio de carga de combustible; sin estudio, la bodega se proyecta como tipo a.",
+        "rTexto": "Con la Tabla 3 del art. 4.3.4: se entra con la mayor de las densidades de carga combustible (media según NCh 1916 y puntual máxima según NCh 1993) y con el número de pisos contado según el art. 4.3.5. Para eso hace falta un estudio de carga de combustible; sin estudio, la bodega se proyecta como tipo a."
+      },
+      {
+        "p": "¿Una nave de un piso pero muy alta cuenta como un piso?",
+        "r": "Sólo si su densidad de carga combustible media es inferior a 500 MJ/m² y no tiene altillos. Si no, el art. 4.3.5 divide la altura por 3,5 m y la fracción cuenta como un piso más: una nave de 8 m se cuenta como 3 pisos.",
+        "rTexto": "Sólo si su densidad de carga combustible media es inferior a 500 MJ/m² y no tiene altillos. Si no, el art. 4.3.5 divide la altura por 3,5 m y la fracción cuenta como un piso más: una nave de 8 m se cuenta como 3 pisos."
+      },
+      {
+        "p": "¿Se puede bajar el tipo exigido a un edificio?",
+        "r": "Sí, cambiando las variables de la tabla: reducir la densidad de carga combustible, compartimentar con muros F-120 o superior (art. 4.3.24) para calcular por sectores, o separar destinos en planta. Cuando el tipo no cambia, la alternativa es proteger los elementos que no cumplen.",
+        "rTexto": "Sí, cambiando las variables de la tabla: reducir la densidad de carga combustible, compartimentar con muros F-120 o superior (art. 4.3.24) para calcular por sectores, o separar destinos en planta. Cuando el tipo no cambia, la alternativa es proteger los elementos que no cumplen."
+      },
+      {
+        "p": "¿Dónde se verifica la resistencia al fuego de un material?",
+        "r": "En el Listado Oficial de Comportamiento al Fuego de Elementos y Materiales de Construcción del MINVU, o mediante ensayo según las normas oficiales. Si un elemento no figura, el art. 4.3.2 exige una certificación de un profesional especialista o, si no es posible asimilarlo, un ensayo de laboratorio.",
+        "rTexto": "En el Listado Oficial de Comportamiento al Fuego de Elementos y Materiales de Construcción del MINVU, o mediante ensayo según las normas oficiales. Si un elemento no figura, el art. 4.3.2 exige una certificación de un profesional especialista o, si no es posible asimilarlo, un ensayo de laboratorio."
+      }
+    ]
+  },
+  "autorCaja": {
+    "inicial": "S",
+    "nombre": "Equipo técnico SVEA Consultores",
+    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 empresas atendidas."
+  },
+  "compartir": {
+    "titulo": "Compartir",
+    "enlaces": [
+      {
+        "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://sveaconsultores.cl/resistencia-al-fuego-oguc/",
+        "texto": "in",
+        "titulo": "LinkedIn",
+        "externo": true
+      },
+      {
+        "href": "https://api.whatsapp.com/send?text=Resistencia%20al%20fuego%20OGUC%20https://sveaconsultores.cl/resistencia-al-fuego-oguc/",
+        "texto": "wa",
+        "titulo": "WhatsApp",
+        "externo": true
+      },
+      {
+        "href": "mailto:?subject=Resistencia%20al%20fuego%20OGUC&body=Te%20comparto%20esta%20gu%C3%ADa%3A%20https://sveaconsultores.cl/resistencia-al-fuego-oguc/",
+        "texto": "@",
+        "titulo": "Email",
+        "externo": false
+      }
+    ]
+  },
+  "bloques": [
+    {
+      "tipo": "html",
+      "html": "<p class=\"art-entrada\">\n        La <strong>resistencia al fuego</strong> es el tiempo, en minutos, que un elemento de construcción soporta un incendio sin perder su función. La <strong>OGUC</strong> la exige en su Título 4, Capítulo 3: primero clasifica cada edificio en uno de cuatro <strong>tipos (a, b, c o d)</strong> según su destino, pisos, superficie, ocupantes o carga combustible, y luego fija en una tabla la resistencia que debe tener cada muro, pilar, losa y techumbre. Esta guía explica las dos cosas con las tablas oficiales.\n    </p>\n\n<section id=\"que-es\">\n        <h2>Qué significa F-15, F-30, F-60, F-120 y F-180</h2>\n        <p>La letra F seguida de un número es la clase de resistencia al fuego: <strong>los minutos durante los cuales el elemento mantiene su comportamiento ante el fuego en el ensayo normalizado</strong>. Un muro F-120 resiste 120 minutos; una techumbre F-15, quince. Las clases que usa la OGUC son F-15, F-30, F-60, F-90, F-120, F-150 y F-180.</p>\n        <p>Cómo se acredita lo dice el art. 4.3.2: el comportamiento al fuego de los elementos y materiales se determina por el <strong>Listado Oficial de Comportamiento al Fuego</strong> que publica el MINVU, o por ensayos según las normas oficiales (la NCh 935/1 para la resistencia al fuego). Si un elemento no está en el listado ni certificado, el art. 4.3.2 exige una certificación de un profesional especialista que lo asimile a alguno de los tipos, y la DOM puede pedir un ensayo de laboratorio.</p>\n        <div class=\"callout callout-info\"><span class=\"callout-icon\">i</span><div class=\"callout-body\"><div class=\"callout-title\">Resistencia no es incombustibilidad</div><p>Un pilar de acero no se quema, pero pierde capacidad con el calor: sin protección puede quedar bajo F-15. Por eso las bodegas metálicas cumplen los tipos más exigentes con pintura intumescente, morteros o placas, y no con el acero desnudo.</p></div></div>\n    </section>\n\n<section id=\"tabla\">\n        <h2>Tabla de resistencia al fuego de la OGUC (art. 4.3.3)</h2>\n        <p>El art. 4.3.3 dice que los edificios que deban protegerse contra el fuego se proyectan y construyen según uno de cuatro tipos, y que sus elementos cumplen la resistencia de esta tabla. Si a un elemento le corresponden dos resistencias por cumplir dos funciones, manda la mayor.</p>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Elemento de construcción</th><th>Tipo a</th><th>Tipo b</th><th>Tipo c</th><th>Tipo d</th></tr></thead>\n            <tbody>\n                <tr><td>(1) Muros cortafuego</td><td>F-180</td><td>F-150</td><td>F-120</td><td>F-120</td></tr>\n                <tr><td>(2) Muros zona vertical de seguridad y caja de escalera</td><td>F-120</td><td>F-120</td><td>F-90</td><td>F-60</td></tr>\n                <tr><td>(3) Muros caja de ascensores</td><td>F-120</td><td>F-90</td><td>F-60</td><td>F-60</td></tr>\n                <tr><td>(4) Muros divisorios entre unidades (hasta la cubierta)</td><td>F-120</td><td>F-90</td><td>F-60</td><td>F-60</td></tr>\n                <tr><td>(5) Elementos soportantes verticales</td><td>F-120</td><td>F-90</td><td>F-60</td><td>F-30</td></tr>\n                <tr><td>(6) Muros no soportantes y tabiques</td><td>F-30</td><td>F-15</td><td>—</td><td>—</td></tr>\n                <tr><td>(7) Escaleras</td><td>F-60</td><td>F-30</td><td>F-15</td><td>—</td></tr>\n                <tr><td>(8) Elementos soportantes horizontales</td><td>F-120</td><td>F-90</td><td>F-60</td><td>F-30</td></tr>\n                <tr><td>(9) Techumbre incluido cielo falso</td><td>F-60</td><td>F-60</td><td>F-30</td><td>F-15</td></tr>\n            </tbody>\n        </table></div>\n        <p>Del tipo a al d las exigencias bajan. Para una bodega o planta industrial, la diferencia entre proyectar en tipo a o en tipo d está en los pilares y vigas (F-120 contra F-30), la techumbre (F-60 contra F-15) y los muros cortafuego (F-180 contra F-120).</p>\n    </section>\n\n<section id=\"como-se-determina\">\n        <h2>Cómo se determina el tipo de un edificio (art. 4.3.4)</h2>\n        <p>El tipo no lo elige el proyectista: sale de las tres tablas del art. 4.3.4, según el destino, el número de pisos y una tercera variable que depende del destino.</p>\n        <ul class=\"checklist\">\n            <li><strong>Tabla 1, por superficie edificada:</strong> viviendas, hoteles, oficinas, museos, salud, restaurantes, locales comerciales, bibliotecas, talleres automotores y estacionamientos.</li>\n            <li><strong>Tabla 2, por número máximo de ocupantes:</strong> teatros y espectáculos, reuniones y establecimientos docentes.</li>\n            <li><strong>Tabla 3, por densidad de carga combustible:</strong> combustibles y lubricantes, establecimientos industriales, supermercados y centros comerciales, y establecimientos de bodegaje. Es la que necesita un estudio de carga de combustible.</li>\n        </ul>\n        <p>Algunas filas de la Tabla 1, para que veas cómo funciona (pisos 1 a 7 o más):</p>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Destino</th><th>Superficie edificada</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7+</th></tr></thead>\n            <tbody>\n                <tr><td>Habitacional</td><td>Cualquiera</td><td>d</td><td>d</td><td>c</td><td>c</td><td>b</td><td>a</td><td>a</td></tr>\n                <tr><td>Oficinas</td><td>Sobre 1.500 m²</td><td>c</td><td>c</td><td>b</td><td>b</td><td>b</td><td>a</td><td>a</td></tr>\n                <tr><td>Oficinas</td><td>Hasta 500 m²</td><td>d</td><td>c</td><td>c</td><td>b</td><td>b</td><td>b</td><td>a</td></tr>\n                <tr><td>Locales comerciales</td><td>Sobre 500 m²</td><td>c</td><td>b</td><td>b</td><td>a</td><td>a</td><td>a</td><td>a</td></tr>\n                <tr><td>Locales comerciales</td><td>Hasta 200 m²</td><td>d</td><td>c</td><td>b</td><td>b</td><td>b</td><td>a</td><td>a</td></tr>\n            </tbody>\n        </table></div>\n    </section>\n\n<figure class=\"article-img\">\n        <img data-foto=\"bodega-centro-logistico-carga-combustible\" alt=\"Nave de un centro logístico con racks y mercadería: la densidad de carga combustible fija su tipo en la Tabla 3 de la OGUC\">\n        <figcaption>En bodegas e industrias el tipo sale de la Tabla 3: densidad de carga combustible y número de pisos.</figcaption>\n    </figure>\n"
+    },
+    {
+      "tipo": "formulario"
+    },
+    {
+      "tipo": "html",
+      "html": "<section id=\"tabla-3\">\n        <h2>Tabla 3: el tipo según la carga combustible</h2>\n        <p>Para los cuatro destinos de la Tabla 3, la variable es la <strong>densidad de carga combustible</strong>: la media según NCh 1916 y la puntual máxima según NCh 1993, ambas en MJ/m². Se entra con la fila que corresponde a la <strong>mayor de las dos densidades</strong> y con la columna del número de pisos. Cómo se obtienen esas densidades lo explicamos en la guía de <a href=\"/calculo-carga-de-fuego-nch-1916/\">cálculo de la carga de fuego según la NCh 1916</a>.</p>\n        <h3>Establecimientos de bodegaje</h3>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Media (MJ/m²)</th><th>Puntual máxima (MJ/m²)</th><th>1 piso</th><th>2</th><th>3</th><th>4</th><th>5 o más</th></tr></thead>\n            <tbody>\n                <tr><td>Sobre 16.000</td><td>Sobre 32.000</td><td>b</td><td>b</td><td>a</td><td>a</td><td>a</td></tr>\n                <tr><td>Sobre 8.000 y hasta 16.000</td><td>Sobre 24.000 y hasta 32.000</td><td>c</td><td>b</td><td>b</td><td>a</td><td>a</td></tr>\n                <tr><td>Sobre 4.000 y hasta 8.000</td><td>Sobre 16.000 y hasta 24.000</td><td>c</td><td>c</td><td>b</td><td>b</td><td>a</td></tr>\n                <tr><td>Sobre 2.000 y hasta 4.000</td><td>Sobre 10.000 y hasta 16.000</td><td>d</td><td>c</td><td>c</td><td>b</td><td>b</td></tr>\n                <tr><td>Sobre 1.000 y hasta 2.000</td><td>Sobre 6.000 y hasta 10.000</td><td>d</td><td>d</td><td>c</td><td>c</td><td>b</td></tr>\n                <tr><td>Sobre 500 y hasta 1.000</td><td>Sobre 3.500 y hasta 6.000</td><td>d</td><td>d</td><td>d</td><td>c</td><td>c</td></tr>\n                <tr><td>Hasta 500</td><td>Hasta 3.500</td><td>d</td><td>d</td><td>d</td><td>d</td><td>c</td></tr>\n            </tbody>\n        </table></div>\n        <h3>Establecimientos industriales</h3>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Media (MJ/m²)</th><th>Puntual máxima (MJ/m²)</th><th>1 piso</th><th>2</th><th>3</th><th>4</th><th>5 o más</th></tr></thead>\n            <tbody>\n                <tr><td>Sobre 16.000</td><td>Sobre 32.000</td><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td></tr>\n                <tr><td>Sobre 8.000 y hasta 16.000</td><td>Sobre 24.000 y hasta 32.000</td><td>b</td><td>a</td><td>a</td><td>a</td><td>a</td></tr>\n                <tr><td>Sobre 4.000 y hasta 8.000</td><td>Sobre 16.000 y hasta 24.000</td><td>c</td><td>b</td><td>a</td><td>a</td><td>a</td></tr>\n                <tr><td>Sobre 2.000 y hasta 4.000</td><td>Sobre 10.000 y hasta 16.000</td><td>c</td><td>c</td><td>b</td><td>a</td><td>a</td></tr>\n                <tr><td>Sobre 1.000 y hasta 2.000</td><td>Sobre 6.000 y hasta 10.000</td><td>d</td><td>c</td><td>c</td><td>b</td><td>a</td></tr>\n                <tr><td>Sobre 500 y hasta 1.000</td><td>Sobre 3.500 y hasta 6.000</td><td>d</td><td>d</td><td>c</td><td>c</td><td>b</td></tr>\n                <tr><td>Hasta 500</td><td>Hasta 3.500</td><td>d</td><td>d</td><td>d</td><td>c</td><td>c</td></tr>\n            </tbody>\n        </table></div>\n        <h3>Supermercados y centros comerciales</h3>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Media (MJ/m²)</th><th>Puntual máxima (MJ/m²)</th><th>1 piso</th><th>2</th><th>3</th><th>4</th><th>5 o más</th></tr></thead>\n            <tbody>\n                <tr><td>Sobre 16.000</td><td>Sobre 32.000</td><td>b</td><td>a</td><td>a</td><td>a</td><td>a</td></tr>\n                <tr><td>Sobre 8.000 y hasta 16.000</td><td>Sobre 24.000 y hasta 32.000</td><td>b</td><td>b</td><td>a</td><td>a</td><td>a</td></tr>\n                <tr><td>Sobre 4.000 y hasta 8.000</td><td>Sobre 16.000 y hasta 24.000</td><td>c</td><td>b</td><td>b</td><td>a</td><td>a</td></tr>\n                <tr><td>Sobre 2.000 y hasta 4.000</td><td>Sobre 10.000 y hasta 16.000</td><td>c</td><td>c</td><td>b</td><td>b</td><td>a</td></tr>\n                <tr><td>Sobre 1.000 y hasta 2.000</td><td>Sobre 6.000 y hasta 10.000</td><td>d</td><td>c</td><td>c</td><td>b</td><td>b</td></tr>\n                <tr><td>Hasta 1.000</td><td>Hasta 6.000</td><td>d</td><td>d</td><td>c</td><td>c</td><td>b</td></tr>\n            </tbody>\n        </table></div>\n        <h3>Combustibles, lubricantes, aceites minerales y naturales</h3>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Media (MJ/m²)</th><th>Puntual máxima (MJ/m²)</th><th>1 piso</th><th>2</th><th>3</th><th>4</th><th>5 o más</th></tr></thead>\n            <tbody>\n                <tr><td>Sobre 8.000</td><td>Sobre 24.000</td><td>a</td><td>a</td><td>a</td><td>a</td><td>a</td></tr>\n                <tr><td>Sobre 4.000 y hasta 8.000</td><td>Sobre 16.000 y hasta 24.000</td><td>b</td><td>a</td><td>a</td><td>a</td><td>a</td></tr>\n                <tr><td>Sobre 2.000 y hasta 4.000</td><td>Sobre 10.000 y hasta 16.000</td><td>c</td><td>b</td><td>a</td><td>a</td><td>a</td></tr>\n                <tr><td>Hasta 2.000</td><td>Hasta 10.000</td><td>d</td><td>c</td><td>b</td><td>a</td><td>a</td></tr>\n            </tbody>\n        </table></div>\n        <div class=\"callout callout-danger\"><span class=\"callout-icon\">!</span><div class=\"callout-body\"><div class=\"callout-title\">Sin estudio, tipo a</div><p>El mismo art. 4.3.4 lo dispone: para los destinos de la Tabla 3, <strong>cuando no se presente un estudio de carga combustible, la edificación deberá proyectarse y construirse de acuerdo al tipo a</strong>. En qué trámites te lo van a pedir está en <a href=\"/cuando-piden-estudio-de-carga-de-combustible/\">cuándo te piden el estudio de carga de combustible</a>.</p></div></div>\n    </section>\n\n<section id=\"pisos\">\n        <h2>Las reglas del art. 4.3.5 que cambian el resultado</h2>\n        <p>El art. 4.3.5 fija cómo se aplican las tablas. Cuatro de sus reglas deciden el tipo de la mayoría de las bodegas e industrias:</p>\n        <ul class=\"checklist\">\n            <li><strong>Un piso son 3,5 m de altura.</strong> Lo que sobrepasa esa medida se suma aparte y se divide por 3,5 m; la fracción cuenta como un piso más. Una nave de 8 m se cuenta como 3 pisos. Se exceptúan las estructuras de un solo piso, cualquiera sea su altura, con densidad media <strong>inferior a 500 MJ/m²</strong> y sin altillos ni superficies intermedias.</li>\n            <li><strong>Uso mixto:</strong> se considera siempre la altura total del edificio, no sólo la del sector analizado.</li>\n            <li><strong>Sectores separados en planta</strong> con distinto destino: se aplica la tabla a cada uno por separado, y cada sector puede quedar con un estándar distinto.</li>\n            <li><strong>Sin separación en planta:</strong> si usos distintos dan estándares distintos, manda el más exigente.</li>\n        </ul>\n        <p>A esto se suman dos artículos que conviene conocer. El <strong>art. 4.3.24</strong> permite subdividir un edificio en compartimentos con muros F-120 o superior (puertas F-60 de cierre automático), y aclara que la compartimentación sirve para <strong>reducir la superficie de cálculo</strong> de las tablas del art. 4.3.4. Y el <strong>art. 4.3.26</strong> exime de protección contra el fuego a las edificaciones de un piso de elementos no combustibles que cumplan a la vez cinco condiciones: menos de 100 ocupantes, carga combustible media inferior a 250 MJ/m² en todos sus recintos, ocupación sólo por adultos que se valgan por sí mismos, destino de equipamiento y 4 m o más a los deslindes.</p>\n    </section>\n<section id=\"bodega\">\n        <h2>Qué implica para una bodega o una planta</h2>\n        <p>Tomemos el ejemplo de la guía de cálculo: una bodega de 1.000 m² con densidad media de 1.254 MJ/m² y puntual máxima de 8.157 MJ/m². Las dos caen en la fila «sobre 1.000 y hasta 2.000 / sobre 6.000 y hasta 10.000» de establecimientos de bodegaje.</p>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Situación</th><th>Pisos según art. 4.3.5</th><th>Tipo</th><th>Pilares y vigas</th><th>Techumbre</th><th>Muros cortafuego</th></tr></thead>\n            <tbody>\n                <tr><td>Nave de 3,5 m de altura</td><td>1</td><td>d</td><td>F-30</td><td>F-15</td><td>F-120</td></tr>\n                <tr><td>Nave de 8 m de altura</td><td>3</td><td>c</td><td>F-60</td><td>F-30</td><td>F-120</td></tr>\n                <tr><td>Nave de 8 m sin estudio</td><td>—</td><td>a</td><td>F-120</td><td>F-60</td><td>F-180</td></tr>\n            </tbody>\n        </table></div>\n        <p>La lectura es simple: <strong>el estudio no cambia la bodega, cambia lo que la OGUC le exige</strong>. Y muestra las palancas cuando el tipo sale más alto de lo que la estructura cumple:</p>\n        <ul class=\"checklist\">\n            <li><strong>Bajar la densidad</strong> del sector que decide: repartir el stock, limitar la altura de apilamiento en las posiciones más cargadas o sacar los embalajes del recinto.</li>\n            <li><strong>Compartimentar</strong> con muros F-120 (art. 4.3.24), para que la zona de alta carga sea un sector chico y el resto se clasifique por su propia densidad.</li>\n            <li><strong>Proteger los elementos</strong> que no cumplen: pintura intumescente o placas en pilares y vigas, con la resistencia acreditada en el Listado Oficial.</li>\n            <li><strong>Quedar bajo 500 MJ/m²</strong> cuando es posible, para que una nave alta se cuente como de un piso.</li>\n        </ul>\n        <p>El informe de SVEA entrega la clasificación, compara la resistencia exigida con la que tienen los elementos existentes y recomienda la alternativa menos costosa. Lo hacemos con tus planos e inventario, en 3 a 5 días hábiles. Conoce el <a href=\"/estudio-de-carga-de-combustible/\">servicio de estudio de carga de combustible</a> o <a href=\"/estudio-de-carga-de-combustible/#formulario-ecc\">pide tu cotización</a>. Si además tramitas la patente de una industria o bodega, la SEREMI te pedirá la <a href=\"/calificacion-tecnica-industrial/\">calificación técnica industrial</a>, que suele ir en el mismo expediente.</p>\n    </section>\n\n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿Tu bodega o planta cumple el tipo que le exige la OGUC?</h3><p>Calculamos la carga combustible, clasificamos tu edificio con las tablas del art. 4.3.4 y te decimos qué resistencia al fuego debe tener cada elemento. Informe firmado en 3 a 5 días hábiles.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20necesito%20saber%20qu%C3%A9%20resistencia%20al%20fuego%20exige%20la%20OGUC%20a%20mi%20bodega\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><!--logos-clientes--></aside>\n\n<section id=\"errores\">\n        <h2>Errores comunes al aplicar la tabla</h2>\n        <div class=\"error-item\"><h4>Mirar sólo la tabla del art. 4.3.3</h4><p>La tabla dice qué exige cada tipo, no cuál es tu tipo. Ése sale de las tablas del art. 4.3.4.</p></div>\n        <div class=\"error-item\"><h4>Contar los pisos por las losas</h4><p>Para estas tablas un piso son 3,5 m; una nave de 8 m no es «de un piso» salvo que tenga menos de 500 MJ/m² y no tenga altillos.</p></div>\n        <div class=\"error-item\"><h4>Clasificar con la densidad media</h4><p>La Tabla 3 usa la mayor de las dos densidades; en bodegas con racks la puntual suele mandar.</p></div>\n        <div class=\"error-item\"><h4>Usar tipos «A, B, C, D, E» de otras normas</h4><p>La OGUC tiene cuatro tipos, a, b, c y d. Tablas con cinco categorías o con valores distintos no son la ordenanza chilena.</p></div>\n        <div class=\"error-item\"><h4>Declarar F-120 sin respaldo</h4><p>La resistencia se acredita con el Listado Oficial del MINVU o con ensayo; un pilar de acero sin protección no llega a la clase que se le atribuye.</p></div>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (septiembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=8201\" target=\"_blank\" rel=\"noopener\">Ordenanza General de Urbanismo y Construcciones (DS 47 de 1992, MINVU), texto vigente en la Biblioteca del Congreso Nacional: arts. 1.1.2, 1.4.19, 4.3.2 a 4.3.5, 4.3.24 y 4.3.26</a></li><li><a href=\"https://www.minvu.gob.cl/ditec/\" target=\"_blank\" rel=\"noopener\">Listado Oficial de Comportamiento al Fuego de Elementos y Componentes de la Construcción (MINVU, DITEC)</a></li><li><a href=\"https://www.inn.cl/\" target=\"_blank\" rel=\"noopener\">Instituto Nacional de Normalización (INN): NCh 1916 Of.99, NCh 1993 Of.98, NCh 1914/2 y NCh 935/1</a></li></ul>\n    </section>\n"
+    }
+  ],
+  "relacionados": {
+    "titulo": "Servicios relacionados",
+    "intro": "",
+    "tarjetas": [
+      {
+        "titulo": "Estudio de Carga de Combustible",
+        "texto": "Cálculo de la carga de fuego según NCh 1916 a partir de tus planos e inventario, clasificación según la OGUC e informe firmado por profesional en 3 a 5 días hábiles.",
+        "href": "/estudio-de-carga-de-combustible/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Calificación Técnica Industrial",
+        "texto": "La calificación de la SEREMI de Salud que la municipalidad pide para la patente de industrias y bodegas. Suele ir junto al estudio de carga de combustible.",
+        "href": "/calificacion-tecnica-industrial/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Planes de Emergencia y Evacuación",
+        "texto": "Plan de emergencia conforme al DS 44 y al DS 594, con mapa de riesgos, protocolos y planos de evacuación.",
+        "href": "/planes-de-emergencia-y-evacuacion/",
+        "enlace": "Conocer servicio →"
+      }
+    ]
+  },
+  "asunto": {
+    "prefijo": "[BLOG] Cotización ECC - ",
+    "campo": "Empresa",
+    "id": "dynamic-subject-art-ecc-oguc"
+  }
+}

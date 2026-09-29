@@ -13915,5 +13915,221 @@
     "contenido": null,
     "formularios": [],
     "nueva": true
+  },
+  {
+    "ruta": "/calculo-carga-de-fuego-nch-1916/",
+    "slug": "calculo-carga-de-fuego-nch-1916",
+    "tipo": "articulos",
+    "title": "Cálculo de carga de fuego según NCh 1916, con ejemplo",
+    "description": "Cómo se calcula la carga de fuego (carga combustible) según la NCh 1916: fórmula, calores de combustión, densidad media y puntual, y un ejemplo de bodega.",
+    "robots": "index, follow",
+    "canonical": "https://sveaconsultores.cl/calculo-carga-de-fuego-nch-1916/",
+    "h1": "Cómo se calcula la carga de fuego según la NCh 1916 (con ejemplo)",
+    "h1_html": "Cómo se calcula la carga de fuego según la NCh 1916 (con ejemplo)",
+    "og_image": "https://sveaconsultores.cl/img/og/bodega-racks-mercaderia-carga-combustible.jpg",
+    "palabras_origen": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Cómo se calcula la carga de fuego según la NCh 1916 (con ejemplo)",
+        "description": "Cómo se calcula la carga de fuego (carga combustible) según la NCh 1916: fórmula, calores de combustión, densidad media y puntual, y un ejemplo de bodega.",
+        "image": "https://sveaconsultores.cl/img/og/bodega-racks-mercaderia-carga-combustible.jpg",
+        "keywords": "NCh 1916, carga de fuego, carga combustible, densidad de carga de fuego",
+        "inLanguage": "es-CL",
+        "articleSection": "Guías de cumplimiento",
+        "author": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
+          }
+        },
+        "datePublished": "2026-09-29",
+        "dateModified": "2026-09-29",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://sveaconsultores.cl/calculo-carga-de-fuego-nch-1916/"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://sveaconsultores.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://sveaconsultores.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Cálculo de carga de fuego NCh 1916",
+            "item": "https://sveaconsultores.cl/calculo-carga-de-fuego-nch-1916/"
+          }
+        ]
+      }
+    ],
+    "contenido": null,
+    "formularios": [],
+    "nueva": true
+  },
+  {
+    "ruta": "/cuando-piden-estudio-de-carga-de-combustible/",
+    "slug": "cuando-piden-estudio-de-carga-de-combustible",
+    "tipo": "articulos",
+    "title": "Cuándo te piden el estudio de carga de combustible",
+    "description": "Qué trámites exigen el estudio de carga de combustible: permiso y recepción en la DOM, calificación SEREMI, patente, bodegas DS 43 y pólizas de incendio.",
+    "robots": "index, follow",
+    "canonical": "https://sveaconsultores.cl/cuando-piden-estudio-de-carga-de-combustible/",
+    "h1": "Cuándo te piden el estudio de carga de combustible: DOM, SEREMI, patente y seguros",
+    "h1_html": "Cuándo te piden el estudio de carga de combustible: DOM, SEREMI, patente y seguros",
+    "og_image": "https://sveaconsultores.cl/img/og/bodega-andenes-carga-permisos-seremi.jpg",
+    "palabras_origen": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Cuándo te piden el estudio de carga de combustible: DOM, SEREMI, patente y seguros",
+        "description": "Qué trámites exigen el estudio de carga de combustible: permiso y recepción en la DOM, calificación SEREMI, patente, bodegas DS 43 y pólizas de incendio.",
+        "image": "https://sveaconsultores.cl/img/og/bodega-andenes-carga-permisos-seremi.jpg",
+        "keywords": "estudio de carga de combustible, bodega, DOM, SEREMI, patente",
+        "inLanguage": "es-CL",
+        "articleSection": "Guías de cumplimiento",
+        "author": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
+          }
+        },
+        "datePublished": "2026-09-29",
+        "dateModified": "2026-09-29",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://sveaconsultores.cl/cuando-piden-estudio-de-carga-de-combustible/"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://sveaconsultores.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://sveaconsultores.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Cuándo piden el estudio de carga de combustible",
+            "item": "https://sveaconsultores.cl/cuando-piden-estudio-de-carga-de-combustible/"
+          }
+        ]
+      }
+    ],
+    "contenido": null,
+    "formularios": [],
+    "nueva": true
+  },
+  {
+    "ruta": "/resistencia-al-fuego-oguc/",
+    "slug": "resistencia-al-fuego-oguc",
+    "tipo": "articulos",
+    "title": "Resistencia al fuego OGUC: tabla de tipos a, b, c y d",
+    "description": "Resistencia al fuego según la OGUC: qué significa F-15 a F-180, la tabla del art. 4.3.3 por elemento y cómo se determina el tipo a, b, c o d de tu edificio.",
+    "robots": "index, follow",
+    "canonical": "https://sveaconsultores.cl/resistencia-al-fuego-oguc/",
+    "h1": "Resistencia al fuego según la OGUC: tipos a, b, c y d y la tabla de exigencias",
+    "h1_html": "Resistencia al fuego según la OGUC: tipos a, b, c y d y la tabla de exigencias",
+    "og_image": "https://sveaconsultores.cl/img/og/bodega-estanterias-estudio-carga-combustible.jpg",
+    "palabras_origen": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Resistencia al fuego según la OGUC: tipos a, b, c y d y la tabla de exigencias",
+        "description": "Resistencia al fuego según la OGUC: qué significa F-15 a F-180, la tabla del art. 4.3.3 por elemento y cómo se determina el tipo a, b, c o d de tu edificio.",
+        "image": "https://sveaconsultores.cl/img/og/bodega-estanterias-estudio-carga-combustible.jpg",
+        "keywords": "resistencia al fuego OGUC, tabla resistencia al fuego, OGUC 4.3.3, tipos a b c d",
+        "inLanguage": "es-CL",
+        "articleSection": "Guías de cumplimiento",
+        "author": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
+          }
+        },
+        "datePublished": "2026-09-29",
+        "dateModified": "2026-09-29",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://sveaconsultores.cl/resistencia-al-fuego-oguc/"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://sveaconsultores.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://sveaconsultores.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Resistencia al fuego OGUC",
+            "item": "https://sveaconsultores.cl/resistencia-al-fuego-oguc/"
+          }
+        ]
+      }
+    ],
+    "contenido": null,
+    "formularios": [],
+    "nueva": true
   }
 ]

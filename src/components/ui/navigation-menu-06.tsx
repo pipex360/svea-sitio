@@ -1,7 +1,9 @@
 import {
   BookOpenIcon,
   BuildingIcon,
+  CalculatorIcon,
   ClipboardCheckIcon,
+  ClipboardListIcon,
   FactoryIcon,
   FileCheckIcon,
   FileSpreadsheetIcon,
@@ -12,6 +14,7 @@ import {
   LeafIcon,
   type LucideIcon,
   RecycleIcon,
+  ShieldIcon,
   SirenIcon,
   StoreIcon,
   TruckIcon,
@@ -164,14 +167,32 @@ export const guias: Entrada[] = [
     description: 'Cuándo exigen autorización y qué incluye el plan de manejo.',
     icon: FlaskConicalIcon,
   },
+  {
+    title: 'Cálculo de carga de fuego NCh 1916',
+    href: '/calculo-carga-de-fuego-nch-1916/',
+    description: 'Fórmula, calores de combustión y un ejemplo de bodega.',
+    icon: CalculatorIcon,
+  },
+  {
+    title: 'Cuándo piden el estudio de carga de combustible',
+    href: '/cuando-piden-estudio-de-carga-de-combustible/',
+    description: 'DOM, SEREMI, patente, bodegas DS 43 y seguros.',
+    icon: ClipboardListIcon,
+  },
+  {
+    title: 'Resistencia al fuego OGUC',
+    href: '/resistencia-al-fuego-oguc/',
+    description: 'Tipos a, b, c y d y la tabla de exigencias por elemento.',
+    icon: ShieldIcon,
+  },
 ];
 
 /**
- * El menú «Recursos y guías» muestra sólo las seis guías principales y un
- * enlace a /blog/, donde están todas agrupadas por tema. Las seis salen de
- * GUIAS_MENU (src/contenido/articulos/guias.ts), la misma lista que usa la
- * columna del pie: menú y pie no pueden diferir. De `guias` (la lista
- * completa) se toma sólo el icono.
+ * El menú «Recursos y guías» muestra sólo las ocho guías principales (una por
+ * servicio, dos de la CTI) y un enlace a /blog/, donde están todas agrupadas
+ * por tema. Las ocho salen de GUIAS_MENU (src/contenido/articulos/guias.ts),
+ * la misma lista que usa la columna del pie: menú y pie no pueden diferir.
+ * De `guias` (la lista completa) se toma sólo el icono.
  */
 export const guiasPrincipales: Entrada[] = GUIAS_MENU.map((g) => ({
   title: g.rotulo,
