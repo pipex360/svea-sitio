@@ -112,7 +112,12 @@ const {
           <div class="principal">
             <span class="punto" aria-hidden="true"></span>
             {principal.contador
-              ? <b class={`cifra ${principal.contador === 'mas' ? 'pre' : 'pct'}`} style={`--meta:${principal.valor}`}></b>
+              ? <b
+                  class="cifra"
+                  data-meta={principal.valor}
+                  data-antes={principal.contador === 'mas' ? '+' : ''}
+                  data-despues={principal.contador === 'pct' ? '%' : ''}
+                >{principal.contador === 'mas' ? '+' : ''}{principal.valor}{principal.contador === 'pct' ? '%' : ''}</b>
               : <b set:html={rangosHtml(principal.valor)} />}
             <span set:html={rangosHtml(principal.texto)} />
           </div>
@@ -128,13 +133,10 @@ const {
 </div>
 
 <style is:global>
-  /* Los contadores suben desde cero al cargar, en CSS. */
-  @property --n{syntax:"<integer>";inherits:false;initial-value:0}
-  .halo .cifra{counter-reset:n var(--n);animation:sube-n 1.6s cubic-bezier(.2,.7,.2,1) forwards;font-variant-numeric:tabular-nums}
-  .halo .cifra::after{content:counter(n)}
-  .halo .cifra.pre::before{content:"+"}
-  .halo .cifra.pct::after{content:counter(n) "%"}
-  @keyframes sube-n{from{--n:0}to{--n:var(--meta)}}
+  /* La cifra que sube: el número final va escrito en el HTML (Google y
+     quien no tenga JavaScript lo leen tal cual) y el script de abajo lo
+     cuenta desde cero cuando se ve. Ancho fijo por dígito: no baila. */
+  .halo .cifra{font-variant-numeric:tabular-nums}
 
   /* svh y no dvh: en el teléfono dvh cambia de valor mientras la barra del
      navegador se esconde al bajar, y el hero se reacomodaba en pleno scroll */
@@ -242,6 +244,46 @@ const {
   @media (prefers-reduced-motion:reduce){
     .halo-fondo img,.halo-aura,.halo-pulso .punto::before{animation:none}
     .halo-fondo picture:nth-child(1) img{opacity:1}
-    .halo .cifra{animation:none;--n:var(--meta)}
   }
 </style>
+
+<script>
+  // El contador del hero. Antes era CSS puro y arrancaba al cargar el HTML:
+  // en el teléfono, que tarda más en pintar la foto y la letra, terminaba
+  // antes de que se viera. Ahora parte en cero apenas corre el script,
+  // espera a que la letra esté lista y la cifra en pantalla, y cuenta en
+  // 1,8 s con salida suave.
+  const cifras = document.querySelectorAll<HTMLElement>('.halo .cifra[data-meta]');
+  const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!quieto) {
+    const contar = (el: HTMLElement) => {
+      const meta = Number(el.dataset.meta) || 0;
+      const antes = el.dataset.antes ?? '';
+      const despues = el.dataset.despues ?? '';
+      const dura = 1800;
+      let inicio = 0;
+      const paso = (t: number) => {
+        if (!inicio) inicio = t;
+        const x = Math.min(1, (t - inicio) / dura);
+        const suave = 1 - Math.pow(1 - x, 3);
+        el.textContent = `${antes}${Math.round(meta * suave)}${despues}`;
+        if (x < 1) requestAnimationFrame(paso);
+      };
+      requestAnimationFrame(paso);
+    };
+    cifras.forEach((c) => (c.textContent = `${c.dataset.antes ?? ''}0${c.dataset.despues ?? ''}`));
+    const arrancar = () => {
+      const ojo = new IntersectionObserver((entradas) => {
+        entradas.forEach((e) => {
+          if (!e.isIntersecting) return;
+          ojo.unobserve(e.target);
+          // un respiro para que la foto y la letra ya estén pintadas
+          setTimeout(() => contar(e.target as HTMLElement), 250);
+        });
+      }, { threshold: 0.6 });
+      cifras.forEach((c) => ojo.observe(c));
+    };
+    // la letra lista (o, si tarda, a los 1,2 s): así no cuenta con la letra de reemplazo
+    Promise.race([document.fonts.ready, new Promise((ok) => setTimeout(ok, 1200))]).then(arrancar);
+  }
+</script>
