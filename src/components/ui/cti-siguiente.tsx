@@ -44,7 +44,7 @@ export function CtiSiguiente({ base = '' }: { base?: string }) {
               <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-white/90 via-white/60 to-transparent backdrop-blur-[1px]" />
               <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white/85 via-white/40 to-transparent backdrop-blur-sm" />
 
-              <div className="relative space-y-3 p-7 pt-28 sm:space-y-4 sm:pt-7">
+              <div className="relative space-y-3 p-7 pt-14 sm:space-y-4 sm:pt-7">
                 <span className="inline-flex w-fit items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-semibold text-black">
                   <FlameIcon className="size-3.5" aria-hidden="true" />
                   Servicio complementario
