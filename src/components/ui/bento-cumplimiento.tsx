@@ -219,13 +219,13 @@ export function CumplimientoBento() {
     <BentoGridShowcase
       className="mx-auto max-w-7xl"
       integration={<Compromiso />}
-      trackers={<Dato meta={250} sufijo="+" rotulo="Trámites Gestionados" />}
+      trackers={<Dato meta={250} sufijo="+" rotulo="Empresas atendidas" />}
       statistic={
         <Dato
-          meta={100}
-          sufijo="%"
-          rotulo="Tasa de Aprobación"
-          pie="En trámites realizados"
+          meta={8}
+          sufijo=""
+          rotulo="Servicios Especializados"
+          pie="CTI, carga de combustible, planes de emergencia, residuos, informe sanitario y SEIA"
           grande
           puntos
         />

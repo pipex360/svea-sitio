@@ -112,7 +112,7 @@ const fuentesCSS = `
         Cumplimiento Ambiental <span class="font-black text-svea">Sin Complicaciones.</span>
       </h2>
       <p class="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-black/75 md:text-lg">
-        Ofrecemos soluciones técnicas y normativas para garantizar la optimización en proyectos
+        Ofrecemos soluciones técnicas y normativas para optimizar tus proyectos
         industriales. Experiencia, calidad y transparencia en un solo lugar.
       </p>
       <div class="flex flex-wrap items-center justify-center gap-3">
@@ -132,11 +132,11 @@ const fuentesCSS = `
   <div class="svea-nuevo">
     <Cta69
       badge={{ label: 'Primer paso' }}
-      heading="¿Listo para comenzar su proyecto?"
+      heading="¿Listo para comenzar tu proyecto?"
       button={{ label: 'Contáctanos', href: `${BASE}/#form-home` }}
       labels={{
         marqueePhrase: 'Cumplimiento',
-        note: 'Deje la complejidad normativa en nuestras manos. Nuestro equipo de expertos está listo para asesorarlo hoy mismo.',
+        note: 'Deja la complejidad normativa en nuestras manos. Nuestro equipo de expertos está listo para asesorarte hoy mismo.',
         footnote: 'Proceso simple y transparente',
       }}
       client:idle
@@ -152,6 +152,11 @@ const fuentesCSS = `
   <!-- Contáctanos y el formulario (lista roja: ver contacto.tsx) -->
   <div class="svea-nuevo">
     <Contacto copia={COPIA} client:load />
+  </div>
+
+  <!-- el cierre común de todas las páginas: formulario → verde → pie -->
+  <div class="svea-nuevo">
+    <Cta69 destino={`${BASE}/#form-home`} client:idle />
   </div>
 
   <!-- Pie de página -->
