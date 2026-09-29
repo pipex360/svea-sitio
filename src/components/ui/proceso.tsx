@@ -240,7 +240,7 @@ export function Proceso({ base = '' }: { base?: string }) {
       id="proceso"
       copete="Proceso simple y transparente"
       titulo="¿Cómo Trabajamos?"
-      parrafo="Desde la cotización hasta la resolución aprobada, gestionamos todo el proceso para que tú te concentres en tu negocio."
+      parrafo="Desde la cotización hasta la resolución de la autoridad, gestionamos todo el proceso para que tú te concentres en tu negocio."
       linea="Informe técnico listo en 3-5 días hábiles · Cotización en menos de 24 horas"
       pasos={PASOS.map((p) => ({ ...p, ...FRANJAS[p.id] }))}
     />

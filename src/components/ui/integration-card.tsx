@@ -96,7 +96,7 @@ const PASOS: Paso[] = [
     id: 'entrega',
     numero: '05',
     titulo: 'Entrega',
-    descripcion: 'Recibes tu documentación aprobada',
+    descripcion: 'Recibes tu documentación y la resolución de la autoridad',
     icono: BadgeCheck,
     x: 456,
     y: 86,

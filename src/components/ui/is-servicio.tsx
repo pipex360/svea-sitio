@@ -102,7 +102,7 @@ export const PASOS = [
   { titulo: 'Evaluación', descripcion: 'Visitamos e inspeccionamos tu establecimiento', icono: SearchIcon },
   { titulo: 'Informe técnico', descripcion: 'Preparamos toda la documentación requerida', icono: FileTextIcon },
   { titulo: 'Gestión SEREMI', descripcion: 'Ingresamos el expediente y gestionamos el proceso', icono: LandmarkIcon },
-  { titulo: 'Resolución favorable', descripcion: 'Informe sanitario aprobado por la SEREMI', icono: FileCheckIcon },
+  { titulo: 'Resolución SEREMI', descripcion: 'Seguimiento hasta la resolución de la SEREMI', icono: FileCheckIcon },
 ];
 
 const tarjeta = cn(

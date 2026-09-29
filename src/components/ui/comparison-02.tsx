@@ -72,7 +72,7 @@ const COLUMNAS: readonly Columna[] = [
   },
   {
     name: 'SVEA Consultores',
-    summary: 'Del diagnóstico al permiso aprobado, sin llamar a nadie',
+    summary: 'Del diagnóstico a la resolución, sin llamar a nadie',
     featured: true,
   },
 ];

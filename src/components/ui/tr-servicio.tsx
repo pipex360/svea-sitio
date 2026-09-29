@@ -60,7 +60,7 @@ export const PASOS = [
   { titulo: 'Clasificación', descripcion: 'Evaluación y categorización de tus residuos', icono: TagsIcon },
   { titulo: 'Documentación', descripcion: 'Preparación del expediente y plan de manejo', icono: FolderOpenIcon },
   { titulo: 'Gestión SEREMI', descripcion: 'Presentación y seguimiento ante la autoridad sanitaria', icono: LandmarkIcon },
-  { titulo: 'Autorización', descripcion: 'Permiso aprobado + documentación completa', icono: FileTextIcon },
+  { titulo: 'Autorización', descripcion: 'Resolución de la SEREMI + documentación completa', icono: FileTextIcon },
 ];
 
 const tarjeta = cn(
