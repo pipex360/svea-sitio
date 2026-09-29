@@ -47,11 +47,6 @@ export type PasoFranja = {
   claro: boolean;
   foto: string;
   alt: string;
-  /**
-   * Lo que incluye el servicio en este paso, plegado bajo un «Qué incluye +»:
-   * la tarjeta muestra sólo la frase corta, y el detalle sigue en la página.
-   */
-  incluye?: { titulo: string; descripcion: string }[];
 };
 
 /** Los cinco colores de las franjas, en orden; se comparten entre páginas. */
@@ -117,8 +112,6 @@ export function PasoAPaso({
   linea,
   pasos,
   children,
-  circuloDesde = 220,
-  fotoAbajo = false,
 }: {
   base?: string;
   /** el id de la sección; el del titular es `titulo-<id>` */
@@ -130,10 +123,6 @@ export function PasoAPaso({
   pasos: PasoFranja[];
   /** lo que va debajo de las tarjetas, dentro de la misma sección */
   children?: React.ReactNode;
-  /** en escritorio, dónde empieza el círculo de la foto (px desde arriba); más abajo si el texto es largo */
-  circuloDesde?: number;
-  /** en el teléfono, el texto a todo el ancho y la foto debajo (para textos largos) */
-  fotoAbajo?: boolean;
 }) {
   const fila = useRef<HTMLOListElement>(null);
   const mover = (lado: 1 | -1) => {
@@ -199,55 +188,27 @@ export function PasoAPaso({
                 as="li"
                 key={paso.id}
                 delay={i * 0.06}
-                estilo={{ '--sup': `${circuloDesde}px` } as React.CSSProperties}
                 className={cn(
-                  'group/franja relative isolate flex overflow-hidden rounded-2xl',
-                  fotoAbajo ? 'flex-col lg:flex-row' : 'min-h-[230px] sm:min-h-[260px]',
+                  'group/franja relative isolate flex min-h-[230px] overflow-hidden rounded-2xl sm:min-h-[260px]',
                   'lg:h-[600px] lg:min-h-0 lg:w-[calc((100%-48px)/3)] lg:shrink-0 lg:snap-start lg:rounded-xl',
                   f.fondo,
                 )}
               >
-                <div className={cn('relative z-10 flex flex-col p-7 sm:p-9 lg:w-full lg:p-8', fotoAbajo ? 'w-full' : 'w-[62%] sm:w-[60%]', tinta)}>
+                <div className={cn('relative z-10 flex w-[62%] flex-col p-7 sm:w-[60%] sm:p-9 lg:w-full lg:p-8', tinta)}>
                   <p className={cn('text-sm font-medium lg:text-base', f.claro ? 'text-black/70' : 'text-white/80')}>
                     Paso {paso.numero}
                   </p>
                   <h3 className="mt-4 font-[Manrope,Inter,sans-serif] text-3xl font-medium leading-[1.1] tracking-[-0.03em] sm:text-[2.4rem] lg:mt-6 lg:text-[38px]">
                     {paso.titulo}
                   </h3>
-                  <p className={cn('mt-3 text-base leading-relaxed lg:max-w-[360px]', f.claro ? 'text-black/75' : 'text-white/85')}>
+                  <p className={cn('mt-3 text-base leading-relaxed lg:max-w-[340px]', f.claro ? 'text-black/75' : 'text-white/85')}>
                     <span dangerouslySetInnerHTML={{ __html: rangosHtml(paso.descripcion) }} />
                   </p>
-                  {paso.incluye && (
-                    <details className="acordeon group/detalle mt-4">
-                      <summary
-                        className={cn(
-                          'inline-flex cursor-pointer items-center gap-1.5 text-sm font-semibold underline underline-offset-4',
-                          f.claro ? 'text-black/75' : 'text-white/85',
-                        )}
-                      >
-                        Qué incluye
-                        <span aria-hidden="true" className="transition-transform duration-200 group-open/detalle:rotate-45">
-                          +
-                        </span>
-                      </summary>
-                      <ul className={cn('relative z-20 mt-3 space-y-2 rounded-lg p-3 text-sm leading-snug', f.fondo)}>
-                        {paso.incluye.map((x) => (
-                          <li key={x.titulo}>
-                            <b className="font-semibold">{x.titulo}.</b>{' '}
-                            <span dangerouslySetInnerHTML={{ __html: rangosHtml(x.descripcion) }} />
-                          </li>
-                        ))}
-                      </ul>
-                    </details>
-                  )}
                 </div>
                 <div
                   className={cn(
-                    'overflow-hidden rounded-tl-[100%]',
-                    fotoAbajo
-                      ? 'relative ml-auto h-48 w-[80%] shrink-0 sm:h-56 sm:w-[60%] lg:absolute'
-                      : 'absolute bottom-0 right-0 h-[88%] w-[42%] sm:w-[38%]',
-                    'lg:bottom-auto lg:right-auto lg:top-[var(--sup)] lg:size-[680px] lg:rounded-full',
+                    'absolute bottom-0 right-0 h-[88%] w-[42%] overflow-hidden rounded-tl-[100%] sm:w-[38%]',
+                    'lg:bottom-auto lg:right-auto lg:top-[220px] lg:size-[680px] lg:rounded-full',
                     CIRCULO[i % 2],
                   )}
                 >
@@ -258,7 +219,7 @@ export function PasoAPaso({
                     base={base}
                     className={cn(
                       'h-full w-full object-cover transition-transform duration-500 ease-out group-hover/franja:scale-105 motion-reduce:transition-none',
-                      'lg:absolute lg:top-0 lg:h-[calc(600px-var(--sup))] lg:max-w-none',
+                      'lg:absolute lg:top-0 lg:h-[380px] lg:max-w-none',
                       ANCHO_TARJETA,
                       VENTANA[i % 2],
                     )}
