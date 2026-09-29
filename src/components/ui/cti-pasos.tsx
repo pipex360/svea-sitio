@@ -54,7 +54,6 @@ export function CtiPasos({ base = '' }: { base?: string }) {
       id="pasos-cti"
       copete="Paso a paso"
       titulo="¿Cómo obtienes tu Calificación Técnica Industrial?"
-      linea="Informe técnico en 3-5 días hábiles · Cotización en menos de 24 horas"
       pasos={PASOS.map((p, i) => ({ ...p, numero: String(i + 1).padStart(2, '0'), ...COLORES_FRANJA[i] }))}
     />
   );
