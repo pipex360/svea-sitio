@@ -35,11 +35,11 @@ import { ServiceGrid, type Ficha } from '@/components/ui/service-grid';
 const bloques = (): BloqueScroll[] => {
   const planta = {
     foto: 'planta-quimica-calificacion-tecnica-industrial',
-    alt: 'Calificación técnica industrial - planta química evaluada por SVEA Consultores',
+    alt: 'Planta química con estanques y cañerías, instalación que requiere calificación técnica industrial de la SEREMI de Salud',
   };
   const instalacion = {
     foto: 'instalacion-industrial-nocturna-informe-cti',
-    alt: 'Informe CTI SEREMI de Salud - instalación industrial nocturna',
+    alt: 'Instalación industrial iluminada de noche, cuyo informe técnico se presenta para la CTI ante la SEREMI de Salud',
   };
   return [
     {
