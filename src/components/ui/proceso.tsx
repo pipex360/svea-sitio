@@ -1,9 +1,19 @@
 'use client';
 
 /**
- * «¿Cómo Trabajamos?», con la forma de la sección «Issues» de arup.com: fondo
- * negro, el titular y el botón a un lado, y los cinco pasos como franjas de
- * color, cada una con su foto recortada en un cuarto de elipse a la derecha.
+ * «¿Cómo Trabajamos?», con la forma de la sección «Issues» de arup.com.
+ *
+ * Escritorio (lg+), medido sobre arup.com a 1440 px: fondo negro, 64 px
+ * arriba y abajo, 32 px a los lados; el titular a la izquierda y el botón
+ * con borde arriba a la derecha; las tarjetas de 600 px de alto y un tercio
+ * del ancho (24 px entre ellas, esquinas de 12 px), con la foto dentro de un
+ * círculo de 680 px que empieza a 220 px del borde de arriba y se sale por
+ * abajo y por el lado. Como aquí son cinco pasos y no tres, la fila se
+ * desliza de lado (con las flechas, el trackpad o el dedo) y encaja cada
+ * tarjeta.
+ *
+ * Teléfono y tablet: la versión apilada, una franja por paso con la foto en
+ * un cuarto de elipse a la derecha, como la de Arup en el teléfono.
  *
  * Rompe a propósito con el resto de la portada (fondo claro, tarjetas
  * blancas con icono): aquí mandan el color y las fotos.
@@ -18,10 +28,13 @@
  * - Entrada con Reveal: el HTML llega con todo visible.
  */
 
+import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
+import { useRef } from 'react';
+
 import { Foto } from '@/components/ui/foto';
 import { PASOS } from '@/components/ui/integration-card';
 import { Reveal } from '@/components/ui/reveal';
-import { cn } from '@/lib/utils';
+import { cn, rangosHtml } from '@/lib/utils';
 
 /** Color de fondo, color del texto y foto de cada paso, en el orden de PASOS. */
 const FRANJAS: Record<string, { fondo: string; claro: boolean; foto: string; alt: string }> = {
@@ -57,36 +70,81 @@ const FRANJAS: Record<string, { fondo: string; claro: boolean; foto: string; alt
   },
 };
 
+/** Dónde cae el círculo de la foto en escritorio: dos posiciones que se turnan, como en Arup. */
+const CIRCULO = ['lg:left-[46px]', 'lg:-left-[78px]'];
+/**
+ * La foto no llena el círculo de 680 px: de él sólo se ve la parte que cae
+ * dentro de la tarjeta (su ancho × 380 px). La foto se dibuja justo en esa
+ * ventana, corrida lo contrario que el círculo, así se ve encuadrada entera
+ * y no un rincón ampliado. El ancho de la tarjeta es un tercio del
+ * contenedor (1376 px como mucho, 32 px de margen, 24 px entre tarjetas).
+ */
+const VENTANA = ['lg:left-[-46px]', 'lg:left-[78px]'];
+const ANCHO_TARJETA = 'lg:w-[min(443px,calc((100vw-112px)/3))]';
+
 export function Proceso({ base = '' }: { base?: string }) {
+  const fila = useRef<HTMLOListElement>(null);
+  const mover = (lado: 1 | -1) => {
+    const el = fila.current;
+    if (!el) return;
+    const tarjeta = el.querySelector('li');
+    const paso = tarjeta ? tarjeta.getBoundingClientRect().width + 24 : el.clientWidth / 3;
+    el.scrollBy({ left: lado * paso, behavior: 'smooth' });
+  };
+
   return (
-    <section className="bg-black px-6 py-20 text-white md:py-28" id="proceso" aria-labelledby="titulo-proceso">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-12 lg:gap-10">
-        <Reveal className="lg:sticky lg:top-28 lg:col-span-4 lg:self-start">
-          <p className="text-sm font-medium text-white/60">Proceso simple y transparente</p>
-          <h2
-            id="titulo-proceso"
-            className="mt-3 font-[Manrope,Inter,sans-serif] text-5xl font-medium leading-[1.05] tracking-[-0.04em] text-white md:text-6xl"
-          >
-            ¿Cómo Trabajamos?
-          </h2>
-          <p className="mt-6 max-w-md text-lg leading-relaxed text-white/85">
-            Desde la cotización hasta la resolución aprobada, gestionamos todo el proceso para que tú
-            te concentres en tu negocio.
-          </p>
-          <a
-            href={`${base}/#form-home`}
-            className="mt-8 inline-flex h-14 items-center rounded-full border border-white/50 px-8 text-lg text-white no-underline transition-colors duration-200 hover:border-white hover:bg-white hover:text-black"
-          >
-            Solicitar cotización
-          </a>
-          <p className="mt-8 text-sm leading-6 text-white/60">
-            Informe técnico listo en 3-5 días hábiles
-            <br />
-            Cotización en menos de 24 horas
-          </p>
+    <section className="bg-black px-6 py-20 text-white lg:px-8 lg:py-16" id="proceso" aria-labelledby="titulo-proceso">
+      <div className="mx-auto max-w-[1376px]">
+        <Reveal className="lg:flex lg:items-end lg:justify-between lg:gap-10">
+          <div className="max-w-[793px]">
+            <p className="text-sm font-medium text-white/60">Proceso simple y transparente</p>
+            <h2
+              id="titulo-proceso"
+              className="mt-3 font-[Manrope,Inter,sans-serif] text-5xl font-medium leading-[1.05] tracking-[-0.04em] text-white md:text-6xl lg:text-[68px] lg:leading-[1.1]"
+            >
+              ¿Cómo Trabajamos?
+            </h2>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85">
+              Desde la cotización hasta la resolución aprobada, gestionamos todo el proceso para que tú
+              te concentres en tu negocio.
+            </p>
+            <p className="mt-4 text-sm leading-6 text-white/60">
+              Informe técnico listo en 3-5 días hábiles · Cotización en menos de 24 horas
+            </p>
+          </div>
+          <div className="mt-8 flex items-center gap-3 lg:mt-0 lg:shrink-0">
+            <a
+              href={`${base}/#form-home`}
+              className="inline-flex h-14 items-center rounded-full border border-white/50 px-8 text-lg text-white no-underline transition-colors duration-200 hover:border-white hover:bg-white hover:text-black lg:h-11 lg:px-6 lg:text-xl"
+            >
+              Solicitar cotización
+            </a>
+            <button
+              type="button"
+              onClick={() => mover(-1)}
+              aria-label="Ver pasos anteriores"
+              className="hidden size-11 place-items-center rounded-full border border-white/50 bg-transparent text-white transition-colors hover:border-white hover:bg-white hover:text-black lg:grid"
+            >
+              <ArrowLeftIcon className="size-5" aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              onClick={() => mover(1)}
+              aria-label="Ver pasos siguientes"
+              className="hidden size-11 place-items-center rounded-full border border-white/50 bg-transparent text-white transition-colors hover:border-white hover:bg-white hover:text-black lg:grid"
+            >
+              <ArrowRightIcon className="size-5" aria-hidden="true" />
+            </button>
+          </div>
         </Reveal>
 
-        <ol className="space-y-5 lg:col-span-8">
+        <ol
+          ref={fila}
+          className={cn(
+            'mt-12 space-y-5 lg:mt-10 lg:flex lg:gap-6 lg:space-y-0 lg:overflow-x-auto lg:scroll-smooth',
+            'lg:snap-x lg:snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
+          )}
+        >
           {PASOS.map((paso, i) => {
             const f = FRANJAS[paso.id];
             const tinta = f.claro ? 'text-black' : 'text-white';
@@ -97,27 +155,39 @@ export function Proceso({ base = '' }: { base?: string }) {
                 delay={i * 0.06}
                 className={cn(
                   'group/franja relative isolate flex min-h-[230px] overflow-hidden rounded-2xl sm:min-h-[260px]',
+                  'lg:h-[600px] lg:min-h-0 lg:w-[calc((100%-48px)/3)] lg:shrink-0 lg:snap-start lg:rounded-xl',
                   f.fondo,
                 )}
               >
-                <div className={cn('relative z-10 flex w-[62%] flex-col p-7 sm:w-[60%] sm:p-9', tinta)}>
-                  <p className={cn('text-sm font-medium', f.claro ? 'text-black/70' : 'text-white/80')}>
+                <div className={cn('relative z-10 flex w-[62%] flex-col p-7 sm:w-[60%] sm:p-9 lg:w-full lg:p-8', tinta)}>
+                  <p className={cn('text-sm font-medium lg:text-base', f.claro ? 'text-black/70' : 'text-white/80')}>
                     Paso {paso.numero}
                   </p>
-                  <h3 className="mt-4 font-[Manrope,Inter,sans-serif] text-3xl font-medium leading-[1.1] tracking-[-0.03em] sm:text-[2.4rem]">{paso.titulo}</h3>
-                  <p className={cn('mt-3 text-base leading-relaxed', f.claro ? 'text-black/75' : 'text-white/85')}>
-                    {paso.descripcion}
+                  <h3 className="mt-4 font-[Manrope,Inter,sans-serif] text-3xl font-medium leading-[1.1] tracking-[-0.03em] sm:text-[2.4rem] lg:mt-6 lg:text-[38px]">
+                    {paso.titulo}
+                  </h3>
+                  <p className={cn('mt-3 text-base leading-relaxed lg:max-w-[340px]', f.claro ? 'text-black/75' : 'text-white/85')}>
+                    <span dangerouslySetInnerHTML={{ __html: rangosHtml(paso.descripcion) }} />
                   </p>
                 </div>
                 <div
-                  className="absolute bottom-0 right-0 h-[88%] w-[42%] overflow-hidden rounded-tl-[100%] sm:w-[38%]"
+                  className={cn(
+                    'absolute bottom-0 right-0 h-[88%] w-[42%] overflow-hidden rounded-tl-[100%] sm:w-[38%]',
+                    'lg:bottom-auto lg:right-auto lg:top-[220px] lg:size-[680px] lg:rounded-full',
+                    CIRCULO[i % 2],
+                  )}
                 >
                   <Foto
                     nombre={f.foto}
                     alt={f.alt}
-                    tamano="(min-width: 1024px) 300px, 40vw"
+                    tamano="(min-width: 1024px) 443px, 40vw"
                     base={base}
-                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover/franja:scale-105 motion-reduce:transition-none"
+                    className={cn(
+                      'h-full w-full object-cover transition-transform duration-500 ease-out group-hover/franja:scale-105 motion-reduce:transition-none',
+                      'lg:absolute lg:top-0 lg:h-[380px] lg:max-w-none',
+                      ANCHO_TARJETA,
+                      VENTANA[i % 2],
+                    )}
                   />
                 </div>
               </Reveal>
