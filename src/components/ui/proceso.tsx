@@ -150,7 +150,7 @@ export function PasoAPaso({
               />
             )}
           </div>
-          <div className="mt-8 hidden items-center gap-3 lg:mt-0 lg:flex lg:shrink-0">
+          <div className="hidden">
             <button
               type="button"
               onClick={() => mover(-1)}
@@ -173,8 +173,9 @@ export function PasoAPaso({
         <ol
           ref={fila}
           className={cn(
-            'mt-12 space-y-5 lg:mt-10 lg:flex lg:gap-6 lg:space-y-0 lg:overflow-x-auto lg:scroll-smooth',
-            'lg:snap-x lg:snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
+            // 29-sep: en escritorio los cinco pasos a la vista (antes un carrusel
+            // mostraba tres y escondía el 4 y el 5 detrás de las flechas)
+            'mt-12 space-y-5 lg:mt-10 lg:grid lg:grid-cols-5 lg:gap-4 lg:space-y-0',
           )}
         >
           {pasos.map((paso, i) => {
@@ -187,25 +188,25 @@ export function PasoAPaso({
                 delay={i * 0.06}
                 className={cn(
                   'group/franja relative isolate flex min-h-[230px] overflow-hidden rounded-2xl sm:min-h-[260px]',
-                  'lg:h-[600px] lg:min-h-0 lg:w-[calc((100%-48px)/3)] lg:shrink-0 lg:snap-start lg:rounded-xl',
+                  'lg:h-[560px] lg:min-h-0 lg:rounded-xl',
                   f.fondo,
                 )}
               >
-                <div className={cn('relative z-10 flex w-[62%] flex-col p-7 sm:w-[60%] sm:p-9 lg:w-full lg:p-8', tinta)}>
-                  <p className={cn('text-sm font-medium lg:text-base', f.claro ? 'text-black/70' : 'text-white/80')}>
+                <div className={cn('relative z-10 flex w-[62%] flex-col p-7 sm:w-[60%] sm:p-9 lg:w-full lg:p-6', tinta)}>
+                  <p className={cn('text-sm font-medium lg:text-base', f.claro ? 'text-black/70' : 'text-white')}>
                     Paso {paso.numero}
                   </p>
-                  <h3 className="mt-4 font-[Manrope,Inter,sans-serif] text-3xl font-medium leading-[1.1] tracking-[-0.03em] sm:text-[2.4rem] lg:mt-6 lg:text-[38px]">
+                  <h3 className="mt-4 font-[Manrope,Inter,sans-serif] text-3xl font-medium leading-[1.1] tracking-[-0.03em] sm:text-[2.4rem] lg:mt-5 lg:text-[26px]">
                     {paso.titulo}
                   </h3>
-                  <p className={cn('mt-3 text-base leading-relaxed lg:max-w-[340px]', f.claro ? 'text-black/75' : 'text-white/85')}>
+                  <p className={cn('mt-3 text-base leading-relaxed lg:max-w-[340px]', f.claro ? 'text-black/75' : 'text-white')}>
                     <span dangerouslySetInnerHTML={{ __html: rangosHtml(paso.descripcion) }} />
                   </p>
                 </div>
                 <div
                   className={cn(
                     'absolute bottom-0 right-0 h-[88%] w-[42%] overflow-hidden rounded-tl-[100%] sm:w-[38%]',
-                    'lg:bottom-auto lg:right-auto lg:top-[220px] lg:size-[680px] lg:rounded-full',
+                    'lg:bottom-auto lg:right-auto lg:top-[260px] lg:size-[680px] lg:rounded-full',
                     CIRCULO[i % 2],
                   )}
                 >

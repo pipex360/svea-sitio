@@ -15,7 +15,7 @@ const FOTOS = [
   { foto: 'inspeccion-planta-fiscalizacion-seremi', alt: "Visita e inspección del establecimiento" },
   { foto: 'preparacion-descargos-sumario-sanitario', alt: "Preparación de la documentación requerida" },
   { foto: 'revision-expediente-observaciones-seremi', alt: "Ingreso y gestión del expediente ante la SEREMI" },
-  { foto: 'operarios-grua-horquilla-bodega-calificacion-tecnica', alt: "Establecimiento operando con su informe sanitario aprobado" },
+  { foto: 'cocina-industrial-acero-informe-sanitario', alt: "Cocina industrial operando con su informe sanitario aprobado" },
 ];
 
 export function IsPasos({ base = '' }: { base?: string }) {

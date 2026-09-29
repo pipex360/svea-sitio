@@ -15,7 +15,7 @@ const FOTOS = [
   { foto: 'tambores-plasticos-sustancias-peligrosas-ds-43', alt: "Tambores de sustancias peligrosas evaluados en el levantamiento" },
   { foto: 'inspeccion-bodega-calificacion-tecnica-industrial', alt: "Clasificación de los residuos en bodega según la normativa" },
   { foto: 'preparacion-descargos-sumario-sanitario', alt: "Elaboración del plan de manejo y sus procedimientos" },
-  { foto: 'tecnicos-casco-revision-calificacion-tecnica-industrial', alt: "Técnicos revisan el informe que acredita el cumplimiento" },
+  { foto: 'operario-bodega-residuos-peligrosos', alt: "Operario en la bodega de residuos peligrosos, con el plan de manejo al día" },
 ];
 
 export function RpPasos({ base = '' }: { base?: string }) {
