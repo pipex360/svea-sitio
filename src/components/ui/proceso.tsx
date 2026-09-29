@@ -37,6 +37,27 @@ import { Reveal } from '@/components/ui/reveal';
 import { cn, rangosHtml } from '@/lib/utils';
 
 /** Color de fondo, color del texto y foto de cada paso, en el orden de PASOS. */
+/** Un paso con su franja: el texto, el color y la foto. */
+export type PasoFranja = {
+  id: string;
+  numero: string;
+  titulo: string;
+  descripcion: string;
+  fondo: string;
+  claro: boolean;
+  foto: string;
+  alt: string;
+};
+
+/** Los cinco colores de las franjas, en orden; se comparten entre páginas. */
+export const COLORES_FRANJA = [
+  { fondo: 'bg-[#0e7a3c]', claro: false },
+  { fondo: 'bg-[#6bbf3b]', claro: true },
+  { fondo: 'bg-[#2b7a8c]', claro: false },
+  { fondo: 'bg-[#d08a2e]', claro: true },
+  { fondo: 'bg-[#e9efe6]', claro: true },
+];
+
 const FRANJAS: Record<string, { fondo: string; claro: boolean; foto: string; alt: string }> = {
   cotizacion: {
     fondo: 'bg-[#0e7a3c]',
@@ -82,7 +103,24 @@ const CIRCULO = ['lg:left-[46px]', 'lg:-left-[78px]'];
 const VENTANA = ['lg:left-[-46px]', 'lg:left-[78px]'];
 const ANCHO_TARJETA = 'lg:w-[min(443px,calc((100vw-112px)/3))]';
 
-export function Proceso({ base = '' }: { base?: string }) {
+export function PasoAPaso({
+  base = '',
+  id,
+  copete,
+  titulo,
+  parrafo,
+  linea,
+  pasos,
+}: {
+  base?: string;
+  /** el id de la sección; el del titular es `titulo-<id>` */
+  id: string;
+  copete: string;
+  titulo: string;
+  parrafo?: string;
+  linea?: string;
+  pasos: PasoFranja[];
+}) {
   const fila = useRef<HTMLOListElement>(null);
   const mover = (lado: 1 | -1) => {
     const el = fila.current;
@@ -93,24 +131,24 @@ export function Proceso({ base = '' }: { base?: string }) {
   };
 
   return (
-    <section className="bg-black px-6 py-20 text-white lg:px-8 lg:py-16" id="proceso" aria-labelledby="titulo-proceso">
+    <section className="bg-black px-6 py-20 text-white lg:px-8 lg:py-16" id={id} aria-labelledby={`titulo-${id}`}>
       <div className="mx-auto max-w-[1376px]">
         <Reveal className="lg:flex lg:items-end lg:justify-between lg:gap-10">
           <div className="max-w-[793px]">
-            <p className="text-sm font-medium text-white/60">Proceso simple y transparente</p>
+            <p className="text-sm font-medium text-white/60">{copete}</p>
             <h2
-              id="titulo-proceso"
+              id={`titulo-${id}`}
               className="mt-3 font-[Manrope,Inter,sans-serif] text-5xl font-medium leading-[1.05] tracking-[-0.04em] text-white md:text-6xl lg:text-[68px] lg:leading-[1.1]"
             >
-              ¿Cómo Trabajamos?
+              {titulo}
             </h2>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85">
-              Desde la cotización hasta la resolución aprobada, gestionamos todo el proceso para que tú
-              te concentres en tu negocio.
-            </p>
-            <p className="mt-4 text-sm leading-6 text-white/60">
-              Informe técnico listo en 3-5 días hábiles · Cotización en menos de 24 horas
-            </p>
+            {parrafo && <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85">{parrafo}</p>}
+            {linea && (
+              <p
+                className="mt-4 text-sm leading-6 text-white/60"
+                dangerouslySetInnerHTML={{ __html: rangosHtml(linea) }}
+              />
+            )}
           </div>
           <div className="mt-8 hidden items-center gap-3 lg:mt-0 lg:flex lg:shrink-0">
             <button
@@ -139,8 +177,8 @@ export function Proceso({ base = '' }: { base?: string }) {
             'lg:snap-x lg:snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
           )}
         >
-          {PASOS.map((paso, i) => {
-            const f = FRANJAS[paso.id];
+          {pasos.map((paso, i) => {
+            const f = paso;
             const tinta = f.claro ? 'text-black' : 'text-white';
             return (
               <Reveal
@@ -190,6 +228,21 @@ export function Proceso({ base = '' }: { base?: string }) {
         </ol>
       </div>
     </section>
+  );
+}
+
+/** «¿Cómo Trabajamos?» de la portada. */
+export function Proceso({ base = '' }: { base?: string }) {
+  return (
+    <PasoAPaso
+      base={base}
+      id="proceso"
+      copete="Proceso simple y transparente"
+      titulo="¿Cómo Trabajamos?"
+      parrafo="Desde la cotización hasta la resolución aprobada, gestionamos todo el proceso para que tú te concentres en tu negocio."
+      linea="Informe técnico listo en 3-5 días hábiles · Cotización en menos de 24 horas"
+      pasos={PASOS.map((p) => ({ ...p, ...FRANJAS[p.id] }))}
+    />
   );
 }
 

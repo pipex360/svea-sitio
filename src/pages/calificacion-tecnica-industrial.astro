@@ -40,6 +40,7 @@ import { BarraMovil } from '../components/ui/barra-movil';
 import { CtiFormulario } from '../components/ui/cti-formulario';
 import { CtiQueEs } from '../components/ui/cti-que-es';
 import { CtiServicio } from '../components/ui/cti-servicio';
+import { CtiPasos } from '../components/ui/cti-pasos';
 import { CtiSiguiente } from '../components/ui/cti-siguiente';
 import { CtiFaq, PREGUNTAS } from '../components/ui/cti-faq';
 import SeoHead from '../components/SeoHead.astro';
@@ -92,6 +93,7 @@ const fuentesCSS = `
   <div class="svea-nuevo">
     <CtiQueEs base={BASE} client:idle />
     <CtiServicio client:idle />
+    <CtiPasos base={BASE} client:idle />
     <CtiSiguiente base={BASE} client:idle />
     <CtiFaq />
     <Cta69
