@@ -32,7 +32,6 @@
  */
 
 import { Badge7 } from '@/components/ui/cta69-utils/badge7';
-import { IconoWhatsApp } from '@/components/ui/icono-whatsapp';
 import { Reveal } from '@/components/ui/reveal';
 import { Velaris } from '@/components/ui/velaris';
 import { CIERRE } from '@/data/cierre';
@@ -68,7 +67,6 @@ const REPETICIONES = 8;
 
 export function Cta69({
   destino,
-  whatsapp = CIERRE.whatsapp,
   className,
   badge,
   heading,
@@ -139,24 +137,9 @@ export function Cta69({
               </svg>
             </span>
           </a>
-          {!propio && (
-            <a href={whatsapp} target="_blank" rel="noopener" className="btn-whatsapp">
-              <IconoWhatsApp className="size-5" />
-              {CIERRE.whatsappTexto}
-            </a>
-          )}
         </div>
 
-        {propio ? (
-          labels?.footnote && <p className="mt-8 text-base text-white/60">{labels.footnote}</p>
-        ) : (
-          <p className="mt-8 text-base text-white/60">
-            {CIERRE.pie} ·{' '}
-            <a href={CIERRE.telefono.href} className="whitespace-nowrap text-white/80 no-underline hover:text-white">
-              {CIERRE.telefono.texto}
-            </a>
-          </p>
-        )}
+        {/* 29-sep: bajo el botón no va nada más (ni WhatsApp ni la letra chica) */}
       </Reveal>
     </section>
   );
