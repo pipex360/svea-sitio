@@ -15,7 +15,7 @@ import { ChevronDownIcon } from 'lucide-react';
 export const PREGUNTAS = [
   {
     p: '¿Qué pasa si mi infraestructura no cumple con los requisitos para la CTI?',
-    r: 'En caso de observaciones, te brindamos una asesoría detallada sobre los cambios necesarios para cumplir con la normativa y facilitar su aprobación. Te acompañamos en todo el proceso de adecuación hasta lograr la resolución favorable.',
+    r: 'En caso de observaciones, te brindamos una asesoría detallada sobre los cambios necesarios para cumplir con la normativa y facilitar su aprobación. Te acompañamos en todo el proceso de adecuación hasta la resolución de la SEREMI.',
   },
   {
     p: '¿Puedo operar sin la Calificación Técnica Industrial?',

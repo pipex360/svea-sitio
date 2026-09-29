@@ -46,11 +46,11 @@ const INCLUYE: Servicio[] = [
   },
   {
     titulo: 'Asesoramiento en Adecuaciones Normativas',
-    descripcion: 'Si hay observaciones, te guiamos en los ajustes para lograr la aprobación',
+    descripcion: 'Si hay observaciones, te guiamos en los ajustes que pida la SEREMI',
     Icono: ShieldCheckIcon,
   },
   {
-    titulo: 'Acompañamiento hasta la Resolución Aprobada',
+    titulo: 'Acompañamiento hasta la Resolución',
     descripcion: 'No terminamos hasta que tengas tu resolución para tramitar la patente municipal',
     Icono: HandshakeIcon,
   },

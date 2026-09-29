@@ -43,7 +43,7 @@ const PASOS = [
     titulo: 'Resolución',
     descripcion: 'Recibes la resolución de la SEREMI para tramitar tu patente',
     foto: 'operarios-grua-horquilla-bodega-calificacion-tecnica',
-    alt: 'Bodega operando con su calificación técnica industrial aprobada',
+    alt: 'Bodega operando con su calificación técnica industrial al día',
   },
 ];
 

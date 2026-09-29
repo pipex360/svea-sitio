@@ -101,7 +101,7 @@ const Compromiso = () => (
       <h3 className="mb-3 text-xl font-bold tracking-tight text-white">Compromiso y Garantía</h3>
       <p className="text-sm leading-relaxed text-white/80">
         Nos especializamos en la satisfacción del cliente. No solo entregamos documentos;
-        aseguramos la viabilidad y el cumplimiento normativo de su proyecto industrial.
+        aseguramos la viabilidad y el cumplimiento normativo de tu proyecto industrial.
       </p>
       <ul className="mt-auto grid gap-2.5 pt-8">
         {['Calidad Técnica', 'Eficiencia en Tiempos', 'Profesionalismo', 'Transparencia Total'].map(

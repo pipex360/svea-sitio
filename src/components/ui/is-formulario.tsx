@@ -51,7 +51,7 @@ export function IsFormulario({ copia = false }: { copia?: boolean }) {
           title="Solicita tu Cotización"
           titleId="titulo-form-is"
           description="Te enviaremos tu cotización en menos de 24 horas. Gestionamos tu autorización sanitaria ante la SEREMI de Salud. Requisito obligatorio para obtener la patente municipal y operar legalmente en Chile."
-          beneficios={["Obtén tu Informe Sanitario Favorable con gestión integral ante la SEREMI de Salud.", "Evaluación completa de tu establecimiento.", "Seguimiento hasta la resolución favorable.", "Cotización gratuita en menos de 24 horas."]}
+          beneficios={["Obtén tu Informe Sanitario Favorable con gestión integral ante la SEREMI de Salud.", "Evaluación completa de tu establecimiento.", "Seguimiento hasta la resolución de la SEREMI.", "Cotización gratuita en menos de 24 horas."]}
           contactInfo={[
             { icon: IconoWhatsApp, label: 'WhatsApp directo', value: '+56 9 2994 7924', href: WHATSAPP, externo: true },
             { icon: MailIcon, label: 'Correo', value: CORREO, href: `mailto:${CORREO}` },

@@ -45,7 +45,7 @@ const bloques = (): BloqueScroll[] => {
     },
     {
       texto:
-        'En SVEA Consultores nos encargamos de todo el proceso: desde la evaluación inicial de tu establecimiento hasta la obtención de la resolución favorable, asegurando el cumplimiento de toda la normativa vigente.',
+        'En SVEA Consultores nos encargamos de todo el proceso: desde la evaluación inicial de tu establecimiento hasta la resolución de la SEREMI, asegurando el cumplimiento de toda la normativa vigente.',
       ...industria,
     },
   ];

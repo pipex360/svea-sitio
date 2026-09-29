@@ -15,7 +15,7 @@ const FOTOS = [
   { foto: 'tambores-plasticos-sustancias-peligrosas-ds-43', alt: "Residuos en tambores, evaluados y categorizados" },
   { foto: 'preparacion-descargos-sumario-sanitario', alt: "Preparación del expediente y del plan de manejo" },
   { foto: 'revision-expediente-observaciones-seremi', alt: "Presentación y seguimiento del expediente ante la SEREMI de Salud" },
-  { foto: 'camion-tolva-escombros-obra-autorizacion-transporte', alt: "Camión tolva con su autorización de transporte aprobada" },
+  { foto: 'camion-tolva-escombros-obra-autorizacion-transporte', alt: "Camión tolva con su autorización de transporte de residuos vigente" },
 ];
 
 export function TrPasos({ base = '' }: { base?: string }) {

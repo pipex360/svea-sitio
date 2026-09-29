@@ -87,7 +87,7 @@ const FRANJAS: Record<string, { fondo: string; claro: boolean; foto: string; alt
     fondo: 'bg-[#e9efe6]',
     claro: true,
     foto: 'tecnicos-casco-revision-calificacion-tecnica-industrial',
-    alt: 'Dos técnicos con casco revisan en planta la documentación aprobada',
+    alt: 'Dos técnicos con casco revisan en planta la documentación entregada',
   },
 };
 
