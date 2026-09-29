@@ -41,6 +41,11 @@ export function CtiSiguiente({ base = '' }: { base?: string }) {
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover/ecc:scale-105 motion-reduce:transition-none"
               />
               <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/40 to-transparent" />
+              {/* aura blanca detrás del título: aclara la foto justo donde empieza el texto */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 h-[92%] bg-[radial-gradient(ellipse_95%_55%_at_35%_40%,rgba(255,255,255,0.85),rgba(255,255,255,0.45)_55%,transparent_85%)] sm:h-[85%] sm:bg-[radial-gradient(ellipse_90%_60%_at_30%_55%,rgba(255,255,255,0.85),rgba(255,255,255,0.4)_55%,transparent_80%)]"
+              />
               <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-white/90 via-white/60 to-transparent backdrop-blur-[1px]" />
               <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white/85 via-white/40 to-transparent backdrop-blur-sm" />
 
