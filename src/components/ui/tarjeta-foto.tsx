@@ -28,6 +28,7 @@ export function TarjetaFoto({
   acciones,
   pie,
   arriba,
+  className,
   children,
 }: {
   /** si viene, la tarjeta entera es el enlace; si no, lleva sus `acciones` */
@@ -46,13 +47,15 @@ export function TarjetaFoto({
   pie?: React.ReactNode;
   /** en el teléfono, cuánta foto queda a la vista sobre la píldora */
   arriba: string;
+  /** clases extra para la tarjeta (p. ej. otra altura mínima) */
+  className?: string;
   children?: React.ReactNode;
 }) {
   const Caja = href ? 'a' : 'div';
   return (
     <Caja
       {...(href ? { href } : {})}
-      className="group/tarjeta relative flex h-full flex-col justify-end overflow-hidden rounded-3xl border border-[#d8d3c7] no-underline shadow-[0_18px_34px_-16px_rgba(55,47,36,0.35)] transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100 sm:min-h-[520px]"
+      className={cn("group/tarjeta relative flex h-full flex-col justify-end overflow-hidden rounded-3xl border border-[#d8d3c7] no-underline shadow-[0_18px_34px_-16px_rgba(55,47,36,0.35)] transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100 sm:min-h-[520px]", className)}
     >
       <Foto
         nombre={foto}
@@ -83,7 +86,7 @@ export function TarjetaFoto({
             </span>
           )}
         </h3>
-        {children && <p className="text-base leading-relaxed text-black/75">{children}</p>}
+        {children && <div className="text-base leading-relaxed text-black/75 [&_a]:font-semibold [&_a]:text-svea [&_a]:underline">{children}</div>}
         {acciones && (
           <ul className="flex flex-wrap gap-2 pt-1">
             {acciones.map((a) => (

@@ -44,7 +44,9 @@ import { ArticuloFormulario } from '../components/ui/articulo-formulario';
 import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import { Reveal } from '../components/ui/reveal';
-import { Velaris } from '../components/ui/velaris';
+import { TarjetaFoto } from '../components/ui/tarjeta-foto';
+import Foto from '../components/Foto.astro';
+import { BookOpenIcon, BriefcaseIcon } from 'lucide-react';
 import paginas from '../data/paginas.json';
 import { GUIAS, guia } from '../contenido/articulos/guias';
 import { fotosEnHtml, ogFoto } from '../lib/fotos';
@@ -78,6 +80,17 @@ const todasLasTarjetas = datos.relacionados.tarjetas as { titulo: string; texto:
 const tarjetas = todasLasTarjetas.filter((t) => rutaDe(t.href) !== servicio.ruta);
 // su texto (el del WordPress) pasa a la tarjeta destacada, que es el mismo servicio
 const textoDestacado = todasLasTarjetas.find((t) => rutaDe(t.href) === servicio.ruta)?.texto;
+// la foto de cada servicio en sus tarjetas: la primera de su hero
+const FOTO_SERVICIO: Record<string, string> = {
+  '/calificacion-tecnica-industrial/': 'instalacion-industrial-calificacion-tecnica-industrial',
+  '/estudio-de-carga-de-combustible/': 'bodega-estanterias-estudio-carga-combustible',
+  '/planes-de-emergencia-y-evacuacion/': 'brigada-simulacro-incendio-plan-de-emergencia',
+  '/planes-de-emergencia-y-evacuacion-condominios/': 'edificios-providencia-plan-emergencia-condominio',
+  '/manejo-de-residuos-peligrosos/': 'tambores-residuos-peligrosos-bodega',
+  '/autorizacion-de-transporte-de-residuos/': 'camion-tolva-descarga-transporte-residuos-autorizado',
+  '/informe-sanitario/': 'planta-alimentos-informe-sanitario',
+};
+const fotoDe = (h: string) => FOTO_SERVICIO[rutaDe(h)] ?? 'tecnicos-casco-revision-calificacion-tecnica-industrial';
 
 /** Los enlaces internos del contenido van con la raíz del sitio: aquí se les pone la base.
  *  Las fotos vienen como <img data-foto="nombre"> y pasan a su <picture> (src/lib/fotos.ts). */
@@ -210,7 +223,7 @@ const fuentesCSS = `
   <link rel="preload" href={`${BASE}/fonts/manrope-variable-latin.woff2`} as="font" type="font/woff2" crossorigin />
   <style set:html={fuentesCSS}></style>
 </head>
-<body>
+<body class="botones-planos">
   <MedicionSitio copia={COPIA} parte="body" />
   <div class="svea-nuevo art">
     <div class="art-progreso" aria-hidden="true"></div>
@@ -218,6 +231,12 @@ const fuentesCSS = `
     <!-- #inicio: mientras se ve, la barra pegajosa no aparece (la cabecera ya trae la suya) -->
     <header class="art-cab" id="inicio">
       <BarraLectura cotizar={FORM} />
+
+      <!-- 29-sep: la portada de la guía lleva su foto, como el hero de los
+           servicios: fija, con un velo blanco que deja leer el titular -->
+      <div class="art-cab-foto" aria-hidden="true">
+        <Foto nombre={esta.imagen.nombre} alt="" tamano="hero" prioridad />
+      </div>
 
       <div class="art-cabecera">
         <nav class="art-migas" aria-label="Migas de pan">
@@ -323,51 +342,75 @@ const fuentesCSS = `
 
 
     <section class="art-servicio" aria-labelledby="titulo-servicios">
-      <Reveal className="art-ancho" client:idle>
+      <div class="art-ancho">
         <h2 id="titulo-servicios">{datos.relacionados.titulo}</h2>
         {datos.relacionados.intro && <p class="art-servicio-intro" set:html={conBase(datos.relacionados.intro)} />}
-        <div class="art-servicio-principal">
-          <Velaris className="absolute inset-0" speed={1.2} suave client:idle />
-          <div>
-            <p class="art-eyebrow">Servicio relacionado</p>
-            <h3>{servicio.nombre}</h3>
-            {textoDestacado ? <p set:html={conBase(textoDestacado)} /> : <p>{servicio.texto}</p>}
-          </div>
-          <div class="art-servicio-botones">
-            <a class="btn-flecha inversa" href={`${BASE}${servicio.ruta}${servicio.formulario}`}><span>Cotizar este servicio</span><Fragment set:html={flecha} /></a>
-            <a class="art-boton-linea" href={`${BASE}${servicio.ruta}`}>Ver el servicio</a>
-          </div>
-        </div>
-        <div class:list={['art-tarjetas', tarjetas.length === 2 && 'dos', tarjetas.length === 0 && 'hidden']}>
-          {tarjetas.map((t) => (
-            <div class="art-tarjeta tarjeta-svea">
-              <h3>{t.titulo}</h3>
-              <p set:html={conBase(t.texto)} />
-              <a href={ruta(t.href)}>{t.enlace}</a>
-            </div>
+        <div class:list={['art-fotos', tarjetas.length === 0 && 'sola', (tarjetas.length === 1 || tarjetas.length === 3) && 'pares']}>
+          <Reveal className="h-full" client:idle>
+            <TarjetaFoto
+              base={BASE}
+              foto={fotoDe(servicio.ruta)}
+              alt=""
+              icono={BriefcaseIcon}
+              pildora="Servicio relacionado"
+              titulo={servicio.nombre}
+              verificado
+              acciones={[
+                { texto: 'Cotizar este servicio', href: `${BASE}${servicio.ruta}${servicio.formulario}` },
+                { texto: 'Ver el servicio', href: `${BASE}${servicio.ruta}` },
+              ]}
+              arriba="pt-14"
+            >
+              {textoDestacado ? <Fragment set:html={conBase(textoDestacado)} /> : servicio.texto}
+            </TarjetaFoto>
+          </Reveal>
+          {tarjetas.map((t, i) => (
+            <Reveal className="h-full" delay={0.06 * (i + 1)} client:idle>
+              <TarjetaFoto
+                base={BASE}
+                foto={fotoDe(t.href)}
+                alt=""
+                icono={BriefcaseIcon}
+                pildora="Servicio"
+                titulo={t.titulo}
+                acciones={[{ texto: t.enlace, href: ruta(t.href) }]}
+                arriba="pt-14"
+              >
+                <Fragment set:html={conBase(t.texto)} />
+              </TarjetaFoto>
+            </Reveal>
           ))}
         </div>
-      </Reveal>
+      </div>
     </section>
 
     <section class="art-otras" aria-labelledby="titulo-otras">
-      <Reveal className="art-ancho" client:idle>
+      <div class="art-ancho">
         <div class="art-otras-cab">
           <h2 id="titulo-otras">Otras guías del blog</h2>
           <a class="art-boton-linea" href={`${BASE}/blog/`}>Ver todas las guías</a>
         </div>
-        <ul class="art-otras-lista">
-          {otras.map((g) => (
-            <li>
-              <a class="tarjeta-svea" href={`${BASE}/${g.slug}/`}>
-                <span class="art-otras-cat">{g.tema}</span>
-                <span class="art-otras-tit">{g.titulo}</span>
-                <span class="art-otras-baj">{g.bajada}</span>
-              </a>
-            </li>
+        <ul class="art-fotos">
+          {otras.map((g, i) => (
+            <Reveal as="li" className="h-full" delay={0.05 * i} client:idle>
+              <TarjetaFoto
+                href={`${BASE}/${g.slug}/`}
+                base={BASE}
+                foto={g.imagen.nombre}
+                alt=""
+                icono={BookOpenIcon}
+                pildora={g.tema}
+                titulo={g.titulo}
+                boton="Leer guía"
+                arriba="pt-24"
+                className="sm:min-h-[460px]"
+              >
+                {g.bajada}
+              </TarjetaFoto>
+            </Reveal>
           ))}
         </ul>
-      </Reveal>
+      </div>
     </section>
 
     <ArticuloFormulario datos={{ ...datos.formulario }} asunto={datos.asunto} copia={COPIA} base={BASE} client:idle />
@@ -444,8 +487,22 @@ const fuentesCSS = `
 
   /* ---------- cabecera ---------- */
   /* la cabecera en la hoja de la portada, sin los degradados lima y celeste */
-  .art-cab{position:relative;background:linear-gradient(to bottom,#fff,var(--hoja));
+  .art-cab{position:relative;overflow:hidden;background:linear-gradient(to bottom,#fff,var(--hoja));
     border-bottom:1px solid var(--borde)}
+  /* la foto de la guía: fija, a sangre, con velo blanco desde la izquierda
+     (donde va el titular) y desde abajo (donde van las cifras) */
+  .art-cab-foto{position:absolute;inset:0;z-index:0}
+  .art-cab-foto img{width:100%;height:100%;object-fit:cover}
+  .art-cab-foto::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.88) 30%,rgba(255,255,255,.9) 70%,rgba(255,255,255,.6) 100%),
+      linear-gradient(to top,rgba(244,246,244,.95) 0%,transparent 35%)}
+  .art-cab>*:not(.art-cab-foto){position:relative;z-index:1}
+  .art-cabecera{min-height:min(60svh,620px);display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start}
+  .art-cabecera>.art-cifras,.art-cabecera>.art-migas{align-self:stretch}
+  @media (max-width:820px){
+    .art-cab-foto::after{background:linear-gradient(to bottom,rgba(255,255,255,.72),rgba(255,255,255,.9) 45%,rgba(244,246,244,.97))}
+    .art-cabecera{min-height:0}
+  }
   /* el titular se alinea con la columna de lectura (índice 260 px + hueco 64 px) */
   .art-cabecera{max-width:76rem;margin:0 auto;padding:40px 48px 56px 372px}
   /* migas discretas: 13 px, gris y un separador fino (24-sep) */
@@ -579,9 +636,14 @@ const fuentesCSS = `
   .art .art-cuerpo figcaption{margin-top:10px;font-size:14px;line-height:1.5;color:rgba(0,0,0,.55)}
 
   /* llamada a mitad del texto (article-cta del original) */
-  .art-cta{margin:2.4em 0;padding:30px;border-radius:20px;border:1px solid var(--borde);background:var(--hoja);overflow:hidden}
-  .art .art-cuerpo .art-cta h3{margin:0 0 .4em;font-size:24px}
-  .art-cta p{font-size:16.5px;color:var(--suave)}
+  /* 29-sep: el recuadro de cotizar, en el verde oscuro del cierre */
+  .art-cta{margin:2.4em 0;padding:30px;border-radius:20px;border:1px solid #0b3d25;background:#0d3518;overflow:hidden}
+  .art .art-cuerpo .art-cta h3{margin:0 0 .4em;font-size:24px;color:#fff}
+  .art .art-cuerpo .art-cta p{font-size:16.5px;color:rgba(255,255,255,.8)}
+  .art .art-cuerpo .art-cta .btn-flecha{background:#fff}
+  .art .art-cuerpo .art-cta .btn-flecha span{color:#000!important}
+  .art .art-cuerpo .art-cta .art-boton-linea{background:transparent;color:#fff!important;border-color:rgba(255,255,255,.4)!important}
+  .art .art-cuerpo .art-cta [role=group]{padding:14px 0;border-radius:14px;background:#fff}
   .art-cta-botones{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:18px}
   .art .art-cuerpo .art-cta a.btn-flecha,.art .art-cuerpo .art-cta a.art-boton-linea{text-decoration:none;font-weight:500}
   .art .art-cuerpo .art-cta .btn-flecha{font-size:16px;padding:6px 6px 6px 24px}
@@ -646,6 +708,12 @@ const fuentesCSS = `
   @media (max-width:640px){.art-servicio-botones{width:100%}.art-servicio-principal .btn-flecha{width:100%}}
   .art-servicio-principal .art-boton-linea{background:transparent;color:#fff!important;border-color:rgba(255,255,255,.35)!important}
   .art-servicio-principal .art-boton-linea:hover{border-color:#fff!important}
+  /* tarjetas con foto (servicios relacionados y otras guías) */
+  .art .art-fotos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0;padding:0;list-style:none}
+  .art .art-fotos.sola{grid-template-columns:minmax(0,34rem)}
+  .art .art-fotos.pares{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:1023px){.art .art-fotos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:640px){.art .art-fotos,.art .art-fotos.pares,.art .art-fotos.sola{grid-template-columns:minmax(0,1fr)}}
   .art-tarjetas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
   .art-tarjetas.dos{grid-template-columns:repeat(2,minmax(0,1fr))}
   .art-tarjeta{display:flex;flex-direction:column;padding:24px;border:1px solid var(--borde);border-radius:12px;background:#fff}
