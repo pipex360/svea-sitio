@@ -7,15 +7,18 @@
  *
  * Reparto (decisión del 24-sep, tras auditar el WordPress vivo):
  *
- *   · Google Ads va ENTERO por GTM-NGVMRNDM: el contenedor trae el Google
- *     tag AW-16836158536, el Conversion Linker, la conversión del formulario
- *     (086iCJjJlsobEMjIjdw-, disparada por la vista de /gracias/) y la del
- *     clic de WhatsApp (9SA2CNy8qcobEMjIjdw-, clic en enlaces a
- *     api.whatsapp.com). Aquí NO va ningún gtag('event','conversion'): el
- *     WordPress los mandaba además inline y contaba cada lead dos veces.
+ *   · Google Ads: GTM-NGVMRNDM trae el Google tag AW-16836158536, el
+ *     Conversion Linker y las dos conversiones. PERO (30-sep) las de Ads
+ *     también van aquí, inline, como en el WordPress: desde el 28-sep, con
+ *     sólo el GTM, llegaron 7 leads con gclid y Ads contó 0 — la prueba real
+ *     en /gracias/ mostró el config con el gclid y NINGÚN hit de conversión.
+ *     Van por la cola de gtag.js (dataLayerGA): formulario 086iCJjJlsobEMjIjdw-
+ *     al cargar /gracias/, WhatsApp 9SA2CNy8qcobEMjIjdw- al clic. Si el GTM
+ *     también la manda, no se cuenta doble: las dos acciones tienen el
+ *     recuento en «Una» por clic.
  *   · GA4 (G-FWQ05WDLZ3) va por gtag.js desde el código, porque el GTM no
  *     trae GA4: page_view (el config), `form_submit_cotizacion` con el
- *     parámetro `servicio`, y `clic_whatsapp`. Sin conversiones de Ads.
+ *     parámetro `servicio`, y `clic_whatsapp`.
  *
  * Además:
  *   · Enhanced Conversions: al enviar un formulario se guardan en
@@ -121,6 +124,14 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
       w.gtagGA = function () { w.dataLayerGA.push(arguments); };
       w.gtagGA('js', new Date());
       w.gtagGA('config', 'G-FWQ05WDLZ3');
+      // conversión de Google Ads por gtag.js (ver arriba por qué no basta el GTM)
+      var aw = false;
+      w.sveaConversionAds = function (etiqueta) {
+        if (w.sveaCookiesRechazadas) return;   // rechazó en el aviso de cookies
+        if (!aw) { aw = true; w.gtagGA('config', 'AW-16836158536'); }
+        w.gtagGA('event', 'conversion', { send_to: 'AW-16836158536/' + etiqueta, value: 1.0, currency: 'CLP', transport_type: 'beacon' });
+      };
+      if (inmediato) w.sveaConversionAds('086iCJjJlsobEMjIjdw-');   // /gracias/: lead del formulario
       var hecho = false;
       function cargar() {
         if (hecho) return; hecho = true;
@@ -200,10 +211,11 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
         if (ud.email || ud.phone_number) ss.set('svea_user_data', JSON.stringify(ud));
       }, true);
 
-      // clic en WhatsApp (la conversión de Ads la cuenta el GTM)
+      // clic en WhatsApp: evento de GA4 y conversión de Ads
       document.addEventListener('click', function (e) {
         var a = e.target && e.target.closest && e.target.closest('a[href*="api.whatsapp.com"], a[href*="wa.me/"]');
         if (!a) return;
+        window.sveaConversionAds('9SA2CNy8qcobEMjIjdw-');
         window.gtagGA('event', 'clic_whatsapp', {
           event_category: 'Lead',
           event_label: document.title,

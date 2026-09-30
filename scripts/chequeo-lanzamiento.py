@@ -6,10 +6,12 @@ construido en modo producción, y lista todo lo que se perdería o cambiaría.
 
 Arquitectura de medición del sitio nuevo (24-sep, ver
 src/components/MedicionSitio.astro):
-  · Google Ads va SÓLO por GTM-NGVMRNDM (etiqueta, vinculador y las dos
-    conversiones). En el HTML no puede quedar ninguna etiqueta de conversión
-    AW-…/… ni un send_to: el WordPress las mandaba además inline y contaba
-    cada lead dos veces. Por eso las señales «Ads» del vivo NO se exigen.
+  · Google Ads: GTM-NGVMRNDM (etiqueta y vinculador) y, desde el 30-sep, las
+    dos conversiones TAMBIÉN inline por gtag.js (con sólo el GTM no salía
+    ningún hit de conversión). Cada página trae una sola función
+    sveaConversionAds con un send_to, y sólo las dos etiquetas conocidas:
+    formulario 086iCJjJlsobEMjIjdw- (en /gracias/) y WhatsApp
+    9SA2CNy8qcobEMjIjdw-. Por eso las señales «Ads» del vivo NO se exigen.
   · GA4 G-FWQ05WDLZ3 por gtag.js, con su propia cola (dataLayerGA/gtagGA).
     Cada página nueva debe traer el GTM y el GA4, exactamente una vez cada
     uno. Desde el 24-sep se INYECTAN después de la carga (no son <script>
@@ -79,9 +81,15 @@ def medicion(h):
     if n_ga4 != 1: p.append(f"gtag('config','{GA4}'): {n_ga4} (se espera 1)")
     if n_lib != 1: p.append(f'gtag.js de {GA4}: {n_lib} (se espera 1)')
     etiquetas = sorted(set(re.findall(r'AW-\d+/[A-Za-z0-9_-]+', h)))
-    if etiquetas: p.append('conversión de Ads inline (debe ir por GTM): ' + ', '.join(etiquetas))
-    if 'send_to' in h: p.append('send_to inline (debe ir por GTM)')
+    if etiquetas: p.append('conversión de Ads con etiqueta armada a mano: ' + ', '.join(etiquetas))
+    llamadas = set(re.findall(r"sveaConversionAds\('([^']+)'\)", h))
+    if llamadas - PERMITIDAS: p.append('etiqueta de conversión desconocida: ' + ', '.join(sorted(llamadas - PERMITIDAS)))
+    if '9SA2CNy8qcobEMjIjdw-' not in llamadas: p.append('falta la conversión del clic de WhatsApp')
+    if h.count('send_to') != 1: p.append(f"send_to: {h.count('send_to')} (se espera 1, en sveaConversionAds)")
     return p
+
+
+PERMITIDAS = {'086iCJjJlsobEMjIjdw-', '9SA2CNy8qcobEMjIjdw-'}
 
 
 def vivo(ruta):

@@ -352,22 +352,33 @@ for (const [ruta, archivo, { desde: fDesde, hasta: fHasta }] of CONTENIDOS) {
   else checks++;
 }
 
-// 8. Las conversiones de Google Ads van SÓLO por GTM: ningún
-// gtag('event','conversion') ni send_to AW- en el código (el WordPress las
-// mandaba además inline y contaba cada lead dos veces).
+// 8. Las conversiones de Google Ads: un solo lugar y sólo las dos etiquetas.
+// Hasta el 30-sep iban SÓLO por GTM y no llegaba ningún hit de conversión
+// (7 leads con gclid, 0 conversiones); volvieron inline como en el WordPress,
+// pero únicamente desde MedicionSitio.astro (sveaConversionAds).
 {
   const { readdirSync, statSync } = await import('node:fs');
   const archivos = [];
   const recorrer = (d) => { for (const n of readdirSync(d)) { const f = path.join(d, n); if (statSync(f).isDirectory()) recorrer(f); else if (/\.(astro|tsx?|m?js)$/.test(n)) archivos.push(f); } };
   recorrer('src');
   const CONVERSION = /send_to|gtag(?:GA)?\(\s*['"]event['"]\s*,\s*['"]conversion['"]/;
-  const reales = [];
+  const PERMITIDAS = new Set(['086iCJjJlsobEMjIjdw-', '9SA2CNy8qcobEMjIjdw-']);
+  const fuera = [];
+  let enMedicion = 0;
   for (const f of archivos) {
-    readFileSync(f, 'utf8').split('\n').forEach((l, i) => {
-      if (CONVERSION.test(l) && !/^\s*(\*|\/\/)/.test(l)) reales.push(`${f}:${i + 1}: ${l.trim()}`);
+    const txt = readFileSync(f, 'utf8');
+    txt.split('\n').forEach((l, i) => {
+      if (!CONVERSION.test(l) || /^\s*(\*|\/\/)/.test(l)) return;
+      if (f.endsWith('MedicionSitio.astro')) enMedicion++;
+      else fuera.push(`${f}:${i + 1}: ${l.trim()}`);
     });
+    if (f.endsWith('MedicionSitio.astro')) {
+      for (const m of txt.matchAll(/sveaConversionAds\('([^']+)'\)/g)) if (!PERMITIDAS.has(m[1])) fuera.push(`${f}: etiqueta desconocida ${m[1]}`);
+      for (const e of PERMITIDAS) if (!txt.includes(`sveaConversionAds('${e}')`)) fuera.push(`${f}: falta la conversión ${e}`);
+    }
   }
-  if (reales.length) fallos.push(`código  ✗ quedan conversiones de Ads inline (deben ir por GTM):\n     ${reales.join('\n     ')}`);
+  if (enMedicion !== 1) fuera.push(`MedicionSitio.astro: ${enMedicion} envíos de conversión (se espera 1, en sveaConversionAds)`);
+  if (fuera.length) fallos.push(`código  ✗ conversiones de Ads fuera de lugar:\n     ${fuera.join('\n     ')}`);
   else checks++;
 }
 
