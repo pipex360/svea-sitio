@@ -223,6 +223,19 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
           transport_type: 'beacon',
         });
       }, true);
+
+      // clic en el teléfono: evento de GA4 (en Ads se importa como «Cliente
+      // potencial por teléfono»: su asistente sólo ofrece eventos de Analytics)
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest && e.target.closest('a[href^="tel:"]');
+        if (!a) return;
+        window.gtagGA('event', 'clic_telefono', {
+          event_category: 'Lead',
+          event_label: document.title,
+          link_url: a.href,
+          transport_type: 'beacon',
+        });
+      }, true);
     })();
     </script>
   </Fragment>
