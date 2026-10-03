@@ -215,6 +215,21 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
       document.addEventListener('click', function (e) {
         var a = e.target && e.target.closest && e.target.closest('a[href*="api.whatsapp.com"], a[href*="wa.me/"]');
         if (!a) return;
+        // el mensaje que llega a WhatsApp dice de dónde viene la persona: así, al
+        // crear el presupuesto se puede marcar «¿Cómo llegó el cliente?» sin adivinar
+        // (sólo en los enlaces a nuestro número, no en los de «compartir»)
+        try {
+          if (/56929947924/.test(a.href)) {
+            var u = new URL(a.href);
+            var deAds = ss.get('gclid') || ss.get('utm_medium') === 'cpc';
+            var marca = deAds ? '(vengo de un anuncio de Google)' : '(vengo de su sitio web)';
+            var t = u.searchParams.get('text') || 'Hola, necesito una cotización';
+            if (t.indexOf('(vengo de') === -1) {
+              u.searchParams.set('text', t.replace(/\s*Llego desde Google\.?\s*$/, '') + ' ' + marca);
+              a.href = u.toString();
+            }
+          }
+        } catch (err) {}
         window.sveaConversionAds('9SA2CNy8qcobEMjIjdw-');
         window.gtagGA('event', 'clic_whatsapp', {
           event_category: 'Lead',
