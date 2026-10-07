@@ -436,7 +436,8 @@ const BARRA =
     form.addEventListener('submit', function () {
       var campoNombre  = form.querySelector('input[name="Nombre"]');
       var campoEmpresa = form.querySelector('input[name="Empresa"]') ||
-                         form.querySelector('input[name="Condominio"]');
+                         form.querySelector('input[name="Condominio"]') ||
+                         form.querySelector('input[name="Comunidad / dirección"]');
       var nombre  = ((campoNombre && campoNombre.value) || '').trim() || 'Sin nombre';
       var empresa = ((campoEmpresa && campoEmpresa.value) || '').trim();
       if (empresa === 'No indicada') empresa = ''; // al volver atrás el campo puede traer el relleno
@@ -450,9 +451,11 @@ const BARRA =
       // de armar el asunto (sin empresa el asunto no lleva « | »). Un campo
       // vacío hacía que n8n («LEADS · Clasificar») leyera como empresa el
       // rótulo del campo siguiente.
-      ['Empresa', 'Condominio', 'Mensaje'].forEach(function (n) {
+      ['Empresa', 'Condominio', 'Comunidad / dirección', 'Vehículos', 'Mensaje'].forEach(function (n) {
         var c = form.querySelector('[name="' + n + '"]');
-        if (c && !c.value.trim()) c.value = 'No indicada';
+        if (!c || c.value.trim()) return;
+        if (c.type === 'number') c.type = 'text'; // un número no acepta texto
+        c.value = 'No indicada';
       });
     });
   });

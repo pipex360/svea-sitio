@@ -118,7 +118,8 @@ const BASE_AVISO = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
                 required={c.required}
                 placeholder={c.placeholder}
                 autocomplete={AUTOCOMPLETAR[c.name]}
-                inputmode={c.type === 'tel' ? 'tel' : undefined}
+                inputmode={c.type === 'tel' ? 'tel' : c.type === 'number' ? 'numeric' : undefined}
+                min={c.control === 'input' ? c.min : undefined}
                 class={`${clasesControl} h-11 max-sm:h-10`}
               />
             )}
@@ -164,7 +165,8 @@ const BASE_AVISO = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
                     required={c.required}
                     placeholder={c.placeholder}
                     autocomplete={AUTOCOMPLETAR[c.name]}
-                    inputmode={c.type === 'tel' ? 'tel' : undefined}
+                    inputmode={c.type === 'tel' ? 'tel' : c.type === 'number' ? 'numeric' : undefined}
+                min={c.control === 'input' ? c.min : undefined}
                     class={`${clasesControl} h-11 max-sm:h-10`}
                   />
                 )}

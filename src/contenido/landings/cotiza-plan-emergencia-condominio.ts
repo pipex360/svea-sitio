@@ -129,17 +129,10 @@ const landing: Landing = {
       },
       {
         "control": "input",
-        "label": "Nombre del Condominio / Edificio",
-        "name": "Condominio",
+        "label": "Nombre de la comunidad y/o dirección (opcional)",
+        "name": "Comunidad / dirección",
         "type": "text",
-        "placeholder": "Ej: Edificio Los Arrayanes",
-        "opcional": true
-      },
-      {
-        "control": "textarea",
-        "label": "¿Qué necesitas? (opcional, nos ayuda a cotizar sin llamarte)",
-        "name": "Mensaje",
-        "placeholder": "N° de pisos o departamentos y comuna"
+        "placeholder": "Ej: Edificio Los Robles, Av. Ejemplo 123, Ñuñoa"
       }
     ],
     "boton": "COTIZAR PLAN DE EMERGENCIA GRATIS →",

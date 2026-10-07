@@ -15,7 +15,7 @@
 export type Opcion = { value: string; texto: string; placeholder?: boolean };
 
 export type Campo =
-  | { control: 'input'; label: string; name: string; type: string; placeholder: string; required?: boolean; mitad?: boolean; opcional?: boolean }
+  | { control: 'input'; label: string; name: string; type: string; placeholder: string; required?: boolean; mitad?: boolean; opcional?: boolean; min?: number }
   | { control: 'textarea'; label: string; name: string; placeholder: string; required?: boolean; mitad?: boolean; opcional?: boolean }
   | { control: 'select'; label: string; name: string; opciones: Opcion[]; required?: boolean; mitad?: boolean; opcional?: boolean };
 
