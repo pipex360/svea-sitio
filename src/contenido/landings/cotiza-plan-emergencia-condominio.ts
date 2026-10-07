@@ -16,7 +16,7 @@ const landing: Landing = {
   "ruta": "/cotiza-plan-emergencia-condominio/",
   "urgencia": "<strong>Ley 21.442 vigente</strong> — Tu condominio necesita un plan de emergencia y evacuación. Cotízalo hoy.",
   "badge": "Cotización plan de emergencia en 24\u00a0horas",
-  "h1": "Plan de Emergencia<br>Condominio y Edificio<br><em>Ley 21.442</em>",
+  "h1": "Plan de Emergencia y<br>Evacuación para Condominios<br><em>Ley 21.442</em>",
   "subtitulo": "Plan de emergencia condominio · Plan de emergencia edificio · Ley 21.442 y OGUC",
   "bajada": "Nuestro <strong>plan de emergencia y evacuación</strong> para condominios cubre análisis de riesgos, protocolos de evacuación y roles para comité y administración. Tu <strong>plan de seguridad para condominios</strong> con respaldo profesional y aprobación normativa.",
   "pills": [

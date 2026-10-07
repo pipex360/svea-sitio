@@ -170,7 +170,7 @@ export const GUIAS: Guia[] = [
   {
     slug: 'plan-de-emergencia-ds-44-empresas-chile',
     tema: 'Emergencias e incendio',
-    titulo: 'DS 44: obligaciones, simulacro anual y fiscalización',
+    titulo: 'Plan de emergencia DS 44: obligaciones, simulacro y fiscalización',
     bajada: 'Qué obliga el Decreto Supremo 44 a toda empresa: requisitos del plan de emergencia, simulacro anual, fiscalización de la Dirección del Trabajo y cómo evitar sanciones.',
     categoria: 'Seguridad Laboral',
     fecha: 'Mar 2026',

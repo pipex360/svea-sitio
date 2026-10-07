@@ -29,6 +29,7 @@ import { Cta69 } from '../components/ui/cta69';
 import { Footer2 } from '../components/ui/footer2';
 import { Reveal } from '../components/ui/reveal';
 import Foto from '../components/Foto.astro';
+import { altHero } from '../lib/fotos';
 import FranjaClientes from '../components/FranjaClientes.astro';
 import { TarjetaFoto } from '../components/ui/tarjeta-foto';
 import { BookOpenIcon } from 'lucide-react';
@@ -69,8 +70,8 @@ const fuentesCSS = `
     <header class="blog-cab" id="inicio">
       <BarraLectura cotizar={COTIZAR} />
       <!-- 29-sep: la portada del blog con foto, como las guías y los servicios -->
-      <div class="blog-cab-foto" aria-hidden="true">
-        <Foto nombre="tecnicos-casco-revision-calificacion-tecnica-industrial" alt="" tamano="hero" diferida={false} />
+      <div class="blog-cab-foto">
+        <Foto nombre="tecnicos-casco-revision-calificacion-tecnica-industrial" alt={altHero('tecnicos-casco-revision-calificacion-tecnica-industrial')} tamano="hero" diferida={false} />
       </div>
       <div class="blog-cabecera">
         <nav class="blog-migas" aria-label="Migas de pan">

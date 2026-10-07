@@ -234,8 +234,8 @@ const fuentesCSS = `
 
       <!-- 29-sep: la portada de la guía lleva su foto, como el hero de los
            servicios: fija, con un velo blanco que deja leer el titular -->
-      <div class="art-cab-foto" aria-hidden="true">
-        <Foto nombre={esta.imagen.nombre} alt="" tamano="hero" diferida={false} />
+      <div class="art-cab-foto">
+        <Foto nombre={esta.imagen.nombre} alt={esta.imagen.alt} tamano="hero" diferida={false} />
       </div>
 
       <div class="art-cabecera">
