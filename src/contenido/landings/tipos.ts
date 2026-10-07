@@ -36,6 +36,8 @@ export interface Landing {
   h1Alterno?: string;
   /** la línea chica bajo el H1 (html) */
   subtitulo?: string;
+  /** Sustantivo de la franja «Con la confianza de más de 250 …». Por defecto «empresas». */
+  clientesComo?: string;
   /** la bajada del hero (html) */
   bajada: string;
   pills: string[];
