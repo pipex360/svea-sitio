@@ -133,9 +133,11 @@ const BARRA =
 
   <div class="svea-nuevo">
     <!-- franja de urgencia del original, en el verde profundo de la casa -->
-    <div class="lp-urgencia bg-[#0d3518] px-4 py-2.5 text-center text-[13px] leading-snug text-white/75 max-sm:py-2 max-sm:text-[12px] md:text-sm">
+    <div class="lp-urgencia bg-[#0d3518] px-4 py-2.5 text-center text-[13px] leading-snug text-white/75 max-sm:overflow-hidden max-sm:text-ellipsis max-sm:whitespace-nowrap max-sm:py-2 max-sm:text-[12.5px] md:text-sm">
       <span class="lp-punto" aria-hidden="true"></span>
-      <span set:html={d.urgencia} />
+      <span class="max-sm:hidden" set:html={d.urgencia} />
+      <!-- 7-oct (v6): en el teléfono, la versión corta en una sola línea -->
+      <span class="sm:hidden" set:html={d.urgenciaCorta} />
     </div>
 
     <main>

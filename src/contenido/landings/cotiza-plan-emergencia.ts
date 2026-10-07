@@ -13,6 +13,7 @@ import type { Landing } from './tipos';
 
 const landing: Landing = {
   "ruta": "/cotiza-plan-emergencia/",
+  "urgenciaCorta": "<strong>DS 44 vigente</strong> — Regulariza tu plan hoy.",
   "urgencia": "<strong>DS 44 vigente desde 2025</strong> — Tu empresa necesita un plan de emergencia actualizado. Regulariza hoy.",
   "badge": "Cotización en menos de 24 horas",
   "h1": "Plan de Emergencia<br>y Evacuación<br><em>conforme al DS&nbsp;594 y DS&nbsp;44</em>",
@@ -129,61 +130,18 @@ const landing: Landing = {
       },
       {
         "control": "input",
-        "label": "Empresa *",
+        "label": "Empresa",
         "name": "Empresa",
         "type": "text",
         "placeholder": "Nombre de tu empresa",
-        "required": true
-      },
-      {
-        "control": "select",
-        "label": "Tipo de establecimiento",
-        "name": "Tipo de Establecimiento",
-        "opciones": [
-          {
-            "value": "",
-            "texto": "Selecciona...",
-            "placeholder": true
-          },
-          {
-            "value": "Fábrica / Industria",
-            "texto": "Fábrica / Industria"
-          },
-          {
-            "value": "Bodega / Centro logístico",
-            "texto": "Bodega / Centro logístico"
-          },
-          {
-            "value": "Oficinas",
-            "texto": "Oficinas"
-          },
-          {
-            "value": "Local comercial",
-            "texto": "Local comercial"
-          },
-          {
-            "value": "Taller mecánico / industrial",
-            "texto": "Taller mecánico / industrial"
-          },
-          {
-            "value": "Condominio / Edificio",
-            "texto": "Condominio / Edificio"
-          },
-          {
-            "value": "Educacional",
-            "texto": "Educacional"
-          },
-          {
-            "value": "Otro",
-            "texto": "Otro"
-          }
-        ]
+        "opcional": true
       },
       {
         "control": "textarea",
-        "label": "Mensaje (opcional)",
+        "label": "Mensaje",
         "name": "Mensaje",
-        "placeholder": "¿Necesitas el plan por fiscalización, patente u otro motivo?"
+        "placeholder": "¿Necesitas el plan por fiscalización, patente u otro motivo?",
+        "opcional": true
       }
     ],
     "boton": "SOLICITAR COTIZACIÓN GRATUITA →",

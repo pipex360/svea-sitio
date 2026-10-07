@@ -14,6 +14,7 @@ import type { Landing } from './tipos';
 
 const landing: Landing = {
   "ruta": "/cotiza-informe-sanitario/",
+  "urgenciaCorta": "<strong>¿Necesitas tu resolución sanitaria?</strong> Regulariza hoy.",
   "urgencia": "<strong>¿Necesitas tu informe sanitario / resolución sanitaria?</strong> — Sin autorización sanitaria de la SEREMI no puedes operar legalmente. Regulariza hoy.",
   "badge": "Cotización en menos de 24 horas",
   "h1": "Informe Sanitario Favorable ante <em>SEREMI de Salud</em>",
@@ -128,61 +129,18 @@ const landing: Landing = {
       },
       {
         "control": "input",
-        "label": "Empresa *",
+        "label": "Empresa",
         "name": "Empresa",
         "type": "text",
         "placeholder": "Nombre de tu empresa",
-        "required": true
-      },
-      {
-        "control": "select",
-        "label": "Tipo de establecimiento",
-        "name": "Tipo de Establecimiento",
-        "opciones": [
-          {
-            "value": "",
-            "texto": "Selecciona...",
-            "placeholder": true
-          },
-          {
-            "value": "Fábrica / Industria",
-            "texto": "Fábrica / Industria"
-          },
-          {
-            "value": "Bodega / Centro logístico",
-            "texto": "Bodega / Centro logístico"
-          },
-          {
-            "value": "Taller mecánico / industrial",
-            "texto": "Taller mecánico / industrial"
-          },
-          {
-            "value": "Planta de alimentos",
-            "texto": "Planta de alimentos"
-          },
-          {
-            "value": "Local comercial",
-            "texto": "Local comercial"
-          },
-          {
-            "value": "Restaurante / Servicio de alimentación",
-            "texto": "Restaurante / Servicio de alimentación"
-          },
-          {
-            "value": "Centro médico / Clínica",
-            "texto": "Centro médico / Clínica"
-          },
-          {
-            "value": "Otro",
-            "texto": "Otro"
-          }
-        ]
+        "opcional": true
       },
       {
         "control": "textarea",
-        "label": "Mensaje (opcional)",
+        "label": "Mensaje",
         "name": "Mensaje",
-        "placeholder": "¿Necesitas informe sanitario favorable, resolución sanitaria o autorización sanitaria para tu patente?"
+        "placeholder": "¿Necesitas informe sanitario favorable, resolución sanitaria o autorización sanitaria para tu patente?",
+        "opcional": true
       }
     ],
     "boton": "SOLICITAR COTIZACIÓN GRATUITA →",

@@ -57,21 +57,29 @@ const clasesControl =
   'focus-visible:border-svea focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-svea/25';
 
 // los campos se agrupan en filas: los marcados «mitad» van de a dos
+// 7-oct (v6): arriba sólo los obligatorios (nombre, teléfono, email) y el
+// botón; los «opcional» van en una sección chica bajo el botón
 type Fila = Landing['formulario']['campos'];
-const filas: Fila[] = [];
-for (const c of f.campos) {
-  const ultima = filas[filas.length - 1];
-  if (c.mitad && ultima && ultima.length === 1 && ultima[0].mitad) ultima.push(c);
-  else filas.push([c]);
-}
+const agrupar = (campos: Fila) => {
+  const filas: Fila[] = [];
+  for (const c of campos) {
+    const ultima = filas[filas.length - 1];
+    if (c.mitad && ultima && ultima.length === 1 && ultima[0].mitad) ultima.push(c);
+    else filas.push([c]);
+  }
+  return filas;
+};
+const filas = agrupar(f.campos.filter((c) => !c.opcional));
+const filasOpcionales = agrupar(f.campos.filter((c) => c.opcional));
 import { AVISO_FORMULARIO } from '../ui/aviso-formulario';
 const BASE_AVISO = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 ---
 <!-- la tarjeta de «Contáctanos» de la portada (contact-card): esquinas
      rectas, cruces en las esquinas, el titular en blanco y el formulario
      sobre la hoja. 7-oct (v6): en el teléfono (≤640 px) sin las cruces y
-     más apretada, con teléfono y email lado a lado, para que los primeros
-     campos se vean en la primera pantalla -->
+     más apretada. Arriba sólo nombre, teléfono y email (cada uno en su fila
+     en el teléfono) y el botón; empresa y mensaje, opcionales, bajo el botón.
+     Así el formulario completo entra en la primera pantalla -->
 <div class="lp-form-card relative border border-border bg-white shadow-[0_18px_40px_-24px_rgba(0,0,0,0.25)]">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="absolute -left-3 -top-3 size-6 text-black/40 max-sm:hidden"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="absolute -right-3 -top-3 size-6 text-black/40 max-sm:hidden"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
@@ -79,7 +87,7 @@ const BASE_AVISO = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="absolute -bottom-3 -right-3 size-6 text-black/40 max-sm:hidden"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
   <div class="px-5 pb-5 pt-6 max-sm:pb-3 max-sm:pt-4 sm:px-7 sm:pt-7">
     <h2 class="font-display text-[22px] font-semibold leading-tight tracking-tight text-black sm:text-2xl">{f.titulo}</h2>
-    <p class="mt-1 text-sm text-black/60" set:html={f.bajada} />
+    <p class="mt-1 text-sm text-black/60 max-sm:hidden" set:html={f.bajada} />
   </div>
 
   <div class="border-t border-border bg-hoja p-5 max-sm:pt-4 sm:p-7">
@@ -89,13 +97,13 @@ const BASE_AVISO = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
     method={copia ? undefined : 'POST'}
     onsubmit={copia ? 'return false' : undefined}
     data-copia={copia ? '1' : undefined}
-    class="space-y-3.5"
+    class="space-y-3.5 max-sm:space-y-2.5"
   >
     <Fragment set:html={ocultosHtml} />
     <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" aria-hidden="true" />
 
     {filas.map((fila) => (
-      <div class={fila.length > 1 ? 'grid grid-cols-2 gap-3.5' : undefined}>
+      <div class={fila.length > 1 ? 'grid gap-3.5 sm:grid-cols-2' : undefined}>
         {fila.map((c) => (
           <div class="flex flex-col gap-1.5">
             <label for={idCampo(c.name)} class="text-sm font-medium text-black">{c.label}</label>
@@ -135,6 +143,46 @@ const BASE_AVISO = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
       </span>
     </button>
+
+    {filasOpcionales.length > 0 && (
+      <div role="group" aria-labelledby={`${f.id}-opcionales`} class="lp-opcionales space-y-3.5 border-t border-dashed border-black/15 pt-3.5 max-sm:space-y-2.5">
+        <p id={`${f.id}-opcionales`} class="text-[13px] font-semibold text-black/60">Para cotizar más rápido (opcional)</p>
+        {filasOpcionales.map((fila) => (
+          <div class={fila.length > 1 ? 'grid gap-3.5 sm:grid-cols-2' : undefined}>
+            {fila.map((c) => (
+              <div class="flex flex-col gap-1.5">
+                <label for={idCampo(c.name)} class="text-sm font-medium text-black">{c.label}</label>
+                {c.control === 'input' && (
+                  <input
+                    id={idCampo(c.name)}
+                    type={c.type}
+                    name={c.name}
+                    required={c.required}
+                    placeholder={c.placeholder}
+                    autocomplete={AUTOCOMPLETAR[c.name]}
+                    inputmode={c.type === 'tel' ? 'tel' : undefined}
+                    class={`${clasesControl} h-11`}
+                  />
+                )}
+                {c.control === 'select' && (
+                  <svea-select><select id={idCampo(c.name)} name={c.name} required={c.required} class={`${clasesControl} h-11 pr-8`}><Fragment set:html={opcionesHtml(c.opciones)} /></select></svea-select>
+                )}
+                {c.control === 'textarea' && (
+                  <textarea
+                    id={idCampo(c.name)}
+                    name={c.name}
+                    required={c.required}
+                    placeholder={c.placeholder}
+                    rows="3"
+                    class={`${clasesControl} resize-none py-2.5`}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    )}
 
     <p class="flex items-center justify-center gap-1.5 text-xs text-black/55">
       <svg viewBox="0 0 24 24" class="size-3.5" fill="currentColor" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" /></svg>

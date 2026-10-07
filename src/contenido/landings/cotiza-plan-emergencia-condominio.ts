@@ -14,6 +14,7 @@ import type { Landing } from './tipos';
 
 const landing: Landing = {
   "ruta": "/cotiza-plan-emergencia-condominio/",
+  "urgenciaCorta": "<strong>Ley 21.442 vigente</strong> — Cotiza tu plan hoy.",
   "urgencia": "<strong>Ley 21.442 vigente</strong> — Tu condominio necesita un plan de emergencia y evacuación. Cotízalo hoy.",
   "badge": "Cotización plan de emergencia en 24\u00a0horas",
   "h1": "Plan de Emergencia y<br>Evacuación para Condominios<br><em>Ley 21.442</em>",
@@ -128,53 +129,18 @@ const landing: Landing = {
       },
       {
         "control": "input",
-        "label": "Nombre del Condominio / Edificio *",
+        "label": "Nombre del Condominio / Edificio",
         "name": "Condominio",
         "type": "text",
         "placeholder": "Ej: Edificio Los Arrayanes",
-        "required": true
-      },
-      {
-        "control": "select",
-        "label": "Tipo de condominio",
-        "name": "Tipo de Condominio",
-        "opciones": [
-          {
-            "value": "",
-            "texto": "Selecciona...",
-            "placeholder": true
-          },
-          {
-            "value": "Edificio residencial",
-            "texto": "Edificio residencial"
-          },
-          {
-            "value": "Condominio horizontal (casas)",
-            "texto": "Condominio horizontal (casas)"
-          },
-          {
-            "value": "Edificio con locales comerciales",
-            "texto": "Edificio con locales comerciales"
-          },
-          {
-            "value": "Edificio con subterráneo",
-            "texto": "Edificio con subterráneo"
-          },
-          {
-            "value": "Condominio mixto",
-            "texto": "Condominio mixto (residencial + comercial)"
-          },
-          {
-            "value": "Otro",
-            "texto": "Otro"
-          }
-        ]
+        "opcional": true
       },
       {
         "control": "textarea",
-        "label": "Mensaje (opcional)",
+        "label": "Mensaje",
         "name": "Mensaje",
-        "placeholder": "Pisos, departamentos y motivo (p. ej., fiscalización)"
+        "placeholder": "Pisos, departamentos y motivo (p. ej., fiscalización)",
+        "opcional": true
       }
     ],
     "boton": "COTIZAR PLAN DE EMERGENCIA GRATIS →",

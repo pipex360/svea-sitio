@@ -18,6 +18,7 @@ import type { Landing } from './tipos';
 
 const landing: Landing = {
   "ruta": "/cotiza-calificacion-tecnica-industrial/",
+  "urgenciaCorta": "<strong>¿Necesitas tu certificado?</strong> Regulariza hoy.",
   "urgencia": "<strong>¿Necesitas tu certificado de actividad inofensiva?</strong> — Sin calificación técnica industrial aprobada no puedes operar. Regulariza hoy.",
   "badge": "Cotización en menos de 24 horas",
   "h1": "Certificado de Actividad<br>Inofensiva y <em>Calificación Técnica Industrial</em>",
@@ -132,61 +133,18 @@ const landing: Landing = {
       },
       {
         "control": "input",
-        "label": "Empresa *",
+        "label": "Empresa",
         "name": "Empresa",
         "type": "text",
         "placeholder": "Nombre de tu empresa",
-        "required": true
-      },
-      {
-        "control": "select",
-        "label": "Tipo de establecimiento",
-        "name": "Tipo de Establecimiento",
-        "opciones": [
-          {
-            "value": "",
-            "texto": "Selecciona...",
-            "placeholder": true
-          },
-          {
-            "value": "Fábrica / Industria",
-            "texto": "Fábrica / Industria"
-          },
-          {
-            "value": "Bodega / Centro logístico",
-            "texto": "Bodega / Centro logístico"
-          },
-          {
-            "value": "Taller mecánico / industrial",
-            "texto": "Taller mecánico / industrial"
-          },
-          {
-            "value": "Planta de alimentos",
-            "texto": "Planta de alimentos"
-          },
-          {
-            "value": "Local comercial",
-            "texto": "Local comercial"
-          },
-          {
-            "value": "Oficinas con actividad industrial",
-            "texto": "Oficinas con actividad industrial"
-          },
-          {
-            "value": "Microempresa (Ley 20.898)",
-            "texto": "Microempresa (Ley 20.898)"
-          },
-          {
-            "value": "Otro",
-            "texto": "Otro"
-          }
-        ]
+        "opcional": true
       },
       {
         "control": "textarea",
-        "label": "Mensaje (opcional)",
+        "label": "Mensaje",
         "name": "Mensaje",
-        "placeholder": "¿Necesitas certificado de actividad inofensiva, CTI por patente nueva, renovación o regularización?"
+        "placeholder": "¿Necesitas certificado de actividad inofensiva, CTI por patente nueva, renovación o regularización?",
+        "opcional": true
       }
     ],
     "boton": "SOLICITAR COTIZACIÓN GRATUITA →",

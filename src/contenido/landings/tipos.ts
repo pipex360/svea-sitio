@@ -15,9 +15,9 @@
 export type Opcion = { value: string; texto: string; placeholder?: boolean };
 
 export type Campo =
-  | { control: 'input'; label: string; name: string; type: string; placeholder: string; required?: boolean; mitad?: boolean }
-  | { control: 'textarea'; label: string; name: string; placeholder: string; required?: boolean; mitad?: boolean }
-  | { control: 'select'; label: string; name: string; opciones: Opcion[]; required?: boolean; mitad?: boolean };
+  | { control: 'input'; label: string; name: string; type: string; placeholder: string; required?: boolean; mitad?: boolean; opcional?: boolean }
+  | { control: 'textarea'; label: string; name: string; placeholder: string; required?: boolean; mitad?: boolean; opcional?: boolean }
+  | { control: 'select'; label: string; name: string; opciones: Opcion[]; required?: boolean; mitad?: boolean; opcional?: boolean };
 
 export type Oculto = { name: string; value: string; id?: string };
 
@@ -26,6 +26,8 @@ export interface Landing {
   ruta: string;
   /** la franja de urgencia de arriba (html) */
   urgencia: string;
+  /** 7-oct (v6): la misma franja, corta, en UNA línea para el teléfono (≤640 px; html) */
+  urgenciaCorta: string;
   /** el sello sobre el titular */
   badge: string;
   /** el H1 tal cual el original (html: <br>, <em>) */
