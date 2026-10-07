@@ -439,12 +439,21 @@ const BARRA =
                          form.querySelector('input[name="Condominio"]');
       var nombre  = ((campoNombre && campoNombre.value) || '').trim() || 'Sin nombre';
       var empresa = ((campoEmpresa && campoEmpresa.value) || '').trim();
+      if (empresa === 'No indicada') empresa = ''; // al volver atrás el campo puede traer el relleno
       var ahora = new Date();
       var fecha = ahora.toLocaleDateString('es-CL') + ' ' +
                   ahora.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
       var asunto = prefijoAsunto + nombre + (empresa ? ' | ' + empresa : '') + ' - ' + fecha;
       var destino = document.getElementById(subjectId);
       if (destino) destino.value = asunto;
+      // 7-oct (v6): los opcionales en blanco viajan como «No indicada», DESPUÉS
+      // de armar el asunto (sin empresa el asunto no lleva « | »). Un campo
+      // vacío hacía que n8n («LEADS · Clasificar») leyera como empresa el
+      // rótulo del campo siguiente.
+      ['Empresa', 'Condominio', 'Mensaje'].forEach(function (n) {
+        var c = form.querySelector('[name="' + n + '"]');
+        if (c && !c.value.trim()) c.value = 'No indicada';
+      });
     });
   });
   </script>
