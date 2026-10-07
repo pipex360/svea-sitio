@@ -60,10 +60,9 @@ const landing: Landing = {
       { control: 'input', label: 'Empresa', name: 'Empresa', type: 'text', placeholder: 'Nombre de tu empresa', opcional: true },
       {
         control: 'textarea',
-        label: 'Mensaje',
+        label: '¿Qué necesitas? (opcional, nos ayuda a cotizar sin llamarte)',
         name: 'Mensaje',
         placeholder: '¿Qué residuos transportas, cuántos vehículos y hacia qué destino?',
-        opcional: true,
       },
     ],
     boton: 'SOLICITAR COTIZACIÓN GRATUITA →',

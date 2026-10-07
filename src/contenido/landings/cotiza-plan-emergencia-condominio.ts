@@ -137,10 +137,9 @@ const landing: Landing = {
       },
       {
         "control": "textarea",
-        "label": "Mensaje",
+        "label": "¿Qué necesitas? (opcional, nos ayuda a cotizar sin llamarte)",
         "name": "Mensaje",
-        "placeholder": "Pisos, departamentos y motivo (p. ej., fiscalización)",
-        "opcional": true
+        "placeholder": "N° de pisos o departamentos y comuna"
       }
     ],
     "boton": "COTIZAR PLAN DE EMERGENCIA GRATIS →",

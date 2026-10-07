@@ -137,10 +137,9 @@ const landing: Landing = {
       },
       {
         "control": "textarea",
-        "label": "Mensaje",
+        "label": "¿Qué necesitas? (opcional, nos ayuda a cotizar sin llamarte)",
         "name": "Mensaje",
-        "placeholder": "¿Necesitas informe sanitario favorable, resolución sanitaria o autorización sanitaria para tu patente?",
-        "opcional": true
+        "placeholder": "Tipo de establecimiento y comuna"
       }
     ],
     "boton": "SOLICITAR COTIZACIÓN GRATUITA →",

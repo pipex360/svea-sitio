@@ -138,10 +138,9 @@ const landing: Landing = {
       },
       {
         "control": "textarea",
-        "label": "Mensaje",
+        "label": "¿Qué necesitas? (opcional, nos ayuda a cotizar sin llamarte)",
         "name": "Mensaje",
-        "placeholder": "¿Necesitas el plan por fiscalización, patente u otro motivo?",
-        "opcional": true
+        "placeholder": "Tipo de establecimiento, N° de trabajadores y m²"
       }
     ],
     "boton": "SOLICITAR COTIZACIÓN GRATUITA →",

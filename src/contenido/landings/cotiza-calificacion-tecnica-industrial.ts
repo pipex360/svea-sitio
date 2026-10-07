@@ -141,10 +141,9 @@ const landing: Landing = {
       },
       {
         "control": "textarea",
-        "label": "Mensaje",
+        "label": "¿Qué necesitas? (opcional, nos ayuda a cotizar sin llamarte)",
         "name": "Mensaje",
-        "placeholder": "¿Necesitas certificado de actividad inofensiva, CTI por patente nueva, renovación o regularización?",
-        "opcional": true
+        "placeholder": "Cuéntanos tu rubro, comuna y m² aprox. y te enviamos el presupuesto sin llamarte"
       }
     ],
     "boton": "SOLICITAR COTIZACIÓN GRATUITA →",
