@@ -43,7 +43,10 @@ export type Logo = {
 
 /** Los logos de SVEA van de proporción 1,1 a 4,3. Con una altura fija los
  *  cuadrados quedarían diminutos, así que se calcula a partir de su proporción. */
-const alto = (logo: Logo) => `${Math.round(40 / Math.pow(logo.ratio ?? 2, 0.35))}px`;
+const alto = (logo: Logo) => Math.round(40 / Math.pow(logo.ratio ?? 2, 0.35));
+/** El ancho que le toca a esa altura. Va como atributo junto con el alto para que el navegador
+ *  reserve el espacio antes de bajar la imagen (sin esto la cinta salta al cargar). */
+const ancho = (logo: Logo) => Math.round(alto(logo) * (logo.ratio ?? 2));
 
 const Mitad = ({ logos, oculta }: { logos: Logo[]; oculta?: boolean }) => (
   <div className="flex shrink-0 items-center gap-[42px] pr-[42px]" aria-hidden={oculta || undefined}>
@@ -55,7 +58,9 @@ const Mitad = ({ logos, oculta }: { logos: Logo[]; oculta?: boolean }) => (
         loading="eager"
         decoding="async"
         className="pointer-events-none w-auto select-none object-contain"
-        style={{ height: alto(logo) }}
+        width={ancho(logo)}
+        height={alto(logo)}
+        style={{ height: `${alto(logo)}px` }}
       />
     ))}
   </div>
