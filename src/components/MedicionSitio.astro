@@ -251,6 +251,73 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
           transport_type: 'beacon',
         });
       }, true);
+
+      // embudo del formulario (21-oct): cuántos lo empiezan, hasta qué casilla
+      // llegan y cuántos se van a medias. Sólo viaja el NOMBRE de la casilla,
+      // nunca lo que la persona escribe.
+      //   formulario_inicio    al tocar la primera casilla
+      //   formulario_campo     la primera vez que una casilla queda con algo escrito
+      //   formulario_abandono  al irse de la página con el formulario empezado y sin enviar
+      // El abandono sale una sola vez, también si sólo cambió de pestaña y vuelve
+      // a enviar: la tasa se saca de inicio vs form_submit_cotizacion; el
+      // abandono sirve para ver en qué casilla quedan.
+      var SEL = 'form[action*="web3forms"]';
+      var embudo = [];   // un estado por formulario
+      function estadoDe(form) {
+        for (var i = 0; i < embudo.length; i++) if (embudo[i].form === form) return embudo[i];
+        var st = { form: form, inicio: 0, campos: [], ultimo: '', enviado: false, cerrado: false };
+        embudo.push(st);
+        return st;
+      }
+      function casilla(el) {
+        if (!el || !el.name || !el.form || !el.form.matches(SEL)) return '';
+        if (el.type === 'hidden' || el.type === 'submit' || el.name === 'botcheck') return '';
+        return el.name;
+      }
+      function datos(st, extra) {
+        var s = st.form.querySelector('[name="Servicio"]');
+        var o = {
+          servicio: (s && s.value) || '',
+          form_id: st.form.id || '',
+          event_label: document.title,
+          transport_type: 'beacon',
+        };
+        for (var k in extra) o[k] = extra[k];
+        return o;
+      }
+      document.addEventListener('focusin', function (e) {
+        var n = casilla(e.target);
+        if (!n) return;
+        var st = estadoDe(e.target.form);
+        if (st.inicio) return;
+        st.inicio = Date.now();
+        window.gtagGA('event', 'formulario_inicio', datos(st, { campo: n }));
+      }, true);
+      document.addEventListener('change', function (e) {
+        var n = casilla(e.target);
+        if (!n || !String(e.target.value || '').trim()) return;
+        var st = estadoDe(e.target.form);
+        st.ultimo = n;
+        if (st.campos.indexOf(n) !== -1) return;
+        st.campos.push(n);
+        window.gtagGA('event', 'formulario_campo', datos(st, { campo: n, orden: st.campos.length }));
+      }, true);
+      document.addEventListener('submit', function (e) {
+        if (e.target && e.target.matches && e.target.matches(SEL)) estadoDe(e.target).enviado = true;
+      }, true);
+      function alIrse() {
+        embudo.forEach(function (st) {
+          if (!st.inicio || st.enviado || st.cerrado) return;
+          st.cerrado = true;
+          window.gtagGA('event', 'formulario_abandono', datos(st, {
+            ultimo_campo: st.ultimo || '(ninguna completa)',
+            campos_completos: st.campos.length,
+            segundos: Math.round((Date.now() - st.inicio) / 1000),
+          }));
+        });
+      }
+      document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') alIrse(); });
+      window.addEventListener('pagehide', alIrse);
     })();
     </script>
   </Fragment>
