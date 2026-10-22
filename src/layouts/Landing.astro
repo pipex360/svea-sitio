@@ -54,7 +54,7 @@ import { Footer2 } from '../components/ui/footer2';
 import paginas from '../data/paginas.json';
 import type { Landing } from '../contenido/landings/tipos';
 import Foto from '../components/Foto.astro';
-import { precargaFoto } from '../lib/fotos';
+import { precargaFoto, altHero } from '../lib/fotos';
 import { rangosHtml } from '../lib/utils';
 
 interface Props {
@@ -133,30 +133,34 @@ const BARRA =
 
   <div class="svea-nuevo">
     <!-- franja de urgencia del original, en el verde profundo de la casa -->
-    <div class="lp-urgencia bg-[#0d3518] px-4 py-2.5 text-center text-[13px] leading-snug text-white/75 md:text-sm">
+    <div class="lp-urgencia bg-[#0d3518] px-4 py-2.5 text-center text-[13px] leading-snug text-white/75 max-sm:overflow-hidden max-sm:text-ellipsis max-sm:whitespace-nowrap max-sm:py-2 max-sm:text-[12.5px] md:text-sm">
       <span class="lp-punto" aria-hidden="true"></span>
-      <span set:html={d.urgencia} />
+      <span class="max-sm:hidden" set:html={d.urgencia} />
+      <!-- 7-oct (v6): en el teléfono, la versión corta en una sola línea -->
+      <span class="sm:hidden" set:html={d.urgenciaCorta} />
     </div>
 
     <main>
       <!-- HERO con el lenguaje de la portada (HeroHalo): la foto del servicio
            de fondo, veladuras blancas y el halo tras el mensaje. Encima, la
            cabecera de landing (logo y teléfono, sin menú). En el teléfono el
-           orden es titular, bajada, formulario, pills y cifras; en escritorio
+           orden es titular, bajada, formulario, pills y cifras (≤640 px, desde
+           el 7-oct: titular, formulario, bajada, pills y cifras, para que los
+           primeros campos se vean sin bajar); en escritorio
            el formulario va a la derecha, a la altura del titular. Nada nace
            invisible: el titular y la bajada salen con la primera pintura. -->
       <section id="inicio" class="lp-hero" aria-labelledby="lp-h1">
-        <div class="lp-hero-fondo" aria-hidden="true">
-          <Foto nombre={d.foto} alt="" tamano="hero" prioridad />
-          <div class="lp-velo-arriba"></div>
-          <div class="lp-velo-abajo"></div>
-          <div class="lp-aura"></div>
+        <div class="lp-hero-fondo">
+          <Foto nombre={d.foto} alt={altHero(d.foto)} tamano="hero" prioridad />
+          <div class="lp-velo-arriba" aria-hidden="true"></div>
+          <div class="lp-velo-abajo" aria-hidden="true"></div>
+          <div class="lp-aura" aria-hidden="true"></div>
         </div>
 
         <!-- cabecera de landing: logo y teléfono, sin menú -->
         <header class="relative z-10">
-          <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 md:px-6 md:py-5">
-            <img src={`${BASE}/img/logo-svea.webp`} width="404" height="137" alt="SVEA Consultores" class="h-8 w-auto md:h-10" fetchpriority="high" />
+          <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 max-sm:py-2 md:px-6 md:py-5">
+            <img src={`${BASE}/img/logo-svea.webp`} width="404" height="137" alt="SVEA Consultores" class="h-8 w-auto max-sm:h-7 md:h-10" fetchpriority="high" />
             <a href={TEL_HREF} class="lp-tel" aria-label={`Llamar al ${TEL}`}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={TEL_SVG} />
               <span>{TEL}</span>
@@ -164,16 +168,16 @@ const BARRA =
           </div>
         </header>
 
-        <div class="relative z-10 mx-auto grid max-w-6xl gap-x-12 gap-y-8 px-4 pb-14 pt-4 md:px-6 md:pt-10 lg:grid-cols-[minmax(0,1fr)_440px] lg:grid-rows-[auto_1fr] lg:gap-y-10 lg:pb-20 lg:pt-12">
-          <div class="lg:col-start-1 lg:row-start-1">
+        <div class="lp-hero-grid relative z-10 mx-auto grid max-w-6xl gap-x-12 gap-y-8 px-4 pb-14 pt-4 max-sm:gap-y-0 max-sm:pb-12 max-sm:pt-1 md:px-6 md:pt-10 lg:grid-cols-[minmax(0,1fr)_440px] lg:grid-rows-[auto_1fr] lg:gap-y-10 lg:pb-20 lg:pt-12">
+          <div class="lp-hero-texto lg:col-start-1 lg:row-start-1">
             <p class="lp-copete">
               <span class="lp-latido" aria-hidden="true"></span>{d.badge}
             </p>
             <h1 id="lp-h1" class="lp-h1">
-              <Fragment set:html={d.h1} />
-              {d.h1Alterno && <span class="mt-3 block font-sans text-base font-medium tracking-normal text-black/55 md:text-lg">{d.h1Alterno}</span>}
+              <Fragment set:html={d.h1.replace(/<br>/g, '<br> ')} />
+              {d.h1Alterno && <span class="mt-3 block font-sans text-base font-medium tracking-normal text-black/55 max-sm:hidden md:text-lg">{d.h1Alterno}</span>}
             </h1>
-            {d.subtitulo && <p class="lp-subtitulo mt-3 text-sm font-medium text-black/60" set:html={d.subtitulo} />}
+            {d.subtitulo && <p class="lp-subtitulo mt-3 max-sm:mt-6 text-sm font-medium text-black/60" set:html={d.subtitulo} />}
             <p class="lp-bajada" set:html={d.bajada} />
           </div>
 
@@ -181,7 +185,7 @@ const BARRA =
             <LandingFormulario f={d.formulario} copia={COPIA} />
           </div>
 
-          <div class="lg:col-start-1 lg:row-start-2">
+          <div class="lp-hero-pills lg:col-start-1 lg:row-start-2">
             <ul class="flex flex-wrap gap-2">
               {d.pills.map((p) => (
                 <li class="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-3.5 py-2 text-sm font-medium text-black/80 backdrop-blur-sm">
@@ -205,7 +209,7 @@ const BARRA =
 
       <!-- clientes -->
       <section class="bg-white px-4 py-8" aria-label="Clientes de SVEA Consultores">
-        <TituloClientes />
+        <TituloClientes quienes={d.clientesComo} />
         <LogoMarquee logos={clientes} />
       </section>
 
@@ -432,15 +436,27 @@ const BARRA =
     form.addEventListener('submit', function () {
       var campoNombre  = form.querySelector('input[name="Nombre"]');
       var campoEmpresa = form.querySelector('input[name="Empresa"]') ||
-                         form.querySelector('input[name="Condominio"]');
+                         form.querySelector('input[name="Condominio"]') ||
+                         form.querySelector('input[name="Comunidad / dirección"]');
       var nombre  = ((campoNombre && campoNombre.value) || '').trim() || 'Sin nombre';
       var empresa = ((campoEmpresa && campoEmpresa.value) || '').trim();
+      if (empresa === 'No indicada') empresa = ''; // al volver atrás el campo puede traer el relleno
       var ahora = new Date();
       var fecha = ahora.toLocaleDateString('es-CL') + ' ' +
                   ahora.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
       var asunto = prefijoAsunto + nombre + (empresa ? ' | ' + empresa : '') + ' - ' + fecha;
       var destino = document.getElementById(subjectId);
       if (destino) destino.value = asunto;
+      // 7-oct (v6): los opcionales en blanco viajan como «No indicada», DESPUÉS
+      // de armar el asunto (sin empresa el asunto no lleva « | »). Un campo
+      // vacío hacía que n8n («LEADS · Clasificar») leyera como empresa el
+      // rótulo del campo siguiente.
+      ['Empresa', 'Condominio', 'Comunidad / dirección', 'Vehículos', 'Mensaje'].forEach(function (n) {
+        var c = form.querySelector('[name="' + n + '"]');
+        if (!c || c.value.trim()) return;
+        if (c.type === 'number') c.type = 'text'; // un número no acepta texto
+        c.value = 'No indicada';
+      });
     });
   });
   </script>
@@ -525,6 +541,23 @@ const BARRA =
   .lp-bajada { margin: 20px 0 0; max-width: 44ch; font-size: 18px; line-height: 1.6; color: rgba(0,0,0,.7); }
   .lp-subtitulo em { font-style: normal; font-weight: 600; color: rgba(0,0,0,.7); }
   @media (max-width: 820px) { .lp-bajada { font-size: 16px; } }
+  /* 7-oct (v6): en el teléfono (≤640 px) el formulario entra en la primera
+     pantalla (390×660 con las barras de Safari): titular más chico y sin los
+     <br> del original, y la bajada y el subtítulo pasan bajo el formulario
+     (sólo el orden visual: en el HTML siguen tras el titular). La grilla se
+     vuelve una columna flex y la caja del texto se disuelve en ella. */
+  @media (max-width: 640px) {
+    .lp-hero-grid { display: flex; flex-direction: column; } /* gap y padding: max-sm: en el marcado (las utilidades van !important) */
+    .lp-hero-texto { display: contents; }
+    .lp-copete { margin-bottom: 10px; font-size: 11.5px; gap: 10px; }
+    .lp-h1 { font-size: 25px; line-height: 1.12; max-width: none; }
+    .lp-h1 br { display: none; } /* tras cada <br> va un espacio: las palabras no se pegan */
+    #formulario { order: 1; margin-top: 12px; }
+    .lp-hero-texto > .lp-subtitulo, .lp-hero-texto > .lp-bajada { order: 2; }
+    .lp-hero-texto > .lp-subtitulo + .lp-bajada { margin-top: 8px; }
+    .lp-hero-texto > .lp-bajada { margin-top: 24px; }
+    .lp-hero-pills { order: 3; margin-top: 24px; }
+  }
   .lp-cifra { font-family: Manrope, Inter, sans-serif; font-weight: 500; font-size: 30px; letter-spacing: -.03em; line-height: 1; color: #000; }
   @media (min-width: 768px) { .lp-cifra { font-size: 38px; } }
 

@@ -144,3 +144,41 @@ export function fotosEnHtml(html: string, base = ''): string {
     return fotoHtml(nombre, { base, alt, tamano: 'articulo', clase });
   });
 }
+
+/**
+ * El texto alternativo de las fotos de cabecera (hero de la portada, los
+ * servicios, las landings y el blog; las guías traen el suyo en guias.ts).
+ * 7-oct (v6): antes iban con alt="" como fondo decorativo; ahora dicen qué
+ * se ve, en corto.
+ */
+const ALT_HERO: Record<string, string> = {
+  'planta-energia-consultoria-ambiental-cumplimiento-normativo': 'Parque eólico al atardecer',
+  'centro-logistico-consultoria-ambiental-permisos': 'Centro logístico visto desde el aire',
+  'planta-industrial-consultoria-ambiental-seremi': 'Planta industrial con estanques al atardecer',
+  'bodega-calificacion-tecnica-industrial': 'Bodega industrial con portones y patio de maniobras',
+  'instalacion-industrial-calificacion-tecnica-industrial': 'Instalación industrial vista desde el aire',
+  'taller-metalmecanico-calificacion-tecnica-industrial': 'Taller metalmecánico',
+  'operarios-grua-horquilla-bodega-calificacion-tecnica': 'Grúa horquilla y operarios en una bodega',
+  'tecnicos-casco-planta-cumplimiento-normativo': 'Técnicos con casco en una planta industrial',
+  'tecnicos-casco-revision-calificacion-tecnica-industrial': 'Técnicos con casco revisando una instalación',
+  'bodega-estanterias-estudio-carga-combustible': 'Bodega con estanterías altas de mercadería',
+  'bodega-productos-estudio-carga-combustible': 'Racks altos de una bodega con mercadería',
+  'bodega-racks-mercaderia-carga-combustible': 'Racks de bodega cargados con mercadería en pallets',
+  'operario-transpaleta-racks-estudio-carga-combustible': 'Operario con transpaleta entre racks de bodega',
+  'brigada-simulacro-incendio-plan-de-emergencia': 'Brigada de emergencia con manguera en un simulacro',
+  'simulacro-extintor-brigada-plan-emergencia': 'Brigadistas apagando un fuego con extintor en un simulacro',
+  'edificio-condominio-plan-de-emergencia': 'Edificio de un condominio residencial',
+  'edificios-providencia-plan-emergencia-condominio': 'Edificios de Providencia, en Santiago',
+  'edificios-santiago-cordillera-nevada-plan-emergencia-condominio': 'Edificios de Santiago con la cordillera nevada',
+  'camion-cisterna-inflamable-transporte-residuos-peligrosos': 'Camión cisterna de carga inflamable',
+  'camion-tolva-carga-planta-residuos': 'Camión tolva cargado por un cargador frontal',
+  'camion-tolva-descarga-transporte-residuos-autorizado': 'Camión tolva descargando residuos en un sitio autorizado',
+  'camion-tolva-escombros-residuos-no-peligrosos': 'Camión tolva cargado con escombros',
+  'linea-seleccion-tomates-informe-sanitario': 'Línea de selección de tomates en una planta de alimentos',
+  'manipulacion-alimentos-informe-sanitario': 'Manipulación de alimentos en una planta',
+  'planta-alimentos-informe-sanitario': 'Trabajadoras con cofia en una planta de alimentos',
+  'tambores-azules-residuos-peligrosos-almacenamiento': 'Tambores azules de residuos peligrosos almacenados',
+  'tambores-residuos-peligrosos-bodega': 'Tambores de residuos peligrosos en una bodega',
+  'valle-elqui-cultivos-pertinencia-seia': 'Cultivos en el valle del Elqui',
+};
+export const altHero = (nombre: string) => ALT_HERO[nombre] ?? '';

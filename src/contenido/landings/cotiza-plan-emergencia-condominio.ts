@@ -9,16 +9,24 @@
  * el 24-sep por decisión de Carlos (3-5 días hábiles en todos los servicios,
  * 5-10 en Plan de Emergencia empresa y condominios). Los plazos de la
  * autoridad (SEREMI, Bomberos) quedan como estaban.
+ *
+ * 7-oct-2026 · la campaña de Ads pasó a atacar sólo edificios (el 96% de los presupuestos de
+ * plan de emergencia son de edificios y los piden administradoras). Cambios de texto de ese día:
+ * la bajada nombra a quién va dirigido (administradores y comités); el subtítulo conserva las
+ * frases exactas de las palabras clave y suma «comunidad» y «copropiedad» (palabras nuevas); «Empresas atendidas» → «Clientes atendidos»; y sale «aprobación normativa», que se
+ * leía como promesa de aprobación (la aprobación la da la autoridad).
  */
 import type { Landing } from './tipos';
 
 const landing: Landing = {
   "ruta": "/cotiza-plan-emergencia-condominio/",
+  "urgenciaCorta": "<strong>Ley 21.442 vigente</strong> — Cotiza tu plan hoy.",
   "urgencia": "<strong>Ley 21.442 vigente</strong> — Tu condominio necesita un plan de emergencia y evacuación. Cotízalo hoy.",
   "badge": "Cotización plan de emergencia en 24\u00a0horas",
-  "h1": "Plan de Emergencia<br>Condominio y Edificio<br><em>Ley 21.442</em>",
-  "subtitulo": "Plan de emergencia condominio · Plan de emergencia edificio · Ley 21.442 y OGUC",
-  "bajada": "Nuestro <strong>plan de emergencia y evacuación</strong> para condominios cubre análisis de riesgos, protocolos de evacuación y roles para comité y administración. Tu <strong>plan de seguridad para condominios</strong> con respaldo profesional y aprobación normativa.",
+  "h1": "Plan de Emergencia y<br>Evacuación para Condominios<br><em>Ley 21.442</em>",
+  "subtitulo": "Plan de emergencia condominio · Plan de emergencia edificio · Plan de emergencia comunidad · Ley 21.442 de copropiedad y OGUC",
+  "clientesComo": "clientes",
+  "bajada": "Para administradores y comités de administración: nuestro <strong>plan de emergencia y evacuación</strong> para condominios, edificios y comunidades cubre análisis de riesgos, protocolos de evacuación y roles para comité y administración. Tu <strong>plan de seguridad para condominios</strong> con respaldo profesional y acompañamiento hasta la revisión de Bomberos.",
   "pills": [
     "Plan adaptado a tu edificio",
     "Correcciones sin costo incluidas",
@@ -27,7 +35,7 @@ const landing: Landing = {
   "cifras": [
     {
       "valor": "250+",
-      "texto": "Empresas atendidas"
+      "texto": "Clientes atendidos"
     },
     {
       "valor": "21.442",
@@ -128,53 +136,10 @@ const landing: Landing = {
       },
       {
         "control": "input",
-        "label": "Nombre del Condominio / Edificio *",
-        "name": "Condominio",
+        "label": "Nombre de la comunidad y/o dirección (opcional)",
+        "name": "Comunidad / dirección",
         "type": "text",
-        "placeholder": "Ej: Edificio Los Arrayanes",
-        "required": true
-      },
-      {
-        "control": "select",
-        "label": "Tipo de condominio",
-        "name": "Tipo de Condominio",
-        "opciones": [
-          {
-            "value": "",
-            "texto": "Selecciona...",
-            "placeholder": true
-          },
-          {
-            "value": "Edificio residencial",
-            "texto": "Edificio residencial"
-          },
-          {
-            "value": "Condominio horizontal (casas)",
-            "texto": "Condominio horizontal (casas)"
-          },
-          {
-            "value": "Edificio con locales comerciales",
-            "texto": "Edificio con locales comerciales"
-          },
-          {
-            "value": "Edificio con subterráneo",
-            "texto": "Edificio con subterráneo"
-          },
-          {
-            "value": "Condominio mixto",
-            "texto": "Condominio mixto (residencial + comercial)"
-          },
-          {
-            "value": "Otro",
-            "texto": "Otro"
-          }
-        ]
-      },
-      {
-        "control": "textarea",
-        "label": "Mensaje (opcional)",
-        "name": "Mensaje",
-        "placeholder": "Pisos, departamentos y motivo (p. ej., fiscalización)"
+        "placeholder": "Ej: Edificio Los Robles, Av. Ejemplo 123, Ñuñoa"
       }
     ],
     "boton": "COTIZAR PLAN DE EMERGENCIA GRATIS →",

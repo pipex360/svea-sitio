@@ -14,6 +14,7 @@ import type { Landing } from './tipos';
 
 const landing: Landing = {
   "ruta": "/cotiza-estudio-de-carga-de-combustible/",
+  "urgenciaCorta": "<strong>¿Fiscalización pendiente?</strong> Cotízalo hoy.",
   "urgencia": "<strong>¿Fiscalización o permiso pendiente?</strong> — Sin estudio de carga de combustible tu instalación queda fuera de norma. Cotízalo hoy.",
   "badge": "Cotización en menos de 24 horas",
   "h1": "Estudio de Carga de<br>Combustible y <em>Carga de Fuego</em>",
@@ -127,57 +128,17 @@ const landing: Landing = {
       },
       {
         "control": "input",
-        "label": "Empresa *",
+        "label": "Empresa",
         "name": "Empresa",
         "type": "text",
         "placeholder": "Nombre de tu empresa",
-        "required": true
-      },
-      {
-        "control": "select",
-        "label": "Tipo de establecimiento",
-        "name": "Tipo de Establecimiento",
-        "opciones": [
-          {
-            "value": "",
-            "texto": "Selecciona...",
-            "placeholder": true
-          },
-          {
-            "value": "Bodega / Centro logístico",
-            "texto": "Bodega / Centro logístico"
-          },
-          {
-            "value": "Fábrica / Industria",
-            "texto": "Fábrica / Industria"
-          },
-          {
-            "value": "Taller mecánico / industrial",
-            "texto": "Taller mecánico / industrial"
-          },
-          {
-            "value": "Centro comercial",
-            "texto": "Centro comercial"
-          },
-          {
-            "value": "Almacén de materiales",
-            "texto": "Almacén de materiales"
-          },
-          {
-            "value": "Planta de producción",
-            "texto": "Planta de producción"
-          },
-          {
-            "value": "Otro",
-            "texto": "Otro"
-          }
-        ]
+        "opcional": true
       },
       {
         "control": "textarea",
-        "label": "Mensaje (opcional)",
+        "label": "¿Qué necesitas? (opcional, nos ayuda a cotizar sin llamarte)",
         "name": "Mensaje",
-        "placeholder": "¿Necesitas el estudio de carga de combustible por fiscalización, patente u otro motivo?"
+        "placeholder": "m² de la bodega y qué productos guardas"
       }
     ],
     "boton": "SOLICITAR COTIZACIÓN GRATUITA →",

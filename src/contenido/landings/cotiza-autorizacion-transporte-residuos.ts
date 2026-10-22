@@ -17,6 +17,7 @@ import type { Landing } from './tipos';
 
 const landing: Landing = {
   ruta: '/cotiza-autorizacion-transporte-residuos/',
+  urgenciaCorta: '<strong>¿Transportas residuos?</strong> Regulariza hoy.',
   urgencia:
     '<strong>¿Transportas residuos sin autorización?</strong> — La SEREMI puede aplicar multas, sumarios sanitarios y paralizar tu operación. Regulariza hoy.',
   badge: 'Cotización en menos de 24 horas',
@@ -56,24 +57,14 @@ const landing: Landing = {
       { control: 'input', label: 'Nombre completo *', name: 'Nombre', type: 'text', placeholder: 'Ej: María González', required: true },
       { control: 'input', label: 'Teléfono *', name: 'Teléfono', type: 'tel', placeholder: '+569 1234 5678', required: true, mitad: true },
       { control: 'input', label: 'Email *', name: 'Email', type: 'email', placeholder: 'correo@empresa.cl', required: true, mitad: true },
-      { control: 'input', label: 'Empresa *', name: 'Empresa', type: 'text', placeholder: 'Nombre de tu empresa', required: true },
-      {
-        control: 'select',
-        label: 'Tipo de residuo',
-        name: 'Tipo de Residuo',
-        opciones: [
-          { value: '', texto: 'Selecciona...', placeholder: true },
-          { value: 'Residuos peligrosos (RESPEL)', texto: 'Residuos peligrosos (RESPEL)' },
-          { value: 'Residuos no peligrosos', texto: 'Residuos no peligrosos' },
-          { value: 'Ambos', texto: 'Ambos' },
-          { value: 'No estoy seguro', texto: 'No estoy seguro' },
-        ],
-      },
+      { control: 'input', label: '¿Cuántos vehículos? (opcional)', name: 'Vehículos', type: 'number', placeholder: 'Ej: 2', min: 1 },
+      { control: 'input', label: 'Empresa', name: 'Empresa', type: 'text', placeholder: 'Nombre de tu empresa', opcional: true },
       {
         control: 'textarea',
-        label: 'Mensaje (opcional)',
+        label: 'Mensaje',
         name: 'Mensaje',
-        placeholder: '¿Qué residuos transportas, cuántos vehículos y hacia qué destino?',
+        placeholder: '¿Qué residuos transportas y hacia qué destino?',
+        opcional: true,
       },
     ],
     boton: 'SOLICITAR COTIZACIÓN GRATUITA →',

@@ -27,6 +27,7 @@
 import MenuSvea from './ui/navigation-menu-06';
 import { MenuMovil } from './ui/menu-movil';
 import Foto from './Foto.astro';
+import { altHero } from '../lib/fotos';
 import { rangosHtml } from '../lib/utils';
 
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
@@ -90,9 +91,9 @@ const {
 
   <section class="halo-seccion" id="inicio" aria-label="Presentación">
     <div class="halo-tarjeta">
-      <div class:list={['halo-fondo', { una: fotos.length === 1 }]} aria-hidden="true">
+      <div class:list={['halo-fondo', { una: fotos.length === 1 }]}>
         {fotos.map((nombre, i) => (
-          <Foto nombre={nombre} alt="" tamano="hero" prioridad={i === 0} />
+          <Foto nombre={nombre} alt={altHero(nombre)} tamano="hero" prioridad={i === 0} />
         ))}
       </div>
       <div class="halo-velo-arriba" aria-hidden="true"></div>

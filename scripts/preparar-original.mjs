@@ -319,6 +319,12 @@ writeFileSync(path.join(DEST, 'robots.txt'), PRODUCCION
   ? `User-agent: *\nAllow: /\nSitemap: ${DOM}/sitemap-index.xml\n`
   : 'User-agent: *\nDisallow: /\n');
 console.log(`robots.txt de ${PRODUCCION ? 'PRODUCCIÓN (Allow + sitemap)' : 'la copia (Disallow: /)'}`);
+// el resumen para ChatGPT, Gemini y otras IA (22-oct-2026). Vivía en public/, que
+// este script borra entero al empezar: por eso un build nuevo lo perdía.
+if (PRODUCCION && existsSync('mejoras/llms.txt')) {
+  cpSync('mejoras/llms.txt', path.join(DEST, 'llms.txt'));
+  console.log('llms.txt copiado a la raíz');
+}
 
 // --- redirecciones 301 (ver REDIRECCIONES.md) -------------------------------
 // La lista vive en src/data/redirecciones.json. En producción se escribe
