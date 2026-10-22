@@ -173,7 +173,7 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
       // Llegó desde un asistente de IA sin marcas en la URL (22-oct-2026): ChatGPT le
       // pone utm_source=chatgpt.com a sus enlaces, pero Gemini, Perplexity y Copilot
       // casi nunca; sólo dejan de qué página viene (el referrer). Se guarda como
-      // utm_source=<asistente> y utm_medium=ia, sin pisar lo que ya traía la sesión.
+      // utm_source=<asistente> (sin utm_medium, como ChatGPT), sin pisar la sesión.
       // Gemini a veces no manda el referrer: se cuenta de menos, nunca de más.
       var IA = [
         [/(^|\.)(chatgpt\.com|chat\.openai\.com)$/, 'chatgpt.com'],
@@ -192,8 +192,8 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
       }
       if (!ss.get('gclid') && !ss.get('utm_source')) {
         var ia = asistenteIA(document.referrer);
-        if (ia) { ss.set('utm_source', ia); ss.set('utm_medium', 'ia'); }
-      } else if (ss.get('utm_source') && !ss.get('utm_medium') && asistenteIA('https://' + ss.get('utm_source'))) ss.set('utm_medium', 'ia');
+        if (ia) ss.set('utm_source', ia);
+      }
       function rellenar(raiz) {
         CAMPOS.forEach(function (f) {
           var v = ss.get(f);
