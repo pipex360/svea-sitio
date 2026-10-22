@@ -261,6 +261,44 @@ function sinCodigo(html) {
       tag.replace(/\son[a-z]+\s*=\s*(?:"[^"]*"|'[^']*')/gi, ''));
 }
 
+// 22-oct-2026: palabras del original que se sacaron A PROPÓSITO en las
+// revisiones de textos del 29-sep, por página, para que la comparación las
+// perdone sólo ahí. Cualquier otra palabra que falte sigue fallando, y estas
+// mismas también si desaparecen de una página que no las nombra.
+//  · «aprobada/aprobado», «favorable», «lograr»: la resolución la da la
+//    autoridad, no se promete (4a82758, 9a924b6, 14458da).
+//  · «hrs», «automática»: la cotización es «en menos de 24 horas», ya no
+//    «automática por email en 24 hrs» (2ea175a).
+//  · «visita», «inspección», «presencial», «recorre», «cuantificando»: la carga
+//    de combustible se levanta con planos e inventario, sin visita técnica (2ea175a).
+//  · «final»: la landing de plan de emergencia dice «hasta la revisión de
+//    Bomberos» (2ea175a).
+//  · «proyectos», «gestionados»: la caja de autor de las guías dice «+250
+//    empresas atendidas» en vez de la cifra de proyectos gestionados (14458da).
+const COTIZA_24 = ['hrs', 'automática'];
+const AUTOR_GUIAS = ['proyectos', 'gestionados'];
+const QUITADAS_A_PROPOSITO = new Map(Object.entries({
+  '/calificacion-tecnica-industrial/': [...COTIZA_24, 'aprobada', 'lograr', 'favorable'],
+  '/estudio-de-carga-de-combustible/': [...COTIZA_24, 'visita', 'inspección', 'presencial'],
+  '/planes-de-emergencia-y-evacuacion/': COTIZA_24,
+  '/planes-de-emergencia-y-evacuacion-condominios/': COTIZA_24,
+  '/manejo-de-residuos-peligrosos/': COTIZA_24,
+  '/autorizacion-de-transporte-de-residuos/': [...COTIZA_24, 'aprobado'],
+  '/informe-sanitario/': [...COTIZA_24, 'aprobado'],
+  '/cotiza-calificacion-tecnica-industrial/': ['favorable'],
+  '/cotiza-estudio-de-carga-de-combustible/': ['visita'],
+  '/cotiza-plan-emergencia/': ['final'],
+  '/gracias/': ['automática'],
+  ...Object.fromEntries(ARTICULOS.map((s) => [`/${s}/`, AUTOR_GUIAS])),
+  '/autorizacion-transporte-residuos-chile/': [...AUTOR_GUIAS, 'favorable'],
+  '/estudio-de-carga-combustible-chile/': [...AUTOR_GUIAS, 'visita', 'recorre', 'cuantificando'],
+}).map(([ruta, ws]) => [ruta, new Set(ws)]));
+/** las palabras del original que faltan, menos las quitadas a propósito en esa página */
+const perdidasDe = (ruta, antes, ahora) => {
+  const perdonadas = QUITADAS_A_PROPOSITO.get(ruta) || new Set();
+  return [...antes].filter((w) => !ahora.has(w) && !perdonadas.has(w));
+};
+
 function palabras(limpio, desde = 0, hasta = limpio.length) {
   const texto = limpio
     .slice(desde, hasta)
@@ -283,7 +321,7 @@ function palabras(limpio, desde = 0, hasta = limpio.length) {
   const hasta = orig.indexOf('<section class="elementor-section elementor-top-section elementor-element elementor-element-adbcfcf');
   const antes = palabras(orig, desde, hasta > desde ? hasta : orig.length);
   const ahora = palabras(sinCodigo(readFileSync(path.join(DIST, 'calificacion-tecnica-industrial/index.html'), 'utf8')));
-  const perdidas = [...antes].filter((w) => !ahora.has(w));
+  const perdidas = perdidasDe('/calificacion-tecnica-industrial/', antes, ahora);
   if (marca < 0 || hasta < 0) fallos.push('/calificacion-tecnica-industrial/  ✗ no se encontró el contenido del original');
   else if (perdidas.length) {
     fallos.push(`/calificacion-tecnica-industrial/  ✗ se perdieron ${perdidas.length} palabras del original: ${perdidas.slice(0, 12).join(', ')}`);
@@ -340,7 +378,7 @@ for (const [ruta, archivo, { desde: fDesde, hasta: fHasta }] of CONTENIDOS) {
   // título que sirve el WordPress es el suyo, de Rank Math): no es contenido
   const antes = palabras(archivo.startsWith('landings-ads/') ? orig.slice(0, hasta).replace(/<title>[\s\S]*?<\/title>/g, (t, i) => (i >= desde ? ' '.repeat(t.length) : t)) : orig, desde, hasta);
   const ahora = palabras(sinCodigo(readFileSync(path.join(DIST, ruta.replace(/^\//, ''), 'index.html'), 'utf8')));
-  const perdidas = [...antes].filter((w) => !ahora.has(w));
+  const perdidas = perdidasDe(ruta, antes, ahora);
   if (perdidas.length) fallos.push(`${ruta}  ✗ se perdieron ${perdidas.length} palabras del original: ${perdidas.slice(0, 20).join(', ')}`);
   else checks++;
 }
