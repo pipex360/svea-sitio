@@ -10,13 +10,18 @@
  */
 import {
   ActivityIcon,
+  BadgeCheckIcon,
   Building2Icon,
+  CalendarClockIcon,
   CircleParkingIcon,
   CloudRainWindIcon,
   CogIcon,
   ConciergeBellIcon,
+  FileSignatureIcon,
   FlameIcon,
+  GavelIcon,
   HomeIcon,
+  SendIcon,
   ShieldAlertIcon,
   StoreIcon,
   TriangleAlertIcon,
@@ -75,6 +80,19 @@ const QUIENES: Ficha[] = [
   { nombre: 'Conserjería 24/7', icono: ConciergeBellIcon },
 ];
 
+/**
+ * 3-nov (SEO tanda 1): «Qué exige la Ley 21.442». Cada punto sale TEXTUAL de
+ * la guía /plan-de-emergencia-condominio-chile/ (tabla de normativa, FAQ y
+ * «Multas y sanciones»): si la guía cambia, esto se revisa con ella.
+ */
+const LEY: Ficha[] = [
+  { nombre: 'Plan obligatorio (art. 40)', descripcion: 'Todo condominio debe tener un plan de emergencia.', icono: BadgeCheckIcon },
+  { nombre: 'Firma de un ingeniero en prevención de riesgos', descripcion: 'Lo elabora y suscribe; sin esa firma el plan no tiene validez legal.', icono: FileSignatureIcon },
+  { nombre: 'Actualización', descripcion: 'Cuando cambian las condiciones de seguridad; el plan de evacuación, al menos una vez al año.', icono: CalendarClockIcon },
+  { nombre: 'Copia a Bomberos y Carabineros', descripcion: 'Las actualizaciones, dentro de 15 días corridos desde su firma (DS 7, art. 35).', icono: SendIcon },
+  { nombre: 'Multas al administrador (art. 88)', descripcion: 'De 1 a 4 UTM (menos graves) y de 5 a 10 UTM (graves y gravísimas).', icono: GavelIcon },
+];
+
 const EMERGENCIAS: Ficha[] = [
   { nombre: 'Incendios (departamentos/áreas comunes)', icono: FlameIcon },
   { nombre: 'Sismos', icono: ActivityIcon },
@@ -102,6 +120,25 @@ export function PcQueEs({ base = '' }: { base?: string }) {
             </h2>
           }
         />
+
+        <ServiceGrid
+          className="mt-20"
+          columnas="sm:grid-cols-3"
+          titulo={
+            <h3 className="text-balance text-2xl font-bold tracking-tight text-black md:text-3xl">
+              ¿Qué exige la Ley 21.442 a tu condominio o edificio?
+            </h3>
+          }
+          subtitulo="Aplica a todos los condominios y edificios de Chile. El comité de administración somete el plan a la asamblea de copropietarios y el administrador firma sus actualizaciones junto al presidente del comité."
+          fichas={LEY}
+        />
+        <p className="mx-auto mt-10 max-w-2xl text-center text-base leading-relaxed text-black/70">
+          Para el detalle de lo que tu comunidad debe cumplir, lee nuestra{' '}
+          <a href={`${base}/plan-de-emergencia-condominio-chile/`} className="font-semibold text-svea underline">
+            guía completa de la Ley 21.442 para condominios
+          </a>
+          .
+        </p>
 
         <ServiceGrid
           className="mt-20"
