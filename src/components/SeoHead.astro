@@ -48,7 +48,7 @@ const SERVICIOS_LD = [
   { ruta: '/informe-sanitario/', name: 'Informe Sanitario', alternateName: 'Informe Sanitario Favorable SEREMI', description: 'Preparación del expediente y tramitación del informe sanitario (resolución o autorización sanitaria) ante la SEREMI de Salud, con seguimiento hasta la resolución.' },
   { ruta: '/estudio-de-carga-de-combustible/', name: 'Estudio de Carga de Combustible (ECC)', description: 'Evaluación del riesgo de incendio en instalaciones comerciales e industriales según los materiales presentes. Cálculo de carga de combustible por sector, clasificación de riesgo y recomendaciones de mitigación.' },
   { ruta: '/planes-de-emergencia-y-evacuacion/', name: 'Plan de Emergencia y Evacuación Industrial', description: 'Planes personalizados de emergencia y evacuación para empresas e industrias. Protocolos de actuación ante incendio, sismo, derrame y otras emergencias. Incluye planos de evacuación, roles y capacitación.' },
-  { ruta: '/planes-de-emergencia-y-evacuacion-condominios/', name: 'Plan de Emergencia y Evacuación para Condominios', description: 'Planes de emergencia a medida para condominios y edificios residenciales. Protocolos claros de evacuación, roles de emergencia y señalética para resguardar la vida de los residentes.' },
+  { ruta: '/planes-de-emergencia-y-evacuacion-condominios/', name: 'Plan de Emergencia y Evacuación para Condominios', serviceType: 'Plan de emergencia y evacuación para condominios', description: 'Planes de emergencia a medida para condominios y edificios residenciales. Protocolos claros de evacuación, roles de emergencia y señalética para resguardar la vida de los residentes.' },
   { ruta: '/manejo-de-residuos-peligrosos/', name: 'Manejo de Sustancias y Residuos Peligrosos', description: 'Asesoría integral para el manejo seguro y legal de sustancias peligrosas según D.S. 43 y D.S. 148. Minimización de riesgos operativos y cumplimiento normativo.' },
   { ruta: '/autorizacion-de-transporte-de-residuos/', name: 'Autorización de Transporte de Residuos Peligrosos y No Peligrosos', description: 'Gestión de permisos y autorizaciones para el transporte de residuos peligrosos y no peligrosos. Tramitación completa ante la autoridad sanitaria.' },
   { ruta: '/permisos-ambientales-y-pertinencias-del-seia/', name: 'Permisos Ambientales y Pertinencias del SEIA', description: 'Evaluación de la pertinencia de ingreso al Sistema de Evaluación de Impacto Ambiental (SEIA) y gestión de los permisos ambientales aplicables al proyecto.' },
@@ -115,7 +115,8 @@ const bloques = (pagina.jsonld ?? [])
 const servicioLD = (() => {
   const sv = SERVICIOS_LD.find((x) => `${SITIO}${x.ruta}` === pagina.canonical);
   if (!sv) return null;
-  const { ruta, ...resto } = sv;
+  // serviceType propio sólo donde se definió (3-nov: condominios); el resto sigue «Consultoría Ambiental»
+  const { ruta, serviceType = 'Consultoría Ambiental', ...resto } = sv as typeof sv & { serviceType?: string };
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -123,7 +124,7 @@ const servicioLD = (() => {
     ...resto,
     url: `${SITIO}${ruta}`,
     provider: { '@id': `${SITIO}/#organization` },
-    serviceType: 'Consultoría Ambiental',
+    serviceType,
     areaServed: { '@type': 'Country', name: 'Chile' },
   };
 })();
