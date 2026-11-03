@@ -140,7 +140,8 @@ function huellaFormulario(html, id, { sinOrigen = false } = {}) {
     const name = attr(tag, 'name');
     if (!name) continue;
     const type = tag.startsWith('<select') ? 'select' : tag.startsWith('<textarea') ? 'textarea' : attr(tag, 'type') || 'text';
-    if (type === 'hidden' && sinOrigen && ORIGEN.includes(name)) continue;
+    // page_url (3-nov, SEO tanda 1): la página del lead, agregada fuera de las landings
+    if (type === 'hidden' && sinOrigen && (ORIGEN.includes(name) || name === 'page_url')) continue;
     if (type === 'hidden') ocultos[name] = attr(tag, 'value');
     else if (name === 'botcheck') ocultos.botcheck = type;
     else visibles.push(`${name}:${type}:${tiene(tag, 'required') ? 'req' : 'opt'}`);
