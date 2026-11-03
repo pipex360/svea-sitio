@@ -20,9 +20,8 @@ import {
 import { Scroll01, type BloqueScroll } from '@/components/ui/scroll-01';
 import { ServiceGrid, type Ficha } from '@/components/ui/service-grid';
 
-/** Los cuatro párrafos del original: los dos primeros sobre qué es el
- *  estudio, con la bodega; los dos últimos sobre qué se evalúa y para qué
- *  sirve, con el centro logístico. */
+/** Cuatro párrafos: la definición y los trámites que lo piden, con la
+ *  bodega; lo que entrega SVEA y en qué plazo, con el centro logístico. */
 const bloques = (): BloqueScroll[] => {
   const bodega = {
     foto: 'bodega-racks-mercaderia-carga-combustible',
@@ -38,19 +37,24 @@ const bloques = (): BloqueScroll[] => {
         'El Estudio de Carga de Combustible (ECC) es un análisis técnico especializado que permite cuantificar con precisión la cantidad total de material combustible presente en una instalación, ya sea industrial, comercial o de almacenamiento.',
       ...bodega,
     },
+    // 3-nov (SEO tanda 1): los tres párrafos que seguían repetían la
+    // definición de la guía /estudio-de-carga-combustible-chile/. Ahora dicen
+    // para qué trámite se pide y qué entrega SVEA, con lo que el sitio ya dice
+    // del servicio (pasos, «qué incluye», cifras del hero) y la guía
+    // «Cuándo te piden el estudio de carga de combustible».
     {
       texto:
-        'Este estudio es fundamental para identificar el riesgo potencial de incendio y clasificar adecuadamente los sectores según su nivel de carga térmica, tal como lo establece la normativa vigente en Chile, incluyendo la Ordenanza General de Urbanismo y Construcción (OGUC) y la norma NCh 1916.',
+        'Se pide en trámites concretos: el permiso de edificación y la recepción de la obra en la Dirección de Obras Municipales (DOM), la calificación ante la SEREMI de Salud, la patente municipal y, a veces, el seguro del recinto.',
       ...bodega,
     },
     {
       texto:
-        'A través de este análisis, se evalúa no solo la cantidad de materiales combustibles, sino también su ubicación, distribución y comportamiento ante una eventual emergencia. Con esta información, es posible determinar el nivel de riesgo que representa cada área, facilitando la implementación de medidas de seguridad específicas.',
+        'En SVEA revisamos los planos y el inventario, calculamos la carga de combustible en Mcal/m² por sector según la OGUC y la NCh 1916, y te entregamos el informe técnico con planos, cálculos y conclusiones, listo para presentar ante la autoridad, con recomendaciones para bajar el riesgo.',
       ...logistica,
     },
     {
       texto:
-        'Su correcta ejecución contribuye a la seguridad de las personas y las instalaciones, permite acceder a autorizaciones municipales, prevenir sanciones y demostrar el compromiso de la empresa con la gestión integral del riesgo.',
+        'El informe está en 3-5 días hábiles y las correcciones van incluidas en el servicio, sin costo. La cotización te llega en menos de 24 horas.',
       ...logistica,
     },
   ];

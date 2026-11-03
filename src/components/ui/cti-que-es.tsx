@@ -52,6 +52,14 @@ const bloques = (): BloqueScroll[] => {
         'Este documento es clave para demostrar que la actividad se encuentra correctamente emplazada, de acuerdo con el uso de suelo establecido por el Plan Regulador Comunal, y que su funcionamiento no representa riesgos sanitarios o ambientales para la comunidad.',
       ...planta,
     },
+    // 3-nov (SEO tanda 1): «inofensiva» es lo que más se busca del tema y la
+    // página no decía qué relación tiene con la CTI. Las cuatro categorías
+    // salen de las guías del sitio (OGUC art. 4.14.2).
+    {
+      texto:
+        'La SEREMI de Salud clasifica cada actividad en una de cuatro categorías, según el artículo 4.14.2 de la OGUC: inofensiva, molesta, insalubre o contaminante, y peligrosa. Si tu actividad queda como inofensiva, lo que recibes es el certificado de calificación de actividad inofensiva, que también se pide para la patente municipal. En SVEA tramitamos las dos: la Calificación Técnica Industrial y el certificado de actividad inofensiva.',
+      ...planta,
+    },
     {
       texto:
         'En SVEA Consultores nos encargamos de evaluar detalladamente las características de tu infraestructura, levantamos toda la información requerida y preparamos el expediente técnico completo que exige la SEREMI de Salud. Además, gestionamos directamente la tramitación del informe, representándote ante la autoridad sanitaria y facilitando la regularización de tu actividad.',
