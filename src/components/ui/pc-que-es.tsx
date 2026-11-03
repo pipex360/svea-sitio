@@ -14,12 +14,12 @@ import {
   Building2Icon,
   CalendarClockIcon,
   CircleParkingIcon,
+  CoinsIcon,
   CloudRainWindIcon,
   CogIcon,
   ConciergeBellIcon,
   FileSignatureIcon,
   FlameIcon,
-  GavelIcon,
   HomeIcon,
   SendIcon,
   ShieldAlertIcon,
@@ -90,7 +90,7 @@ const LEY: Ficha[] = [
   { nombre: 'Firma de un ingeniero en prevención de riesgos', descripcion: 'Lo elabora y suscribe; sin esa firma el plan no tiene validez legal.', icono: FileSignatureIcon },
   { nombre: 'Actualización', descripcion: 'Cuando cambian las condiciones de seguridad; el plan de evacuación, al menos una vez al año.', icono: CalendarClockIcon },
   { nombre: 'Copia a Bomberos y Carabineros', descripcion: 'Las actualizaciones, dentro de 15 días corridos desde su firma (DS 7, art. 35).', icono: SendIcon },
-  { nombre: 'Multas al administrador (art. 88)', descripcion: 'De 1 a 4 UTM (menos graves) y de 5 a 10 UTM (graves y gravísimas).', icono: GavelIcon },
+  { nombre: 'Multas al administrador (art. 88)', descripcion: 'De 1 a 4 UTM (menos graves) y de 5 a 10 UTM (graves y gravísimas).', icono: CoinsIcon },
 ];
 
 const EMERGENCIAS: Ficha[] = [
