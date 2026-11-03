@@ -170,10 +170,17 @@ const FORM = '#article-lead-form-wrapper';
 // 3-nov (SEO tanda 1): caja corta de cotizar después de la entrada, con el
 // NOMBRE del servicio como texto del enlace. Sólo promete lo que el sitio ya
 // dice: cotización en menos de 24 horas y, si la página del servicio lo
-// declara, su plazo. Va antes del primer <h2> del primer bloque (todas las
-// guías abren con un solo <p class="art-entrada">).
+// declara, su plazo. Va antes de la primera sección del primer bloque: todas
+// las guías abren con un solo <p class="art-entrada"> y después la <section>
+// del primer <h2> (si no hubiera <section>, antes del <h2>).
 const conCaja = !servicio.sinCaja;
-const primerH2 = (html: string) => html.indexOf('<h2');
+const primerH2 = (html: string) => {
+  const h2 = html.indexOf('<h2');
+  if (h2 < 0) return -1;
+  const finEntrada = html.indexOf('</p>');
+  const seccion = html.lastIndexOf('<section', h2);
+  return seccion > finEntrada ? seccion : h2;
+};
 
 const flecha = '<span class="circulo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>';
 
