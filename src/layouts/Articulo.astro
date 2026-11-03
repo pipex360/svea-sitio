@@ -167,6 +167,14 @@ const modificado = datos.actualizado?.iso ?? publicado;
 
 const FORM = '#article-lead-form-wrapper';
 
+// 3-nov (SEO tanda 1): caja corta de cotizar después de la entrada, con el
+// NOMBRE del servicio como texto del enlace. Sólo promete lo que el sitio ya
+// dice: cotización en menos de 24 horas y, si la página del servicio lo
+// declara, su plazo. Va antes del primer <h2> del primer bloque (todas las
+// guías abren con un solo <p class="art-entrada">).
+const conCaja = !servicio.sinCaja;
+const primerH2 = (html: string) => html.indexOf('<h2');
+
 const flecha = '<span class="circulo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>';
 
 /** Icono y nombre legible de cada botón de compartir del original. */
@@ -284,16 +292,30 @@ const fuentesCSS = `
       </details>
 
       <article class="art-cuerpo">
-        {datos.bloques.map((b: { tipo: string; html?: string }) =>
-          b.tipo === 'html' ? (
-            <Fragment set:html={conClientes(tablasApiladas(ordenar(conBase(b.html!))))} />
-          ) : (
+        {datos.bloques.map((b: { tipo: string; html?: string }, i: number) => {
+          if (b.tipo !== 'html') return (
             <aside class="art-salto" aria-label="Cotización">
               <p><strong>{datos.formulario.titulo}.</strong> El formulario está al final de la guía.</p>
               <a class="art-boton-linea" href={FORM}>Ir al formulario</a>
             </aside>
-          ),
-        )}
+          );
+          const html = conClientes(tablasApiladas(ordenar(conBase(b.html!))));
+          const corte = i === 0 && conCaja ? primerH2(html) : -1;
+          if (corte < 0) return <Fragment set:html={html} />;
+          return (
+            <>
+              <Fragment set:html={html.slice(0, corte)} />
+              <aside class="art-salto" aria-label="Cotización">
+                <p>
+                  <strong>¿Lo necesitas para un trámite?</strong> Revisa nuestro servicio de{' '}
+                  <a href={`${BASE}${servicio.ruta}`}>{servicio.nombre}</a>: cotización en menos de 24 horas{servicio.plazo ? `, ${servicio.plazo}` : ''}.
+                </p>
+                <a class="art-boton-linea" href={`${BASE}${servicio.ruta}${servicio.formulario}`}>Cotizar</a>
+              </aside>
+              <Fragment set:html={html.slice(corte)} />
+            </>
+          );
+        })}
 
         <section id={datos.faq.id} class="art-faq" aria-labelledby="titulo-faq">
           <h2 id="titulo-faq">{datos.faq.titulo}</h2>
@@ -357,7 +379,8 @@ const fuentesCSS = `
               verificado
               acciones={[
                 { texto: 'Cotizar este servicio', href: `${BASE}${servicio.ruta}${servicio.formulario}` },
-                { texto: 'Ver el servicio', href: `${BASE}${servicio.ruta}` },
+                // 3-nov: el nombre del servicio como texto del enlace (salvo Informe Sanitario, que no se toca)
+                { texto: conCaja ? servicio.nombre : 'Ver el servicio', href: `${BASE}${servicio.ruta}` },
               ]}
               arriba="pt-14"
             >

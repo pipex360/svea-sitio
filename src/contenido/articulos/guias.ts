@@ -53,30 +53,40 @@ export type Servicio = {
   /** ancla del formulario en esa página */
   formulario: string;
   texto: string;
+  /** el plazo que la página del servicio declara en su hero (3-nov: caja de
+   *  cotizar de las guías); si la página no declara plazo, no va */
+  plazo?: string;
+  /** 3-nov: sin caja de cotizar arriba ni cambio de botón al pie (Informe
+   *  Sanitario no se toca: servicio descartado) */
+  sinCaja?: boolean;
 };
 
 const CTI: Servicio = {
   nombre: 'Calificación Técnica Industrial',
   ruta: '/calificacion-tecnica-industrial/',
   formulario: '#formulario-cti',
+  plazo: 'informe técnico en 3-5 días hábiles',
   texto: 'Nos encargamos de todo el proceso ante la SEREMI de Salud, desde el informe técnico hasta la resolución, con acompañamiento en cada observación.',
 };
 const ECC: Servicio = {
   nombre: 'Estudio de Carga de Combustible',
   ruta: '/estudio-de-carga-de-combustible/',
   formulario: '#formulario-ecc',
+  plazo: 'informe técnico en 3-5 días hábiles',
   texto: 'Cálculo de la carga de fuego según NCh 1916, categoría de resistencia al fuego según la OGUC e informe firmado por profesional.',
 };
 const PE: Servicio = {
   nombre: 'Planes de Emergencia y Evacuación',
   ruta: '/planes-de-emergencia-y-evacuacion/',
   formulario: '#formulario-pe',
+  plazo: 'plan completo en 5-10 días hábiles',
   texto: 'Plan de emergencia para tu empresa conforme al DS 44 y al DS 594: mapa de riesgos, protocolos, planos de evacuación y simulacros.',
 };
 const PC: Servicio = {
   nombre: 'Planes de Emergencia para Condominios',
   ruta: '/planes-de-emergencia-y-evacuacion-condominios/',
   formulario: '#formulario-pc',
+  plazo: 'plan completo en 5-10 días hábiles',
   texto: 'Plan de emergencia y evacuación para edificios y condominios conforme a la Ley 21.442, listo para presentar ante Bomberos y Carabineros.',
 };
 const RP: Servicio = {
@@ -95,6 +105,7 @@ const IS: Servicio = {
   nombre: 'Informe Sanitario',
   ruta: '/informe-sanitario/',
   formulario: '#formulario-is',
+  sinCaja: true,
   texto: 'Expediente técnico completo y tramitación ante la SEREMI de Salud para obtener tu informe sanitario favorable y la patente municipal.',
 };
 
