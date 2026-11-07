@@ -1,0 +1,298 @@
+{
+ "slug": "despues-cti-plan-de-emergencia",
+ "ruta": "/despues-de-la-cti/plan-de-emergencia/",
+ "migasOriginal": [
+  {
+   "texto": "Inicio",
+   "href": "/"
+  },
+  {
+   "texto": "Blog",
+   "href": "/blog/"
+  }
+ ],
+ "migaFinal": "Plan de emergencia y evacuación",
+ "categoria": "Datos CTI",
+ "h1": "Plan de emergencia DS 44 para bodegas e industrias: cuándo lo exige la SEREMI y a cuántas empresas",
+ "bajada": "Cuando la SEREMI de Salud califica una actividad (la calificación industrial o CTI que la municipalidad pide para la patente), la resolución no termina en «INOFENSIVA»: debajo vienen condiciones y obligaciones que el titular debe cumplir después. Una de ellas es el plan de emergencia: la resolución registra que la instalación contará con un plan de emergencia (incendio y evacuación), a veces visado por Bomberos; cuando hay cámaras de frío exige medidas ante fugas de refrigerante o amoníaco, y en varias calificaciones recuerda el cumplimiento del D.S. 594 (ruido, iluminación y otros agentes) que el plan de emergencia y el programa de prevención deben recoger. Entre 2023 y septiembre 2026, 512 titulares distintos en Chile recibieron una calificación con esa exigencia (119 al año en promedio 2023-2025); en la Región Metropolitana aparece en el 8,9 % de las calificaciones industriales.",
+ "fecha": "Noviembre 2026",
+ "actualizado": {
+  "iso": "2026-11-07",
+  "texto": "7 de noviembre de 2026"
+ },
+ "lectura": "4 min de lectura",
+ "autor": "Equipo técnico SVEA Consultores",
+ "cifras": [
+  {
+   "n": "512",
+   "l": "titulares con la exigencia en Chile 2023-2026"
+  },
+  {
+   "n": "119 / año",
+   "l": "promedio 2023-2025"
+  },
+  {
+   "n": "8,9 %",
+   "l": "de las CTI calificadas de la RM la traen"
+  },
+  {
+   "n": "19 %",
+   "l": "escrita como obligación («deberá») en la RM"
+  }
+ ],
+ "indiceTitulo": "En esta página",
+ "indice": [
+  {
+   "href": "#cuantas-empresas-al-ano-reciben-esta-exigencia",
+   "texto": "Cuántas empresas al año reciben esta exigencia"
+  },
+  {
+   "href": "#que-exigencias-agrupa-esta-pagina",
+   "texto": "Qué exigencias agrupa esta página"
+  },
+  {
+   "href": "#en-que-regiones-se-exige-mas",
+   "texto": "En qué regiones se exige más"
+  },
+  {
+   "href": "#que-dice-exactamente-la-resolucion",
+   "texto": "Qué dice exactamente la resolución"
+  },
+  {
+   "href": "#que-hacer-si-tu-calificacion-industrial-trae-esta-exigencia",
+   "texto": "Qué hacer si tu calificación industrial trae esta exigencia"
+  },
+  {
+   "href": "#que-hace-svea-con-estos-datos",
+   "texto": "Qué hace SVEA con estos datos"
+  },
+  {
+   "href": "#fuentes",
+   "texto": "Fuente y método"
+  },
+  {
+   "href": "#faq",
+   "texto": "Preguntas frecuentes"
+  }
+ ],
+ "formulario": {
+  "titulo": "Cotiza el plan de emergencia",
+  "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+  "ocultos": [
+   {
+    "name": "access_key",
+    "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+   },
+   {
+    "name": "subject",
+    "value": "Nueva cotización Plan de Emergencia y Evacuación (Datos CTI) - SVEA Consultores",
+    "id": "dynamic-subject-despues-cti-plan-de-emergencia"
+   },
+   {
+    "name": "from_name",
+    "value": "SVEA Consultores Blog - Datos CTI"
+   },
+   {
+    "name": "redirect",
+    "value": "https://sveaconsultores.cl/gracias/"
+   },
+   {
+    "name": "Servicio",
+    "value": "Plan de Emergencia y Evacuación"
+   },
+   {
+    "name": "Origen",
+    "value": "Datos CTI - despues-cti-plan-de-emergencia"
+   }
+  ],
+  "campos": [
+   {
+    "label": "Nombre completo *",
+    "id": "art-nombre",
+    "name": "Nombre",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Ej: Juan Pérez",
+    "ancho": false
+   },
+   {
+    "label": "Empresa *",
+    "id": "art-empresa",
+    "name": "Empresa",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Nombre de tu empresa",
+    "ancho": false
+   },
+   {
+    "label": "Teléfono *",
+    "id": "art-telefono",
+    "name": "Teléfono",
+    "tipo": "tel",
+    "requerido": true,
+    "placeholder": "+569 1234 5678",
+    "ancho": false
+   },
+   {
+    "label": "Email *",
+    "id": "art-email",
+    "name": "Email",
+    "tipo": "email",
+    "requerido": true,
+    "placeholder": "correo@empresa.cl",
+    "ancho": false
+   },
+   {
+    "label": "Tipo de servicio",
+    "id": "art-tipo",
+    "name": "Tipo de Servicio",
+    "tipo": "select",
+    "requerido": false,
+    "placeholder": null,
+    "ancho": true,
+    "opciones": [
+     {
+      "value": "",
+      "texto": "Selecciona una opción",
+      "seleccionada": true,
+      "desactivada": true
+     },
+     {
+      "value": "Calificación Técnica Industrial",
+      "texto": "Calificación técnica industrial (CTI)",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Informe Sanitario",
+      "texto": "Informe sanitario",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Transporte de Residuos",
+      "texto": "Transporte de residuos",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Otro trámite SEREMI",
+      "texto": "Otro trámite ante la SEREMI",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "No estoy seguro",
+      "texto": "No estoy seguro",
+      "seleccionada": false,
+      "desactivada": false
+     }
+    ]
+   },
+   {
+    "label": "Mensaje (opcional)",
+    "id": "art-mensaje",
+    "name": "Mensaje",
+    "tipo": "textarea",
+    "requerido": false,
+    "placeholder": "¿Qué actividad tienes, en qué comuna y en qué etapa está el trámite?",
+    "ancho": true,
+    "filas": 3
+   }
+  ],
+  "boton": "Solicitar cotización gratuita →",
+  "confianza": [
+   "Datos protegidos",
+   "Cotización sin costo",
+   "Sin compromiso"
+  ]
+ },
+ "faq": {
+  "id": "faq",
+  "titulo": "Preguntas frecuentes",
+  "items": [
+   {
+    "p": "¿La calificación industrial (CTI) incluye el plan de emergencia?",
+    "r": "No. La calificación evalúa la actividad; el plan de emergencia es una exigencia aparte que la SEREMI deja escrita en la resolución. En la RM la trae el 8,9 % de las CTI calificadas.",
+    "rTexto": "No. La calificación evalúa la actividad; el plan de emergencia es una exigencia aparte que la SEREMI deja escrita en la resolución. En la RM la trae el 8,9 % de las CTI calificadas."
+   },
+   {
+    "p": "¿Cuántas empresas al año tienen que resolver el plan de emergencia después de la calificación industrial?",
+    "r": "119 titulares al año en promedio (2023-2025) en las 13 regiones con datos; 166 en enero-septiembre de 2026.",
+    "rTexto": "119 titulares al año en promedio (2023-2025) en las 13 regiones con datos; 166 en enero-septiembre de 2026."
+   },
+   {
+    "p": "¿Es obligación o condición?",
+    "r": "Mayoritariamente condición declarada por el titular (585 de 720 en la RM); la SEREMI la verifica en fiscalización.",
+    "rTexto": "Mayoritariamente condición declarada por el titular (585 de 720 en la RM); la SEREMI la verifica en fiscalización."
+   },
+   {
+    "p": "¿Qué pasa si no la cumplo?",
+    "r": "La calificación queda condicionada: en una fiscalización o sumario sanitario la SEREMI puede exigir el cumplimiento, multar o dejar sin efecto la calificación; y la municipalidad puede negar la patente definitiva.",
+    "rTexto": "La calificación queda condicionada: en una fiscalización o sumario sanitario la SEREMI puede exigir el cumplimiento, multar o dejar sin efecto la calificación; y la municipalidad puede negar la patente definitiva."
+   },
+   {
+    "p": "¿Quién hace el plan de emergencia?",
+    "r": "Depende de la exigencia: algunas las produce un consultor (memorias, planes, proyectos), otras un proveedor o instalador autorizado. SVEA la detecta en la resolución y la resuelve o la deriva: <a href=\"/planes-de-emergencia-y-evacuacion/\">Plan de emergencia DS 44 (cotizar)</a>.",
+    "rTexto": "Depende de la exigencia: algunas las produce un consultor (memorias, planes, proyectos), otras un proveedor o instalador autorizado. SVEA la detecta en la resolución y la resuelve o la deriva: Plan de emergencia DS 44 (cotizar)."
+   }
+  ]
+ },
+ "autorCaja": {
+  "inicial": "S",
+  "nombre": "Equipo técnico SVEA Consultores",
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+ },
+ "compartir": {
+  "titulo": "Compartir",
+  "enlaces": []
+ },
+ "bloques": [
+  {
+   "tipo": "html",
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de las SEREMI de Salud de 13 regiones publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026. Lectura de las exigencias por patrones de texto sobre las resoluciones calificadas (taxonomía SVEA de 43 exigencias).</em></p>\n<p class=\"art-entrada\">La calificación industrial (CTI) es el permiso de la SEREMI de Salud que la municipalidad exige para la patente; se tramita en <a href=\"/seremi-en-linea-calificacion-industrial/\">SEREMI en Línea (ASDigital)</a> y, una vez resuelta, deja escritas exigencias como ésta. Las demás están en <a href=\"/despues-de-la-cti/\">después de la calificación industrial</a>.</p>\n<section id=\"cuantas-empresas-al-ano-reciben-esta-exigencia\">\n<h2>Cuántas empresas al año reciben esta exigencia</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Año</th><th>Titulares con la exigencia (Chile)</th></tr></thead><tbody><tr><td>2023</td><td>107</td></tr><tr><td>2024</td><td>89</td></tr><tr><td>2025</td><td>161</td></tr><tr><td>2026 (ene-sep)</td><td>166</td></tr></tbody></table></div>\n<p>Se cuentan RUT distintos con al menos una resolución calificada que nombra el plan de emergencia (cuando la página suma más de una exigencia, se toma la mayor por región: es una cota inferior). Es una exigencia <strong>específica</strong>: aparece en el 8,9 % de las calificadas de la RM, así que depende de la actividad declarada, no de la plantilla de la resolución.</p>\n</section>\n<section id=\"que-exigencias-agrupa-esta-pagina\">\n<h2>Qué exigencias agrupa esta página</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Exigencia que agrupa esta página</th><th>Titulares (Chile)</th><th>% de las calificadas de la RM</th></tr></thead><tbody><tr><td>Plan de emergencia y evacuación</td><td>512</td><td>8,9 %</td></tr><tr><td>Medidas ante fugas de refrigerante o amoníaco</td><td>169</td><td>3,8 %</td></tr><tr><td>Cumplimiento del D.S. 594 (agentes ocupacionales)</td><td>205</td><td>4,5 %</td></tr></tbody></table></div>\n<p>Cada fila cuenta RUT distintos; una misma empresa puede recibir más de una. El resto de la página usa la mayor de ellas por región como cota inferior del conjunto.</p>\n</section>\n<section id=\"en-que-regiones-se-exige-mas\">\n<h2>En qué regiones se exige más</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Región</th><th>Titulares</th><th>% de las calificadas de la región</th></tr></thead><tbody><tr><td>Región Metropolitana</td><td>374</td><td>8,9 %</td></tr><tr><td>Región de Valparaíso</td><td>43</td><td>8,4 %</td></tr><tr><td>Región de Los Lagos</td><td>38</td><td>13,4 %</td></tr><tr><td>Región del Maule</td><td>22</td><td>6,3 %</td></tr><tr><td>Región de Antofagasta</td><td>16</td><td>6,2 %</td></tr><tr><td>Región de La Araucanía</td><td>6</td><td>1,7 %</td></tr><tr><td>Región de Magallanes</td><td>6</td><td>29,6 % (muestra chica)</td></tr><tr><td>Región de Coquimbo</td><td>4</td><td>3,2 %</td></tr></tbody></table></div>\n<p>El porcentaje es sobre las resoluciones calificadas de cada SEREMI; las plantillas cambian de región a región, así que una diferencia grande puede ser de criterio y no de actividad.</p>\n</section>\n<section id=\"que-dice-exactamente-la-resolucion\">\n<h2>Qué dice exactamente la resolución</h2>\n<p>La frase más repetida en las resoluciones de la RM es: «Se debe dar cumplimiento a lo establecido en el D.S. 594/99 del MINSAL, respecto de la exposición a ruido, iluminación, otros contaminantes cuya evaluación la debe realizar el organismo administrador de la Ley 16.744». En la RM, 135 titulares la recibieron como <strong>obligación</strong> (la SEREMI usa «deberá», «debe», «previo a») y 585 como <strong>condición declarada</strong> (el titular dijo que la tendría y la calificación queda sujeta a eso). Como condición, la SEREMI anota lo que el expediente declaró; si en la fiscalización no existe, la calificación queda sin respaldo. Por eso conviene tener el documento o la instalación antes de que llegue el fiscalizador.</p>\n</section>\n<section id=\"que-hacer-si-tu-calificacion-industrial-trae-esta-exigencia\">\n<h2>Qué hacer si tu calificación industrial trae esta exigencia</h2>\n<ol class=\"process-steps\"><li><div class=\"step-content\"><p>Leer la resolución completa, no sólo el resolutivo: la exigencia va en los considerandos o en el «se señala».</p></div></li><li><div class=\"step-content\"><p>Verificar si está escrita como obligación («deberá») o como condición («contará con»): la primera tiene plazo implícito; la segunda se exige en la fiscalización.</p></div></li><li><div class=\"step-content\"><p>Resolverla con el documento o el trámite que corresponda y guardar el respaldo junto a la resolución de CTI: la municipalidad y la SEREMI lo piden para la patente y en el sumario sanitario.</p></div></li><li><div class=\"step-content\"><p>Si la instalación cambia (más maquinaria, más sustancias, otro galpón), la calificación «no ampara» la modificación y la exigencia se recalcula.</p></div></li></ol>\n</section>\n<section id=\"que-hace-svea-con-estos-datos\">\n<h2>Qué hace SVEA con estos datos</h2>\n<p>SVEA Consultores lee la resolución de CTI del cliente y separa lo que es plantilla de lo que es una exigencia real; la que corresponde al plan de emergencia se resuelve con el documento o el trámite que la SEREMI nombra, o se deriva a un proveedor autorizado cuando es una instalación. Si todavía no tienes la CTI, la carpeta se arma desde el inicio con esta exigencia prevista, para que la resolución no la traiga como observación.</p>\n<p><a href=\"/planes-de-emergencia-y-evacuacion/\">Plan de emergencia DS 44 (cotizar)</a> · <a href=\"/calificacion-tecnica-industrial/\">Cotizar la CTI</a> · <a href=\"/calificacion-tecnica-industrial-chile/\">Guía completa de la CTI</a></p>\n</section>"
+  },
+  {
+   "tipo": "formulario"
+  },
+  {
+   "tipo": "html",
+   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Cifras calculadas sobre resoluciones públicas de las SEREMI de Salud de 13 regiones publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026: 11.229 resoluciones publicadas, de las cuales se leen las calificadas (INOFENSIVA, MOLESTA o PELIGROSA) de cada región. Cada resolución se parte en oraciones y se buscan 3 patrónes de texto para esta exigencia, descartando las oraciones con negación («sin almacenamiento de…», «no cuenta con…»). Se cuentan RUT distintos por año y región; un titular con dos CTI cuenta una vez. La clasificación en obligación o condición depende del verbo de la oración. Los falsos positivos revisados a mano quedaron bajo el 5 % en las exigencias grandes; en las chicas (menos de 50 casos) conviene leer la resolución. Las cifras se actualizan todos los meses. No se publican nombres de titulares, RUT ni direcciones.</p>\n</section>"
+  }
+ ],
+ "relacionados": {
+  "titulo": "Servicios relacionados",
+  "intro": "",
+  "tarjetas": [
+   {
+    "titulo": "Planes de Emergencia y Evacuación",
+    "texto": "Plan de emergencia para empresas conforme al DS 44 y al DS 594: riesgos, protocolos, planos de evacuación y simulacros.",
+    "href": "/planes-de-emergencia-y-evacuacion/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Calificación Técnica Industrial",
+    "texto": "Expediente técnico completo (memorias, planos, controles ambientales) y tramitación en ASDigital hasta la resolución de la SEREMI.",
+    "href": "/calificacion-tecnica-industrial/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Estudio de Carga de Combustible",
+    "texto": "Cálculo de la carga de fuego según NCh 1916 y categoría de resistencia al fuego según la OGUC, con informe firmado.",
+    "href": "/estudio-de-carga-de-combustible/",
+    "enlace": "Conocer servicio →"
+   }
+  ]
+ },
+ "asunto": {
+  "prefijo": "[BLOG] Cotización Plan de Emergencia y Evacuación - ",
+  "campo": "Empresa",
+  "id": "dynamic-subject-despues-cti-plan-de-emergencia"
+ },
+ "datosCti": {
+  "tipo": "servicio",
+  "ola": 2,
+  "corte": "noviembre 2026",
+  "generado": "2026-11-07"
+ }
+}

@@ -1,0 +1,67 @@
+region,anio,publicadas,decisiones,calificadas_inofensiva,calificadas_molesta,calificadas_peligrosa,rechazadas,no_ha_lugar,desistimientos,rechazo_sobre_decisiones_pct,rechazo_sobre_publicadas_pct,plazo_mediana_dias,plazo_p75_dias,pct_personas_naturales,pct_regularizacion,corte
+Región de Antofagasta,2023,166,151,79,<5,0,52,16,11,34.4,31.3,104,159,49.0,74.8,noviembre 2026
+Región de Antofagasta,2024,158,148,74,<5,0,64,6,8,43.2,40.5,158,220,33.8,70.9,noviembre 2026
+Región de Antofagasta,2025,129,119,69,<5,0,39,8,8,32.8,30.2,191,301,39.5,65.5,noviembre 2026
+Región de Antofagasta,2026,45,41,19,<5,0,14,<5,<5,34.1,31.1,177,248,26.8,65.9,noviembre 2026
+Región de Antofagasta,total,498,459,241,15,0,169,34,31,36.8,33.9,146,219,39.7,70.4,noviembre 2026
+Región de La Araucanía,2023,79,70,68,0,0,<5,<5,6,1.4,1.3,21,40,47.1,78.6,noviembre 2026
+Región de La Araucanía,2024,85,83,75,0,0,6,<5,<5,7.2,7.1,19,38,48.2,69.9,noviembre 2026
+Región de La Araucanía,2025,112,110,105,0,0,<5,<5,<5,3.6,3.6,12,30,48.2,77.3,noviembre 2026
+Región de La Araucanía,2026,136,124,109,0,<5,11,<5,10,8.9,8.1,14,26,54.8,79.0,noviembre 2026
+Región de La Araucanía,total,412,387,357,0,<5,22,7,19,5.7,5.3,16,34,50.1,76.5,noviembre 2026
+Región de Arica y Parinacota,2023,10,10,8,0,0,<5,0,0,20.0,20.0,44,57,80.0,40.0,noviembre 2026
+Región de Arica y Parinacota,2024,22,20,14,<5,0,5,0,<5,25.0,22.7,35,65,20.0,45.0,noviembre 2026
+Región de Arica y Parinacota,2025,27,25,16,0,0,8,<5,<5,32.0,29.6,57,78,60.0,76.0,noviembre 2026
+Región de Arica y Parinacota,2026,10,9,6,0,0,<5,<5,<5,22.2,20.0,40,43,77.8,66.7,noviembre 2026
+Región de Arica y Parinacota,total,69,64,44,<5,0,17,<5,5,26.6,24.6,44,68,53.1,59.4,noviembre 2026
+Región de Atacama,2023,29,25,<5,<5,0,16,<5,<5,64.0,55.2,56,96,0.0,76.0,noviembre 2026
+Región de Atacama,2024,16,11,5,<5,0,5,0,<5,45.5,31.2,103,128,0.0,54.5,noviembre 2026
+Región de Atacama,2025,30,24,10,<5,0,11,<5,<5,45.8,36.7,68,136,0.0,79.2,noviembre 2026
+Región de Atacama,2026,20,19,8,<5,0,9,<5,0,47.4,45.0,38,50,0.0,73.7,noviembre 2026
+Región de Atacama,total,95,79,27,<5,0,41,7,9,51.9,43.2,58,102,0.0,73.4,noviembre 2026
+Región de Aysén,2023,16,16,14,0,0,<5,<5,0,6.2,6.2,31,43,62.5,62.5,noviembre 2026
+Región de Aysén,2024,14,14,14,0,0,0,0,0,0.0,0.0,14,21,71.4,42.9,noviembre 2026
+Región de Aysén,2025,29,27,24,0,0,<5,0,<5,11.1,10.3,10,17,59.3,40.7,noviembre 2026
+Región de Aysén,2026,12,12,10,0,0,<5,0,0,16.7,16.7,12,26,91.7,100.0,noviembre 2026
+Región de Aysén,total,71,69,62,0,0,6,<5,<5,8.7,8.5,13,34,68.1,56.5,noviembre 2026
+Región de Coquimbo,2023,75,62,38,<5,0,13,7,10,21.0,17.3,74,101,43.5,74.2,noviembre 2026
+Región de Coquimbo,2024,36,34,11,0,0,13,10,<5,38.2,36.1,68,111,32.4,67.6,noviembre 2026
+Región de Coquimbo,2025,59,44,17,<5,0,13,12,13,29.5,22.0,86,118,47.7,65.9,noviembre 2026
+Región de Coquimbo,2026,94,75,48,<5,0,18,6,19,24.0,19.1,79,162,48.0,66.7,noviembre 2026
+Región de Coquimbo,total,264,215,114,9,0,57,35,43,26.5,21.6,76,144,44.2,68.8,noviembre 2026
+Región de Los Lagos,2023,90,84,57,5,0,7,15,6,8.3,7.8,31,51,47.6,59.5,noviembre 2026
+Región de Los Lagos,2024,103,87,49,7,0,19,12,14,21.8,18.4,39,70,39.1,63.2,noviembre 2026
+Región de Los Lagos,2025,112,103,82,<5,0,9,9,8,8.7,8.0,42,72,41.7,63.1,noviembre 2026
+Región de Los Lagos,2026,113,93,86,<5,0,<5,<5,20,2.2,1.8,53,96,29.0,61.3,noviembre 2026
+Región de Los Lagos,total,418,367,274,18,0,37,38,48,10.1,8.9,41,75,39.2,61.9,noviembre 2026
+Región de Los Ríos,2023,34,33,29,0,0,<5,<5,<5,9.1,8.8,42,58,42.4,75.8,noviembre 2026
+Región de Los Ríos,2024,26,23,19,<5,<5,0,<5,<5,0.0,0.0,19,33,30.4,56.5,noviembre 2026
+Región de Los Ríos,2025,43,42,31,<5,<5,9,0,<5,21.4,20.9,25,42,54.8,76.2,noviembre 2026
+Región de Los Ríos,2026,33,33,25,<5,0,7,0,0,21.2,21.2,31,51,66.7,81.8,noviembre 2026
+Región de Los Ríos,total,136,131,104,<5,<5,19,<5,5,14.5,14.0,28,49,50.4,74.0,noviembre 2026
+Región de Magallanes,2025,31,30,11,<5,0,16,<5,<5,53.3,51.6,46,70,26.7,63.3,noviembre 2026
+Región de Magallanes,2026,35,28,12,<5,0,10,<5,7,35.7,28.6,46,78,21.4,53.6,noviembre 2026
+Región de Magallanes,total,66,58,23,<5,0,26,5,8,44.8,39.4,46,78,24.1,58.6,noviembre 2026
+Región del Maule,2023,113,99,78,<5,0,16,<5,12,16.2,14.2,43,64,54.5,59.6,noviembre 2026
+Región del Maule,2024,123,109,80,0,0,25,<5,13,22.9,20.3,51,83,28.4,51.4,noviembre 2026
+Región del Maule,2025,162,146,111,<5,0,30,<5,15,20.5,18.5,44,73,46.6,66.4,noviembre 2026
+Región del Maule,2026,126,104,78,0,0,13,13,22,12.5,10.3,44,73,41.3,70.2,noviembre 2026
+Región del Maule,total,524,458,347,<5,0,84,25,62,18.3,16.0,46,76,42.8,62.2,noviembre 2026
+Región Metropolitana,2023,1894,1828,1002,49,<5,738,37,58,40.4,39.0,44,61,28.2,66.0,noviembre 2026
+Región Metropolitana,2024,1925,1859,1030,55,0,758,16,55,40.8,39.4,47,55,22.1,64.9,noviembre 2026
+Región Metropolitana,2025,2200,2077,1251,53,<5,715,56,62,34.4,32.5,48,62,24.1,68.0,noviembre 2026
+Región Metropolitana,2026,1688,1634,996,25,0,544,69,47,33.3,32.2,50,56,25.8,66.9,noviembre 2026
+Región Metropolitana,total,7707,7398,4279,182,<5,2755,178,222,37.2,35.7,47,58,25.0,66.5,noviembre 2026
+Región de Tarapacá,2023,57,53,37,<5,0,11,<5,<5,20.8,19.3,26,56,69.8,77.4,noviembre 2026
+Región de Tarapacá,2024,39,34,15,<5,0,12,<5,5,35.3,30.8,26,55,20.6,64.7,noviembre 2026
+Región de Tarapacá,total,96,87,52,<5,0,23,8,7,26.4,24.0,26,56,50.6,72.4,noviembre 2026
+Región de Valparaíso,2023,210,197,123,11,0,37,26,12,18.8,17.6,46,69,33.5,60.9,noviembre 2026
+Región de Valparaíso,2024,175,153,103,6,<5,37,6,21,24.2,21.1,38,56,17.6,62.1,noviembre 2026
+Región de Valparaíso,2025,268,246,152,21,<5,56,16,21,22.8,20.9,46,64,27.6,70.3,noviembre 2026
+Región de Valparaíso,2026,216,196,86,8,<5,61,40,19,31.1,28.2,47,67,28.6,69.4,noviembre 2026
+Región de Valparaíso,total,869,792,464,46,<5,191,88,73,24.1,22.0,44,65,27.4,66.2,noviembre 2026
+Chile (13 regiones),2023,2773,2628,1537,76,<5,897,116,122,34.1,32.3,44,65,33.4,66.5,noviembre 2026
+Chile (13 regiones),2024,2722,2575,1489,79,<5,944,61,126,36.7,34.7,47,58,24.5,64.3,noviembre 2026
+Chile (13 regiones),2025,3202,2993,1879,87,<5,913,110,137,30.5,28.5,48,64,28.8,68.2,noviembre 2026
+Chile (13 regiones),2026,2528,2368,1483,47,<5,693,143,149,29.3,27.4,49,59,29.9,67.9,noviembre 2026
+Chile (13 regiones),total,11225,10564,6388,289,10,3447,430,534,32.6,30.7,47,62,29.2,66.7,noviembre 2026

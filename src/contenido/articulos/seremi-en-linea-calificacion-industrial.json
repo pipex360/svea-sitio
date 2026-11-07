@@ -1,0 +1,298 @@
+{
+ "slug": "seremi-en-linea-calificacion-industrial",
+ "ruta": "/seremi-en-linea-calificacion-industrial/",
+ "migasOriginal": [
+  {
+   "texto": "Inicio",
+   "href": "/"
+  },
+  {
+   "texto": "Blog",
+   "href": "/blog/"
+  }
+ ],
+ "migaFinal": "Calificación industrial en SEREMI en Línea",
+ "categoria": "Datos CTI",
+ "h1": "Cómo tramitar la calificación industrial en SEREMI en Línea (ASDigital) paso a paso, y los errores que causan el rechazo",
+ "bajada": "La calificación industrial (Calificación Técnica Industrial, CTI) es el permiso de la SEREMI de Salud que la municipalidad exige para la patente comercial o industrial de una bodega, un taller o una planta. Se pide por internet en SEREMI en Línea (ASDigital). Esta guía recorre el trámite paso a paso y, con las 11.225 resoluciones públicas que SVEA analizó, dice en qué paso se cae la carpeta: el 33 % se rechaza y 9 de cada 10 rechazos son por documentos que faltan.",
+ "fecha": "Noviembre 2026",
+ "actualizado": {
+  "iso": "2026-11-07",
+  "texto": "7 de noviembre de 2026"
+ },
+ "lectura": "10 min de lectura",
+ "autor": "Equipo técnico SVEA Consultores",
+ "cifras": [
+  {
+   "n": "33 %",
+   "l": "de las solicitudes se rechaza (10.564 con decisión, 13 SEREMI)"
+  },
+  {
+   "n": "9 de 10",
+   "l": "rechazos por antecedentes que faltan, no por la actividad"
+  },
+  {
+   "n": "47 días",
+   "l": "mediana desde que se ingresa hasta la resolución"
+  },
+  {
+   "n": "5 documentos",
+   "l": "que la SEREMI nombra cuando rechaza"
+  }
+ ],
+ "indiceTitulo": "En esta página",
+ "indice": [
+  {
+   "href": "#que-es-la-calificacion-industrial-y-quien-la-pide",
+   "texto": "Qué es la calificación industrial y quién la pide"
+  },
+  {
+   "href": "#antes-de-entrar-a-la-plataforma-la-carpeta",
+   "texto": "Antes de entrar a la plataforma: la carpeta"
+  },
+  {
+   "href": "#paso-a-paso-en-seremi-en-linea-asdigital",
+   "texto": "Paso a paso en SEREMI en Línea (ASDigital)"
+  },
+  {
+   "href": "#los-errores-que-causan-el-rechazo-en-orden",
+   "texto": "Los errores que causan el rechazo, en orden"
+  },
+  {
+   "href": "#cuando-conviene-tramitarla-solo-y-cuando-no",
+   "texto": "Cuándo conviene tramitarla solo y cuándo no"
+  },
+  {
+   "href": "#que-hace-svea",
+   "texto": "Qué hace SVEA"
+  },
+  {
+   "href": "#fuentes",
+   "texto": "Fuente y método"
+  },
+  {
+   "href": "#faq",
+   "texto": "Preguntas frecuentes"
+  }
+ ],
+ "formulario": {
+  "titulo": "Cotiza la CTI con una carpeta que responda a lo que la SEREMI pide",
+  "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+  "ocultos": [
+   {
+    "name": "access_key",
+    "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+   },
+   {
+    "name": "subject",
+    "value": "Nueva cotización Calificación Técnica Industrial (Datos CTI) - SVEA Consultores",
+    "id": "dynamic-subject-seremi-en-linea-calificacion-industrial"
+   },
+   {
+    "name": "from_name",
+    "value": "SVEA Consultores Blog - Datos CTI"
+   },
+   {
+    "name": "redirect",
+    "value": "https://sveaconsultores.cl/gracias/"
+   },
+   {
+    "name": "Servicio",
+    "value": "Calificación Técnica Industrial"
+   },
+   {
+    "name": "Origen",
+    "value": "Datos CTI - seremi-en-linea-calificacion-industrial"
+   }
+  ],
+  "campos": [
+   {
+    "label": "Nombre completo *",
+    "id": "art-nombre",
+    "name": "Nombre",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Ej: Juan Pérez",
+    "ancho": false
+   },
+   {
+    "label": "Empresa *",
+    "id": "art-empresa",
+    "name": "Empresa",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Nombre de tu empresa",
+    "ancho": false
+   },
+   {
+    "label": "Teléfono *",
+    "id": "art-telefono",
+    "name": "Teléfono",
+    "tipo": "tel",
+    "requerido": true,
+    "placeholder": "+569 1234 5678",
+    "ancho": false
+   },
+   {
+    "label": "Email *",
+    "id": "art-email",
+    "name": "Email",
+    "tipo": "email",
+    "requerido": true,
+    "placeholder": "correo@empresa.cl",
+    "ancho": false
+   },
+   {
+    "label": "Tipo de servicio",
+    "id": "art-tipo",
+    "name": "Tipo de Servicio",
+    "tipo": "select",
+    "requerido": false,
+    "placeholder": null,
+    "ancho": true,
+    "opciones": [
+     {
+      "value": "",
+      "texto": "Selecciona una opción",
+      "seleccionada": true,
+      "desactivada": true
+     },
+     {
+      "value": "Calificación Técnica Industrial",
+      "texto": "Calificación técnica industrial (CTI)",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Informe Sanitario",
+      "texto": "Informe sanitario",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Transporte de Residuos",
+      "texto": "Transporte de residuos",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Otro trámite SEREMI",
+      "texto": "Otro trámite ante la SEREMI",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "No estoy seguro",
+      "texto": "No estoy seguro",
+      "seleccionada": false,
+      "desactivada": false
+     }
+    ]
+   },
+   {
+    "label": "Mensaje (opcional)",
+    "id": "art-mensaje",
+    "name": "Mensaje",
+    "tipo": "textarea",
+    "requerido": false,
+    "placeholder": "¿Qué actividad tienes, en qué comuna y en qué etapa está el trámite?",
+    "ancho": true,
+    "filas": 3
+   }
+  ],
+  "boton": "Solicitar cotización gratuita →",
+  "confianza": [
+   "Datos protegidos",
+   "Cotización sin costo",
+   "Sin compromiso"
+  ]
+ },
+ "faq": {
+  "id": "faq",
+  "titulo": "Preguntas frecuentes",
+  "items": [
+   {
+    "p": "¿La calificación industrial se tramita en SEREMI en Línea o en la municipalidad?",
+    "r": "En SEREMI en Línea (la plataforma ASDigital de las SEREMI de Salud), con ClaveÚnica. La municipalidad no la tramita: la exige después, como requisito de la patente comercial o industrial definitiva.",
+    "rTexto": "En SEREMI en Línea (la plataforma ASDigital de las SEREMI de Salud), con ClaveÚnica. La municipalidad no la tramita: la exige después, como requisito de la patente comercial o industrial definitiva."
+   },
+   {
+    "p": "¿Qué documentos hay que subir en ASDigital para la calificación industrial?",
+    "r": "Memoria descriptiva de procesos, medidas de control ambiental, plano general de la instalación, memoria técnica de construcción, acreditación de agua y alcantarillado, personería (escritura, poder, RUT) y los antecedentes propios del rubro (hojas de seguridad, estudio de ruido). Son exactamente los documentos que la SEREMI nombra en los rechazos.",
+    "rTexto": "Memoria descriptiva de procesos, medidas de control ambiental, plano general de la instalación, memoria técnica de construcción, acreditación de agua y alcantarillado, personería (escritura, poder, RUT) y los antecedentes propios del rubro (hojas de seguridad, estudio de ruido). Son exactamente los documentos que la SEREMI nombra en los rechazos."
+   },
+   {
+    "p": "¿Cuánto demora la SEREMI en resolver en SEREMI en Línea?",
+    "r": "47 días corridos de mediana en Chile entre el ingreso y la resolución (50 en la Región Metropolitana en 2026). Varía por región: 13 días en Aysén, 16 en La Araucanía, 146 en Antofagasta. A eso hay que sumar el tiempo de preparar la carpeta.",
+    "rTexto": "47 días corridos de mediana en Chile entre el ingreso y la resolución (50 en la Región Metropolitana en 2026). Varía por región: 13 días en Aysén, 16 en La Araucanía, 146 en Antofagasta. A eso hay que sumar el tiempo de preparar la carpeta."
+   },
+   {
+    "p": "¿Puedo tramitar la calificación industrial como persona natural o microempresa familiar?",
+    "r": "Sí. Una de cada cuatro solicitudes de la RM es de una persona natural. El problema es el resultado: se rechaza el 63,5 % (47,5 % en Chile), contra 15 % de las EIRL, porque la carpeta llega sin los documentos técnicos. La vía de microempresa familiar (Ley 19.749) tiene además requisitos propios; 40 rechazos de la RM dicen que la actividad no califica como MEF.",
+    "rTexto": "Sí. Una de cada cuatro solicitudes de la RM es de una persona natural. El problema es el resultado: se rechaza el 63,5 % (47,5 % en Chile), contra 15 % de las EIRL, porque la carpeta llega sin los documentos técnicos. La vía de microempresa familiar (Ley 19.749) tiene además requisitos propios; 40 rechazos de la RM dicen que la actividad no califica como MEF."
+   },
+   {
+    "p": "¿Qué pasa si la SEREMI rechaza mi solicitud?",
+    "r": "La resolución dice por escrito qué faltó. Se puede recurrir (reposición, jerárquico) o volver a presentar con la carpeta completa; quienes reingresan en 30 días con lo que la resolución nombró aprueban 59 %. El arancel pagado no se devuelve.",
+    "rTexto": "La resolución dice por escrito qué faltó. Se puede recurrir (reposición, jerárquico) o volver a presentar con la carpeta completa; quienes reingresan en 30 días con lo que la resolución nombró aprueban 59 %. El arancel pagado no se devuelve."
+   }
+  ]
+ },
+ "autorCaja": {
+  "inicial": "S",
+  "nombre": "Equipo técnico SVEA Consultores",
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+ },
+ "compartir": {
+  "titulo": "Compartir",
+  "enlaces": []
+ },
+ "bloques": [
+  {
+   "tipo": "html",
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de las SEREMI de Salud de 13 regiones publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026.</em></p>\n<p class=\"art-entrada\">Miles de personas entran cada mes a SEREMI en Línea para hacer el trámite solas. Se puede: la plataforma es la misma para una multinacional y para un taller de barrio. Lo que no se ve desde la pantalla es que la SEREMI no califica un formulario, califica una <strong>carpeta técnica</strong>, y que la mayoría de los rechazos ocurre antes de que la autoridad mire la actividad. Esta guía dice qué pide cada paso y dónde fallan las solicitudes, con cifras.</p>\n<section id=\"que-es-la-calificacion-industrial-y-quien-la-pide\">\n<h2>Qué es la calificación industrial y quién la pide</h2>\n<p>La calificación industrial (su nombre legal es Calificación Técnica Industrial o CTI, art. 4.14.2 de la OGUC) es la resolución con que la SEREMI de Salud clasifica una actividad como inofensiva, molesta, insalubre o peligrosa. La pide la <strong>municipalidad</strong> para otorgar la patente comercial o industrial definitiva (sin ella la patente queda provisoria o se niega), y la <strong>Dirección de Obras</strong> para verificar que la actividad es compatible con el uso de suelo. Quién la necesita: bodegas, talleres, industrias, locales con elaboración, depósitos; qué es y cuáles son las categorías está en la <a href=\"/calificacion-tecnica-industrial-chile/\">guía completa de la calificación técnica industrial</a>. Para locales simples puede bastar el <a href=\"/calificacion-inofensiva-seremi/\">certificado de calificación inofensiva</a>.</p>\n<p>Dos datos para dimensionar: las 13 SEREMI con resoluciones publicadas resolvieron 11.225 solicitudes entre 2023 y septiembre de 2026 (3.203 en 2025), y la Región Metropolitana concentra el 70 %. Dos de cada tres son <strong>regularizaciones</strong>: la actividad ya funciona y recién pide el permiso, normalmente porque la municipalidad lo exigió para la patente (<a href=\"/regularizar-cti-actividad-existente/\">regularizar una actividad existente</a>).</p>\n</section>\n<section id=\"antes-de-entrar-a-la-plataforma-la-carpeta\">\n<h2>Antes de entrar a la plataforma: la carpeta</h2>\n<p>El error más común es empezar por la pantalla. SEREMI en Línea es el último paso; antes hay que tener listos los documentos que la resolución nombra cuando rechaza. En la Región Metropolitana el 90 % de los rechazos dice que el titular «no ha aportado los antecedentes suficientes», y lo que la SEREMI nombra como faltante es siempre lo mismo:</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Documento</th><th>% de los rechazos por insuficiencia que lo nombran (RM)</th><th>Qué es</th></tr></thead><tbody><tr><td>Medidas de control ambiental</td><td>46 %</td><td>Cómo se controlan ruido, emisiones, residuos, derrames e incendio: extintores dimensionados y capacitación, ventilación, gestión de residuos</td></tr><tr><td>Memoria descriptiva de procesos</td><td>43 %</td><td>Qué se hace, con qué maquinaria, en qué horario, con cuántos trabajadores, qué materias primas y productos</td></tr><tr><td>Plano general de la instalación</td><td>19 %</td><td>Planta con superficies por sector, maquinaria, bodegas, baños, vías de evacuación y emplazamiento</td></tr><tr><td>Memoria técnica de construcción</td><td>18 %</td><td>Materialidad de muros, estructura, techumbre y pisos; separación con vecinos; resistencia al fuego</td></tr><tr><td>Acreditación de agua y alcantarillado</td><td>8 % de los rechazos de regularización piden la boleta</td><td>Boleta o factibilidad de la sanitaria; si es pozo o fosa, su autorización</td></tr></tbody></table></div>\n<p>Más la personería (escritura y poder vigentes, RUT y razón social iguales en todos los papeles), el permiso de edificación o recepción municipal cuando existe, y el comprobante de inicio de actividades. Con eso listo, el trámite en línea toma una tarde; sin eso, toma dos meses y termina en rechazo. El detalle por documento, con lo que falla por tipo de titular, rubro y comuna, está en <a href=\"/por-que-rechazan-la-cti/\">por qué la SEREMI rechaza la calificación industrial</a>.</p>\n</section>\n<section id=\"paso-a-paso-en-seremi-en-linea-asdigital\">\n<h2>Paso a paso en SEREMI en Línea (ASDigital)</h2>\n<ol class=\"process-steps\"><li><div class=\"step-content\"><h4>Entrar con ClaveÚnica</h4><p>SEREMI en Línea (seremienlinea.minsal.cl) es la ventanilla de trámites de las SEREMI de Salud; ASDigital es la plataforma que la sostiene. Se entra con la ClaveÚnica del titular o del representante legal; si tramita un tercero, debe tener el poder.</p></div></li><li><div class=\"step-content\"><h4>Elegir el trámite correcto</h4><p>«Calificación técnica de actividad industrial» (o la denominación de calificación industrial que use la región). No confundirlo con la autorización o resolución sanitaria de alimentos, el informe sanitario ni la calificación de microempresa familiar, que son trámites distintos con requisitos distintos. En la RM hubo 430 resoluciones «no ha lugar» en el periodo: la SEREMI consideró que la actividad no requería calificación o que se pidió el trámite equivocado.</p></div></li><li><div class=\"step-content\"><h4>Identificar al titular y al recinto</h4><p>RUT, razón social, representante y dirección del recinto exactamente como aparecen en la escritura, el SII y el permiso municipal. Uno de cada cuatro rechazos «no cumple normativa» de 2025-2026 en la RM nombra un error de personería, RUT o razón social: el rechazo más fácil de evitar.</p></div></li><li><div class=\"step-content\"><h4>Declarar la actividad y la situación</h4><p>Si la instalación está «en proyecto» o es «existente» (regularización), la superficie construida y de terreno, los trabajadores, el horario y la maquinaria. Estos datos los compara la SEREMI con el plano y las memorias: una sola versión de cada número en todos los documentos.</p></div></li><li><div class=\"step-content\"><h4>Adjuntar la carpeta técnica</h4><p>Memoria descriptiva de procesos, medidas de control ambiental, plano general, memoria técnica de construcción, acreditación de agua y alcantarillado, personería y los antecedentes propios del rubro (hojas de seguridad si hay sustancias peligrosas, estudio de ruido si hay vecinos y maquinaria ruidosa). Los archivos en PDF legibles, con los planos a escala y firmados.</p></div></li><li><div class=\"step-content\"><h4>Pagar el arancel</h4><p>Se paga en línea según el valor que fija la SEREMI para la actividad; el pago no se devuelve si la solicitud se rechaza.</p></div></li><li><div class=\"step-content\"><h4>Seguir el expediente y responder observaciones</h4><p>La SEREMI puede observar antes de resolver; el plazo para responder lo fija la observación y se cuenta en días hábiles (<a href=\"/rechazo-observaciones-seremi/\">observación, rechazo y recursos</a>). Responder punto por punto y subir los documentos corregidos, no sólo una carta.</p></div></li><li><div class=\"step-content\"><h4>Recibir la resolución</h4><p>Llega al expediente en línea: calificada (inofensiva, molesta, insalubre o peligrosa), rechazada o «no ha lugar». La mediana desde el ingreso hasta la resolución es 47 días corridos en Chile (50 en la RM en 2026; de 13 días en Aysén a 146 en Antofagasta: <a href=\"/plazo-seremi-cti/\">cuánto demora la SEREMI</a>).</p></div></li><li><div class=\"step-content\"><h4>Leer la resolución completa</h4><p>Si califica, trae condiciones y obligaciones posteriores: en la RM el 77 % de las calificaciones exige algo más (plan de emergencia DS 44, sustancias peligrosas DS 43, residuos peligrosos y SIDREP, extintores dimensionados, autorización sanitaria de alimentos). Cuántas empresas y cuáles, en <a href=\"/despues-de-la-cti/\">después de la calificación industrial</a>. Si rechaza, dice por escrito qué faltó.</p></div></li><li><div class=\"step-content\"><h4>Llevarla a la municipalidad</h4><p>Con la resolución favorable se pide o se regulariza la patente comercial o industrial definitiva (<a href=\"/patente-definitiva-permisos-seremi/\">patente definitiva y permisos SEREMI</a>).</p></div></li></ol>\n</section>\n<section id=\"los-errores-que-causan-el-rechazo-en-orden\">\n<h2>Los errores que causan el rechazo, en orden</h2>\n<p>Con las resoluciones leídas, estos son los errores por los que se cae una solicitud hecha sola:</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Error</th><th>Qué dicen los datos</th></tr></thead><tbody><tr><td>Subir la solicitud sin memoria de procesos ni medidas de control ambiental</td><td>Son los dos documentos más nombrados en los rechazos (43 % y 46 % de los rechazos por insuficiencia en la RM). En personas naturales, la mitad de los rechazos ni siquiera nombra un documento: falta la estructura entera</td></tr><tr><td>Tramitar a nombre propio sin carpeta técnica</td><td>Las personas naturales se rechazan 47,5 % en Chile y 63,5 % en la RM, contra 26-29 % de las empresas y 15 % de las EIRL. No es la forma jurídica, es la carpeta (<a href=\"/cti-persona-natural/\">patente microempresa familiar y persona natural</a>)</td></tr><tr><td>Regularizar con el plano viejo</td><td>A las regularizaciones les falta el plano (21 %) y la memoria de construcción (20 %) casi el doble que a los proyectos; se rechazan 42 % contra 28 %</td></tr><tr><td>No acreditar agua y alcantarillado</td><td>El 8 % de los rechazos de regularización en la RM pide la boleta de agua potable</td></tr><tr><td>Datos distintos en la solicitud, el plano y las memorias</td><td>Trabajadores, m², horario y maquinaria se comparan; la diferencia se observa o se rechaza</td></tr><tr><td>Extintores sin dimensionar ni capacitación, flujo de camiones en la calle, materialidad sin describir</td><td>Son los puntos del D.S. 594 que la SEREMI RM nombra en el 58 %, 47 % y 44 % de los rechazos «no cumple normativa» de 2025-2026 (<a href=\"/cti-no-cumple-normativa/\">qué revisa la SEREMI en 2026</a>)</td></tr><tr><td>Personería, RUT o razón social con errores</td><td>25 % de los rechazos «no cumple normativa» de 2025-2026 en la RM</td></tr><tr><td>Pedir el trámite de microempresa familiar sin cumplir la Ley 19.749</td><td>40 rechazos en la RM dicen que la actividad no califica como MEF</td></tr><tr><td>Reingresar lo mismo después de un rechazo</td><td>El 42 % de los rechazados vuelve; de ellos aprueba la mitad. Quien reingresa en 30 días con lo que la resolución nombró aprueba 59 % (<a href=\"/rechazo-cti-que-hacer/\">qué hacer tras un rechazo</a>)</td></tr></tbody></table></div>\n<p>El resultado agregado: el 33 % de las solicitudes con decisión se rechaza en Chile (37 % en la RM), con diferencias grandes por región, comuna y rubro (<a href=\"/cti/tasa-de-rechazo/\">ranking de rechazo</a>).</p>\n</section>\n<section id=\"cuando-conviene-tramitarla-solo-y-cuando-no\">\n<h2>Cuándo conviene tramitarla solo y cuándo no</h2>\n<p>Hacerlo solo funciona cuando la actividad es simple (un local, una bodega chica sin sustancias peligrosas), el recinto tiene recepción municipal y plano al día, y hay alguien que pueda escribir la memoria de procesos y las medidas de control para ese recinto. Los locales comerciales se rechazan 23 % y da lo mismo quién firma. Conviene apoyo técnico cuando es una regularización con ampliaciones sin recepción, cuando hay maquinaria, sustancias peligrosas, vecinos colindantes o carga de combustible alta, cuando ya hubo un rechazo, o cuando el recinto es un galpón compartido con otras empresas (58 % de rechazo en condominios industriales). La diferencia no está en la plataforma, que es la misma; está en la carpeta que se sube.</p>\n</section>\n<section id=\"que-hace-svea\">\n<h2>Qué hace SVEA</h2>\n<p>SVEA Consultores prepara la carpeta técnica completa y la ingresa en SEREMI en Línea a nombre del cliente: memoria descriptiva de procesos, medidas de control ambiental, plano general, memoria técnica de construcción, acreditaciones y personería, más el seguimiento del expediente y la respuesta a observaciones hasta la resolución. De los clientes de SVEA con resolución publicada, 13 de 14 fueron calificados en el primer intento (muestra chica, publicada con su tamaño). No prometemos la calificación, que la decide la SEREMI; sí que la carpeta llegue con lo que la autoridad nombra cuando rechaza. <a href=\"/calificacion-tecnica-industrial/\">Cotiza la calificación industrial</a>.</p>\n</section>"
+  },
+  {
+   "tipo": "formulario"
+  },
+  {
+   "tipo": "html",
+   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Pasos descritos según el trámite de calificación técnica de actividad industrial en SEREMI en Línea (ASDigital) vigente a noviembre de 2026; la denominación exacta y el arancel pueden cambiar por región, y conviene confirmarlos en la plataforma. Cifras calculadas sobre resoluciones públicas de las SEREMI de Salud de 13 regiones publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026: 11.225 resoluciones publicadas entre enero de 2023 y septiembre de 2026, 10.564 con decisión; tasa de rechazo = rechazadas sobre resoluciones con decisión. Antecedentes faltantes y categorías de incumplimiento leídos de los considerandos de las resoluciones de la Región Metropolitana (2.755 rechazos). Reingreso = siguiente resolución del mismo RUT, medido sobre los rechazos de 2023-2024. Cifra de SVEA: clientes con resolución publicada cruzados por RUT; muestra chica. No se publican nombres de titulares, RUT ni direcciones.</p>\n</section>"
+  }
+ ],
+ "relacionados": {
+  "titulo": "Servicios relacionados",
+  "intro": "",
+  "tarjetas": [
+   {
+    "titulo": "Calificación Técnica Industrial",
+    "texto": "Expediente técnico completo (memorias, planos, controles ambientales) y tramitación en ASDigital hasta la resolución de la SEREMI.",
+    "href": "/calificacion-tecnica-industrial/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Estudio de Carga de Combustible",
+    "texto": "Cálculo de la carga de fuego según NCh 1916 y categoría de resistencia al fuego según la OGUC, con informe firmado.",
+    "href": "/estudio-de-carga-de-combustible/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Planes de Emergencia y Evacuación",
+    "texto": "Plan de emergencia para empresas conforme al DS 44 y al DS 594: riesgos, protocolos, planos de evacuación y simulacros.",
+    "href": "/planes-de-emergencia-y-evacuacion/",
+    "enlace": "Conocer servicio →"
+   }
+  ]
+ },
+ "asunto": {
+  "prefijo": "[BLOG] Cotización Calificación Técnica Industrial - ",
+  "campo": "Empresa",
+  "id": "dynamic-subject-seremi-en-linea-calificacion-industrial"
+ },
+ "datosCti": {
+  "tipo": "articulo",
+  "ola": 1,
+  "corte": "noviembre 2026",
+  "generado": "2026-11-07"
+ }
+}

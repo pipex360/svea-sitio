@@ -1,0 +1,302 @@
+{
+ "slug": "cti-persona-natural",
+ "ruta": "/cti-persona-natural/",
+ "migasOriginal": [
+  {
+   "texto": "Inicio",
+   "href": "/"
+  },
+  {
+   "texto": "Blog",
+   "href": "/blog/"
+  }
+ ],
+ "migaFinal": "Patente MEF y persona natural",
+ "categoria": "Datos CTI",
+ "h1": "Patente de microempresa familiar (MEF) y calificación industrial a nombre propio: por qué se rechaza el 64 % y cómo evitarlo",
+ "bajada": "Una de cada cuatro Calificaciones Técnicas Industriales de la Región Metropolitana la pide una persona natural, y casi dos de cada tres terminan rechazadas. No es el recinto ni la comuna: la misma persona, formalizada como EIRL, se rechaza 15,5 %. Qué pasa con esas carpetas y qué hacer distinto.",
+ "fecha": "Noviembre 2026",
+ "actualizado": {
+  "iso": "2026-11-07",
+  "texto": "7 de noviembre de 2026"
+ },
+ "lectura": "8 min de lectura",
+ "autor": "Equipo técnico SVEA Consultores",
+ "cifras": [
+  {
+   "n": "63,5 %",
+   "l": "de rechazo en personas naturales"
+  },
+  {
+   "n": "29 %",
+   "l": "de rechazo en SpA (15,5 % en EIRL)"
+  },
+  {
+   "n": "42 %",
+   "l": "de todos los rechazos son de personas naturales"
+  },
+  {
+   "n": "19 %",
+   "l": "aprueba al reingresar (empresas: 63 %)"
+  }
+ ],
+ "indiceTitulo": "En esta página",
+ "indice": [
+  {
+   "href": "#la-cifra-63-5-de-rechazo",
+   "texto": "La cifra: 63,5 % de rechazo"
+  },
+  {
+   "href": "#que-falta-en-la-carpeta-de-una-persona-natural",
+   "texto": "Qué falta en la carpeta de una persona natural"
+  },
+  {
+   "href": "#que-pasa-despues-pocas-vuelven-y-casi-ninguna-aprueba",
+   "texto": "Qué pasa después: pocas vuelven y casi ninguna aprueba"
+  },
+  {
+   "href": "#el-recinto-tipico-chico-diurno-de-barrio",
+   "texto": "El recinto típico: chico, diurno, de barrio"
+  },
+  {
+   "href": "#que-hacer-distinto",
+   "texto": "Qué hacer distinto"
+  },
+  {
+   "href": "#para-que-sirve-hacerlo-bien-a-la-primera",
+   "texto": "Para qué sirve hacerlo bien a la primera"
+  },
+  {
+   "href": "#que-hace-svea",
+   "texto": "Qué hace SVEA"
+  },
+  {
+   "href": "#fuentes",
+   "texto": "Fuente y método"
+  },
+  {
+   "href": "#faq",
+   "texto": "Preguntas frecuentes"
+  }
+ ],
+ "formulario": {
+  "titulo": "Cotiza la CTI con una carpeta que responda a lo que la SEREMI pide",
+  "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+  "ocultos": [
+   {
+    "name": "access_key",
+    "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+   },
+   {
+    "name": "subject",
+    "value": "Nueva cotización Calificación Técnica Industrial (Datos CTI) - SVEA Consultores",
+    "id": "dynamic-subject-cti-persona-natural"
+   },
+   {
+    "name": "from_name",
+    "value": "SVEA Consultores Blog - Datos CTI"
+   },
+   {
+    "name": "redirect",
+    "value": "https://sveaconsultores.cl/gracias/"
+   },
+   {
+    "name": "Servicio",
+    "value": "Calificación Técnica Industrial"
+   },
+   {
+    "name": "Origen",
+    "value": "Datos CTI - cti-persona-natural"
+   }
+  ],
+  "campos": [
+   {
+    "label": "Nombre completo *",
+    "id": "art-nombre",
+    "name": "Nombre",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Ej: Juan Pérez",
+    "ancho": false
+   },
+   {
+    "label": "Empresa *",
+    "id": "art-empresa",
+    "name": "Empresa",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Nombre de tu empresa",
+    "ancho": false
+   },
+   {
+    "label": "Teléfono *",
+    "id": "art-telefono",
+    "name": "Teléfono",
+    "tipo": "tel",
+    "requerido": true,
+    "placeholder": "+569 1234 5678",
+    "ancho": false
+   },
+   {
+    "label": "Email *",
+    "id": "art-email",
+    "name": "Email",
+    "tipo": "email",
+    "requerido": true,
+    "placeholder": "correo@empresa.cl",
+    "ancho": false
+   },
+   {
+    "label": "Tipo de servicio",
+    "id": "art-tipo",
+    "name": "Tipo de Servicio",
+    "tipo": "select",
+    "requerido": false,
+    "placeholder": null,
+    "ancho": true,
+    "opciones": [
+     {
+      "value": "",
+      "texto": "Selecciona una opción",
+      "seleccionada": true,
+      "desactivada": true
+     },
+     {
+      "value": "Calificación Técnica Industrial",
+      "texto": "Calificación técnica industrial (CTI)",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Informe Sanitario",
+      "texto": "Informe sanitario",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Transporte de Residuos",
+      "texto": "Transporte de residuos",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Otro trámite SEREMI",
+      "texto": "Otro trámite ante la SEREMI",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "No estoy seguro",
+      "texto": "No estoy seguro",
+      "seleccionada": false,
+      "desactivada": false
+     }
+    ]
+   },
+   {
+    "label": "Mensaje (opcional)",
+    "id": "art-mensaje",
+    "name": "Mensaje",
+    "tipo": "textarea",
+    "requerido": false,
+    "placeholder": "¿Qué actividad tienes, en qué comuna y en qué etapa está el trámite?",
+    "ancho": true,
+    "filas": 3
+   }
+  ],
+  "boton": "Solicitar cotización gratuita →",
+  "confianza": [
+   "Datos protegidos",
+   "Cotización sin costo",
+   "Sin compromiso"
+  ]
+ },
+ "faq": {
+  "id": "faq",
+  "titulo": "Preguntas frecuentes",
+  "items": [
+   {
+    "p": "¿Puedo tramitar la calificación industrial como persona natural?",
+    "r": "Sí. Una de cada cuatro CTI de la Región Metropolitana se presenta a nombre de una persona natural. El problema no es la posibilidad sino el resultado: el 63,5 % se rechaza, contra 29 % de las SpA.",
+    "rTexto": "Sí. Una de cada cuatro CTI de la Región Metropolitana se presenta a nombre de una persona natural. El problema no es la posibilidad sino el resultado: el 63,5 % se rechaza, contra 29 % de las SpA."
+   },
+   {
+    "p": "¿Por qué se rechaza tanto la calificación industrial de personas naturales?",
+    "r": "Porque la carpeta llega sin los documentos técnicos que la SEREMI necesita para calificar: memoria de procesos, medidas de controles ambientales, plano y memoria de construcción. En la mitad de esos rechazos la resolución ni siquiera nombra un documento puntual; falta la estructura completa. Sólo el 6 % de los rechazos a personas naturales es porque el recinto no cumple la norma.",
+    "rTexto": "Porque la carpeta llega sin los documentos técnicos que la SEREMI necesita para calificar: memoria de procesos, medidas de controles ambientales, plano y memoria de construcción. En la mitad de esos rechazos la resolución ni siquiera nombra un documento puntual; falta la estructura completa. Sólo el 6 % de los rechazos a personas naturales es porque el recinto no cumple la norma."
+   },
+   {
+    "p": "¿Conviene crear una empresa para tramitar la calificación industrial?",
+    "r": "Los datos muestran correlación, no causa: la EIRL se rechaza 15,5 % y la persona natural 63,5 %, pero lo que cambia es que la EIRL suele llegar con carpeta técnica. Una persona natural con la misma carpeta tiene la misma oportunidad. La decisión de formalizar una empresa tiene otras razones (tributarias, de responsabilidad) que no son materia de este artículo.",
+    "rTexto": "Los datos muestran correlación, no causa: la EIRL se rechaza 15,5 % y la persona natural 63,5 %, pero lo que cambia es que la EIRL suele llegar con carpeta técnica. Una persona natural con la misma carpeta tiene la misma oportunidad. La decisión de formalizar una empresa tiene otras razones (tributarias, de responsabilidad) que no son materia de este artículo."
+   },
+   {
+    "p": "¿Me rechazan igual si es un proyecto nuevo?",
+    "r": "Sí: 63,5 % en proyecto y 63,4 % en regularización. En empresas el proyecto nuevo se rechaza mucho menos (18 %); en personas naturales no hay diferencia porque el problema está en la carpeta, no en el recinto.",
+    "rTexto": "Sí: 63,5 % en proyecto y 63,4 % en regularización. En empresas el proyecto nuevo se rechaza mucho menos (18 %); en personas naturales no hay diferencia porque el problema está en la carpeta, no en el recinto."
+   },
+   {
+    "p": "Si me rechazaron a mi nombre, ¿qué probabilidad tengo al reingresar?",
+    "r": "Si reingresas lo mismo, baja: de las personas naturales rechazadas en 2023-2024 que volvieron a presentar, aprobó el 19 %. Con la carpeta completa el escenario es otro; de hecho, quienes desisten para ordenar la carpeta y luego reingresan aprueban en cerca de dos de cada tres casos.",
+    "rTexto": "Si reingresas lo mismo, baja: de las personas naturales rechazadas en 2023-2024 que volvieron a presentar, aprobó el 19 %. Con la carpeta completa el escenario es otro; de hecho, quienes desisten para ordenar la carpeta y luego reingresan aprueban en cerca de dos de cada tres casos."
+   }
+  ]
+ },
+ "autorCaja": {
+  "inicial": "S",
+  "nombre": "Equipo técnico SVEA Consultores",
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+ },
+ "compartir": {
+  "titulo": "Compartir",
+  "enlaces": []
+ },
+ "bloques": [
+  {
+   "tipo": "html",
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de la SEREMI de Salud RM publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026.</em></p>\n<p class=\"art-entrada\">La calificación industrial (Calificación Técnica Industrial, CTI) es el permiso de la SEREMI de Salud que la municipalidad exige para la patente comercial o industrial de bodegas, talleres e industrias; se tramita por internet en <a href=\"/seremi-en-linea-calificacion-industrial/\">SEREMI en Línea (ASDigital)</a>. Muchos talleres, cocinas, locales y bodegas chicas se tramitan a nombre del dueño, sin sociedad. Es legítimo y a veces es lo único posible: el arrendador que regulariza su galpón, el mecánico con patente a su nombre, la pastelería que empieza. Pero en la SEREMI RM esas solicitudes corren con una desventaja enorme, y los datos permiten decir cuál es.</p>\n<section id=\"la-cifra-63-5-de-rechazo\">\n<h2>La cifra: 63,5 % de rechazo</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Tipo de titular</th><th>Resoluciones con decisión (2023-2026)</th><th>Participación</th><th>Rechazo</th></tr></thead><tbody><tr><td>Persona natural</td><td>1.847</td><td>25 %</td><td><strong>63,5 %</strong></td></tr><tr><td>SpA</td><td>2.976</td><td>40 %</td><td>29,4 %</td></tr><tr><td>Sociedad limitada</td><td>1.356</td><td>18 %</td><td>30,9 %</td></tr><tr><td>S.A.</td><td>790</td><td>11 %</td><td>26,7 %</td></tr><tr><td>EIRL</td><td>330</td><td>4 %</td><td><strong>15,5 %</strong></td></tr><tr><td>Otra persona jurídica</td><td>99</td><td>1 %</td><td>26,3 %</td></tr></tbody></table></div>\n<p>Las personas naturales son el 25 % de las solicitudes y el 42 % de todos los rechazos. La tasa baja un poco (65,8 % en 2023, 66,4 % en 2024, 60,6 % en 2025, 61,0 % en 2026), pero la brecha con las empresas se mantiene en más de 30 puntos.</p>\n<p>Tres comparaciones descartan las explicaciones fáciles:</p>\n<ul><li><strong>No es que regularicen más.</strong> La persona natural se rechaza 63,4 % cuando regulariza una instalación existente y 63,5 % cuando presenta un proyecto nuevo. En las empresas el modo sí importa (34 % y 18 %); en la persona natural, no.</li><li><strong>No es el rubro.</strong> En bodegas, la persona natural se rechaza 81 % y la empresa 29 %; en metalmecánica, 77 % contra 35 %; en alimentos, 52 % contra 21 %; en talleres mecánicos, 55 % contra 24 %. La única excepción son los locales comerciales: 23 % contra 22 %, trámites simples donde da lo mismo quién firma.</li><li><strong>No es la comuna.</strong> En las comunas con más personas naturales la brecha es la misma: Estación Central 73 % contra 17 %, Independencia 64 % contra 25 %, La Cisterna 54 % contra 32 %, Recoleta 61 % contra 22 %. Donde el rechazo de personas naturales es bajo (Puente Alto 22 %, Melipilla 19 %) también lo es el de empresas.</li></ul>\n<p>Y la comparación decisiva: la <strong>EIRL</strong>, que es una persona natural con empresa individual, se rechaza 15,5 %, la tasa más baja de todos los tipos de titular. Misma persona, mismo tipo de negocio; la diferencia está en cómo llega la carpeta.</p>\n</section>\n<section id=\"que-falta-en-la-carpeta-de-una-persona-natural\">\n<h2>Qué falta en la carpeta de una persona natural</h2>\n<p>Entre los rechazos por «antecedentes insuficientes», la SEREMI nombra el antecedente faltante con menos frecuencia cuando el titular es persona natural: en el <strong>51 %</strong> de esos rechazos sólo escribe la frase genérica, contra el 33 % en empresas. La lectura más probable es que la carpeta llega tan incompleta que no hay un documento puntual que señalar: falta la estructura entera.</p>\n<p>Cuando sí lo nombra:</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Antecedente nombrado</th><th>Personas naturales</th><th>Empresas</th></tr></thead><tbody><tr><td>Medidas de controles ambientales</td><td>37 %</td><td>53 %</td></tr><tr><td>Memoria descriptiva de procesos</td><td>36 %</td><td>49 %</td></tr><tr><td>Plano general</td><td>13 %</td><td>24 %</td></tr><tr><td>Memoria técnica de construcción</td><td>12 %</td><td>23 %</td></tr></tbody></table></div>\n<p>Los porcentajes más bajos no significan que la persona natural entregue mejor esos documentos; significan que la SEREMI, frente a una carpeta sin memoria ni controles ni plano, no detalla. El rechazo de fondo («no cumple normativa») es apenas el 6 % de los rechazos a personas naturales: la autoridad casi nunca llegó a evaluar el recinto.</p>\n<p>Otro indicio: la persona natural se rechaza igual con una actividad (64 %), con dos (60 %) o con tres o más (63 %). En las empresas, declarar varias actividades baja el rechazo porque suele venir con carpeta técnica; aquí no cambia nada.</p>\n</section>\n<section id=\"que-pasa-despues-pocas-vuelven-y-casi-ninguna-aprueba\">\n<h2>Qué pasa después: pocas vuelven y casi ninguna aprueba</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Rechazos 2023-2024</th><th>Volvieron a presentar</th><th>Aprobaron al 2º intento</th></tr></thead><tbody><tr><td>Personas naturales (617)</td><td>25 %</td><td><strong>19 %</strong></td></tr><tr><td>Empresas (897)</td><td>54 %</td><td>63 %</td></tr></tbody></table></div>\n<p>Es el dato más duro del análisis. Tres de cada cuatro personas naturales rechazadas no vuelven a presentar con su RUT, y de las que vuelven aprueba menos de una de cada cinco: reingresan la misma carpeta, o casi. En toda la base hay 937 personas naturales con al menos un rechazo y ninguna calificación posterior. Para una empresa el segundo intento suele funcionar; para una persona natural, sin cambiar la forma de preparar la carpeta, no.</p>\n<p>Las personas naturales también son la mitad de los desistimientos (52 %, cuando son el 25 % de las solicitudes): retiran la solicitud a los pocos días, cuando ven lo que la SEREMI pide.</p>\n</section>\n<section id=\"el-recinto-tipico-chico-diurno-de-barrio\">\n<h2>El recinto típico: chico, diurno, de barrio</h2>\n<p>Las instalaciones calificadas de personas naturales tienen 2 trabajadores y 108 m² construidos de mediana (las empresas, 6 y 471 m²). Son talleres mecánicos, cocinas, pastelerías, locales, bodegas chicas, y el 41 % está en zona II del D.S. 38 (sectores residenciales mixtos; en empresas, 15 %), donde la memoria tiene que acreditar el ruido. La SEREMI tarda con ellas lo mismo que con todas: 48 días de mediana en 2026 (<a href=\"/plazo-seremi-cti/\">cuánto demora la SEREMI</a>). Es decir, el trámite es pequeño en tamaño pero no en exigencia documental: la memoria de procesos, los controles ambientales, el plano y la memoria de construcción se piden igual que a una industria.</p>\n</section>\n<section id=\"que-hacer-distinto\">\n<h2>Qué hacer distinto</h2>\n<p>La forma jurídica no es el punto, y no es asesoría legal cambiarla por esto: lo que la EIRL muestra es que una carpeta armada con criterio técnico aprueba, aunque la firme una persona. Para quien tramita a su nombre:</p>\n<ol class=\"process-steps\"><li><div class=\"step-content\"><h4>Tratar el trámite como lo que es: una memoria técnica, no un formulario</h4><p>La solicitud en ASDigital es el último paso; antes hay que tener escritos la memoria descriptiva de procesos y las medidas de controles ambientales para ese recinto en particular, aunque sea un taller de 60 m².</p></div></li><li><div class=\"step-content\"><h4>Plano del recinto real</h4><p>, con superficies, sectores y vías de evacuación, que coincida con la memoria. Si es un local arrendado, pedirle al dueño la recepción municipal o el permiso de edificación.</p></div></li><li><div class=\"step-content\"><h4>Memoria de construcción</h4><p>materialidad de muros, techumbre y pisos, y cómo se separa del vecino. En regularizaciones es lo que más falta.</p></div></li><li><div class=\"step-content\"><h4>Agua y alcantarillado</h4><p>boleta de agua potable del recinto o certificado de factibilidad. Es un rechazo frecuente y evitable.</p></div></li><li><div class=\"step-content\"><h4>Ruido si estás en zona II</h4><p>horario diurno, maquinaria declarada, medidas (cerramientos, ubicación de compresores). No hace falta un estudio de ruido para un taller chico, pero sí decir qué hace ruido y cómo se controla.</p></div></li><li><div class=\"step-content\"><h4>Extintores con potencial de extinción y personal capacitado</h4><p>, y el resto de las medidas de control de incendio según el tamaño.</p></div></li><li><div class=\"step-content\"><h4>Una sola versión de cada dato</h4><p>en todos los documentos: trabajadores, m², horario, maquinaria. La SEREMI compara el plano con la memoria y con la solicitud.</p></div></li><li><div class=\"step-content\"><h4>Si ya te rechazaron</h4><p>, no reingreses lo mismo: el 77 % de las personas naturales que reingresan recibe un segundo rechazo. Lee el considerando y arma la carpeta completa (<a href=\"/rechazo-cti-que-hacer/\">qué hacer tras un rechazo</a>).</p></div></li></ol>\n</section>\n<section id=\"para-que-sirve-hacerlo-bien-a-la-primera\">\n<h2>Para qué sirve hacerlo bien a la primera</h2>\n<p>La CTI (o el certificado de calificación inofensiva, para los trámites simples: <a href=\"/calificacion-inofensiva-seremi/\">qué es y cuándo basta</a>) es lo que la municipalidad pide para la patente definitiva. Un rechazo cuesta el arancel, dos meses de espera y, en la práctica, varios meses más hasta reingresar. Para una persona natural el costo relativo es mayor que para una empresa, porque suele ser su único trámite y su único local.</p>\n</section>\n<section id=\"que-hace-svea\">\n<h2>Qué hace SVEA</h2>\n<p>Preparamos la carpeta técnica de la CTI para personas naturales y pymes chicas igual que para empresas: memoria de procesos, controles ambientales, plano y memoria de construcción, más la carga en ASDigital. Los trámites pequeños tienen un alcance acotado y un precio acorde; lo que no se acorta es el contenido, porque la SEREMI pide lo mismo. No prometemos la calificación, la decide la autoridad; sí prometemos que la carpeta no llegue vacía, que es la causa del 64 %. <a href=\"/calificacion-tecnica-industrial/\">Cotiza tu CTI</a>.</p>\n</section>"
+  },
+  {
+   "tipo": "formulario"
+  },
+  {
+   "tipo": "html",
+   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Cifras calculadas sobre resoluciones públicas de la SEREMI de Salud RM publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026. Persona natural = titular con RUT menor a 50 millones; el tipo de sociedad se infiere de la razón social. Tasas sobre las 7.398 resoluciones con decisión de enero de 2023 a septiembre de 2026 (1.847 de personas naturales). Reingreso = siguiente resolución del mismo RUT; se mide sobre los rechazos de 2023-2024 por truncamiento. Las resoluciones de personas naturales contienen nombre, RUN y dirección: este artículo usa exclusivamente cifras agregadas y no describe ningún caso individual.</p>\n</section>"
+  }
+ ],
+ "relacionados": {
+  "titulo": "Servicios relacionados",
+  "intro": "",
+  "tarjetas": [
+   {
+    "titulo": "Calificación Técnica Industrial",
+    "texto": "Expediente técnico completo (memorias, planos, controles ambientales) y tramitación en ASDigital hasta la resolución de la SEREMI.",
+    "href": "/calificacion-tecnica-industrial/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Estudio de Carga de Combustible",
+    "texto": "Cálculo de la carga de fuego según NCh 1916 y categoría de resistencia al fuego según la OGUC, con informe firmado.",
+    "href": "/estudio-de-carga-de-combustible/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Planes de Emergencia y Evacuación",
+    "texto": "Plan de emergencia para empresas conforme al DS 44 y al DS 594: riesgos, protocolos, planos de evacuación y simulacros.",
+    "href": "/planes-de-emergencia-y-evacuacion/",
+    "enlace": "Conocer servicio →"
+   }
+  ]
+ },
+ "asunto": {
+  "prefijo": "[BLOG] Cotización Calificación Técnica Industrial - ",
+  "campo": "Empresa",
+  "id": "dynamic-subject-cti-persona-natural"
+ },
+ "datosCti": {
+  "tipo": "articulo",
+  "ola": 1,
+  "corte": "noviembre 2026",
+  "generado": "2026-11-07"
+ }
+}

@@ -1,0 +1,310 @@
+{
+ "slug": "cti-bodegas",
+ "ruta": "/cti/bodegas/",
+ "migasOriginal": [
+  {
+   "texto": "Inicio",
+   "href": "/"
+  },
+  {
+   "texto": "Blog",
+   "href": "/blog/"
+  }
+ ],
+ "migaFinal": "Patente y permiso SEREMI para bodegas",
+ "categoria": "Datos CTI",
+ "h1": "Permiso SEREMI y patente para bodegas: requisitos de la calificación industrial en 2.022 resoluciones",
+ "bajada": "Bodegas y centros de distribución suman 2.022 resoluciones de calificación industrial en la Región Metropolitana entre 2023 y septiembre 2026: el 27,3 % de todo lo que resuelve la SEREMI. Esta página reúne lo que esas resoluciones dicen: cuánto crece el rubro, cuánto se rechaza y por qué, dónde están los recintos, cuánto demora la SEREMI y qué tamaño tiene la instalación que aprueba.",
+ "fecha": "Noviembre 2026",
+ "actualizado": {
+  "iso": "2026-11-07",
+  "texto": "7 de noviembre de 2026"
+ },
+ "lectura": "5 min de lectura",
+ "autor": "Equipo técnico SVEA Consultores",
+ "cifras": [
+  {
+   "n": "2.022",
+   "l": "resoluciones CTI 2023-2026"
+  },
+  {
+   "n": "40 %",
+   "l": "de rechazo (RM: 37 %)"
+  },
+  {
+   "n": "49 días",
+   "l": "mediana SEREMI"
+  },
+  {
+   "n": "7 trab · 636 m²",
+   "l": "instalación típica calificada"
+  }
+ ],
+ "indiceTitulo": "En esta página",
+ "indice": [
+  {
+   "href": "#cuantas-calificaciones-industriales-de-bodegas-resuelve-la-s",
+   "texto": "Cuántas calificaciones industriales de bodegas resuelve la SEREMI RM"
+  },
+  {
+   "href": "#cuanto-se-rechaza-la-calificacion-industrial-de-bodegas",
+   "texto": "Cuánto se rechaza la calificación industrial de bodegas"
+  },
+  {
+   "href": "#que-actividades-se-declaran-en-bodegas",
+   "texto": "Qué actividades se declaran en bodegas"
+  },
+  {
+   "href": "#que-le-falto-a-las-carpetas-rechazadas-de-bodegas",
+   "texto": "Qué le faltó a las carpetas rechazadas de bodegas"
+  },
+  {
+   "href": "#donde-estan-los-recintos-de-bodegas",
+   "texto": "Dónde están los recintos de bodegas"
+  },
+  {
+   "href": "#cuanto-demora-el-permiso-seremi-calificacion-industrial-de-b",
+   "texto": "Cuánto demora el permiso SEREMI (calificación industrial) de bodegas"
+  },
+  {
+   "href": "#como-es-una-bodega-que-la-seremi-califica",
+   "texto": "Cómo es una bodega que la SEREMI califica"
+  },
+  {
+   "href": "#que-pasa-despues-de-un-rechazo-en-bodegas",
+   "texto": "Qué pasa después de un rechazo en bodegas"
+  },
+  {
+   "href": "#que-hace-svea-con-estos-datos",
+   "texto": "Qué hace SVEA con estos datos"
+  },
+  {
+   "href": "#fuentes",
+   "texto": "Fuente y método"
+  },
+  {
+   "href": "#faq",
+   "texto": "Preguntas frecuentes"
+  }
+ ],
+ "formulario": {
+  "titulo": "Cotiza la Calificación Técnica Industrial",
+  "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+  "ocultos": [
+   {
+    "name": "access_key",
+    "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+   },
+   {
+    "name": "subject",
+    "value": "Nueva cotización Calificación Técnica Industrial (Datos CTI) - SVEA Consultores",
+    "id": "dynamic-subject-cti-bodegas"
+   },
+   {
+    "name": "from_name",
+    "value": "SVEA Consultores Blog - Datos CTI"
+   },
+   {
+    "name": "redirect",
+    "value": "https://sveaconsultores.cl/gracias/"
+   },
+   {
+    "name": "Servicio",
+    "value": "Calificación Técnica Industrial"
+   },
+   {
+    "name": "Origen",
+    "value": "Datos CTI - cti-bodegas"
+   }
+  ],
+  "campos": [
+   {
+    "label": "Nombre completo *",
+    "id": "art-nombre",
+    "name": "Nombre",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Ej: Juan Pérez",
+    "ancho": false
+   },
+   {
+    "label": "Empresa *",
+    "id": "art-empresa",
+    "name": "Empresa",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Nombre de tu empresa",
+    "ancho": false
+   },
+   {
+    "label": "Teléfono *",
+    "id": "art-telefono",
+    "name": "Teléfono",
+    "tipo": "tel",
+    "requerido": true,
+    "placeholder": "+569 1234 5678",
+    "ancho": false
+   },
+   {
+    "label": "Email *",
+    "id": "art-email",
+    "name": "Email",
+    "tipo": "email",
+    "requerido": true,
+    "placeholder": "correo@empresa.cl",
+    "ancho": false
+   },
+   {
+    "label": "Tipo de servicio",
+    "id": "art-tipo",
+    "name": "Tipo de Servicio",
+    "tipo": "select",
+    "requerido": false,
+    "placeholder": null,
+    "ancho": true,
+    "opciones": [
+     {
+      "value": "",
+      "texto": "Selecciona una opción",
+      "seleccionada": true,
+      "desactivada": true
+     },
+     {
+      "value": "Calificación Técnica Industrial",
+      "texto": "Calificación técnica industrial (CTI)",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Informe Sanitario",
+      "texto": "Informe sanitario",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Transporte de Residuos",
+      "texto": "Transporte de residuos",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Otro trámite SEREMI",
+      "texto": "Otro trámite ante la SEREMI",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "No estoy seguro",
+      "texto": "No estoy seguro",
+      "seleccionada": false,
+      "desactivada": false
+     }
+    ]
+   },
+   {
+    "label": "Mensaje (opcional)",
+    "id": "art-mensaje",
+    "name": "Mensaje",
+    "tipo": "textarea",
+    "requerido": false,
+    "placeholder": "¿Qué actividad tienes, en qué comuna y en qué etapa está el trámite?",
+    "ancho": true,
+    "filas": 3
+   }
+  ],
+  "boton": "Solicitar cotización gratuita →",
+  "confianza": [
+   "Datos protegidos",
+   "Cotización sin costo",
+   "Sin compromiso"
+  ]
+ },
+ "faq": {
+  "id": "faq",
+  "titulo": "Preguntas frecuentes",
+  "items": [
+   {
+    "p": "¿Necesito la calificación industrial (CTI) de la SEREMI para la patente de una bodega?",
+    "r": "Si la actividad es industrial, de almacenamiento o de taller según la OGUC (art. 4.14.2) y la municipalidad o la DOM la piden para la patente o el permiso, sí. En el periodo hubo 34 resoluciones «no ha lugar» en bodegas: la SEREMI consideró que la actividad no requería calificación. Conviene confirmarlo antes de pagar el arancel.",
+    "rTexto": "Si la actividad es industrial, de almacenamiento o de taller según la OGUC (art. 4.14.2) y la municipalidad o la DOM la piden para la patente o el permiso, sí. En el periodo hubo 34 resoluciones «no ha lugar» en bodegas: la SEREMI consideró que la actividad no requería calificación. Conviene confirmarlo antes de pagar el arancel."
+   },
+   {
+    "p": "¿Cuánto se rechaza la calificación industrial de bodegas?",
+    "r": "40 % de las resoluciones con decisión (2023-2026); 29 % en empresas y 81 % en personas naturales.",
+    "rTexto": "40 % de las resoluciones con decisión (2023-2026); 29 % en empresas y 81 % en personas naturales."
+   },
+   {
+    "p": "¿Qué documentos faltan más en los rechazos de bodegas?",
+    "r": "Medidas de control ambiental (50 % de los rechazos por insuficiencia), memoria descriptiva de procesos (50 %), plano (22 %) y memoria técnica de construcción (21 %).",
+    "rTexto": "Medidas de control ambiental (50 % de los rechazos por insuficiencia), memoria descriptiva de procesos (50 %), plano (22 %) y memoria técnica de construcción (21 %)."
+   },
+   {
+    "p": "¿Cuánto demora el permiso SEREMI para una bodega?",
+    "r": "Mediana de 49 días corridos; en 2026, 52. A eso hay que sumar el tiempo de armar la carpeta antes de ingresar.",
+    "rTexto": "Mediana de 49 días corridos; en 2026, 52. A eso hay que sumar el tiempo de armar la carpeta antes de ingresar."
+   },
+   {
+    "p": "¿Es más fácil regularizar o presentar una bodega en proyecto?",
+    "r": "En empresas del rubro, la regularización se rechaza 38 % y el proyecto nuevo 15 %. A la regularización le faltan más los planos y la memoria de construcción de lo ya edificado.",
+    "rTexto": "En empresas del rubro, la regularización se rechaza 38 % y el proyecto nuevo 15 %. A la regularización le faltan más los planos y la memoria de construcción de lo ya edificado."
+   }
+  ]
+ },
+ "autorCaja": {
+  "inicial": "S",
+  "nombre": "Equipo técnico SVEA Consultores",
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+ },
+ "compartir": {
+  "titulo": "Compartir",
+  "enlaces": []
+ },
+ "bloques": [
+  {
+   "tipo": "html",
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de la SEREMI de Salud de la Región Metropolitana publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026.</em></p>\n<p class=\"art-entrada\">Para la patente municipal de una bodega la municipalidad pide el permiso de la SEREMI de Salud: la calificación industrial (Calificación Técnica Industrial, CTI), que se tramita en <a href=\"/seremi-en-linea-calificacion-industrial/\">SEREMI en Línea (ASDigital)</a>. Las cifras del resto de los rubros, comunas y regiones están en <a href=\"/cti/\">calificación industrial por región, comuna y rubro</a>.</p>\n<section id=\"cuantas-calificaciones-industriales-de-bodegas-resuelve-la-s\">\n<h2>Cuántas calificaciones industriales de bodegas resuelve la SEREMI RM</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Año</th><th>Resoluciones con decisión</th><th>Rechazadas</th><th>Participación en RM</th></tr></thead><tbody><tr><td>2023</td><td>481</td><td>37 %</td><td>26,3 %</td></tr><tr><td>2024</td><td>537</td><td>47 %</td><td>28,9 %</td></tr><tr><td>2025</td><td>574</td><td>37 %</td><td>27,6 %</td></tr><tr><td>2026 (ene-sep)</td><td>430</td><td>37 %</td><td>26,3 %</td></tr></tbody></table></div>\n<p>De 2023 a 2025 las resoluciones pasaron de 481 a 574 (+19 %); el total de la Región Metropolitana varió +14 %. El 63 % son regularizaciones (la instalación ya opera) y el 20 % las presenta una persona natural (RM: 25 %).</p>\n</section>\n<section id=\"cuanto-se-rechaza-la-calificacion-industrial-de-bodegas\">\n<h2>Cuánto se rechaza la calificación industrial de bodegas</h2>\n<p>801 de 2.022 resoluciones fueron rechazadas: <strong>40 %</strong>. La cifra de la Región Metropolitana es 37 %, así que aquí el riesgo es el mismo que en el resto de la región. La diferencia por tipo de titular es grande: las empresas se rechazan 29 % y las personas naturales 81 %. Quien tramita a su nombre y sin apoyo técnico concentra el problema.</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Segmento</th><th>Resoluciones</th><th>Rechazo</th></tr></thead><tbody><tr><td>Empresas</td><td>1.616</td><td>29 %</td></tr><tr><td>Personas naturales</td><td>406</td><td>81 %</td></tr><tr><td>Empresas, regularización</td><td>—</td><td>38 %</td></tr><tr><td>Empresas, proyecto nuevo</td><td>—</td><td>15 %</td></tr><tr><td>2023-2024</td><td>1.018</td><td>42 %</td></tr><tr><td>2025-2026</td><td>1.004</td><td>37 %</td></tr></tbody></table></div>\n<p>Para comparar con el resto del país, <a href=\"/cti/tasa-de-rechazo/\">ver el ranking completo de rechazo por región, comuna y rubro</a>.</p>\n</section>\n<section id=\"que-actividades-se-declaran-en-bodegas\">\n<h2>Qué actividades se declaran en bodegas</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Actividad (como la escribe la SEREMI)</th><th>Resoluciones</th><th>Rechazo</th></tr></thead><tbody><tr><td>Almacenar carga general no peligrosa, no alimentaria, no combustible</td><td>951</td><td>43 %</td></tr><tr><td>Almacenar artículos y/o equipos eléctricos y/o electrónicos</td><td>317</td><td>36 %</td></tr><tr><td>Almacenar artículos plásticos</td><td>268</td><td>32 %</td></tr><tr><td>Almacenar otros productos textiles</td><td>224</td><td>35 %</td></tr><tr><td>Almacenar productos metalicos, maquinarias y/o equipos (incluye chatarra)</td><td>202</td><td>37 %</td></tr><tr><td>Almacenar prendas de vestir</td><td>195</td><td>41 %</td></tr><tr><td>Almacenar artículos de papel y/o cartón</td><td>191</td><td>36 %</td></tr><tr><td>Almacenar carga general combustible, no peligrosa, no alimentaria</td><td>172</td><td>37 %</td></tr></tbody></table></div>\n<p>La actividad con más rechazo del rubro (con muestra suficiente) es «almacenar carga general no peligrosa, no alimentaria, no combustible», con 43 %.</p>\n</section>\n<section id=\"que-le-falto-a-las-carpetas-rechazadas-de-bodegas\">\n<h2>Qué le faltó a las carpetas rechazadas de bodegas</h2>\n<p>El 92 % de los rechazos es por «antecedentes insuficientes» y el 7 % porque la instalación «no cumple con normativa vigente». Lo que la SEREMI nombra como faltante:</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Antecedente que la SEREMI nombra como faltante</th><th>Bodegas</th><th>Toda la RM</th></tr></thead><tbody><tr><td>Medidas de control ambiental</td><td>50 %</td><td>46 %</td></tr><tr><td>Memoria descriptiva de procesos</td><td>50 %</td><td>43 %</td></tr><tr><td>Plano general de la instalación</td><td>22 %</td><td>19 %</td></tr><tr><td>Memoria técnica de construcción</td><td>21 %</td><td>18 %</td></tr><tr><td>Condiciones de almacenamiento</td><td>3 %</td><td>4 %</td></tr></tbody></table></div>\n<p>En el 36 % de los rechazos por insuficiencia la resolución no detalla el antecedente. Para una bodega, la memoria de procesos tiene que describir la operación real (qué entra, qué se hace, qué sale, con qué maquinaria) y las medidas de control ambiental deben responder a ruido, emisiones, residuos y riesgo de incendio de esa operación en particular.</p>\n</section>\n<section id=\"donde-estan-los-recintos-de-bodegas\">\n<h2>Dónde están los recintos de bodegas</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Comuna del recinto</th><th>Resoluciones</th><th>Rechazo</th></tr></thead><tbody><tr><td>Renca</td><td>399</td><td>43 %</td></tr><tr><td>Quilicura</td><td>363</td><td>46 %</td></tr><tr><td>Lampa</td><td>186</td><td>36 %</td></tr><tr><td>Pudahuel</td><td>139</td><td>41 %</td></tr><tr><td>San Bernardo</td><td>130</td><td>32 %</td></tr><tr><td>Quinta Normal</td><td>78</td><td>37 %</td></tr><tr><td>San Joaquín</td><td>71</td><td>30 %</td></tr><tr><td>Macul</td><td>52</td><td>29 %</td></tr></tbody></table></div>\n<p>El detalle de cada comuna está en su propia página (por ejemplo, <a href=\"/cti/renca/\">CTI en Renca</a>).</p>\n</section>\n<section id=\"cuanto-demora-el-permiso-seremi-calificacion-industrial-de-b\">\n<h2>Cuánto demora el permiso SEREMI (calificación industrial) de bodegas</h2>\n<p>Mediana de <strong>49 días corridos</strong> entre la solicitud y la resolución (mitad central entre 41 y 61; 90 % antes de 70). En 2026, 52 días (entre 46 y 61); el 74 % se resolvió en 60 días o menos. El promedio regional 2026 es 50 días; el plazo casi no depende del rubro ni del resultado, depende de la cola de la SEREMI.</p>\n</section>\n<section id=\"como-es-una-bodega-que-la-seremi-califica\">\n<h2>Cómo es una bodega que la SEREMI califica</h2>\n<p>Las calificadas son, en su mayoría, pymes de tamaño medio: 7 trabajadores y 636 m² construidos en la mediana (el 75 % tiene hasta 16 trabajadores y 2.500 m²). El 40 % supera los 1.000 m² y el 14 % no llega a 200 m². El 5 % declara turno nocturno; el 9 % está en zona II del D.S. 38 (residencial mixta, donde hay que acreditar el ruido). Declaran plan de emergencia el 13 % y red húmeda el 43 %. 63 resoluciones (3,1 %) salieron MOLESTAS, es decir, calificadas con restricción de zona.</p>\n</section>\n<section id=\"que-pasa-despues-de-un-rechazo-en-bodegas\">\n<h2>Qué pasa después de un rechazo en bodegas</h2>\n<p>De los 431 rechazos de 2023-2024 del rubro, el 42 % volvió a presentar (mediana 175 días después) y de esos aprobó el 48 %. Regional: reingresa 42 %, aprueba 51 %; dentro de 30 días, 59 %.</p>\n</section>\n<section id=\"que-hace-svea-con-estos-datos\">\n<h2>Qué hace SVEA con estos datos</h2>\n<p>SVEA Consultores prepara el expediente completo de la CTI para una bodega: memoria descriptiva de procesos, medidas de control ambiental, memoria técnica de construcción y planos, y la carga en ASDigital. Los antecedentes que más faltan en los rechazos de este nodo son exactamente los que arma el equipo técnico. No prometemos un resultado: la calificación la decide la SEREMI; lo que sí hacemos es presentar una carpeta que responde a lo que la autoridad pide y, si hay un rechazo previo, reingresar con lo que la resolución dijo que faltaba.</p>\n<p><a href=\"/calificacion-tecnica-industrial/\">Cotizar la calificación industrial</a> · <a href=\"/seremi-en-linea-calificacion-industrial/\">Cómo se tramita en SEREMI en Línea</a> · <a href=\"/rechazo-cti-que-hacer/\">Me rechazaron: qué hacer</a> · <a href=\"/calificacion-tecnica-industrial-chile/\">Guía completa de la CTI</a></p>\n</section>"
+  },
+  {
+   "tipo": "formulario"
+  },
+  {
+   "tipo": "html",
+   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Cifras calculadas sobre resoluciones públicas de la SEREMI de Salud de la Región Metropolitana publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026. Universo: 7.707 resoluciones de Calificación Técnica Industrial publicadas entre enero de 2023 y septiembre 2026; para bodegas se consideran las 2.022 resoluciones con decisión (calificada, rechazada o «no ha lugar»); los desistimientos y los documentos vacíos quedan fuera porque no traen comuna ni actividad. «Rechazo» es rechazadas sobre resoluciones con decisión. El antecedente faltante es el que la SEREMI nombra en el considerando; en una parte de los rechazos sólo escribe la frase genérica «no ha aportado los antecedentes suficientes» (en este nodo, 36 %). Tamaño y horario salen del texto de las resoluciones calificadas. Las cifras se actualizan todos los meses con las resoluciones nuevas; esta página muestra la fecha de corte arriba. No se publican nombres de titulares, RUT ni direcciones.</p>\n</section>"
+  }
+ ],
+ "relacionados": {
+  "titulo": "Servicios relacionados",
+  "intro": "",
+  "tarjetas": [
+   {
+    "titulo": "Calificación Técnica Industrial",
+    "texto": "Expediente técnico completo (memorias, planos, controles ambientales) y tramitación en ASDigital hasta la resolución de la SEREMI.",
+    "href": "/calificacion-tecnica-industrial/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Estudio de Carga de Combustible",
+    "texto": "Cálculo de la carga de fuego según NCh 1916 y categoría de resistencia al fuego según la OGUC, con informe firmado.",
+    "href": "/estudio-de-carga-de-combustible/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Planes de Emergencia y Evacuación",
+    "texto": "Plan de emergencia para empresas conforme al DS 44 y al DS 594: riesgos, protocolos, planos de evacuación y simulacros.",
+    "href": "/planes-de-emergencia-y-evacuacion/",
+    "enlace": "Conocer servicio →"
+   }
+  ]
+ },
+ "asunto": {
+  "prefijo": "[BLOG] Cotización Calificación Técnica Industrial - ",
+  "campo": "Empresa",
+  "id": "dynamic-subject-cti-bodegas"
+ },
+ "datosCti": {
+  "tipo": "rubro",
+  "ola": 1,
+  "corte": "noviembre 2026",
+  "generado": "2026-11-07"
+ }
+}

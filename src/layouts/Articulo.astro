@@ -48,7 +48,7 @@ import { TarjetaFoto } from '../components/ui/tarjeta-foto';
 import Foto from '../components/Foto.astro';
 import { BookOpenIcon, BriefcaseIcon } from 'lucide-react';
 import paginas from '../data/paginas.json';
-import { GUIAS, guia } from '../contenido/articulos/guias';
+import { GUIAS, guia, rutaGuia } from '../contenido/articulos/guias';
 import { fotosEnHtml, ogFoto } from '../lib/fotos';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -65,14 +65,15 @@ const COPIA = !import.meta.env.SVEA_PRODUCCION;
 const archivos = import.meta.glob('../contenido/articulos/*.json', { eager: true, import: 'default' });
 const datos = archivos[`../contenido/articulos/${slug}.json`] as any;
 if (!datos) throw new Error(`Falta src/contenido/articulos/${slug}.json`);
-const pagina = paginas.find((p) => p.ruta === `/${slug}/`)!;
 const esta = guia(slug);
+// 7-nov: las guías de Datos CTI tienen ruta propia (/cti/…); el resto sigue en /<slug>/
+const pagina = paginas.find((p) => p.ruta === rutaGuia(esta))!;
 const servicio = esta.servicio;
 // «Otras guías»: seis, primero las del mismo tema (25-sep: eran las quince
 // en dos columnas); el enlace «Ver todas las guías» lleva al resto
 const otras = [
-  ...GUIAS.filter((g) => g.slug !== slug && g.tema === esta.tema),
-  ...GUIAS.filter((g) => g.slug !== slug && g.tema !== esta.tema),
+  ...GUIAS.filter((g) => g.slug !== slug && !g.oculta && g.tema === esta.tema),
+  ...GUIAS.filter((g) => g.slug !== slug && !g.oculta && g.tema !== esta.tema),
 ].slice(0, 6);
 // «Servicios relacionados»: la tarjeta chica que repite el servicio destacado no se muestra
 const rutaDe = (h: string) => h.replace(/^https?:\/\/[^/]+/, '').replace(/#.*$/, '');
@@ -189,7 +190,7 @@ const ICONOS: Record<string, string> = {
 // «Compartir», igual en todas las guías (25-sep): LinkedIn, WhatsApp, correo
 // y copiar enlace, armados con la URL pública y el título de la guía. Antes
 // cada guía traía su juego del WordPress (unas sin correo, una con X).
-const URL_GUIA = `https://sveaconsultores.cl/${slug}/`;
+const URL_GUIA = `https://sveaconsultores.cl${rutaGuia(esta)}`;
 const tituloUrl = encodeURIComponent(esta.titulo);
 const urlUrl = encodeURIComponent(URL_GUIA);
 const COMPARTIR = [
@@ -394,7 +395,7 @@ const fuentesCSS = `
           {otras.map((g, i) => (
             <Reveal as="li" className="h-full" delay={0.05 * i} client:idle>
               <TarjetaFoto
-                href={`${BASE}/${g.slug}/`}
+                href={`${BASE}${rutaGuia(g)}`}
                 base={BASE}
                 foto={g.imagen.nombre}
                 alt=""

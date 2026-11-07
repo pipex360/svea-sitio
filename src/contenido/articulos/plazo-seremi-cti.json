@@ -1,0 +1,302 @@
+{
+ "slug": "plazo-seremi-cti",
+ "ruta": "/plazo-seremi-cti/",
+ "migasOriginal": [
+  {
+   "texto": "Inicio",
+   "href": "/"
+  },
+  {
+   "texto": "Blog",
+   "href": "/blog/"
+  }
+ ],
+ "migaFinal": "Cuánto demora la SEREMI",
+ "categoria": "Datos CTI",
+ "h1": "¿Cuánto se demora la SEREMI en resolver la calificación industrial (CTI) en 2026?",
+ "bajada": "La respuesta corta: unas siete semanas. La larga: 50 días corridos de mediana en 2026, con la mitad de los casos entre 42 y 56, igual para aprobar que para rechazar, y casi lo mismo en cualquier comuna o rubro. Lo que sí cambia el plazo total es cuánto tardas tú en armar la carpeta y si te la rechazan.",
+ "fecha": "Noviembre 2026",
+ "actualizado": {
+  "iso": "2026-11-07",
+  "texto": "7 de noviembre de 2026"
+ },
+ "lectura": "7 min de lectura",
+ "autor": "Equipo técnico SVEA Consultores",
+ "cifras": [
+  {
+   "n": "50 días",
+   "l": "mediana 2026, solicitud → resolución"
+  },
+  {
+   "n": "42-56",
+   "l": "días en la mitad central de los casos"
+  },
+  {
+   "n": "80 %",
+   "l": "resuelto en 60 días o menos"
+  },
+  {
+   "n": "47 = 47",
+   "l": "días para aprobar y para rechazar"
+  }
+ ],
+ "indiceTitulo": "En esta página",
+ "indice": [
+  {
+   "href": "#el-plazo-en-2026-50-dias-corridos",
+   "texto": "El plazo en 2026: 50 días corridos"
+  },
+  {
+   "href": "#rechazar-tarda-lo-mismo-que-aprobar",
+   "texto": "Rechazar tarda lo mismo que aprobar"
+  },
+  {
+   "href": "#por-tipo-de-titular-modo-y-rubro-casi-igual",
+   "texto": "Por tipo de titular, modo y rubro: casi igual"
+  },
+  {
+   "href": "#el-mes-en-que-ingresas-si-importa",
+   "texto": "El mes en que ingresas sí importa"
+  },
+  {
+   "href": "#el-plazo-total-no-es-el-de-la-seremi",
+   "texto": "El plazo total no es el de la SEREMI"
+  },
+  {
+   "href": "#que-dice-la-ley-y-que-dice-la-practica",
+   "texto": "Qué dice la ley y qué dice la práctica"
+  },
+  {
+   "href": "#que-hace-svea",
+   "texto": "Qué hace SVEA"
+  },
+  {
+   "href": "#fuentes",
+   "texto": "Fuente y método"
+  },
+  {
+   "href": "#faq",
+   "texto": "Preguntas frecuentes"
+  }
+ ],
+ "formulario": {
+  "titulo": "Cotiza la CTI con una carpeta que responda a lo que la SEREMI pide",
+  "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+  "ocultos": [
+   {
+    "name": "access_key",
+    "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+   },
+   {
+    "name": "subject",
+    "value": "Nueva cotización Calificación Técnica Industrial (Datos CTI) - SVEA Consultores",
+    "id": "dynamic-subject-plazo-seremi-cti"
+   },
+   {
+    "name": "from_name",
+    "value": "SVEA Consultores Blog - Datos CTI"
+   },
+   {
+    "name": "redirect",
+    "value": "https://sveaconsultores.cl/gracias/"
+   },
+   {
+    "name": "Servicio",
+    "value": "Calificación Técnica Industrial"
+   },
+   {
+    "name": "Origen",
+    "value": "Datos CTI - plazo-seremi-cti"
+   }
+  ],
+  "campos": [
+   {
+    "label": "Nombre completo *",
+    "id": "art-nombre",
+    "name": "Nombre",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Ej: Juan Pérez",
+    "ancho": false
+   },
+   {
+    "label": "Empresa *",
+    "id": "art-empresa",
+    "name": "Empresa",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Nombre de tu empresa",
+    "ancho": false
+   },
+   {
+    "label": "Teléfono *",
+    "id": "art-telefono",
+    "name": "Teléfono",
+    "tipo": "tel",
+    "requerido": true,
+    "placeholder": "+569 1234 5678",
+    "ancho": false
+   },
+   {
+    "label": "Email *",
+    "id": "art-email",
+    "name": "Email",
+    "tipo": "email",
+    "requerido": true,
+    "placeholder": "correo@empresa.cl",
+    "ancho": false
+   },
+   {
+    "label": "Tipo de servicio",
+    "id": "art-tipo",
+    "name": "Tipo de Servicio",
+    "tipo": "select",
+    "requerido": false,
+    "placeholder": null,
+    "ancho": true,
+    "opciones": [
+     {
+      "value": "",
+      "texto": "Selecciona una opción",
+      "seleccionada": true,
+      "desactivada": true
+     },
+     {
+      "value": "Calificación Técnica Industrial",
+      "texto": "Calificación técnica industrial (CTI)",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Informe Sanitario",
+      "texto": "Informe sanitario",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Transporte de Residuos",
+      "texto": "Transporte de residuos",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Otro trámite SEREMI",
+      "texto": "Otro trámite ante la SEREMI",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "No estoy seguro",
+      "texto": "No estoy seguro",
+      "seleccionada": false,
+      "desactivada": false
+     }
+    ]
+   },
+   {
+    "label": "Mensaje (opcional)",
+    "id": "art-mensaje",
+    "name": "Mensaje",
+    "tipo": "textarea",
+    "requerido": false,
+    "placeholder": "¿Qué actividad tienes, en qué comuna y en qué etapa está el trámite?",
+    "ancho": true,
+    "filas": 3
+   }
+  ],
+  "boton": "Solicitar cotización gratuita →",
+  "confianza": [
+   "Datos protegidos",
+   "Cotización sin costo",
+   "Sin compromiso"
+  ]
+ },
+ "faq": {
+  "id": "faq",
+  "titulo": "Preguntas frecuentes",
+  "items": [
+   {
+    "p": "¿Cuánto demora la SEREMI RM en resolver una calificación industrial?",
+    "r": "En 2026, 50 días corridos de mediana desde la solicitud en ASDigital, con la mitad de los casos entre 42 y 56 y el 80 % en 60 días o menos. En todo el periodo 2023-2026 la mediana es 47 días.",
+    "rTexto": "En 2026, 50 días corridos de mediana desde la solicitud en ASDigital, con la mitad de los casos entre 42 y 56 y el 80 % en 60 días o menos. En todo el periodo 2023-2026 la mediana es 47 días."
+   },
+   {
+    "p": "¿La SEREMI responde antes si va a rechazar?",
+    "r": "No. INOFENSIVA y RECHAZADA tienen la misma mediana: 47 días. La única diferencia relevante es que las calificaciones MOLESTAS tardan unos cinco días más.",
+    "rTexto": "No. INOFENSIVA y RECHAZADA tienen la misma mediana: 47 días. La única diferencia relevante es que las calificaciones MOLESTAS tardan unos cinco días más."
+   },
+   {
+    "p": "¿En qué mes conviene ingresar la calificación industrial?",
+    "r": "Entre enero y mayo. Las solicitudes de octubre y noviembre de 2025 tardaron 64-65 días de mediana; las de enero y febrero de 2026, 42-43. La demanda sube de mayo a agosto, con pico en julio, y la SEREMI acumula cola hacia fin de año.",
+    "rTexto": "Entre enero y mayo. Las solicitudes de octubre y noviembre de 2025 tardaron 64-65 días de mediana; las de enero y febrero de 2026, 42-43. La demanda sube de mayo a agosto, con pico en julio, y la SEREMI acumula cola hacia fin de año."
+   },
+   {
+    "p": "¿La demora depende de la comuna o del rubro?",
+    "r": "Casi nada. Las comunas con más volumen están todas entre 47 y 50 días de mediana, y los rubros entre 47 y 53. Los locales comerciales salen en 15 días porque son trámites simples.",
+    "rTexto": "Casi nada. Las comunas con más volumen están todas entre 47 y 50 días de mediana, y los rubros entre 47 y 53. Los locales comerciales salen en 15 días porque son trámites simples."
+   },
+   {
+    "p": "¿Qué hago si llevo más de 90 días sin resolución?",
+    "r": "Es raro: en 2026 sólo el 0,2 % de las resoluciones tardó más de 90 días. Revisa el estado en ASDigital, deja constancia por la OIRS de la SEREMI y, si corresponde, evalúa los mecanismos de la Ley 19.880 que explicamos en la guía de rechazo y observaciones.",
+    "rTexto": "Es raro: en 2026 sólo el 0,2 % de las resoluciones tardó más de 90 días. Revisa el estado en ASDigital, deja constancia por la OIRS de la SEREMI y, si corresponde, evalúa los mecanismos de la Ley 19.880 que explicamos en la guía de rechazo y observaciones."
+   }
+  ]
+ },
+ "autorCaja": {
+  "inicial": "S",
+  "nombre": "Equipo técnico SVEA Consultores",
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+ },
+ "compartir": {
+  "titulo": "Compartir",
+  "enlaces": []
+ },
+ "bloques": [
+  {
+   "tipo": "html",
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de la SEREMI de Salud RM publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026.</em></p>\n<p class=\"art-entrada\">La calificación industrial (CTI) es el permiso de la SEREMI de Salud que exige la municipalidad para la patente; se tramita en <a href=\"/seremi-en-linea-calificacion-industrial/\">SEREMI en Línea (ASDigital)</a> y la mayoría lo intenta sola. Cada resolución de Calificación Técnica Industrial trae dos fechas: la de la solicitud en ASDigital y la de la resolución. Restarlas en las 7.398 resoluciones con decisión que la SEREMI RM publicó entre enero de 2023 y septiembre de 2026 da una medida real del plazo, sin promesas ni plazos legales teóricos. Esto es lo que sale.</p>\n<section id=\"el-plazo-en-2026-50-dias-corridos\">\n<h2>El plazo en 2026: 50 días corridos</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Año de la resolución</th><th>Resoluciones</th><th>Mediana (días corridos)</th><th>25 % más rápido</th><th>75 %</th><th>90 %</th></tr></thead><tbody><tr><td>2023</td><td>1.828</td><td>44</td><td>30</td><td>61</td><td>76</td></tr><tr><td>2024</td><td>1.859</td><td>47</td><td>37</td><td>55</td><td>64</td></tr><tr><td>2025</td><td>2.077</td><td>48</td><td>31</td><td>62</td><td>70</td></tr><tr><td>2026 (enero-septiembre)</td><td>1.634</td><td><strong>50</strong></td><td>42</td><td>56</td><td>68</td></tr><tr><td>Todo el periodo</td><td>7.398</td><td>47</td><td>36</td><td>58</td><td>70</td></tr></tbody></table></div>\n<p>La mediana sube de a poco (44 → 50 días), pero lo que más cambió es la dispersión: en 2023 un cuarto de las resoluciones salía antes de 30 días y otro cuarto después de 61; en 2026 la mitad central cae entre 42 y 56. La SEREMI se volvió más predecible: casi todo se resuelve entre la sexta y la octava semana.</p>\n<p>Distribución de lo resuelto en 2026:</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Días corridos desde la solicitud</th><th>Resoluciones de 2026</th></tr></thead><tbody><tr><td>30 o menos</td><td>10 %</td></tr><tr><td>31 a 45</td><td>24 %</td></tr><tr><td>46 a 60</td><td>46 %</td></tr><tr><td>61 a 70</td><td>13 %</td></tr><tr><td>71 a 90</td><td>6 %</td></tr><tr><td>Más de 90</td><td>0,2 %</td></tr></tbody></table></div>\n<p>El 80 % se resolvió en 60 días o menos y el 94 % en 70 o menos. Con cuatro meses de espera (más de 120 días) no hay casos en 2026: si tu solicitud lleva más de 90 días sin resolución, algo pasó con el expediente y conviene revisarlo en ASDigital o preguntar por la OIRS.</p>\n</section>\n<section id=\"rechazar-tarda-lo-mismo-que-aprobar\">\n<h2>Rechazar tarda lo mismo que aprobar</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Resultado</th><th>Mediana</th><th>Mitad central</th></tr></thead><tbody><tr><td>INOFENSIVA</td><td>47</td><td>36-58</td></tr><tr><td>RECHAZADA</td><td>47</td><td>35-58</td></tr><tr><td>NO HA LUGAR</td><td>47</td><td>32-58</td></tr><tr><td>MOLESTA</td><td>52</td><td>43-63</td></tr></tbody></table></div>\n<p>La SEREMI no despacha antes los rechazos: una carpeta incompleta espera en la misma cola que una completa y, al final del plazo, recibe un rechazo que obliga a empezar de nuevo. Por eso <a href=\"/por-que-rechazan-la-cti/\">el rechazo</a> es el factor que más alarga el trámite real: dos intentos son unos 100 días de espera en la SEREMI, más el tiempo de rehacer la carpeta.</p>\n<p>Las MOLESTAS tardan cinco días más: son las instalaciones grandes (27 trabajadores y 3.479 m² de mediana), con turno nocturno y estudios de ruido o emisiones, y la revisión es más larga.</p>\n</section>\n<section id=\"por-tipo-de-titular-modo-y-rubro-casi-igual\">\n<h2>Por tipo de titular, modo y rubro: casi igual</h2>\n<ul><li><strong>Persona natural vs empresa.</strong> En todo el periodo, 40 días contra 49. La diferencia se explica porque los rechazos a personas naturales por «no aportó antecedentes» se despachaban antes; en 2026 casi desaparece: 48 contra 51.</li><li><strong>Regularización vs proyecto nuevo.</strong> 48 y 47 días. El modo no cambia el plazo.</li><li><strong>Rubro.</strong> Bodegas 49, metalmecánica 49, alimentos 47, talleres mecánicos 47, eléctricos 49, químicos 47, materiales de construcción 53. La excepción son los locales comerciales: 15 días de mediana, trámites simples que la SEREMI resuelve rápido (y que en muchos casos no necesitaban CTI).</li><li><strong>Comuna.</strong> Quilicura 49, Renca 48, Lampa 50, Santiago 47, San Bernardo 49, Quinta Normal 47, San Joaquín 48, Pudahuel 47, Maipú 48. En 2026 todas quedan entre 48 y 52. No hay una «SEREMI más lenta» según la comuna: es la misma oficina y la misma cola. El detalle de cada comuna está en su página, por ejemplo <a href=\"/cti/quilicura/\">CTI en Quilicura</a> o <a href=\"/cti/renca/\">CTI en Renca</a>.</li></ul>\n</section>\n<section id=\"el-mes-en-que-ingresas-si-importa\">\n<h2>El mes en que ingresas sí importa</h2>\n<p>Mediana de días según el mes de la solicitud (resoluciones ya publicadas):</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Mes de ingreso</th><th>Mediana</th><th>Mes de ingreso</th><th>Mediana</th></tr></thead><tbody><tr><td>octubre 2025</td><td>64</td><td>abril 2026</td><td>48</td></tr><tr><td>noviembre 2025</td><td>65</td><td>mayo 2026</td><td>47</td></tr><tr><td>diciembre 2025</td><td>59</td><td>junio 2026</td><td>53</td></tr><tr><td>enero 2026</td><td>43</td><td>julio 2026</td><td>52</td></tr><tr><td>febrero 2026</td><td>42</td><td>agosto 2026</td><td>51 (parcial)</td></tr><tr><td>marzo 2026</td><td>47</td><td></td><td></td></tr></tbody></table></div>\n<p>Las solicitudes de octubre y noviembre de 2025 esperaron más de dos meses: es el atasco de fin de año, que ya había ocurrido en 2023 (las solicitudes de agosto a noviembre de 2023 tardaron 65 días de mediana). Las de enero y febrero de 2026 salieron en seis semanas. El patrón se repite todos los años porque la demanda tiene estacionalidad: se ingresan 206 solicitudes en un julio promedio y 122 en febrero. Si puedes elegir, ingresa entre enero y mayo; si tienes que ingresar en el segundo semestre, cuenta con dos semanas más.</p>\n</section>\n<section id=\"el-plazo-total-no-es-el-de-la-seremi\">\n<h2>El plazo total no es el de la SEREMI</h2>\n<p>Los 50 días son desde que la solicitud queda ingresada en ASDigital. Antes hay que armar la carpeta: memoria de procesos, medidas de control ambiental, plano, memoria de construcción, factibilidad de agua, certificado de informaciones previas. Y después del ingreso puede venir un rechazo.</p>\n<p>Un cálculo realista para una empresa que parte de cero:</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Etapa</th><th>Tiempo</th></tr></thead><tbody><tr><td>Levantamiento y redacción del expediente (con asesoría)</td><td>2 a 4 semanas</td></tr><tr><td>Espera de la SEREMI (mediana 2026)</td><td>7 semanas</td></tr><tr><td><strong>Total si aprueba al primer intento</strong></td><td><strong>9 a 11 semanas</strong></td></tr><tr><td>Si hay rechazo: corregir y reingresar (mediana de mercado: 111 días hasta reingresar) + nueva espera</td><td>+ 4 a 6 meses</td></tr></tbody></table></div>\n<p>En los trámites de SVEA, la mediana desde que el cliente acepta el presupuesto hasta que el expediente está listo es de 20 días; luego la SEREMI resolvió entre 27 y 64 días después del ingreso en los casos visibles en la base. Lo que más alarga el total, según lo que vemos, es el tiempo que pasa entre que el expediente está listo y que efectivamente se carga en ASDigital, y el rechazo por carpeta incompleta.</p>\n</section>\n<section id=\"que-dice-la-ley-y-que-dice-la-practica\">\n<h2>Qué dice la ley y qué dice la práctica</h2>\n<p>El Código Sanitario (art. 7) fija 30 días hábiles para que la autoridad sanitaria se pronuncie, y la Ley 19.880 regula el silencio administrativo; cómo funcionan y cuándo se pueden invocar está explicado en <a href=\"/rechazo-observaciones-seremi/\">la SEREMI rechazó u observó tu solicitud: cómo responder</a>. En la práctica, la mediana de 50 días corridos de 2026 equivale a unos 35 días hábiles: la SEREMI se mueve en el entorno del plazo legal, un poco por encima. Planificar la patente o la apertura con «30 días hábiles» es optimista; con dos meses corridos desde el ingreso, realista.</p>\n</section>\n<section id=\"que-hace-svea\">\n<h2>Qué hace SVEA</h2>\n<p>Lo que podemos acortar es nuestra parte: el expediente listo en unas tres semanas y cargado en ASDigital la misma semana, con los antecedentes que la SEREMI más echa en falta ya incluidos para no perder un ciclo completo en un rechazo. El plazo de la SEREMI no lo controla nadie; la cantidad de intentos, sí. <a href=\"/calificacion-tecnica-industrial/\">Cotiza tu CTI</a>.</p>\n</section>"
+  },
+  {
+   "tipo": "formulario"
+  },
+  {
+   "tipo": "html",
+   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Cifras calculadas sobre resoluciones públicas de la SEREMI de Salud RM publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026. Plazo = fecha de resolución menos fecha de solicitud, en días corridos, sobre las 7.398 resoluciones con decisión (calificadas, rechazadas y «no ha lugar») de enero de 2023 a septiembre de 2026. Las tablas por mes de ingreso están truncadas en los meses recientes: sólo incluyen solicitudes ya resueltas, por eso agosto de 2026 es parcial y septiembre se omite. Los días hábiles son una conversión aproximada (5 de cada 7 días, sin descontar festivos). Los tiempos de SVEA salen de sus propios trabajos (n chico, se informan como referencia). Sólo cifras agregadas; sin titulares, RUT ni direcciones.</p>\n</section>"
+  }
+ ],
+ "relacionados": {
+  "titulo": "Servicios relacionados",
+  "intro": "",
+  "tarjetas": [
+   {
+    "titulo": "Calificación Técnica Industrial",
+    "texto": "Expediente técnico completo (memorias, planos, controles ambientales) y tramitación en ASDigital hasta la resolución de la SEREMI.",
+    "href": "/calificacion-tecnica-industrial/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Estudio de Carga de Combustible",
+    "texto": "Cálculo de la carga de fuego según NCh 1916 y categoría de resistencia al fuego según la OGUC, con informe firmado.",
+    "href": "/estudio-de-carga-de-combustible/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Planes de Emergencia y Evacuación",
+    "texto": "Plan de emergencia para empresas conforme al DS 44 y al DS 594: riesgos, protocolos, planos de evacuación y simulacros.",
+    "href": "/planes-de-emergencia-y-evacuacion/",
+    "enlace": "Conocer servicio →"
+   }
+  ]
+ },
+ "asunto": {
+  "prefijo": "[BLOG] Cotización Calificación Técnica Industrial - ",
+  "campo": "Empresa",
+  "id": "dynamic-subject-plazo-seremi-cti"
+ },
+ "datosCti": {
+  "tipo": "articulo",
+  "ola": 1,
+  "corte": "noviembre 2026",
+  "generado": "2026-11-07"
+ }
+}

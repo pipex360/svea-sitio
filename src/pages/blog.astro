@@ -31,9 +31,11 @@ import Foto from '../components/Foto.astro';
 import { TarjetaFoto } from '../components/ui/tarjeta-foto';
 import { BookOpenIcon } from 'lucide-react';
 import paginas from '../data/paginas.json';
-import { GUIAS, TEMAS } from '../contenido/articulos/guias';
+import { GUIAS, TEMAS, rutaGuia } from '../contenido/articulos/guias';
 
-const GRUPOS = TEMAS.map((t) => ({ ...t, guias: GUIAS.filter((g) => g.tema === t.nombre) }));
+// 7-nov: las páginas programáticas de Datos CTI (región, comuna, rubro, servicio) no van en /blog/: se llega desde sus hubs
+const VISIBLES = GUIAS.filter((g) => !g.oculta);
+const GRUPOS = TEMAS.map((t) => ({ ...t, guias: VISIBLES.filter((g) => g.tema === t.nombre) }));
 
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 const COPIA = !import.meta.env.SVEA_PRODUCCION;
@@ -79,7 +81,7 @@ const fuentesCSS = `
         </nav>
         <p class="blog-insignia">Recursos y Guías</p>
         <h1>Guías Cumplimiento <em>Normativo</em> Chile</h1>
-        <p class="blog-bajada">{GUIAS.length} guías prácticas sobre regulación ambiental, sanitaria e industrial, escritas por nuestro equipo técnico especializado: qué exige cada norma, quién está obligado, plazos y costos.</p>
+        <p class="blog-bajada">{VISIBLES.length} guías prácticas sobre regulación ambiental, sanitaria e industrial, escritas por nuestro equipo técnico especializado: qué exige cada norma, quién está obligado, plazos y costos.</p>
         <nav class="blog-temas" aria-label="Temas">
           <ul>
             {GRUPOS.map((t) => (
@@ -113,7 +115,7 @@ const fuentesCSS = `
                   client:idle
                 >
                   <TarjetaFoto
-                    href={`${BASE}/${g.slug}/`}
+                    href={`${BASE}${rutaGuia(g)}`}
                     base={BASE}
                     foto={g.imagen.nombre}
                     alt={g.imagen.alt}

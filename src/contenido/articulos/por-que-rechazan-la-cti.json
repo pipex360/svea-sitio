@@ -1,0 +1,302 @@
+{
+ "slug": "por-que-rechazan-la-cti",
+ "ruta": "/por-que-rechazan-la-cti/",
+ "migasOriginal": [
+  {
+   "texto": "Inicio",
+   "href": "/"
+  },
+  {
+   "texto": "Blog",
+   "href": "/blog/"
+  }
+ ],
+ "migaFinal": "Por qué la SEREMI rechaza la calificación industrial (RM)",
+ "categoria": "Datos CTI",
+ "h1": "¿Por qué la SEREMI rechaza la calificación industrial (CTI)? Analizamos 7.707 resoluciones de la Región Metropolitana",
+ "bajada": "Más de un tercio de las Calificaciones Técnicas Industriales de la Región Metropolitana termina rechazada, y casi nunca porque la instalación no cumpla: falta la memoria de controles ambientales, la memoria de procesos, el plano o la memoria de construcción. Las cifras, por año, tipo de titular, rubro y comuna.",
+ "fecha": "Noviembre 2026",
+ "actualizado": {
+  "iso": "2026-11-07",
+  "texto": "7 de noviembre de 2026"
+ },
+ "lectura": "9 min de lectura",
+ "autor": "Equipo técnico SVEA Consultores",
+ "cifras": [
+  {
+   "n": "7.707",
+   "l": "resoluciones CTI analizadas (2023-2026)"
+  },
+  {
+   "n": "35,7 %",
+   "l": "de rechazo sobre lo publicado"
+  },
+  {
+   "n": "90 %",
+   "l": "de los rechazos por antecedentes que faltan"
+  },
+  {
+   "n": "46 %",
+   "l": "de esos rechazos sin medidas de control ambiental"
+  }
+ ],
+ "indiceTitulo": "En esta página",
+ "indice": [
+  {
+   "href": "#cuantas-calificacion-industrial-se-rechazan-en-la-region-met",
+   "texto": "Cuántas calificación industrial se rechazan en la Región Metropolitana"
+  },
+  {
+   "href": "#el-motivo-casi-siempre-es-el-mismo-faltan-antecedentes",
+   "texto": "El motivo casi siempre es el mismo: faltan antecedentes"
+  },
+  {
+   "href": "#quien-tramita-importa-mas-que-que-tramita",
+   "texto": "Quién tramita importa más que qué tramita"
+  },
+  {
+   "href": "#por-rubro-y-por-comuna",
+   "texto": "Por rubro y por comuna"
+  },
+  {
+   "href": "#que-pasa-despues-del-rechazo",
+   "texto": "Qué pasa después del rechazo"
+  },
+  {
+   "href": "#como-evitar-el-rechazo-lista-corta",
+   "texto": "Cómo evitar el rechazo: lista corta"
+  },
+  {
+   "href": "#que-hace-svea",
+   "texto": "Qué hace SVEA"
+  },
+  {
+   "href": "#fuentes",
+   "texto": "Fuente y método"
+  },
+  {
+   "href": "#faq",
+   "texto": "Preguntas frecuentes"
+  }
+ ],
+ "formulario": {
+  "titulo": "Cotiza la CTI con una carpeta que responda a lo que la SEREMI pide",
+  "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+  "ocultos": [
+   {
+    "name": "access_key",
+    "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+   },
+   {
+    "name": "subject",
+    "value": "Nueva cotización Calificación Técnica Industrial (Datos CTI) - SVEA Consultores",
+    "id": "dynamic-subject-por-que-rechazan-la-cti"
+   },
+   {
+    "name": "from_name",
+    "value": "SVEA Consultores Blog - Datos CTI"
+   },
+   {
+    "name": "redirect",
+    "value": "https://sveaconsultores.cl/gracias/"
+   },
+   {
+    "name": "Servicio",
+    "value": "Calificación Técnica Industrial"
+   },
+   {
+    "name": "Origen",
+    "value": "Datos CTI - por-que-rechazan-la-cti"
+   }
+  ],
+  "campos": [
+   {
+    "label": "Nombre completo *",
+    "id": "art-nombre",
+    "name": "Nombre",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Ej: Juan Pérez",
+    "ancho": false
+   },
+   {
+    "label": "Empresa *",
+    "id": "art-empresa",
+    "name": "Empresa",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Nombre de tu empresa",
+    "ancho": false
+   },
+   {
+    "label": "Teléfono *",
+    "id": "art-telefono",
+    "name": "Teléfono",
+    "tipo": "tel",
+    "requerido": true,
+    "placeholder": "+569 1234 5678",
+    "ancho": false
+   },
+   {
+    "label": "Email *",
+    "id": "art-email",
+    "name": "Email",
+    "tipo": "email",
+    "requerido": true,
+    "placeholder": "correo@empresa.cl",
+    "ancho": false
+   },
+   {
+    "label": "Tipo de servicio",
+    "id": "art-tipo",
+    "name": "Tipo de Servicio",
+    "tipo": "select",
+    "requerido": false,
+    "placeholder": null,
+    "ancho": true,
+    "opciones": [
+     {
+      "value": "",
+      "texto": "Selecciona una opción",
+      "seleccionada": true,
+      "desactivada": true
+     },
+     {
+      "value": "Calificación Técnica Industrial",
+      "texto": "Calificación técnica industrial (CTI)",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Informe Sanitario",
+      "texto": "Informe sanitario",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Transporte de Residuos",
+      "texto": "Transporte de residuos",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Otro trámite SEREMI",
+      "texto": "Otro trámite ante la SEREMI",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "No estoy seguro",
+      "texto": "No estoy seguro",
+      "seleccionada": false,
+      "desactivada": false
+     }
+    ]
+   },
+   {
+    "label": "Mensaje (opcional)",
+    "id": "art-mensaje",
+    "name": "Mensaje",
+    "tipo": "textarea",
+    "requerido": false,
+    "placeholder": "¿Qué actividad tienes, en qué comuna y en qué etapa está el trámite?",
+    "ancho": true,
+    "filas": 3
+   }
+  ],
+  "boton": "Solicitar cotización gratuita →",
+  "confianza": [
+   "Datos protegidos",
+   "Cotización sin costo",
+   "Sin compromiso"
+  ]
+ },
+ "faq": {
+  "id": "faq",
+  "titulo": "Preguntas frecuentes",
+  "items": [
+   {
+    "p": "¿Qué porcentaje de calificaciones industriales rechaza la SEREMI RM?",
+    "r": "El 35,7 % de las 7.707 resoluciones publicadas entre enero de 2023 y septiembre de 2026 (37,2 % de las que llegaron a una decisión). Por año: 39,0 % en 2023, 39,4 % en 2024, 32,5 % en 2025 y 32,2 % en enero-septiembre de 2026.",
+    "rTexto": "El 35,7 % de las 7.707 resoluciones publicadas entre enero de 2023 y septiembre de 2026 (37,2 % de las que llegaron a una decisión). Por año: 39,0 % en 2023, 39,4 % en 2024, 32,5 % en 2025 y 32,2 % en enero-septiembre de 2026."
+   },
+   {
+    "p": "¿Cuál es el motivo más común de rechazo de la calificación industrial?",
+    "r": "«El titular no ha aportado los antecedentes suficientes», en el 90 % de los rechazos. Lo que más se nombra como faltante: medidas de controles ambientales (46 %) y memoria descriptiva de procesos (43 %), seguidas de plano (19 %) y memoria técnica de construcción (18 %).",
+    "rTexto": "«El titular no ha aportado los antecedentes suficientes», en el 90 % de los rechazos. Lo que más se nombra como faltante: medidas de controles ambientales (46 %) y memoria descriptiva de procesos (43 %), seguidas de plano (19 %) y memoria técnica de construcción (18 %)."
+   },
+   {
+    "p": "¿Rechazan la calificación industrial porque la instalación no cumple la norma?",
+    "r": "Pocas veces: 9,2 % de los rechazos dice que la instalación «no cumple con normativa vigente». Pero esa causa sube: era 7 % de los rechazos en 2023 y 16 % en 2026.",
+    "rTexto": "Pocas veces: 9,2 % de los rechazos dice que la instalación «no cumple con normativa vigente». Pero esa causa sube: era 7 % de los rechazos en 2023 y 16 % en 2026."
+   },
+   {
+    "p": "¿Se rechaza más una regularización que un proyecto nuevo?",
+    "r": "En empresas sí: 34,2 % la instalación existente contra 18,2 % el proyecto. En personas naturales da lo mismo (63,4 % y 63,5 %).",
+    "rTexto": "En empresas sí: 34,2 % la instalación existente contra 18,2 % el proyecto. En personas naturales da lo mismo (63,4 % y 63,5 %)."
+   },
+   {
+    "p": "Si me rechazan, ¿la SEREMI me devuelve el arancel?",
+    "r": "No. El arancel paga la revisión, y la nueva solicitud se paga de nuevo. Por eso conviene presentar la carpeta completa la primera vez o, si ya hubo rechazo, reingresar con exactamente lo que la resolución dijo que faltaba.",
+    "rTexto": "No. El arancel paga la revisión, y la nueva solicitud se paga de nuevo. Por eso conviene presentar la carpeta completa la primera vez o, si ya hubo rechazo, reingresar con exactamente lo que la resolución dijo que faltaba."
+   }
+  ]
+ },
+ "autorCaja": {
+  "inicial": "S",
+  "nombre": "Equipo técnico SVEA Consultores",
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+ },
+ "compartir": {
+  "titulo": "Compartir",
+  "enlaces": []
+ },
+ "bloques": [
+  {
+   "tipo": "html",
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de la SEREMI de Salud RM publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026.</em></p>\n<p class=\"art-entrada\">La calificación industrial (Calificación Técnica Industrial, CTI) es el permiso de la SEREMI de Salud que la municipalidad exige para la patente comercial o industrial de bodegas, talleres e industrias; se tramita por internet en <a href=\"/seremi-en-linea-calificacion-industrial/\">SEREMI en Línea (ASDigital)</a>. La Calificación Técnica Industrial (CTI) es la resolución con que la SEREMI de Salud califica una actividad productiva como inofensiva, molesta, insalubre o peligrosa, y la municipalidad la pide para otorgar la patente industrial o de bodega. En la Región Metropolitana la SEREMI resolvió 7.707 solicitudes entre enero de 2023 y septiembre de 2026, y todas sus resoluciones son públicas. Las leímos completas para responder una pregunta que nos hacen cada semana: ¿por qué rechazan la CTI?</p>\n<section id=\"cuantas-calificacion-industrial-se-rechazan-en-la-region-met\">\n<h2>Cuántas calificación industrial se rechazan en la Región Metropolitana</h2>\n<p>De las 7.707 resoluciones publicadas, 2.755 fueron rechazadas: el <strong>35,7 %</strong>. Si se cuenta sólo sobre las resoluciones que llegaron a una decisión (sin desistimientos ni documentos vacíos), el rechazo es 37,2 %. La buena noticia es que viene bajando.</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Año</th><th>CTI publicadas</th><th>Rechazadas</th><th>Rechazo sobre publicadas</th><th>Calificadas</th></tr></thead><tbody><tr><td>2023</td><td>1.894</td><td>738</td><td>39,0 %</td><td>55,6 %</td></tr><tr><td>2024</td><td>1.925</td><td>758</td><td>39,4 %</td><td>56,4 %</td></tr><tr><td>2025</td><td>2.200</td><td>715</td><td>32,5 %</td><td>59,4 %</td></tr><tr><td>2026 (enero-septiembre)</td><td>1.688</td><td>544</td><td>32,2 %</td><td>60,5 %</td></tr></tbody></table></div>\n<p>El quiebre es 2025: la SEREMI rechaza siete puntos menos que en 2023-2024 y, como veremos en <a href=\"/plazo-seremi-cti/\">cuánto demora la SEREMI en resolver una CTI</a>, resuelve en un plazo más parejo. El resto de los resultados: 55,5 % INOFENSIVA, 2,4 % MOLESTA, 2,3 % «no ha lugar» (la actividad no requería calificación), 2,9 % desistimientos y 1,1 % documentos vacíos en Transparencia.</p>\n</section>\n<section id=\"el-motivo-casi-siempre-es-el-mismo-faltan-antecedentes\">\n<h2>El motivo casi siempre es el mismo: faltan antecedentes</h2>\n<p>La resolución de rechazo trae un considerando que explica la causa. En 2.486 de los 2.755 rechazos (<strong>90,2 %</strong>) la frase es «el titular no ha aportado los antecedentes suficientes». Sólo en 254 (9,2 %) la SEREMI dice que «la instalación no cumple con la normativa vigente».</p>\n<p>Dicho de otro modo: nueve de cada diez rechazos no evalúan la actividad. La SEREMI no alcanzó a pronunciarse sobre si la bodega o el taller es inofensivo, porque la carpeta no le permitió hacerlo. El trámite vuelve a cero, se paga de nuevo el arancel y se esperan otras seis o siete semanas.</p>\n<h3>Qué antecedente faltó</h3>\n<p>En el 59 % de los rechazos por insuficiencia la SEREMI nombra el antecedente que faltó o venía incompleto (en el 41 % restante sólo escribe la frase genérica). Sobre los 2.486 rechazos por insuficiencia:</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Antecedente nombrado como faltante</th><th>Todos</th><th>Empresas</th><th>Personas naturales</th></tr></thead><tbody><tr><td>Medidas de controles ambientales</td><td><strong>46 %</strong></td><td>53 %</td><td>37 %</td></tr><tr><td>Memoria descriptiva de procesos y actividades</td><td><strong>43 %</strong></td><td>49 %</td><td>36 %</td></tr><tr><td>Plano general de la instalación</td><td>19 %</td><td>24 %</td><td>13 %</td></tr><tr><td>Memoria técnica de características de construcción</td><td>18 %</td><td>23 %</td><td>12 %</td></tr><tr><td>Condiciones de almacenamiento</td><td>4 %</td><td>5 %</td><td>3 %</td></tr><tr><td>Maquinaria</td><td>4 %</td><td>4 %</td><td>3 %</td></tr><tr><td>Flujo vehicular (vehículos cargados por día)</td><td>3 %</td><td>3 %</td><td>3 %</td></tr><tr><td>Manejo de residuos</td><td>3 %</td><td>3 %</td><td>2 %</td></tr><tr><td>Dotación y horario</td><td>2 %</td><td>2 %</td><td>2 %</td></tr><tr><td>Ruido (D.S. 38)</td><td>2 %</td><td>2 %</td><td>2 %</td></tr><tr><td>Sustancias peligrosas (D.S. 43, hojas de seguridad)</td><td>2 %</td><td>2 %</td><td>1 %</td></tr></tbody></table></div>\n<p>Los dos primeros no son permisos que se piden a un tercero: son documentos técnicos que se redactan para esa instalación. La <strong>memoria de controles ambientales</strong> describe cómo se controlan ruido, emisiones, residuos, olores y riesgo de incendio dentro del predio; la <strong>memoria descriptiva de procesos</strong> explica qué entra, qué se hace, con qué maquinaria, cuánta gente, en qué horario y qué sale. Si falta alguna de las dos, la SEREMI no tiene con qué calificar.</p>\n<p>Hay detalles más concretos que se repiten en los considerandos: la boleta de agua potable o la factibilidad sanitaria (175 rechazos), los extintores sin potencial de extinción ni capacitación (116), el número y tipo de transpaletas o grúas horquilla (105), y errores de personería o de RUT del titular (56). Son omisiones pequeñas que cuestan un trámite completo.</p>\n<h3>La SEREMI pide cada vez más detalle físico</h3>\n<p>Entre 2023 y 2026 cambió lo que la autoridad echa en falta. El plano pasó de nombrarse en el 18 % de los rechazos por insuficiencia al 23 %; la memoria de construcción, de 18 % a 23 %; las condiciones de almacenamiento, de 1 % a 9 %; la maquinaria, de 1 % a 9 %; el flujo vehicular, de 1 % a 7 %; el ruido, de 1 % a 5 %. Y el rechazo de fondo («no cumple con normativa») subió de 7 % a 16 % de los rechazos. La SEREMI quiere saber cómo se almacena, con qué se mueve la carga y cuántos camiones entran, y empieza a rechazar la actividad misma cuando lo que ve no le cierra.</p>\n</section>\n<section id=\"quien-tramita-importa-mas-que-que-tramita\">\n<h2>Quién tramita importa más que qué tramita</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Tipo de titular</th><th>Resoluciones con decisión</th><th>Rechazo</th></tr></thead><tbody><tr><td>Persona natural</td><td>1.847</td><td><strong>63,5 %</strong></td></tr><tr><td>Sociedad limitada</td><td>1.356</td><td>30,9 %</td></tr><tr><td>SpA</td><td>2.976</td><td>29,4 %</td></tr><tr><td>S.A.</td><td>790</td><td>26,7 %</td></tr><tr><td>EIRL</td><td>330</td><td><strong>15,5 %</strong></td></tr></tbody></table></div>\n<p>La persona natural que tramita a su nombre se rechaza más del doble que cualquier empresa, y da lo mismo si es una regularización (63,4 %) o un proyecto nuevo (63,5 %): no es el recinto, es cómo se presenta. La EIRL, que suele ser la misma persona formalizada y con asesoría, se rechaza 15,5 %. Dedicamos un artículo a esto: <a href=\"/cti-persona-natural/\">CTI como persona natural: por qué se rechaza el 64 %</a>.</p>\n<p>En las empresas sí importa el modo: regularizar una instalación que ya opera se rechaza 34,2 %; presentarla en proyecto, 18,2 %. A las regularizaciones les faltan más el plano y la memoria de construcción de lo ya edificado.</p>\n<p>Un dato que sorprende: declarar más actividades no sube el riesgo, lo baja. Las CTI con una sola actividad se rechazan 39 %; las que declaran cinco o más, 32 %. Una carpeta que describe bien varias actividades suele venir armada con criterio técnico, y además evita una segunda CTI cuando el negocio crece.</p>\n</section>\n<section id=\"por-rubro-y-por-comuna\">\n<h2>Por rubro y por comuna</h2>\n<p>Las tasas siguientes son sobre resoluciones con decisión (una CTI puede declarar más de un rubro).</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Rubro</th><th>Resoluciones</th><th>Rechazo</th><th>Rechazo en empresas</th></tr></thead><tbody><tr><td>Materiales de construcción (bodegas)</td><td>294</td><td>51 %</td><td>39 %</td></tr><tr><td>Metalmecánica (taller, industria, bodega)</td><td>845</td><td>45 %</td><td>35 %</td></tr><tr><td>Artículos eléctricos y electrónicos</td><td>326</td><td>41 %</td><td>26 %</td></tr><tr><td>Bodegas (almacenamiento)</td><td>2.022</td><td>40 %</td><td>29 %</td></tr><tr><td>Plástico</td><td>257</td><td>40 %</td><td>34 %</td></tr><tr><td>Alimentos (talleres, bodegas, industria)</td><td>1.373</td><td>27 %</td><td>21 %</td></tr><tr><td>Talleres mecánicos</td><td>580</td><td>27 %</td><td>22 %</td></tr><tr><td>Locales comerciales</td><td>312</td><td>23 %</td><td>22 %</td></tr></tbody></table></div>\n<p>La metalmecánica es el caso más técnico: incluso en industrias con 20 o más trabajadores el rechazo supera el 50 %, y lo que falta es la memoria de controles ambientales (58 % de sus rechazos por insuficiencia). Los talleres mecánicos, en cambio, pasaron de 34-35 % en 2023-2024 a 19 % en 2026.</p>\n<p>Por comuna, las industriales del norponiente rechazan más (Quilicura 44 %, Renca 44 %, Lampa 41 %, Lo Espejo 47 %, La Pintana 50 %) y las de trámites simples, menos (Santiago 27 %, Puente Alto 19 %, Vitacura 9 %). Cada comuna con más de 40 resoluciones tiene su página: por ejemplo, <a href=\"/cti/quilicura/\">CTI en Quilicura</a> y <a href=\"/cti/renca/\">CTI en Renca</a>.</p>\n</section>\n<section id=\"que-pasa-despues-del-rechazo\">\n<h2>Qué pasa después del rechazo</h2>\n<p>Rechazar no es más rápido que aprobar: la mediana entre solicitud y resolución es 47 días tanto para las INOFENSIVA como para las RECHAZADA, así que una carpeta incompleta espera lo mismo y vuelve a cero. De los rechazados en 2023-2024, el 42 % volvió a presentar una solicitud y, de esos, el 52 % aprobó: de cada 100 rechazados, 22 terminan calificados por su cuenta y 58 no vuelven a intentarlo con el mismo RUT. Las empresas reingresan más (54 %) y aprueban más (63 %) que las personas naturales (25 % y 19 %). Qué conviene hacer y cuándo, en <a href=\"/rechazo-cti-que-hacer/\">Me rechazaron la CTI: qué hacer y en cuánto tiempo reingresar</a>.</p>\n</section>\n<section id=\"como-evitar-el-rechazo-lista-corta\">\n<h2>Cómo evitar el rechazo: lista corta</h2>\n<ol class=\"process-steps\"><li><div class=\"step-content\"><h4>Memoria descriptiva de procesos</h4><p>escrita para esa instalación: materias primas, etapas, maquinaria (con cantidades), dotación, horario, productos, residuos.</p></div></li><li><div class=\"step-content\"><h4>Medidas de controles ambientales</h4><p>que respondan a esa operación: ruido (zona del D.S. 38), emisiones, residuos, extintores con potencial de extinción y personal capacitado, red húmeda si corresponde, plan de emergencia.</p></div></li><li><div class=\"step-content\"><h4>Plano general</h4><p>que coincida con la memoria: superficies, sectores de almacenamiento, vías de evacuación.</p></div></li><li><div class=\"step-content\"><h4>Memoria técnica de construcción</h4><p>materialidad, resistencia al fuego, recepción o permiso de edificación si existe.</p></div></li><li><div class=\"step-content\"><h4>Pruebas de agua y alcantarillado</h4><p>factibilidad o boleta de agua potable del recinto.</p></div></li><li><div class=\"step-content\"><h4>Condiciones de almacenamiento, maquinaria y flujo vehicular</h4><p>declarados con números, no con adjetivos.</p></div></li><li><div class=\"step-content\"><h4>Personería y RUT</h4><p>correctos, y una sola versión de cada dato en todos los documentos: la SEREMI compara.</p></div></li></ol>\n</section>\n<section id=\"que-hace-svea\">\n<h2>Qué hace SVEA</h2>\n<p>SVEA Consultores prepara el expediente técnico de la CTI (memoria de procesos, controles ambientales, memoria de construcción y planos) y lo carga en ASDigital. Los antecedentes que más faltan en los rechazos son exactamente los que redacta el equipo técnico; por eso trabajamos también con empresas que ya recibieron un rechazo. No garantizamos la calificación, que la decide la SEREMI; sí garantizamos que la carpeta responde a lo que la autoridad pide. <a href=\"/calificacion-tecnica-industrial/\">Cotiza tu CTI</a> o revisa la <a href=\"/calificacion-tecnica-industrial-chile/\">guía completa de la Calificación Técnica Industrial</a>.</p>\n</section>"
+  },
+  {
+   "tipo": "formulario"
+  },
+  {
+   "tipo": "html",
+   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Cifras calculadas sobre resoluciones públicas de la SEREMI de Salud RM publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026. Universo: 7.707 resoluciones de CTI publicadas entre enero de 2023 y septiembre de 2026, leídas con su texto completo. «Rechazo sobre publicadas» incluye en el denominador desistimientos y documentos vacíos; las tasas por rubro, comuna y tipo de titular son sobre las 7.398 resoluciones con decisión. El antecedente faltante es el que la resolución nombra en el considerando; en el 41 % de los rechazos por insuficiencia la SEREMI escribe sólo la frase genérica. Persona natural se identifica por el RUT; el tipo de sociedad, por la razón social. Sólo se publican cifras agregadas: ningún titular, RUT ni dirección. Las cifras se actualizan cada mes con las resoluciones nuevas.</p>\n</section>"
+  }
+ ],
+ "relacionados": {
+  "titulo": "Servicios relacionados",
+  "intro": "",
+  "tarjetas": [
+   {
+    "titulo": "Calificación Técnica Industrial",
+    "texto": "Expediente técnico completo (memorias, planos, controles ambientales) y tramitación en ASDigital hasta la resolución de la SEREMI.",
+    "href": "/calificacion-tecnica-industrial/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Estudio de Carga de Combustible",
+    "texto": "Cálculo de la carga de fuego según NCh 1916 y categoría de resistencia al fuego según la OGUC, con informe firmado.",
+    "href": "/estudio-de-carga-de-combustible/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Planes de Emergencia y Evacuación",
+    "texto": "Plan de emergencia para empresas conforme al DS 44 y al DS 594: riesgos, protocolos, planos de evacuación y simulacros.",
+    "href": "/planes-de-emergencia-y-evacuacion/",
+    "enlace": "Conocer servicio →"
+   }
+  ]
+ },
+ "asunto": {
+  "prefijo": "[BLOG] Cotización Calificación Técnica Industrial - ",
+  "campo": "Empresa",
+  "id": "dynamic-subject-por-que-rechazan-la-cti"
+ },
+ "datosCti": {
+  "tipo": "articulo",
+  "ola": 1,
+  "corte": "noviembre 2026",
+  "generado": "2026-11-07"
+ }
+}
