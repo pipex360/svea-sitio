@@ -1,0 +1,306 @@
+{
+ "slug": "cti-la-pintana",
+ "ruta": "/cti/la-pintana/",
+ "migasOriginal": [
+  {
+   "texto": "Inicio",
+   "href": "/"
+  },
+  {
+   "texto": "Blog",
+   "href": "/blog/"
+  }
+ ],
+ "migaFinal": "La Pintana",
+ "categoria": "Datos CTI",
+ "h1": "Permiso SEREMI y patente en La Pintana: la calificación industrial en 177 resoluciones",
+ "bajada": "Si tu bodega, taller o planta está en La Pintana, estas son las cifras de los trámites de CTI que la SEREMI ya resolvió ahí. El rubro que más la pide es metalmecánica (46 resoluciones). Esta página resume cuántas calificaciones industriales se tramitan en la comuna, cuántas se rechazan y por qué, cuánto demora la SEREMI y cómo es la instalación típica que aprueba.",
+ "fecha": "Noviembre 2026",
+ "actualizado": {
+  "iso": "2026-11-07",
+  "texto": "7 de noviembre de 2026"
+ },
+ "lectura": "5 min de lectura",
+ "autor": "Equipo técnico SVEA Consultores",
+ "cifras": [
+  {
+   "n": "177",
+   "l": "resoluciones CTI 2023-2026"
+  },
+  {
+   "n": "50 %",
+   "l": "de rechazo (RM: 37 %)"
+  },
+  {
+   "n": "49 días",
+   "l": "mediana SEREMI"
+  },
+  {
+   "n": "46 %",
+   "l": "de los rechazos sin medidas de control ambiental"
+  }
+ ],
+ "indiceTitulo": "En esta página",
+ "indice": [
+  {
+   "href": "#cuantas-calificaciones-industriales-se-tramitan-en-la-pintan",
+   "texto": "Cuántas calificaciones industriales se tramitan en La Pintana"
+  },
+  {
+   "href": "#cuanto-se-rechaza-la-calificacion-industrial-en-la-pintana",
+   "texto": "Cuánto se rechaza la calificación industrial en La Pintana"
+  },
+  {
+   "href": "#que-le-falto-a-las-carpetas-rechazadas-en-la-pintana",
+   "texto": "Qué le faltó a las carpetas rechazadas en La Pintana"
+  },
+  {
+   "href": "#que-rubros-piden-calificacion-industrial-en-la-pintana",
+   "texto": "Qué rubros piden calificación industrial en La Pintana"
+  },
+  {
+   "href": "#cuanto-demora-el-permiso-seremi-calificacion-industrial-en-l",
+   "texto": "Cuánto demora el permiso SEREMI (calificación industrial) en La Pintana"
+  },
+  {
+   "href": "#como-es-la-instalacion-tipica-que-la-seremi-califica-en-la-p",
+   "texto": "Cómo es la instalación típica que la SEREMI califica en La Pintana"
+  },
+  {
+   "href": "#que-pasa-despues-de-un-rechazo-en-la-pintana",
+   "texto": "Qué pasa después de un rechazo en La Pintana"
+  },
+  {
+   "href": "#que-hace-svea-con-estos-datos",
+   "texto": "Qué hace SVEA con estos datos"
+  },
+  {
+   "href": "#fuentes",
+   "texto": "Fuente y método"
+  },
+  {
+   "href": "#faq",
+   "texto": "Preguntas frecuentes"
+  }
+ ],
+ "formulario": {
+  "titulo": "Cotiza la Calificación Técnica Industrial",
+  "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+  "ocultos": [
+   {
+    "name": "access_key",
+    "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+   },
+   {
+    "name": "subject",
+    "value": "Nueva cotización Calificación Técnica Industrial (Datos CTI) - SVEA Consultores",
+    "id": "dynamic-subject-cti-la-pintana"
+   },
+   {
+    "name": "from_name",
+    "value": "SVEA Consultores Blog - Datos CTI"
+   },
+   {
+    "name": "redirect",
+    "value": "https://sveaconsultores.cl/gracias/"
+   },
+   {
+    "name": "Servicio",
+    "value": "Calificación Técnica Industrial"
+   },
+   {
+    "name": "Origen",
+    "value": "Datos CTI - cti-la-pintana"
+   }
+  ],
+  "campos": [
+   {
+    "label": "Nombre completo *",
+    "id": "art-nombre",
+    "name": "Nombre",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Ej: Juan Pérez",
+    "ancho": false
+   },
+   {
+    "label": "Empresa *",
+    "id": "art-empresa",
+    "name": "Empresa",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Nombre de tu empresa",
+    "ancho": false
+   },
+   {
+    "label": "Teléfono *",
+    "id": "art-telefono",
+    "name": "Teléfono",
+    "tipo": "tel",
+    "requerido": true,
+    "placeholder": "+569 1234 5678",
+    "ancho": false
+   },
+   {
+    "label": "Email *",
+    "id": "art-email",
+    "name": "Email",
+    "tipo": "email",
+    "requerido": true,
+    "placeholder": "correo@empresa.cl",
+    "ancho": false
+   },
+   {
+    "label": "Tipo de servicio",
+    "id": "art-tipo",
+    "name": "Tipo de Servicio",
+    "tipo": "select",
+    "requerido": false,
+    "placeholder": null,
+    "ancho": true,
+    "opciones": [
+     {
+      "value": "",
+      "texto": "Selecciona una opción",
+      "seleccionada": true,
+      "desactivada": true
+     },
+     {
+      "value": "Calificación Técnica Industrial",
+      "texto": "Calificación técnica industrial (CTI)",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Informe Sanitario",
+      "texto": "Informe sanitario",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Transporte de Residuos",
+      "texto": "Transporte de residuos",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Otro trámite SEREMI",
+      "texto": "Otro trámite ante la SEREMI",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "No estoy seguro",
+      "texto": "No estoy seguro",
+      "seleccionada": false,
+      "desactivada": false
+     }
+    ]
+   },
+   {
+    "label": "Mensaje (opcional)",
+    "id": "art-mensaje",
+    "name": "Mensaje",
+    "tipo": "textarea",
+    "requerido": false,
+    "placeholder": "¿Qué actividad tienes, en qué comuna y en qué etapa está el trámite?",
+    "ancho": true,
+    "filas": 3
+   }
+  ],
+  "boton": "Solicitar cotización gratuita →",
+  "confianza": [
+   "Datos protegidos",
+   "Cotización sin costo",
+   "Sin compromiso"
+  ]
+ },
+ "faq": {
+  "id": "faq",
+  "titulo": "Preguntas frecuentes",
+  "items": [
+   {
+    "p": "¿Cuántas calificaciones industriales se resuelven al año en La Pintana?",
+    "r": "En 2025 la SEREMI de Salud de la Región Metropolitana resolvió 29 resoluciones de CTI para recintos en La Pintana; en enero-septiembre de 2026, 32. Es el 2,4 % de la región en todo el periodo.",
+    "rTexto": "En 2025 la SEREMI de Salud de la Región Metropolitana resolvió 29 resoluciones de CTI para recintos en La Pintana; en enero-septiembre de 2026, 32. Es el 2,4 % de la región en todo el periodo."
+   },
+   {
+    "p": "¿Qué porcentaje de calificaciones industriales se rechaza en La Pintana?",
+    "r": "El 50 % de las resoluciones con decisión (2023-2026). Para empresas es 37 % y para personas naturales 86 %.",
+    "rTexto": "El 50 % de las resoluciones con decisión (2023-2026). Para empresas es 37 % y para personas naturales 86 %."
+   },
+   {
+    "p": "¿Por qué la SEREMI rechaza la calificación industrial en La Pintana?",
+    "r": "En el 91 % de los casos, por antecedentes insuficientes. Lo más nombrado: medidas de control ambiental (46 %), memoria de procesos (44 %), planos (11 %) y memoria de construcción (11 %).",
+    "rTexto": "En el 91 % de los casos, por antecedentes insuficientes. Lo más nombrado: medidas de control ambiental (46 %), memoria de procesos (44 %), planos (11 %) y memoria de construcción (11 %)."
+   },
+   {
+    "p": "¿Cuánto demora la SEREMI en resolver la calificación industrial en La Pintana?",
+    "r": "Mediana de 49 días corridos desde la solicitud; en 2026, 51 días. En toda la Región Metropolitana la mediana es 47 días.",
+    "rTexto": "Mediana de 49 días corridos desde la solicitud; en 2026, 51 días. En toda la Región Metropolitana la mediana es 47 días."
+   },
+   {
+    "p": "¿La patente en La Pintana la da la municipalidad o la SEREMI?",
+    "r": "Las dos intervienen. La calificación industrial (CTI) la resuelve la SEREMI de Salud de la Región Metropolitana por SEREMI en Línea (ASDigital); la municipalidad la exige después para otorgar la patente comercial o industrial definitiva, y la Dirección de Obras la usa para verificar el uso de suelo. Sin la calificación, la patente queda provisoria o se niega.",
+    "rTexto": "Las dos intervienen. La calificación industrial (CTI) la resuelve la SEREMI de Salud de la Región Metropolitana por SEREMI en Línea (ASDigital); la municipalidad la exige después para otorgar la patente comercial o industrial definitiva, y la Dirección de Obras la usa para verificar el uso de suelo. Sin la calificación, la patente queda provisoria o se niega."
+   }
+  ]
+ },
+ "autorCaja": {
+  "inicial": "S",
+  "nombre": "Equipo técnico SVEA Consultores",
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+ },
+ "compartir": {
+  "titulo": "Compartir",
+  "enlaces": []
+ },
+ "bloques": [
+  {
+   "tipo": "html",
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de la SEREMI de Salud de la Región Metropolitana publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026.</em></p>\n<p class=\"art-entrada\">Para obtener o renovar la patente municipal (comercial o industrial) de una bodega, un taller o una planta, la municipalidad pide el permiso de la SEREMI de Salud: la calificación industrial (Calificación Técnica Industrial, CTI), que se tramita en <a href=\"/seremi-en-linea-calificacion-industrial/\">SEREMI en Línea (ASDigital)</a>. Las cifras de toda la Región Metropolitana están en <a href=\"/cti/region/metropolitana/\">su página regional</a> y el conjunto en <a href=\"/cti/\">calificación industrial por región, comuna y rubro</a>.</p>\n<section id=\"cuantas-calificaciones-industriales-se-tramitan-en-la-pintan\">\n<h2>Cuántas calificaciones industriales se tramitan en La Pintana</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Año</th><th>Resoluciones con decisión</th><th>Rechazadas</th><th>Participación en RM</th></tr></thead><tbody><tr><td>2023</td><td>57</td><td>47 %</td><td>3,1 %</td></tr><tr><td>2024</td><td>59</td><td>63 %</td><td>3,2 %</td></tr><tr><td>2025</td><td>29</td><td>41 %</td><td>1,4 %</td></tr><tr><td>2026 (ene-sep)</td><td>32</td><td>41 %</td><td>2,0 %</td></tr></tbody></table></div>\n<p>Entre 2023 y 2025 las solicitudes bajaron 49 % (57 → 29); el total de la Región Metropolitana varió +14 %. El 57 % son regularizaciones de instalaciones que ya operan; el resto son proyectos nuevos. El peso de las personas naturales es el del promedio de la región: el 28 % de las solicitudes las hace una persona natural (RM: 25 %).</p>\n</section>\n<section id=\"cuanto-se-rechaza-la-calificacion-industrial-en-la-pintana\">\n<h2>Cuánto se rechaza la calificación industrial en La Pintana</h2>\n<p>De las 177 resoluciones con decisión, 89 fueron rechazadas: <strong>50 %</strong>. El promedio de la Región Metropolitana es 37 %; una CTI se rechaza 13 puntos por encima. Las personas naturales (28 % de las solicitudes) se rechazan 86 %; las empresas, 37 %. En toda la Región Metropolitana la relación es 63 % contra 29 %.</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Segmento</th><th>Resoluciones</th><th>Rechazo</th></tr></thead><tbody><tr><td>Empresas</td><td>128</td><td>37 %</td></tr><tr><td>Personas naturales</td><td>49</td><td>86 %</td></tr><tr><td>Regularización (instalación existente)</td><td>—</td><td>55 %</td></tr><tr><td>Proyecto nuevo</td><td>—</td><td>43 %</td></tr><tr><td>2023-2024</td><td>116</td><td>55 %</td></tr><tr><td>2025-2026</td><td>61</td><td>41 %</td></tr></tbody></table></div>\n<p>El rechazo bajó entre los dos bienios, igual que en toda la Región Metropolitana (41 % → 34 %). Para comparar con el resto del país, <a href=\"/cti/tasa-de-rechazo/\">ver el ranking completo de rechazo por región, comuna y rubro</a>.</p>\n</section>\n<section id=\"que-le-falto-a-las-carpetas-rechazadas-en-la-pintana\">\n<h2>Qué le faltó a las carpetas rechazadas en La Pintana</h2>\n<p>En el 91 % de los rechazos la SEREMI escribe que el titular «no ha aportado los antecedentes suficientes»; el 8 % dice que la instalación «no cumple con normativa vigente». Es decir, casi nunca se rechaza la actividad: se rechaza la carpeta. Lo que la autoridad nombra como faltante en esos rechazos por insuficiencia:</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Antecedente que la SEREMI nombra como faltante</th><th>La Pintana</th><th>Toda la RM</th></tr></thead><tbody><tr><td>Medidas de control ambiental</td><td>46 %</td><td>46 %</td></tr><tr><td>Memoria descriptiva de procesos</td><td>44 %</td><td>43 %</td></tr><tr><td>Plano general de la instalación</td><td>11 %</td><td>19 %</td></tr><tr><td>Memoria técnica de construcción</td><td>11 %</td><td>18 %</td></tr></tbody></table></div>\n<p>En el 42 % de los rechazos por insuficiencia la resolución no detalla el antecedente. La memoria de procesos y las medidas de control ambiental son documentos de ingeniería, no certificados de terceros; se escriben para la instalación concreta y la SEREMI los revisa contra el plano.</p>\n</section>\n<section id=\"que-rubros-piden-calificacion-industrial-en-la-pintana\">\n<h2>Qué rubros piden calificación industrial en La Pintana</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Rubro</th><th>Resoluciones</th><th>Rechazo</th></tr></thead><tbody><tr><td>Metalmecánica</td><td>46</td><td>57 %</td></tr><tr><td>Bodegas</td><td>35</td><td>46 %</td></tr><tr><td>Plásticos</td><td>16</td><td>25 % (muestra chica)</td></tr><tr><td>Alimentos</td><td>15</td><td>40 % (muestra chica)</td></tr><tr><td>Materiales de construcción</td><td>11</td><td>55 % (muestra chica)</td></tr><tr><td>Talleres mecánicos y automotriz</td><td>10</td><td>50 % (muestra chica)</td></tr></tbody></table></div>\n<p>Una resolución puede cubrir más de un rubro, por eso la suma supera el total. El 40 % de las CTI de la comuna declara dos o más actividades.</p>\n</section>\n<section id=\"cuanto-demora-el-permiso-seremi-calificacion-industrial-en-l\">\n<h2>Cuánto demora el permiso SEREMI (calificación industrial) en La Pintana</h2>\n<p>Desde la fecha de solicitud hasta la resolución, la mediana en La Pintana es <strong>49 días corridos</strong> (la mitad de los casos entre 40 y 59; el 90 % antes de 70). En lo resuelto en 2026 la mediana es 51 días (entre 45 y 60 en la mitad central); el 75 % salió en 60 días o menos. La mediana de la Región Metropolitana es 47 días (50 en 2026). Conviene contar el tiempo completo: armar la carpeta, ingresar y esperar estas semanas; un rechazo duplica todo el ciclo.</p>\n</section>\n<section id=\"como-es-la-instalacion-tipica-que-la-seremi-califica-en-la-p\">\n<h2>Cómo es la instalación típica que la SEREMI califica en La Pintana</h2>\n<p>Las calificadas son, en su mayoría, pymes de tamaño medio: 7 trabajadores y 742 m² construidos en la mediana (el 75 % tiene hasta 12 trabajadores y 2.261 m²). El 45 % supera los 1.000 m² y el 14 % no llega a 200 m². El 4 % declara turno nocturno y el 8 % está en zona II del D.S. 38 (sectores residenciales mixtos, donde la memoria tiene que demostrar el ruido). Sólo el 5 % declara plan de emergencia y el 26 % red húmeda. Hubo 1 calificaciones MOLESTAS (con restricción de zona) en el periodo.</p>\n</section>\n<section id=\"que-pasa-despues-de-un-rechazo-en-la-pintana\">\n<h2>Qué pasa después de un rechazo en La Pintana</h2>\n<p>De los 64 rechazos de 2023-2024 en la comuna, el 48 % volvió a presentar una solicitud (mediana de 127 días después), y de esos aprobó el 32 %. En toda la Región Metropolitana reingresa el 42 % y aprueba el 51 % al segundo intento; quien reingresa dentro de 30 días aprueba 58 %. El resto sigue sin calificación: opera sin CTI o desistió del proyecto.</p>\n</section>\n<section id=\"que-hace-svea-con-estos-datos\">\n<h2>Qué hace SVEA con estos datos</h2>\n<p>Para una instalación en La Pintana, SVEA Consultores arma y carga la carpeta completa de la CTI: memoria descriptiva de procesos, medidas de control ambiental, memoria técnica de construcción y planos, y la carga en ASDigital. Los antecedentes que más faltan en los rechazos de este nodo son exactamente los que arma el equipo técnico. No prometemos un resultado: la calificación la decide la SEREMI; lo que sí hacemos es presentar una carpeta que responde a lo que la autoridad pide y, si hay un rechazo previo, reingresar con lo que la resolución dijo que faltaba.</p>\n<p><a href=\"/calificacion-tecnica-industrial/\">Cotizar la calificación industrial</a> · <a href=\"/seremi-en-linea-calificacion-industrial/\">Cómo se tramita en SEREMI en Línea</a> · <a href=\"/rechazo-cti-que-hacer/\">Me rechazaron: qué hacer</a> · <a href=\"/calificacion-tecnica-industrial-chile/\">Guía completa de la CTI</a></p>\n</section>"
+  },
+  {
+   "tipo": "formulario"
+  },
+  {
+   "tipo": "html",
+   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Cifras calculadas sobre resoluciones públicas de la SEREMI de Salud de la Región Metropolitana publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026. Universo: 7.707 resoluciones de Calificación Técnica Industrial publicadas entre enero de 2023 y septiembre 2026; para La Pintana se consideran las 177 resoluciones con decisión (calificada, rechazada o «no ha lugar»); los desistimientos y los documentos vacíos quedan fuera porque no traen comuna ni actividad. «Rechazo» es rechazadas sobre resoluciones con decisión. El antecedente faltante es el que la SEREMI nombra en el considerando; en una parte de los rechazos sólo escribe la frase genérica «no ha aportado los antecedentes suficientes» (en este nodo, 42 %). Tamaño y horario salen del texto de las resoluciones calificadas. Las cifras se actualizan todos los meses con las resoluciones nuevas; esta página muestra la fecha de corte arriba. No se publican nombres de titulares, RUT ni direcciones.</p>\n</section>"
+  }
+ ],
+ "relacionados": {
+  "titulo": "Servicios relacionados",
+  "intro": "",
+  "tarjetas": [
+   {
+    "titulo": "Calificación Técnica Industrial",
+    "texto": "Expediente técnico completo (memorias, planos, controles ambientales) y tramitación en ASDigital hasta la resolución de la SEREMI.",
+    "href": "/calificacion-tecnica-industrial/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Estudio de Carga de Combustible",
+    "texto": "Cálculo de la carga de fuego según NCh 1916 y categoría de resistencia al fuego según la OGUC, con informe firmado.",
+    "href": "/estudio-de-carga-de-combustible/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Planes de Emergencia y Evacuación",
+    "texto": "Plan de emergencia para empresas conforme al DS 44 y al DS 594: riesgos, protocolos, planos de evacuación y simulacros.",
+    "href": "/planes-de-emergencia-y-evacuacion/",
+    "enlace": "Conocer servicio →"
+   }
+  ]
+ },
+ "asunto": {
+  "prefijo": "[BLOG] Cotización Calificación Técnica Industrial - ",
+  "campo": "Empresa",
+  "id": "dynamic-subject-cti-la-pintana"
+ },
+ "datosCti": {
+  "tipo": "comuna",
+  "ola": 1,
+  "corte": "noviembre 2026",
+  "generado": "2026-11-07"
+ }
+}

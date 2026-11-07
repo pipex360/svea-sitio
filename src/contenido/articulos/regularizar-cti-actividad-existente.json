@@ -1,0 +1,306 @@
+{
+ "slug": "regularizar-cti-actividad-existente",
+ "ruta": "/regularizar-cti-actividad-existente/",
+ "migasOriginal": [
+  {
+   "texto": "Inicio",
+   "href": "/"
+  },
+  {
+   "texto": "Blog",
+   "href": "/blog/"
+  }
+ ],
+ "migaFinal": "Regularizar una actividad sin patente",
+ "categoria": "Datos CTI",
+ "h1": "Regularizar la patente de una actividad que ya funciona: por qué la SEREMI rechaza el 42 % de esas calificaciones industriales",
+ "bajada": "Dos de cada tres Calificaciones Técnicas Industriales de la Región Metropolitana son regularizaciones: el taller, la bodega o la cocina ya opera y recién pide la calificación para la patente. Se rechazan el 42 %, contra el 28 % de los proyectos nuevos, y la diferencia no está en la actividad sino en lo que falta de lo ya construido: la memoria de construcción, el plano y la boleta de agua.",
+ "fecha": "Noviembre 2026",
+ "actualizado": {
+  "iso": "2026-11-07",
+  "texto": "7 de noviembre de 2026"
+ },
+ "lectura": "8 min de lectura",
+ "autor": "Equipo técnico SVEA Consultores",
+ "cifras": [
+  {
+   "n": "42,1 %",
+   "l": "de rechazo en regularizaciones (proyecto nuevo: 27,6 %)"
+  },
+  {
+   "n": "66 %",
+   "l": "de las CTI de la RM regulariza algo que ya opera"
+  },
+  {
+   "n": "34 % vs 18 %",
+   "l": "rechazo de empresas: regularizar vs proyecto"
+  },
+  {
+   "n": "1.880 / año",
+   "l": "regularizaciones en las 13 regiones con datos"
+  }
+ ],
+ "indiceTitulo": "En esta página",
+ "indice": [
+  {
+   "href": "#la-cifra-42-de-rechazo-al-regularizar-28-en-proyecto",
+   "texto": "La cifra: 42 % de rechazo al regularizar, 28 % en proyecto"
+  },
+  {
+   "href": "#no-es-la-persona-natural-la-empresa-tambien-paga-la-regulari",
+   "texto": "No es la persona natural: la empresa también paga la regularización"
+  },
+  {
+   "href": "#que-le-falta-a-una-regularizacion",
+   "texto": "Qué le falta a una regularización"
+  },
+  {
+   "href": "#el-recinto-tipico-chico-antiguo-de-barrio",
+   "texto": "El recinto típico: chico, antiguo, de barrio"
+  },
+  {
+   "href": "#donde-y-en-que-rubros-se-regulariza",
+   "texto": "Dónde y en qué rubros se regulariza"
+  },
+  {
+   "href": "#que-pasa-despues-de-un-rechazo-en-regularizacion",
+   "texto": "Qué pasa después de un rechazo en regularización"
+  },
+  {
+   "href": "#como-regularizar-bien-a-la-primera",
+   "texto": "Cómo regularizar bien a la primera"
+  },
+  {
+   "href": "#que-hace-svea",
+   "texto": "Qué hace SVEA"
+  },
+  {
+   "href": "#fuentes",
+   "texto": "Fuente y método"
+  },
+  {
+   "href": "#faq",
+   "texto": "Preguntas frecuentes"
+  }
+ ],
+ "formulario": {
+  "titulo": "Cotiza la CTI con una carpeta que responda a lo que la SEREMI pide",
+  "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+  "ocultos": [
+   {
+    "name": "access_key",
+    "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+   },
+   {
+    "name": "subject",
+    "value": "Nueva cotización Calificación Técnica Industrial (Datos CTI) - SVEA Consultores",
+    "id": "dynamic-subject-regularizar-cti-actividad-existente"
+   },
+   {
+    "name": "from_name",
+    "value": "SVEA Consultores Blog - Datos CTI"
+   },
+   {
+    "name": "redirect",
+    "value": "https://sveaconsultores.cl/gracias/"
+   },
+   {
+    "name": "Servicio",
+    "value": "Calificación Técnica Industrial"
+   },
+   {
+    "name": "Origen",
+    "value": "Datos CTI - regularizar-cti-actividad-existente"
+   }
+  ],
+  "campos": [
+   {
+    "label": "Nombre completo *",
+    "id": "art-nombre",
+    "name": "Nombre",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Ej: Juan Pérez",
+    "ancho": false
+   },
+   {
+    "label": "Empresa *",
+    "id": "art-empresa",
+    "name": "Empresa",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Nombre de tu empresa",
+    "ancho": false
+   },
+   {
+    "label": "Teléfono *",
+    "id": "art-telefono",
+    "name": "Teléfono",
+    "tipo": "tel",
+    "requerido": true,
+    "placeholder": "+569 1234 5678",
+    "ancho": false
+   },
+   {
+    "label": "Email *",
+    "id": "art-email",
+    "name": "Email",
+    "tipo": "email",
+    "requerido": true,
+    "placeholder": "correo@empresa.cl",
+    "ancho": false
+   },
+   {
+    "label": "Tipo de servicio",
+    "id": "art-tipo",
+    "name": "Tipo de Servicio",
+    "tipo": "select",
+    "requerido": false,
+    "placeholder": null,
+    "ancho": true,
+    "opciones": [
+     {
+      "value": "",
+      "texto": "Selecciona una opción",
+      "seleccionada": true,
+      "desactivada": true
+     },
+     {
+      "value": "Calificación Técnica Industrial",
+      "texto": "Calificación técnica industrial (CTI)",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Informe Sanitario",
+      "texto": "Informe sanitario",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Transporte de Residuos",
+      "texto": "Transporte de residuos",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Otro trámite SEREMI",
+      "texto": "Otro trámite ante la SEREMI",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "No estoy seguro",
+      "texto": "No estoy seguro",
+      "seleccionada": false,
+      "desactivada": false
+     }
+    ]
+   },
+   {
+    "label": "Mensaje (opcional)",
+    "id": "art-mensaje",
+    "name": "Mensaje",
+    "tipo": "textarea",
+    "requerido": false,
+    "placeholder": "¿Qué actividad tienes, en qué comuna y en qué etapa está el trámite?",
+    "ancho": true,
+    "filas": 3
+   }
+  ],
+  "boton": "Solicitar cotización gratuita →",
+  "confianza": [
+   "Datos protegidos",
+   "Cotización sin costo",
+   "Sin compromiso"
+  ]
+ },
+ "faq": {
+  "id": "faq",
+  "titulo": "Preguntas frecuentes",
+  "items": [
+   {
+    "p": "¿Qué es regularizar una calificación industrial?",
+    "r": "Pedir la Calificación Técnica Industrial para una actividad que ya funciona, en vez de hacerlo antes de instalarla. La resolución lo registra como instalación «existente». En la Región Metropolitana es el 66,5 % de las CTI (4.919 de 7.398 con decisión entre 2023 y septiembre de 2026).",
+    "rTexto": "Pedir la Calificación Técnica Industrial para una actividad que ya funciona, en vez de hacerlo antes de instalarla. La resolución lo registra como instalación «existente». En la Región Metropolitana es el 66,5 % de las CTI (4.919 de 7.398 con decisión entre 2023 y septiembre de 2026)."
+   },
+   {
+    "p": "¿Se rechaza más una regularización que un proyecto nuevo?",
+    "r": "Sí: 42,1 % contra 27,6 % en la SEREMI RM. En empresas la brecha es mayor (34 % contra 18 %); en personas naturales no hay diferencia (63 % en ambos casos), porque ahí el problema es la carpeta entera.",
+    "rTexto": "Sí: 42,1 % contra 27,6 % en la SEREMI RM. En empresas la brecha es mayor (34 % contra 18 %); en personas naturales no hay diferencia (63 % en ambos casos), porque ahí el problema es la carpeta entera."
+   },
+   {
+    "p": "¿Por qué se rechazan las regularizaciones?",
+    "r": "Por los mismos motivos que todas (9 de cada 10 por antecedentes insuficientes), pero con dos faltantes que pesan el doble: el plano general de la instalación (21 % de los rechazos por insuficiencia, contra 12,5 % en proyecto) y la memoria técnica de construcción (20 % contra 12,6 %). También se pide más la boleta de agua potable (8 % contra 1 %).",
+    "rTexto": "Por los mismos motivos que todas (9 de cada 10 por antecedentes insuficientes), pero con dos faltantes que pesan el doble: el plano general de la instalación (21 % de los rechazos por insuficiencia, contra 12,5 % en proyecto) y la memoria técnica de construcción (20 % contra 12,6 %). También se pide más la boleta de agua potable (8 % contra 1 %)."
+   },
+   {
+    "p": "¿Puedo seguir funcionando mientras tramito la regularización?",
+    "r": "Este artículo no es asesoría legal. En los datos, la actividad regularizada normalmente sigue operando durante el trámite, y la municipalidad exige la calificación para la patente definitiva. Si la SEREMI fiscaliza, la falta de calificación puede terminar en sumario sanitario; conviene regularizar antes de que eso ocurra.",
+    "rTexto": "Este artículo no es asesoría legal. En los datos, la actividad regularizada normalmente sigue operando durante el trámite, y la municipalidad exige la calificación para la patente definitiva. Si la SEREMI fiscaliza, la falta de calificación puede terminar en sumario sanitario; conviene regularizar antes de que eso ocurra."
+   },
+   {
+    "p": "¿Demora más una regularización?",
+    "r": "No. La mediana es 48 días corridos para regularizaciones y 47 para proyectos (50 en ambos casos en 2026). Lo que alarga el trámite es el rechazo y el tiempo hasta reingresar.",
+    "rTexto": "No. La mediana es 48 días corridos para regularizaciones y 47 para proyectos (50 en ambos casos en 2026). Lo que alarga el trámite es el rechazo y el tiempo hasta reingresar."
+   }
+  ]
+ },
+ "autorCaja": {
+  "inicial": "S",
+  "nombre": "Equipo técnico SVEA Consultores",
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+ },
+ "compartir": {
+  "titulo": "Compartir",
+  "enlaces": []
+ },
+ "bloques": [
+  {
+   "tipo": "html",
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de la SEREMI de Salud RM publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026.</em></p>\n<p class=\"art-entrada\">La calificación industrial (Calificación Técnica Industrial, CTI) es el permiso de la SEREMI de Salud que la municipalidad exige para la patente comercial o industrial de bodegas, talleres e industrias; se tramita por internet en <a href=\"/seremi-en-linea-calificacion-industrial/\">SEREMI en Línea (ASDigital)</a>. La resolución de CTI distingue dos situaciones. «En proyecto»: la instalación todavía no existe o no funciona, y la SEREMI califica lo que la memoria describe. «Existente»: la actividad ya opera (a veces hace años) y pide la calificación porque la municipalidad la exige para la patente definitiva, porque cambió de dueño o porque llegó una fiscalización. Esa segunda situación es la mayoría del mercado y la que peor resultado tiene.</p>\n<section id=\"la-cifra-42-de-rechazo-al-regularizar-28-en-proyecto\">\n<h2>La cifra: 42 % de rechazo al regularizar, 28 % en proyecto</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Situación declarada</th><th>Resoluciones con decisión (2023-2026)</th><th>Participación</th><th>Rechazo</th></tr></thead><tbody><tr><td>Existente (regularización)</td><td>4.919</td><td>66,5 %</td><td><strong>42,1 %</strong></td></tr><tr><td>En proyecto</td><td>2.479</td><td>33,5 %</td><td><strong>27,6 %</strong></td></tr></tbody></table></div>\n<p>La brecha se mantiene todos los años, aunque ambas tasas bajan desde 2025:</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Año</th><th>Regularización</th><th>Proyecto nuevo</th></tr></thead><tbody><tr><td>2023</td><td>45,2 %</td><td>31,0 %</td></tr><tr><td>2024</td><td>46,9 %</td><td>29,4 %</td></tr><tr><td>2025</td><td>39,1 %</td><td>24,4 %</td></tr><tr><td>2026 (ene-sep)</td><td>37,2 %</td><td>25,3 %</td></tr></tbody></table></div>\n<p>En las 13 regiones con resoluciones publicadas, la regularización es el 67 % de las CTI (7.051 de 10.564, unas 1.880 al año) y se rechaza el 36 % contra el 25 % de los proyectos. La brecha existe casi en todas partes: Antofagasta 42 % contra 24 %, Valparaíso 26 % contra 21 %, Maule 21 % contra 13 %. Las excepciones son las regiones con rechazo bajo (Araucanía, Los Lagos), donde da lo mismo, y Coquimbo, donde los proyectos se rechazan más. El <a href=\"/cti/tasa-de-rechazo/\">ranking por región, comuna y rubro</a> tiene el detalle.</p>\n</section>\n<section id=\"no-es-la-persona-natural-la-empresa-tambien-paga-la-regulari\">\n<h2>No es la persona natural: la empresa también paga la regularización</h2>\n<p>Una parte de la brecha viene de quién tramita. Las personas naturales son el 27 % de las regularizaciones y el 21 % de los proyectos, y <a href=\"/cti-persona-natural/\">se rechazan 63 % en ambos casos</a>. Pero al mirar sólo empresas la brecha sigue, y es mayor:</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Tipo de titular</th><th>Regularización</th><th>Proyecto nuevo</th></tr></thead><tbody><tr><td>SpA</td><td>35,6 %</td><td>17,0 %</td></tr><tr><td>Sociedad limitada</td><td>37,4 %</td><td>20,3 %</td></tr><tr><td>S.A.</td><td>31,8 %</td><td>20,1 %</td></tr><tr><td>EIRL</td><td>16,3 %</td><td>12,5 %</td></tr><tr><td>Persona natural</td><td>63,4 %</td><td>63,5 %</td></tr><tr><td><strong>Todas las empresas</strong></td><td><strong>34,2 %</strong></td><td><strong>18,2 %</strong></td></tr></tbody></table></div>\n<p>Una empresa que presenta un proyecto nuevo tiene el doble de probabilidad de aprobar que la misma empresa regularizando. Y la tendencia favorece al proyecto: el rechazo de empresas en proyecto bajó de 21 % (2023) a 14 % (2026); en regularización, de 36 % a 28,5 %.</p>\n</section>\n<section id=\"que-le-falta-a-una-regularizacion\">\n<h2>Qué le falta a una regularización</h2>\n<p>Nueve de cada diez rechazos, en los dos casos, son por «antecedentes insuficientes»; la SEREMI casi no llega a evaluar la actividad (<a href=\"/por-que-rechazan-la-cti/\">por qué rechazan la CTI</a>). Lo distinto es <strong>qué</strong> falta. En los rechazos por insuficiencia la autoridad nombra:</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Antecedente nombrado como faltante</th><th>Regularización (1.885 rechazos)</th><th>Proyecto nuevo (601)</th></tr></thead><tbody><tr><td>Medidas de control ambiental</td><td>47,5 %</td><td>42,8 %</td></tr><tr><td>Memoria descriptiva de procesos</td><td>43,9 %</td><td>41,1 %</td></tr><tr><td><strong>Plano general de la instalación</strong></td><td><strong>21,3 %</strong></td><td>12,5 %</td></tr><tr><td><strong>Memoria técnica de construcción</strong></td><td><strong>20,1 %</strong></td><td>12,6 %</td></tr><tr><td>Condiciones de almacenamiento</td><td>4,2 %</td><td>4,5 %</td></tr><tr><td>Detalle de maquinaria</td><td>3,6 %</td><td>3,3 %</td></tr><tr><td>Flujo vehicular</td><td>3,1 %</td><td>3,0 %</td></tr></tbody></table></div>\n<p>Los dos documentos que describen lo ya construido (el plano y la memoria técnica de construcción) faltan casi el doble en las regularizaciones. Tiene lógica: el proyecto nuevo viene de un arquitecto o un ingeniero y trae planos de permiso de edificación; la bodega que opera hace diez años tiene un plano viejo, una ampliación sin recepción y nadie que haya escrito la materialidad de los muros. Otro indicio del mismo problema: el <strong>8 % de los rechazos de regularización pide la boleta de agua potable</strong> (contra 1 % en proyecto), porque la SEREMI necesita acreditar que el recinto tiene agua y alcantarillado y en lo existente nadie adjunta el comprobante.</p>\n<p>El rechazo de fondo («no cumple normativa») es parecido en los dos grupos (8,7 % y 10,8 %) y <a href=\"/cti-no-cumple-normativa/\">cambió de significado en 2025</a>.</p>\n</section>\n<section id=\"el-recinto-tipico-chico-antiguo-de-barrio\">\n<h2>El recinto típico: chico, antiguo, de barrio</h2>\n<p>Las instalaciones que la SEREMI califica en regularización son la mitad de las de proyecto: <strong>4 trabajadores y 260 m² construidos</strong> de mediana, en terrenos de unos 1.000 m², con 3 extintores; las de proyecto, 8 trabajadores, 760 m², 5.000 m² de terreno y 6 extintores. El 19,5 % de las regularizaciones calificadas está en zona II del D.S. 38 (sectores residenciales mixtos; en proyecto, 13,9 %), donde la memoria debe hacerse cargo del ruido hacia las viviendas vecinas. Y casi nunca son «molestas»: la SEREMI califica MOLESTA al 1,2 % de las regularizaciones y al 4,9 % de los proyectos, porque el proyecto nuevo es la industria grande y la regularización es la pyme.</p>\n<p>La regularización no es más rápida ni más lenta: 48 días corridos de mediana contra 47 del proyecto (50 en ambos casos en 2026; <a href=\"/plazo-seremi-cti/\">cuánto demora la SEREMI</a>). La SEREMI no tiene una vía abreviada para lo existente; pide lo mismo.</p>\n</section>\n<section id=\"donde-y-en-que-rubros-se-regulariza\">\n<h2>Dónde y en qué rubros se regulariza</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Rubro</th><th>CTI</th><th>Regularización</th><th>Rechazo regularizando</th><th>Rechazo en proyecto</th></tr></thead><tbody><tr><td>Locales comerciales</td><td>312</td><td>85 %</td><td>23 %</td><td>21 %</td></tr><tr><td>Eléctricos y electrónicos</td><td>326</td><td>79 %</td><td>44 %</td><td>29 %</td></tr><tr><td>Materiales de construcción</td><td>294</td><td>77 %</td><td><strong>54 %</strong></td><td>41 %</td></tr><tr><td>Papel, cartón e imprentas</td><td>207</td><td>75 %</td><td>47 %</td><td>16 %</td></tr><tr><td>Madera y muebles</td><td>203</td><td>75 %</td><td>45 %</td><td>41 %</td></tr><tr><td>Textil</td><td>233</td><td>73 %</td><td>32 %</td><td>29 %</td></tr><tr><td>Plásticos</td><td>257</td><td>70 %</td><td>49 %</td><td>22 %</td></tr><tr><td>Automotor</td><td>781</td><td>67 %</td><td>36 %</td><td>24 %</td></tr><tr><td>Metalmecánica</td><td>845</td><td>67 %</td><td><strong>49 %</strong></td><td>37 %</td></tr><tr><td>Bodegas</td><td>2.022</td><td>63 %</td><td><strong>48 %</strong></td><td>26 %</td></tr><tr><td>Alimentos</td><td>1.373</td><td>61 %</td><td>30 %</td><td>23 %</td></tr><tr><td>Químicos</td><td>235</td><td>47 %</td><td>49 %</td><td>23 %</td></tr></tbody></table></div>\n<p>Por tipo de instalación: una bodega existente se rechaza 47 % y una en proyecto 27 %; un taller, 35 % y 25 %; una industria, 46 % y 32 %; un local de venta, 23 % y 21 %. Donde el trámite es simple (locales), regularizar no cuesta más; donde la SEREMI pide memoria técnica completa (bodegas, metalmecánica, plásticos, imprentas), regularizar duplica el rechazo.</p>\n<p>Por comuna, las industriales del norponiente son casi todas regularización: Renca 78 % (rechazo regularizando 50 %, en proyecto 21 %), Quilicura 77 % (50 % contra 25 %), Santiago 78 % (27 % contra 25 %), Quinta Normal 74 % (44 % contra 25 %). Las comunas donde se construye bodega nueva tienen más proyectos: San Bernardo 48 % de regularización y Pudahuel 47 %; Lampa, 62 %. Cada comuna tiene su página: <a href=\"/cti/renca/\">Renca</a>, <a href=\"/cti/quilicura/\">Quilicura</a>, <a href=\"/cti/santiago/\">Santiago</a>, <a href=\"/cti/san-bernardo/\">San Bernardo</a>, <a href=\"/cti/pudahuel/\">Pudahuel</a>, <a href=\"/cti/lampa/\">Lampa</a>.</p>\n</section>\n<section id=\"que-pasa-despues-de-un-rechazo-en-regularizacion\">\n<h2>Qué pasa después de un rechazo en regularización</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Rechazos 2023-2024</th><th>Volvieron a presentar</th><th>Aprobaron al 2º intento</th></tr></thead><tbody><tr><td>Regularización (1.127)</td><td>39 %</td><td>54 %</td></tr><tr><td>Proyecto nuevo (387)</td><td>52 %</td><td>45 %</td></tr><tr><td>Empresa regularizando (681)</td><td>52 %</td><td><strong>63 %</strong></td></tr><tr><td>Persona natural regularizando (446)</td><td>20 %</td><td>21 %</td></tr></tbody></table></div>\n<p>Quien regulariza vuelve menos (la actividad sigue operando mientras tanto, y el apuro baja), pero cuando una empresa vuelve con la carpeta corregida aprueba en dos de cada tres casos. La persona natural que regulariza casi no vuelve, y cuando vuelve casi no aprueba (<a href=\"/rechazo-cti-que-hacer/\">qué hacer tras un rechazo</a>). En la base hay cientos de recintos que operan con una CTI rechazada y ninguna calificación posterior: operan sin patente definitiva o con una patente provisoria que la municipalidad puede no renovar (<a href=\"/patente-definitiva-permisos-seremi/\">patente definitiva y permisos SEREMI</a>).</p>\n</section>\n<section id=\"como-regularizar-bien-a-la-primera\">\n<h2>Cómo regularizar bien a la primera</h2>\n<ol class=\"process-steps\"><li><div class=\"step-content\"><h4>Levantar el recinto como está, no como estaba en el plano del permiso</h4><p>Plano general con la planta real: superficies por sector, maquinaria, bodegas, oficinas, baños, vías de evacuación y el emplazamiento en el terreno. Si hubo ampliaciones sin recepción, hay que decirlo y dibujarlas; la SEREMI compara el plano con la memoria y con la visita.</p></div></li><li><div class=\"step-content\"><h4>Memoria técnica de construcción</h4><p>Materialidad de muros, estructura, techumbre y pisos, cómo se separa de los vecinos y qué resistencia al fuego tiene. Es el documento que más falta en las regularizaciones y el que más incomoda escribir, porque obliga a mirar lo que hay.</p></div></li><li><div class=\"step-content\"><h4>Agua y alcantarillado acreditados</h4><p>Boleta de la empresa sanitaria a nombre del recinto o certificado de factibilidad; si el agua es de pozo o la descarga es a fosa, la autorización correspondiente.</p></div></li><li><div class=\"step-content\"><h4>Memoria de procesos y medidas de control ambiental escritas para esa operación</h4><p>, con la maquinaria que de verdad hay, el horario real y los residuos que se generan hoy. Las regularizaciones suelen heredar memorias genéricas de otro trámite.</p></div></li><li><div class=\"step-content\"><h4>Ruido si estás en zona II o colindas con viviendas</h4><p>qué hace ruido, cuándo y cómo se controla. Uno de cada cinco recintos regularizados está en zona residencial mixta.</p></div></li><li><div class=\"step-content\"><h4>Coherencia entre documentos</h4><p>trabajadores, m², horario y maquinaria iguales en la solicitud, el plano y las memorias. En una instalación que ya funciona la SEREMI puede verificar cada dato.</p></div></li><li><div class=\"step-content\"><h4>Si ya hubo un rechazo</h4><p>, leer el considerando y completar lo que nombra antes de reingresar; el 13,5 % de las CTI de la RM llega con un rechazo previo del mismo titular.</p></div></li></ol>\n</section>\n<section id=\"que-hace-svea\">\n<h2>Qué hace SVEA</h2>\n<p>SVEA Consultores prepara el expediente de regularización completo: levantamiento del recinto, plano general, memoria técnica de construcción, memoria de procesos y medidas de control ambiental, revisión de agua y alcantarillado, y la carga en ASDigital. No prometemos la calificación, que la decide la SEREMI; sí que la carpeta describa lo que existe con los documentos que la autoridad nombra cuando rechaza. <a href=\"/calificacion-tecnica-industrial/\">Cotiza la CTI</a>.</p>\n</section>"
+  },
+  {
+   "tipo": "formulario"
+  },
+  {
+   "tipo": "html",
+   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Cifras calculadas sobre resoluciones públicas de la SEREMI de Salud RM publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026: 7.398 resoluciones con decisión (calificada, rechazada o «no ha lugar») entre enero de 2023 y septiembre de 2026, 4.919 de instalaciones «existentes» y 2.479 «en proyecto» según la propia resolución. Antecedentes faltantes leídos del considerando con patrones de texto en los rechazos por insuficiencia. Tamaño de las instalaciones: mediana de trabajadores y m² declarados en las resoluciones calificadas. Reingreso = siguiente resolución del mismo RUT; se mide sobre los rechazos de 2023-2024 por truncamiento. Cifras nacionales sobre 10.564 resoluciones con decisión de 13 regiones. Sólo agregados: no se publican nombres de titulares, RUT ni direcciones.</p>\n</section>"
+  }
+ ],
+ "relacionados": {
+  "titulo": "Servicios relacionados",
+  "intro": "",
+  "tarjetas": [
+   {
+    "titulo": "Calificación Técnica Industrial",
+    "texto": "Expediente técnico completo (memorias, planos, controles ambientales) y tramitación en ASDigital hasta la resolución de la SEREMI.",
+    "href": "/calificacion-tecnica-industrial/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Estudio de Carga de Combustible",
+    "texto": "Cálculo de la carga de fuego según NCh 1916 y categoría de resistencia al fuego según la OGUC, con informe firmado.",
+    "href": "/estudio-de-carga-de-combustible/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Planes de Emergencia y Evacuación",
+    "texto": "Plan de emergencia para empresas conforme al DS 44 y al DS 594: riesgos, protocolos, planos de evacuación y simulacros.",
+    "href": "/planes-de-emergencia-y-evacuacion/",
+    "enlace": "Conocer servicio →"
+   }
+  ]
+ },
+ "asunto": {
+  "prefijo": "[BLOG] Cotización Calificación Técnica Industrial - ",
+  "campo": "Empresa",
+  "id": "dynamic-subject-regularizar-cti-actividad-existente"
+ },
+ "datosCti": {
+  "tipo": "articulo",
+  "ola": 1,
+  "corte": "noviembre 2026",
+  "generado": "2026-11-07"
+ }
+}

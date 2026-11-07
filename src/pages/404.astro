@@ -11,7 +11,7 @@
  * ven en GA4 las URLs rotas que llegan de afuera.
  */
 import PaginaSimple from '../layouts/PaginaSimple.astro';
-import { GUIAS } from '../contenido/articulos/guias';
+import { GUIAS, rutaGuia } from '../contenido/articulos/guias';
 
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 const WHATSAPP = 'https://api.whatsapp.com/send/?phone=56929947924&text=Hola%2C%20llegu%C3%A9%20a%20una%20p%C3%A1gina%20que%20no%20existe%20en%20el%20sitio%20y%20necesito%20ayuda';
@@ -26,7 +26,7 @@ const SERVICIOS = [
   { href: '/autorizacion-de-transporte-de-residuos/', titulo: 'Transporte de Residuos', texto: 'Autorización sanitaria de transporte' },
   { href: '/permisos-ambientales-y-pertinencias-del-seia/', titulo: 'Permisos ambientales y SEIA', texto: 'Pertinencias y permisos ambientales' },
 ];
-const guias = GUIAS.map((g) => ({ href: `/${g.slug}/`, titulo: g.titulo, texto: g.tema }));
+const guias = GUIAS.filter((g) => !g.oculta).map((g) => ({ href: rutaGuia(g), titulo: g.titulo, texto: g.tema }));
 
 const seo = {
   title: 'Página no encontrada · SVEA Consultores',

@@ -1,0 +1,306 @@
+{
+ "slug": "cti-region-atacama",
+ "ruta": "/cti/region/atacama/",
+ "migasOriginal": [
+  {
+   "texto": "Inicio",
+   "href": "/"
+  },
+  {
+   "texto": "Blog",
+   "href": "/blog/"
+  }
+ ],
+ "migaFinal": "Región de Atacama",
+ "categoria": "Datos CTI",
+ "h1": "Permiso SEREMI y patente en la Región de Atacama: la calificación industrial en 79 resoluciones",
+ "bajada": "La SEREMI de Salud de la Región de Atacama resolvió 79 solicitudes con decisión entre enero de 2023 y septiembre 2026: el 0,7 % de las 10.564 que suman las 13 regiones con datos publicados. Se rechazó el 52 % (Chile: 33 %) y la SEREMI tardó 58 días corridos en la mediana (Chile: 47). Esta página reúne lo que esas resoluciones dicen de la región: volumen por año, rechazo por tipo de titular, antecedentes que faltan, plazo, comunas y rubros.",
+ "fecha": "Noviembre 2026",
+ "actualizado": {
+  "iso": "2026-11-07",
+  "texto": "7 de noviembre de 2026"
+ },
+ "lectura": "5 min de lectura",
+ "autor": "Equipo técnico SVEA Consultores",
+ "cifras": [
+  {
+   "n": "79",
+   "l": "resoluciones CTI 2023-2026"
+  },
+  {
+   "n": "52 %",
+   "l": "de rechazo (Chile: 33 %)"
+  },
+  {
+   "n": "58 días",
+   "l": "mediana SEREMI (Chile: 47)"
+  },
+  {
+   "n": "0 %",
+   "l": "de las solicitudes son de personas naturales"
+  }
+ ],
+ "indiceTitulo": "En esta página",
+ "indice": [
+  {
+   "href": "#cuantas-calificaciones-industriales-resuelve-la-seremi-en-la",
+   "texto": "Cuántas calificaciones industriales resuelve la SEREMI en la Región de Atacama"
+  },
+  {
+   "href": "#cuanto-se-rechaza-la-calificacion-industrial-en-la-region-de",
+   "texto": "Cuánto se rechaza la calificación industrial en la Región de Atacama"
+  },
+  {
+   "href": "#que-le-falto-a-las-carpetas-rechazadas-en-la-region-de-ataca",
+   "texto": "Qué le faltó a las carpetas rechazadas en la Región de Atacama"
+  },
+  {
+   "href": "#en-que-comunas-de-la-region-de-atacama-se-tramita-la-calific",
+   "texto": "En qué comunas de la Región de Atacama se tramita la calificación industrial"
+  },
+  {
+   "href": "#que-rubros-piden-calificacion-industrial-en-la-region-de-ata",
+   "texto": "Qué rubros piden calificación industrial en la Región de Atacama"
+  },
+  {
+   "href": "#cuanto-demora-la-seremi-de-la-region-de-atacama",
+   "texto": "Cuánto demora la SEREMI de la Región de Atacama"
+  },
+  {
+   "href": "#como-es-la-instalacion-tipica-que-califica-la-seremi-en-la-r",
+   "texto": "Cómo es la instalación típica que califica la SEREMI en la Región de Atacama"
+  },
+  {
+   "href": "#que-hace-svea-con-estos-datos",
+   "texto": "Qué hace SVEA con estos datos"
+  },
+  {
+   "href": "#fuentes",
+   "texto": "Fuente y método"
+  },
+  {
+   "href": "#faq",
+   "texto": "Preguntas frecuentes"
+  }
+ ],
+ "formulario": {
+  "titulo": "Cotiza la Calificación Técnica Industrial",
+  "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+  "ocultos": [
+   {
+    "name": "access_key",
+    "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+   },
+   {
+    "name": "subject",
+    "value": "Nueva cotización Calificación Técnica Industrial (Datos CTI) - SVEA Consultores",
+    "id": "dynamic-subject-cti-region-atacama"
+   },
+   {
+    "name": "from_name",
+    "value": "SVEA Consultores Blog - Datos CTI"
+   },
+   {
+    "name": "redirect",
+    "value": "https://sveaconsultores.cl/gracias/"
+   },
+   {
+    "name": "Servicio",
+    "value": "Calificación Técnica Industrial"
+   },
+   {
+    "name": "Origen",
+    "value": "Datos CTI - cti-region-atacama"
+   }
+  ],
+  "campos": [
+   {
+    "label": "Nombre completo *",
+    "id": "art-nombre",
+    "name": "Nombre",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Ej: Juan Pérez",
+    "ancho": false
+   },
+   {
+    "label": "Empresa *",
+    "id": "art-empresa",
+    "name": "Empresa",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Nombre de tu empresa",
+    "ancho": false
+   },
+   {
+    "label": "Teléfono *",
+    "id": "art-telefono",
+    "name": "Teléfono",
+    "tipo": "tel",
+    "requerido": true,
+    "placeholder": "+569 1234 5678",
+    "ancho": false
+   },
+   {
+    "label": "Email *",
+    "id": "art-email",
+    "name": "Email",
+    "tipo": "email",
+    "requerido": true,
+    "placeholder": "correo@empresa.cl",
+    "ancho": false
+   },
+   {
+    "label": "Tipo de servicio",
+    "id": "art-tipo",
+    "name": "Tipo de Servicio",
+    "tipo": "select",
+    "requerido": false,
+    "placeholder": null,
+    "ancho": true,
+    "opciones": [
+     {
+      "value": "",
+      "texto": "Selecciona una opción",
+      "seleccionada": true,
+      "desactivada": true
+     },
+     {
+      "value": "Calificación Técnica Industrial",
+      "texto": "Calificación técnica industrial (CTI)",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Informe Sanitario",
+      "texto": "Informe sanitario",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Transporte de Residuos",
+      "texto": "Transporte de residuos",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Otro trámite SEREMI",
+      "texto": "Otro trámite ante la SEREMI",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "No estoy seguro",
+      "texto": "No estoy seguro",
+      "seleccionada": false,
+      "desactivada": false
+     }
+    ]
+   },
+   {
+    "label": "Mensaje (opcional)",
+    "id": "art-mensaje",
+    "name": "Mensaje",
+    "tipo": "textarea",
+    "requerido": false,
+    "placeholder": "¿Qué actividad tienes, en qué comuna y en qué etapa está el trámite?",
+    "ancho": true,
+    "filas": 3
+   }
+  ],
+  "boton": "Solicitar cotización gratuita →",
+  "confianza": [
+   "Datos protegidos",
+   "Cotización sin costo",
+   "Sin compromiso"
+  ]
+ },
+ "faq": {
+  "id": "faq",
+  "titulo": "Preguntas frecuentes",
+  "items": [
+   {
+    "p": "¿Cuántas calificaciones industriales resuelve al año la SEREMI de Salud de la Región de Atacama?",
+    "r": "En 2025, 24 resoluciones con decisión; en enero-septiembre de 2026, 19. Es el 0,7 % del país.",
+    "rTexto": "En 2025, 24 resoluciones con decisión; en enero-septiembre de 2026, 19. Es el 0,7 % del país."
+   },
+   {
+    "p": "¿Qué porcentaje de calificaciones industriales se rechaza en la Región de Atacama?",
+    "r": "El 52 % de las resoluciones con decisión (2023-2026); empresas 57 %. El promedio de las 13 regiones es 33 %.",
+    "rTexto": "El 52 % de las resoluciones con decisión (2023-2026); empresas 57 %. El promedio de las 13 regiones es 33 %."
+   },
+   {
+    "p": "¿Cuánto demora el permiso SEREMI (calificación industrial) en la Región de Atacama?",
+    "r": "Mediana de 58 días corridos desde la solicitud hasta la resolución; en 2026, 38. La mediana nacional es 47 días.",
+    "rTexto": "Mediana de 58 días corridos desde la solicitud hasta la resolución; en 2026, 38. La mediana nacional es 47 días."
+   },
+   {
+    "p": "¿Dónde se tramita la calificación industrial en la Región de Atacama?",
+    "r": "En la SEREMI de Salud de la Región de Atacama, por SEREMI en Línea (plataforma ASDigital del MINSAL), con la misma ficha y los mismos antecedentes que en el resto del país. La municipalidad la pide después para la patente.",
+    "rTexto": "En la SEREMI de Salud de la Región de Atacama, por SEREMI en Línea (plataforma ASDigital del MINSAL), con la misma ficha y los mismos antecedentes que en el resto del país. La municipalidad la pide después para la patente."
+   },
+   {
+    "p": "¿Qué comunas de la Región de Atacama concentran las calificaciones industriales?",
+    "r": "Copiapó (41), Vallenar (9), Diego de Almagro (8), Tierra Amarilla (6), Caldera (6).",
+    "rTexto": "Copiapó (41), Vallenar (9), Diego de Almagro (8), Tierra Amarilla (6), Caldera (6)."
+   }
+  ]
+ },
+ "autorCaja": {
+  "inicial": "S",
+  "nombre": "Equipo técnico SVEA Consultores",
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+ },
+ "compartir": {
+  "titulo": "Compartir",
+  "enlaces": []
+ },
+ "bloques": [
+  {
+   "tipo": "html",
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de la SEREMI de Salud de la Región de Atacama publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026.</em></p>\n<p class=\"art-entrada\">La calificación industrial (Calificación Técnica Industrial, CTI) es el permiso de la SEREMI de Salud que la municipalidad exige para la patente de bodegas, talleres e industrias; se tramita en <a href=\"/seremi-en-linea-calificacion-industrial/\">SEREMI en Línea (ASDigital)</a>. Las 13 regiones se comparan en <a href=\"/cti/\">calificación industrial por región, comuna y rubro</a> y en el <a href=\"/cti/tasa-de-rechazo/\">ranking de rechazo</a>.</p>\n<section id=\"cuantas-calificaciones-industriales-resuelve-la-seremi-en-la\">\n<h2>Cuántas calificaciones industriales resuelve la SEREMI en la Región de Atacama</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Año</th><th>Resoluciones con decisión</th><th>Rechazadas</th><th>Participación en Chile</th></tr></thead><tbody><tr><td>2023</td><td>25</td><td>64 %</td><td>1,0 %</td></tr><tr><td>2024</td><td>11</td><td>45 %</td><td>0,4 %</td></tr><tr><td>2025</td><td>24</td><td>46 %</td><td>0,8 %</td></tr><tr><td>2026 (ene-sep)</td><td>19</td><td>47 %</td><td>0,8 %</td></tr></tbody></table></div>\n<p>El volumen se mantiene estable: 25 resoluciones en 2023 y 24 en 2025 (-4 %), mientras el total de Chile varió +14 %. El 73 % son regularizaciones de instalaciones que ya operan. El 0 % de las solicitudes las presenta una persona natural (Chile: 29 %).</p>\n</section>\n<section id=\"cuanto-se-rechaza-la-calificacion-industrial-en-la-region-de\">\n<h2>Cuánto se rechaza la calificación industrial en la Región de Atacama</h2>\n<p>De las 79 resoluciones con decisión, 41 fueron rechazadas: <strong>52 %</strong>. Es la región número 1 de 13 en rechazo (Chile: 33 %). Las personas naturales son pocas en este nodo (0 resoluciones; muestra chica), así que su tasa no se compara.</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Segmento</th><th>Resoluciones</th><th>Rechazo</th></tr></thead><tbody><tr><td>Empresas</td><td>49</td><td>57 %</td></tr><tr><td>Personas naturales</td><td>0</td><td>—</td></tr><tr><td>Regularización (instalación existente)</td><td>—</td><td>50 %</td></tr><tr><td>Proyecto nuevo</td><td>—</td><td>57 %</td></tr><tr><td>2023-2024</td><td>36</td><td>58 %</td></tr><tr><td>2025-2026</td><td>43</td><td>47 %</td></tr></tbody></table></div>\n<p>El rechazo bajó entre los dos bienios, igual que en todo Chile (35 % → 30 %). Para comparar con el resto del país, <a href=\"/cti/tasa-de-rechazo/\">ver el ranking completo de rechazo por región, comuna y rubro</a>.</p>\n</section>\n<section id=\"que-le-falto-a-las-carpetas-rechazadas-en-la-region-de-ataca\">\n<h2>Qué le faltó a las carpetas rechazadas en la Región de Atacama</h2>\n<p>En el 66 % de los rechazos la SEREMI escribe que el titular «no ha aportado los antecedentes suficientes»; el 29 % dice que la instalación «no cumple con normativa vigente». Es decir, casi nunca se rechaza la actividad: se rechaza la carpeta. Lo que la autoridad nombra como faltante en esos rechazos por insuficiencia:</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Antecedente que la SEREMI nombra como faltante</th><th>Región de Atacama</th><th>Todo Chile</th></tr></thead><tbody><tr><td>Medidas de control ambiental</td><td>56 %</td><td>44 %</td></tr><tr><td>Memoria descriptiva de procesos</td><td>30 %</td><td>40 %</td></tr><tr><td>Plano general de la instalación</td><td>33 %</td><td>20 %</td></tr><tr><td>Memoria técnica de construcción</td><td>30 %</td><td>17 %</td></tr><tr><td>Condiciones de almacenamiento</td><td>11 %</td><td>6 %</td></tr><tr><td>Flujo vehicular</td><td>4 %</td><td>3 %</td></tr><tr><td>Manejo de residuos</td><td>26 %</td><td>5 %</td></tr><tr><td>Ruido (D.S. 38)</td><td>26 %</td><td>4 %</td></tr></tbody></table></div>\n<p>En el 30 % de los rechazos por insuficiencia la resolución no detalla el antecedente. La memoria de procesos y las medidas de control ambiental son documentos de ingeniería, no certificados de terceros; se escriben para la instalación concreta y la SEREMI los revisa contra el plano.</p>\n</section>\n<section id=\"en-que-comunas-de-la-region-de-atacama-se-tramita-la-calific\">\n<h2>En qué comunas de la Región de Atacama se tramita la calificación industrial</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Comuna del recinto</th><th>Resoluciones</th><th>Rechazo</th><th>Página</th></tr></thead><tbody><tr><td>Copiapó</td><td>41</td><td>59 %</td><td><a href=\"/cti/copiapo/\">CTI en Copiapó</a></td></tr><tr><td>Vallenar</td><td>9</td><td>22 % (muestra chica)</td><td>—</td></tr><tr><td>Diego de Almagro</td><td>8</td><td>75 % (muestra chica)</td><td>—</td></tr><tr><td>Tierra Amarilla</td><td>6</td><td>33 % (muestra chica)</td><td>—</td></tr><tr><td>Caldera</td><td>6</td><td>83 % (muestra chica)</td><td>—</td></tr><tr><td>Huasco</td><td>5</td><td>40 % (muestra chica)</td><td>—</td></tr><tr><td>Freirina</td><td>2</td><td>0 % (muestra chica)</td><td>—</td></tr><tr><td>Chanaral</td><td>1</td><td>0 % (muestra chica)</td><td>—</td></tr></tbody></table></div>\n<p>Las comunas con 40 o más resoluciones tienen su propia página con el detalle por rubro, titular y plazo.</p>\n</section>\n<section id=\"que-rubros-piden-calificacion-industrial-en-la-region-de-ata\">\n<h2>Qué rubros piden calificación industrial en la Región de Atacama</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Rubro</th><th>Resoluciones</th><th>Rechazo</th></tr></thead><tbody><tr><td>Infraestructura energética</td><td>11</td><td>55 % (muestra chica)</td></tr><tr><td>Talleres mecánicos y automotriz</td><td>11</td><td>64 % (muestra chica)</td></tr><tr><td>Metalmecánica</td><td>9</td><td>89 % (muestra chica)</td></tr><tr><td>Alimentos</td><td>8</td><td>25 % (muestra chica)</td></tr><tr><td>Locales comerciales</td><td>8</td><td>12 % (muestra chica)</td></tr><tr><td>Servicios</td><td>6</td><td>33 % (muestra chica)</td></tr></tbody></table></div>\n<p>Una resolución puede cubrir más de un rubro, por eso la suma supera el total. Las páginas por rubro (bodegas, talleres mecánicos, metalmecánica, alimentos y otras 18) están calculadas con la Región Metropolitana, que concentra dos de cada tres CTI del país; sirven como referencia de qué pide la SEREMI por tipo de instalación.</p>\n</section>\n<section id=\"cuanto-demora-la-seremi-de-la-region-de-atacama\">\n<h2>Cuánto demora la SEREMI de la Región de Atacama</h2>\n<p>Desde la solicitud hasta la resolución, la mediana es <strong>58 días corridos</strong> (mitad central entre 34 y 102; el 90 % antes de 148). En lo resuelto en 2026 la mediana es 38 días. La mediana nacional es 47 días y esta región es la número 3 de 13 en plazo (de la más lenta a la más rápida). Está en el rango de la mayoría de las regiones (6 a 8 semanas).</p>\n</section>\n<section id=\"como-es-la-instalacion-tipica-que-califica-la-seremi-en-la-r\">\n<h2>Cómo es la instalación típica que califica la SEREMI en la Región de Atacama</h2>\n<p>Las calificadas son, en su mayoría, pymes chicas: 6 trabajadores y 249 m² construidos en la mediana (el 75 % tiene hasta 14 trabajadores y 737 m²). El 23 % supera los 1.000 m² y el 42 % no llega a 200 m². El 13 % declara turno nocturno. Declaran plan de emergencia el 0 % y red húmeda el 3 %. Hubo 4 calificaciones MOLESTAS (con restricción de zona) en el periodo.</p>\n</section>\n<section id=\"que-hace-svea-con-estos-datos\">\n<h2>Qué hace SVEA con estos datos</h2>\n<p>SVEA Consultores prepara el expediente completo de la CTI para una instalación en la Región de Atacama: memoria descriptiva de procesos, medidas de control ambiental, memoria técnica de construcción y planos, y la carga en ASDigital. Los antecedentes que más faltan en los rechazos de este nodo son exactamente los que arma el equipo técnico. No prometemos un resultado: la calificación la decide la SEREMI; lo que sí hacemos es presentar una carpeta que responde a lo que la autoridad pide y, si hay un rechazo previo, reingresar con lo que la resolución dijo que faltaba.</p>\n<p><a href=\"/calificacion-tecnica-industrial/\">Cotizar la calificación industrial</a> · <a href=\"/seremi-en-linea-calificacion-industrial/\">Cómo se tramita en SEREMI en Línea</a> · <a href=\"/rechazo-cti-que-hacer/\">Me rechazaron: qué hacer</a> · <a href=\"/calificacion-tecnica-industrial-chile/\">Guía completa de la CTI</a></p>\n</section>"
+  },
+  {
+   "tipo": "formulario"
+  },
+  {
+   "tipo": "html",
+   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Cifras calculadas sobre resoluciones públicas de la SEREMI de Salud de la Región de Atacama publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026. Universo: 95 resoluciones de Calificación Técnica Industrial publicadas entre enero de 2023 y septiembre 2026; para la región se consideran las 79 resoluciones con decisión (calificada, rechazada o «no ha lugar»); los desistimientos y los documentos vacíos quedan fuera porque no traen comuna ni actividad. «Rechazo» es rechazadas sobre resoluciones con decisión. El antecedente faltante es el que la SEREMI nombra en el considerando; en una parte de los rechazos sólo escribe la frase genérica «no ha aportado los antecedentes suficientes» (en este nodo, 30 %). Tamaño y horario salen del texto de las resoluciones calificadas. Las cifras se actualizan todos los meses con las resoluciones nuevas; esta página muestra la fecha de corte arriba. No se publican nombres de titulares, RUT ni direcciones.</p>\n</section>"
+  }
+ ],
+ "relacionados": {
+  "titulo": "Servicios relacionados",
+  "intro": "",
+  "tarjetas": [
+   {
+    "titulo": "Calificación Técnica Industrial",
+    "texto": "Expediente técnico completo (memorias, planos, controles ambientales) y tramitación en ASDigital hasta la resolución de la SEREMI.",
+    "href": "/calificacion-tecnica-industrial/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Estudio de Carga de Combustible",
+    "texto": "Cálculo de la carga de fuego según NCh 1916 y categoría de resistencia al fuego según la OGUC, con informe firmado.",
+    "href": "/estudio-de-carga-de-combustible/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Planes de Emergencia y Evacuación",
+    "texto": "Plan de emergencia para empresas conforme al DS 44 y al DS 594: riesgos, protocolos, planos de evacuación y simulacros.",
+    "href": "/planes-de-emergencia-y-evacuacion/",
+    "enlace": "Conocer servicio →"
+   }
+  ]
+ },
+ "asunto": {
+  "prefijo": "[BLOG] Cotización Calificación Técnica Industrial - ",
+  "campo": "Empresa",
+  "id": "dynamic-subject-cti-region-atacama"
+ },
+ "datosCti": {
+  "tipo": "region",
+  "ola": 1,
+  "corte": "noviembre 2026",
+  "generado": "2026-11-07"
+ }
+}

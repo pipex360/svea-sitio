@@ -1,0 +1,302 @@
+{
+ "slug": "rechazo-cti-que-hacer",
+ "ruta": "/rechazo-cti-que-hacer/",
+ "migasOriginal": [
+  {
+   "texto": "Inicio",
+   "href": "/"
+  },
+  {
+   "texto": "Blog",
+   "href": "/blog/"
+  }
+ ],
+ "migaFinal": "Rechazo SEREMI de la calificación industrial",
+ "categoria": "Datos CTI",
+ "h1": "Rechazo SEREMI de la calificación industrial: qué hacer y en cuánto tiempo reingresar",
+ "bajada": "Un rechazo de la Calificación Técnica Industrial no es el final: es la SEREMI diciéndote, por escrito, qué le faltó a la carpeta. Con 2.755 rechazos leídos y 919 reingresos seguidos, esto es lo que conviene hacer, cuándo recurrir y cuándo volver a presentar, y qué pasa con quienes esperan.",
+ "fecha": "Noviembre 2026",
+ "actualizado": {
+  "iso": "2026-11-07",
+  "texto": "7 de noviembre de 2026"
+ },
+ "lectura": "8 min de lectura",
+ "autor": "Equipo técnico SVEA Consultores",
+ "cifras": [
+  {
+   "n": "~740",
+   "l": "CTI rechazadas al año en la RM"
+  },
+  {
+   "n": "90 %",
+   "l": "por antecedentes que faltan"
+  },
+  {
+   "n": "42 %",
+   "l": "de los rechazados vuelve a presentar"
+  },
+  {
+   "n": "59 %",
+   "l": "aprueba si reingresa en 30 días"
+  }
+ ],
+ "indiceTitulo": "En esta página",
+ "indice": [
+  {
+   "href": "#primero-lee-el-considerando-no-solo-el-rechacese",
+   "texto": "Primero: lee el considerando, no sólo el «rechácese»"
+  },
+  {
+   "href": "#segundo-recurso-o-nueva-solicitud",
+   "texto": "Segundo: recurso o nueva solicitud"
+  },
+  {
+   "href": "#tercero-no-esperes-los-numeros-del-reingreso",
+   "texto": "Tercero: no esperes. Los números del reingreso"
+  },
+  {
+   "href": "#mientras-tanto-que-pasa-con-la-patente",
+   "texto": "Mientras tanto: qué pasa con la patente"
+  },
+  {
+   "href": "#los-que-desistieron",
+   "texto": "Los que desistieron"
+  },
+  {
+   "href": "#que-hacer-en-orden",
+   "texto": "Qué hacer, en orden"
+  },
+  {
+   "href": "#que-hace-svea",
+   "texto": "Qué hace SVEA"
+  },
+  {
+   "href": "#fuentes",
+   "texto": "Fuente y método"
+  },
+  {
+   "href": "#faq",
+   "texto": "Preguntas frecuentes"
+  }
+ ],
+ "formulario": {
+  "titulo": "Cotiza la CTI con una carpeta que responda a lo que la SEREMI pide",
+  "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+  "ocultos": [
+   {
+    "name": "access_key",
+    "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+   },
+   {
+    "name": "subject",
+    "value": "Nueva cotización Calificación Técnica Industrial (Datos CTI) - SVEA Consultores",
+    "id": "dynamic-subject-rechazo-cti-que-hacer"
+   },
+   {
+    "name": "from_name",
+    "value": "SVEA Consultores Blog - Datos CTI"
+   },
+   {
+    "name": "redirect",
+    "value": "https://sveaconsultores.cl/gracias/"
+   },
+   {
+    "name": "Servicio",
+    "value": "Calificación Técnica Industrial"
+   },
+   {
+    "name": "Origen",
+    "value": "Datos CTI - rechazo-cti-que-hacer"
+   }
+  ],
+  "campos": [
+   {
+    "label": "Nombre completo *",
+    "id": "art-nombre",
+    "name": "Nombre",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Ej: Juan Pérez",
+    "ancho": false
+   },
+   {
+    "label": "Empresa *",
+    "id": "art-empresa",
+    "name": "Empresa",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Nombre de tu empresa",
+    "ancho": false
+   },
+   {
+    "label": "Teléfono *",
+    "id": "art-telefono",
+    "name": "Teléfono",
+    "tipo": "tel",
+    "requerido": true,
+    "placeholder": "+569 1234 5678",
+    "ancho": false
+   },
+   {
+    "label": "Email *",
+    "id": "art-email",
+    "name": "Email",
+    "tipo": "email",
+    "requerido": true,
+    "placeholder": "correo@empresa.cl",
+    "ancho": false
+   },
+   {
+    "label": "Tipo de servicio",
+    "id": "art-tipo",
+    "name": "Tipo de Servicio",
+    "tipo": "select",
+    "requerido": false,
+    "placeholder": null,
+    "ancho": true,
+    "opciones": [
+     {
+      "value": "",
+      "texto": "Selecciona una opción",
+      "seleccionada": true,
+      "desactivada": true
+     },
+     {
+      "value": "Calificación Técnica Industrial",
+      "texto": "Calificación técnica industrial (CTI)",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Informe Sanitario",
+      "texto": "Informe sanitario",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Transporte de Residuos",
+      "texto": "Transporte de residuos",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Otro trámite SEREMI",
+      "texto": "Otro trámite ante la SEREMI",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "No estoy seguro",
+      "texto": "No estoy seguro",
+      "seleccionada": false,
+      "desactivada": false
+     }
+    ]
+   },
+   {
+    "label": "Mensaje (opcional)",
+    "id": "art-mensaje",
+    "name": "Mensaje",
+    "tipo": "textarea",
+    "requerido": false,
+    "placeholder": "¿Qué actividad tienes, en qué comuna y en qué etapa está el trámite?",
+    "ancho": true,
+    "filas": 3
+   }
+  ],
+  "boton": "Solicitar cotización gratuita →",
+  "confianza": [
+   "Datos protegidos",
+   "Cotización sin costo",
+   "Sin compromiso"
+  ]
+ },
+ "faq": {
+  "id": "faq",
+  "titulo": "Preguntas frecuentes",
+  "items": [
+   {
+    "p": "¿Puedo apelar el rechazo de la calificación industrial?",
+    "r": "Sí. La Ley 19.880 da 5 días hábiles desde la notificación para el recurso de reposición ante la misma SEREMI, con jerárquico en subsidio. Conviene cuando la SEREMI se equivocó en los hechos o la norma. Si faltaba un antecedente, es más rápido presentar una nueva solicitud con la carpeta corregida.",
+    "rTexto": "Sí. La Ley 19.880 da 5 días hábiles desde la notificación para el recurso de reposición ante la misma SEREMI, con jerárquico en subsidio. Conviene cuando la SEREMI se equivocó en los hechos o la norma. Si faltaba un antecedente, es más rápido presentar una nueva solicitud con la carpeta corregida."
+   },
+   {
+    "p": "¿Cuánto tiempo tengo para volver a presentar la calificación industrial?",
+    "r": "No hay un plazo legal para la nueva solicitud: es un trámite nuevo. Pero los datos dicen que conviene hacerlo pronto: quien reingresa dentro de 30 días aprueba 59 %; quien espera entre tres y seis meses, 48 %.",
+    "rTexto": "No hay un plazo legal para la nueva solicitud: es un trámite nuevo. Pero los datos dicen que conviene hacerlo pronto: quien reingresa dentro de 30 días aprueba 59 %; quien espera entre tres y seis meses, 48 %."
+   },
+   {
+    "p": "¿Tengo que pagar de nuevo el arancel?",
+    "r": "Sí. La nueva solicitud paga el arancel completo. Por eso vale la pena que el segundo intento vaya completo: el 45 % de los reingresos vuelve a ser rechazado.",
+    "rTexto": "Sí. La nueva solicitud paga el arancel completo. Por eso vale la pena que el segundo intento vaya completo: el 45 % de los reingresos vuelve a ser rechazado."
+   },
+   {
+    "p": "¿Cuántos de los rechazados logran la calificación industrial después?",
+    "r": "De los rechazados en 2023-2024, el 42 % volvió a presentar y el 52 % de esos aprobó: 22 de cada 100. El 73 % de los rechazados en esos años sigue hoy sin calificación con ese RUT.",
+    "rTexto": "De los rechazados en 2023-2024, el 42 % volvió a presentar y el 52 % de esos aprobó: 22 de cada 100. El 73 % de los rechazados en esos años sigue hoy sin calificación con ese RUT."
+   },
+   {
+    "p": "¿Me rechazaron por el rubro o por la comuna?",
+    "r": "Casi nunca. El 90 % de los rechazos es por antecedentes que faltan, en todos los rubros y comunas. Lo que cambia por rubro es qué antecedente pesa más: en metalmecánica, las medidas de controles ambientales (58 % de sus rechazos por insuficiencia); en bodegas, controles y memoria de procesos a partes iguales (50 % cada uno).",
+    "rTexto": "Casi nunca. El 90 % de los rechazos es por antecedentes que faltan, en todos los rubros y comunas. Lo que cambia por rubro es qué antecedente pesa más: en metalmecánica, las medidas de controles ambientales (58 % de sus rechazos por insuficiencia); en bodegas, controles y memoria de procesos a partes iguales (50 % cada uno)."
+   }
+  ]
+ },
+ "autorCaja": {
+  "inicial": "S",
+  "nombre": "Equipo técnico SVEA Consultores",
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+ },
+ "compartir": {
+  "titulo": "Compartir",
+  "enlaces": []
+ },
+ "bloques": [
+  {
+   "tipo": "html",
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de la SEREMI de Salud RM publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026.</em></p>\n<p class=\"art-entrada\">Para la patente municipal de una bodega, un taller o una planta, la municipalidad pide la calificación industrial (CTI) de la SEREMI de Salud, que se solicita en <a href=\"/seremi-en-linea-calificacion-industrial/\">SEREMI en Línea (ASDigital)</a>. La SEREMI de Salud RM rechaza unas 740 solicitudes de CTI al año (738 en 2023, 758 en 2024, 715 en 2025 y 544 entre enero y septiembre de 2026). Si acabas de recibir una, estás en un grupo grande, y los datos de lo que hizo ese grupo sirven para decidir qué hacer tú.</p>\n<section id=\"primero-lee-el-considerando-no-solo-el-rechacese\">\n<h2>Primero: lee el considerando, no sólo el «rechácese»</h2>\n<p>La resolución de rechazo trae un considerando con la causa. Hay dos frases posibles y cambian todo lo que viene después:</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Lo que dice la resolución</th><th>Frecuencia</th><th>Qué significa</th></tr></thead><tbody><tr><td>«El titular no ha aportado los antecedentes suficientes»</td><td>90 % de los rechazos</td><td>La SEREMI no evaluó la actividad: faltó o venía incompleto un documento. Se corrige y se vuelve a presentar.</td></tr><tr><td>«La instalación no cumple con la normativa vigente»</td><td>9 %</td><td>La SEREMI sí evaluó y encontró un problema de fondo (zona, ruido, emisiones, construcción). Hay que resolverlo antes de volver a presentar, o discutirlo con un recurso si crees que se equivocó.</td></tr></tbody></table></div>\n<p>En el 59 % de los rechazos por antecedentes la SEREMI nombra qué faltó. Lo más frecuente: las medidas de controles ambientales (46 %), la memoria descriptiva de procesos (43 %), el plano general (19 %) y la memoria técnica de construcción (18 %); con menos frecuencia, las condiciones de almacenamiento, la maquinaria, el flujo de vehículos, los residuos, la boleta de agua o los extintores. El detalle completo está en <a href=\"/por-que-rechazan-la-cti/\">¿Por qué rechazan la CTI?</a>. Si tu resolución sólo trae la frase genérica (pasa en el 41 % de los casos), la carpeta hay que revisarla completa contra la lista de documentos de la <a href=\"/calificacion-tecnica-industrial-chile/\">guía de la CTI</a>.</p>\n<p>En unos 70 rechazos la SEREMI agrega que el titular puede presentar una «carta de reconsideración» en cinco días hábiles. Si tu resolución la menciona, ese plazo es la vía más corta y casi nadie la usa.</p>\n</section>\n<section id=\"segundo-recurso-o-nueva-solicitud\">\n<h2>Segundo: recurso o nueva solicitud</h2>\n<p>Hay dos caminos y no son excluyentes, pero conviene elegir bien:</p>\n<ul><li><strong>Recurso de reposición</strong> (y jerárquico en subsidio), dentro de 5 días hábiles desde la notificación, según la Ley 19.880. Sirve cuando la SEREMI se equivocó en los hechos o en la norma: por ejemplo, dice que falta un documento que sí se adjuntó, o aplica una zona del D.S. 38 que no corresponde. Los plazos, ante quién y qué pasa si no responde están en <a href=\"/rechazo-observaciones-seremi/\">la SEREMI rechazó u observó tu solicitud: cómo responder</a>.</li><li><strong>Nueva solicitud</strong> en ASDigital, con la carpeta corregida y el arancel pagado de nuevo. Es el camino para el 90 % de los casos: faltaba algo, se agrega, se reingresa. Un recurso contra un rechazo bien fundado sólo suma semanas.</li></ul>\n<p>Regla práctica: si el considerando nombra un antecedente que no entregaste o entregaste incompleto, reingresa; si afirma algo que es falso o que puedes demostrar con lo que ya está en el expediente, recurre (y prepara la nueva solicitud en paralelo).</p>\n</section>\n<section id=\"tercero-no-esperes-los-numeros-del-reingreso\">\n<h2>Tercero: no esperes. Los números del reingreso</h2>\n<p>Seguimos la siguiente resolución del mismo titular después de cada rechazo de 2023 y 2024 (los años con seguimiento completo):</p>\n<div class=\"art-tabla\"><table><thead><tr><th></th><th>Rechazos 2023-24</th><th>Volvieron a presentar</th><th>Aprobaron al segundo intento</th></tr></thead><tbody><tr><td>Todos</td><td>1.514</td><td>42 %</td><td>52 %</td></tr><tr><td>Empresas</td><td>897</td><td>54 %</td><td>63 %</td></tr><tr><td>Personas naturales</td><td>617</td><td>25 %</td><td>19 %</td></tr><tr><td>Regularización</td><td>1.127</td><td>39 %</td><td>55 %</td></tr><tr><td>Proyecto nuevo</td><td>387</td><td>52 %</td><td>46 %</td></tr></tbody></table></div>\n<p>Seis de cada diez titulares rechazados no vuelven a presentar con el mismo RUT. De los que vuelven, aprueba la mitad; la otra mitad recibe un segundo rechazo (45 % de los reingresos) o desiste. En total, de cada 100 rechazados sólo 22 terminan calificados por su cuenta.</p>\n<p>¿Cuándo vuelven? La mediana es 111 días después del rechazo. Un 20 % reingresa dentro de 30 días, 43 % dentro de 90, 63 % dentro de 180 y 17 % espera más de un año.</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Días entre el rechazo y la nueva solicitud</th><th>Reingresos</th><th>Aprueban</th></tr></thead><tbody><tr><td>0 a 30</td><td>20 %</td><td><strong>59 %</strong></td></tr><tr><td>31 a 90</td><td>23 %</td><td>56 %</td></tr><tr><td>91 a 180</td><td>20 %</td><td>48 %</td></tr><tr><td>Más de 180</td><td>37 %</td><td>56 %</td></tr></tbody></table></div>\n<p>Quien reingresa en el primer mes aprueba más que quien se demora medio año. Tiene lógica: la resolución está fresca, el equipo que armó la carpeta sigue disponible y lo que faltaba se completa en días, no se rehace desde cero. Esperar no mejora la carpeta; sólo alarga el tiempo sin CTI.</p>\n</section>\n<section id=\"mientras-tanto-que-pasa-con-la-patente\">\n<h2>Mientras tanto: qué pasa con la patente</h2>\n<p>Quien regulariza una instalación que ya opera suele estar con patente provisoria o en trámite, y la municipalidad pide la CTI para la definitiva. Un rechazo no cierra el local por sí mismo, pero deja el expediente municipal detenido y expone a una fiscalización sin respaldo. Lo que dice la normativa sobre la patente y los permisos de la SEREMI está en <a href=\"/patente-definitiva-permisos-seremi/\">patente definitiva: qué permisos de la SEREMI necesitas</a>. El plazo de la SEREMI para la nueva solicitud será el mismo que la primera vez: 50 días corridos de mediana en 2026 (<a href=\"/plazo-seremi-cti/\">cuánto demora la SEREMI</a>). Rechazar y volver a presentar cuesta, en la práctica, cuatro meses más de espera.</p>\n</section>\n<section id=\"los-que-desistieron\">\n<h2>Los que desistieron</h2>\n<p>Hay otro grupo: 222 titulares (2,9 % de lo publicado) retiraron la solicitud antes de la resolución, en general a los 12 días de presentarla, cuando la SEREMI pidió antecedentes o se dieron cuenta de que faltaba algo. Cerca de un tercio volvió a presentar y, de esos, casi dos de cada tres aprobaron: a quien se detiene a ordenar la carpeta le va mejor que a quien se deja rechazar. Si recién ingresaste y sabes que la carpeta está incompleta, desistir y reingresar completo es una opción.</p>\n</section>\n<section id=\"que-hacer-en-orden\">\n<h2>Qué hacer, en orden</h2>\n<ol class=\"process-steps\"><li><div class=\"step-content\"><h4>Descarga la resolución</h4><p>desde ASDigital y lee el considerando completo. Anota si dice «antecedentes insuficientes» o «no cumple normativa», y cada antecedente que nombra.</p></div></li><li><div class=\"step-content\"><h4>Si menciona carta de reconsideración</h4><p>, prepárala en los cinco días hábiles con el antecedente que faltó.</p></div></li><li><div class=\"step-content\"><h4>Si la SEREMI se equivocó en un hecho</h4><p>, presenta la reposición dentro de 5 días hábiles; si no, no gastes ese tiempo en recursos.</p></div></li><li><div class=\"step-content\"><h4>Compara la carpeta completa</h4><p>contra la lista de la guía: memoria de procesos, controles ambientales, plano, memoria de construcción, factibilidad o boleta de agua, certificado de informaciones previas, personería y RUT. Corrige todo lo que no coincida entre documentos, no sólo lo que la resolución nombró: la SEREMI vuelve a revisar todo.</p></div></li><li><div class=\"step-content\"><h4>Reingresa dentro de 30 días</h4><p>, con el arancel pagado y la solicitud nueva (no se puede «completar» la rechazada).</p></div></li><li><div class=\"step-content\"><h4>Anota el número de la nueva solicitud</h4><p>y revisa el estado en ASDigital a las seis semanas.</p></div></li></ol>\n</section>\n<section id=\"que-hace-svea\">\n<h2>Qué hace SVEA</h2>\n<p>Trabajamos a menudo con empresas que llegan con un rechazo: revisamos la resolución, redactamos o completamos los antecedentes que la SEREMI nombró (casi siempre la memoria de controles ambientales y la memoria de procesos), corregimos lo que no coincide entre documentos y reingresamos. El resultado lo decide la SEREMI y no lo prometemos; lo que sí comprometemos es reingresar con la carpeta completa en días, no en meses, porque el plazo de reingreso es lo único de esta historia que depende del titular. <a href=\"/calificacion-tecnica-industrial/\">Cotiza el reingreso de tu CTI</a>.</p>\n</section>"
+  },
+  {
+   "tipo": "formulario"
+  },
+  {
+   "tipo": "html",
+   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Cifras calculadas sobre resoluciones públicas de la SEREMI de Salud RM publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026. Rechazos: 2.755 de 7.707 resoluciones publicadas entre enero de 2023 y septiembre de 2026. Reingreso = siguiente resolución (de cualquier tipo, salvo documento vacío) del mismo RUT después del rechazo; para 2025-2026 el seguimiento está truncado, por eso las tasas se calculan sobre los rechazos de 2023-2024. Los días hasta el reingreso se cuentan desde la resolución de rechazo hasta la nueva solicitud (828 reingresos con ambas fechas). Desistimientos: 222 resoluciones; su reingreso se siguió con el mismo método. Sólo cifras agregadas; ningún titular, RUT ni dirección.</p>\n</section>"
+  }
+ ],
+ "relacionados": {
+  "titulo": "Servicios relacionados",
+  "intro": "",
+  "tarjetas": [
+   {
+    "titulo": "Calificación Técnica Industrial",
+    "texto": "Expediente técnico completo (memorias, planos, controles ambientales) y tramitación en ASDigital hasta la resolución de la SEREMI.",
+    "href": "/calificacion-tecnica-industrial/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Estudio de Carga de Combustible",
+    "texto": "Cálculo de la carga de fuego según NCh 1916 y categoría de resistencia al fuego según la OGUC, con informe firmado.",
+    "href": "/estudio-de-carga-de-combustible/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Planes de Emergencia y Evacuación",
+    "texto": "Plan de emergencia para empresas conforme al DS 44 y al DS 594: riesgos, protocolos, planos de evacuación y simulacros.",
+    "href": "/planes-de-emergencia-y-evacuacion/",
+    "enlace": "Conocer servicio →"
+   }
+  ]
+ },
+ "asunto": {
+  "prefijo": "[BLOG] Cotización Calificación Técnica Industrial - ",
+  "campo": "Empresa",
+  "id": "dynamic-subject-rechazo-cti-que-hacer"
+ },
+ "datosCti": {
+  "tipo": "articulo",
+  "ola": 1,
+  "corte": "noviembre 2026",
+  "generado": "2026-11-07"
+ }
+}

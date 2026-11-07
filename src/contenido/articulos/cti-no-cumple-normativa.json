@@ -1,0 +1,306 @@
+{
+ "slug": "cti-no-cumple-normativa",
+ "ruta": "/cti-no-cumple-normativa/",
+ "migasOriginal": [
+  {
+   "texto": "Inicio",
+   "href": "/"
+  },
+  {
+   "texto": "Blog",
+   "href": "/blog/"
+  }
+ ],
+ "migaFinal": "Rechazo SEREMI «no cumple normativa»",
+ "categoria": "Datos CTI",
+ "h1": "Resolución sanitaria rechazada por «no cumple con normativa vigente»: qué revisa la SEREMI en 2026 y cómo cambió",
+ "bajada": "Hasta 2024 esa frase era un rechazo de fondo: ruido, emisiones, uso de suelo. Desde 2025 es otra cosa: una lista de verificación del D.S. 594 (extintores, flujo vehicular, ventilación, residuos) pegada a un rechazo por antecedentes. Pasó del 7 % al 16 % de los rechazos de la SEREMI RM y, leído con cuidado, es el rechazo que más se corrige al reingresar.",
+ "fecha": "Noviembre 2026",
+ "actualizado": {
+  "iso": "2026-11-07",
+  "texto": "7 de noviembre de 2026"
+ },
+ "lectura": "8 min de lectura",
+ "autor": "Equipo técnico SVEA Consultores",
+ "cifras": [
+  {
+   "n": "254",
+   "l": "rechazos «no cumple normativa» en la RM 2023-2026"
+  },
+  {
+   "n": "7 % → 16 %",
+   "l": "de los rechazos, 2023 a 2026"
+  },
+  {
+   "n": "60 %",
+   "l": "de los de 2026 mencionan extintores"
+  },
+  {
+   "n": "77 %",
+   "l": "aprueba al reingresar (resto de rechazos: 50 %)"
+  }
+ ],
+ "indiceTitulo": "En esta página",
+ "indice": [
+  {
+   "href": "#cuantos-son-y-como-crecen",
+   "texto": "Cuántos son y cómo crecen"
+  },
+  {
+   "href": "#que-incumple-segun-la-propia-resolucion",
+   "texto": "Qué incumple, según la propia resolución"
+  },
+  {
+   "href": "#cuantos-son-de-verdad-un-problema-de-emplazamiento",
+   "texto": "Cuántos son de verdad un problema de emplazamiento"
+  },
+  {
+   "href": "#la-prueba-es-el-rechazo-que-mas-aprueba-al-reingresar",
+   "texto": "La prueba: es el rechazo que más aprueba al reingresar"
+  },
+  {
+   "href": "#dos-casos-particulares",
+   "texto": "Dos casos particulares"
+  },
+  {
+   "href": "#fuera-de-la-region-metropolitana-la-frase-es-la-norma",
+   "texto": "Fuera de la Región Metropolitana la frase es la norma"
+  },
+  {
+   "href": "#que-hacer-si-tu-rechazo-dice-no-cumple-con-normativa-vigente",
+   "texto": "Qué hacer si tu rechazo dice «no cumple con normativa vigente»"
+  },
+  {
+   "href": "#que-hace-svea",
+   "texto": "Qué hace SVEA"
+  },
+  {
+   "href": "#fuentes",
+   "texto": "Fuente y método"
+  },
+  {
+   "href": "#faq",
+   "texto": "Preguntas frecuentes"
+  }
+ ],
+ "formulario": {
+  "titulo": "Cotiza la CTI con una carpeta que responda a lo que la SEREMI pide",
+  "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+  "ocultos": [
+   {
+    "name": "access_key",
+    "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+   },
+   {
+    "name": "subject",
+    "value": "Nueva cotización Calificación Técnica Industrial (Datos CTI) - SVEA Consultores",
+    "id": "dynamic-subject-cti-no-cumple-normativa"
+   },
+   {
+    "name": "from_name",
+    "value": "SVEA Consultores Blog - Datos CTI"
+   },
+   {
+    "name": "redirect",
+    "value": "https://sveaconsultores.cl/gracias/"
+   },
+   {
+    "name": "Servicio",
+    "value": "Calificación Técnica Industrial"
+   },
+   {
+    "name": "Origen",
+    "value": "Datos CTI - cti-no-cumple-normativa"
+   }
+  ],
+  "campos": [
+   {
+    "label": "Nombre completo *",
+    "id": "art-nombre",
+    "name": "Nombre",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Ej: Juan Pérez",
+    "ancho": false
+   },
+   {
+    "label": "Empresa *",
+    "id": "art-empresa",
+    "name": "Empresa",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Nombre de tu empresa",
+    "ancho": false
+   },
+   {
+    "label": "Teléfono *",
+    "id": "art-telefono",
+    "name": "Teléfono",
+    "tipo": "tel",
+    "requerido": true,
+    "placeholder": "+569 1234 5678",
+    "ancho": false
+   },
+   {
+    "label": "Email *",
+    "id": "art-email",
+    "name": "Email",
+    "tipo": "email",
+    "requerido": true,
+    "placeholder": "correo@empresa.cl",
+    "ancho": false
+   },
+   {
+    "label": "Tipo de servicio",
+    "id": "art-tipo",
+    "name": "Tipo de Servicio",
+    "tipo": "select",
+    "requerido": false,
+    "placeholder": null,
+    "ancho": true,
+    "opciones": [
+     {
+      "value": "",
+      "texto": "Selecciona una opción",
+      "seleccionada": true,
+      "desactivada": true
+     },
+     {
+      "value": "Calificación Técnica Industrial",
+      "texto": "Calificación técnica industrial (CTI)",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Informe Sanitario",
+      "texto": "Informe sanitario",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Transporte de Residuos",
+      "texto": "Transporte de residuos",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Otro trámite SEREMI",
+      "texto": "Otro trámite ante la SEREMI",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "No estoy seguro",
+      "texto": "No estoy seguro",
+      "seleccionada": false,
+      "desactivada": false
+     }
+    ]
+   },
+   {
+    "label": "Mensaje (opcional)",
+    "id": "art-mensaje",
+    "name": "Mensaje",
+    "tipo": "textarea",
+    "requerido": false,
+    "placeholder": "¿Qué actividad tienes, en qué comuna y en qué etapa está el trámite?",
+    "ancho": true,
+    "filas": 3
+   }
+  ],
+  "boton": "Solicitar cotización gratuita →",
+  "confianza": [
+   "Datos protegidos",
+   "Cotización sin costo",
+   "Sin compromiso"
+  ]
+ },
+ "faq": {
+  "id": "faq",
+  "titulo": "Preguntas frecuentes",
+  "items": [
+   {
+    "p": "¿Qué significa que la instalación «no cumple con normativa vigente» en un rechazo de calificaciones industriales?",
+    "r": "Depende del año. En 2023-2024 significaba casi siempre un problema de fondo: ruido, emisiones, uso de suelo o vecinos. Desde 2025 la SEREMI RM usa la frase para listar los puntos del D.S. 594 que no quedaron acreditados (extintores, flujo vehicular, materialidad, ventilación, residuos), y en el 62 % de los casos la acompaña de «antecedentes insuficientes». Hay que leer lo que sigue a la frase.",
+    "rTexto": "Depende del año. En 2023-2024 significaba casi siempre un problema de fondo: ruido, emisiones, uso de suelo o vecinos. Desde 2025 la SEREMI RM usa la frase para listar los puntos del D.S. 594 que no quedaron acreditados (extintores, flujo vehicular, materialidad, ventilación, residuos), y en el 62 % de los casos la acompaña de «antecedentes insuficientes». Hay que leer lo que sigue a la frase."
+   },
+   {
+    "p": "¿Cuántas calificación industrial se rechazan por este motivo?",
+    "r": "254 en la Región Metropolitana entre 2023 y septiembre de 2026: el 9,2 % de los rechazos, pero en alza (7 % en 2023, 15,6 % en 2026).",
+    "rTexto": "254 en la Región Metropolitana entre 2023 y septiembre de 2026: el 9,2 % de los rechazos, pero en alza (7 % en 2023, 15,6 % en 2026)."
+   },
+   {
+    "p": "¿Se puede reingresar después de un rechazo por «no cumple normativa»?",
+    "r": "Sí, y con buen resultado: de los rechazados por este motivo en 2023-2024 que volvieron a presentar, aprobó el 77 %, contra el 50 % del resto de rechazos. La excepción son los que mencionan uso de suelo o SEA (28 % de los casos): ahí el problema no es la carpeta.",
+    "rTexto": "Sí, y con buen resultado: de los rechazados por este motivo en 2023-2024 que volvieron a presentar, aprobó el 77 %, contra el 50 % del resto de rechazos. La excepción son los que mencionan uso de suelo o SEA (28 % de los casos): ahí el problema no es la carpeta."
+   },
+   {
+    "p": "¿Qué revisa la SEREMI del D.S. 594 en la calificación industrial?",
+    "r": "Según los rechazos de 2025-2026: extintores (cantidad, potencial de extinción y capacitación del personal), flujo vehicular y carga y descarga dentro del predio, características de construcción y resistencia al fuego, manejo de residuos, ventilación, servicios higiénicos y agua potable y alcantarillado.",
+    "rTexto": "Según los rechazos de 2025-2026: extintores (cantidad, potencial de extinción y capacitación del personal), flujo vehicular y carga y descarga dentro del predio, características de construcción y resistencia al fuego, manejo de residuos, ventilación, servicios higiénicos y agua potable y alcantarillado."
+   },
+   {
+    "p": "¿Es lo mismo en todas las regiones?",
+    "r": "No. En la SEREMI RM la frase es el 9 % de los rechazos; en Valparaíso el 48 % y en Antofagasta el 69 %, porque esas SEREMI la escriben casi en cualquier rechazo. Fuera de la RM no sirve para distinguir un rechazo de fondo de uno por carpeta.",
+    "rTexto": "No. En la SEREMI RM la frase es el 9 % de los rechazos; en Valparaíso el 48 % y en Antofagasta el 69 %, porque esas SEREMI la escriben casi en cualquier rechazo. Fuera de la RM no sirve para distinguir un rechazo de fondo de uno por carpeta."
+   }
+  ]
+ },
+ "autorCaja": {
+  "inicial": "S",
+  "nombre": "Equipo técnico SVEA Consultores",
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+ },
+ "compartir": {
+  "titulo": "Compartir",
+  "enlaces": []
+ },
+ "bloques": [
+  {
+   "tipo": "html",
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de la SEREMI de Salud RM publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026.</em></p>\n<p class=\"art-entrada\">Para la patente municipal de una bodega, un taller o una planta, la municipalidad pide la calificación industrial (CTI) de la SEREMI de Salud, que se solicita en <a href=\"/seremi-en-linea-calificacion-industrial/\">SEREMI en Línea (ASDigital)</a>. Una resolución de rechazo de CTI trae, en los considerandos, una de dos frases (o las dos). La primera, «el titular no ha aportado los antecedentes suficientes», está en el 90 % de los rechazos y significa que la SEREMI no pudo evaluar (<a href=\"/por-que-rechazan-la-cti/\">por qué rechazan la CTI</a>). La segunda, «la instalación (o el proyecto) no cumple con la normativa vigente», suena definitiva: la autoridad evaluó y el recinto no sirve. Leídos los 254 casos de la Región Metropolitana, la segunda frase ya no significa eso.</p>\n<section id=\"cuantos-son-y-como-crecen\">\n<h2>Cuántos son y cómo crecen</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Año</th><th>Rechazos totales (RM)</th><th>«No cumple normativa»</th><th>Participación</th><th>Y además «antecedentes insuficientes»</th></tr></thead><tbody><tr><td>2023</td><td>738</td><td>53</td><td>7,2 %</td><td>17 %</td></tr><tr><td>2024</td><td>758</td><td>42</td><td>5,5 %</td><td>36 %</td></tr><tr><td>2025</td><td>715</td><td>74</td><td>10,3 %</td><td>62 %</td></tr><tr><td>2026 (ene-sep)</td><td>544</td><td>85</td><td><strong>15,6 %</strong></td><td><strong>62 %</strong></td></tr><tr><td>Total</td><td>2.755</td><td>254</td><td>9,2 %</td><td>48 %</td></tr></tbody></table></div>\n<p>Dos cosas pasan a la vez. El rótulo se usa el doble que hace tres años, y casi siempre viene acompañado de la frase de antecedentes insuficientes: en 2026, 53 de los 85 traen las dos. Es decir, la SEREMI no está rechazando más instalaciones por ser incompatibles con la norma; está escribiendo, en el mismo rechazo por carpeta incompleta, <strong>qué</strong> de la norma no quedó acreditado.</p>\n<p>Se concentra en empresas (11,4 % de sus rechazos, contra 6,3 % en personas naturales, cuyas carpetas no llegan a ese nivel de detalle), en SpA (12,1 %) y en proyectos nuevos (10,8 %, contra 8,7 % en regularizaciones). En alimentos, uno de cada cuatro rechazos de 2026 lleva la frase.</p>\n</section>\n<section id=\"que-incumple-segun-la-propia-resolucion\">\n<h2>Qué incumple, según la propia resolución</h2>\n<p>Debajo de la frase la SEREMI detalla. Clasificado por palabras clave (un rechazo cae en varias categorías), el contenido cambió por completo entre los dos bienios:</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Qué dice que incumple</th><th>2023-2024 (95 rechazos)</th><th>2025-2026 (159)</th></tr></thead><tbody><tr><td>Además, antecedentes insuficientes</td><td>25 %</td><td><strong>62 %</strong></td></tr><tr><td>Extintores: cantidad, potencial de extinción, capacitación</td><td>18 %</td><td><strong>58 %</strong></td></tr><tr><td>D.S. 594 (condiciones sanitarias y ambientales del lugar de trabajo)</td><td>19 %</td><td><strong>56 %</strong></td></tr><tr><td>Flujo vehicular, carga y descarga, estacionamientos</td><td>25 %</td><td>47 %</td></tr><tr><td>Características de construcción, materialidad, resistencia al fuego</td><td>33 %</td><td>44 %</td></tr><tr><td>Residuos (sólidos, aceites, peligrosos)</td><td>13 %</td><td>43 %</td></tr><tr><td>Ventilación</td><td>21 %</td><td>42 %</td></tr><tr><td>Vecinos colindantes, viviendas</td><td>21 %</td><td>41 %</td></tr><tr><td>Emisiones a la atmósfera, material particulado</td><td><strong>43 %</strong></td><td>40 %</td></tr><tr><td>Ruido (D.S. 38)</td><td><strong>44 %</strong></td><td>37 %</td></tr><tr><td>Planos (emplazamiento, elevación, cuadro de superficies)</td><td>14 %</td><td>32 %</td></tr><tr><td>Error de personería, RUT o razón social</td><td>12 %</td><td>25 %</td></tr><tr><td>Debe evaluarse en el SEA o tiene RCA</td><td>17 %</td><td>23 %</td></tr><tr><td>Sustancias peligrosas (D.S. 43, NCh 382)</td><td>17 %</td><td>22 %</td></tr><tr><td>Microempresa familiar que no califica como MEF</td><td>9 %</td><td>20 %</td></tr><tr><td>Agua potable, alcantarillado, boleta</td><td>7 %</td><td>17 %</td></tr><tr><td>Carga de combustible</td><td>11 %</td><td>12 %</td></tr><tr><td>Uso de suelo, zona, plan regulador, CIP</td><td><strong>15 %</strong></td><td>4 %</td></tr><tr><td>Sólo la frase, sin detalle</td><td><strong>21 %</strong></td><td>6 %</td></tr></tbody></table></div>\n<p>En 2023-2024 el «no cumple» era un juicio sobre el emplazamiento y las emisiones: ruido, material particulado, uso de suelo, y en uno de cada cinco casos la SEREMI no explicaba nada. En 2025-2026 es una revisión del D.S. 594 punto por punto, y casi siempre explica: extintores sin dimensionar o sin registro de capacitación, flujo de camiones sin resolver dentro del predio, materialidad sin describir, residuos sin gestor, ventilación sin proyecto. Son los mismos cinco puntos por los que hoy rechaza «de fondo» y que una memoria técnica completa resuelve.</p>\n<p>Otra lectura del mismo cambio: la palabra «extintor» aparecía en el 1,5 % de todos los rechazos de 2023 y en el 9,4 % de los de 2026; la cita al D.S. 594, del 0,7 % al 9,2 %.</p>\n</section>\n<section id=\"cuantos-son-de-verdad-un-problema-de-emplazamiento\">\n<h2>Cuántos son de verdad un problema de emplazamiento</h2>\n<p>Lo que no se arregla con documentos es el lugar: un taller en zona donde el plan regulador no lo permite, o un proyecto que debía entrar al SEA. De los 254 rechazos, <strong>70 (28 %) mencionan uso de suelo o SEA/RCA</strong>; la proporción no cambió entre bienios (29 % y 26 %). Si se suman los que nombran a los vecinos colindantes, que a veces es contexto y a veces es el motivo, llegan a la mitad.</p>\n<p>Al revés: alrededor de <strong>180 de los 254</strong> no mencionan uso de suelo ni SEA. Son rechazos que nombran extintores, flujo vehicular, materialidad, ventilación, residuos o personería, y que se subsanan con una memoria de controles bien hecha, un plano con cuadro de superficies, un gestor de residuos y el papel de la personería correcto.</p>\n</section>\n<section id=\"la-prueba-es-el-rechazo-que-mas-aprueba-al-reingresar\">\n<h2>La prueba: es el rechazo que más aprueba al reingresar</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Rechazos 2023-2024 (RM)</th><th>Volvieron a presentar</th><th>Aprobaron al 2º intento</th><th>Días hasta reingresar (promedio)</th></tr></thead><tbody><tr><td>Con «no cumple normativa» (95)</td><td>45 %</td><td><strong>77 %</strong></td><td>147</td></tr><tr><td>Resto de rechazos (1.419)</td><td>42 %</td><td>50 %</td><td>210</td></tr></tbody></table></div>\n<p>Si «no cumple normativa» fuera una incompatibilidad real, quienes reingresan deberían fracasar. Pasa lo contrario: aprueban tres de cada cuatro, mucho más que el resto, y vuelven antes. La razón es que la resolución les dijo exactamente qué corregir. Ampliando a los rechazos de 2023-2025, la ventaja se mantiene (66 % contra 50 %). El plazo de la SEREMI para resolverlos es el mismo que para todos: 49 días corridos de mediana (<a href=\"/plazo-seremi-cti/\">cuánto demora la SEREMI</a>).</p>\n<p>Esa claridad también se refleja en las reconsideraciones: el 5 % de los rechazos de 2026 ya son respuesta a una reconsideración (0,9 % en 2023); el titular discute el fondo porque hay fondo que discutir (<a href=\"/rechazo-observaciones-seremi/\">observación, rechazo y recursos</a>).</p>\n</section>\n<section id=\"dos-casos-particulares\">\n<h2>Dos casos particulares</h2>\n<p><strong>Microempresa familiar (MEF).</strong> 40 de los 254 rechazos dicen que la actividad no califica como MEF según la Ley 19.749: el titular pidió la calificación por la vía de la microempresa familiar y la SEREMI concluyó que no cumple las condiciones (trabajadores ajenos, superficie, actividad molesta). Es un rechazo frecuente en <a href=\"/cti-persona-natural/\">personas naturales</a> y se evita eligiendo bien la vía antes de ingresar.</p>\n<p><strong>Personería.</strong> Uno de cada cuatro rechazos «no cumple» de 2025-2026 nombra un error en el RUT, la razón social o el poder del representante. Es el rechazo más tonto y más fácil de evitar: la solicitud en ASDigital y los documentos tienen que decir lo mismo, y quien firma tiene que poder firmar.</p>\n</section>\n<section id=\"fuera-de-la-region-metropolitana-la-frase-es-la-norma\">\n<h2>Fuera de la Región Metropolitana la frase es la norma</h2>\n<p>Las plantillas de cada SEREMI son distintas. En la RM la frase aparece en el 9 % de los rechazos; en Valparaíso, en el 48 %; en Antofagasta, en el 69 %; en Los Ríos, en el 63 %. En esas regiones el rótulo acompaña casi cualquier rechazo y no distingue nada; conviene leer los considerandos de la <a href=\"/cti/\">página de cada región</a> antes de sacar conclusiones. En las 13 regiones juntas, el 16,5 % de los rechazos la trae.</p>\n</section>\n<section id=\"que-hacer-si-tu-rechazo-dice-no-cumple-con-normativa-vigente\">\n<h2>Qué hacer si tu rechazo dice «no cumple con normativa vigente»</h2>\n<ol class=\"process-steps\"><li><div class=\"step-content\"><h4>Leer qué sigue a la frase</h4><p>Si nombra uso de suelo, plan regulador o SEA, el problema es el lugar o la escala del proyecto: hay que resolverlo antes de reingresar (informe de la DOM, consulta de pertinencia) o cambiar de recinto. Si nombra extintores, D.S. 594, flujo vehicular, materialidad, ventilación o residuos, es carpeta.</p></div></li><li><div class=\"step-content\"><h4>Extintores dimensionados y capacitación con registro</h4><p>Cantidad por superficie y riesgo, agente (PQS, CO₂), potencial de extinción y el registro firmado de la capacitación del personal. Es el punto más repetido de 2026; está en el 90 % de las calificaciones como condición (<a href=\"/despues-de-la-cti/proteccion-contra-incendio/\">extintores y carga de combustible después de la CTI</a>).</p></div></li><li><div class=\"step-content\"><h4>Flujo vehicular dentro del predio</h4><p>Carga, descarga y estacionamiento resueltos en el plano, sin usar la calle.</p></div></li><li><div class=\"step-content\"><h4>Materialidad y resistencia al fuego</h4><p>por recinto, con el cuadro de superficies. Cuando la carga de combustible es alta, un <a href=\"/estudio-de-carga-de-combustible/\">estudio de carga de combustible</a> define la categoría y evita la discusión.</p></div></li><li><div class=\"step-content\"><h4>Residuos con gestor</h4><p>sólidos con transportista autorizado, aceites y filtros como <a href=\"/despues-de-la-cti/residuos-peligrosos-ds-148/\">residuos peligrosos</a>, <a href=\"/despues-de-la-cti/sustancias-peligrosas-ds-43/\">sustancias peligrosas</a> con su hoja de seguridad.</p></div></li><li><div class=\"step-content\"><h4>Ventilación y emisiones</h4><p>descritas: campana, filtro, descarga a los cuatro vientos, captación de polvo, según la actividad.</p></div></li><li><div class=\"step-content\"><h4>Personería y datos coherentes</h4><p>en todos los documentos.</p></div></li><li><div class=\"step-content\"><h4>Reingresar pronto</h4><p>Quienes volvieron con estas correcciones aprobaron en el 77 % de los casos; esperar no mejora la carpeta (<a href=\"/rechazo-cti-que-hacer/\">qué hacer tras un rechazo</a>).</p></div></li></ol>\n</section>\n<section id=\"que-hace-svea\">\n<h2>Qué hace SVEA</h2>\n<p>SVEA Consultores lee la resolución de rechazo, separa lo que es emplazamiento de lo que es carpeta y arma el reingreso con la memoria de controles ambientales completa (extintores dimensionados, residuos, ventilación, materialidad, flujo vehicular), el plano con superficies y la personería correcta. Si el problema es el lugar, lo decimos antes de cobrar un reingreso que no va a prosperar. No prometemos la calificación; la decide la SEREMI. <a href=\"/calificacion-tecnica-industrial/\">Cotiza la CTI o el reingreso</a>.</p>\n</section>"
+  },
+  {
+   "tipo": "formulario"
+  },
+  {
+   "tipo": "html",
+   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Cifras calculadas sobre resoluciones públicas de la SEREMI de Salud RM publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026: 2.755 rechazos entre enero de 2023 y septiembre de 2026, 254 con la frase «no cumple con normativa vigente» en los considerandos. Las categorías de incumplimiento se leen del texto con patrones de palabras clave; un rechazo puede caer en varias y los porcentajes no suman 100. Reingreso = siguiente resolución del mismo RUT; se mide sobre los rechazos de 2023-2024 (y 2023-2025 como control) por truncamiento. Cifras de otras regiones sobre 3.447 rechazos de 13 regiones; sus plantillas son distintas y la frase no es comparable. Sólo agregados: no se publican nombres de titulares, RUT ni direcciones.</p>\n</section>"
+  }
+ ],
+ "relacionados": {
+  "titulo": "Servicios relacionados",
+  "intro": "",
+  "tarjetas": [
+   {
+    "titulo": "Calificación Técnica Industrial",
+    "texto": "Expediente técnico completo (memorias, planos, controles ambientales) y tramitación en ASDigital hasta la resolución de la SEREMI.",
+    "href": "/calificacion-tecnica-industrial/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Estudio de Carga de Combustible",
+    "texto": "Cálculo de la carga de fuego según NCh 1916 y categoría de resistencia al fuego según la OGUC, con informe firmado.",
+    "href": "/estudio-de-carga-de-combustible/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Planes de Emergencia y Evacuación",
+    "texto": "Plan de emergencia para empresas conforme al DS 44 y al DS 594: riesgos, protocolos, planos de evacuación y simulacros.",
+    "href": "/planes-de-emergencia-y-evacuacion/",
+    "enlace": "Conocer servicio →"
+   }
+  ]
+ },
+ "asunto": {
+  "prefijo": "[BLOG] Cotización Calificación Técnica Industrial - ",
+  "campo": "Empresa",
+  "id": "dynamic-subject-cti-no-cumple-normativa"
+ },
+ "datosCti": {
+  "tipo": "articulo",
+  "ola": 1,
+  "corte": "noviembre 2026",
+  "generado": "2026-11-07"
+ }
+}

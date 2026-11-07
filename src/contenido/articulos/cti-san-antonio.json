@@ -1,0 +1,302 @@
+{
+ "slug": "cti-san-antonio",
+ "ruta": "/cti/san-antonio/",
+ "migasOriginal": [
+  {
+   "texto": "Inicio",
+   "href": "/"
+  },
+  {
+   "texto": "Blog",
+   "href": "/blog/"
+  }
+ ],
+ "migaFinal": "San Antonio",
+ "categoria": "Datos CTI",
+ "h1": "Permiso SEREMI y patente en San Antonio: la calificación industrial en 83 resoluciones",
+ "bajada": "Si tu bodega, taller o planta está en San Antonio, estas son las cifras de los trámites de CTI que la SEREMI ya resolvió ahí. El rubro que más la pide es bodegas (24 resoluciones). Esta página resume cuántas calificaciones industriales se tramitan en la comuna, cuántas se rechazan y por qué, cuánto demora la SEREMI y cómo es la instalación típica que aprueba.",
+ "fecha": "Noviembre 2026",
+ "actualizado": {
+  "iso": "2026-11-07",
+  "texto": "7 de noviembre de 2026"
+ },
+ "lectura": "5 min de lectura",
+ "autor": "Equipo técnico SVEA Consultores",
+ "cifras": [
+  {
+   "n": "83",
+   "l": "resoluciones CTI 2023-2026"
+  },
+  {
+   "n": "19 %",
+   "l": "de rechazo (Valparaíso: 24 %)"
+  },
+  {
+   "n": "43 días",
+   "l": "mediana SEREMI"
+  },
+  {
+   "n": "34 %",
+   "l": "de las solicitudes son de personas naturales"
+  }
+ ],
+ "indiceTitulo": "En esta página",
+ "indice": [
+  {
+   "href": "#cuantas-calificaciones-industriales-se-tramitan-en-san-anton",
+   "texto": "Cuántas calificaciones industriales se tramitan en San Antonio"
+  },
+  {
+   "href": "#cuanto-se-rechaza-la-calificacion-industrial-en-san-antonio",
+   "texto": "Cuánto se rechaza la calificación industrial en San Antonio"
+  },
+  {
+   "href": "#que-le-falto-a-las-carpetas-rechazadas-en-san-antonio",
+   "texto": "Qué le faltó a las carpetas rechazadas en San Antonio"
+  },
+  {
+   "href": "#que-rubros-piden-calificacion-industrial-en-san-antonio",
+   "texto": "Qué rubros piden calificación industrial en San Antonio"
+  },
+  {
+   "href": "#cuanto-demora-el-permiso-seremi-calificacion-industrial-en-s",
+   "texto": "Cuánto demora el permiso SEREMI (calificación industrial) en San Antonio"
+  },
+  {
+   "href": "#como-es-la-instalacion-tipica-que-la-seremi-califica-en-san",
+   "texto": "Cómo es la instalación típica que la SEREMI califica en San Antonio"
+  },
+  {
+   "href": "#que-hace-svea-con-estos-datos",
+   "texto": "Qué hace SVEA con estos datos"
+  },
+  {
+   "href": "#fuentes",
+   "texto": "Fuente y método"
+  },
+  {
+   "href": "#faq",
+   "texto": "Preguntas frecuentes"
+  }
+ ],
+ "formulario": {
+  "titulo": "Cotiza la Calificación Técnica Industrial",
+  "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+  "ocultos": [
+   {
+    "name": "access_key",
+    "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+   },
+   {
+    "name": "subject",
+    "value": "Nueva cotización Calificación Técnica Industrial (Datos CTI) - SVEA Consultores",
+    "id": "dynamic-subject-cti-san-antonio"
+   },
+   {
+    "name": "from_name",
+    "value": "SVEA Consultores Blog - Datos CTI"
+   },
+   {
+    "name": "redirect",
+    "value": "https://sveaconsultores.cl/gracias/"
+   },
+   {
+    "name": "Servicio",
+    "value": "Calificación Técnica Industrial"
+   },
+   {
+    "name": "Origen",
+    "value": "Datos CTI - cti-san-antonio"
+   }
+  ],
+  "campos": [
+   {
+    "label": "Nombre completo *",
+    "id": "art-nombre",
+    "name": "Nombre",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Ej: Juan Pérez",
+    "ancho": false
+   },
+   {
+    "label": "Empresa *",
+    "id": "art-empresa",
+    "name": "Empresa",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Nombre de tu empresa",
+    "ancho": false
+   },
+   {
+    "label": "Teléfono *",
+    "id": "art-telefono",
+    "name": "Teléfono",
+    "tipo": "tel",
+    "requerido": true,
+    "placeholder": "+569 1234 5678",
+    "ancho": false
+   },
+   {
+    "label": "Email *",
+    "id": "art-email",
+    "name": "Email",
+    "tipo": "email",
+    "requerido": true,
+    "placeholder": "correo@empresa.cl",
+    "ancho": false
+   },
+   {
+    "label": "Tipo de servicio",
+    "id": "art-tipo",
+    "name": "Tipo de Servicio",
+    "tipo": "select",
+    "requerido": false,
+    "placeholder": null,
+    "ancho": true,
+    "opciones": [
+     {
+      "value": "",
+      "texto": "Selecciona una opción",
+      "seleccionada": true,
+      "desactivada": true
+     },
+     {
+      "value": "Calificación Técnica Industrial",
+      "texto": "Calificación técnica industrial (CTI)",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Informe Sanitario",
+      "texto": "Informe sanitario",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Transporte de Residuos",
+      "texto": "Transporte de residuos",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Otro trámite SEREMI",
+      "texto": "Otro trámite ante la SEREMI",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "No estoy seguro",
+      "texto": "No estoy seguro",
+      "seleccionada": false,
+      "desactivada": false
+     }
+    ]
+   },
+   {
+    "label": "Mensaje (opcional)",
+    "id": "art-mensaje",
+    "name": "Mensaje",
+    "tipo": "textarea",
+    "requerido": false,
+    "placeholder": "¿Qué actividad tienes, en qué comuna y en qué etapa está el trámite?",
+    "ancho": true,
+    "filas": 3
+   }
+  ],
+  "boton": "Solicitar cotización gratuita →",
+  "confianza": [
+   "Datos protegidos",
+   "Cotización sin costo",
+   "Sin compromiso"
+  ]
+ },
+ "faq": {
+  "id": "faq",
+  "titulo": "Preguntas frecuentes",
+  "items": [
+   {
+    "p": "¿Cuántas calificaciones industriales se resuelven al año en San Antonio?",
+    "r": "En 2025 la SEREMI de Salud de la Región de Valparaíso resolvió 16 resoluciones de CTI para recintos en San Antonio; en enero-septiembre de 2026, 20. Es el 10,5 % de la región en todo el periodo.",
+    "rTexto": "En 2025 la SEREMI de Salud de la Región de Valparaíso resolvió 16 resoluciones de CTI para recintos en San Antonio; en enero-septiembre de 2026, 20. Es el 10,5 % de la región en todo el periodo."
+   },
+   {
+    "p": "¿Qué porcentaje de calificaciones industriales se rechaza en San Antonio?",
+    "r": "El 19 % de las resoluciones con decisión (2023-2026). Para empresas es 15 %.",
+    "rTexto": "El 19 % de las resoluciones con decisión (2023-2026). Para empresas es 15 %."
+   },
+   {
+    "p": "¿Por qué la SEREMI rechaza la calificación industrial en San Antonio?",
+    "r": "En el 69 % de los casos, por antecedentes insuficientes. Con 11 rechazos por insuficiencia la muestra es chica; en toda la Región de Valparaíso lo que más falta son las medidas de control ambiental (27 %) y la memoria de procesos (23 %).",
+    "rTexto": "En el 69 % de los casos, por antecedentes insuficientes. Con 11 rechazos por insuficiencia la muestra es chica; en toda la Región de Valparaíso lo que más falta son las medidas de control ambiental (27 %) y la memoria de procesos (23 %)."
+   },
+   {
+    "p": "¿Cuánto demora la SEREMI en resolver la calificación industrial en San Antonio?",
+    "r": "Mediana de 43 días corridos desde la solicitud; en 2026, 50 días. En toda la Región de Valparaíso la mediana es 44 días.",
+    "rTexto": "Mediana de 43 días corridos desde la solicitud; en 2026, 50 días. En toda la Región de Valparaíso la mediana es 44 días."
+   },
+   {
+    "p": "¿La patente en San Antonio la da la municipalidad o la SEREMI?",
+    "r": "Las dos intervienen. La calificación industrial (CTI) la resuelve la SEREMI de Salud de la Región de Valparaíso por SEREMI en Línea (ASDigital); la municipalidad la exige después para otorgar la patente comercial o industrial definitiva, y la Dirección de Obras la usa para verificar el uso de suelo. Sin la calificación, la patente queda provisoria o se niega.",
+    "rTexto": "Las dos intervienen. La calificación industrial (CTI) la resuelve la SEREMI de Salud de la Región de Valparaíso por SEREMI en Línea (ASDigital); la municipalidad la exige después para otorgar la patente comercial o industrial definitiva, y la Dirección de Obras la usa para verificar el uso de suelo. Sin la calificación, la patente queda provisoria o se niega."
+   }
+  ]
+ },
+ "autorCaja": {
+  "inicial": "S",
+  "nombre": "Equipo técnico SVEA Consultores",
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+ },
+ "compartir": {
+  "titulo": "Compartir",
+  "enlaces": []
+ },
+ "bloques": [
+  {
+   "tipo": "html",
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de la SEREMI de Salud de la Región de Valparaíso publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026.</em></p>\n<p class=\"art-entrada\">Para obtener o renovar la patente municipal (comercial o industrial) de una bodega, un taller o una planta, la municipalidad pide el permiso de la SEREMI de Salud: la calificación industrial (Calificación Técnica Industrial, CTI), que se tramita en <a href=\"/seremi-en-linea-calificacion-industrial/\">SEREMI en Línea (ASDigital)</a>. Las cifras de toda la Región de Valparaíso están en <a href=\"/cti/region/valparaiso/\">su página regional</a> y el conjunto en <a href=\"/cti/\">calificación industrial por región, comuna y rubro</a>.</p>\n<section id=\"cuantas-calificaciones-industriales-se-tramitan-en-san-anton\">\n<h2>Cuántas calificaciones industriales se tramitan en San Antonio</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Año</th><th>Resoluciones con decisión</th><th>Rechazadas</th><th>Participación en Valparaíso</th></tr></thead><tbody><tr><td>2023</td><td>27</td><td>19 %</td><td>13,7 %</td></tr><tr><td>2024</td><td>20</td><td>20 %</td><td>13,1 %</td></tr><tr><td>2025</td><td>16</td><td>12 %</td><td>6,5 %</td></tr><tr><td>2026 (ene-sep)</td><td>20</td><td>25 %</td><td>10,2 %</td></tr></tbody></table></div>\n<p>El volumen cae: 27 resoluciones en 2023 contra 16 en 2025 (-41 %), mientras el total de la Región de Valparaíso varió +25 %. El 64 % son regularizaciones de instalaciones que ya operan; el resto son proyectos nuevos. Las personas naturales pesan más que en el promedio de la región: el 34 % de las solicitudes las hace una persona natural (Valparaíso: 27 %).</p>\n</section>\n<section id=\"cuanto-se-rechaza-la-calificacion-industrial-en-san-antonio\">\n<h2>Cuánto se rechaza la calificación industrial en San Antonio</h2>\n<p>De las 83 resoluciones con decisión, 16 fueron rechazadas: <strong>19 %</strong>. La cifra de la Región de Valparaíso es 24 %, así que aquí el riesgo es el mismo que en el resto de la región. Las personas naturales son pocas en este nodo (28 resoluciones; muestra chica), así que su tasa no se compara.</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Segmento</th><th>Resoluciones</th><th>Rechazo</th></tr></thead><tbody><tr><td>Empresas</td><td>55</td><td>15 %</td></tr><tr><td>Personas naturales</td><td>28</td><td>29 %</td></tr><tr><td>Regularización (instalación existente)</td><td>—</td><td>19 %</td></tr><tr><td>Proyecto nuevo</td><td>—</td><td>20 %</td></tr><tr><td>2023-2024</td><td>47</td><td>19 %</td></tr><tr><td>2025-2026</td><td>36</td><td>19 %</td></tr></tbody></table></div>\n<p>El rechazo se mantiene entre los dos bienios, como en toda la Región de Valparaíso (21 % → 26 %). Para comparar con el resto del país, <a href=\"/cti/tasa-de-rechazo/\">ver el ranking completo de rechazo por región, comuna y rubro</a>.</p>\n</section>\n<section id=\"que-le-falto-a-las-carpetas-rechazadas-en-san-antonio\">\n<h2>Qué le faltó a las carpetas rechazadas en San Antonio</h2>\n<p>En el 69 % de los rechazos la SEREMI escribe que el titular «no ha aportado los antecedentes suficientes»; el 44 % dice que la instalación «no cumple con normativa vigente». Son 11 rechazos por insuficiencia en el periodo: muestra chica, así que no se desglosa por antecedente. En toda la Región de Valparaíso lo que más falta es medidas de control ambiental (27 % de los rechazos por insuficiencia) y memoria descriptiva de procesos (23 %).</p>\n</section>\n<section id=\"que-rubros-piden-calificacion-industrial-en-san-antonio\">\n<h2>Qué rubros piden calificación industrial en San Antonio</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Rubro</th><th>Resoluciones</th><th>Rechazo</th></tr></thead><tbody><tr><td>Bodegas</td><td>24</td><td>25 % (muestra chica)</td></tr><tr><td>Talleres mecánicos y automotriz</td><td>16</td><td>19 % (muestra chica)</td></tr><tr><td>Alimentos</td><td>11</td><td>9 % (muestra chica)</td></tr><tr><td>Locales comerciales</td><td>6</td><td>17 % (muestra chica)</td></tr><tr><td>Metalmecánica</td><td>4</td><td>50 % (muestra chica)</td></tr><tr><td>Servicios</td><td>3</td><td>0 % (muestra chica)</td></tr></tbody></table></div>\n<p>Una resolución puede cubrir más de un rubro, por eso la suma supera el total. El 33 % de las CTI de la comuna declara dos o más actividades.</p>\n</section>\n<section id=\"cuanto-demora-el-permiso-seremi-calificacion-industrial-en-s\">\n<h2>Cuánto demora el permiso SEREMI (calificación industrial) en San Antonio</h2>\n<p>Desde la fecha de solicitud hasta la resolución, la mediana en San Antonio es <strong>43 días corridos</strong> (la mitad de los casos entre 28 y 58; el 90 % antes de 73). En lo resuelto en 2026 la mediana es 50 días (entre 23 y 57 en la mitad central); el 80 % salió en 60 días o menos. La mediana de la Región de Valparaíso es 44 días (47 en 2026). Rechazar no es más rápido que aprobar: una carpeta incompleta espera lo mismo y vuelve a cero.</p>\n</section>\n<section id=\"como-es-la-instalacion-tipica-que-la-seremi-califica-en-san\">\n<h2>Cómo es la instalación típica que la SEREMI califica en San Antonio</h2>\n<p>Las calificadas son, en su mayoría, pymes chicas: 4 trabajadores y 173 m² construidos en la mediana (el 75 % tiene hasta 8 trabajadores y 544 m²). El 21 % supera los 1.000 m² y el 53 % no llega a 200 m². El 10 % declara turno nocturno. Sólo el 3 % declara plan de emergencia y el 10 % red húmeda. Hubo 14 calificaciones MOLESTAS (con restricción de zona) en el periodo.</p>\n</section>\n<section id=\"que-hace-svea-con-estos-datos\">\n<h2>Qué hace SVEA con estos datos</h2>\n<p>El trabajo de SVEA Consultores en una CTI para una instalación en San Antonio es el expediente técnico: memoria descriptiva de procesos, medidas de control ambiental, memoria técnica de construcción y planos, y la carga en ASDigital. Los antecedentes que más faltan en los rechazos de este nodo son exactamente los que arma el equipo técnico. No prometemos un resultado: la calificación la decide la SEREMI; lo que sí hacemos es presentar una carpeta que responde a lo que la autoridad pide y, si hay un rechazo previo, reingresar con lo que la resolución dijo que faltaba.</p>\n<p><a href=\"/calificacion-tecnica-industrial/\">Cotizar la calificación industrial</a> · <a href=\"/seremi-en-linea-calificacion-industrial/\">Cómo se tramita en SEREMI en Línea</a> · <a href=\"/rechazo-cti-que-hacer/\">Me rechazaron: qué hacer</a> · <a href=\"/calificacion-tecnica-industrial-chile/\">Guía completa de la CTI</a></p>\n</section>"
+  },
+  {
+   "tipo": "formulario"
+  },
+  {
+   "tipo": "html",
+   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Cifras calculadas sobre resoluciones públicas de la SEREMI de Salud de la Región de Valparaíso publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026. Universo: 869 resoluciones de Calificación Técnica Industrial publicadas entre enero de 2023 y septiembre 2026; para San Antonio se consideran las 83 resoluciones con decisión (calificada, rechazada o «no ha lugar»); los desistimientos y los documentos vacíos quedan fuera porque no traen comuna ni actividad. «Rechazo» es rechazadas sobre resoluciones con decisión. El antecedente faltante es el que la SEREMI nombra en el considerando; en una parte de los rechazos sólo escribe la frase genérica «no ha aportado los antecedentes suficientes» (en este nodo, 82 %). Tamaño y horario salen del texto de las resoluciones calificadas. Las cifras se actualizan todos los meses con las resoluciones nuevas; esta página muestra la fecha de corte arriba. No se publican nombres de titulares, RUT ni direcciones.</p>\n</section>"
+  }
+ ],
+ "relacionados": {
+  "titulo": "Servicios relacionados",
+  "intro": "",
+  "tarjetas": [
+   {
+    "titulo": "Calificación Técnica Industrial",
+    "texto": "Expediente técnico completo (memorias, planos, controles ambientales) y tramitación en ASDigital hasta la resolución de la SEREMI.",
+    "href": "/calificacion-tecnica-industrial/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Estudio de Carga de Combustible",
+    "texto": "Cálculo de la carga de fuego según NCh 1916 y categoría de resistencia al fuego según la OGUC, con informe firmado.",
+    "href": "/estudio-de-carga-de-combustible/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Planes de Emergencia y Evacuación",
+    "texto": "Plan de emergencia para empresas conforme al DS 44 y al DS 594: riesgos, protocolos, planos de evacuación y simulacros.",
+    "href": "/planes-de-emergencia-y-evacuacion/",
+    "enlace": "Conocer servicio →"
+   }
+  ]
+ },
+ "asunto": {
+  "prefijo": "[BLOG] Cotización Calificación Técnica Industrial - ",
+  "campo": "Empresa",
+  "id": "dynamic-subject-cti-san-antonio"
+ },
+ "datosCti": {
+  "tipo": "comuna",
+  "ola": 2,
+  "corte": "noviembre 2026",
+  "generado": "2026-11-07"
+ }
+}

@@ -1,0 +1,302 @@
+{
+ "slug": "cti-iquique",
+ "ruta": "/cti/iquique/",
+ "migasOriginal": [
+  {
+   "texto": "Inicio",
+   "href": "/"
+  },
+  {
+   "texto": "Blog",
+   "href": "/blog/"
+  }
+ ],
+ "migaFinal": "Iquique",
+ "categoria": "Datos CTI",
+ "h1": "Permiso SEREMI y patente en Iquique: la calificación industrial en 61 resoluciones",
+ "bajada": "Si tu bodega, taller o planta está en Iquique, estas son las cifras de los trámites de CTI que la SEREMI ya resolvió ahí. El rubro que más la pide es alimentos (30 resoluciones). Esta página resume cuántas calificaciones industriales se tramitan en la comuna, cuántas se rechazan y por qué, cuánto demora la SEREMI y cómo es la instalación típica que aprueba.",
+ "fecha": "Noviembre 2026",
+ "actualizado": {
+  "iso": "2026-11-07",
+  "texto": "7 de noviembre de 2026"
+ },
+ "lectura": "4 min de lectura",
+ "autor": "Equipo técnico SVEA Consultores",
+ "cifras": [
+  {
+   "n": "61",
+   "l": "resoluciones CTI 2023-2024"
+  },
+  {
+   "n": "25 %",
+   "l": "de rechazo (Tarapacá: 26 %)"
+  },
+  {
+   "n": "24 días",
+   "l": "mediana SEREMI"
+  },
+  {
+   "n": "51 %",
+   "l": "de las solicitudes son de personas naturales"
+  }
+ ],
+ "indiceTitulo": "En esta página",
+ "indice": [
+  {
+   "href": "#cuantas-calificaciones-industriales-se-tramitan-en-iquique",
+   "texto": "Cuántas calificaciones industriales se tramitan en Iquique"
+  },
+  {
+   "href": "#cuanto-se-rechaza-la-calificacion-industrial-en-iquique",
+   "texto": "Cuánto se rechaza la calificación industrial en Iquique"
+  },
+  {
+   "href": "#que-le-falto-a-las-carpetas-rechazadas-en-iquique",
+   "texto": "Qué le faltó a las carpetas rechazadas en Iquique"
+  },
+  {
+   "href": "#que-rubros-piden-calificacion-industrial-en-iquique",
+   "texto": "Qué rubros piden calificación industrial en Iquique"
+  },
+  {
+   "href": "#cuanto-demora-el-permiso-seremi-calificacion-industrial-en-i",
+   "texto": "Cuánto demora el permiso SEREMI (calificación industrial) en Iquique"
+  },
+  {
+   "href": "#como-es-la-instalacion-tipica-que-la-seremi-califica-en-iqui",
+   "texto": "Cómo es la instalación típica que la SEREMI califica en Iquique"
+  },
+  {
+   "href": "#que-hace-svea-con-estos-datos",
+   "texto": "Qué hace SVEA con estos datos"
+  },
+  {
+   "href": "#fuentes",
+   "texto": "Fuente y método"
+  },
+  {
+   "href": "#faq",
+   "texto": "Preguntas frecuentes"
+  }
+ ],
+ "formulario": {
+  "titulo": "Cotiza la Calificación Técnica Industrial",
+  "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+  "ocultos": [
+   {
+    "name": "access_key",
+    "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+   },
+   {
+    "name": "subject",
+    "value": "Nueva cotización Calificación Técnica Industrial (Datos CTI) - SVEA Consultores",
+    "id": "dynamic-subject-cti-iquique"
+   },
+   {
+    "name": "from_name",
+    "value": "SVEA Consultores Blog - Datos CTI"
+   },
+   {
+    "name": "redirect",
+    "value": "https://sveaconsultores.cl/gracias/"
+   },
+   {
+    "name": "Servicio",
+    "value": "Calificación Técnica Industrial"
+   },
+   {
+    "name": "Origen",
+    "value": "Datos CTI - cti-iquique"
+   }
+  ],
+  "campos": [
+   {
+    "label": "Nombre completo *",
+    "id": "art-nombre",
+    "name": "Nombre",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Ej: Juan Pérez",
+    "ancho": false
+   },
+   {
+    "label": "Empresa *",
+    "id": "art-empresa",
+    "name": "Empresa",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Nombre de tu empresa",
+    "ancho": false
+   },
+   {
+    "label": "Teléfono *",
+    "id": "art-telefono",
+    "name": "Teléfono",
+    "tipo": "tel",
+    "requerido": true,
+    "placeholder": "+569 1234 5678",
+    "ancho": false
+   },
+   {
+    "label": "Email *",
+    "id": "art-email",
+    "name": "Email",
+    "tipo": "email",
+    "requerido": true,
+    "placeholder": "correo@empresa.cl",
+    "ancho": false
+   },
+   {
+    "label": "Tipo de servicio",
+    "id": "art-tipo",
+    "name": "Tipo de Servicio",
+    "tipo": "select",
+    "requerido": false,
+    "placeholder": null,
+    "ancho": true,
+    "opciones": [
+     {
+      "value": "",
+      "texto": "Selecciona una opción",
+      "seleccionada": true,
+      "desactivada": true
+     },
+     {
+      "value": "Calificación Técnica Industrial",
+      "texto": "Calificación técnica industrial (CTI)",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Informe Sanitario",
+      "texto": "Informe sanitario",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Transporte de Residuos",
+      "texto": "Transporte de residuos",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Otro trámite SEREMI",
+      "texto": "Otro trámite ante la SEREMI",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "No estoy seguro",
+      "texto": "No estoy seguro",
+      "seleccionada": false,
+      "desactivada": false
+     }
+    ]
+   },
+   {
+    "label": "Mensaje (opcional)",
+    "id": "art-mensaje",
+    "name": "Mensaje",
+    "tipo": "textarea",
+    "requerido": false,
+    "placeholder": "¿Qué actividad tienes, en qué comuna y en qué etapa está el trámite?",
+    "ancho": true,
+    "filas": 3
+   }
+  ],
+  "boton": "Solicitar cotización gratuita →",
+  "confianza": [
+   "Datos protegidos",
+   "Cotización sin costo",
+   "Sin compromiso"
+  ]
+ },
+ "faq": {
+  "id": "faq",
+  "titulo": "Preguntas frecuentes",
+  "items": [
+   {
+    "p": "¿Cuántas calificaciones industriales se resuelven al año en Iquique?",
+    "r": "En 2025 la SEREMI de Salud de la Región de Tarapacá resolvió 0 resoluciones de CTI para recintos en Iquique; en enero-septiembre de 2026, 0. Es el 70,1 % de la región en todo el periodo.",
+    "rTexto": "En 2025 la SEREMI de Salud de la Región de Tarapacá resolvió 0 resoluciones de CTI para recintos en Iquique; en enero-septiembre de 2026, 0. Es el 70,1 % de la región en todo el periodo."
+   },
+   {
+    "p": "¿Qué porcentaje de calificaciones industriales se rechaza en Iquique?",
+    "r": "El 25 % de las resoluciones con decisión (2023-2024). Para empresas es 27 % y para personas naturales 23 %.",
+    "rTexto": "El 25 % de las resoluciones con decisión (2023-2024). Para empresas es 27 % y para personas naturales 23 %."
+   },
+   {
+    "p": "¿Por qué la SEREMI rechaza la calificación industrial en Iquique?",
+    "r": "En el 53 % de los casos, por antecedentes insuficientes. Con 8 rechazos por insuficiencia la muestra es chica; en todo Chile lo que más falta son las medidas de control ambiental (44 %) y la memoria de procesos (40 %).",
+    "rTexto": "En el 53 % de los casos, por antecedentes insuficientes. Con 8 rechazos por insuficiencia la muestra es chica; en todo Chile lo que más falta son las medidas de control ambiental (44 %) y la memoria de procesos (40 %)."
+   },
+   {
+    "p": "¿Cuánto demora la SEREMI en resolver la calificación industrial en Iquique?",
+    "r": "Mediana de 24 días corridos desde la solicitud. En toda la Región de Tarapacá la mediana es 26 días.",
+    "rTexto": "Mediana de 24 días corridos desde la solicitud. En toda la Región de Tarapacá la mediana es 26 días."
+   },
+   {
+    "p": "¿La patente en Iquique la da la municipalidad o la SEREMI?",
+    "r": "Las dos intervienen. La calificación industrial (CTI) la resuelve la SEREMI de Salud de la Región de Tarapacá por SEREMI en Línea (ASDigital); la municipalidad la exige después para otorgar la patente comercial o industrial definitiva, y la Dirección de Obras la usa para verificar el uso de suelo. Sin la calificación, la patente queda provisoria o se niega.",
+    "rTexto": "Las dos intervienen. La calificación industrial (CTI) la resuelve la SEREMI de Salud de la Región de Tarapacá por SEREMI en Línea (ASDigital); la municipalidad la exige después para otorgar la patente comercial o industrial definitiva, y la Dirección de Obras la usa para verificar el uso de suelo. Sin la calificación, la patente queda provisoria o se niega."
+   }
+  ]
+ },
+ "autorCaja": {
+  "inicial": "S",
+  "nombre": "Equipo técnico SVEA Consultores",
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+ },
+ "compartir": {
+  "titulo": "Compartir",
+  "enlaces": []
+ },
+ "bloques": [
+  {
+   "tipo": "html",
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de la SEREMI de Salud de la Región de Tarapacá publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026.</em></p>\n<p class=\"art-entrada\">Para obtener o renovar la patente municipal (comercial o industrial) de una bodega, un taller o una planta, la municipalidad pide el permiso de la SEREMI de Salud: la calificación industrial (Calificación Técnica Industrial, CTI), que se tramita en <a href=\"/seremi-en-linea-calificacion-industrial/\">SEREMI en Línea (ASDigital)</a>. Las cifras de toda la Región de Tarapacá están en <a href=\"/cti/region/tarapaca/\">su página regional</a> y el conjunto en <a href=\"/cti/\">calificación industrial por región, comuna y rubro</a>.</p>\n<section id=\"cuantas-calificaciones-industriales-se-tramitan-en-iquique\">\n<h2>Cuántas calificaciones industriales se tramitan en Iquique</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Año</th><th>Resoluciones con decisión</th><th>Rechazadas</th><th>Participación en Tarapacá</th></tr></thead><tbody><tr><td>2023</td><td>36</td><td>19 %</td><td>67,9 %</td></tr><tr><td>2024</td><td>25</td><td>32 %</td><td>73,5 %</td></tr><tr><td>2025</td><td>0</td><td>—</td><td>—</td></tr><tr><td>2026 (ene-sep)</td><td>0</td><td>—</td><td>—</td></tr></tbody></table></div>\n<p>Entre 2023 y 2025 las solicitudes bajaron 100 % (36 → 0); el total de la Región de Tarapacá varió -100 %. El 79 % son regularizaciones de instalaciones que ya operan; el resto son proyectos nuevos. El peso de las personas naturales es el del promedio de la región: el 51 % de las solicitudes las hace una persona natural (Tarapacá: 51 %).</p>\n</section>\n<section id=\"cuanto-se-rechaza-la-calificacion-industrial-en-iquique\">\n<h2>Cuánto se rechaza la calificación industrial en Iquique</h2>\n<p>De las 61 resoluciones con decisión, 15 fueron rechazadas: <strong>25 %</strong>. Es prácticamente el promedio de la Región de Tarapacá (26 %). Empresas y personas naturales se rechazan parecido (27 % y 23 %): es uno de los pocos nodos donde tramitar a nombre propio no castiga más.</p>\n<div class=\"art-tabla\"><table><thead><tr><th>Segmento</th><th>Resoluciones</th><th>Rechazo</th></tr></thead><tbody><tr><td>Empresas</td><td>30</td><td>27 %</td></tr><tr><td>Personas naturales</td><td>31</td><td>23 %</td></tr><tr><td>Regularización (instalación existente)</td><td>—</td><td>25 %</td></tr><tr><td>Proyecto nuevo</td><td>—</td><td>23 %</td></tr><tr><td>2023-2024</td><td>61</td><td>25 %</td></tr><tr><td>2025-2026</td><td>0</td><td>—</td></tr></tbody></table></div>\n<p>El rechazo bajó entre los dos bienios, igual que en toda la Región de Tarapacá (26 % → —). Para comparar con el resto del país, <a href=\"/cti/tasa-de-rechazo/\">ver el ranking completo de rechazo por región, comuna y rubro</a>.</p>\n</section>\n<section id=\"que-le-falto-a-las-carpetas-rechazadas-en-iquique\">\n<h2>Qué le faltó a las carpetas rechazadas en Iquique</h2>\n<p>En el 53 % de los rechazos la SEREMI escribe que el titular «no ha aportado los antecedentes suficientes»; el 20 % dice que la instalación «no cumple con normativa vigente». Son 8 rechazos por insuficiencia en el periodo: muestra chica, así que no se desglosa por antecedente. En todo Chile lo que más falta es medidas de control ambiental (44 % de los rechazos por insuficiencia) y memoria descriptiva de procesos (40 %).</p>\n</section>\n<section id=\"que-rubros-piden-calificacion-industrial-en-iquique\">\n<h2>Qué rubros piden calificación industrial en Iquique</h2>\n<div class=\"art-tabla\"><table><thead><tr><th>Rubro</th><th>Resoluciones</th><th>Rechazo</th></tr></thead><tbody><tr><td>Alimentos</td><td>30</td><td>27 %</td></tr><tr><td>Locales comerciales</td><td>8</td><td>0 % (muestra chica)</td></tr><tr><td>Talleres mecánicos y automotriz</td><td>5</td><td>20 % (muestra chica)</td></tr><tr><td>Bodegas</td><td>3</td><td>33 % (muestra chica)</td></tr><tr><td>Locales públicos</td><td>3</td><td>33 % (muestra chica)</td></tr><tr><td>Madera y muebles</td><td>2</td><td>50 % (muestra chica)</td></tr></tbody></table></div>\n<p>Una resolución puede cubrir más de un rubro, por eso la suma supera el total. El 36 % de las CTI de la comuna declara dos o más actividades.</p>\n</section>\n<section id=\"cuanto-demora-el-permiso-seremi-calificacion-industrial-en-i\">\n<h2>Cuánto demora el permiso SEREMI (calificación industrial) en Iquique</h2>\n<p>Desde la fecha de solicitud hasta la resolución, la mediana en Iquique es <strong>24 días corridos</strong> (la mitad de los casos entre 13 y 54; el 90 % antes de 73). La mediana de la Región de Tarapacá es 26 días. Conviene contar el tiempo completo: armar la carpeta, ingresar y esperar estas semanas; un rechazo duplica todo el ciclo.</p>\n</section>\n<section id=\"como-es-la-instalacion-tipica-que-la-seremi-califica-en-iqui\">\n<h2>Cómo es la instalación típica que la SEREMI califica en Iquique</h2>\n<p>Las calificadas son, en su mayoría, recintos pequeños: 3 trabajadores y 76 m² construidos en la mediana (el 75 % tiene hasta 5 trabajadores y 221 m²). El 7 % supera los 1.000 m² y el 71 % no llega a 200 m². El 17 % declara turno nocturno. Sólo el 0 % declara plan de emergencia y el 7 % red húmeda. Hubo 4 calificaciones MOLESTAS (con restricción de zona) en el periodo.</p>\n</section>\n<section id=\"que-hace-svea-con-estos-datos\">\n<h2>Qué hace SVEA con estos datos</h2>\n<p>El trabajo de SVEA Consultores en una CTI para una instalación en Iquique es el expediente técnico: memoria descriptiva de procesos, medidas de control ambiental, memoria técnica de construcción y planos, y la carga en ASDigital. Los antecedentes que más faltan en los rechazos de este nodo son exactamente los que arma el equipo técnico. No prometemos un resultado: la calificación la decide la SEREMI; lo que sí hacemos es presentar una carpeta que responde a lo que la autoridad pide y, si hay un rechazo previo, reingresar con lo que la resolución dijo que faltaba.</p>\n<p><a href=\"/calificacion-tecnica-industrial/\">Cotizar la calificación industrial</a> · <a href=\"/seremi-en-linea-calificacion-industrial/\">Cómo se tramita en SEREMI en Línea</a> · <a href=\"/rechazo-cti-que-hacer/\">Me rechazaron: qué hacer</a> · <a href=\"/calificacion-tecnica-industrial-chile/\">Guía completa de la CTI</a></p>\n</section>"
+  },
+  {
+   "tipo": "formulario"
+  },
+  {
+   "tipo": "html",
+   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Cifras calculadas sobre resoluciones públicas de la SEREMI de Salud de la Región de Tarapacá publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026. Universo: 96 resoluciones de Calificación Técnica Industrial publicadas entre enero de 2023 y diciembre 2024; para Iquique se consideran las 61 resoluciones con decisión (calificada, rechazada o «no ha lugar»); los desistimientos y los documentos vacíos quedan fuera porque no traen comuna ni actividad. «Rechazo» es rechazadas sobre resoluciones con decisión. El antecedente faltante es el que la SEREMI nombra en el considerando; en una parte de los rechazos sólo escribe la frase genérica «no ha aportado los antecedentes suficientes» (en este nodo, 12 %). Tamaño y horario salen del texto de las resoluciones calificadas. Las cifras se actualizan todos los meses con las resoluciones nuevas; esta página muestra la fecha de corte arriba. No se publican nombres de titulares, RUT ni direcciones.</p>\n</section>"
+  }
+ ],
+ "relacionados": {
+  "titulo": "Servicios relacionados",
+  "intro": "",
+  "tarjetas": [
+   {
+    "titulo": "Calificación Técnica Industrial",
+    "texto": "Expediente técnico completo (memorias, planos, controles ambientales) y tramitación en ASDigital hasta la resolución de la SEREMI.",
+    "href": "/calificacion-tecnica-industrial/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Estudio de Carga de Combustible",
+    "texto": "Cálculo de la carga de fuego según NCh 1916 y categoría de resistencia al fuego según la OGUC, con informe firmado.",
+    "href": "/estudio-de-carga-de-combustible/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Planes de Emergencia y Evacuación",
+    "texto": "Plan de emergencia para empresas conforme al DS 44 y al DS 594: riesgos, protocolos, planos de evacuación y simulacros.",
+    "href": "/planes-de-emergencia-y-evacuacion/",
+    "enlace": "Conocer servicio →"
+   }
+  ]
+ },
+ "asunto": {
+  "prefijo": "[BLOG] Cotización Calificación Técnica Industrial - ",
+  "campo": "Empresa",
+  "id": "dynamic-subject-cti-iquique"
+ },
+ "datosCti": {
+  "tipo": "comuna",
+  "ola": 2,
+  "corte": "noviembre 2026",
+  "generado": "2026-11-07"
+ }
+}

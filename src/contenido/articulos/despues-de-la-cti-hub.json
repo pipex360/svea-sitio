@@ -1,0 +1,241 @@
+{
+ "slug": "despues-de-la-cti-hub",
+ "ruta": "/despues-de-la-cti/",
+ "migasOriginal": [
+  {
+   "texto": "Inicio",
+   "href": "/"
+  },
+  {
+   "texto": "Blog",
+   "href": "/blog/"
+  }
+ ],
+ "migaFinal": "Después de la CTI",
+ "categoria": "Datos CTI",
+ "h1": "Después de la calificación industrial: DS 44, DS 43, SIDREP, SINADER y resolución sanitaria que la SEREMI deja escritas",
+ "bajada": "Una resolución de CTI calificada trae, además del resolutivo, condiciones y obligaciones: en la Región Metropolitana el 77 % de las calificadas (3.447 de 4.465) incluye al menos una exigencia específica y el promedio es 2,2 por resolución. Cada página de abajo mide las exigencias que corresponden a un servicio que SVEA presta: cuántos titulares las reciben al año en Chile, en qué regiones, rubros e instalaciones, qué dice la frase exacta y si es obligación («deberá») o condición declarada. Las exigencias que resuelve un instalador o un proveedor (ventilación, sala de baterías, red húmeda, TE-1, GLP, control de vectores) no tienen página propia: se mencionan donde corresponde.",
+ "fecha": "Noviembre 2026",
+ "actualizado": {
+  "iso": "2026-11-07",
+  "texto": "7 de noviembre de 2026"
+ },
+ "lectura": "4 min de lectura",
+ "autor": "Equipo técnico SVEA Consultores",
+ "cifras": [],
+ "indiceTitulo": "En esta página",
+ "indice": [
+  {
+   "href": "#que-hace-svea-con-estos-datos",
+   "texto": "Qué hace SVEA con estos datos"
+  },
+  {
+   "href": "#fuentes",
+   "texto": "Fuente y método"
+  },
+  {
+   "href": "#faq",
+   "texto": "Preguntas frecuentes"
+  }
+ ],
+ "formulario": {
+  "titulo": "Cotiza la Calificación Técnica Industrial",
+  "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+  "ocultos": [
+   {
+    "name": "access_key",
+    "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+   },
+   {
+    "name": "subject",
+    "value": "Nueva cotización Calificación Técnica Industrial (Datos CTI) - SVEA Consultores",
+    "id": "dynamic-subject-despues-de-la-cti-hub"
+   },
+   {
+    "name": "from_name",
+    "value": "SVEA Consultores Blog - Datos CTI"
+   },
+   {
+    "name": "redirect",
+    "value": "https://sveaconsultores.cl/gracias/"
+   },
+   {
+    "name": "Servicio",
+    "value": "Calificación Técnica Industrial"
+   },
+   {
+    "name": "Origen",
+    "value": "Datos CTI - despues-de-la-cti-hub"
+   }
+  ],
+  "campos": [
+   {
+    "label": "Nombre completo *",
+    "id": "art-nombre",
+    "name": "Nombre",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Ej: Juan Pérez",
+    "ancho": false
+   },
+   {
+    "label": "Empresa *",
+    "id": "art-empresa",
+    "name": "Empresa",
+    "tipo": "text",
+    "requerido": true,
+    "placeholder": "Nombre de tu empresa",
+    "ancho": false
+   },
+   {
+    "label": "Teléfono *",
+    "id": "art-telefono",
+    "name": "Teléfono",
+    "tipo": "tel",
+    "requerido": true,
+    "placeholder": "+569 1234 5678",
+    "ancho": false
+   },
+   {
+    "label": "Email *",
+    "id": "art-email",
+    "name": "Email",
+    "tipo": "email",
+    "requerido": true,
+    "placeholder": "correo@empresa.cl",
+    "ancho": false
+   },
+   {
+    "label": "Tipo de servicio",
+    "id": "art-tipo",
+    "name": "Tipo de Servicio",
+    "tipo": "select",
+    "requerido": false,
+    "placeholder": null,
+    "ancho": true,
+    "opciones": [
+     {
+      "value": "",
+      "texto": "Selecciona una opción",
+      "seleccionada": true,
+      "desactivada": true
+     },
+     {
+      "value": "Calificación Técnica Industrial",
+      "texto": "Calificación técnica industrial (CTI)",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Informe Sanitario",
+      "texto": "Informe sanitario",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Transporte de Residuos",
+      "texto": "Transporte de residuos",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "Otro trámite SEREMI",
+      "texto": "Otro trámite ante la SEREMI",
+      "seleccionada": false,
+      "desactivada": false
+     },
+     {
+      "value": "No estoy seguro",
+      "texto": "No estoy seguro",
+      "seleccionada": false,
+      "desactivada": false
+     }
+    ]
+   },
+   {
+    "label": "Mensaje (opcional)",
+    "id": "art-mensaje",
+    "name": "Mensaje",
+    "tipo": "textarea",
+    "requerido": false,
+    "placeholder": "¿Qué actividad tienes, en qué comuna y en qué etapa está el trámite?",
+    "ancho": true,
+    "filas": 3
+   }
+  ],
+  "boton": "Solicitar cotización gratuita →",
+  "confianza": [
+   "Datos protegidos",
+   "Cotización sin costo",
+   "Sin compromiso"
+  ]
+ },
+ "faq": {
+  "id": "faq",
+  "titulo": "Preguntas frecuentes",
+  "items": [
+   {
+    "p": "¿De dónde salen estas cifras?",
+    "r": "De las resoluciones de Calificación Técnica Industrial que cada SEREMI de Salud publica en el Portal de Transparencia, leídas y clasificadas por SVEA cada mes. Sólo se publican agregados.",
+    "rTexto": "De las resoluciones de Calificación Técnica Industrial que cada SEREMI de Salud publica en el Portal de Transparencia, leídas y clasificadas por SVEA cada mes. Sólo se publican agregados."
+   }
+  ]
+ },
+ "autorCaja": {
+  "inicial": "S",
+  "nombre": "Equipo técnico SVEA Consultores",
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+ },
+ "compartir": {
+  "titulo": "Compartir",
+  "enlaces": []
+ },
+ "bloques": [
+  {
+   "tipo": "html",
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de las SEREMI de Salud de 13 regiones publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026; lectura por patrones de texto (taxonomía SVEA de 43 exigencias) sobre las resoluciones calificadas.</em></p>\n<div class=\"art-tabla\"><table><thead><tr><th>Servicio posterior (exigencias agrupadas)</th><th>Titulares 2023-2026 (Chile)</th><th>Promedio anual 2023-2025</th><th>% de las calificadas RM</th><th>Página</th></tr></thead><tbody><tr><td>Protección contra incendio: extintores, red húmeda, detección y carga de combustible</td><td>3.673</td><td>1.026</td><td>90,7 %</td><td><a href=\"/despues-de-la-cti/proteccion-contra-incendio/\">ver</a></td></tr><tr><td>Residuos no peligrosos: transportista autorizado y SINADER</td><td>2.990</td><td>777</td><td>71,6 %</td><td><a href=\"/despues-de-la-cti/residuos-no-peligrosos-sinader/\">ver</a></td></tr><tr><td>Autorización sanitaria de alimentos (D.S. 977) e informe sanitario</td><td>1.268</td><td>343</td><td>23,4 %</td><td><a href=\"/despues-de-la-cti/autorizacion-sanitaria-alimentos/\">ver</a></td></tr><tr><td>Almacenamiento de sustancias peligrosas (D.S. 43)</td><td>709</td><td>192</td><td>15,2 %</td><td><a href=\"/despues-de-la-cti/sustancias-peligrosas-ds-43/\">ver</a></td></tr><tr><td>Residuos peligrosos: bodega RESPEL, plan de manejo y SIDREP (D.S. 148)</td><td>515</td><td>135</td><td>6,6 %</td><td><a href=\"/despues-de-la-cti/residuos-peligrosos-ds-148/\">ver</a></td></tr><tr><td>Plan de emergencia y evacuación</td><td>512</td><td>119</td><td>8,9 %</td><td><a href=\"/despues-de-la-cti/plan-de-emergencia/\">ver</a></td></tr></tbody></table></div>\n<p>Los RUT se cuentan una vez por servicio (cuando el servicio agrupa varias exigencias se toma la mayor por región: cota inferior); una misma empresa puede aparecer en varias filas. Las cifras por región, comuna y rubro de la propia CTI están en <a href=\"/cti/\">CTI por región, comuna y rubro</a> y el <a href=\"/cti/tasa-de-rechazo/\">ranking de rechazo</a>.</p>\n\n<section id=\"que-hace-svea-con-estos-datos\">\n<h2>Qué hace SVEA con estos datos</h2>\n<p>Al entregar una CTI, SVEA lee la resolución con el cliente y marca lo que queda pendiente; al armar la carpeta, prevé las exigencias que la SEREMI va a escribir para ese rubro. <a href=\"/calificacion-tecnica-industrial/\">Cotizar la CTI</a> · <a href=\"/cti/\">CTI por región, comuna y rubro</a></p>\n</section>"
+  },
+  {
+   "tipo": "formulario"
+  },
+  {
+   "tipo": "html",
+   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Resoluciones públicas de las seremi de salud de 13 regiones publicadas en el portal de transparencia, análisis svea, corte noviembre 2026. Se leen las resoluciones calificadas (INOFENSIVA, MOLESTA, PELIGROSA), se parten en oraciones y se buscan 43 patrones; se descartan oraciones con negación. Falsos positivos bajo el 5 % en las exigencias grandes. Sólo agregados; nunca nombres, RUT ni direcciones.</p>\n</section>"
+  }
+ ],
+ "relacionados": {
+  "titulo": "Servicios relacionados",
+  "intro": "",
+  "tarjetas": [
+   {
+    "titulo": "Calificación Técnica Industrial",
+    "texto": "Expediente técnico completo (memorias, planos, controles ambientales) y tramitación en ASDigital hasta la resolución de la SEREMI.",
+    "href": "/calificacion-tecnica-industrial/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Estudio de Carga de Combustible",
+    "texto": "Cálculo de la carga de fuego según NCh 1916 y categoría de resistencia al fuego según la OGUC, con informe firmado.",
+    "href": "/estudio-de-carga-de-combustible/",
+    "enlace": "Conocer servicio →"
+   },
+   {
+    "titulo": "Planes de Emergencia y Evacuación",
+    "texto": "Plan de emergencia para empresas conforme al DS 44 y al DS 594: riesgos, protocolos, planos de evacuación y simulacros.",
+    "href": "/planes-de-emergencia-y-evacuacion/",
+    "enlace": "Conocer servicio →"
+   }
+  ]
+ },
+ "asunto": {
+  "prefijo": "[BLOG] Cotización Calificación Técnica Industrial - ",
+  "campo": "Empresa",
+  "id": "dynamic-subject-despues-de-la-cti-hub"
+ },
+ "datosCti": {
+  "tipo": "hub",
+  "ola": 1,
+  "corte": "noviembre 2026",
+  "generado": "2026-11-07"
+ }
+}
