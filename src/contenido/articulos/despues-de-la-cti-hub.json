@@ -31,7 +31,7 @@
   },
   {
    "href": "#fuentes",
-   "texto": "Fuente y método"
+   "texto": "Fuente"
   },
   {
    "href": "#faq",
@@ -176,15 +176,15 @@
   "items": [
    {
     "p": "¿De dónde salen estas cifras?",
-    "r": "De las resoluciones de Calificación Técnica Industrial que cada SEREMI de Salud publica en el Portal de Transparencia, leídas y clasificadas por SVEA cada mes. Sólo se publican agregados.",
-    "rTexto": "De las resoluciones de Calificación Técnica Industrial que cada SEREMI de Salud publica en el Portal de Transparencia, leídas y clasificadas por SVEA cada mes. Sólo se publican agregados."
+    "r": "De las resoluciones de Calificación Técnica Industrial públicas de cada SEREMI de Salud, leídas y clasificadas por SVEA cada mes. Sólo se publican agregados.",
+    "rTexto": "De las resoluciones de Calificación Técnica Industrial públicas de cada SEREMI de Salud, leídas y clasificadas por SVEA cada mes. Sólo se publican agregados."
    }
   ]
  },
  "autorCaja": {
   "inicial": "S",
   "nombre": "Equipo técnico SVEA Consultores",
-  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 proyectos gestionados."
+  "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 empresas atendidas."
  },
  "compartir": {
   "titulo": "Compartir",
@@ -193,14 +193,14 @@
  "bloques": [
   {
    "tipo": "html",
-   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de las SEREMI de Salud de 13 regiones publicadas en el Portal de Transparencia, análisis SVEA, corte noviembre 2026; lectura por patrones de texto (taxonomía SVEA de 43 exigencias) sobre las resoluciones calificadas.</em></p>\n<div class=\"art-tabla\"><table><thead><tr><th>Servicio posterior (exigencias agrupadas)</th><th>Titulares 2023-2026 (Chile)</th><th>Promedio anual 2023-2025</th><th>% de las calificadas RM</th><th>Página</th></tr></thead><tbody><tr><td>Protección contra incendio: extintores, red húmeda, detección y carga de combustible</td><td>3.673</td><td>1.026</td><td>90,7 %</td><td><a href=\"/despues-de-la-cti/proteccion-contra-incendio/\">ver</a></td></tr><tr><td>Residuos no peligrosos: transportista autorizado y SINADER</td><td>2.990</td><td>777</td><td>71,6 %</td><td><a href=\"/despues-de-la-cti/residuos-no-peligrosos-sinader/\">ver</a></td></tr><tr><td>Autorización sanitaria de alimentos (D.S. 977) e informe sanitario</td><td>1.268</td><td>343</td><td>23,4 %</td><td><a href=\"/despues-de-la-cti/autorizacion-sanitaria-alimentos/\">ver</a></td></tr><tr><td>Almacenamiento de sustancias peligrosas (D.S. 43)</td><td>709</td><td>192</td><td>15,2 %</td><td><a href=\"/despues-de-la-cti/sustancias-peligrosas-ds-43/\">ver</a></td></tr><tr><td>Residuos peligrosos: bodega RESPEL, plan de manejo y SIDREP (D.S. 148)</td><td>515</td><td>135</td><td>6,6 %</td><td><a href=\"/despues-de-la-cti/residuos-peligrosos-ds-148/\">ver</a></td></tr><tr><td>Plan de emergencia y evacuación</td><td>512</td><td>119</td><td>8,9 %</td><td><a href=\"/despues-de-la-cti/plan-de-emergencia/\">ver</a></td></tr></tbody></table></div>\n<p>Los RUT se cuentan una vez por servicio (cuando el servicio agrupa varias exigencias se toma la mayor por región: cota inferior); una misma empresa puede aparecer en varias filas. Las cifras por región, comuna y rubro de la propia CTI están en <a href=\"/cti/\">CTI por región, comuna y rubro</a> y el <a href=\"/cti/tasa-de-rechazo/\">ranking de rechazo</a>.</p>\n\n<section id=\"que-hace-svea-con-estos-datos\">\n<h2>Qué hace SVEA con estos datos</h2>\n<p>Al entregar una CTI, SVEA lee la resolución con el cliente y marca lo que queda pendiente; al armar la carpeta, prevé las exigencias que la SEREMI va a escribir para ese rubro. <a href=\"/calificacion-tecnica-industrial/\">Cotizar la CTI</a> · <a href=\"/cti/\">CTI por región, comuna y rubro</a></p>\n</section>"
+   "html": "<p class=\"art-datos\"><em>Datos: resoluciones públicas de las SEREMI de Salud de 13 regiones, análisis SVEA, corte noviembre 2026; lectura por patrones de texto (taxonomía SVEA de 43 exigencias) sobre las resoluciones calificadas.</em></p>\n<div class=\"art-tabla\"><table><thead><tr><th>Servicio posterior (exigencias agrupadas)</th><th>Titulares 2023-2026 (Chile)</th><th>Promedio anual 2023-2025</th><th>% de las calificadas RM</th><th>Página</th></tr></thead><tbody><tr><td>Protección contra incendio: extintores, red húmeda, detección y carga de combustible</td><td>3.673</td><td>1.026</td><td>90,7 %</td><td><a href=\"/despues-de-la-cti/proteccion-contra-incendio/\">ver</a></td></tr><tr><td>Residuos no peligrosos: transportista autorizado y SINADER</td><td>2.990</td><td>777</td><td>71,6 %</td><td><a href=\"/despues-de-la-cti/residuos-no-peligrosos-sinader/\">ver</a></td></tr><tr><td>Autorización sanitaria de alimentos (D.S. 977) e informe sanitario</td><td>1.268</td><td>343</td><td>23,4 %</td><td><a href=\"/despues-de-la-cti/autorizacion-sanitaria-alimentos/\">ver</a></td></tr><tr><td>Almacenamiento de sustancias peligrosas (D.S. 43)</td><td>709</td><td>192</td><td>15,2 %</td><td><a href=\"/despues-de-la-cti/sustancias-peligrosas-ds-43/\">ver</a></td></tr><tr><td>Residuos peligrosos: bodega RESPEL, plan de manejo y SIDREP (D.S. 148)</td><td>515</td><td>135</td><td>6,6 %</td><td><a href=\"/despues-de-la-cti/residuos-peligrosos-ds-148/\">ver</a></td></tr><tr><td>Plan de emergencia y evacuación</td><td>512</td><td>119</td><td>8,9 %</td><td><a href=\"/despues-de-la-cti/plan-de-emergencia/\">ver</a></td></tr></tbody></table></div>\n<p>Los RUT se cuentan una vez por servicio (cuando el servicio agrupa varias exigencias se toma la mayor por región: cota inferior); una misma empresa puede aparecer en varias filas. Las cifras por región, comuna y rubro de la propia CTI están en <a href=\"/cti/\">CTI por región, comuna y rubro</a> y el <a href=\"/cti/tasa-de-rechazo/\">ranking de rechazo</a>.</p>\n\n<section id=\"que-hace-svea-con-estos-datos\">\n<h2>Qué hace SVEA con estos datos</h2>\n<p>Al entregar una CTI, SVEA lee la resolución con el cliente y marca lo que queda pendiente; al armar la carpeta, prevé las exigencias que la SEREMI va a escribir para ese rubro. <a href=\"/calificacion-tecnica-industrial/\">Cotizar la CTI</a> · <a href=\"/cti/\">CTI por región, comuna y rubro</a></p>\n</section>"
   },
   {
    "tipo": "formulario"
   },
   {
    "tipo": "html",
-   "html": "<section id=\"fuentes\">\n<h2>Fuente y método</h2>\n<p>Resoluciones públicas de las seremi de salud de 13 regiones publicadas en el portal de transparencia, análisis svea, corte noviembre 2026. Se leen las resoluciones calificadas (INOFENSIVA, MOLESTA, PELIGROSA), se parten en oraciones y se buscan 43 patrones; se descartan oraciones con negación. Falsos positivos bajo el 5 % en las exigencias grandes. Sólo agregados; nunca nombres, RUT ni direcciones.</p>\n</section>"
+   "html": "<section id=\"fuentes\">\n<h2>Fuente</h2>\n<p>Resoluciones públicas de la SEREMI de Salud (enero 2023 – septiembre 2026), analizadas por SVEA. Sólo cifras agregadas, sin datos de empresas ni personas. Se actualiza cada mes.</p>\n</section>"
   }
  ],
  "relacionados": {
