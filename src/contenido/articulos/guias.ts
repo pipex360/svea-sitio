@@ -1308,7 +1308,7 @@ export const GUIAS: Guia[] = [
     categoria: 'Datos CTI',
     fecha: "Nov 2026",
     lectura: "5 min lectura",
-    imagen: { nombre: "bodega-productos-estudio-carga-combustible", alt: "Patente en Arica: certificado de actividad inofensiva y calificación industrial en 61 resoluciones" },
+    imagen: { nombre: "planta-alimentos-informe-sanitario", alt: "Patente en Arica: certificado de actividad inofensiva y calificación industrial en 61 resoluciones" },
     servicio: CTI,
     oculta: true,
   },
