@@ -18,7 +18,8 @@
  *     recuento en «Una» por clic.
  *   · GA4 (G-FWQ05WDLZ3) va por gtag.js desde el código, porque el GTM no
  *     trae GA4: page_view (el config), `form_submit_cotizacion` con el
- *     parámetro `servicio`, y `clic_whatsapp`.
+ *     parámetro `servicio`, y `clic_whatsapp`. Desde el 8-nov además: `clic_enlace` (texto, destino,
+ *     tipo_clic, zona), `lectura_profundidad` (25/50/75/100), `lectura_tiempo` y `formulario_invalido`.
  *
  * Además:
  *   · Enhanced Conversions: al enviar un formulario se guardan en
@@ -343,6 +344,88 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
       }
       document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') alIrse(); });
       window.addEventListener('pagehide', alIrse);
+
+      // casilla con error (8-nov, «monitorear todos los clics y dónde se mueve el
+      // cliente, como en Tasaria»): el navegador marca la casilla inválida al
+      // intentar enviar. Viaja el nombre de la casilla y el tipo de error, nunca lo escrito.
+      document.addEventListener('invalid', function (e) {
+        var n = casilla(e.target);
+        if (!n) return;
+        var v = e.target.validity || {};
+        var tipo = v.valueMissing ? 'vacio' : v.typeMismatch ? 'formato' : v.patternMismatch ? 'patron' : v.tooShort ? 'corto' : 'otro';
+        window.gtagGA('event', 'formulario_invalido', datos(estadoDe(e.target.form), { campo: n, error: tipo }));
+      }, true);
+
+      // todos los clics en botones y enlaces: qué botón, hacia dónde y en qué
+      // parte de la página. WhatsApp y teléfono ya tienen su evento propio.
+      function zona(el) {
+        var s = el.closest('header, nav, footer, aside, section[id], form, [data-zona]');
+        if (!s) return 'cuerpo';
+        if (s.getAttribute('data-zona')) return s.getAttribute('data-zona');
+        if (s.id) return s.id;
+        return s.tagName.toLowerCase() === 'nav' ? 'menu' : s.tagName.toLowerCase();
+      }
+      document.addEventListener('click', function (e) {
+        var el = e.target && e.target.closest && e.target.closest('a[href], button');
+        if (!el) return;
+        var href = el.getAttribute('href') || '';
+        if (/api\.whatsapp\.com|wa\.me\/|^tel:/.test(href)) return;
+        if (el.type === 'submit') return;   // el envío ya se mide con form_submit_cotizacion
+        var texto = (el.getAttribute('aria-label') || el.innerText || el.title || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+        var destino = '', tipo = 'boton';
+        if (href) {
+          try {
+            var u = new URL(href, location.href);
+            var propio = u.hostname === location.hostname;
+            destino = propio ? (u.pathname + u.hash) : u.hostname;
+            tipo = /^#/.test(href) || (propio && u.pathname === location.pathname && u.hash) ? 'ancla' : propio ? 'interno' : 'externo';
+          } catch (err) { destino = href.slice(0, 100); }
+        }
+        if (/cotiz|formulario|solicitar/i.test(texto + ' ' + destino)) tipo = 'cta_' + tipo;
+        window.gtagGA('event', 'clic_enlace', {
+          texto: texto,
+          destino: destino,
+          tipo_clic: tipo,
+          zona: zona(el),
+          event_label: document.title,
+          transport_type: 'beacon',
+        });
+      }, true);
+
+      // hasta dónde lee: 25, 50, 75 y 100 % de la página (una vez cada uno) y,
+      // en los artículos, cuánto tiempo estuvo leyendo con la pestaña visible
+      var hitos = [25, 50, 75, 100], vistos = {}, visible = 0, desde = Date.now();
+      function profundidad() {
+        var alto = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+        var pct = Math.round(100 * window.scrollY / alto);
+        hitos.forEach(function (h) {
+          if (pct >= h - 2 && !vistos[h]) {
+            vistos[h] = 1;
+            window.gtagGA('event', 'lectura_profundidad', { porcentaje: h, event_label: document.title });
+          }
+        });
+      }
+      var esperando = false;
+      window.addEventListener('scroll', function () {
+        if (esperando) return;
+        esperando = true;
+        setTimeout(function () { esperando = false; profundidad(); }, 400);
+      }, { passive: true });
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') {
+          visible += Date.now() - desde;
+          var seg = Math.round(visible / 1000);
+          if (seg >= 5 && !vistos.tiempo) {
+            vistos.tiempo = 1;
+            var maxp = 0; hitos.forEach(function (h) { if (vistos[h]) maxp = h; });
+            window.gtagGA('event', 'lectura_tiempo', {
+              segundos: seg, porcentaje_max: maxp, event_label: document.title, transport_type: 'beacon',
+            });
+          }
+        } else {
+          desde = Date.now();
+        }
+      });
     })();
     </script>
   </Fragment>
