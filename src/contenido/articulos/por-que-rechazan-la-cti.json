@@ -236,6 +236,11 @@
     "rTexto": "En empresas sí: 34,2 % la instalación existente contra 18,2 % el proyecto. En personas naturales da lo mismo (63,4 % y 63,5 %)."
    },
    {
+    "p": "¿Cuánto cuesta la calificación industrial (certificado de actividad inofensiva)?",
+    "r": "El arancel lo cobra la SEREMI de Salud y depende de la región y del tipo de trámite; se paga en SEREMI en Línea al ingresar la solicitud y no se devuelve si se rechaza. Como referencia, un trámite de calificación en la Región Metropolitana en 2026 quedó en $107.700 de arancel (es el valor de un caso real, no una tarifa oficial: confirma el vigente en la plataforma antes de pagar). A eso se suma el costo de preparar la carpeta técnica (memoria de procesos, medidas de control ambiental, plano y memoria de construcción), que depende del tamaño y la complejidad de la instalación.",
+    "rTexto": "El arancel lo cobra la SEREMI de Salud y depende de la región y del tipo de trámite; se paga en SEREMI en Línea al ingresar la solicitud y no se devuelve si se rechaza. Como referencia, un trámite de calificación en la Región Metropolitana en 2026 quedó en $107.700 de arancel (es el valor de un caso real, no una tarifa oficial: confirma el vigente en la plataforma antes de pagar). A eso se suma el costo de preparar la carpeta técnica (memoria de procesos, medidas de control ambiental, plano y memoria de construcción), que depende del tamaño y la complejidad de la instalación."
+   },
+   {
     "p": "Si me rechazan, ¿la SEREMI me devuelve el arancel?",
     "r": "No. El arancel paga la revisión, y la nueva solicitud se paga de nuevo. Por eso conviene presentar la carpeta completa la primera vez o, si ya hubo rechazo, reingresar con exactamente lo que la resolución dijo que faltaba.",
     "rTexto": "No. El arancel paga la revisión, y la nueva solicitud se paga de nuevo. Por eso conviene presentar la carpeta completa la primera vez o, si ya hubo rechazo, reingresar con exactamente lo que la resolución dijo que faltaba."
