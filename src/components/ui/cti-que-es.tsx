@@ -32,7 +32,10 @@ import { ServiceGrid, type Ficha } from '@/components/ui/service-grid';
 /** Los cuatro párrafos del original, con la foto que acompaña a cada uno:
  *  las dos primeras sobre qué es y para qué sirve, con la planta química;
  *  las dos últimas sobre lo que hacemos nosotros, con la instalación. */
-const bloques = (): BloqueScroll[] => {
+// 8-nov: enlaces en contexto hacia la guía de «certificado de actividad inofensiva» (la que
+// rankea por ese término), el paso a paso de SEREMI en Línea y los datos por comuna.
+const ENLACE = 'font-medium text-svea underline underline-offset-2 hover:no-underline';
+const bloques = (base: string): BloqueScroll[] => {
   const planta = {
     foto: 'planta-quimica-calificacion-tecnica-industrial',
     alt: 'Planta química con estanques y cañerías, instalación que requiere calificación técnica industrial de la SEREMI de Salud',
@@ -58,16 +61,34 @@ const bloques = (): BloqueScroll[] => {
     {
       texto:
         'La SEREMI de Salud clasifica cada actividad en una de cuatro categorías, según el artículo 4.14.2 de la OGUC: inofensiva, molesta, insalubre o contaminante, y peligrosa. Si tu actividad queda como inofensiva, lo que recibes es el certificado de calificación de actividad inofensiva, que también se pide para la patente municipal. En SVEA tramitamos las dos: la Calificación Técnica Industrial y el certificado de actividad inofensiva.',
+      extra: (
+        <>
+          {' '}Qué es y cuándo lo pide la municipalidad está en la guía del{' '}
+          <a className={ENLACE} href={`${base}/calificacion-inofensiva-seremi/`}>certificado de actividad inofensiva</a>.
+        </>
+      ),
       ...planta,
     },
     {
       texto:
         'En SVEA Consultores nos encargamos de evaluar detalladamente las características de tu infraestructura, levantamos toda la información requerida y preparamos el expediente técnico completo que exige la SEREMI de Salud. Además, gestionamos directamente la tramitación del informe, representándote ante la autoridad sanitaria y facilitando la regularización de tu actividad.',
+      extra: (
+        <>
+          {' '}El ingreso se hace en SEREMI en Línea; qué pide cada pantalla está en{' '}
+          <a className={ENLACE} href={`${base}/seremi-en-linea-calificacion-industrial/`}>SEREMI en Línea (ASDigital): cómo tramitar paso a paso</a>.
+        </>
+      ),
       ...instalacion,
     },
     {
       texto:
         'Ya sea que estés comenzando un proyecto o necesites regularizar una instalación existente, te ayudamos a cumplir con la normativa de forma segura, ágil y con respaldo profesional. También gestionamos la calificación como actividad inofensiva ante la SEREMI de Salud (Circular B32/04).',
+      extra: (
+        <>
+          {' '}Cuántas calificaciones se tramitan y cuántas se rechazan en tu comuna o rubro lo puedes ver en{' '}
+          <a className={ENLACE} href={`${base}/cti/`}>calificación industrial por región, comuna y rubro</a>.
+        </>
+      ),
       ...instalacion,
     },
   ];
@@ -91,7 +112,7 @@ export function CtiQueEs({ base = '' }: { base?: string }) {
       <div className="mx-auto max-w-6xl">
         <Scroll01
           base={base}
-          bloques={bloques()}
+          bloques={bloques(base)}
           encabezado={
             <h2
               id="titulo-que-es"

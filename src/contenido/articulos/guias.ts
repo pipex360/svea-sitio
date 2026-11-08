@@ -1739,6 +1739,10 @@ export const GUIAS_MENU: { slug: string; rotulo: string; descripcion: string }[]
   { slug: 'que-es-informe-sanitario', rotulo: '¿Qué es el Informe Sanitario?', descripcion: 'Quién lo necesita, documentos, plazos y costos ante la SEREMI.' },
 ];
 export const VER_TODAS_LAS_GUIAS = { rotulo: 'Ver todas las guías', ruta: '/blog/' };
+/** 8-nov: «Datos CTI» en el menú «Recursos y guías» (escritorio y móvil) y en el pie, junto a
+ *  «Ver todas las guías»: el hub /cti/ con las cifras por región, comuna y rubro. Va aparte de
+ *  GUIAS_MENU para no romper la grilla de 2 × 4. */
+export const DATOS_CTI_MENU = { rotulo: 'Datos CTI: rechazo y plazo de la SEREMI', detalle: 'Por región, comuna y rubro', ruta: '/cti/' };
 
 /** la URL pública de una guía: su ruta propia o /<slug>/ */
 export const rutaGuia = (g: { slug: string; ruta?: string }) => g.ruta ?? `/${g.slug}/`;

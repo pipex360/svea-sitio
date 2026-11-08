@@ -3,6 +3,7 @@
  * con su texto exacto, en acordeones nativos (mismo formato que cti-faq.tsx).
  */
 
+import type { ReactNode } from 'react';
 import { ChevronDownIcon } from 'lucide-react';
 
 export const PREGUNTAS = [
@@ -32,7 +33,19 @@ export const PREGUNTAS = [
   },
 ];
 
-export function PeFaq() {
+/** 8-nov: enlace en contexto al final de una respuesta (aparte de PREGUNTAS, que va en texto plano al FAQPage). */
+const ENLACE = 'font-medium text-svea underline underline-offset-2 hover:no-underline';
+const mas = (base: string): Record<string, ReactNode> => ({
+  '¿Quién debe implementar un plan de emergencia y evacuación?': (
+    <>
+      {' '}La SEREMI de Salud también lo deja escrito en muchas calificaciones industriales (
+      <a className={ENLACE} href={`${base}/despues-de-la-cti/plan-de-emergencia/`}>cuándo exige la SEREMI el plan de emergencia DS 44</a>).
+    </>
+  ),
+});
+
+export function PeFaq({ base = '' }: { base?: string }) {
+  const extra = mas(base);
   return (
     <section className="bg-hoja px-6 py-20" id="preguntas" aria-labelledby="titulo-faq">
       <div className="mx-auto max-w-3xl">
@@ -57,7 +70,7 @@ export function PeFaq() {
                   className="size-5 shrink-0 text-black/40 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none"
                 />
               </summary>
-              <p className="pb-5 text-base leading-relaxed text-black/70">{r}</p>
+              <p className="pb-5 text-base leading-relaxed text-black/70">{r}{extra[p]}</p>
             </details>
           ))}
         </div>

@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 import * as React from 'react';
 import { cn } from '@/lib/utils';
-import { GUIAS_MENU, TEMAS, VER_TODAS_LAS_GUIAS } from '@/contenido/articulos/guias';
+import { DATOS_CTI_MENU, GUIAS_MENU, TEMAS, VER_TODAS_LAS_GUIAS } from '@/contenido/articulos/guias';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -268,6 +268,15 @@ export default function MenuSvea({ base = '' }: { base?: string }) {
               >
                 {VER_TODAS_LAS_GUIAS.rotulo}
                 <span className="text-right text-xs font-medium text-muted-foreground">{TEMAS.map((t) => t.nombre).join(' · ')} →</span>
+              </a>
+            </NavigationMenuLink>
+            <NavigationMenuLink asChild>
+              <a
+                href={url(DATOS_CTI_MENU.ruta)}
+                className="mt-2 flex items-center justify-between gap-3 rounded-md border border-border px-3 py-2.5 text-sm font-semibold text-foreground no-underline transition-colors hover:bg-accent"
+              >
+                {DATOS_CTI_MENU.rotulo}
+                <span className="text-right text-xs font-medium text-muted-foreground">{DATOS_CTI_MENU.detalle} →</span>
               </a>
             </NavigationMenuLink>
           </NavigationMenuContent>

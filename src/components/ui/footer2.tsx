@@ -42,7 +42,7 @@ import { useEffect, useRef } from 'react';
 
 import { Velaris } from '@/components/ui/velaris';
 import { cn } from '@/lib/utils';
-import { GUIAS_MENU, VER_TODAS_LAS_GUIAS } from '@/contenido/articulos/guias';
+import { DATOS_CTI_MENU, GUIAS_MENU, VER_TODAS_LAS_GUIAS } from '@/contenido/articulos/guias';
 
 interface MenuItem {
   title: string;
@@ -118,6 +118,7 @@ export function Footer2({
       span: 2,
       links: [
         ...GUIAS_MENU.map((g) => ({ text: g.rotulo, url: `${base}/${g.slug}/` })),
+        { text: DATOS_CTI_MENU.rotulo, url: `${base}${DATOS_CTI_MENU.ruta}` },
         { text: VER_TODAS_LAS_GUIAS.rotulo, url: `${base}${VER_TODAS_LAS_GUIAS.ruta}` },
       ],
     },

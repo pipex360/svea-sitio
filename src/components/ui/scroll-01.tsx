@@ -62,6 +62,8 @@ function sinDuplicar(nodo: ReactNode): ReactNode {
 export type BloqueScroll = {
   /** el párrafo */
   texto: string;
+  /** 8-nov: lo que sigue al párrafo dentro del mismo <p> (un enlace en contexto); opcional */
+  extra?: ReactNode;
   /** la foto que acompaña a este párrafo: nombre en mejoras/fotos (ver src/lib/fotos.ts) */
   foto: string;
   alt: string;
@@ -83,6 +85,7 @@ function Bloque({ bloque, quieto }: { bloque: BloqueScroll; quieto: boolean }) {
       className="text-base leading-relaxed text-black/75 md:text-lg"
     >
       {bloque.texto}
+      {bloque.extra}
     </motion.p>
   );
 }
@@ -128,7 +131,7 @@ export function Scroll01({
         <div className="space-y-4">
           {bloques.map((b, i) => (
             <div key={b.texto.slice(0, 30)}>
-              <p className="text-base leading-relaxed text-black/75">{b.texto}</p>
+              <p className="text-base leading-relaxed text-black/75">{b.texto}{b.extra}</p>
               {fotoDe(i) !== fotoDe(i + 1) && (
                 <Foto
                   nombre={b.foto}

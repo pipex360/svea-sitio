@@ -10,6 +10,7 @@
  * No lleva estado: Astro lo dibuja en el servidor y no viaja JavaScript.
  */
 
+import type { ReactNode } from 'react';
 import { ChevronDownIcon } from 'lucide-react';
 
 export const PREGUNTAS = [
@@ -39,7 +40,35 @@ export const PREGUNTAS = [
   },
 ];
 
-export function CtiFaq() {
+/**
+ * 8-nov: enlaces en contexto al final de algunas respuestas (por pregunta). Van
+ * aparte de PREGUNTAS porque PREGUNTAS alimenta el FAQPage del <head> en texto plano.
+ */
+const ENLACE = 'font-medium text-svea underline underline-offset-2 hover:no-underline';
+const mas = (base: string): Record<string, ReactNode> => ({
+  '¿Es obligatorio contar con la CTI antes de solicitar la Patente Municipal?': (
+    <>
+      {' '}Conviene partir con tiempo: la SEREMI tarda semanas en resolver, y en algunas regiones meses (
+      <a className={ENLACE} href={`${base}/plazo-seremi-cti/`}>cuánto demora la SEREMI, región por región</a>).
+    </>
+  ),
+  '¿Cuáles son las principales razones por las que se rechaza una CTI?': (
+    <>
+      {' '}Lo que la SEREMI nombra en los rechazos, contado en las resoluciones, está en{' '}
+      <a className={ENLACE} href={`${base}/por-que-rechazan-la-cti/`}>por qué la SEREMI rechaza la calificación industrial</a>, y la comparación entre regiones, comunas y rubros en el{' '}
+      <a className={ENLACE} href={`${base}/cti/tasa-de-rechazo/`}>ranking de rechazo</a>.
+    </>
+  ),
+  '¿Qué es la calificación como actividad inofensiva?': (
+    <>
+      {' '}El detalle está en la guía del{' '}
+      <a className={ENLACE} href={`${base}/calificacion-inofensiva-seremi/`}>certificado de actividad inofensiva</a>.
+    </>
+  ),
+});
+
+export function CtiFaq({ base = '' }: { base?: string }) {
+  const extra = mas(base);
   return (
     <section className="bg-hoja px-6 py-20" id="preguntas" aria-labelledby="titulo-faq">
       <div className="mx-auto max-w-3xl">
@@ -64,7 +93,7 @@ export function CtiFaq() {
                   className="size-5 shrink-0 text-black/40 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none"
                 />
               </summary>
-              <p className="pb-5 text-base leading-relaxed text-black/70">{r}</p>
+              <p className="pb-5 text-base leading-relaxed text-black/70">{r}{extra[p]}</p>
             </details>
           ))}
         </div>
