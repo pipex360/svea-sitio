@@ -21,7 +21,7 @@ Las regiones, comunas, rubros y servicios llevan `oculta: true` en `guias.ts`: t
 
 ## 2. De dónde salen los datos
 
-Resoluciones de CTI que las SEREMI de Salud de 13 regiones publican en el Portal de Transparencia (actos con efectos sobre terceros): 11.225 resoluciones entre enero de 2023 y septiembre de 2026, 10.564 con decisión. SVEA las descarga, lee y clasifica cada mes en una base propia (`seremi.db`, en el equipo de Carlos; **no va en el repo**). En el sitio sólo hay **agregados**: nunca nombres de titulares, RUT, representantes ni direcciones. Antes de entregar se corrió una barrida automática de todo lo que entra al repo (JSON, .astro, paginas.json, guias.ts, CSV) contra 13.583 nombres y 9.100 direcciones de la base más el patrón de RUT: **0 coincidencias**. Si editas un JSON a mano, no agregues datos de empresas o personas.
+Resoluciones públicas de CTI de las SEREMI de Salud de 13 regiones: 11.225 resoluciones entre enero de 2023 y septiembre de 2026, 10.564 con decisión. SVEA las descarga, lee y clasifica cada mes en una base propia (`seremi.db`, en el equipo de Carlos; **no va en el repo**). En el sitio sólo hay **agregados**: nunca nombres de titulares, RUT, representantes ni direcciones. Antes de entregar se corrió una barrida automática de todo lo que entra al repo (JSON, .astro, paginas.json, guias.ts, CSV) contra 13.583 nombres y 9.100 direcciones de la base más el patrón de RUT: **0 coincidencias**. Si editas un JSON a mano, no agregues datos de empresas o personas.
 
 Convención de todas las cifras: «tasa de rechazo» = rechazadas sobre resoluciones **con decisión** (calificada, rechazada o «no ha lugar»); la tasa «sobre publicadas» (incluye desistimientos) se indica cuando se usa. Corte: noviembre 2026; aparece en cada página («Actualizado el …») y en el JSON (`datosCti.corte`).
 
@@ -266,4 +266,4 @@ Ignacio recibe el commit (o los archivos) y sólo compila y publica. Páginas nu
 
 ## 12. Dudas que decide Carlos, no Ignacio
 
-Informe sanitario está «descartado» comercialmente pero es el destino natural de la página de resolución sanitaria de alimentos (1.268 titulares); la página enlaza al servicio tal como existe. Las cifras de SVEA (13 de 14 clientes calificados a la primera) se publican con su tamaño de muestra. Las páginas comparan SEREMI (Antofagasta 146 días, Atacama 52 %) siempre como medición con fuente y método, nunca como crítica, y ningún CTA promete la calificación.
+Las páginas NO publican resultados de clientes de SVEA, ni precio de SVEA, ni cantidades de empresas, titulares o RUT (sólo porcentajes y cantidades de resoluciones), ni nombran la fuente exacta de los datos. Las páginas comparan SEREMI (Antofagasta 146 días, Atacama 52 %) siempre como medición con fuente y método, nunca como crítica, y ningún CTA promete la calificación.
