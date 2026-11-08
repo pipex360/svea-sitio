@@ -69,6 +69,8 @@ const esta = guia(slug);
 // 7-nov: las guías de Datos CTI tienen ruta propia (/cti/…); el resto sigue en /<slug>/
 const pagina = paginas.find((p) => p.ruta === rutaGuia(esta))!;
 const servicio = esta.servicio;
+// 8-nov: ajustes de celular sólo para las páginas de Datos CTI (cifras y «Cotizar» arriba, tablas largas recortadas)
+const esDatosCti = Boolean(datos.datosCti);
 // «Otras guías»: seis, primero las del mismo tema (25-sep: eran las quince
 // en dos columnas); el enlace «Ver todas las guías» lleva al resto
 const otras = [
@@ -145,6 +147,24 @@ function tablasApiladas(html: string) {
           return r && !/data-label=/.test(attrs) ? `<${tag}${attrs} data-label="${r}">` : `<${tag}${attrs}>`;
         });
       }));
+  });
+}
+
+/**
+ * 8-nov (Datos CTI, celular): en el teléfono cada fila de tabla es una tarjeta
+ * (~150 px), así que una tabla de 54 comunas mide metros. Las tablas de más de
+ * 8 filas muestran 8 y un «Ver las N filas» sin JavaScript (casilla + etiqueta);
+ * en escritorio se ven completas y el botón no aparece. Todo queda en el HTML.
+ */
+const FILAS_MOVIL = 8;
+let nTabla = 0;
+function tablasLargas(html: string) {
+  return html.replace(/<div class="art-tabla">(<table\b[\s\S]*?<\/table>)<\/div>/g, (todo, tabla) => {
+    const filas = (tabla.match(/<tbody\b[\s\S]*?<\/tbody>/)?.[0].match(/<tr\b/g) || []).length;
+    if (filas <= FILAS_MOVIL) return todo;
+    const id = `vermas-${slug}-${++nTabla}`;
+    return `<div class="art-tabla art-tabla-larga"><input type="checkbox" id="${id}" class="art-vermas-in">${tabla}`
+      + `<label for="${id}" class="art-vermas"><span class="art-vermas-mas">Ver las ${filas} filas</span><span class="art-vermas-menos">Ver menos</span></label></div>`;
   });
 }
 
@@ -241,7 +261,7 @@ const fuentesCSS = `
 </head>
 <body class="botones-planos">
   <MedicionSitio copia={COPIA} parte="body" />
-  <div class="svea-nuevo art">
+  <div class:list={["svea-nuevo art", esDatosCti && "art-datos-cti"]}>
     <div class="art-progreso" aria-hidden="true"></div>
 
     <!-- #inicio: mientras se ve, la barra pegajosa no aparece (la cabecera ya trae la suya) -->
@@ -282,6 +302,11 @@ const fuentesCSS = `
             ))}
           </dl>
         )}
+        {esDatosCti && (
+          <a class="art-cotizar-movil btn-flecha" href={`${BASE}${servicio.ruta}${servicio.formulario}`}>
+            <span>Cotizar {servicio.ruta === '/calificacion-tecnica-industrial/' ? 'la calificación industrial' : servicio.nombre.toLowerCase()}</span><Fragment set:html={flecha} />
+          </a>
+        )}
       </div>
     </header>
 
@@ -307,7 +332,8 @@ const fuentesCSS = `
               <a class="art-boton-linea" href={FORM}>Ir al formulario</a>
             </aside>
           );
-          const html = conClientes(tablasApiladas(ordenar(conBase(b.html!))));
+          const html0 = conClientes(tablasApiladas(ordenar(conBase(b.html!))));
+          const html = esDatosCti ? tablasLargas(html0) : html0;
           const corte = i === 0 && conCaja ? primerH2(html) : -1;
           if (corte < 0) return <Fragment set:html={html} />;
           return (
@@ -791,6 +817,45 @@ const fuentesCSS = `
   .art-otras-cat{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--verde)}
   .art-otras-tit{font-family:Manrope,Inter,sans-serif;font-weight:600;font-size:18px;line-height:1.3;color:#000}
   .art-otras-baj{font-size:14.5px;line-height:1.55;color:var(--suave)}
+
+  /* ---------- Datos CTI en el teléfono (8-nov) ----------
+     GA4: en celular se lee la mitad (32 s contra 64 s) pero se convierte más.
+     Arriba van H1, las cifras y «Cotizar»; la bajada y la fecha, después.
+     En escritorio no cambia nada (el botón no se muestra). */
+  .art-cotizar-movil{display:none}
+  @media (max-width:820px){
+    .art-datos-cti .art-cabecera>*{order:5}
+    .art-datos-cti .art-cabecera>.art-migas{order:1}
+    .art-datos-cti .art-cabecera>.art-categoria{order:2;margin:16px 0 10px}
+    .art-datos-cti .art-cabecera>h1{order:3}
+    .art-datos-cti .art-cabecera>.art-cifras{order:4;margin-top:18px}
+    .art-datos-cti .art-cabecera>.art-cotizar-movil{order:4}
+    .art-datos-cti .art-cab h1{font-size:27px;line-height:1.15}
+    .art-datos-cti .art-cifras>div{padding:12px 14px}
+    .art-datos-cti .art-cifras dd{font-size:22px}
+    .art-datos-cti .art-cifras dt{font-size:12.5px}
+    .art-datos-cti .art-cotizar-movil{display:inline-flex;align-self:stretch;justify-content:space-between;margin-top:14px;text-decoration:none}
+    .art-datos-cti .art-bajada{margin-top:18px}
+  }
+  /* tarjetas de tabla más bajas en Datos CTI: «rótulo: valor» en una línea */
+  @media (max-width:640px){
+    .art-datos-cti .art-cuerpo td[data-label]:not(:first-child)::before{display:inline;margin:0 6px 0 0}
+    .art-datos-cti .art-cuerpo td:not(:first-child){padding:5px 16px}
+    .art-datos-cti .art-cuerpo td:first-child{padding:10px 16px}
+    .art-datos-cti .art-cuerpo td:last-child{padding-bottom:12px}
+  }
+  /* tablas de más de 8 filas: 8 visibles en el teléfono y «Ver las N filas» */
+  .art-vermas{display:none}
+  .art-vermas-in{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+  .art .art-cuerpo .art-tabla-larga{position:relative}
+  @media (max-width:640px){
+    .art .art-cuerpo .art-vermas-in:not(:checked)~table tbody tr:nth-child(n+9){display:none}
+    .art .art-cuerpo .art-vermas{display:flex;align-items:center;justify-content:center;height:46px;margin:4px 0 0;border:1px solid var(--borde);border-radius:999px;
+      background:#fff;font-size:15px;font-weight:600;color:#000;cursor:pointer}
+    .art .art-cuerpo .art-vermas-menos,.art .art-cuerpo .art-vermas-in:checked~.art-vermas .art-vermas-mas{display:none}
+    .art .art-cuerpo .art-vermas-in:checked~.art-vermas .art-vermas-menos{display:inline}
+    .art .art-cuerpo .art-vermas-in:focus-visible~.art-vermas{outline:2px solid var(--verde);outline-offset:2px}
+  }
 
   /* ---------- pantallas medianas y teléfono ---------- */
   @media (max-width:1023px){
