@@ -237,8 +237,8 @@
    },
    {
     "p": "¿Cuánto cuesta la calificación industrial (certificado de actividad inofensiva) en Iquique?",
-    "r": "El arancel lo cobra la SEREMI de Salud y depende de la región y del tipo de trámite; se paga en SEREMI en Línea al ingresar y no se devuelve si la solicitud se rechaza. Como referencia, un trámite de calificación en la Región Metropolitana en 2026 quedó en $107.700 de arancel (un caso real, no una tarifa oficial: confirma el valor vigente en la plataforma). A eso se suma preparar la carpeta técnica, que depende del tamaño y la complejidad de la instalación.",
-    "rTexto": "El arancel lo cobra la SEREMI de Salud y depende de la región y del tipo de trámite; se paga en SEREMI en Línea al ingresar y no se devuelve si la solicitud se rechaza. Como referencia, un trámite de calificación en la Región Metropolitana en 2026 quedó en $107.700 de arancel (un caso real, no una tarifa oficial: confirma el valor vigente en la plataforma). A eso se suma preparar la carpeta técnica, que depende del tamaño y la complejidad de la instalación."
+    "r": "El arancel que cobra la SEREMI por la calificación es de $107.700 (2026) y se reajusta una vez al año; se paga en SEREMI en Línea cuando el trámite queda ingresado, y no se devuelve si la solicitud se rechaza. Aparte está la preparación de la carpeta técnica.",
+    "rTexto": "El arancel que cobra la SEREMI por la calificación es de $107.700 (2026) y se reajusta una vez al año; se paga en SEREMI en Línea cuando el trámite queda ingresado, y no se devuelve si la solicitud se rechaza. Aparte está la preparación de la carpeta técnica."
    },
    {
     "p": "¿La patente en Iquique la da la municipalidad o la SEREMI?",
