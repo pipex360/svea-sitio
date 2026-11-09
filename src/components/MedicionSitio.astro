@@ -157,7 +157,11 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
     <script is:inline>
 
     (function () {
-      var CAMPOS = ['gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      // 9-nov-2026: se suma fbclid (anuncios de Meta) al juego de último clic.
+      var CAMPOS = ['gclid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      // Primer contacto de la sesión (9-nov-2026): la primera página que vio y de
+      // qué sitio venía. Se guardan una sola vez y no se pisan al navegar.
+      var ENTRADA = ['landing_page', 'referrer'];
       var ss = {
         get: function (k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
         set: function (k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} },
@@ -195,11 +199,31 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
         var ia = asistenteIA(document.referrer);
         if (ia) ss.set('utm_source', ia);
       }
+      if (!ss.get('landing_page')) {
+        ss.set('landing_page', location.origin + location.pathname);
+        var ref = '';
+        try {
+          var rh = new URL(document.referrer).hostname;
+          if (rh && rh !== location.hostname && !/(^|\.)sveaconsultores\.cl$/.test(rh)) ref = document.referrer.split('?')[0];
+        } catch (e) {}
+        ss.set('referrer', ref || '(directo)');
+      }
       function rellenar(raiz) {
-        CAMPOS.forEach(function (f) {
+        CAMPOS.concat(ENTRADA).forEach(function (f) {
           var v = ss.get(f);
           if (!v) return;
           raiz.querySelectorAll('input[name="' + f + '"]').forEach(function (el) { if (!el.value) el.value = v; });
+          // fbclid y la entrada no vienen como ocultos en los formularios: se
+          // agregan al de Web3Forms para que lleguen en el correo del lead.
+          // Sólo al enviar (raiz = el formulario): antes, la hidratación de React
+          // podría botar los ocultos agregados.
+          if (!(raiz.matches && raiz.matches('form'))) return;
+          [raiz].forEach(function (fm) {
+            if (fm.querySelector('input[name="' + f + '"]')) return;
+            var i = document.createElement('input');
+            i.type = 'hidden'; i.name = f; i.value = v;
+            fm.appendChild(i);
+          });
         });
       }
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { rellenar(document); });
