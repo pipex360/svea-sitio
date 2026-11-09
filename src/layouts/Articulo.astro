@@ -313,16 +313,27 @@ const fuentesCSS = `
     <BarraPegajosa base={BASE} cotizar={FORM} client:idle />
 
     <div class="art-marco">
-      <details class="art-indice" open data-indice>
-        <summary>{datos.indiceTitulo}</summary>
-        <nav aria-label={datos.indiceTitulo}>
-          <ol>
-            {datos.indice.map((e: { href: string; texto: string }) => (
-              <li><a href={e.href}>{e.texto}</a></li>
-            ))}
-          </ol>
-        </nav>
-      </details>
+      <!-- 09-11-2026, Carlos: «siempre visible para poder enviar la cotización». En escritorio
+           la columna del índice queda fija y lleva debajo la caja de cotizar; en pantallas
+           medianas y teléfono la caja no se muestra (ahí está la barra «WhatsApp | Cotizar»). -->
+      <div class="art-lateral">
+        <details class="art-indice" open data-indice>
+          <summary>{datos.indiceTitulo}</summary>
+          <nav aria-label={datos.indiceTitulo}>
+            <ol>
+              {datos.indice.map((e: { href: string; texto: string }) => (
+                <li><a href={e.href}>{e.texto}</a></li>
+              ))}
+            </ol>
+          </nav>
+        </details>
+        <aside class="art-lateral-cotizar" aria-label="Cotización">
+          <p class="art-lateral-titulo">{datos.formulario.titulo}</p>
+          <p class="art-lateral-texto">Cotización en menos de 24 horas, sin costo.</p>
+          <a class="btn-flecha" href={FORM}><span>Cotizar</span><Fragment set:html={flecha} /></a>
+          <a class="art-lateral-wa" href="https://api.whatsapp.com/send/?phone=56929947924&text=Hola%2C%20necesito%20asesor%C3%ADa%20t%C3%A9cnica" target="_blank" rel="noopener">o escríbenos por WhatsApp</a>
+        </aside>
+      </div>
 
       <article class="art-cuerpo">
         {datos.bloques.map((b: { tipo: string; html?: string }, i: number) => {
@@ -593,7 +604,14 @@ const fuentesCSS = `
 
   /* ---------- marco: índice + cuerpo ---------- */
   .art-marco{max-width:76rem;margin:0 auto;padding:56px 48px 24px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:64px;align-items:start}
-  .art-indice{position:sticky;top:88px;max-height:calc(100vh - 110px);overflow:auto;font-size:14px}
+  .art-lateral{position:sticky;top:88px;display:flex;flex-direction:column;gap:24px}
+  .art-indice{max-height:calc(100vh - 380px);overflow:auto;font-size:14px}
+  .art-lateral-cotizar{padding:20px;border:1px solid var(--borde);border-radius:14px;background:#fff;box-shadow:0 12px 30px -22px rgba(0,0,0,.35)}
+  .art-lateral-titulo{margin:0 0 6px;font-size:15px;font-weight:700;line-height:1.35;color:#000}
+  .art-lateral-texto{margin:0 0 14px;font-size:13.5px;line-height:1.45;color:rgba(0,0,0,.62)}
+  .art-lateral-cotizar .btn-flecha{width:100%;justify-content:center;text-decoration:none}
+  .art-lateral-wa{display:block;margin-top:10px;font-size:13px;text-align:center;color:rgba(0,0,0,.62);text-decoration:underline;text-underline-offset:3px}
+  .art-lateral-wa:hover{color:#000}
   .art-indice>summary{list-style:none;pointer-events:none;margin-bottom:12px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(0,0,0,.5)}
   .art-indice>summary::-webkit-details-marker{display:none}
   .art-indice ol{counter-reset:ind;border-left:1px solid var(--borde)}
@@ -865,6 +883,8 @@ const fuentesCSS = `
   @media (max-width:1023px){
     .art-cabecera{max-width:48rem;padding:32px 24px 44px}
     .art-marco{grid-template-columns:minmax(0,1fr);gap:0;padding:28px 24px 8px;max-width:48rem}
+    .art-lateral{position:static;display:block}
+    .art-lateral-cotizar{display:none}
     .art-indice{position:static;max-height:none;margin-bottom:8px;border:1px solid var(--borde);border-radius:14px;padding:0 18px;background:#fff}
     .art-indice>summary{pointer-events:auto;cursor:pointer;margin:0;padding:16px 0;display:flex;justify-content:space-between;align-items:center}
     .art-indice>summary::after{content:"+";font-size:20px;font-weight:400;color:rgba(0,0,0,.5)}
