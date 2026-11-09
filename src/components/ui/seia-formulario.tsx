@@ -50,6 +50,11 @@ export function SeiaFormulario({ copia = false }: { copia?: boolean }) {
       ahora.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
     const asunto = 'Permisos ambientales y SEIA - ' + nombre + (empresa ? ' | ' + empresa : '') + ' - ' + fecha;
     if (asuntoRef.current) asuntoRef.current.value = asunto;
+    // 9-nov-2026: Empresa es opcional (un tercio de quienes tramitan la CTI son personas
+    // naturales). En blanco viaja como «No indicada», después de armar el asunto, igual
+    // que en las landings, para que n8n no lea como empresa el rótulo del campo siguiente.
+    const campoEmpresa = form.querySelector('input[name="Empresa"]') as HTMLInputElement | null;
+    if (!copia && campoEmpresa && !campoEmpresa.value.trim()) campoEmpresa.value = 'No indicada';
     if (copia) e.preventDefault();
   };
 
@@ -105,7 +110,7 @@ export function SeiaFormulario({ copia = false }: { copia?: boolean }) {
             </div>
             <div className="flex flex-col gap-1.5">
               <Label htmlFor="seia-empresa">Empresa</Label>
-              <Input id="seia-empresa" type="text" name="Empresa" required placeholder="Nombre de tu empresa" autoComplete="organization" />
+              <Input id="seia-empresa" type="text" name="Empresa" placeholder="Nombre de tu empresa (opcional)" autoComplete="organization" />
             </div>
             <div className="flex flex-col gap-1.5">
               <Label htmlFor="seia-mensaje">Mensaje</Label>

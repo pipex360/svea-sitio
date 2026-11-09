@@ -37,6 +37,11 @@ export function TrFormulario({ copia = false }: { copia?: boolean }) {
       ahora.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
     const asunto = 'Cotización Transporte Residuos - ' + nombre + (empresa ? ' | ' + empresa : '') + ' - ' + fecha;
     if (asuntoRef.current) asuntoRef.current.value = asunto;
+    // 9-nov-2026: Empresa es opcional (un tercio de quienes tramitan la CTI son personas
+    // naturales). En blanco viaja como «No indicada», después de armar el asunto, igual
+    // que en las landings, para que n8n no lea como empresa el rótulo del campo siguiente.
+    const campoEmpresa = form.querySelector('input[name="Empresa"]') as HTMLInputElement | null;
+    if (!copia && campoEmpresa && !campoEmpresa.value.trim()) campoEmpresa.value = 'No indicada';
     if (copia) e.preventDefault();
   };
 
@@ -92,7 +97,7 @@ export function TrFormulario({ copia = false }: { copia?: boolean }) {
             </div>
             <div className="flex flex-col gap-1.5">
               <Label htmlFor="tr-empresa">Empresa</Label>
-              <Input id="tr-empresa" type="text" name="Empresa" required placeholder="Empresa / Razón social" autoComplete="organization" />
+              <Input id="tr-empresa" type="text" name="Empresa" placeholder="Empresa / Razón social (opcional)" autoComplete="organization" />
             </div>
             <div className="flex flex-col gap-1.5">
               <Label htmlFor="tr-mensaje">Mensaje</Label>

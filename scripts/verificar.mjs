@@ -7,7 +7,7 @@
  *
  *   node scripts/verificar.mjs
  */
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import paginas from '../src/data/paginas.json' with { type: 'json' };
 
@@ -220,7 +220,16 @@ for (const [ruta, id, origen, destino] of [
 const PALABRAS_N8N = ['CTI', 'ECC', 'Plan Emergencia', 'Condominios', 'Transporte', 'Manejo de residuos', 'Informe Sanitario'];
 for (const slug of GUIAS_NUEVAS) {
   const ruta = `/${slug}/`;
-  const html = readFileSync(path.join(DIST, slug, 'index.html'), 'utf8');
+  // Algunas guías se publican en otra ruta (p. ej. /cti/tasa-de-rechazo/): se
+  // busca el HTML que trae el asunto de esa guía.
+  let archivo = path.join(DIST, slug, 'index.html');
+  if (!existsSync(archivo)) {
+    const otro = readdirSync(DIST, { recursive: true }).find((f) => f.endsWith('index.html') &&
+      readFileSync(path.join(DIST, f), 'utf8').includes(`dynamic-subject-${slug}"`));
+    if (!otro) { fallos.push(`${ruta}  ✗ no se encontró la página de la guía`); continue; }
+    archivo = path.join(DIST, otro);
+  }
+  const html = readFileSync(archivo, 'utf8');
   const h = huellaFormulario(html, 'article-lead-form');
   if (!h) { fallos.push(`${ruta}  ✗ no se encontró el article-lead-form`); continue; }
   const { ocultos, visibles } = JSON.parse(h);

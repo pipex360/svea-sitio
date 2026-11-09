@@ -83,6 +83,11 @@ export function Contacto({ copia = false }: { copia?: boolean }) {
       ahora.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
     const asunto = servicio + ' - ' + nombre + (empresa ? ' | ' + empresa : '') + ' - ' + fecha;
     if (asuntoRef.current) asuntoRef.current.value = asunto;
+    // 9-nov-2026: Empresa es opcional (un tercio de quienes tramitan la CTI son personas
+    // naturales). En blanco viaja como «No indicada», después de armar el asunto, igual
+    // que en las landings, para que n8n no lea como empresa el rótulo del campo siguiente.
+    const campoEmpresa = form.querySelector('input[name="Empresa"]') as HTMLInputElement | null;
+    if (!copia && campoEmpresa && !campoEmpresa.value.trim()) campoEmpresa.value = 'No indicada';
     if (copia) e.preventDefault();
   };
 
@@ -147,7 +152,7 @@ export function Contacto({ copia = false }: { copia?: boolean }) {
               </div>
               <div className="flex flex-col gap-1.5">
                 <Label htmlFor="contacto-empresa">Empresa</Label>
-                <Input id="contacto-empresa" type="text" name="Empresa" required placeholder="Empresa" autoComplete="organization" />
+                <Input id="contacto-empresa" type="text" name="Empresa" placeholder="Empresa (opcional)" autoComplete="organization" />
               </div>
             </div>
 
@@ -173,7 +178,7 @@ export function Contacto({ copia = false }: { copia?: boolean }) {
             </div>
 
             <button type="submit" className="btn-flecha ancha">
-              <span>Enviar Consulta</span>
+              <span>Solicitar cotización</span>
               <span className="circulo">
                 <svg
                   viewBox="0 0 24 24"

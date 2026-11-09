@@ -38,6 +38,11 @@ export function PeFormulario({ copia = false }: { copia?: boolean }) {
       ahora.toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit' });
     const asunto = 'Cotización Plan Emergencia Industrial - ' + nombre + (empresa ? ' | ' + empresa : '') + ' - ' + fecha;
     if (asuntoRef.current) asuntoRef.current.value = asunto;
+    // 9-nov-2026: Empresa es opcional (un tercio de quienes tramitan la CTI son personas
+    // naturales). En blanco viaja como «No indicada», después de armar el asunto, igual
+    // que en las landings, para que n8n no lea como empresa el rótulo del campo siguiente.
+    const campoEmpresa = form.querySelector('input[name="Empresa"]') as HTMLInputElement | null;
+    if (!copia && campoEmpresa && !campoEmpresa.value.trim()) campoEmpresa.value = 'No indicada';
     if (copia) e.preventDefault();
   };
 
@@ -93,7 +98,7 @@ export function PeFormulario({ copia = false }: { copia?: boolean }) {
             </div>
             <div className="flex flex-col gap-1.5">
               <Label htmlFor="pe-empresa">Empresa</Label>
-              <Input id="pe-empresa" type="text" name="Empresa" required placeholder="Nombre de tu empresa" autoComplete="organization" />
+              <Input id="pe-empresa" type="text" name="Empresa" placeholder="Nombre de tu empresa (opcional)" autoComplete="organization" />
             </div>
             <p className="flex items-center gap-2 rounded-xl border border-svea/20 bg-svea/5 px-4 py-3 text-sm font-medium text-black">
               <LockIcon className="size-4 shrink-0 text-svea" aria-hidden="true" />
