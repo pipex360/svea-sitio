@@ -13,7 +13,7 @@ import { TarjetaFoto } from '@/components/ui/tarjeta-foto';
 
 const GUIAS = [
   { texto: '¿Qué es el Informe Sanitario? Quién lo necesita y cómo se tramita', ruta: '/que-es-informe-sanitario/' },
-  { texto: 'Patente definitiva: qué permisos de la SEREMI necesitas', ruta: '/patente-definitiva-permisos-seremi/' },
+  { texto: 'Patente definitiva comercial o municipal: qué permisos de la SEREMI necesitas', ruta: '/patente-definitiva-permisos-seremi/' },
 ];
 
 const ENLACES = [

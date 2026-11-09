@@ -128,7 +128,7 @@ export const guias: Entrada[] = [
   {
     title: 'Patente definitiva',
     href: '/patente-definitiva-permisos-seremi/',
-    description: 'Qué permisos de la SEREMI te piden para dejar la patente provisoria.',
+    description: 'Patente comercial o municipal: qué permisos de la SEREMI te piden para dejar la provisoria.',
     icon: StoreIcon,
   },
   {
@@ -162,9 +162,9 @@ export const guias: Entrada[] = [
     icon: FileWarningIcon,
   },
   {
-    title: 'Sustancias peligrosas DS 43',
+    title: 'Bodega SUSPEL y DS 43',
     href: '/plan-manejo-sustancias-peligrosas-ds-43/',
-    description: 'Cuándo exigen autorización y qué incluye el plan de manejo.',
+    description: 'Qué bodega corresponde, cuándo exigen autorización y qué incluye el plan.',
     icon: FlaskConicalIcon,
   },
   {

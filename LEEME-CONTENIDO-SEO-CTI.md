@@ -63,7 +63,7 @@ Carlos decidió publicar en **dos olas en 3-4 semanas**, no en tandas de meses. 
 |---|---|---|---|---|---|
 | 1 | Artículo | `/cti-condominio-industrial/` | Patente en condominio industrial: 58 % de rechazo SEREMI | `src/contenido/articulos/cti-condominio-industrial.json` | `articulo_condominios_industriales_cti.md` |
 | 2 | Artículo | `/cti-no-cumple-normativa/` | Rechazo SEREMI «no cumple normativa»: qué revisa en 2026 | `src/contenido/articulos/cti-no-cumple-normativa.json` | `articulo_no_cumple_normativa_2026.md` |
-| 3 | Artículo | `/cti-persona-natural/` | Patente MEF y persona natural: por qué se rechaza el 64 % | `src/contenido/articulos/cti-persona-natural.json` | `articulo_cti_persona_natural.md` |
+| 3 | Artículo | `/cti-persona-natural/` | Patente microempresa familiar (MEF): 64 % de rechazo SEREMI | `src/contenido/articulos/cti-persona-natural.json` | `articulo_cti_persona_natural.md` |
 | 4 | Artículo | `/plazo-seremi-cti/` | Cuánto demora la SEREMI: plazo de la calificación industrial | `src/contenido/articulos/plazo-seremi-cti.json` | `articulo_plazo_seremi_cti.md` |
 | 5 | Artículo | `/por-que-rechazan-la-cti/` | Por qué la SEREMI rechaza la calificación industrial (RM) | `src/contenido/articulos/por-que-rechazan-la-cti.json` | `articulo_por_que_rechazan_cti.md` |
 | 6 | Artículo | `/rechazo-cti-que-hacer/` | Rechazo SEREMI de la calificación industrial: qué hacer | `src/contenido/articulos/rechazo-cti-que-hacer.json` | `articulo_rechazo_cti_que_hacer.md` |
@@ -172,7 +172,7 @@ Carlos decidió publicar en **dos olas en 3-4 semanas**, no en tandas de meses. 
 | 70 | Servicio posterior | `/despues-de-la-cti/proteccion-contra-incendio/` | Extintores y estudio de carga combustible: exigencias SEREMI | `src/contenido/articulos/despues-cti-proteccion-contra-incendio.json` | `paginas/despues-cti-proteccion-contra-incendio.md` |
 | 71 | Servicio posterior | `/despues-de-la-cti/residuos-no-peligrosos-sinader/` | SINADER y retiro de residuos: qué exige la SEREMI | `src/contenido/articulos/despues-cti-residuos-no-peligrosos-sinader.json` | `paginas/despues-cti-residuos-no-peligrosos-sinader.md` |
 | 72 | Servicio posterior | `/despues-de-la-cti/residuos-peligrosos-ds-148/` | SIDREP y residuos peligrosos tras la calificación industrial | `src/contenido/articulos/despues-cti-residuos-peligrosos-ds-148.json` | `paginas/despues-cti-residuos-peligrosos-ds-148.md` |
-| 73 | Servicio posterior | `/despues-de-la-cti/sustancias-peligrosas-ds-43/` | Bodega de sustancias peligrosas DS 43 (SUSPEL) y la SEREMI | `src/contenido/articulos/despues-cti-sustancias-peligrosas-ds-43.json` | `paginas/despues-cti-sustancias-peligrosas-ds-43.md` |
+| 73 | Servicio posterior | `/despues-de-la-cti/sustancias-peligrosas-ds-43/` | Sustancias peligrosas en la calificación industrial (DS 43) | `src/contenido/articulos/despues-cti-sustancias-peligrosas-ds-43.json` | `paginas/despues-cti-sustancias-peligrosas-ds-43.md` |
 
 Cómo publicar sólo la ola 1: las 73 páginas de la ola 2 ya están en la rama; la forma simple es marcar `robots: "noindex, follow"` en sus entradas de `paginas.json` (campo `datosCti.ola == 2` en el JSON de contenido y columna «ola» en `paquete/indice_paginas.json`) y volverlas a `index, follow` al publicar la ola 2; `astro.config.mjs` excluye del sitemap lo que `paginas.json` marca noindex. Alternativa: borrar temporalmente sus `.astro`. Lo que no conviene es publicar las 73 sin el `noindex` y «esconderlas»: Google las rastrea igual.
 
@@ -210,7 +210,7 @@ La CTI casi no se busca por su nombre («calificacion tecnica industrial» 70/me
 | `/plazo-seremi-cti/` | cuánto demora la seremi / seremi en linea | 18.100 (seremi en linea) | plazo calificación industrial: sin volumen medible |
 | `/cti/tasa-de-rechazo/` (ranking) e `/informe-cti-chile-2026/` | calificacion industrial + seremi de salud (datos) | 210 · 22.200 (navegacional) | recurso enlazable: prensa, gremios, asistentes de IA |
 | `/despues-de-la-cti/plan-de-emergencia/` | ds 44 | 12.100 | plan de emergencia 880 · plan de emergencia y evacuación 210 · plan de emergencia ds 44 140 |
-| `/despues-de-la-cti/sustancias-peligrosas-ds-43/` | ds 43 | 2.400 | sustancias peligrosas 880 · bodega suspel 320 · hojas de seguridad hds 40 |
+| `/despues-de-la-cti/sustancias-peligrosas-ds-43/` | sustancias peligrosas en la calificación industrial (9-nov: «ds 43» 2.400 y «bodega suspel» 320 los trabaja la guía `/plan-manejo-sustancias-peligrosas-ds-43/`; ésta enlaza a ella) | — | hojas de seguridad hds 40 |
 | `/despues-de-la-cti/residuos-peligrosos-ds-148/` | sidrep | 1.900 | residuos peligrosos 1.000 |
 | `/despues-de-la-cti/residuos-no-peligrosos-sinader/` | sinader | 1.300 | transporte de residuos 50 |
 | `/despues-de-la-cti/proteccion-contra-incendio/` | estudio de carga combustible | 140 | carga de fuego 30 |

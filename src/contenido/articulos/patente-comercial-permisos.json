@@ -1,0 +1,328 @@
+{
+  "slug": "patente-comercial-permisos",
+  "ruta": "/patente-comercial-permisos/",
+  "migasOriginal": [
+    {
+      "texto": "Inicio",
+      "href": "/"
+    },
+    {
+      "texto": "Blog",
+      "href": "/blog/"
+    }
+  ],
+  "migaFinal": "Patente comercial y permisos",
+  "categoria": "Permisos SEREMI",
+  "h1": "Patente comercial: qué permisos necesitas y cuándo entra la SEREMI",
+  "bajada": "Qué es la patente comercial o municipal, qué te pide la municipalidad, cuándo basta la provisoria, en qué casos necesitas la calificación técnica industrial de la SEREMI de Salud y cómo funciona la patente de microempresa familiar (MEF).",
+  "fecha": "Noviembre 2026",
+  "actualizado": {
+    "iso": "2026-11-09",
+    "texto": "9 de noviembre de 2026"
+  },
+  "lectura": "9 min de lectura",
+  "autor": "Equipo técnico SVEA Consultores",
+  "cifras": [
+    {
+      "n": "DL 3.063",
+      "l": "Ley de Rentas Municipales"
+    },
+    {
+      "n": "2 años",
+      "l": "Plazo máx. de la provisoria"
+    },
+    {
+      "n": "4",
+      "l": "Categorías OGUC"
+    },
+    {
+      "n": "$107.700",
+      "l": "Arancel CTI (ChileAtiende)"
+    }
+  ],
+  "indiceTitulo": "En este artículo",
+  "indice": [
+    {
+      "href": "#que-es",
+      "texto": "Qué es la patente comercial"
+    },
+    {
+      "href": "#tipos",
+      "texto": "Tipos de patente municipal"
+    },
+    {
+      "href": "#que-pide",
+      "texto": "Qué pide la municipalidad"
+    },
+    {
+      "href": "#provisoria",
+      "texto": "Provisoria o definitiva"
+    },
+    {
+      "href": "#seremi",
+      "texto": "Cuándo entra la SEREMI"
+    },
+    {
+      "href": "#alimentos",
+      "texto": "Si tu negocio es de alimentos"
+    },
+    {
+      "href": "#mef",
+      "texto": "Patente de microempresa familiar"
+    },
+    {
+      "href": "#orden",
+      "texto": "Orden de los trámites"
+    },
+    {
+      "href": "#como-ayuda",
+      "texto": "Cómo te ayuda SVEA"
+    },
+    {
+      "href": "#fuentes",
+      "texto": "Fuentes"
+    },
+    {
+      "href": "#faq",
+      "texto": "Preguntas frecuentes"
+    }
+  ],
+  "formulario": {
+    "titulo": "Cotiza los permisos para tu patente comercial",
+    "bajada": "Completa el formulario y recibe tu cotización en menos de 24 horas.",
+    "ocultos": [
+      {
+        "name": "access_key",
+        "value": "076a0f9a-9911-48f6-880e-dd9d44c3063b"
+      },
+      {
+        "name": "subject",
+        "value": "Nueva cotización CTI (Blog) - SVEA Consultores",
+        "id": "dynamic-subject-art-patente-comercial"
+      },
+      {
+        "name": "from_name",
+        "value": "SVEA Consultores Blog - CTI"
+      },
+      {
+        "name": "redirect",
+        "value": "https://sveaconsultores.cl/gracias/"
+      },
+      {
+        "name": "Servicio",
+        "value": "Calificación Técnica Industrial"
+      },
+      {
+        "name": "Origen",
+        "value": "Artículo SEO - Patente comercial"
+      }
+    ],
+    "campos": [
+      {
+        "label": "Nombre completo *",
+        "id": "art-nombre",
+        "name": "Nombre",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Ej: Juan Pérez",
+        "ancho": false
+      },
+      {
+        "label": "Empresa *",
+        "id": "art-empresa",
+        "name": "Empresa",
+        "tipo": "text",
+        "requerido": true,
+        "placeholder": "Nombre de tu empresa",
+        "ancho": false
+      },
+      {
+        "label": "Teléfono *",
+        "id": "art-telefono",
+        "name": "Teléfono",
+        "tipo": "tel",
+        "requerido": true,
+        "placeholder": "+569 1234 5678",
+        "ancho": false
+      },
+      {
+        "label": "Email *",
+        "id": "art-email",
+        "name": "Email",
+        "tipo": "email",
+        "requerido": true,
+        "placeholder": "correo@empresa.cl",
+        "ancho": false
+      },
+      {
+        "label": "Tipo de servicio",
+        "id": "art-tipo",
+        "name": "Tipo de Servicio",
+        "tipo": "select",
+        "requerido": false,
+        "placeholder": null,
+        "ancho": true,
+        "opciones": [
+          {
+            "value": "",
+            "texto": "Selecciona una opción",
+            "seleccionada": true,
+            "desactivada": true
+          },
+          {
+            "value": "Calificación Técnica Industrial",
+            "texto": "Calificación técnica industrial (CTI)",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Calificación Inofensiva",
+            "texto": "Calificación inofensiva",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Informe Sanitario",
+            "texto": "Informe sanitario",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "Estudio de Carga de Combustible",
+            "texto": "Estudio de carga de combustible",
+            "seleccionada": false,
+            "desactivada": false
+          },
+          {
+            "value": "No estoy seguro",
+            "texto": "No estoy seguro",
+            "seleccionada": false,
+            "desactivada": false
+          }
+        ]
+      },
+      {
+        "label": "Mensaje (opcional)",
+        "id": "art-mensaje",
+        "name": "Mensaje",
+        "tipo": "textarea",
+        "requerido": false,
+        "placeholder": "¿Qué actividad realizas, en qué comuna y qué te pidió la municipalidad?",
+        "ancho": true,
+        "filas": 3
+      }
+    ],
+    "boton": "Solicitar cotización gratuita →",
+    "confianza": [
+      "Datos protegidos",
+      "Cotización sin costo",
+      "Sin compromiso"
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      {
+        "p": "¿Patente comercial y patente municipal son lo mismo?",
+        "r": "Sí, en el uso diario. La ley habla de «patente municipal» (DL 3.063, art. 23) y la municipalidad la clasifica en comercial, industrial, profesional, de alcoholes o de microempresa familiar según la actividad. «Patente comercial» es como se le dice a la de comercio y, por extensión, a todas.",
+        "rTexto": "Sí, en el uso diario. La ley habla de «patente municipal» (DL 3.063, art. 23) y la municipalidad la clasifica en comercial, industrial, profesional, de alcoholes o de microempresa familiar según la actividad. «Patente comercial» es como se le dice a la de comercio y, por extensión, a todas."
+      },
+      {
+        "p": "¿Cuánto cuesta la patente comercial?",
+        "r": "La municipalidad fija el valor anual entre el 2,5 y el 5 por mil del capital propio del contribuyente, con un mínimo de 1 UTM y un máximo de 8.000 UTM (DL 3.063, art. 24), y se paga en dos cuotas semestrales. A eso se suman los derechos de los permisos que exija tu actividad, como el arancel de la SEREMI para la calificación técnica industrial ($107.700).",
+        "rTexto": "La municipalidad fija el valor anual entre el 2,5 y el 5 por mil del capital propio del contribuyente, con un mínimo de 1 UTM y un máximo de 8.000 UTM (DL 3.063, art. 24), y se paga en dos cuotas semestrales. A eso se suman los derechos de los permisos que exija tu actividad, como el arancel de la SEREMI para la calificación técnica industrial ($107.700)."
+      },
+      {
+        "p": "¿Necesito la calificación de la SEREMI para sacar la patente comercial?",
+        "r": "Sólo si la actividad es industrial o de bodegaje: fabricar, transformar, reparar o almacenar (OGUC, art. 4.14.2). Una tienda u oficina sin procesos ni bodega normalmente no la necesita, aunque algunas municipalidades piden una calificación de actividad inofensiva.",
+        "rTexto": "Sólo si la actividad es industrial o de bodegaje: fabricar, transformar, reparar o almacenar (OGUC, art. 4.14.2). Una tienda u oficina sin procesos ni bodega normalmente no la necesita, aunque algunas municipalidades piden una calificación de actividad inofensiva."
+      },
+      {
+        "p": "¿Puedo abrir mientras la SEREMI resuelve?",
+        "r": "Puedes optar a la patente provisoria si la actividad está permitida en esa dirección y acreditas que pediste la autorización sanitaria (salvo las actividades que requieren autorización expresa previa). La municipalidad te da un plazo, de hasta dos años, para presentar lo que falta.",
+        "rTexto": "Puedes optar a la patente provisoria si la actividad está permitida en esa dirección y acreditas que pediste la autorización sanitaria (salvo las actividades que requieren autorización expresa previa). La municipalidad te da un plazo, de hasta dos años, para presentar lo que falta."
+      },
+      {
+        "p": "¿Qué es la patente MEF?",
+        "r": "La patente de microempresa familiar (Ley 19.749): para actividades que se ejercen en la casa donde vive la familia, con hasta cinco trabajadores extraños a ella y activos productivos de hasta 1.000 UF sin contar el inmueble. Se obtiene con una declaración jurada e inscripción municipal, sin las limitaciones de zonificación, pero no aplica a actividades peligrosas, contaminantes o molestas, y si elaboras alimentos necesitas igual la autorización sanitaria.",
+        "rTexto": "La patente de microempresa familiar (Ley 19.749): para actividades que se ejercen en la casa donde vive la familia, con hasta cinco trabajadores extraños a ella y activos productivos de hasta 1.000 UF sin contar el inmueble. Se obtiene con una declaración jurada e inscripción municipal, sin las limitaciones de zonificación, pero no aplica a actividades peligrosas, contaminantes o molestas, y si elaboras alimentos necesitas igual la autorización sanitaria."
+      },
+      {
+        "p": "¿Cuánto demora la SEREMI en resolver la calificación?",
+        "r": "Depende de la región y de si hay observaciones. Medimos el plazo real en las resoluciones publicadas: está en <a href=\"/plazo-seremi-cti/\">cuánto demora la SEREMI en la calificación industrial</a>. En SVEA preparamos el expediente en 3 a 5 días hábiles.",
+        "rTexto": "Depende de la región y de si hay observaciones; el plazo medido en las resoluciones publicadas está en nuestra página sobre cuánto demora la SEREMI en la calificación industrial. En SVEA preparamos el expediente en 3 a 5 días hábiles."
+      }
+    ]
+  },
+  "autorCaja": {
+    "inicial": "S",
+    "nombre": "Equipo técnico SVEA Consultores",
+    "texto": "Consultora chilena especializada en permisos sanitarios, ambientales y de seguridad ante la SEREMI de Salud, la Dirección del Trabajo y las municipalidades. Más de 250 empresas atendidas."
+  },
+  "compartir": {
+    "titulo": "Compartir",
+    "enlaces": [
+      {
+        "href": "https://www.linkedin.com/sharing/share-offsite/?url=https://sveaconsultores.cl/patente-comercial-permisos/",
+        "texto": "in",
+        "titulo": "LinkedIn",
+        "externo": true
+      },
+      {
+        "href": "https://api.whatsapp.com/send?text=Patente%20comercial%20y%20permisos%20SEREMI%20https://sveaconsultores.cl/patente-comercial-permisos/",
+        "texto": "wa",
+        "titulo": "WhatsApp",
+        "externo": true
+      },
+      {
+        "href": "mailto:?subject=Patente%20comercial%20y%20permisos%20SEREMI&body=Te%20comparto%20esta%20gu%C3%ADa%3A%20https://sveaconsultores.cl/patente-comercial-permisos/",
+        "texto": "@",
+        "titulo": "Email",
+        "externo": false
+      }
+    ]
+  },
+  "bloques": [
+    {
+      "tipo": "html",
+      "html": "<p class=\"art-entrada\">\n        La <strong>patente comercial</strong> es el nombre con que casi todos conocen la <strong>patente municipal</strong>: el permiso, y a la vez el impuesto, que cobra la municipalidad por ejercer una actividad lucrativa en un local de su comuna. Para un almacén o una oficina el trámite es corto, pero si tu negocio fabrica, repara o almacena, la municipalidad te va a pedir permisos de otros organismos, y uno de los que más demora es el de la <strong>SEREMI de Salud</strong>.\n    </p>\n\n<section id=\"que-es\">\n        <h2>Qué es la patente comercial (o patente municipal)</h2>\n        <p>La regula la <strong>Ley de Rentas Municipales</strong> (DL 3.063). Según su artículo 23, el ejercicio de toda profesión, oficio, industria, comercio, arte o cualquier otra actividad lucrativa secundaria o terciaria está sujeto a una <strong>contribución de patente municipal</strong>. Se paga en la comuna donde está el local, aunque la empresa tenga su casa matriz en otra.</p>\n        <p>El valor anual lo fija cada municipalidad entre el <strong>2,5 y el 5 por mil del capital propio</strong> del contribuyente, con un mínimo de 1 UTM y un máximo de 8.000 UTM (art. 24), y se paga en dos cuotas semestrales. Si recién inicias actividades, el cálculo se hace sobre el capital inicial que declaraste ante el SII.</p>\n    </section>\n\n<section id=\"tipos\">\n        <h2>Tipos de patente municipal</h2>\n        <p>Aunque se le diga «comercial» a todas, la municipalidad las clasifica según la actividad, y cada tipo pide permisos distintos:</p>\n        <div class=\"art-tabla\"><table class=\"normativa-table\">\n            <thead><tr><th>Tipo de patente</th><th>Para qué actividades</th><th>Qué suele pedir además</th></tr></thead>\n            <tbody>\n                <tr><td><strong>Comercial</strong></td><td>Venta de bienes y servicios: tiendas, oficinas, distribuidoras.</td><td>Uso de suelo y recepción del local; si hay bodegaje, la calificación de la SEREMI.</td></tr>\n                <tr><td><strong>Industrial</strong></td><td>Fabricación, transformación, talleres y plantas.</td><td>Calificación técnica industrial e informe sanitario de la SEREMI (Código Sanitario, art. 83).</td></tr>\n                <tr><td><strong>Profesional</strong></td><td>Profesionales y sociedades de profesionales.</td><td>No requiere permisos (DL 3.063, art. 26).</td></tr>\n                <tr><td><strong>De alcoholes</strong></td><td>Expendio de bebidas alcohólicas.</td><td>Las exigencias de la Ley 19.925 y, si elabora o sirve alimentos, la autorización sanitaria.</td></tr>\n                <tr><td><strong>Microempresa familiar (MEF)</strong></td><td>Actividad que se ejerce en la casa donde vive la familia.</td><td>Declaración jurada e inscripción municipal (Ley 19.749).</td></tr>\n            </tbody>\n        </table>\n        </div>\n    </section>\n\n<section id=\"que-pide\">\n        <h2>Qué te pide la municipalidad para la patente comercial</h2>\n        <p>Cada municipalidad publica su propia lista, pero casi todas piden lo mismo. Confírmala siempre en el departamento de patentes de tu comuna antes de arrendar o invertir.</p>\n        <ul class=\"checklist\">\n            <li><strong>Inicio de actividades en el SII</strong>, con el giro que vas a desarrollar en ese local.</li>\n            <li><strong>Título para ocupar el local:</strong> contrato de arriendo, escritura o autorización del dueño.</li>\n            <li><strong>Uso de suelo o zonificación:</strong> el <strong>certificado de informaciones previas (CIP)</strong> de la Dirección de Obras dice qué usos permite el plan regulador en esa dirección. Algunas comunas emiten además un certificado de zonificación para la patente.</li>\n            <li><strong>Recepción final del inmueble:</strong> la Ley General de Urbanismo y Construcciones (art. 145) prohíbe habitar o destinar a uso alguno una obra antes de su recepción definitiva. Si el local tiene ampliaciones sin recepción, o fue construido para otro destino, necesitarás regularizar o pedir el <a href=\"/patente-definitiva-permisos-seremi/#cambio-destino\">cambio de destino</a> antes.</li>\n            <li><strong>Capital propio</strong> declarado, para calcular el valor de la patente.</li>\n            <li><strong>Permisos sanitarios y de leyes especiales</strong> según la actividad: aquí entra la SEREMI de Salud, que explicamos más abajo.</li>\n        </ul>\n    </section>\n\n<section id=\"provisoria\">\n        <h2>Patente provisoria o definitiva</h2>\n        <p>Si te falta algún permiso, no siempre tienes que esperar para abrir. El artículo 26 del DL 3.063 obliga a la municipalidad a otorgar una <strong>patente provisoria</strong> cuando la actividad está permitida en esa dirección según el plan regulador y acreditas, entre otros requisitos, que pediste la autorización sanitaria que corresponde (o que ya la tienes, si tu actividad es de las que requieren autorización expresa). Con ella funcionas mientras juntas los permisos pendientes, en un plazo que no puede exceder de dos años.</p>\n        <p>La <strong>patente definitiva</strong> se otorga cuando acompañas todos los permisos sanitarios, de emplazamiento y los que exijan leyes especiales. Si la provisoria vence sin ellos, caduca de pleno derecho y debes cerrar. El detalle de plazos, prórroga y caducidad está en nuestra guía de <a href=\"/patente-definitiva-permisos-seremi/\">patente definitiva y permisos de la SEREMI</a>.</p>\n    </section>\n\n<section id=\"seremi\">\n        <h2>Cuándo entra la SEREMI de Salud: la calificación técnica industrial</h2>\n        <p>La Ordenanza General de Urbanismo y Construcciones (<strong>art. 4.14.2</strong>) dispone que los <strong>establecimientos industriales o de bodegaje</strong> sean calificados caso a caso por la SEREMI de Salud, según los riesgos que puedan causar a sus trabajadores, al vecindario y a la comunidad, en una de cuatro categorías: <strong>peligroso</strong>, <strong>insalubre o contaminante</strong>, <strong>molesto</strong> o <strong>inofensivo</strong>. Esa categoría define en qué zonas del plan regulador puede funcionar la actividad, y por eso la municipalidad la pide antes de la patente.</p>\n        <p>En la práctica, necesitas la <strong>calificación técnica industrial (CTI)</strong> si tu patente es para:</p>\n        <ul class=\"checklist\">\n            <li><strong>Producir o transformar:</strong> fábricas, plantas, maestranzas, imprentas, talleres metalmecánicos, de muebles o de vehículos.</li>\n            <li><strong>Almacenar:</strong> bodegas, centros de distribución y locales donde el bodegaje es parte relevante de la actividad, aunque vendas al por mayor.</li>\n            <li><strong>Ampliar o trasladar</strong> una industria: el Código Sanitario (art. 83) impide a las municipalidades otorgar patentes definitivas para la instalación, ampliación o traslado de industrias sin el informe previo de la autoridad sanitaria.</li>\n        </ul>\n        <p>Una tienda, una oficina o un local de servicios sin procesos ni bodega normalmente <strong>no</strong> necesita la CTI. Si la municipalidad te pide igual un pronunciamiento de la SEREMI para una actividad de bajo riesgo, lo que corresponde suele ser la <a href=\"/calificacion-inofensiva-seremi/\">calificación de actividad inofensiva</a>.</p>\n        <div class=\"callout callout-info\">\n            <span class=\"callout-icon\">i</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">Cómo se tramita y cuánto cuesta en la SEREMI</div>\n                <p>La CTI se pide en <a href=\"/seremi-en-linea-calificacion-industrial/\">SEREMI en Línea (ASDigital)</a>, con un informe técnico de la actividad, planos y antecedentes del recinto. El arancel de la SEREMI es de <strong>$107.700</strong> (ChileAtiende). Antes de ingresar, revisa <a href=\"/por-que-rechazan-la-cti/\">por qué la SEREMI rechaza la calificación industrial</a> y cuánto se rechaza en tu <a href=\"/cti/\">región, comuna o rubro</a>.</p>\n            </div>\n        </div>\n        <p>El paso a paso, los documentos y las categorías están en nuestra guía de <a href=\"/calificacion-tecnica-industrial-chile/\">calificación técnica industrial</a>.</p>\n    </section>\n\n<figure class=\"article-img\">\n        <img data-foto=\"inspeccion-bodega-calificacion-tecnica-industrial\" alt=\"Patente comercial - inspección de una bodega antes de la calificación técnica industrial de la SEREMI\">\n        <figcaption>Bodegas, talleres y plantas necesitan la calificación de la SEREMI antes de la patente municipal definitiva.</figcaption>\n    </figure>\n"
+    },
+    {
+      "tipo": "formulario"
+    },
+    {
+      "tipo": "html",
+      "html": "<section id=\"alimentos\">\n        <h2>Si tu negocio es de alimentos</h2>\n        <p>Restaurantes, cocinas, panaderías, fábricas y bodegas de alimentos necesitan además la <strong>autorización sanitaria</strong> del establecimiento, que también otorga la SEREMI de Salud. La exige el Reglamento Sanitario de los Alimentos (DS 977, arts. 6 y 7) y es un trámite distinto de la calificación: la CTI evalúa el emplazamiento y los riesgos de la actividad; la autorización sanitaria, las condiciones para elaborar, envasar o vender alimentos. Si tu actividad elabora alimentos a escala industrial, es habitual que te pidan las dos.</p>\n    </section>\n\n<section id=\"mef\">\n        <h2>Patente de microempresa familiar (MEF)</h2>\n        <p>La <strong>Ley 19.749</strong> modificó el artículo 26 del DL 3.063 para facilitar la patente a quienes trabajan en su propia casa. Es microempresa familiar la que cumple tres requisitos:</p>\n        <ul class=\"checklist\">\n            <li>La actividad se ejerce en la <strong>casa habitación familiar</strong>.</li>\n            <li>No trabajan en ella <strong>más de cinco trabajadores</strong> extraños a la familia.</li>\n            <li>Sus activos productivos, sin contar el inmueble, no superan las <strong>1.000 UF</strong>.</li>\n        </ul>\n        <p>Para acogerse, te inscribes en el registro de microempresas familiares de la municipalidad con una <strong>declaración jurada</strong> en la que afirmas ser legítimo ocupante de la vivienda y que tu actividad no produce contaminación; si es un departamento o una casa en condominio, necesitas además la autorización del comité de administración. Según su reglamento (DS 102 de 2002, de Hacienda), para otorgar la patente la municipalidad <strong>no considera las limitaciones de zonificación</strong> ni las autorizaciones sanitarias previas que afecten al inmueble, <strong>salvo las del Reglamento Sanitario de los Alimentos</strong>: si elaboras alimentos en tu casa, igual necesitas la autorización sanitaria.</p>\n        <div class=\"callout callout-warning\">\n            <span class=\"callout-icon\">!</span>\n            <div class=\"callout-body\">\n                <div class=\"callout-title\">La MEF no sirve para todo</div>\n                <p>La ley permite a la microempresa familiar cualquier actividad lícita, <strong>excluidas las peligrosas, contaminantes o molestas</strong>. Si tu taller o tu producción en casa calificaría en alguna de esas categorías, la patente MEF no es el camino y la SEREMI evalúa la actividad como cualquier otra. Lo que pasa con esas solicitudes, con datos de las resoluciones, está en <a href=\"/cti-persona-natural/\">patente MEF y calificación industrial a nombre propio</a>.</p>\n            </div>\n        </div>\n    </section>\n\n<section id=\"orden\">\n        <h2>Orden recomendado de los trámites</h2>\n        <ol class=\"process-steps\">\n            <li><div class=\"step-content\"><h4>Certificado de informaciones previas</h4><p>Antes de firmar el arriendo, confirma en la DOM que tu actividad está permitida en esa dirección.</p></div></li>\n            <li><div class=\"step-content\"><h4>Inicio de actividades en el SII</h4><p>Con el giro correcto: es el que la municipalidad y la SEREMI van a revisar.</p></div></li>\n            <li><div class=\"step-content\"><h4>Lista de requisitos de tu comuna</h4><p>Pide al departamento de patentes los permisos que exige para tu rubro y cuáles puedes presentar después con la provisoria.</p></div></li>\n            <li><div class=\"step-content\"><h4>Inmueble en regla</h4><p>Recepción final y, si corresponde, cambio de destino o estudio de carga de combustible.</p></div></li>\n            <li><div class=\"step-content\"><h4>Calificación técnica en la SEREMI</h4><p>Si fabricas, reparas o almacenas. Preparamos el expediente en <strong>3 a 5 días hábiles</strong> y lo ingresamos en SEREMI en Línea.</p></div></li>\n            <li><div class=\"step-content\"><h4>Patente provisoria y luego definitiva</h4><p>Con la solicitud ingresada puedes optar a la provisoria; con la resolución en la mano, a la definitiva.</p></div></li>\n        </ol>\n    </section>\n\n<aside class=\"art-cta\" aria-label=\"Cotizar\"><h3>¿La municipalidad te pidió la calificación de la SEREMI para tu patente?</h3><p>Revisamos tu actividad, te decimos qué permiso corresponde y preparamos el expediente en 3 a 5 días hábiles.</p><div class=\"art-cta-botones\"><a class=\"btn-flecha\" href=\"https://api.whatsapp.com/send/?phone=56929947924&amp;text=Hola%2C%20necesito%20los%20permisos%20de%20la%20SEREMI%20para%20mi%20patente%20comercial\" target=\"_blank\" rel=\"noopener\"><span>Cotizar por WhatsApp</span><span class=\"circulo\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"art-boton-linea\" href=\"#article-lead-form\">Completar formulario</a></div><!--logos-clientes--></aside>\n<section id=\"como-ayuda\">\n        <h2>Cómo te ayuda SVEA Consultores</h2>\n        <p>Revisamos qué te pide tu municipalidad, preparamos la <a href=\"/calificacion-tecnica-industrial/\">calificación técnica industrial</a> y el <a href=\"/estudio-de-carga-de-combustible/\">estudio de carga de combustible</a> cuando la DOM lo exige, y respondemos cada observación de la SEREMI hasta la resolución. Más de 250 empresas atendidas.</p>\n    </section>\n\n<section id=\"fuentes\">\n        <h2>Fuentes</h2>\n        <p>Normas y páginas oficiales consultadas para esta guía (noviembre de 2026). Las normas cambian: ante una duda puntual, manda el texto vigente publicado en la Biblioteca del Congreso Nacional.</p>\n        <ul><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=18967\" target=\"_blank\" rel=\"noopener\">Ley de Rentas Municipales, DL 3.063 (texto refundido), arts. 23, 24 y 26</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=188826\" target=\"_blank\" rel=\"noopener\">Ley 19.749, normas para facilitar la creación de microempresas familiares</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=198229\" target=\"_blank\" rel=\"noopener\">DS 102 de 2002, Ministerio de Hacienda, reglamento de la Ley 19.749</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=5595\" target=\"_blank\" rel=\"noopener\">Código Sanitario, art. 83</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=8201\" target=\"_blank\" rel=\"noopener\">Ordenanza General de Urbanismo y Construcciones, arts. 4.14.2 y 4.14.3</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=13560\" target=\"_blank\" rel=\"noopener\">Ley General de Urbanismo y Construcciones, art. 145</a></li><li><a href=\"https://www.bcn.cl/leychile/navegar?idNorma=71271\" target=\"_blank\" rel=\"noopener\">Reglamento Sanitario de los Alimentos, DS 977, arts. 6 y 7</a></li><li><a href=\"https://seremienlinea.minsal.cl/\" target=\"_blank\" rel=\"noopener\">SEREMI en Línea, Ministerio de Salud</a></li></ul>\n    </section>\n"
+    }
+  ],
+  "relacionados": {
+    "titulo": "Servicios relacionados",
+    "intro": "",
+    "tarjetas": [
+      {
+        "titulo": "Calificación Técnica Industrial",
+        "texto": "Expediente completo y tramitación ante la SEREMI de Salud para industrias y bodegas.",
+        "href": "/calificacion-tecnica-industrial/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Estudio de Carga de Combustible",
+        "texto": "Cálculo de la carga de fuego según NCh 1916 e informe firmado por profesional.",
+        "href": "/estudio-de-carga-de-combustible/",
+        "enlace": "Conocer servicio →"
+      },
+      {
+        "titulo": "Patente definitiva",
+        "texto": "Qué permisos de la SEREMI te piden para pasar de la patente provisoria a la definitiva.",
+        "href": "/patente-definitiva-permisos-seremi/",
+        "enlace": "Leer la guía →"
+      }
+    ]
+  },
+  "asunto": {
+    "prefijo": "[BLOG] Cotización CTI - ",
+    "campo": "Empresa",
+    "id": "dynamic-subject-art-patente-comercial"
+  }
+}

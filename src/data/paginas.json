@@ -4703,8 +4703,8 @@
     "ruta": "/que-es-informe-sanitario/",
     "slug": "que-es-informe-sanitario",
     "tipo": "articulos",
-    "title": "Qué es el Informe Sanitario: Quién lo Pide y Cómo se Tramita",
-    "description": "Diferencia entre informe sanitario, resolución y autorización sanitaria, qué evalúa la SEREMI, documentos, plazos referenciales y costos.",
+    "title": "Informe sanitario o permiso sanitario: quién lo pide y cómo",
+    "description": "Qué es el informe sanitario favorable, el permiso sanitario de la SEREMI para la patente: diferencia con la autorización sanitaria, documentos y plazos.",
     "robots": "index, follow",
     "canonical": "https://sveaconsultores.cl/que-es-informe-sanitario/",
     "h1": "Informe Sanitario Favorable Chile: Guía Completa 2026",
@@ -13428,22 +13428,22 @@
     "ruta": "/patente-definitiva-permisos-seremi/",
     "slug": "patente-definitiva-permisos-seremi",
     "tipo": "articulos",
-    "title": "Patente definitiva: qué permisos de la SEREMI necesitas",
-    "description": "Pasa de patente provisoria a definitiva: qué pide la municipalidad según tu rubro, cuándo entra la SEREMI de Salud y en qué orden hacer los trámites.",
+    "title": "Patente definitiva (comercial o municipal): permisos SEREMI",
+    "description": "Patente comercial o municipal: cómo pasar de provisoria a definitiva, qué pide la municipalidad según tu rubro y cuándo entra la SEREMI de Salud.",
     "robots": "index, follow",
     "canonical": "https://sveaconsultores.cl/patente-definitiva-permisos-seremi/",
-    "h1": "Patente definitiva: qué permisos de la SEREMI necesitas",
-    "h1_html": "Patente definitiva: qué permisos de la SEREMI necesitas",
+    "h1": "Patente definitiva comercial o municipal: qué permisos de la SEREMI necesitas",
+    "h1_html": "Patente definitiva comercial o municipal: qué permisos de la SEREMI necesitas",
     "og_image": "https://sveaconsultores.cl/img/og/firma-solicitud-seremi-en-linea.jpg",
     "palabras_origen": 0,
     "jsonld": [
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Patente definitiva: qué permisos de la SEREMI necesitas",
-        "description": "Pasa de patente provisoria a definitiva: qué pide la municipalidad según tu rubro, cuándo entra la SEREMI de Salud y en qué orden hacer los trámites.",
+        "headline": "Patente definitiva comercial o municipal: qué permisos de la SEREMI necesitas",
+        "description": "Patente comercial o municipal: cómo pasar de provisoria a definitiva, qué pide la municipalidad según tu rubro y cuándo entra la SEREMI de Salud.",
         "image": "https://sveaconsultores.cl/img/og/firma-solicitud-seremi-en-linea.jpg",
-        "keywords": "Patente definitiva, patente provisoria, SEREMI",
+        "keywords": "Patente definitiva, patente comercial, patente municipal, patente provisoria, SEREMI",
         "inLanguage": "es-CL",
         "articleSection": "Guías de cumplimiento",
         "author": {
@@ -13461,7 +13461,7 @@
           }
         },
         "datePublished": "2026-09-24",
-        "dateModified": "2026-09-24",
+        "dateModified": "2026-11-09",
         "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://sveaconsultores.cl/patente-definitiva-permisos-seremi/"
@@ -13488,6 +13488,78 @@
             "position": 3,
             "name": "Patente definitiva",
             "item": "https://sveaconsultores.cl/patente-definitiva-permisos-seremi/"
+          }
+        ]
+      }
+    ],
+    "contenido": null,
+    "formularios": [],
+    "nueva": true
+  },
+  {
+    "ruta": "/patente-comercial-permisos/",
+    "slug": "patente-comercial-permisos",
+    "tipo": "articulos",
+    "title": "Patente comercial: permisos y cuándo entra la SEREMI",
+    "description": "Qué pide la municipalidad para la patente comercial, en qué se diferencia la provisoria de la definitiva y cuándo necesitas la calificación de la SEREMI.",
+    "robots": "index, follow",
+    "canonical": "https://sveaconsultores.cl/patente-comercial-permisos/",
+    "h1": "Patente comercial: qué permisos necesitas y cuándo entra la SEREMI",
+    "h1_html": "Patente comercial: qué permisos necesitas y cuándo entra la SEREMI",
+    "og_image": "https://sveaconsultores.cl/img/og/inspeccion-bodega-calificacion-tecnica-industrial.jpg",
+    "palabras_origen": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Patente comercial: qué permisos necesitas y cuándo entra la SEREMI",
+        "description": "Qué pide la municipalidad para la patente comercial, en qué se diferencia la provisoria de la definitiva y cuándo necesitas la calificación de la SEREMI.",
+        "image": "https://sveaconsultores.cl/img/og/inspeccion-bodega-calificacion-tecnica-industrial.jpg",
+        "keywords": "Patente comercial, patente municipal, patente provisoria, patente MEF, calificación técnica industrial, SEREMI",
+        "inLanguage": "es-CL",
+        "articleSection": "Guías de cumplimiento",
+        "author": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SVEA Consultores",
+          "url": "https://sveaconsultores.cl",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sveaconsultores.cl/img/logo-svea.png"
+          }
+        },
+        "datePublished": "2026-11-09",
+        "dateModified": "2026-11-09",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://sveaconsultores.cl/patente-comercial-permisos/"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://sveaconsultores.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://sveaconsultores.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Patente comercial",
+            "item": "https://sveaconsultores.cl/patente-comercial-permisos/"
           }
         ]
       }
@@ -13860,22 +13932,22 @@
     "ruta": "/plan-manejo-sustancias-peligrosas-ds-43/",
     "slug": "plan-manejo-sustancias-peligrosas-ds-43",
     "tipo": "articulos",
-    "title": "Plan de manejo de sustancias peligrosas DS 43",
-    "description": "DS 43: cuándo exige autorización sanitaria para almacenar sustancias peligrosas, qué bodega corresponde, qué incluye el plan y la declaración semestral.",
+    "title": "Bodega SUSPEL y plan de manejo DS 43: requisitos SEREMI",
+    "description": "DS 43: cuándo una bodega de sustancias peligrosas (SUSPEL) necesita autorización sanitaria, qué bodega corresponde, qué incluye el plan y la declaración.",
     "robots": "index, follow",
     "canonical": "https://sveaconsultores.cl/plan-manejo-sustancias-peligrosas-ds-43/",
-    "h1": "Plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye",
-    "h1_html": "Plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye",
+    "h1": "Bodega SUSPEL y plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye",
+    "h1_html": "Bodega SUSPEL y plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye",
     "og_image": "https://sveaconsultores.cl/img/og/tambores-plasticos-sustancias-peligrosas-ds-43.jpg",
     "palabras_origen": 0,
     "jsonld": [
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye",
-        "description": "DS 43: cuándo exige autorización sanitaria para almacenar sustancias peligrosas, qué bodega corresponde, qué incluye el plan y la declaración semestral.",
+        "headline": "Bodega SUSPEL y plan de manejo de sustancias peligrosas (DS 43): cuándo lo exigen y qué incluye",
+        "description": "DS 43: cuándo una bodega de sustancias peligrosas (SUSPEL) necesita autorización sanitaria, qué bodega corresponde, qué incluye el plan y la declaración.",
         "image": "https://sveaconsultores.cl/img/og/tambores-plasticos-sustancias-peligrosas-ds-43.jpg",
-        "keywords": "DS 43, sustancias peligrosas, almacenamiento",
+        "keywords": "DS 43, bodega SUSPEL, sustancias peligrosas, almacenamiento, plan de manejo",
         "inLanguage": "es-CL",
         "articleSection": "Guías de cumplimiento",
         "author": {
@@ -13893,7 +13965,7 @@
           }
         },
         "datePublished": "2026-09-24",
-        "dateModified": "2026-09-24",
+        "dateModified": "2026-11-09",
         "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://sveaconsultores.cl/plan-manejo-sustancias-peligrosas-ds-43/"
@@ -13918,7 +13990,7 @@
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "Sustancias peligrosas DS 43",
+            "name": "Bodega SUSPEL y DS 43",
             "item": "https://sveaconsultores.cl/plan-manejo-sustancias-peligrosas-ds-43/"
           }
         ]
@@ -14361,7 +14433,7 @@
     "ruta": "/cti-persona-natural/",
     "slug": "cti-persona-natural",
     "tipo": "articulos",
-    "title": "Patente MEF y persona natural: por qué se rechaza el 64 %",
+    "title": "Patente microempresa familiar (MEF): 64 % de rechazo SEREMI",
     "description": "1.847 calificaciones industriales de personas naturales en la SEREMI RM: se rechaza el 63,5 %, contra 29 % de las empresas.",
     "robots": "index, follow",
     "canonical": "https://sveaconsultores.cl/cti-persona-natural/",
@@ -14378,7 +14450,7 @@
         "@context": "https://schema.org",
         "@type": "Dataset",
         "@id": "https://sveaconsultores.cl/cti-persona-natural/#dataset",
-        "name": "Patente MEF y persona natural: por qué se rechaza el 64 % (datos SEREMI, SVEA Consultores)",
+        "name": "Patente microempresa familiar (MEF): 64 % de rechazo SEREMI (datos SEREMI, SVEA Consultores)",
         "description": "1.847 calificaciones industriales de personas naturales en la SEREMI RM: se rechaza el 63,5 %, contra 29 % de las empresas.",
         "url": "https://sveaconsultores.cl/cti-persona-natural/",
         "inLanguage": "es-CL",
@@ -20660,12 +20732,12 @@
     "ruta": "/despues-de-la-cti/sustancias-peligrosas-ds-43/",
     "slug": "despues-cti-sustancias-peligrosas-ds-43",
     "tipo": "articulos",
-    "title": "Bodega de sustancias peligrosas DS 43 (SUSPEL) y la SEREMI",
+    "title": "Sustancias peligrosas en la calificación industrial (DS 43)",
     "description": "El 15,2 % de las calificaciones industriales (CTI) de la RM exige el almacenamiento de sustancias peligrosas (2023-2026).",
     "robots": "noindex, follow",
     "canonical": "https://sveaconsultores.cl/despues-de-la-cti/sustancias-peligrosas-ds-43/",
-    "h1": "Bodega de sustancias peligrosas DS 43 (SUSPEL): qué exige la SEREMI después de la calificación industrial",
-    "h1_html": "Bodega de sustancias peligrosas DS 43 (SUSPEL): qué exige la SEREMI después de la calificación industrial",
+    "h1": "Sustancias peligrosas (DS 43) en la calificación industrial: qué exige la SEREMI en la resolución",
+    "h1_html": "Sustancias peligrosas (DS 43) en la calificación industrial: qué exige la SEREMI en la resolución",
     "og_image": "https://sveaconsultores.cl/img/og/tambores-plasticos-sustancias-peligrosas-ds-43.jpg",
     "palabras_origen": 0,
     "contenido": null,
@@ -20677,7 +20749,7 @@
         "@context": "https://schema.org",
         "@type": "Dataset",
         "@id": "https://sveaconsultores.cl/despues-de-la-cti/sustancias-peligrosas-ds-43/#dataset",
-        "name": "Bodega de sustancias peligrosas DS 43 (SUSPEL) y la SEREMI (datos SEREMI, SVEA Consultores)",
+        "name": "Sustancias peligrosas en la calificación industrial (DS 43) (datos SEREMI, SVEA Consultores)",
         "description": "El 15,2 % de las calificaciones industriales (CTI) de la RM exige el almacenamiento de sustancias peligrosas (2023-2026).",
         "url": "https://sveaconsultores.cl/despues-de-la-cti/sustancias-peligrosas-ds-43/",
         "inLanguage": "es-CL",
@@ -20710,7 +20782,7 @@
         "citation": "resoluciones públicas, SEREMI de Salud (actos y resoluciones con efectos sobre terceros)",
         "dateModified": "2026-11-07",
         "keywords": [
-          "ds 43 bodega suspel",
+          "sustancias peligrosas calificación industrial",
           "almacenamiento de sustancias peligrosas SEREMI",
           "exigencia resolución CTI almacenamiento de sustancias peligrosas",
           "almacenamiento de sustancias peligrosas calificación industrial"
