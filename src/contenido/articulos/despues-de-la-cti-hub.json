@@ -17,8 +17,8 @@
  "bajada": "Una resolución de CTI calificada trae, además del resolutivo, condiciones y obligaciones: en la Región Metropolitana el 77 % de las calificadas (3.447 de 4.465) incluye al menos una exigencia específica y el promedio es 2,2 por resolución. Cada página de abajo mide las exigencias que corresponden a un servicio que SVEA presta: en qué proporción de las calificaciones aparecen, en qué regiones, rubros e instalaciones, qué dice la frase exacta y si es obligación («deberá») o condición declarada. Las exigencias que resuelve un instalador o un proveedor (ventilación, sala de baterías, red húmeda, TE-1, GLP, control de vectores) no tienen página propia: se mencionan donde corresponde.",
  "fecha": "Noviembre 2026",
  "actualizado": {
-  "iso": "2026-11-07",
-  "texto": "7 de noviembre de 2026"
+  "iso": "2026-11-10",
+  "texto": "10 de noviembre de 2026"
  },
  "lectura": "4 min de lectura",
  "autor": "Equipo técnico SVEA Consultores",
@@ -236,6 +236,6 @@
   "tipo": "hub",
   "ola": 1,
   "corte": "noviembre 2026",
-  "generado": "2026-11-07"
+  "generado": "2026-11-10"
  }
 }

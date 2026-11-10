@@ -17,8 +17,8 @@
  "bajada": "Una de cada 5 calificaciones industriales que resuelve la SEREMI RM es de alimentos: 1.373 resoluciones entre 2023 y septiembre 2026. Esta página reúne lo que esas resoluciones dicen: cuánto crece el rubro, cuánto se rechaza y por qué, dónde están los recintos, cuánto demora la SEREMI y qué tamaño tiene la instalación que aprueba.",
  "fecha": "Noviembre 2026",
  "actualizado": {
-  "iso": "2026-11-07",
-  "texto": "7 de noviembre de 2026"
+  "iso": "2026-11-10",
+  "texto": "10 de noviembre de 2026"
  },
  "lectura": "6 min de lectura",
  "autor": "Equipo técnico SVEA Consultores",
@@ -249,8 +249,8 @@
    },
    {
     "p": "¿Cuánto cuesta la calificación industrial (certificado de actividad inofensiva) para una fábrica, cocina o bodega de alimentos?",
-    "r": "El arancel que cobra la SEREMI por la calificación es de $107.700 (2026) y se reajusta una vez al año; se paga en SEREMI en Línea cuando el trámite queda ingresado, y no se devuelve si la solicitud se rechaza. Aparte está la preparación de la carpeta técnica.",
-    "rTexto": "El arancel que cobra la SEREMI por la calificación es de $107.700 (2026) y se reajusta una vez al año; se paga en SEREMI en Línea cuando el trámite queda ingresado, y no se devuelve si la solicitud se rechaza. Aparte está la preparación de la carpeta técnica."
+    "r": "La SEREMI cobra un arancel único en todo el país: $107.700 en 2026, con un reajuste al año. Se paga al ingresar la solicitud en SEREMI en Línea y no se recupera si la calificación se rechaza; la carpeta técnica (memorias y planos) es un costo aparte.",
+    "rTexto": "La SEREMI cobra un arancel único en todo el país: $107.700 en 2026, con un reajuste al año. Se paga al ingresar la solicitud en SEREMI en Línea y no se recupera si la calificación se rechaza; la carpeta técnica (memorias y planos) es un costo aparte."
    },
    {
     "p": "¿Es más fácil regularizar o presentar una fábrica, cocina o bodega de alimentos en proyecto?",
@@ -314,6 +314,6 @@
   "tipo": "rubro",
   "ola": 1,
   "corte": "noviembre 2026",
-  "generado": "2026-11-07"
+  "generado": "2026-11-10"
  }
 }

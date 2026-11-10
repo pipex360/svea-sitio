@@ -17,8 +17,8 @@
  "bajada": "SVEA Consultores leyó las 11.225 resoluciones de Calificación Técnica Industrial que 13 SEREMI de Salud publicaron en el resoluciones públicas entre enero de 2023 y septiembre de 2026. Este informe resume lo que dicen: cuántas se tramitan, cuánto y por qué se rechazan, cuánto demora cada SEREMI, quién tramita y qué exige la autoridad después. Está hecho para citarse: cada cifra tiene definición, fuente y un CSV agregado descargable.",
  "fecha": "Noviembre 2026",
  "actualizado": {
-  "iso": "2026-11-07",
-  "texto": "7 de noviembre de 2026"
+  "iso": "2026-11-10",
+  "texto": "10 de noviembre de 2026"
  },
  "lectura": "12 min de lectura",
  "autor": "Equipo técnico SVEA Consultores",
@@ -305,6 +305,6 @@
   "tipo": "informe",
   "ola": 2,
   "corte": "noviembre 2026",
-  "generado": "2026-11-07"
+  "generado": "2026-11-10"
  }
 }

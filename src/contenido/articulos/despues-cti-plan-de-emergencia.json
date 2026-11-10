@@ -17,8 +17,8 @@
  "bajada": "Cuando la SEREMI de Salud califica una actividad (la calificación industrial o CTI que la municipalidad pide para la patente), la resolución no termina en «INOFENSIVA»: debajo vienen condiciones y obligaciones que el titular debe cumplir después. Una de ellas es el plan de emergencia: la resolución registra que la instalación contará con un plan de emergencia (incendio y evacuación), a veces visado por Bomberos; cuando hay cámaras de frío exige medidas ante fugas de refrigerante o amoníaco, y en varias calificaciones recuerda el cumplimiento del D.S. 594 (ruido, iluminación y otros agentes) que el plan de emergencia y el programa de prevención deben recoger. Entre 2023 y septiembre 2026, en la Región Metropolitana aparece en el 8,9 % de las calificaciones industriales: en 1 de cada 11 calificaciones aprobadas la SEREMI la deja escrita.",
  "fecha": "Noviembre 2026",
  "actualizado": {
-  "iso": "2026-11-07",
-  "texto": "7 de noviembre de 2026"
+  "iso": "2026-11-10",
+  "texto": "10 de noviembre de 2026"
  },
  "lectura": "4 min de lectura",
  "autor": "Equipo técnico SVEA Consultores",
@@ -293,6 +293,6 @@
   "tipo": "servicio",
   "ola": 2,
   "corte": "noviembre 2026",
-  "generado": "2026-11-07"
+  "generado": "2026-11-10"
  }
 }
