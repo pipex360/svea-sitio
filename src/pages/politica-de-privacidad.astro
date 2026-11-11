@@ -18,9 +18,9 @@
 import PaginaSimple from '../layouts/PaginaSimple.astro';
 import { AVISO_COOKIES } from '../lib/aviso-cookies';
 
-const VERSION = '2.0';
-const ACTUALIZADA = '25 de septiembre de 2026';
-const ACTUALIZADA_ISO = '2026-09-25';
+const VERSION = '2.1';
+const ACTUALIZADA = '10 de noviembre de 2026';
+const ACTUALIZADA_ISO = '2026-11-10';
 ---
 <PaginaSimple
   ruta="/politica-de-privacidad/"
@@ -59,7 +59,7 @@ const ACTUALIZADA_ISO = '2026-09-25';
     <p><strong>Lo que se registra de forma automática cuando navegas como usuario del sitio.</strong></p>
     <ul>
       <li><strong>Datos de la campaña por la que llegaste:</strong> si entras desde un anuncio, el identificador de clic de Google Ads (gclid) y los parámetros utm (fuente, medio, campaña, contenido y término). Se guardan en tu navegador sólo mientras dura la visita y viajan junto con el formulario, para saber qué anuncio generó tu consulta.</li>
-      <li><strong>Datos de navegación</strong>, mediante cookies y tecnologías similares de Google: páginas visitadas, tipo de dispositivo y navegador, ubicación aproximada, clics en los botones de WhatsApp y envíos de formulario. El detalle está en la sección 8.</li>
+      <li><strong>Datos de navegación</strong>, mediante cookies y tecnologías similares de Google, Microsoft Clarity y Meta: páginas visitadas, tipo de dispositivo y navegador, ubicación aproximada, clics en los botones de WhatsApp y envíos de formulario. Microsoft Clarity registra además cómo te mueves por cada página (desplazamiento, clics y movimientos del mouse), sin guardar lo que escribes en los formularios. El detalle está en la sección 8.</li>
     </ul>
 
     <h2 id="finalidades">3. Para qué usamos tu información y con qué fundamento</h2>
@@ -71,8 +71,8 @@ const ACTUALIZADA_ISO = '2026-09-25';
           <tr><td>Contactarte en relación con tu solicitud de información o servicios: responder tu consulta, preparar y enviarte la cotización, llamarte o escribirte por correo o WhatsApp sobre ella.</td><td>Medidas precontractuales que tú solicitaste (art. 13 letra c).</td></tr>
           <tr><td>Si nos contratas: prestar el servicio, facturar y cumplir obligaciones legales y tributarias.</td><td>Ejecución del contrato (art. 13 letra c) y obligación legal (art. 13 letra b).</td></tr>
           <tr><td>Ofrecerte asesoría personalizada sobre los servicios que ofrecemos y hacer seguimiento de la cotización que pediste.</td><td>Nuestro interés legítimo en dar seguimiento a una cotización pedida por ti (art. 13 letra d). Puedes oponerte cuando quieras.</td></tr>
-          <tr><td>Mejorar la calidad de atención y nuestros procesos internos: saber qué páginas y anuncios generan consultas (estadísticas de Google Analytics, conversiones de Google Ads, gclid y utm).</td><td>Nuestro interés legítimo en saber qué funciona en el sitio y en nuestros anuncios (art. 13 letra d). Puedes oponerte cuando quieras (sección 8).</td></tr>
-          <tr><td>Mostrarte anuncios de SVEA en otros sitios según tus visitas anteriores (remarketing) y enviar a Google tu correo y teléfono cifrados para medir las conversiones (conversiones mejoradas).</td><td>Nuestro interés legítimo en medir y dar a conocer nuestros servicios (art. 13 letra d). Tienes siempre derecho a oponerte a este uso, que es publicidad (art. 8° letra b de la ley): te explicamos cómo en la sección 8.</td></tr>
+          <tr><td>Mejorar la calidad de atención y nuestros procesos internos: saber qué páginas y anuncios generan consultas (estadísticas de Google Analytics, conversiones de Google Ads, gclid y utm) y encontrar las partes del sitio que no se entienden o no funcionan (grabaciones anónimas y mapas de calor de Microsoft Clarity).</td><td>Nuestro interés legítimo en saber qué funciona en el sitio y en nuestros anuncios (art. 13 letra d). Puedes oponerte cuando quieras (sección 8).</td></tr>
+          <tr><td>Mostrarte anuncios de SVEA en otros sitios, en Facebook e Instagram según tus visitas anteriores (remarketing) y enviar a Google tu correo y teléfono cifrados para medir las conversiones (conversiones mejoradas).</td><td>Nuestro interés legítimo en medir y dar a conocer nuestros servicios (art. 13 letra d). Tienes siempre derecho a oponerte a este uso, que es publicidad (art. 8° letra b de la ley): te explicamos cómo en la sección 8.</td></tr>
         </tbody>
       </table>
     </div>
@@ -87,6 +87,8 @@ const ACTUALIZADA_ISO = '2026-09-25';
         <tbody>
           <tr><td>Web3Forms</td><td>Recibe el formulario y nos lo reenvía por correo.</td><td>Es un servicio extranjero: puede tratar los datos fuera de Chile.</td></tr>
           <tr><td>Google (correo, Google Tag Manager, Google Analytics, Google Ads)</td><td>Correo electrónico, estadísticas del sitio y medición de anuncios.</td><td>Estados Unidos y otros países.</td></tr>
+          <tr><td>Microsoft (Clarity)</td><td>Estadísticas de uso del sitio: grabaciones anónimas de la navegación y mapas de calor.</td><td>Estados Unidos y otros países.</td></tr>
+          <tr><td>Meta (píxel de Facebook e Instagram)</td><td>Medición de anuncios en Facebook e Instagram y remarketing.</td><td>Estados Unidos y otros países.</td></tr>
           <tr><td>Vercel</td><td>Alojamiento del sitio web (registra datos técnicos como la dirección IP).</td><td>Estados Unidos y su red de servidores en otros países.</td></tr>
           <tr><td>n8n</td><td>Automatización que ordena los correos que llegan.</td><td>Puede tratar los datos fuera de Chile.</td></tr>
           <tr><td>Supabase</td><td>Base de datos donde gestionamos las solicitudes y clientes.</td><td>Puede tratar los datos fuera de Chile.</td></tr>
@@ -111,7 +113,7 @@ const ACTUALIZADA_ISO = '2026-09-25';
       <li><strong>Datos de navegación y cookies:</strong> según la duración indicada en la sección 8.</li>
     </ul>
 
-    <h2 id="cookies">8. Cookies, Google Ads y remarketing</h2>
+    <h2 id="cookies">8. Cookies, medición y remarketing</h2>
     <p>Este sitio puede utilizar funciones de Google Ads, incluido el seguimiento de conversiones y remarketing, que recopilan información mediante cookies. Estas cookies permiten mostrarte anuncios relevantes en función de tus visitas anteriores a nuestro sitio.</p>
     <div class="pp-tabla">
       <table>
@@ -121,6 +123,8 @@ const ACTUALIZADA_ISO = '2026-09-25';
           <tr><td>Google Ads: conversiones y remarketing</td><td>Cuenta cuántos anuncios terminan en un formulario o en un clic a WhatsApp, y permite mostrarte anuncios de SVEA después de tu visita.</td><td><code>_gcl_au</code> y cookies de Google Ads</td><td>Hasta 90 días, según informa Google.</td></tr>
           <tr><td>Google Ads: conversiones mejoradas</td><td>Al enviar un formulario, tu correo y teléfono se guardan un momento en tu navegador y, en la página de «gracias», se envían a Google cifrados (hash), para relacionar el envío con el anuncio que viste. Luego se borran del navegador.</td><td>Correo y teléfono cifrados</td><td>Se borran del navegador en la página de «gracias».</td></tr>
           <tr><td>Google Analytics 4</td><td>Estadísticas de visitas, envíos de formulario y clics en WhatsApp.</td><td><code>_ga</code>, <code>_ga_*</code></td><td>Hasta 2 años, según informa Google.</td></tr>
+          <tr><td>Microsoft Clarity</td><td>Registra de forma anónima cómo se navega cada página (desplazamiento, clics, movimientos del mouse) para encontrar lo que no funciona. No guarda lo que escribes en los formularios.</td><td><code>_clck</code>, <code>_clsk</code></td><td>Hasta 1 año, según informa Microsoft.</td></tr>
+          <tr><td>Píxel de Meta</td><td>Cuenta cuántas visitas desde Facebook o Instagram terminan en un formulario o en un clic a WhatsApp, y permite mostrarte anuncios de SVEA en esas redes.</td><td><code>_fbp</code> y cookies de Meta</td><td>Hasta 90 días, según informa Meta.</td></tr>
           <tr><td>Seguimiento de campaña</td><td>Guarda el gclid y los utm de tu llegada para adjuntarlos al formulario.</td><td>Almacenamiento de sesión del navegador</td><td>Se borra al cerrar la pestaña.</td></tr>
         </tbody>
       </table>
@@ -131,7 +135,8 @@ const ACTUALIZADA_ISO = '2026-09-25';
         <li>En el aviso de cookies del sitio puedes aceptar o rechazar las cookies de medición y publicidad. Si las rechazas, Google no guarda cookies en tu navegador ni recibe tu correo y teléfono cifrados. Puedes cambiar tu decisión cuando quieras: <button type="button" class="pp-boton" data-cc-abrir>Cambiar mi elección de cookies</button></li>
       )}
       <li><strong>Puedes desactivar el uso de cookies de publicidad personalizada</strong> accediendo a la configuración de anuncios de Google en: <a href="https://adssettings.google.com/" target="_blank" rel="noopener">https://adssettings.google.com/</a> (hoy «Mi Centro de anuncios»).</li>
-      <li>Puedes bloquear o borrar las cookies desde la configuración de tu navegador. Si tu navegador no acepta cookies, el sitio igual funciona; Google sólo recopila lo que permitas.</li>
+      <li>Puedes bloquear o borrar las cookies desde la configuración de tu navegador. Si tu navegador no acepta cookies, el sitio igual funciona; las herramientas sólo recopilan lo que permitas.</li>
+      <li>Para los anuncios en Facebook e Instagram, puedes cambiar tus preferencias en la configuración de anuncios de tu cuenta de Meta: <a href="https://www.facebook.com/adpreferences/" target="_blank" rel="noopener">https://www.facebook.com/adpreferences/</a>.</li>
       <li>También puedes escribirnos a <a href="mailto:contacto@sveaconsultores.cl">contacto@sveaconsultores.cl</a> para oponerte a este uso de tus datos (sección 9).</li>
     </ul>
 
@@ -159,9 +164,10 @@ const ACTUALIZADA_ISO = '2026-09-25';
 
     <p class="pp-cierre"><strong>Enviar un formulario no significa que aceptes usos distintos de los descritos en esta política.</strong> Usamos tus datos para responder la solicitud que nos hiciste, y puedes oponerte en cualquier momento a su uso para medición y publicidad.</p>
 
-    <h2 id="version-anterior">Versión anterior de esta política</h2>
+    <h2 id="version-anterior">Versiones anteriores de esta política</h2>
+    <p><strong>Versión 2.0 (25 de septiembre de 2026).</strong> Igual a la actual, salvo que no mencionaba Microsoft Clarity ni el píxel de Meta. La versión 2.1 (10 de noviembre de 2026) los agrega en las secciones 2, 3, 4 y 8.</p>
     <details class="pp-anterior">
-      <summary>Versión 1 (sitio anterior, sin fecha), reemplazada por la versión {VERSION} el {ACTUALIZADA}</summary>
+      <summary>Versión 1 (sitio anterior, sin fecha), reemplazada por la versión 2.0 el 25 de septiembre de 2026</summary>
       <div class="pp-anterior-texto">
         <p>En <strong>SVEA Consultores</strong> nos comprometemos a proteger la privacidad de nuestros usuarios y clientes. Esta Política de Privacidad describe cómo recopilamos, utilizamos y protegemos la información personal que se nos proporciona a través de nuestro sitio web <a href="https://www.sveaconsultores.cl">www.sveaconsultores.cl</a>, especialmente a través del formulario de contacto dirigido a clientes potenciales.</p>
 
