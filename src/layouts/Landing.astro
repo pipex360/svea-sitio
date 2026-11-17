@@ -160,7 +160,7 @@ const BARRA =
         <!-- cabecera de landing: logo y teléfono, sin menú -->
         <header class="relative z-10">
           <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 max-sm:py-2 md:px-6 md:py-5">
-            <img src={`${BASE}/img/logo-svea.webp`} width="404" height="137" alt="SVEA Consultores" class="h-8 w-auto max-sm:h-7 md:h-10" fetchpriority="high" />
+            <a href={`${BASE}/`} aria-label="SVEA Consultores: ir al inicio" class="shrink-0"><img src={`${BASE}/img/logo-svea.webp`} width="404" height="137" alt="SVEA Consultores" class="h-8 w-auto max-sm:h-7 md:h-10" fetchpriority="high" /></a>
             <a href={TEL_HREF} class="lp-tel" aria-label={`Llamar al ${TEL}`}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={TEL_SVG} />
               <span>{TEL}</span>
