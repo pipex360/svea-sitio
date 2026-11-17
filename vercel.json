@@ -3,6 +3,12 @@
   "outputDirectory": "dist",
   "trailingSlash": true,
   "redirects": [
+    { "source": "/fb", "destination": "/?utm_source=facebook&utm_medium=social&utm_campaign=perfil&utm_content=boton", "statusCode": 302 },
+    { "source": "/fb/", "destination": "/?utm_source=facebook&utm_medium=social&utm_campaign=perfil&utm_content=boton", "statusCode": 302 },
+    { "source": "/ig", "destination": "/?utm_source=instagram&utm_medium=social&utm_campaign=perfil&utm_content=bio", "statusCode": 302 },
+    { "source": "/ig/", "destination": "/?utm_source=instagram&utm_medium=social&utm_campaign=perfil&utm_content=bio", "statusCode": 302 },
+    { "source": "/in", "destination": "/?utm_source=linkedin&utm_medium=social&utm_campaign=perfil&utm_content=pagina", "statusCode": 302 },
+    { "source": "/in/", "destination": "/?utm_source=linkedin&utm_medium=social&utm_campaign=perfil&utm_content=pagina", "statusCode": 302 },
     {
       "source": "/calificacion-inofensiva-seremi-2026/",
       "destination": "/calificacion-inofensiva-seremi/",

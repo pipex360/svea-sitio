@@ -199,6 +199,20 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
         var ia = asistenteIA(document.referrer);
         if (ia) ss.set('utm_source', ia);
       }
+      // Redes sin utm (16-nov-2026): el enlace visible de una publicación o del perfil
+      // llega sólo con el fbclid o el referrer de Facebook/Instagram/LinkedIn; antes
+      // el lead quedaba sin fuente. Se marca utm_source=<red> y utm_medium=social.
+      function redSocial(url) {
+        var h; try { h = new URL(url).hostname; } catch (e) { return ''; }
+        if (/(^|\.)instagram\.com$/.test(h)) return 'instagram';
+        if (/(^|\.)(facebook\.com|fb\.com|fb\.me)$/.test(h)) return 'facebook';
+        if (/(^|\.)(linkedin\.com|lnkd\.in)$/.test(h)) return 'linkedin';
+        return '';
+      }
+      if (!ss.get('gclid') && !ss.get('utm_source')) {
+        var red = redSocial(document.referrer) || (ss.get('fbclid') ? 'facebook' : '');
+        if (red) { ss.set('utm_source', red); ss.set('utm_medium', 'social'); }
+      }
       if (!ss.get('landing_page')) {
         ss.set('landing_page', location.origin + location.pathname);
         var ref = '';
@@ -272,7 +286,9 @@ const NOSCRIPT = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N
           if (/56929947924/.test(a.href)) {
             var u = new URL(a.href);
             var deAds = ss.get('gclid') || ss.get('utm_medium') === 'cpc';
-            var marca = deAds ? '(vengo de un anuncio de Google)' : '(vengo de su sitio web)';
+            var red = ss.get('utm_medium') === 'social' || ss.get('utm_medium') === 'organic' ? ss.get('utm_source') : '';
+            var redes = { facebook: 'Facebook', instagram: 'Instagram', linkedin: 'LinkedIn' };
+            var marca = deAds ? '(vengo de un anuncio de Google)' : redes[red] ? '(vengo de ' + redes[red] + ')' : '(vengo de su sitio web)';
             var t = u.searchParams.get('text') || 'Hola, necesito una cotización';
             if (t.indexOf('(vengo de') === -1) {
               u.searchParams.set('text', t.replace(/\s*Llego desde Google\.?\s*$/, '') + ' ' + marca);

@@ -388,7 +388,8 @@ ExpiresByType image/x-icon "access plus 30 days"
   const vercel = JSON.parse(readFileSync('vercel.json', 'utf8')).redirects ?? [];
   const clave = (s, d, c) => `${s} ${d} ${c}`;
   const esperadas = new Set(REDIRECCIONES.flatMap((r) => variantes(r.desde).map((d) => clave(d, r.hacia, 301))));
-  const hay = new Set(vercel.map((v) => clave(v.source, v.destination, v.statusCode)));
+  // Los 302 son atajos temporales con utm (/fb, /ig, /in de los perfiles de redes, 16-nov-2026), no páginas que se mudaron.
+  const hay = new Set(vercel.filter((v) => v.statusCode !== 302).map((v) => clave(v.source, v.destination, v.statusCode)));
   const faltan = [...esperadas].filter((x) => !hay.has(x));
   const sobran = [...hay].filter((x) => !esperadas.has(x));
   if (faltan.length || sobran.length) throw new Error(`vercel.json no calza con src/data/redirecciones.json · faltan: ${faltan.join(' | ')} · sobran: ${sobran.join(' | ')}`);
