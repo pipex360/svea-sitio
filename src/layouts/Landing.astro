@@ -181,6 +181,24 @@ const BARRA =
             <p class="lp-bajada" set:html={d.bajada} />
           </div>
 
+          {d.ordenMovilClasico && (
+            <!-- 18-nov-2026: sólo en el teléfono, antes del formulario: confianza y
+                 los dos caminos de un toque (WhatsApp y llamar); el formulario queda
+                 debajo para quien prefiera dejar sus datos -->
+            <div class="lp-contacto-movil sm:hidden">
+              <p class="lp-confianza"><strong>250+ empresas atendidas</strong> · Respuesta en 24 h</p>
+              <a href={d.cierre.whatsapp} target="_blank" rel="noopener" class="lp-btn-wa">
+                <svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true" set:html={WA_SVG} />
+                Escríbenos por WhatsApp
+              </a>
+              <a href={TEL_HREF} class="lp-btn-tel" aria-label={`Llamar al ${TEL}`}>
+                <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={TEL_SVG} />
+                Llamar ahora
+              </a>
+              <p class="lp-o-datos">o déjanos tus datos y te contactamos:</p>
+            </div>
+          )}
+
           <div id="formulario" class="lp-ancla lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start">
             <LandingFormulario f={d.formulario} copia={COPIA} />
           </div>
@@ -569,9 +587,16 @@ const BARRA =
     .lp-orden-clasico > .lp-hero-texto > .lp-subtitulo,
     .lp-orden-clasico > .lp-hero-texto > .lp-bajada { order: 0; }
     .lp-orden-clasico > .lp-hero-texto > .lp-bajada { margin-top: 14px; }
-    .lp-orden-clasico > .lp-hero-pills { order: 1; margin-top: 20px; }
+    .lp-orden-clasico > .lp-contacto-movil { order: 1; margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+    .lp-orden-clasico > #formulario { order: 2; margin-top: 4px; }
+    .lp-orden-clasico > .lp-hero-pills { order: 3; margin-top: 24px; }
     .lp-orden-clasico > .lp-hero-pills .lp-cifras { margin-top: 20px; }
-    .lp-orden-clasico > #formulario { order: 2; margin-top: 24px; }
+    .lp-confianza { margin: 0 0 2px; font-size: 14px; color: rgba(0,0,0,.65); }
+    .lp-confianza strong { color: #0e7a3c; }
+    .lp-btn-wa, .lp-btn-tel { display: flex; align-items: center; justify-content: center; gap: 10px; height: 52px; border-radius: 999px; font-size: 16px; font-weight: 600; text-decoration: none; }
+    .lp-btn-wa { background: #25d366; color: #fff !important; }
+    .lp-btn-tel { background: #fff; color: #000 !important; border: 1.5px solid rgba(0,0,0,.18); }
+    .lp-o-datos { margin: 8px 0 0; text-align: center; font-size: 14px; color: rgba(0,0,0,.6); }
   }
   .lp-cifra { font-family: Manrope, Inter, sans-serif; font-weight: 500; font-size: 30px; letter-spacing: -.03em; line-height: 1; color: #000; }
   @media (min-width: 768px) { .lp-cifra { font-size: 38px; } }
