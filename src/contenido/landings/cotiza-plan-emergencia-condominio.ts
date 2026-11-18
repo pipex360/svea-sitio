@@ -349,6 +349,7 @@ const landing: Landing = {
     "contacto": true
   },
   "foto": 'edificios-santiago-cordillera-nevada-plan-emergencia-condominio',
+  "ordenMovilClasico": true,
   "medicion": {
     "servicio": "Plan de Emergencia Condominios",
     "prefijoAsunto": "[ADS] Cotización Plan Condominios - ",

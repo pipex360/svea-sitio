@@ -353,6 +353,7 @@ const landing: Landing = {
     "contacto": true
   },
   "foto": 'linea-seleccion-tomates-informe-sanitario',
+  "ordenMovilClasico": true,
   "medicion": {
     "servicio": "Informe Sanitario Favorable",
     "prefijoAsunto": "[ADS] Cotización Informe Sanitario - ",

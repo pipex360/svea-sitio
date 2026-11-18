@@ -350,6 +350,7 @@ const landing: Landing = {
     "contacto": true
   },
   "foto": 'edificios-providencia-plan-emergencia-condominio',
+  "ordenMovilClasico": true,
   "medicion": {
     "servicio": "Plan de Emergencia y Evacuación",
     "prefijoAsunto": "[ADS] Cotización Plan Emergencia - ",

@@ -277,6 +277,7 @@ const landing: Landing = {
     contacto: true,
   },
   foto: 'camion-tolva-carga-planta-residuos',
+  ordenMovilClasico: true,
   medicion: {
     servicio: 'Autorización Transporte de Residuos',
     prefijoAsunto: '[ADS] Cotización Transporte Residuos - ',
