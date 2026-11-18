@@ -26,7 +26,6 @@ const landing: Landing = {
   "h1": "Plan de Emergencia y<br>Evacuación para Condominios<br><em>Ley 21.442</em>",
   "subtitulo": "Plan de emergencia condominio · Plan de emergencia edificio · Plan de emergencia comunidad · Ley 21.442 de copropiedad y OGUC",
   "clientesComo": "clientes",
-  "sinCifraClientes": true,
   "bajada": "Para administradores y comités de administración: nuestro <strong>plan de emergencia y evacuación</strong> para condominios, edificios y comunidades cubre análisis de riesgos, protocolos de evacuación y roles para comité y administración. Tu <strong>plan de seguridad para condominios</strong> con respaldo profesional y acompañamiento hasta la revisión de Bomberos.",
   "pills": [
     "Plan adaptado a tu edificio",
@@ -35,8 +34,8 @@ const landing: Landing = {
   ],
   "cifras": [
     {
-      "valor": "5-10",
-      "texto": "Días hábiles"
+      "valor": "250+",
+      "texto": "Clientes atendidos"
     },
     {
       "valor": "21.442",

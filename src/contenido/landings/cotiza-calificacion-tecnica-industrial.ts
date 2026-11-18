@@ -18,7 +18,6 @@ import type { Landing } from './tipos';
 
 const landing: Landing = {
   "ruta": "/cotiza-calificacion-tecnica-industrial/",
-  "sinCifraClientes": true,
   "urgenciaCorta": "<strong>¿Necesitas tu certificado?</strong> Regulariza hoy.",
   "urgencia": "<strong>¿Necesitas tu certificado de actividad inofensiva?</strong> — Sin calificación técnica industrial aprobada no puedes operar. Regulariza hoy.",
   "badge": "Cotización en menos de 24 horas",
@@ -32,8 +31,8 @@ const landing: Landing = {
   ],
   "cifras": [
     {
-      "valor": "3-5",
-      "texto": "Días hábiles expediente"
+      "valor": "250+",
+      "texto": "Empresas atendidas"
     },
     {
       "valor": "15-45",
