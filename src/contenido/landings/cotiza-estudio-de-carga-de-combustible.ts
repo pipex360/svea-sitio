@@ -14,6 +14,7 @@ import type { Landing } from './tipos';
 
 const landing: Landing = {
   "ruta": "/cotiza-estudio-de-carga-de-combustible/",
+  "sinCifraClientes": true,
   "urgenciaCorta": "<strong>¿Fiscalización pendiente?</strong> Cotízalo hoy.",
   "urgencia": "<strong>¿Fiscalización o permiso pendiente?</strong> — Sin estudio de carga de combustible tu instalación queda fuera de norma. Cotízalo hoy.",
   "badge": "Cotización en menos de 24 horas",
@@ -26,8 +27,8 @@ const landing: Landing = {
   ],
   "cifras": [
     {
-      "valor": "250+",
-      "texto": "Empresas atendidas"
+      "valor": "OGUC",
+      "texto": "y NCh 1916"
     },
     {
       "valor": "3-5",

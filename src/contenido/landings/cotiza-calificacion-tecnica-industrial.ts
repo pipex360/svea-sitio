@@ -18,6 +18,7 @@ import type { Landing } from './tipos';
 
 const landing: Landing = {
   "ruta": "/cotiza-calificacion-tecnica-industrial/",
+  "sinCifraClientes": true,
   "urgenciaCorta": "<strong>¿Necesitas tu certificado?</strong> Regulariza hoy.",
   "urgencia": "<strong>¿Necesitas tu certificado de actividad inofensiva?</strong> — Sin calificación técnica industrial aprobada no puedes operar. Regulariza hoy.",
   "badge": "Cotización en menos de 24 horas",
@@ -31,8 +32,8 @@ const landing: Landing = {
   ],
   "cifras": [
     {
-      "valor": "250+",
-      "texto": "Empresas atendidas"
+      "valor": "3-5",
+      "texto": "Días hábiles expediente"
     },
     {
       "valor": "15-45",
@@ -181,7 +182,7 @@ const landing: Landing = {
   "incluye": {
     "copete": "Servicio integral",
     "titulo": "¿Qué incluye la <em>calificación técnica industrial</em>?",
-    "bajada": "Desde la evaluación hasta el certificado de actividad inofensiva aprobado por SEREMI. Sin complicaciones.",
+    "bajada": "Desde la evaluación hasta que la SEREMI resuelve tu certificado de actividad inofensiva. Sin complicaciones.",
     "items": [
       {
         "icono": "<circle cx=\"11\" cy=\"11\" r=\"8\"/><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"/>",

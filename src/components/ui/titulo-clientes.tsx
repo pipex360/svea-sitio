@@ -9,10 +9,10 @@
  */
 import { cn } from '@/lib/utils';
 
-export function TituloClientes({ como: Etiqueta = 'h2', className, quienes = 'empresas' }: { como?: 'h2' | 'p'; className?: string; quienes?: string }) {
+export function TituloClientes({ como: Etiqueta = 'h2', className, quienes = 'empresas', sinCifra = false }: { como?: 'h2' | 'p'; className?: string; quienes?: string; sinCifra?: boolean }) {
   return (
     <Etiqueta className={cn('mb-5 text-center text-lg font-medium text-foreground md:text-2xl', className)}>
-      Con la confianza de <span className="font-black tracking-tight text-svea">{`más de 250 ${quienes}`}</span> en todo Chile
+      Con la confianza de <span className="font-black tracking-tight text-svea">{sinCifra ? quienes : `más de 250 ${quienes}`}</span> en todo Chile
     </Etiqueta>
   );
 }

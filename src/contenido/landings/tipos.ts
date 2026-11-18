@@ -38,6 +38,8 @@ export interface Landing {
   subtitulo?: string;
   /** Sustantivo de la franja «Con la confianza de más de 250 …». Por defecto «empresas». */
   clientesComo?: string;
+  /** 18-nov-2026 (Carlos: no publicar cantidades): la franja dice «Con la confianza de empresas…» sin «más de 250». */
+  sinCifraClientes?: boolean;
   /** la bajada del hero (html) */
   bajada: string;
   pills: string[];
