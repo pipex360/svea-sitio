@@ -18,7 +18,7 @@ const landing: Landing = {
   "urgencia": "<strong>¿Fiscalización o permiso pendiente?</strong> — Sin estudio de carga de combustible tu instalación queda fuera de norma. Cotízalo hoy.",
   "badge": "Cotización en menos de 24 horas",
   "h1": "Estudio de Carga de<br>Combustible y <em>Carga de Fuego</em>",
-  "bajada": "Elaboramos tu <strong>estudio de carga de combustible</strong> e <strong>informe de carga de fuego</strong> con respaldo técnico: identificación de materiales, cálculo de carga térmica e informe conforme a la OGUC y NCh. Tú no tienes que hacer nada.",
+  "bajada": "Hacemos el estudio completo: revisamos los materiales, calculamos la <strong>carga de fuego</strong> y entregamos el informe conforme a la OGUC. Tú no tienes que hacer nada.",
   "pills": [
     "Informe de carga de fuego conforme a la OGUC",
     "Correcciones sin costo incluidas",
