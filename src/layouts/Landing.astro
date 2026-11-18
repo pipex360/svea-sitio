@@ -187,16 +187,6 @@ const BARRA =
                  debajo para quien prefiera dejar sus datos -->
             <div class="lp-contacto-movil sm:hidden">
               <p class="lp-confianza"><strong>250+ empresas</strong> · Cotización en 24 h</p>
-              <div class="lp-atajos">
-                <a href={d.cierre.whatsapp} target="_blank" rel="noopener" class="lp-btn-wa">
-                  <svg viewBox="0 0 24 24" class="size-[18px]" fill="currentColor" aria-hidden="true" set:html={WA_SVG} />
-                  WhatsApp
-                </a>
-                <a href={TEL_HREF} class="lp-btn-tel" aria-label={`Llamar al ${TEL}`}>
-                  <svg viewBox="0 0 24 24" class="size-[18px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={TEL_SVG} />
-                  Llamar
-                </a>
-              </div>
             </div>
           )}
 
@@ -404,12 +394,28 @@ const BARRA =
     <Footer2 base={BASE} tagline={d.pie.presentacion} client:idle />
 
     <!-- en el teléfono, cuando el formulario ya quedó arriba: cotizar o WhatsApp -->
+    {d.ordenMovilClasico ? (
+      <!-- 18-nov-2026: con el orden clásico, en el teléfono la barra va fija desde
+           el principio con los dos atajos (WhatsApp y llamar); el formulario ya
+           está en la primera pantalla -->
+      <div class:list={['lp-barra lp-barra-atajos visible md:hidden', COPIA && 'con-aviso']}>
+        <a href={d.cierre.whatsapp} target="_blank" rel="noopener" class="lp-btn-wa">
+          <svg viewBox="0 0 24 24" class="size-[18px]" fill="currentColor" aria-hidden="true" set:html={WA_SVG} />
+          WhatsApp
+        </a>
+        <a href={TEL_HREF} class="lp-btn-tel" aria-label={`Llamar al ${TEL}`}>
+          <svg viewBox="0 0 24 24" class="size-[18px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={TEL_SVG} />
+          Llamar
+        </a>
+      </div>
+    ) : (
     <div class:list={['lp-barra md:hidden', COPIA && 'con-aviso']} aria-hidden="true" inert>
       <a href="#formulario" class="btn-flecha chica flex-1 justify-center"><span>{d.cierre.boton}</span></a>
       <a href={d.cierre.whatsapp} target="_blank" rel="noopener" class="lp-wa grid size-11 shrink-0 place-items-center rounded-full" aria-label="Escribir por WhatsApp">
         <svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true" set:html={WA_SVG} />
       </a>
     </div>
+    )}
     <!-- en escritorio, el botón flotante de WhatsApp de la portada; aparece
          cuando el formulario del hero ya quedó arriba, para no taparlo -->
     <a href={d.cierre.whatsapp} target="_blank" rel="noopener" class:list={['lp-wa lp-wa-flota', COPIA && 'con-aviso']} aria-hidden="true" tabindex="-1">
@@ -435,11 +441,8 @@ const BARRA =
     if (!form || !('IntersectionObserver' in window)) return;
     new IntersectionObserver(function (es) {
       var e = es[0];
-      // con el orden clásico (formulario bajo las cifras) también se muestra
-      // ANTES de llegar al formulario: quien entra tiene a mano cotizar o WhatsApp
-      var clasico = !!document.querySelector('.lp-orden-clasico');
-      var pasado = !e.isIntersecting && (clasico || e.boundingClientRect.top < 0);
-      [barra, flota].forEach(function (el) {
+      var pasado = !e.isIntersecting && e.boundingClientRect.top < 0;
+      [barra && !barra.classList.contains('lp-barra-atajos') ? barra : null, flota].forEach(function (el) {
         if (!el) return;
         el.classList.toggle('visible', pasado);
         if (pasado) { el.removeAttribute('inert'); el.removeAttribute('aria-hidden'); el.removeAttribute('tabindex'); }
@@ -597,10 +600,7 @@ const BARRA =
     .lp-orden-clasico > .lp-hero-texto > .lp-bajada { font-size: 15px; line-height: 1.55; color: rgba(0,0,0,.68); }
     .lp-confianza { margin: 0; font-size: 14px; color: rgba(0,0,0,.6); }
     .lp-confianza strong { color: #0e7a3c; font-weight: 600; }
-    .lp-atajos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
-    .lp-btn-wa, .lp-btn-tel { display: flex; align-items: center; justify-content: center; gap: 8px; height: 46px; border-radius: 999px; font-size: 15px; font-weight: 600; text-decoration: none; }
-    .lp-btn-wa { background: #128c4b; color: #fff !important; }
-    .lp-btn-tel { background: #fff; color: #000 !important; border: 1px solid rgba(0,0,0,.18); }
+    body:has(.lp-barra-atajos) { padding-bottom: 72px; }
   }
   .lp-cifra { font-family: Manrope, Inter, sans-serif; font-weight: 500; font-size: 30px; letter-spacing: -.03em; line-height: 1; color: #000; }
   @media (min-width: 768px) { .lp-cifra { font-size: 38px; } }
@@ -639,6 +639,10 @@ const BARRA =
   .lp-barra.visible { transform: none; }
   .lp-barra.con-aviso { bottom: 31px; }
   .lp-barra .btn-flecha { overflow: hidden; text-overflow: ellipsis; }
+  .lp-barra-atajos > a { flex: 1; }
+  .lp-btn-wa, .lp-btn-tel { display: flex; align-items: center; justify-content: center; gap: 8px; height: 46px; border-radius: 999px; font-size: 15px; font-weight: 600; text-decoration: none; }
+  .lp-btn-wa { background: #128c4b; color: #fff !important; }
+  .lp-btn-tel { background: #fff; color: #000 !important; border: 1.5px solid rgba(0,0,0,.22) !important; }
   @media (prefers-reduced-motion: reduce) {
     .lp-barra, .lp-wa, .lp-wa-flota { transition: none; }
     .lp-aura, .lp-latido::before { animation: none; }
