@@ -186,7 +186,11 @@ const BARRA =
                  los dos caminos de un toque (WhatsApp y llamar); el formulario queda
                  debajo para quien prefiera dejar sus datos -->
             <div class="lp-contacto-movil sm:hidden">
-              <p class="lp-confianza"><strong>250+ empresas atendidas</strong> · Respuesta en 24 h</p>
+              <ul class="lp-confianza" role="list">
+                <li><strong>250+</strong><span>empresas atendidas</span></li>
+                <li><strong>24 h</strong><span>cotización</span></li>
+                <li><strong>Sin costo</strong><span>correcciones</span></li>
+              </ul>
               <a href={d.cierre.whatsapp} target="_blank" rel="noopener" class="lp-btn-wa">
                 <svg viewBox="0 0 24 24" class="size-5" fill="currentColor" aria-hidden="true" set:html={WA_SVG} />
                 Escríbenos por WhatsApp
@@ -591,11 +595,16 @@ const BARRA =
     .lp-orden-clasico > #formulario { order: 2; margin-top: 4px; }
     .lp-orden-clasico > .lp-hero-pills { order: 3; margin-top: 24px; }
     .lp-orden-clasico > .lp-hero-pills .lp-cifras { margin-top: 20px; }
-    .lp-confianza { margin: 0 0 2px; font-size: 14px; color: rgba(0,0,0,.65); }
-    .lp-confianza strong { color: #0e7a3c; }
-    .lp-btn-wa, .lp-btn-tel { display: flex; align-items: center; justify-content: center; gap: 10px; height: 52px; border-radius: 999px; font-size: 16px; font-weight: 600; text-decoration: none; }
-    .lp-btn-wa { background: #25d366; color: #fff !important; }
-    .lp-btn-tel { background: #fff; color: #000 !important; border: 1.5px solid rgba(0,0,0,.18); }
+    .lp-orden-clasico > .lp-hero-texto > .lp-bajada { font-size: 15px; line-height: 1.55; color: rgba(0,0,0,.68); }
+    .lp-confianza { display: grid; grid-template-columns: repeat(3, 1fr); margin: 2px 0 6px; padding: 0; list-style: none;
+      background: rgba(255,255,255,.88); border: 1px solid rgba(0,0,0,.08); border-radius: 14px; backdrop-filter: blur(6px); }
+    .lp-confianza li { display: flex; flex-direction: column; align-items: center; padding: 10px 4px; text-align: center; }
+    .lp-confianza li + li { border-left: 1px solid rgba(0,0,0,.08); }
+    .lp-confianza strong { font-family: Manrope, Inter, sans-serif; font-size: 18px; font-weight: 700; letter-spacing: -.02em; color: #0e7a3c; line-height: 1.1; }
+    .lp-confianza span { margin-top: 2px; font-size: 12px; color: rgba(0,0,0,.6); }
+    .lp-btn-wa, .lp-btn-tel { display: flex; align-items: center; justify-content: center; gap: 10px; height: 54px; border-radius: 999px; font-size: 16.5px; font-weight: 700; text-decoration: none; }
+    .lp-btn-wa { background: #128c4b; color: #fff !important; box-shadow: 0 8px 20px -10px rgba(18,140,75,.7); }
+    .lp-btn-tel { background: #fff; color: #000 !important; border: 1.5px solid rgba(0,0,0,.2); }
     .lp-o-datos { margin: 8px 0 0; text-align: center; font-size: 14px; color: rgba(0,0,0,.6); }
   }
   .lp-cifra { font-family: Manrope, Inter, sans-serif; font-weight: 500; font-size: 30px; letter-spacing: -.03em; line-height: 1; color: #000; }
