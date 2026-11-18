@@ -22,7 +22,7 @@ const landing: Landing = {
   "urgencia": "<strong>¿Necesitas tu certificado de actividad inofensiva?</strong> — Sin calificación técnica industrial aprobada no puedes operar. Regulariza hoy.",
   "badge": "Cotización en menos de 24 horas",
   "h1": "Certificado de Actividad<br>Inofensiva y <em>Calificación Técnica Industrial</em>",
-  "bajada": "Gestionamos tu <strong>certificado de actividad inofensiva</strong> (la calificación inofensiva) y la <strong>calificación técnica industrial</strong> completa ante la SEREMI de Salud: evaluación, expediente y tramitación. Tú no tienes que hacer nada.",
+  "bajada": "Nos encargamos de todo el trámite ante la <strong>SEREMI de Salud</strong>: evaluación, expediente y seguimiento hasta la resolución. Tú no tienes que hacer nada.",
   "pills": [
     "Certificado de actividad inofensiva ante SEREMI",
     "Calificación industrial SEREMI de principio a fin",
