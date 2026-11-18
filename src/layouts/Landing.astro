@@ -416,7 +416,10 @@ const BARRA =
     if (!form || !('IntersectionObserver' in window)) return;
     new IntersectionObserver(function (es) {
       var e = es[0];
-      var pasado = !e.isIntersecting && e.boundingClientRect.top < 0;
+      // con el orden clásico (formulario bajo las cifras) también se muestra
+      // ANTES de llegar al formulario: quien entra tiene a mano cotizar o WhatsApp
+      var clasico = !!document.querySelector('.lp-orden-clasico');
+      var pasado = !e.isIntersecting && (clasico || e.boundingClientRect.top < 0);
       [barra, flota].forEach(function (el) {
         if (!el) return;
         el.classList.toggle('visible', pasado);
