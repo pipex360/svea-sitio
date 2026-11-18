@@ -40,6 +40,8 @@ export interface Landing {
   clientesComo?: string;
   /** 18-nov-2026 (Carlos: no publicar cantidades): la franja dice «Con la confianza de empresas…» sin «más de 250». */
   sinCifraClientes?: boolean;
+  /** 18-nov-2026: en el teléfono, el orden del WordPress (titular, bajada, pills y cifras, y DESPUÉS el formulario). Con v6 (formulario arriba) la tasa de formularios de Ads bajó de ~10% a ~4,5%. */
+  ordenMovilClasico?: boolean;
   /** la bajada del hero (html) */
   bajada: string;
   pills: string[];

@@ -361,6 +361,7 @@ const landing: Landing = {
     "contacto": true
   },
   "foto": 'operarios-grua-horquilla-bodega-calificacion-tecnica',
+  "ordenMovilClasico": true,
   "medicion": {
     "servicio": "Calificación Técnica Industrial",
     "prefijoAsunto": "[ADS] Cotización CTI - ",

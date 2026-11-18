@@ -344,6 +344,7 @@ const landing: Landing = {
     "contacto": true
   },
   "foto": 'operario-transpaleta-racks-estudio-carga-combustible',
+  "ordenMovilClasico": true,
   "medicion": {
     "servicio": "Estudio de Carga de Combustible",
     "prefijoAsunto": "[ADS] Cotización ECC - ",
